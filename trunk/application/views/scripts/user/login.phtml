@@ -1,0 +1,22 @@
+
+<div class="account-create">
+	<h1>Create an Account</h1>
+    <?php //echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
+        <div class="fieldset">
+			<?php foreach($this->form->getElements() as $element) : ?>
+				<?php echo $element->render(); ?>
+			<?php endforeach; ?>
+		</div>
+        <div class="buttons-set form-buttons">
+            <button type="submit" class="button" title="Create">
+				<span><span>Create</span></span>
+			</button>
+        </div>
+    </form>
+    <script type="text/javascript">
+    //<![CDATA[
+        //var dataForm = new VarienForm('form-validate', true);
+    //]]>
+    </script>
+</div>

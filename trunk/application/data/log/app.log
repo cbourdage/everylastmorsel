@@ -1,0 +1,713 @@
+2011-12-10T17:52:32+00:00 DEBUG (7): Elm_Model_User Object
+(
+    [_resourceName:protected] => user
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 1
+    [_data:protected] => Array
+        (
+            [firstname] => Collin
+            [lastname] => Bourdage
+            [email] => quemercedes@yahoo.com
+            [password] => stereo
+            [passwordVerify] => stereo
+            [location] => United States
+            [submit] => submit
+            [password_hash] => 8d786498ce5a0b10c441bb5478a03ee9:Od
+            [created_at] => Zend_Db_Expr Object
+                (
+                    [_expression:protected] => now()
+                )
+
+            [modified_at] => Zend_Db_Expr Object
+                (
+                    [_expression:protected] => now()
+                )
+
+            [alias] => quemercedes
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => user_id
+    [_isDeleted:protected] => 
+)
+
+2011-12-10T17:52:32+00:00 DEBUG (7): Array
+(
+    [firstname] => Collin
+    [lastname] => Bourdage
+    [email] => quemercedes@yahoo.com
+    [password] => stereo
+    [passwordVerify] => stereo
+    [location] => United States
+    [submit] => submit
+    [password_hash] => 8d786498ce5a0b10c441bb5478a03ee9:Od
+    [created_at] => Zend_Db_Expr Object
+        (
+            [_expression:protected] => now()
+        )
+
+    [modified_at] => Zend_Db_Expr Object
+        (
+            [_expression:protected] => now()
+        )
+
+    [alias] => quemercedes
+)
+
+2011-12-10T17:53:13+00:00 DEBUG (7): Zend_Db_Table_Row Object
+(
+    [_data:protected] => Array
+        (
+            [user_id] => 
+            [firstname] => 
+            [lastname] => 
+            [alias] => 
+            [email] => 
+            [location] => 
+            [password_hash] => 
+            [created_at] => 
+            [modified_at] => 
+        )
+
+    [_cleanData:protected] => Array
+        (
+        )
+
+    [_modifiedFields:protected] => Array
+        (
+            [user_id] => 1
+        )
+
+    [_table:protected] => Elm_Model_Resource_User Object
+        (
+            [_name:protected] => user
+            [_primary:protected] => Array
+                (
+                    [1] => user_id
+                )
+
+            [_resourceModel:protected] => 
+            [_definition:protected] => 
+            [_definitionConfigName:protected] => 
+            [_db:protected] => Zend_Db_Adapter_Pdo_Mysql Object
+                (
+                    [_pdoType:protected] => mysql
+                    [_numericDataTypes:protected] => Array
+                        (
+                            [0] => 0
+                            [1] => 1
+                            [2] => 2
+                            [INT] => 0
+                            [INTEGER] => 0
+                            [MEDIUMINT] => 0
+                            [SMALLINT] => 0
+                            [TINYINT] => 0
+                            [BIGINT] => 1
+                            [SERIAL] => 1
+                            [DEC] => 2
+                            [DECIMAL] => 2
+                            [DOUBLE] => 2
+                            [DOUBLE PRECISION] => 2
+                            [FIXED] => 2
+                            [FLOAT] => 2
+                        )
+
+                    [_defaultStmtClass:protected] => Zend_Db_Statement_Pdo
+                    [_config:protected] => Array
+                        (
+                            [hostname] => localhost
+                            [dbname] => growing_ideas
+                            [username] => root
+                            [password] => 
+                            [charset] => UTF8
+                            [persistent] => 
+                            [options] => Array
+                                (
+                                    [caseFolding] => 0
+                                    [autoQuoteIdentifiers] => 1
+                                    [fetchMode] => 2
+                                )
+
+                            [driver_options] => Array
+                                (
+                                    [1002] => SET NAMES 'UTF8'
+                                )
+
+                        )
+
+                    [_fetchMode:protected] => 5
+                    [_profiler:protected] => Zend_Db_Profiler Object
+                        (
+                            [_queryProfiles:protected] => Array
+                                (
+                                )
+
+                            [_enabled:protected] => 
+                            [_filterElapsedSecs:protected] => 
+                            [_filterTypes:protected] => 
+                        )
+
+                    [_defaultProfilerClass:protected] => Zend_Db_Profiler
+                    [_connection:protected] => PDO Object
+                        (
+                        )
+
+                    [_caseFolding:protected] => 0
+                    [_autoQuoteIdentifiers:protected] => 1
+                    [_allowSerialization:protected] => 1
+                    [_autoReconnectOnUnserialize:protected] => 
+                )
+
+            [_schema:protected] => 
+            [_cols:protected] => Array
+                (
+                    [0] => user_id
+                    [1] => firstname
+                    [2] => lastname
+                    [3] => alias
+                    [4] => email
+                    [5] => location
+                    [6] => password_hash
+                    [7] => created_at
+                    [8] => modified_at
+                )
+
+            [_identity:protected] => 1
+            [_sequence:protected] => 1
+            [_metadata:protected] => Array
+                (
+                    [user_id] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => user_id
+                            [COLUMN_POSITION] => 1
+                            [DATA_TYPE] => int
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 1
+                            [PRIMARY] => 1
+                            [PRIMARY_POSITION] => 1
+                            [IDENTITY] => 1
+                        )
+
+                    [firstname] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => firstname
+                            [COLUMN_POSITION] => 2
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 128
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [lastname] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => lastname
+                            [COLUMN_POSITION] => 3
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 128
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [alias] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => alias
+                            [COLUMN_POSITION] => 4
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 128
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [email] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => email
+                            [COLUMN_POSITION] => 5
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 128
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [location] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => location
+                            [COLUMN_POSITION] => 6
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 1
+                            [LENGTH] => 24
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [password_hash] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => password_hash
+                            [COLUMN_POSITION] => 7
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 255
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [created_at] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => created_at
+                            [COLUMN_POSITION] => 8
+                            [DATA_TYPE] => datetime
+                            [DEFAULT] => 0000-00-00 00:00:00
+                            [NULLABLE] => 
+                            [LENGTH] => 
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [modified_at] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => modified_at
+                            [COLUMN_POSITION] => 9
+                            [DATA_TYPE] => datetime
+                            [DEFAULT] => 0000-00-00 00:00:00
+                            [NULLABLE] => 
+                            [LENGTH] => 
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                )
+
+            [_metadataCache:protected] => 
+            [_metadataCacheInClass:protected] => 1
+            [_rowClass:protected] => Zend_Db_Table_Row
+            [_rowsetClass:protected] => Zend_Db_Table_Rowset
+            [_referenceMap:protected] => Array
+                (
+                )
+
+            [_dependentTables:protected] => Array
+                (
+                )
+
+            [_defaultSource:protected] => defaultNone
+            [_defaultValues:protected] => Array
+                (
+                )
+
+        )
+
+    [_connected:protected] => 1
+    [_readOnly:protected] => 
+    [_tableClass:protected] => Elm_Model_Resource_User
+    [_primary:protected] => Array
+        (
+            [1] => user_id
+        )
+
+)
+
+2011-12-10T17:53:41+00:00 DEBUG (7): Zend_Db_Table_Row Object
+(
+    [_data:protected] => Array
+        (
+            [user_id] => 
+            [firstname] => Collin
+            [lastname] => Bourdage
+            [alias] => quemercedes
+            [email] => quemercedes@yahoo.com
+            [location] => United States
+            [password_hash] => a7aebaeaad6be852ffbcab09aafd37e0:Mz
+            [created_at] => Zend_Db_Expr Object
+                (
+                    [_expression:protected] => now()
+                )
+
+            [modified_at] => Zend_Db_Expr Object
+                (
+                    [_expression:protected] => now()
+                )
+
+        )
+
+    [_cleanData:protected] => Array
+        (
+        )
+
+    [_modifiedFields:protected] => Array
+        (
+            [firstname] => 1
+            [lastname] => 1
+            [alias] => 1
+            [email] => 1
+            [location] => 1
+            [password_hash] => 1
+            [created_at] => 1
+            [modified_at] => 1
+        )
+
+    [_table:protected] => Elm_Model_Resource_User Object
+        (
+            [_name:protected] => user
+            [_primary:protected] => Array
+                (
+                    [1] => user_id
+                )
+
+            [_resourceModel:protected] => 
+            [_definition:protected] => 
+            [_definitionConfigName:protected] => 
+            [_db:protected] => Zend_Db_Adapter_Pdo_Mysql Object
+                (
+                    [_pdoType:protected] => mysql
+                    [_numericDataTypes:protected] => Array
+                        (
+                            [0] => 0
+                            [1] => 1
+                            [2] => 2
+                            [INT] => 0
+                            [INTEGER] => 0
+                            [MEDIUMINT] => 0
+                            [SMALLINT] => 0
+                            [TINYINT] => 0
+                            [BIGINT] => 1
+                            [SERIAL] => 1
+                            [DEC] => 2
+                            [DECIMAL] => 2
+                            [DOUBLE] => 2
+                            [DOUBLE PRECISION] => 2
+                            [FIXED] => 2
+                            [FLOAT] => 2
+                        )
+
+                    [_defaultStmtClass:protected] => Zend_Db_Statement_Pdo
+                    [_config:protected] => Array
+                        (
+                            [hostname] => localhost
+                            [dbname] => growing_ideas
+                            [username] => root
+                            [password] => 
+                            [charset] => UTF8
+                            [persistent] => 
+                            [options] => Array
+                                (
+                                    [caseFolding] => 0
+                                    [autoQuoteIdentifiers] => 1
+                                    [fetchMode] => 2
+                                )
+
+                            [driver_options] => Array
+                                (
+                                    [1002] => SET NAMES 'UTF8'
+                                )
+
+                        )
+
+                    [_fetchMode:protected] => 5
+                    [_profiler:protected] => Zend_Db_Profiler Object
+                        (
+                            [_queryProfiles:protected] => Array
+                                (
+                                )
+
+                            [_enabled:protected] => 
+                            [_filterElapsedSecs:protected] => 
+                            [_filterTypes:protected] => 
+                        )
+
+                    [_defaultProfilerClass:protected] => Zend_Db_Profiler
+                    [_connection:protected] => PDO Object
+                        (
+                        )
+
+                    [_caseFolding:protected] => 0
+                    [_autoQuoteIdentifiers:protected] => 1
+                    [_allowSerialization:protected] => 1
+                    [_autoReconnectOnUnserialize:protected] => 
+                )
+
+            [_schema:protected] => 
+            [_cols:protected] => Array
+                (
+                    [0] => user_id
+                    [1] => firstname
+                    [2] => lastname
+                    [3] => alias
+                    [4] => email
+                    [5] => location
+                    [6] => password_hash
+                    [7] => created_at
+                    [8] => modified_at
+                )
+
+            [_identity:protected] => 1
+            [_sequence:protected] => 1
+            [_metadata:protected] => Array
+                (
+                    [user_id] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => user_id
+                            [COLUMN_POSITION] => 1
+                            [DATA_TYPE] => int
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 1
+                            [PRIMARY] => 1
+                            [PRIMARY_POSITION] => 1
+                            [IDENTITY] => 1
+                        )
+
+                    [firstname] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => firstname
+                            [COLUMN_POSITION] => 2
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 128
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [lastname] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => lastname
+                            [COLUMN_POSITION] => 3
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 128
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [alias] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => alias
+                            [COLUMN_POSITION] => 4
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 128
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [email] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => email
+                            [COLUMN_POSITION] => 5
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 128
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [location] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => location
+                            [COLUMN_POSITION] => 6
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 1
+                            [LENGTH] => 24
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [password_hash] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => password_hash
+                            [COLUMN_POSITION] => 7
+                            [DATA_TYPE] => varchar
+                            [DEFAULT] => 
+                            [NULLABLE] => 
+                            [LENGTH] => 255
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [created_at] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => created_at
+                            [COLUMN_POSITION] => 8
+                            [DATA_TYPE] => datetime
+                            [DEFAULT] => 0000-00-00 00:00:00
+                            [NULLABLE] => 
+                            [LENGTH] => 
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                    [modified_at] => Array
+                        (
+                            [SCHEMA_NAME] => 
+                            [TABLE_NAME] => user
+                            [COLUMN_NAME] => modified_at
+                            [COLUMN_POSITION] => 9
+                            [DATA_TYPE] => datetime
+                            [DEFAULT] => 0000-00-00 00:00:00
+                            [NULLABLE] => 
+                            [LENGTH] => 
+                            [SCALE] => 
+                            [PRECISION] => 
+                            [UNSIGNED] => 
+                            [PRIMARY] => 
+                            [PRIMARY_POSITION] => 
+                            [IDENTITY] => 
+                        )
+
+                )
+
+            [_metadataCache:protected] => 
+            [_metadataCacheInClass:protected] => 1
+            [_rowClass:protected] => Zend_Db_Table_Row
+            [_rowsetClass:protected] => Zend_Db_Table_Rowset
+            [_referenceMap:protected] => Array
+                (
+                )
+
+            [_dependentTables:protected] => Array
+                (
+                )
+
+            [_defaultSource:protected] => defaultNone
+            [_defaultValues:protected] => Array
+                (
+                )
+
+        )
+
+    [_connected:protected] => 1
+    [_readOnly:protected] => 
+    [_tableClass:protected] => Elm_Model_Resource_User
+    [_primary:protected] => Array
+        (
+            [1] => user_id
+        )
+
+)
+
+2011-12-10T18:41:25+00:00 DEBUG (7): Array
+(
+    [firstname] => Collin
+    [lastname] => Bourdage
+    [email] => quemercedes@yahoo.com
+    [password] => temp
+    [passwordVerify] => temp
+    [location] => United States
+    [submit] => submit
+)
+
