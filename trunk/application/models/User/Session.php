@@ -7,7 +7,7 @@
  * @package    Mage_Customer
  * @author      Magento Core Team <core@magentocommerce.com>
  */
-class Elm_Model_User_Session extends Zend_Session_Namespace
+class Elm_Model_User_Session extends Colony_Session
 {
     /**
      * Customer object
@@ -19,6 +19,12 @@ class Elm_Model_User_Session extends Zend_Session_Namespace
 	public function __construct()
 	{
 		parent::__construct('user');
+	}
+
+	public function setUserAsLoggedIn($user)
+	{
+		$this->setUser($user);
+		return $this;
 	}
 
     /**
@@ -95,7 +101,7 @@ class Elm_Model_User_Session extends Zend_Session_Namespace
         /** @var $customer Mage_Customer_Model_Customer */
         $user = Bootstrap::getModel('user');
         if ($user->authenticate($username, $password)) {
-            $this->setUser($user);
+            $this->setUserAsLoggedIn($user);
             //$this->renewSession();
             return true;
         }
@@ -125,8 +131,8 @@ class Elm_Model_User_Session extends Zend_Session_Namespace
     public function authenticate(Zend_Controller_Action $action)
     {
         if (!$this->isLoggedIn()) {
-            $this->beforeAuthUrl = $action->getFrontController()->getCurrentUrl();
-            $action->getResponse()->setRedirect('/user/login');
+            $this->beforeAuthUrl = $action->getCurrentUrl();
+            //$action->getResponse()->setRedirect('/user/login');
             return false;
         }
         return true;

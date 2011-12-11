@@ -6,6 +6,7 @@ class Elm_UserController extends Colony_Controller_Action
 	{
 		return Bootstrap::getSingleton('user/session');
 	}
+	
 	public function preDispatch()
 	{
         parent::preDispatch();
@@ -14,11 +15,12 @@ class Elm_UserController extends Colony_Controller_Action
             return;
         }
 
+		// @TODO figure out redirects for login and registration pages - all pages for that matter.
         $action = $this->getRequest()->getActionName();
         $pattern = '/^(create|login|forgotpassword)/i';
         if (!preg_match($pattern, $action)) {
             if (!$this->_getSession()->authenticate($this)) {
-                $this->_redirect('/');
+                //$this->_redirect('/');
             }
         }
 	}
@@ -35,10 +37,25 @@ class Elm_UserController extends Colony_Controller_Action
 
 	public function viewAction()
 	{
-		$this->view->message = 'You are logged in!';
+		$userAlias = $this->getRequest()->getParam('alias');
+		if ($user = Bootstrap::getModel('user')->loadByAlias($userAlias)) {
+			$this->view->user = $user;
+			$this->view->message = 'User account: ';
+		}
+		else {
+			// forward to invalid
+			$this->view->message = 'Invalid user account...';
+		}
 	}
 
-	// @TODO create error messages
+	/**
+	 * Registration and registration post action
+	 *
+	 * @TODO create error messages
+	 * @TODO Error Validation
+	 * 
+	 * @return void
+	 */
 	public function createAction()
 	{
 		$session = $this->_getSession();
@@ -54,48 +71,65 @@ class Elm_UserController extends Colony_Controller_Action
 			$user = Bootstrap::getModel('user');
 			if ($form->isValid($post)) {
 				$user->setData($post)
-					->setPassword($this->getRequest()->getPost('password'))
-					->save();
+					->setPassword($this->getRequest()->getPost('password'));
+				$user->save();
+
+				// setup session, send email, add messages, move on
+				$session->setUserAsLoggedIn($user);
+				$user->sendNewAccountEmail($session->beforeAuthUrl);
+				$session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
+				if (!($url = $session->beforeAuthUrl)) {
+					$url = '/u/' . $user->getAlias();
+				}
+				$this->_redirect($url);
+				return;
 			}
 			else {
-				Bootstrap::log($post);
-				if (is_array($errors)) {
+				/*if (is_array($errors)) {
 					foreach ($errors as $errorMessage) {
 						$session->addError($errorMessage);
 					}
 				} else {
 					$session->addError($this->__('Invalid user data'));
-				}
+				}*/
 			}
 		}
 
 		$this->view->form = $form;
 	}
 
-	// @TODO last login date
-	// @TODO create error messages
+	/**
+	 * Login and login post actions
+	 *
+	 * @TODO last login date
+	 * @TODO create error messages
+	 *
+	 * @return void
+	 */
 	public function loginAction()
 	{
-		/*$session = $this->_getSession();
+		$session = $this->_getSession();
         if ($session->isLoggedIn()) {
-            $this->_redirect('/u/cbourdage');
+            $this->_redirect('/u/' . $session->getUser()->alias);
             return;
-        }*/
+        }
 
 		$form = new Elm_Model_User_Form_Login();
 		if ($this->getRequest()->isPost()) {
-			$post = $this->getRequest()->getPost();
-			$user = Bootstrap::getModel('user');
-			if ($form->isValid($post)) {
-				$user->setPassword($this->getRequest()->getPost('password'));
-				Bootstrap::log($user);
-				die('logging in: ');
-				$user->save();
-			}
-			else {
-				Bootstrap::log($post);
-			}
-		}
+            $post = $this->getRequest()->getPost();
+            if ($form->isValid($post)) {
+                try {
+                    $session->login($post['username'], $post['password']);
+                } catch (Colony_Exception $e) {
+                    $session->addError($e->getMessage());
+                    $session->setUsername($post['username']);
+                } catch (Exception $e) {
+                    // Mage::logException($e); // PA DSS violation: this exception log can disclose customer password
+                }
+            } else {
+                $session->addError('Login and password are required.');
+            }
+        }
 
 		$this->view->form = $form;
 	}

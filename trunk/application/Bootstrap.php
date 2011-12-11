@@ -80,22 +80,33 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         Zend_Registry::set('log', $logger);
 	}*/
 
+	// @TODO create routes.ini to setup all routes
 	protected function _initRoutes()
 	{
-		//$this->bootstrap('FrontController');
-        //$frontController = $this->getResource('FrontController');
+		$this->bootstrap('frontController');
+        $frontController = $this->getResource('frontController');
 
-        /*
         $route = new Zend_Controller_Router_Route(
-		    '/:user',
+		    'u/:alias',
 		    array(
-		    	'user' => '@cbourdage',
+		    	'controller' => 'user',
+        		'action' => 'view',
+				'alias' => ''
+		    ),
+			array(
+				'alias' => '[a-zA-Z-_0-9]+'
+			)
+		);
+		$frontController->getRouter()->addRoute('user', $route);
+
+		$route = new Zend_Controller_Router_Route(
+		    'help',
+		    array(
 		    	'controller' => 'index',
-        		'action' => 'user'
+        		'action' => 'help',
 		    )
 		);
-		$router = $frontController->getRouter()->addRoute('default', $route);
-		*/
+		$frontController->getRouter()->addRoute('cms', $route);
     }
 
 	/**

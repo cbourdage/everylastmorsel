@@ -1,0 +1,17 @@
+<?php
+$_session = Bootstrap::getSingleton('user/session');
+//Bootstrap::log($this->url('help'));
+?>
+<header id="header" role="banner" class="clearfix grid_12">
+	<h1><?= $this->placeholder('Zend_View_Helper_HeadTitle'); ?></h1>
+
+	<ul class="list-inline grid_4 fRight">
+		<?php if ($_session->isLoggedIn()) : ?>
+			<li><a href="<?= $this->url(null, array('alias' => $_session->user->getAlias(), '_route' => 'user')); ?>">My Account</a></li>
+			<li><a href="<?= $this->url('user/logout'); ?>">Logout</a></li>
+		<?php else : ?>
+			<li><a href="<?= $this->url('user/login'); ?>">Login</a></li>
+		<?php endif; ?>
+		<li><a href="<?= $this->url('help', array('_route' => 'cms')); ?>">Help!</a></li>
+	</ul>
+</header>

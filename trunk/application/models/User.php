@@ -30,6 +30,9 @@ class Elm_Model_User extends Colony_Model_Abstract
 			  	self::EXCEPTION_INVALID_EMAIL_OR_PASSWORD
 			);
         }
+		else {
+			// @TODO set last_login_at field in database
+		}
 
         return true;
     }
@@ -46,10 +49,24 @@ class Elm_Model_User extends Colony_Model_Abstract
         return $this;
     }
 
+	/**
+     * Load customer by email
+     *
+     * @param   string $alias
+     * @return  Elm_Model_User
+     */
+    public function loadByAlias($alias)
+    {
+        $this->_getResource()->loadByAlias($this, $alias);
+        return $this;
+    }
+
 
     /**
      * Processing object before save data
      *
+	 * @TODO setup a 'is_new' variable for new accounts - must expire on third login or if user disables tooltips/guide information
+	 *
      * @return Colony_Model_Abstract
      */
     protected function _beforeSave()
@@ -131,48 +148,18 @@ class Elm_Model_User extends Colony_Model_Abstract
         return Colony_Hash::validateHash($password, $hash);
     }
 
-
-
-
-
-
-
-
     /**
      * Send email with new account specific information
      *
+	 * @TODO send new account email
+	 *
+	 * @param string $backUrl
      * @return Elm_Model_User
      */
-    public function sendNewAccountEmail($type = 'registered', $backUrl = '', $storeId = '0')
+    public function sendNewAccountEmail($backUrl = '')
     {
-        $types = array(
-            'registered'   => self::XML_PATH_REGISTER_EMAIL_TEMPLATE,  // welcome email, when confirmation is disabled
-            'confirmed'    => self::XML_PATH_CONFIRMED_EMAIL_TEMPLATE, // welcome email, when confirmation is enabled
-            'confirmation' => self::XML_PATH_CONFIRM_EMAIL_TEMPLATE,   // email with confirmation link
-        );
-        if (!isset($types[$type])) {
-            throw new Exception(Mage::helper('customer')->__('Wrong transactional account email type.'));
-        }
-
-        $translate = Mage::getSingleton('core/translate');
-        /* @var $translate Mage_Core_Model_Translate */
-        $translate->setTranslateInline(false);
-
-        if (!$storeId) {
-            $storeId = $this->_getWebsiteStoreId($this->getSendemailStoreId());
-        }
-
-        Mage::getModel('core/email_template')
-            ->setDesignConfig(array('area'=>'frontend', 'store'=>$storeId))
-            ->sendTransactional(
-                Mage::getStoreConfig($types[$type], $storeId),
-                Mage::getStoreConfig(self::XML_PATH_REGISTER_EMAIL_IDENTITY, $storeId),
-                $this->getEmail(),
-                $this->getName(),
-                array('customer' => $this, 'back_url' => $backUrl));
-
-        $translate->setTranslateInline(true);
-
+        //http://stackoverflow.com/questions/1218191/how-can-i-make-email-template-in-zend-framework
+		Bootstrap::log(__METHOD__);
         return $this;
     }
 

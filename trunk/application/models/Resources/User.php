@@ -52,6 +52,24 @@ class Elm_Model_Resource_User extends Colony_Db_Table
         return $this;
     }
 
+	/**
+     * Load customer by email
+     *
+     * @param Elm_Model_User $user
+     * @param string $alias
+     * @return Elm_Model_Resource_User
+     * @throws Colony_Exception
+     */
+    public function loadByAlias(Elm_Model_User $user, $alias)
+    {
+		$row = $this->fetchRow(Zend_Db_Table::getDefaultAdapter()->quoteInto('alias=?', $alias));
+        if ($row !== null) {
+            $this->load($user, $row->user_id);
+        } else {
+            $user->setData(array());
+        }
+        return $this;
+    }
 
 
 

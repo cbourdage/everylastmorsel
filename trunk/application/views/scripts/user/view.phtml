@@ -1,0 +1,10 @@
+<?php
+$_user = $this->user;
+?>
+<h4><?php echo $this->message; ?></h4>
+	
+<?php if (Bootstrap::getSingleton('user/session')->isLoggedIn()) :  ?>
+	<pre><?php echo print_r($_user->getData(), true); ?></pre>
+<?php else : ?>
+	<p><?php echo $_user->getName(); ?></p>
+<?php endif; ?>
