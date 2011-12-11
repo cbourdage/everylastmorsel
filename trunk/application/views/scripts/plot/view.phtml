@@ -1,0 +1,10 @@
+<?php
+$_plot = $this->plot;
+?>
+<h4><?php echo $this->message; ?></h4>
+
+<?php if (Bootstrap::getSingleton('user/session')->isLoggedIn()) :  ?>
+	<pre><?php echo print_r($_plot->getData(), true); ?></pre>
+<?php else : ?>
+	<p><?php echo $_plot->getName(); ?></p>
+<?php endif; ?>

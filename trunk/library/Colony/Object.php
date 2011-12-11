@@ -687,4 +687,16 @@ class Colony_Object implements ArrayAccess
         }
         return $this;
     }
+
+	/**
+     * Reset all model data
+     *
+     * @return Colony_Object
+     */
+    public function reset()
+    {
+        $this->setData(array());
+        $this->setOrigData();
+        return $this;
+    }
 }

@@ -110,7 +110,7 @@ class Elm_UserController extends Colony_Controller_Action
 	{
 		$session = $this->_getSession();
         if ($session->isLoggedIn()) {
-            $this->_redirect('/u/' . $session->getUser()->alias);
+            $this->_redirect('/u/' . $session->getUser()->getAlias());
             return;
         }
 
@@ -119,12 +119,15 @@ class Elm_UserController extends Colony_Controller_Action
             $post = $this->getRequest()->getPost();
             if ($form->isValid($post)) {
                 try {
-                    $session->login($post['username'], $post['password']);
+                    $session->login($post['email'], $post['password']);
+        			if (preg_match('/^(login)/i', $session->beforeAuthUrl)) {
+						$session->beforeAuthUrl = '/u/' . $session->getUser()->getAlias();
+					}
+					$this->_redirect($session->beforeAuthUrl);
                 } catch (Colony_Exception $e) {
                     $session->addError($e->getMessage());
-                    $session->setUsername($post['username']);
                 } catch (Exception $e) {
-                    // Mage::logException($e); // PA DSS violation: this exception log can disclose customer password
+					$session->addError($e->getMessage());
                 }
             } else {
                 $session->addError('Login and password are required.');
@@ -141,7 +144,7 @@ class Elm_UserController extends Colony_Controller_Action
 	 */
 	public function logoutAction()
 	{
-		$this->_getSession()->logout()->setBeforeAuthUrl($this->getCurrentUrl());
+		$this->_getSession()->logout()->beforeAuthUrl = $this->getCurrentUrl();
         $this->_redirect('/');
 	}
 }

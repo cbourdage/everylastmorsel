@@ -80,12 +80,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         Zend_Registry::set('log', $logger);
 	}*/
 
-	// @TODO create routes.ini to setup all routes
+	/**
+	 * @TODO create routes.ini to setup all routes
+	 * @TODO Zend_Controller_Router_Rewrite::addConfig(Zend_Config $config, $section = null)
+	 * 
+	 * @return void
+	 */
 	protected function _initRoutes()
 	{
 		$this->bootstrap('frontController');
         $frontController = $this->getResource('frontController');
 
+		// user
         $route = new Zend_Controller_Router_Route(
 		    'u/:alias',
 		    array(
@@ -99,6 +105,21 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		);
 		$frontController->getRouter()->addRoute('user', $route);
 
+		// plot
+        $route = new Zend_Controller_Router_Route(
+		    'p/:id',
+		    array(
+		    	'controller' => 'plot',
+        		'action' => 'view',
+				'id' => ''
+		    ),
+			array(
+				'id' => '\d+'
+			)
+		);
+		$frontController->getRouter()->addRoute('plot', $route);
+
+		// help
 		$route = new Zend_Controller_Router_Route(
 		    'help',
 		    array(
@@ -106,7 +127,17 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         		'action' => 'help',
 		    )
 		);
-		$frontController->getRouter()->addRoute('cms', $route);
+		$frontController->getRouter()->addRoute('help', $route);
+
+		// faq
+		$route = new Zend_Controller_Router_Route(
+		    'faq',
+		    array(
+		    	'controller' => 'index',
+        		'action' => 'faq',
+		    )
+		);
+		$frontController->getRouter()->addRoute('faq', $route);
     }
 
 	/**

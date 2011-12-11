@@ -1,7 +1,7 @@
 <?php
 
 
-class Elm_Model_User_Form_Create extends Zend_Form
+class Elm_Model_Plot_Form_Create extends Zend_Form
 {
 	public function __construct()
 	{
@@ -12,62 +12,36 @@ class Elm_Model_User_Form_Create extends Zend_Form
             Zend_Form_Element::VALIDATE
         );
 
-
-		$this->addElement('text', 'firstname', array(
-            'filters'    => array('StringTrim'),
-            'validators' => array(
-                'Alpha',
-                array('StringLength', true, array(3, 128))
-            ),
-            'required'   => true,
-            'label'      => 'First Name',
-        ));
-
-        $this->addElement('text', 'lastname', array(
-            'filters'    => array('StringTrim'),
-            'validators' => array(
-                'Alpha',
-                array('StringLength', true, array(3, 128))
-            ),
-            'required'   => true,
-            'label'      => 'Last Name',
-        ));
-
 		// @TODO Create unique email check
-        $this->addElement('text', 'email', array(
-            'filters'    => array('StringTrim', 'StringToLower'),
-            'validators' => array(
-                array('StringLength', true, array(3, 128)),
-                array('EmailAddress'),
-                array('UniqueEmail', false, array(Bootstrap::getModel('user'))),
-            ),
-            'required'   => true,
-            'label'      => 'Email',
-        ));
-
-        $this->addElement('password', 'password', array(
+        $this->addElement('text', 'name', array(
             'filters'    => array('StringTrim'),
             'validators' => array(
-                array('StringLength', true, array(6, 128))
+                array('StringLength', true, array(3, 128))
             ),
             'required'   => true,
-            'label'      => 'Password',
+            'label'      => 'Name',
         ));
 
-        $this->addElement('password', 'passwordVerify', array(
+		$this->addElement('text', 'latitude', array(
             'filters'    => array('StringTrim'),
-            'validators' => array(
-               'PasswordVerification',
-            ),
+            'validators' => array('Float'),
             'required'   => true,
-            'label'      => 'Confirm Password',
+            'label'      => 'Latitude',
         ));
 
-		$this->addElement('text', 'location', array(
+        $this->addElement('text', 'longitude', array(
             'filters'    => array('StringTrim'),
-            'validators' => array(),
+            'validators' => array('Float'),
+            'required'   => true,
+            'label'      => 'Longitude',
+        ));
+
+		// @TODO Auto-populate zipcode based on lat & long
+		$this->addElement('text', 'zipcode', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array('PostCode'),
             'required'   => false,
-            'label'      => 'Location',
+            'label'      => 'Zipcode',
         ));
 
         $this->addElement('submit', 'submit', array(

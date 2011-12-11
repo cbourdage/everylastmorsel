@@ -16,11 +16,21 @@ class Elm_Model_User_Session extends Colony_Session
      */
     protected $_user;
 
+	/**
+	 * Constructor to initialize namespace
+	 */
 	public function __construct()
 	{
 		parent::__construct('user');
 	}
 
+	/**
+	 * Sets the status of a user as logged in
+	 *  - initializes session for user
+	 *
+	 * @param $user
+	 * @return Elm_Model_User_Session
+	 */
 	public function setUserAsLoggedIn($user)
 	{
 		$this->setUser($user);
@@ -43,7 +53,7 @@ class Elm_Model_User_Session extends Colony_Session
     /**
      * Retrieve costomer model object
      *
-     * @return Mage_Customer_Model_Customer
+     * @return Elm_Model_User
      */
     public function getUser()
     {
@@ -74,7 +84,7 @@ class Elm_Model_User_Session extends Colony_Session
     }
 
     /**
-     * Checking custommer loggin status
+     * Checking user login status
      *
      * @return bool
      */
@@ -83,7 +93,12 @@ class Elm_Model_User_Session extends Colony_Session
         return (bool)$this->id && (bool)$this->checkUserId($this->id);
     }
 
-	// @TODO database lookkup
+	/**
+	 * @TODO database lookkup
+	 * 
+	 * @param $id
+	 * @return bool
+	 */
 	public function checkUserId($id)
 	{
 		return true;

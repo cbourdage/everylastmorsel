@@ -1,18 +1,10 @@
 <?php
 
 
-class Elm_Model_User_Form_Create extends Zend_Form
+class Elm_Model_User_Form_Login extends Zend_Form
 {
 	public function __construct()
 	{
-		// add path to custom validators
-        $this->addElementPrefixPath(
-            'Elm_Model_Form_Validate',
-            APPLICATION_PATH . '/models/form/validate/',
-            Zend_Form_Element::VALIDATE
-        );
-
-		// @TODO Create unique email check
         $this->addElement('text', 'email', array(
             'filters'    => array('StringTrim', 'StringToLower'),
             'validators' => array(

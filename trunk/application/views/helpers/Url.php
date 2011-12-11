@@ -23,7 +23,7 @@ class Elm_View_Helper_Url extends Zend_View_Helper_Url
     {
 		$route = 'default';
 		if (isset($params['_route'])) {
-			$params['_route'];
+			$route = $params['_route'];
 			unset($params['_route']);
 		}
 		$encode = false;

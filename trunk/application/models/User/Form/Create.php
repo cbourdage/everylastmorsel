@@ -33,7 +33,6 @@ class Elm_Model_User_Form_Create extends Zend_Form
             'label'      => 'Last Name',
         ));
 
-		// @TODO Create unique email check
         $this->addElement('text', 'email', array(
             'filters'    => array('StringTrim', 'StringToLower'),
             'validators' => array(
@@ -63,6 +62,7 @@ class Elm_Model_User_Form_Create extends Zend_Form
             'label'      => 'Confirm Password',
         ));
 
+		// @TODO Auto-populate zipcode based on ip address
 		$this->addElement('text', 'location', array(
             'filters'    => array('StringTrim'),
             'validators' => array(),
