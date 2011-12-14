@@ -2,6 +2,25 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
+	/**
+     * Run the application
+     *
+     * Checks to see that we have a default controller directory. If not, an
+     * exception is thrown.
+     *
+     * If so, it registers the bootstrap with the 'bootstrap' parameter of
+     * the front controller, and dispatches the front controller.
+     *
+     * @return mixed
+     * @throws Zend_Application_Bootstrap_Exception
+     */
+    public function run()
+    {
+		// Apply all updates
+		Elm_Model_Setup::applyAllUpdates();
+		return parent::run();
+    }
+
 	protected function _initLocale()
 	{
         $locale = new Zend_Locale('en_US');
@@ -88,8 +107,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	 */
 	protected function _initRoutes()
 	{
-		$this->bootstrap('frontController');
-        $frontController = $this->getResource('frontController');
+		$this->bootstrap('FrontController');
+        $frontController = $this->getResource('FrontController');
 
 		// user
         $route = new Zend_Controller_Router_Route(
@@ -100,7 +119,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 				'alias' => ''
 		    ),
 			array(
-				'alias' => '[a-zA-Z-_0-9]+'
+				'alias' => '[a-zA-Z-_0-9\.]+'
 			)
 		);
 		$frontController->getRouter()->addRoute('user', $route);

@@ -9,15 +9,15 @@ class Elm_Model_Resource_User extends Colony_Db_Table
     /**
      * Check customer scope, email and confirmation key before saving
      *
-     * @param Colony_Model_Abstract $user
+     * @param Colony_Model_Abstract $object
      * @return Elm_Model_Resource_User
      * @throws Colony_Exception
      */
-    protected function _beforeSave(Colony_Model_Abstract $user)
+    protected function _beforeSave(Colony_Model_Abstract $object)
     {
-        parent::_beforeSave($user);
-        if (!$user->getEmail()) {
-            Bootstrap::throwException(Mage::helper('customer')->__('User email is required.'));
+        parent::_beforeSave($object);
+        if (!$object->getEmail()) {
+            Bootstrap::throwException('User email is required.');
         }
         return $this;
     }
@@ -25,14 +25,34 @@ class Elm_Model_Resource_User extends Colony_Db_Table
     /**
      * Save customer addresses and set default addresses in attributes backend
      *
-     * @param   Colony_Model_Abstract $user
+     * @param   Colony_Model_Abstract $object
      * @return  Colony_Db_Table
      */
-    protected function _afterSave(Colony_Model_Abstract $user)
+    protected function _afterSave(Colony_Model_Abstract $object)
     {
-        return parent::_afterSave($user);
+        return parent::_afterSave($object);
     }
 
+	protected function _afterLoad($object)
+	{
+		parent::_afterLoad($object);
+		
+		$select = $this->getDefaultAdapter()->select()
+			->from(Elm_Model_Resource_Plot::RELATIONSHIP_TABLE)
+			->where('user_id =?', $object->getId());
+		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
+			$plots = array();
+			foreach ($rows as $row) {
+				$plots[] = Bootstrap::getModel('plot')->load($row->plot_id, false);
+			}
+			$object->setPlots($rows);
+		}
+		else {
+			$object->setPlots(null);
+		}
+
+		return $this;
+	}
     /**
      * Load customer by email
      *
@@ -71,7 +91,16 @@ class Elm_Model_Resource_User extends Colony_Db_Table
         return $this;
     }
 
-
+	/**
+     * Check user by id
+     *
+     * @param int $userId
+     * @return bool
+     */
+    public function checkUserId($userId)
+    {
+        return $select = $this->find($userId)->current();
+    }
 
 
 
@@ -113,17 +142,6 @@ class Elm_Model_Resource_User extends Colony_Db_Table
             return false;
         }
         return $lookup['qty'] > 1;
-    }
-
-    /**
-     * Check user by id
-     *
-     * @param int $userId
-     * @return bool
-     */
-    public function checkUserId($userId)
-    {
-        return $select = $this->find($userId)->current();
     }
 }
 

@@ -12,7 +12,6 @@ class Elm_Model_Plot_Form_Create extends Zend_Form
             Zend_Form_Element::VALIDATE
         );
 
-		// @TODO Create unique email check
         $this->addElement('text', 'name', array(
             'filters'    => array('StringTrim'),
             'validators' => array(
@@ -44,6 +43,13 @@ class Elm_Model_Plot_Form_Create extends Zend_Form
             'label'      => 'Zipcode',
         ));
 
+		if (Bootstrap::getSingleton('user/session')->isLoggedIn()) {
+			$this->addElement('hidden', 'user_id', array(
+				'required'   => true,
+				'value'      => Bootstrap::getSingleton('user/session')->id,
+			));
+		}
+		
         $this->addElement('submit', 'submit', array(
             'required' => false,
             'ignore'   => true,

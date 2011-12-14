@@ -24,11 +24,7 @@ class Elm_Model_User extends Colony_Model_Abstract
     {
         $this->loadByEmail($login);
         if (!$this->validatePassword($password)) {
-            throw Bootstrap::exception(
-				'Colony',
-			  	'Invalid login or password',
-			  	self::EXCEPTION_INVALID_EMAIL_OR_PASSWORD
-			);
+            throw new Colony_Exception('Invalid login or password', self::EXCEPTION_INVALID_EMAIL_OR_PASSWORD);
         }
 		else {
 			// @TODO set last_login_at field in database

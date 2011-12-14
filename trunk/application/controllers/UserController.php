@@ -120,7 +120,7 @@ class Elm_UserController extends Colony_Controller_Action
             if ($form->isValid($post)) {
                 try {
                     $session->login($post['email'], $post['password']);
-        			if (preg_match('/^(login)/i', $session->beforeAuthUrl)) {
+        			if (preg_match('/(logout)/i', $session->beforeAuthUrl)) {
 						$session->beforeAuthUrl = '/u/' . $session->getUser()->getAlias();
 					}
 					$this->_redirect($session->beforeAuthUrl);
@@ -133,7 +133,7 @@ class Elm_UserController extends Colony_Controller_Action
                 $session->addError('Login and password are required.');
             }
         }
-
+		
 		$this->view->form = $form;
 	}
 

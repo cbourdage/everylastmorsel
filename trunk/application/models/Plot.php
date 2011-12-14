@@ -8,6 +8,13 @@ class Elm_Model_Plot extends Colony_Model_Abstract
         $this->_init('plot');
     }
 
+	public function _beforeSave()
+	{
+		if (!$this->getId()) {
+			$this->setIsNewPlot(true);
+		}
+	}
+
 	/**
      * Load plot by lat & long
      *

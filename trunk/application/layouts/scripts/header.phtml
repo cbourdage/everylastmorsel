@@ -13,6 +13,7 @@ $_session = Bootstrap::getSingleton('user/session');
 			<li><a href="<?= $this->url(null, array('alias' => $_session->getUser()->getAlias(), '_route' => 'user')); ?>">My Account</a></li>
 			<li><a href="<?= $this->url('user/logout'); ?>">Logout</a></li>
 		<?php else : ?>
+			<li><a href="<?= $this->url('user/create'); ?>">Create Account</a></li>
 			<li><a href="<?= $this->url('user/login'); ?>">Login</a></li>
 		<?php endif; ?>
 		<li><a href="<?= $this->url('help', array('_route' => 'help')); ?>">Help!</a></li>

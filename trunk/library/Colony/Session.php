@@ -29,11 +29,16 @@ class Colony_Session extends Zend_Session_Namespace
 	/**
      * Retrieve messages from session
      *
+	 * @param 	bool $clear
      * @return  Array
      */
-    public function getMessages()
+    public function getMessages($clear = false)
     {
-        return $this->_messages;
+		$messages = $this->_messages;
+		if ($clear === true) {
+			$this->_messages = array();
+		}
+        return $messages;
     }
 
     /**

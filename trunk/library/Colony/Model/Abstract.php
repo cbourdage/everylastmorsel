@@ -120,13 +120,13 @@ abstract class Colony_Model_Abstract extends Colony_Object
      * Load object data
      *
      * @param   integer $id
-     * @param   string $field
+     * @param   boolean $additional
      * @return  Colony_Model_Abstract
      */
-    public function load($id, $field=null)
+    public function load($id, $additional=true)
     {
         $this->_beforeLoad();
-        $this->_getResource()->load($this, $id, $field);
+        $this->_getResource()->load($this, $id, $additional);
         $this->_afterLoad();
         $this->setOrigData();
         $this->_hasDataChanges = false;
@@ -231,15 +231,6 @@ abstract class Colony_Model_Abstract extends Colony_Object
      */
     protected function _beforeSave()
     {
-        if (!$this->getId()) {
-            $this->isObjectNew(true);
-        }
-
-		if ($this->isObjectNew()) {
-			$this->setCreatedAt(new Zend_Db_Expr('now()'));
-			$this->setModifiedAt(new Zend_Db_Expr('now()'));
-		}
-		
         return $this;
     }
 

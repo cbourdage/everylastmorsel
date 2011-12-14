@@ -9,20 +9,56 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
      */
     protected $_resourceModel;
 
+	/**
+     * Check that model data fields that can be saved
+     * has really changed comparing with origData
+     *
+     * @param Colony_Model_Abstract $object
+     * @return boolean
+     */
+    public function hasDataChanged($object)
+    {
+        if (!$object->getOrigData()) {
+            return true;
+        }
+
+        $columns = $this->info('cols');
+        foreach ($columns as $col) {
+            if ($object->getOrigData($col) != $object->getData($col)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Load an object
      *
      * @param   Colony_Model_Abstract $object
      * @param   mixed $id
+	 * @param 	boolean $additional
      * @return  Colony_Db_Table
      */
-    public function load(Colony_Model_Abstract $object, $id)
+    public function load(Colony_Model_Abstract $object, $id, $additional=true)
     {
 		if ($data = $this->find($id)) {
 			$object->setData(array_shift($data->toArray()));
 		}
 
-        $this->_afterLoad($object);
+		if ($additional) {
+			$this->_afterLoad($object);
+		}
+        return $this;
+    }
+
+	/**
+     * Perform actions after object load
+     *
+     * @param Colony_Model_Abstract $object
+	 * @return Colony_Db_Table
+     */
+    protected function _afterLoad(Colony_Model_Abstract $object)
+    {
         return $this;
     }
 
@@ -57,54 +93,7 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
         return $this;
     }
 
-    /**
-     * Delete the object
-     *
-     * @param Colony_Model_Abstract $object
-     * @return Mage_Core_Model_Mysql4_Abstract
-     */
-    public function delete(Colony_Model_Abstract $object)
-    {
-        $this->_beforeDelete($object);
-        $this->delete($this->quoteInto($this->_primary . '=?', $object->getId()));
-        $this->_afterDelete($object);
-        return $this;
-    }
-
-     /**
-     * Check that model data fields that can be saved
-     * has really changed comparing with origData
-     *
-     * @param Colony_Model_Abstract $object
-     * @return boolean
-     */
-    public function hasDataChanged($object)
-    {
-        if (!$object->getOrigData()) {
-            return true;
-        }
-
-        $columns = $this->info('cols');
-        foreach ($columns as $col) {
-            if ($object->getOrigData($col) != $object->getData($col)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Perform actions after object load
-     *
-     * @param Colony_Model_Abstract $object
-	 * @return Colony_Db_Table
-     */
-    protected function _afterLoad(Colony_Model_Abstract $object)
-    {
-        return $this;
-    }
-
-    /**
+	/**
      * Perform actions before object save
      *
      * @param Colony_Model_Abstract $object
@@ -112,6 +101,15 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
      */
     protected function _beforeSave(Colony_Model_Abstract $object)
     {
+		if (!$object->getId()) {
+            $object->isObjectNew(true);
+        }
+
+		if ($object->isObjectNew()) {
+			$object->setCreatedAt(new Zend_Db_Expr('now()'));
+			$object->setModifiedAt(new Zend_Db_Expr('now()'));
+		}
+
         return $this;
     }
 
@@ -123,6 +121,20 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
      */
     protected function _afterSave(Colony_Model_Abstract $object)
     {
+        return $this;
+    }
+	
+    /**
+     * Delete the object
+     *
+     * @param Colony_Model_Abstract $object
+     * @return Mage_Core_Model_Mysql4_Abstract
+     */
+    public function delete(Colony_Model_Abstract $object)
+    {
+        $this->_beforeDelete($object);
+        $this->delete($this->quoteInto($this->_primary . '=?', $object->getId()));
+        $this->_afterDelete($object);
         return $this;
     }
 
