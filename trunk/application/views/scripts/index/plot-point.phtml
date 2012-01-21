@@ -1,0 +1,30 @@
+
+<div id="step-1">
+	<h4>Fantastic! What do you think about this location?</h4>
+	<p class="buttons"><button id="isA">Is a Garden</button><button id="shouldBeA">Should be a Garden</button></p>
+</div>
+<script>
+jQuery('#step-1').find('button').on('click', function(e) {
+	jQuery.ajax({
+		url: '/index/authenticate/',
+		data: 'type=' + jQuery(this).attr('id'),
+		success: function(response) {
+			if (typeof response == 'object') {
+				if (response.success) {
+					window.location = response.location;
+				} else {
+					alert(response.message);
+				}
+			} else {
+				elm.overlayUpdate(response);
+			}
+		},
+		error: function() {
+			alert('error in request');
+		},
+		exception: function() {
+			alert('error in request');
+		}
+	});
+});
+</script>
