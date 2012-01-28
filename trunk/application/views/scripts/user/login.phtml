@@ -1,12 +1,15 @@
 
 <div class="account-login">
 	<h4>Login to your Account</h4>
-    <?php //echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php echo $this->Message()->render(); ?>
     <form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
-        <div class="fieldset">
+        <ul class="fieldset">
 			<?php foreach($this->form->getElements() as $element) : ?>
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
+		</ul>
+		<div class="button-set">
+			<input type="submit" name="submit" id="login-submit" value="submit">
 		</div>
     </form>
     <script type="text/javascript">

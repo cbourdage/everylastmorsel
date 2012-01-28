@@ -189,7 +189,6 @@ abstract class Colony_Model_Abstract extends Colony_Object
 		$dbAdapter->beginTransaction();
         $dataCommited = false;
         try {
-
             $this->_beforeSave();
 			$this->_getResource()->save($this);
 			$this->_afterSave();

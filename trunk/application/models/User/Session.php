@@ -9,13 +9,6 @@
  */
 class Elm_Model_User_Session extends Colony_Session
 {
-    /**
-     * Customer object
-     *
-     * @var Mage_Customer_Model_Customer
-     */
-    protected $_user;
-
 	/**
 	 * Constructor to initialize namespace
 	 */
@@ -45,8 +38,8 @@ class Elm_Model_User_Session extends Colony_Session
      */
     public function setUser(Elm_Model_User $user)
     {
-        $this->_user = $user;
-        $this->id = $user->getId();
+        $this->user = $user;
+        $this->id = $user->getUserId();
         return $this;
     }
 
@@ -57,17 +50,11 @@ class Elm_Model_User_Session extends Colony_Session
      */
     public function getUser()
     {
-        if ($this->_user instanceof Elm_Model_User) {
-            return $this->_user;
+        if ($this->user instanceof Elm_Model_User) {
+            return $this->user;
         }
-
-        $user = Bootstrap::getModel('user');
-        if ($this->id) {
-            $user->load($this->id);
-        }
-
-        $this->setUser($user);
-        return $this->_user;
+        $this->user = Bootstrap::getModel('user');
+        return $this->user;
     }
 
     /**
@@ -78,7 +65,7 @@ class Elm_Model_User_Session extends Colony_Session
     public function getUserId()
     {
         if ($this->isLoggedIn()) {
-            return $this->id;
+            return $this->user->getUserId();
         }
         return null;
     }
@@ -90,22 +77,25 @@ class Elm_Model_User_Session extends Colony_Session
      */
     public function isLoggedIn()
     {
-        return (bool)$this->id && (bool)$this->checkUserId($this->id);
+		if (!(bool)$this->user) {
+			Bootstrap::log(__METHOD__ . ' -- not logged in');
+		}
+        return (bool)$this->user && (bool)$this->checkUserId($this->user->getId());
     }
 
 	/**
-	 * @TODO database lookkup
-	 * 
+	 * Checks the id is valid
+	 *
 	 * @param $id
 	 * @return bool
 	 */
 	public function checkUserId($id)
 	{
-		return true;
+		return Bootstrap::getModel('user')->getResource()->checkUserId($id);
 	}
 
     /**
-     * Customer authorization
+     * Auth user - if false throw Colony_Exception
      *
      * @param   string $username
      * @param   string $password
@@ -113,11 +103,9 @@ class Elm_Model_User_Session extends Colony_Session
      */
     public function login($username, $password)
     {
-        /** @var $customer Mage_Customer_Model_Customer */
         $user = Bootstrap::getModel('user');
         if ($user->authenticate($username, $password)) {
             $this->setUserAsLoggedIn($user);
-            //$this->renewSession();
             return true;
         }
         return false;
@@ -147,7 +135,7 @@ class Elm_Model_User_Session extends Colony_Session
     {
         if (!$this->isLoggedIn()) {
             $this->beforeAuthUrl = $action->getCurrentUrl();
-            //$action->getResponse()->setRedirect('/user/login');
+			Bootstrap::log('not logged in: ' . __METHOD__);
             return false;
         }
         return true;

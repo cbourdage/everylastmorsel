@@ -3,17 +3,20 @@
 
 class Elm_Model_User extends Colony_Model_Abstract
 {
-	const EXCEPTION_EMAIL_NOT_CONFIRMED       = 1;
+    const EXCEPTION_EMAIL_NOT_CONFIRMED       = 1;
     const EXCEPTION_INVALID_EMAIL_OR_PASSWORD = 2;
     const EXCEPTION_EMAIL_EXISTS              = 3;
-	
+
+	/**
+	 * Constructor
+	 */
 	public function _construct()
     {
         $this->_init('user');
     }
-	
+
 	/**
-     * Authenticate customer
+     * Authenticate user
      *
      * @param  string $login
      * @param  string $password
@@ -25,9 +28,8 @@ class Elm_Model_User extends Colony_Model_Abstract
         $this->loadByEmail($login);
         if (!$this->validatePassword($password)) {
             throw new Colony_Exception('Invalid login or password', self::EXCEPTION_INVALID_EMAIL_OR_PASSWORD);
-        }
-		else {
-			// @TODO set last_login_at field in database
+        } else {
+			$this->setData('last_login', date('U'));
 		}
 
         return true;
@@ -57,11 +59,8 @@ class Elm_Model_User extends Colony_Model_Abstract
         return $this;
     }
 
-
     /**
      * Processing object before save data
-     *
-	 * @TODO setup a 'is_new' variable for new accounts - must expire on third login or if user disables tooltips/guide information
 	 *
      * @return Colony_Model_Abstract
      */
@@ -71,6 +70,40 @@ class Elm_Model_User extends Colony_Model_Abstract
 		$this->setAlias(substr($this->getEmail(), 0, strpos($this->getEmail(), '@')));
         return $this;
     }
+
+	/**
+	 * Checks if the current session user matches the
+	 * instantiated user
+	 *
+	 * @return bool
+	 */
+	public function isMe()
+	{
+		$session = Bootstrap::getSingleton('user/session');
+		if ($session->isLoggedIn() && $session->user->getId() == $this->getId()) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Get plots
+	 *
+	 * @return mixed
+	 */
+	public function getPlots()
+	{
+		if (count($this->_plots) > 0) {
+			foreach ($this->getPlotIds() as $id => $role) {
+				if ($role != Elm_Model_Resource_Plot::ROLE_CREATOR) {
+					$plot = Bootstrap::getModel('plot')->load($id);
+					$plot->setUserRole($role);
+					$this->_plots[] = $plot;
+				}
+			}
+		}
+		return $this->_plots;
+	}
 
     /**
      * Change customer password
@@ -149,10 +182,9 @@ class Elm_Model_User extends Colony_Model_Abstract
      *
 	 * @TODO send new account email
 	 *
-	 * @param string $backUrl
      * @return Elm_Model_User
      */
-    public function sendNewAccountEmail($backUrl = '')
+    public function sendNewAccountEmail()
     {
         //http://stackoverflow.com/questions/1218191/how-can-i-make-email-template-in-zend-framework
 		Bootstrap::log(__METHOD__);
@@ -171,27 +203,7 @@ class Elm_Model_User extends Colony_Model_Abstract
      */
     public function sendPasswordReminderEmail()
     {
-        $translate = Mage::getSingleton('core/translate');
-        /* @var $translate Mage_Core_Model_Translate */
-        $translate->setTranslateInline(false);
-
-        $storeId = $this->getStoreId();
-        if (!$storeId) {
-            $storeId = $this->_getWebsiteStoreId();
-        }
-
-        Mage::getModel('core/email_template')
-            ->setDesignConfig(array('area'=>'frontend', 'store'=>$storeId))
-            ->sendTransactional(
-                Mage::getStoreConfig(self::XML_PATH_FORGOT_EMAIL_TEMPLATE, $storeId),
-                Mage::getStoreConfig(self::XML_PATH_FORGOT_EMAIL_IDENTITY, $storeId),
-                $this->getEmail(),
-                $this->getName(),
-                array('customer'=>$this)
-            );
-
-        $translate->setTranslateInline(true);
-
+        Bootstrap::log(__METHOD__);
         return $this;
     }
 
@@ -247,35 +259,6 @@ class Elm_Model_User extends Colony_Model_Abstract
             return true;
         }
         return $errors;
-    }
-
-    function addError($error)
-    {
-        $this->_errors[] = $error;
-    }
-
-    function getErrors()
-    {
-        return $this->_errors;
-    }
-
-    function resetErrors()
-    {
-        $this->_errors = array();
-    }
-
-    function printError($error, $line = null)
-    {
-        if ($error == null) return false;
-        $img = 'error_msg_icon.gif';
-        $liStyle = 'background-color:#FDD; ';
-        echo '<li style="'.$liStyle.'">';
-        echo '<img src="'.Mage::getDesign()->getSkinUrl('images/'.$img).'" class="v-middle"/>';
-        echo $error;
-        if ($line) {
-            echo '<small>, Line: <b>'.$line.'</b></small>';
-        }
-        echo "</li>";
     }
 
     /**

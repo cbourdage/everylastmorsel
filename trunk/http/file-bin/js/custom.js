@@ -2,38 +2,35 @@
 var map;
 var initialLocation;
 var marker;
-var browserSupportFlag = new Boolean();
+//var browserSupportFlag = new Boolean();
 
 function initialize() {
-    var myOptions = {
-        zoom: 14,
+    var options = {
+        zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    map = new google.maps.Map(document.getElementById("mapCanvas"), options);
 
     if (navigator.geolocation) {
-        browserSupportFlag = true;
         navigator.geolocation.getCurrentPosition(function(position) {
             initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+			map.setCenter(initialLocation);
 			initializeMarker(initialLocation);
-            map.setCenter(initialLocation);
         }, function() {
-            handleNoGeolocation(browserSupportFlag);
+            handleNoGeolocation(true);
         });
     }
 	else if (google.gears) {
-        browserSupportFlag = true;
         var geo = google.gears.factory.create('beta.geolocation');
         geo.getCurrentPosition(function(position) {
             initialLocation = new google.maps.LatLng(position.latitude, position.longitude);
             map.setCenter(initialLocation);
         }, function() {
-            handleNoGeoLocation(browserSupportFlag);
+            handleNoGeolocation(true);
         });
     }
     else {
-        browserSupportFlag = false;
-        handleNoGeolocation(browserSupportFlag);
+        handleNoGeolocation(true);
     }
 
 	function initializeMarker(initialLocation) {
@@ -42,7 +39,7 @@ function initialize() {
 			map: map,
 			draggable: true,
 			animation: google.maps.Animation.DROP,
-			position: initialLocation
+			//position: initialLocation
 		});
 
 		function placeMarker(latLng) {
@@ -57,8 +54,32 @@ function initialize() {
 		function tracking() {
 			console.log(marker);
 		}
+
 		google.maps.event.addListener(map, 'click', function(event) {
 			placeMarker(event.latLng);
+
+			console.log(event.latLng);
+			// @TODO display next step
+			jQuery.ajax({
+			  	url: '/index/plotpoint/',
+			  	data: $(event).serialize(),
+				dataType: 'html',
+			  	success: function(response) {
+					$('#overlay').html(response);
+
+					// @TODO create lighbox object for entire project - hide, show, update, html, close
+					$('#overlayBg').fadeIn();
+					$('#overlay').fadeIn();
+				},
+				error: function() {
+					// @TODO create a simple error handler function to display global message
+					alert('error in request');
+				},
+				exception: function() {
+					// @TODO create a simple error handler function to display global message
+					alert('error in request');
+				}
+			});
 	  	});
 		google.maps.event.addListener(marker, 'dragend', function(event) {
 			placeMarker(event.latLng);
@@ -70,26 +91,25 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 function initPlotDrop() {
-  for (var i =0; i < markerArray.length; i++) {
-    setTimeout(function() {
+  	for (var i =0; i < markerArray.length; i++) {
+    	setTimeout(function() {
       addMarkerMethod();
     }, i * 200);
-  }
+  	}
 }
 
 function handleNoGeolocation(errorFlag) {
-        if (errorFlag == true) {
-            alert("Geolocation service failed.");
-        } else {
-            alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
-        }
+	if (errorFlag == true) {
+		alert("Geolocation service failed.");
+		return;
+	}
 
-        var options = {
-            map: map,
-            position: initialLocation,
-            content: 'Supported'
-        };
+	var options = {
+		map: map,
+		position: initialLocation,
+		content: 'Supported'
+	};
 
-        var infowindow = new google.maps.InfoWindow(options);
-        map.setCenter(initialLocation);
-    }
+	var infowindow = new google.maps.InfoWindow(options);
+	map.setCenter(initialLocation);
+}

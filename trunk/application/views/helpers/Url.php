@@ -31,7 +31,7 @@ class Elm_View_Helper_Url extends Zend_View_Helper_Url
 			$encode = $params['_encode'];
 			unset($params['_encode']);
 		}
-		$reset = false;
+		$reset = true;
 		if (isset($params['_reset'])) {
 			$params['_reset'];
 			unset($params['_reset']);
@@ -39,16 +39,29 @@ class Elm_View_Helper_Url extends Zend_View_Helper_Url
 
 		if ($path !== null) {
 			list ($controller, $action) = explode('/', $path);
-			$urlOptions = array(
-				'controller' => $controller,
-				'action' => $action,
-			);
+
+			if ($controller == null) {
+				$urlOptions = array(
+					'controller' => 'index',
+					'action' => 'index',
+				);
+			} elseif ($action == null) {
+				$urlOptions = array(
+					'controller' => $controller,
+					'action' => 'index',
+				);
+			} else {
+				$urlOptions = array(
+					'controller' => $controller,
+					'action' => $action,
+				);
+			}
 		}
 
 		foreach ($params as $key => $value) {
 			$urlOptions[$key] = $value;
 		}
-		
+
 		$router = Zend_Controller_Front::getInstance()->getRouter();
         return $router->assemble($urlOptions, $route, $reset, $encode);
     }

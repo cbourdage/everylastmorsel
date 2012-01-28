@@ -47,8 +47,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
              ->appendStylesheet('/file-bin/css/960/reset.css')
              ->appendStylesheet('/file-bin/css/960/960.css')
              ->appendStylesheet('/file-bin/css/screen.css');
-        $this->_view->headTitle('Every Last Morsel');
-        $this->_view->headTitle()->setSeparator('|');
+        $this->_view->headTitle('Every Last Morsel')
+			->setSeparator('|');
     }
 
     /**
@@ -64,6 +64,22 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    Zend_Registry::set('db', $db);
 	}
 
+	protected function _initSession()
+	{
+		$config = array(
+			'name'           => 'session',
+			'primary'        => 'id',
+			'modifiedColumn' => 'modified',
+			'dataColumn'     => 'data',
+			'lifetimeColumn' => 'lifetime'
+		);
+		//create your Zend_Session_SaveHandler_DbTable and set the save handler for Zend_Session
+		//Zend_Session::setSaveHandler(new Zend_Session_SaveHandler_DbTable($config));
+		Zend_Session::setOptions($this->getOption('session'));
+
+		//self::log(Zend_Session::getOptions());
+	}
+
 	protected function _initModuleAutoloader()
 	{
     	$this->_resourceLoader = new Zend_Application_Module_Autoloader(array(
@@ -71,8 +87,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     		'basePath' => APPLICATION_PATH
     	));
 
+		// @TODO autoloader setup for controllers
     	$this->_resourceLoader->addResourceTypes(array(
-    		'models' => array(
+			'models' => array(
     			'path' => 'models',
     			'namespace' => 'Model'
     		),
@@ -83,25 +100,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	));
     }
 
-	/*protected function _initLogging()
-	{
-		$this->bootstrap('frontController');
-	    $logger = new Zend_Log();
-
-	    $writer = new Zend_Log_Writer_Stream(APPLICATION_PATH . '/../data/logs/app.log');
-        $logger->addWriter($writer);
-
-        if ($this->getEnvironment() == 'production') {
-            $logger->addFilter(new Zend_Log_Filter_Priority(Zend_Log::CRIT));
-        }
-
-        $this->_logger = $logger;
-        Zend_Registry::set('log', $logger);
-	}*/
-
 	/**
-	 * @TODO create routes.ini to setup all routes
-	 * @TODO Zend_Controller_Router_Rewrite::addConfig(Zend_Config $config, $section = null)
+	 * @TODO create routes.ini to setup all routes Zend_Controller_Router_Rewrite::addConfig(Zend_Config $config, $section = null)
 	 * 
 	 * @return void
 	 */

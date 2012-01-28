@@ -7,7 +7,10 @@ h2 { font-weight: normal; font-size: 28px; color: #d9d9d9; letter-spacing: .5px;
 h2 span { color: #34B6ED; font: italic 400 28px Baskerville,serif; }
 h3 { font-weight: normal; font-size: 24px; margin-top: 25px; }
 
-a { text-decoration: none; color: #999;
+a {
+	color: #999;
+	cursor: pointer;
+	text-decoration: none;
 	transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
@@ -20,30 +23,117 @@ a:hover { background: #F6FD79; color: #666; }
 .yellow { color: #F6FD79; }
 
 /** General Styles */
+.no-display { display: none; }
+.fLeft { float: right; }
 .fRight { float: right; }
 .tRight { text-align: right; }
 .tCenter { text-align: center; }
 
 ul.list-inline li { display: inline; }
+ul.list-block li { display: block; float: left; }
 
-/** Outlining Wrapper */
+/** Buttons and forms */
+a.button,
+button {
+	background: #CC7254;
+	border: 0;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	box-shadow: 0 1px 1px rgba(100,0,0,.9);
+	-moz-box-shadow: 0 1px 1px rgba(100,0,0,.9);
+	-o-box-shadow: 0 1px 1px rgba(100,0,0,.9);
+	-webkit-box-shadow: 0 1px 1px rgba(100,0,0,.9);
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	margin: 5px;
+	padding: 3px 8px;
+	text-align: center;
+}
+a.button:active,
+button:active { position: relative; top: 1px; }
+
+/** Colors */
+.dark-green { color: #95A868; }
+.dark-red { color: #452C18; }
+.red { color: #CC7254; }
+.yellow { color: #F4FCB8; }
+
+/** Outlining Wrappers */
 div#page { }
 
 /** Header */
-header { padding-top: 50px; }
-header ul li { color: #666;  margin-left: 10px; }
+header { margin-bottom: 25px; padding-top: 50px; }
+header ul { position: absolute; top: 5px; right: 0; }
+header ul li { color: #666; font-size: 11px;  margin-left: 10px; }
 header ul li:after { content: '|'; margin-left: 10px; }
 header ul li:last-child:after { content: ''; }
 
 /** Main content */
-div#content { margin-top: 25px; }
-div#map_canvas { height: 300px; }
+div#content { }
+
+/** Map Canvas */
+div#mapCanvas { height: 300px; }
+
+/** Steps */
+#step-1 { }
+#step-2 { }
+#step-2 .wrapper { position: relative; left: -350px; }
+#step-2 .wrapper > div { position: absolute; width: 350px; }
+#step-2 .wrapper #login { left: 0; }
+#step-2 .wrapper #middle { left: 350px; }
+#step-2 .wrapper #create { left: 700px; }
+#step-3 { width: 500px; height: 350px; }
+
+/** Message displays */
+div#content .message-block { display: none; }
+
+/** User main content */
+div#content .inner-ontent-wrapper > h2 + ul li { color: #999; font-size: 11px; }
+div#content .inner-ontent-wrapper > h2 + ul li strong { color: #666; }
+div#content #tabMenu { margin-top: 10px; }
+div#content #tabMenu li { margin-right: 20px; }
+div#content #tabMenu li:last-child { margin: 0; }
+div#content .blocked-content { border-bottom: 1px solid #ddd; display: block; margin-bottom: 10px; padding: 10px; }
+
+/** Overlay */
+#overlayBg { background: rgba(255,255,255,.4); height: 100%; width: 100%; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 50; }
+#overlay {
+	background: #fff;
+	border: 1px solid #ddd;
+	box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+	-moz-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+	-o-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+	-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+	display: block;
+	overflow: hidden;
+	padding: 15px 15px 10px;
+	position: absolute;
+	z-index: 55;
+	top: 200px;
+	left: 40%;
+	min-height: 200px;
+	min-width: 300px;
+}
+#overlay a.close { font-size: 12px; position: absolute; right: 5px; top: 5px; }
+#overlay h4 { font-size: 16px; margin-bottom: 10px; }
+#overlay p.buttons { }
+#overlay p.buttons button { float: left; }
+
+/** Plot main content */
+
+
+/** Left Column */
+div#columnLeft { border-right: 1px solid #ddd; min-height: 200px; }
 
 /** Footer */
-footer { font-size: 12px; margin-top: 75px; }
+footer { border-top: 1px solid #ededed; font-size: 12px; margin-top: 75px; margin-bottom: 50px; padding-top: 25px; }
+footer ul.list li { margin-bottom: 5px; }
 
 /** Print Styles */
 @media print {
 	html, body { height: auto; }
-	#map_canvas { height: 300px; }
+	#mapCanvas { height: 300px; }
 }

@@ -1,12 +1,11 @@
 <?php
 
 
-class Elm_Model_User_Form_Settings extends Elm_Model_Form_Abstract
+class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
 {
 	const VISIBILITY_PRIVATE = 'private';
 	const VISIBILITY_PUBLIC = 'public';
 
-	// @TODO add hide/show notifications
 	// @TODO add password reset
 	// @TODO add social settings
 	// @TODO add notes to fields (ie: Visiblity - publicly people can view you and search for you, but privately they can only see your listing)
@@ -28,16 +27,6 @@ class Elm_Model_User_Form_Settings extends Elm_Model_Form_Abstract
 		$this->addElement('checkbox', 'is_new', array(
             'required'   => false,
             'label'      => 'Show/Hide Tips'
-        ));
-
-		$this->addElement('text', 'alias', array(
-            'filters'    => array('StringTrim'),
-            'validators' => array(
-                array('StringLength', true, array(3, 24)),
-                //array('UniqueEmail', false, array(Bootstrap::getModel('user'))),
-            ),
-            'required'   => true,
-            'label'      => 'Username'
         ));
 
 		$this->addElement('radio', 'visibility', array(

@@ -2,16 +2,16 @@
 
 class Elm_Model_Form_Validate_UniqueEmail extends Zend_Validate_Abstract
 {
-    const EMAIL_EXISTS = 'emailExists';
+    const ALIAS_EXISTS = 'aliasExists';
 
 	private $_model;
 
     protected $_messageTemplates = array(
-        self::EMAIL_EXISTS => 'Email "%value%" already exists in our system',
+        self::ALIAS_EXISTS => 'Username "%value%" already exists.',
     );
 
 	/**
-	 * Checks if current email exists in system
+	 * Checks if current alias exists in system
 	 *
 	 * @param string $value
 	 * @param null $context
@@ -19,18 +19,18 @@ class Elm_Model_Form_Validate_UniqueEmail extends Zend_Validate_Abstract
 	 */
     public function isValid($value, $context = null)
     {
-		// Validate current users email as true
-		if (Bootstrap::getSingleton('user/session')->user->getEmail() == $value) {
+		// Validate current users alias as true
+		if (Bootstrap::getSingleton('user/session')->user->getAlias() == $value) {
 			return true;
 		}
 
         $this->_setValue($value);
-		$user = Bootstrap::getModel('user')->loadByEmail($value);
-        if (!$user->getEmail()) {
+		$user = Bootstrap::getModel('user')->loadByAlias($value);
+        if (!$user->getAlias()) {
             return true;
         }
 
-        $this->_error(self::EMAIL_EXISTS);
+        $this->_error(self::ALIAS_EXISTS);
         return false;
     }
 }

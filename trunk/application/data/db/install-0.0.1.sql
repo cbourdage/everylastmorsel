@@ -68,10 +68,11 @@ DROP TABLE IF EXISTS `session`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `session` (
-  `session_id` varchar(255) NOT NULL DEFAULT '',
-  `session_expires` int(10) unsigned NOT NULL DEFAULT '0',
-  `session_data` text NOT NULL,
-  PRIMARY KEY (`session_id`)
+  `id` varchar(255) NOT NULL DEFAULT '',
+  `modified` int(10) unsigned NOT NULL DEFAULT '0',
+  `lifetime` int(10) unsigned NOT NULL DEFAULT '0',
+  `data` text NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Session data store';
 /*!40101 SET character_set_client = @saved_cs_client */;
 

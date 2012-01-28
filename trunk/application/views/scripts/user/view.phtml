@@ -1,10 +1,71 @@
 <?php
+$_session = Bootstrap::getSingleton('user/session');
 $_user = $this->user;
 ?>
-<h4><?php echo $this->message; ?></h4>
-	
-<?php if (Bootstrap::getSingleton('user/session')->isLoggedIn()) :  ?>
-	<pre><?php echo print_r($_user->getData(), true); ?></pre>
+
+<?php echo $this->Message()->render(); ?>
+
+<div class="inner-content-wrapper user">
+<?php if ($_session->isLoggedIn()) :  ?>
+	<h2><?php echo $_user->getName(); ?> <a href="#edit" title="Edit Account Information" id="userEdit">Edit</a></h2>
+	<ul class="list-inline">
+		<li>
+			<strong>Location</strong>
+			<span class="editable" data-name="Location" data-value="<?php echo $_user->getLocation(); ?>"><?php echo $_user->getLocation(); ?></span>
+		</li>
+	</ul>
+
+	<ul id="tabMenu" class="list-inline">
+		<li><a href="#plots" title="Where I'm Growing">Plots</a></li>
+		<li><a href="#socializing" title="What I'm Sharing">Status</a></li>
+		<li><a href="#about" title="Who am I?">About</a></li>
+	</ul>
+
+	<section id="plots" class="blocked-content">
+		<?php if ($plots = $_user->getPlots()) : ?>
+			<ul>
+			<?php foreach ($_user->getPlots() as $plot) : ?>
+				<li>
+					<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $plot->getName(); ?>"><?php echo $plot->getName(); ?></a></h3>
+					<?php echo $plot->getUserRole(); ?>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		<?php else : ?>
+			<p>Sorry no plots associated. Get growing!</p>
+		<?php endif; ?>
+	</section>
+	<section id="socializing" class="blocked-content">
+		This is the socializing status messages
+	</section>
+	<section id="about" class="blocked-content">
+		Who I am!
+	</section>
+
 <?php else : ?>
-	<p><?php echo $_user->getName(); ?></p>
+	<h2><?php echo $_user->getName(); ?></h2>
+
 <?php endif; ?>
+</div>
+	
+<form action="<?php echo $this->url('user/save'); ?>" method="post" class="no-display" id="editForm">
+	<p>
+		<label></label>
+		<input type="text" value="" title="">
+	</p>
+</form>
+
+<script>
+jQuery('#edit').on('click', function(e) {
+	var $this = jQuery(this);
+	var editableEls = jQuery('.editable');
+
+	editableEls.each(function(key, item) {
+
+	})
+});
+
+jQuery('.editable').on('click', function(e) {
+	var $this = jQuery(this);
+});
+</script>

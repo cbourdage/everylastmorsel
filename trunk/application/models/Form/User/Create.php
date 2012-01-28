@@ -1,7 +1,7 @@
 <?php
 
 
-class Elm_Model_User_Form_Create extends Elm_Model_Form_Abstract
+class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
 {
 	public function __construct()
 	{
@@ -10,7 +10,7 @@ class Elm_Model_User_Form_Create extends Elm_Model_Form_Abstract
 		$this->addElement('text', 'firstname', array(
             'filters'    => array('StringTrim'),
             'validators' => array(
-                'Alpha',
+                //'Alpha',
                 array('StringLength', true, array(3, 128))
             ),
             'required'   => true,
@@ -20,7 +20,7 @@ class Elm_Model_User_Form_Create extends Elm_Model_Form_Abstract
         $this->addElement('text', 'lastname', array(
             'filters'    => array('StringTrim'),
             'validators' => array(
-                'Alpha',
+                //'Alpha',
                 array('StringLength', true, array(3, 128))
             ),
             'required'   => true,
@@ -36,6 +36,16 @@ class Elm_Model_User_Form_Create extends Elm_Model_Form_Abstract
             ),
             'required'   => true,
             'label'      => 'Email'
+        ));
+
+		$this->addElement('text', 'alias', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(3, 24)),
+                //array('UniqueAlias', false, array(Bootstrap::getModel('user'))),
+            ),
+            'required'   => true,
+            'label'      => 'Username'
         ));
 
         $this->addElement('password', 'password', array(

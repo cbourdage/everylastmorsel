@@ -1,9 +1,25 @@
-<h3>Sidebar</h3>
-<div id="mainImage">
-	<img src="/blank.jpg" title="" width="200px" />
-</div>
-<div id="lowerColumn">
-	<p class="buttons">
-		<a href="#contact" title="Get in Contact">Send Email</a>
-	</p>
-</div>
+<?php
+$session = Bootstrap::getSingleton('user/session');
+
+if (Zend_Registry::isRegistered('current_user')) : ?>
+	<?php $user = Zend_Registry::get('current_user'); ?>
+	<h3><?php echo $user->getFirstname() . ' ' . $user->getLastname(); ?></h3>
+	<div id="mainImage">
+		<img src="/blank.jpg" title="" width="200px" />
+	</div>
+	<div id="lowerColumn">
+		<?php if ($session->isLoggedIn()) : ?>
+		<p class="buttons">
+			<a href="#contact" class="button" title="Contact <?php echo $user->getFirstname() . ' ' . $user->getLastname(); ?>">Send Email</a>
+		</p>
+		<?php endif; ?>
+
+		<?php if ($session->isLoggedIn() && $user->isMe()) : ?>
+		<ul id="userHub">
+			<li>something here</li>
+			<li>something here 2</li>
+			<li>something here 3</li>
+		</ul>
+		<?php endif; ?>
+	</div>
+<?php endif; ?>

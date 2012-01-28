@@ -37,23 +37,25 @@ class Elm_Model_Resource_User extends Colony_Db_Table
 	{
 		parent::_afterLoad($object);
 		
-		$select = $this->getDefaultAdapter()->select()
+		$select = $this->getDefaultAdapter()
+			->select()
 			->from(Elm_Model_Resource_Plot::RELATIONSHIP_TABLE)
-			->where('user_id =?', $object->getId());
+			->where('user_id=?', $object->getId());
 		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
 			$plots = array();
 			foreach ($rows as $row) {
-				$plots[] = Bootstrap::getModel('plot')->load($row->plot_id, false);
+				$plots[$row->plot_id] = $row->role; //Bootstrap::getModel('plot')->load($row->plot_id, false);
 			}
-			$object->setPlots($rows);
+			$object->setPlotIds($plots);
 		}
 		else {
-			$object->setPlots(null);
+			$object->setPlotIds(null);
 		}
 
 		return $this;
 	}
-    /**
+
+	/**
      * Load customer by email
      *
      * @param Elm_Model_User $user

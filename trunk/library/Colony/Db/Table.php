@@ -75,13 +75,24 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
         }
 
 		$this->_beforeSave($object);
-        $row = $this->createRow();
+
+		$this->setRowClass('Colony_Db_Table_Row');
+		if ($object->getId()) {
+			Bootstrap::log($object->toArray());
+        	$row = $this->createRow($object->toArray());
+		} else {
+			$row = $this->createRow();
+		}
         $columns = $this->info('cols');
         foreach ($columns as $column) {
             if (array_key_exists($column, $object->toArray())) {
                 $row->$column = $object->getData($column);
             }
         }
+
+		if ($object->getId()) {
+			$row->setCleanData($object->getData());
+		}
 
 		$row->save();
 

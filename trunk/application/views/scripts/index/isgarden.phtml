@@ -1,0 +1,54 @@
+
+<div id="step-3">
+	<h4>Well done! What would you like to call this location?</h4>
+	<div class="form-message no-display"></div>
+	<form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="formValidate">
+		<?php foreach($this->form->getHiddenElements() as $element) : ?>
+			<?php echo $element->render(); ?>
+		<?php endforeach; ?>
+        <ul class="fieldset">
+			<?php foreach($this->form->getVisibleElements() as $element) : ?>
+				<?php echo $element->render(); ?>
+			<?php endforeach; ?>
+		</ul>
+
+		<div id="roles">
+			<p>What is your role?</p>
+			<ul class="fieldset">
+			<?php foreach (Elm_Model_Resource_Plot::$userRoles as $role) : ?>
+				<?php if ($role == 'Creator') continue; ?>
+				<li>
+					<label><?php echo $role; ?></label>
+					<input type="radio" id="role<?php echo $role; ?>" class="radio-input" name="role" value="<?php echo $role; ?>">
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		</div>
+		<p class="buttons"><button id="plotCreate">Create!</button></p>
+	</form>
+</div>
+<script>
+jQuery('#step-3').find('#formValidate').on('submit', function(e) {
+	e.preventDefault();
+	jQuery.ajax({
+		url: '/plot/create-ajax/',
+		type: 'post',
+		data: jQuery(this).serialize(),
+		dataType: 'json',
+		success: function(response) {
+			if (response.success) {
+				window.location = response.location;
+			} else {
+				jQuery('.form-message', '#step-3').html(response.message).fadeIn();
+			}
+		},
+		error: function() {
+			alert('error in request');
+		},
+		exception: function() {
+			alert('error in request');
+		}
+	});
+	return false;
+});
+</script>

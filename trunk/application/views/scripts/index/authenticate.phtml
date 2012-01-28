@@ -1,12 +1,88 @@
 <div id="step-2">
-	Says who? (not authenticated - lets login/create
-	<button>Login</button> | <button>Create Account</button>
+	<div class="wrapper">
+		<div id="login">
+			<form action="<?php echo $this->loginForm->getAction() ?>" method="post" id="loginFormValidate">
+				<div class="form-message no-display"></div>
+				<ul class="fieldset">
+					<?php foreach($this->loginForm->getElements() as $element) : ?>
+						<?php echo $element->render(); ?>
+					<?php endforeach; ?>
+				</ul>
+				<div class="button-set">
+					<input type="submit" name="submit" id="login-submit" value="submit">
+				</div>
+			</form>
+		</div>
 
-	<div id="login" class="">
+		<div id="middle">
+			<h4>Says who? (not authenticated - lets login/create</h4>
+			<p class="buttons"><button id="loginSlide">Login</button><button id="createSlide">Create Account</button></p>
+		</div>
 
-	</div>
-
-	<div id="create">
-
+		<div id="create">
+			<form action="<?php echo $this->createForm->getAction() ?>" method="post" id="createFormValidate">
+				<div class="form-message no-display"></div>
+				<ul class="fieldset">
+					<?php foreach($this->createForm->getElements() as $element) : ?>
+						<?php echo $element->render(); ?>
+					<?php endforeach; ?>
+				</ul>
+				<div class="button-set">
+					<input type="submit" name="submit" id="create-submit" value="submit">
+				</div>
+			</form>
+		</div>
 	</div>
 </div>
+
+<script>
+var $wrapper = jQuery('#step-2').find('.wrapper');
+var isAGarden = <?php echo Bootstrap::getSingleton('user/session')->isA; ?>
+/**
+ * Login button click - slide left
+ */
+jQuery('#loginSlide').on('click', function(e) {
+	$wrapper.animate({'left' : '0px'}, 'fast', function() {
+		jQuery('#login-form-validate input').eq(0).focus();
+	})
+});
+
+/**
+ * Create button click - slide right
+ */
+jQuery('#createSlide').on('click', function(e) {
+	$wrapper.animate({'right' : '0px'}, 'fast', function() {
+		jQuery('#createFormValidate input').eq(0).focus();
+	})
+});
+
+jQuery('form', '#step-2').on('submit', function(e) {
+	e.preventDefault();
+	var $form = jQuery(this);
+	var $wrap = $form.parent();
+	jQuery.ajax({
+		url: jQuery(this).attr('action'),
+		type: 'post',
+		data: jQuery(this).serialize(),
+		success: function(response) {
+			// if error - show above form
+			if (response.error) {
+				$form.find('.form-message').html(response.message).fadeIn();
+			} else if (response.success) {
+				jQuery.get('/index/isgarden', function(response) {
+					elm.overlayUpdate(response);
+				})
+			} else {	// else success show next step
+				elm.overlayUpdate(response);
+			}
+		},
+		error: function() {
+			alert('error in request');
+		},
+		exception: function() {
+			alert('error in request');
+		}
+	});
+	return false;
+});
+</script>

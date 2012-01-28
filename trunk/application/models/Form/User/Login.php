@@ -1,7 +1,7 @@
 <?php
 
 
-class Elm_Model_User_Form_Login extends Elm_Model_Form_Abstract
+class Elm_Model_Form_User_Login extends Elm_Model_Form_Abstract
 {
 	public function __construct()
 	{

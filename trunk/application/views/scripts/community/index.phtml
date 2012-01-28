@@ -1,0 +1,11 @@
+<ul>
+<?php foreach ($this->users as $u) : ?>
+	<li><?php echo $u->getName() . ' -- ' . $u->getLocation(); ?>
+<?php endforeach; ?>
+</ul>
+
+<ul>
+<?php foreach ($this->plots as $p) : ?>
+	<li><?php echo $p->getName() . ' -- ' . $p->getLocation(); ?>
+<?php endforeach; ?>
+</ul>

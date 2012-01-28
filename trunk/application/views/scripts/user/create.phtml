@@ -3,17 +3,14 @@
 	<h1>Create an Account</h1>
     <?php //echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
-        <div class="fieldset">
+        <ul class="fieldset">
 			<?php foreach($this->form->getElements() as $element) : ?>
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
+		</ul>
+		<div class="button-set">
+			<input type="submit" name="submit" id="create-submit" value="submit">
 		</div>
-        <!--<div class="buttons-set form-buttons">
-            <button type="submit" class="button" title="Create">
-				<span><span>Create</span></span>
-			</button>
-        </div>-->
-        <p class="required">* Required Fields</p>
     </form>
     <script type="text/javascript">
     //<![CDATA[

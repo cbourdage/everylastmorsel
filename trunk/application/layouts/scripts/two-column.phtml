@@ -1,0 +1,40 @@
+<?= $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<?= $this->headMeta(); ?>
+	<?= $this->headTitle(); ?>
+	<?= $this->headStyle(); ?>
+	<?= $this->headLink(); ?>
+	<?= $this->headScript(); ?>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="/file-bin/js/custom.js"></script>
+</head>
+<body>
+	<div id="page" class="container_12 clearfix">
+		<?= $this->render('header.phtml'); ?>
+
+		<div class="clearfix fLeft">
+			<div id="columnLeft" role="aside" class="grid_3">
+				<?php //echo $this->Sidebar()->render(); ?>
+				<?php echo $this->partial('user/sidebar.phtml'); ?>
+				<?php //echo $this->layout()->sidebar; ?>
+			</div>
+			<div id="content" role="contentinfo" class="grid_9 omega clearfix">
+				<?= $this->layout()->content; ?>
+			</div>
+		</div>
+
+		<div id="overlayBg" style="display: none;"></div>
+		<div id="overlay" style="display: none;">
+			<a class="close" onclick="elm.overlayHide();">Close</a>
+			<div class="content"></div>
+		</div>
+		
+		<?= $this->render('footer.phtml'); ?>
+	</div>
+</body>
+</html>
+

@@ -10,9 +10,6 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 
 	public function _beforeSave()
 	{
-		if (!$this->getId()) {
-			$this->setIsNewPlot(true);
-		}
 	}
 
 	/**
@@ -42,4 +39,23 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		Bootstrap::log(__METHOD__);
         return $this;
     }
+
+	/**
+	 * Associates a user and a plot with an assigned role
+	 *
+	 * @param $userId int
+	 * @param $role string
+	 * @return Elm_Model_Plot
+	 */
+	public function associateUser($userId, $role)
+	{
+		$this->_getResource()->associateUser($this, $userId, $role);
+        return $this;
+	}
+
+	public function getUrl()
+	{
+		$url = '/p/' . $this->getId();
+		return $url;
+	}
 }

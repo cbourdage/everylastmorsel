@@ -2,7 +2,11 @@
 
 class Elm_ErrorController extends Colony_Controller_Action
 {
-
+	/**
+	 * Controller for all errors
+	 *
+	 * @return mixed
+	 */
     public function errorAction()
     {
         $errors = $this->_getParam('error_handler');
@@ -27,30 +31,21 @@ class Elm_ErrorController extends Colony_Controller_Action
                 $this->view->message = 'Application error';
                 break;
         }
-        
-        // Log exception, if logger available
-        if ($log = $this->getLog()) {
-            $log->crit($this->view->message, $errors->exception);
-        }
-        
+
         // conditionally display exceptions
         if ($this->getInvokeArg('displayExceptions') == true) {
             $this->view->exception = $errors->exception;
-        }
-        
-        $this->view->request   = $errors->request;
+			$this->view->request = $errors->request;
+        } else {
+			$this->_forward('no-route');
+		}
     }
 
-    public function getLog()
-    {
-        $bootstrap = $this->getInvokeArg('bootstrap');
-        if (!$bootstrap->hasResource('Log')) {
-            return false;
-        }
-        $log = $bootstrap->getResource('Log');
-        return $log;
-    }
-
-
+	/**
+	 * Default no-route view
+	 */
+	public function noRouteAction()
+	{
+	}
 }
 

@@ -163,7 +163,7 @@ class Colony_Object implements ArrayAccess
     public function setData($key, $value=null)
     {
         $this->_hasDataChanges = true;
-        if(is_array($key)) {
+        if (is_array($key)) {
             $this->_data = $key;
         } else {
             $this->_data[$key] = $value;

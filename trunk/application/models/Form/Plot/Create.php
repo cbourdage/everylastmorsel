@@ -1,7 +1,7 @@
 <?php
 
 
-class Elm_Model_Plot_Form_Create extends Elm_Model_Form_Abstract
+class Elm_Model_Form_Plot_Create extends Elm_Model_Form_Abstract
 {
 	public function __construct()
 	{

@@ -1,10 +1,47 @@
 <?php
+$_session = Bootstrap::getSingleton('user/session');
 $_plot = $this->plot;
 ?>
-<h4><?php echo $this->message; ?></h4>
+<?php echo $this->Message()->render(); ?>
 
-<?php if (Bootstrap::getSingleton('user/session')->isLoggedIn()) :  ?>
-	<pre><?php echo print_r($_plot->getData(), true); ?></pre>
+<div class="inner-content-wrapper plot">
+<?php if ($_session->isLoggedIn()) :  ?>
+	<h2><?php echo $_plot->getName(); ?></h2>
+	<ul class="list-inline">
+		<li><strong>Location</strong> <?php echo $_plot->getZipcode(); ?></li>
+	</ul>
+
+	<section class="photo-timeline">
+		<ul class="list list-block">
+			<li><img src="" title="" alt=""></li>
+			<li><img src="" title="" alt=""></li>
+			<li><img src="" title="" alt=""></li>
+		</ul>
+	</section>
+
+	<ul id="tabMenu" class="list-inline">
+		<li><a href="#plots" title="Where I'm Growing">Users</a></li>
+		<li><a href="#socializing" title="What I'm Sharing">Status</a></li>
+		<li><a href="#crops" title="What I'm Growing">Crops</a></li>
+		<li><a href="#about" title="Who am I?">About</a></li>
+	</ul>
+
+	<section id="users" class="blocked-content">
+		<pre><?php echo print_r($_plot->getUsers(), true); ?></pre>
+	</section>
+	<section id="socializing" class="blocked-content">
+		This is the socializing status messages
+	</section>
+	<section id="crops" class="blocked-content">
+		Crop display
+	</section>
+	<section id="about" class="blocked-content">
+		About this garden
+	</section>
+	<pre><?php //echo print_r($_plot->getData(), true); ?></pre>
+
 <?php else : ?>
-	<p><?php echo $_plot->getName(); ?></p>
+	<h2><?php echo $_plot->getName(); ?></h2>
+
 <?php endif; ?>
+</div>

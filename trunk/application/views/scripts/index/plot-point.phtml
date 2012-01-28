@@ -1,6 +1,7 @@
 
 <div id="step-1">
 	<h4>Fantastic! What do you think about this location?</h4>
+	<div class="form-message no-display"></div>
 	<p class="buttons"><button id="isA">Is a Garden</button><button id="shouldBeA">Should be a Garden</button></p>
 </div>
 <script>
@@ -13,10 +14,11 @@ jQuery('#step-1').find('button').on('click', function(e) {
 				if (response.success) {
 					window.location = response.location;
 				} else {
-					alert(response.message);
+					jQuery('.form-message', '#step-3').html(response.message).fadeIn();
 				}
 			} else {
 				elm.overlayUpdate(response);
+				elm.overlayResize();
 			}
 		},
 		error: function() {
