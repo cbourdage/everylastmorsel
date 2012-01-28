@@ -1,10 +1,12 @@
 <?php
 
 
-class Elm_Model_Plot_Form_Create extends Zend_Form
+class Elm_Model_Plot_Form_Create extends Elm_Model_Form_Abstract
 {
 	public function __construct()
 	{
+		parent::__construct();
+
 		// add path to custom validators
         $this->addElementPrefixPath(
             'Elm_Model_Form_Validate',
@@ -21,39 +23,41 @@ class Elm_Model_Plot_Form_Create extends Zend_Form
             'label'      => 'Name',
         ));
 
-		$this->addElement('text', 'latitude', array(
+		$this->addElement('hidden', 'latitude', array(
             'filters'    => array('StringTrim'),
             'validators' => array('Float'),
             'required'   => true,
-            'label'      => 'Latitude',
+			'value'      => Bootstrap::getSingleton('user/session')->plot['latitude']
         ));
 
-        $this->addElement('text', 'longitude', array(
+        $this->addElement('hidden', 'longitude', array(
             'filters'    => array('StringTrim'),
             'validators' => array('Float'),
             'required'   => true,
-            'label'      => 'Longitude',
+			'value'      => Bootstrap::getSingleton('user/session')->plot['longitude']
         ));
 
 		// @TODO Auto-populate zipcode based on lat & long
 		$this->addElement('text', 'zipcode', array(
             'filters'    => array('StringTrim'),
             'validators' => array('PostCode'),
-            'required'   => false,
-            'label'      => 'Zipcode',
+            'required'   => true,
+            'label'      => 'Zipcode'
         ));
 
 		if (Bootstrap::getSingleton('user/session')->isLoggedIn()) {
 			$this->addElement('hidden', 'user_id', array(
 				'required'   => true,
-				'value'      => Bootstrap::getSingleton('user/session')->id,
+				'value'      => Bootstrap::getSingleton('user/session')->id
 			));
 		}
 		
-        $this->addElement('submit', 'submit', array(
-            'required' => false,
-            'ignore'   => true,
-            'decorators' => array('ViewHelper',array('HtmlTag', array('tag' => 'dd', 'id' => 'form-submit')))
-        ));
+        foreach ($this->getElements() as $element) {
+			if ($element instanceof Zend_Form_Element_Hidden) {
+				$element->setDecorators($this->hiddenDecorators);
+			} else {
+				$element->setDecorators($this->defaultDecorators);
+			}
+		}
 	}
 }

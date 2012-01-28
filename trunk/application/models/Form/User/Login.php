@@ -1,10 +1,12 @@
 <?php
 
 
-class Elm_Model_User_Form_Login extends Zend_Form
+class Elm_Model_User_Form_Login extends Elm_Model_Form_Abstract
 {
 	public function __construct()
 	{
+		parent::__construct();
+
         $this->addElement('text', 'email', array(
             'filters'    => array('StringTrim', 'StringToLower'),
             'validators' => array(
@@ -13,6 +15,7 @@ class Elm_Model_User_Form_Login extends Zend_Form
             ),
             'required'   => true,
             'label'      => 'Email',
+			'id'		 => 'login-email-input'
         ));
 
         $this->addElement('password', 'password', array(
@@ -22,12 +25,11 @@ class Elm_Model_User_Form_Login extends Zend_Form
             ),
             'required'   => true,
             'label'      => 'Password',
+			'id'		 => 'login-password-input'
         ));
 
-        $this->addElement('submit', 'submit', array(
-            'required' => false,
-            'ignore'   => true,
-            'decorators' => array('ViewHelper',array('HtmlTag', array('tag' => 'dd', 'id' => 'form-submit')))
-        ));
+        foreach ($this->getElements() as $element) {
+			$element->setDecorators($this->defaultDecorators);
+		}
 	}
 }
