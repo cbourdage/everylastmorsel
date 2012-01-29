@@ -1,5 +1,5 @@
-trunk/muteor-Zend-Framework-Storefront-829eb0a/*
-trunk/.idea/*
-.idea/*
-muteor-Zend-Framework-Storefront-829eb0a/*
-.DS_Store
+trunk/application/data/session
+trunk/application/data/log
+trunk/muteor-Zend*
+*.idea
+trunk/*.zfproject.xml
