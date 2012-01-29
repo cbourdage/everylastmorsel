@@ -2,15 +2,18 @@
 var map;
 var initialLocation;
 var marker;
+var zoomLevel = 15;
 //var browserSupportFlag = new Boolean();
 
 function initialize() {
     var options = {
-        zoom: 15,
+        zoom: zoomLevel,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("mapCanvas"), options);
+	window.map = map;
 
+	// Setup initial location
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -51,9 +54,6 @@ function initialize() {
 				marker.setAnimation(google.maps.Animation.BOUNCE);
 			}
 		}
-		function tracking() {
-			console.log(marker);
-		}
 
 		google.maps.event.addListener(map, 'click', function(event) {
 			placeMarker(event.latLng);
@@ -89,15 +89,6 @@ function initialize() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
-
-function initPlotDrop() {
-  	for (var i =0; i < markerArray.length; i++) {
-    	setTimeout(function() {
-      addMarkerMethod();
-    }, i * 200);
-  	}
-}
 
 function handleNoGeolocation(errorFlag) {
 	if (errorFlag == true) {

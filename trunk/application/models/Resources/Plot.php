@@ -53,6 +53,15 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		return $this;
 	}
 
+	public function getAllPlots()
+	{
+		$select = $this->select(); //->where('is_active', '1');
+		if ($rows = $this->fetchAll($select)) {
+			return $rows;
+		}
+		return null;
+	}
+
 	public function loadByLatLong($object, $lat, $long)
 	{
 	}

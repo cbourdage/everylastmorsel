@@ -25,6 +25,11 @@ class Elm_Model_Plot extends Colony_Model_Abstract
         return $this;
     }
 
+	public function getAllPlots()
+	{
+		return $this->_getResource()->getAllPlots();
+	}
+
     /**
      * Send email with new account specific information
      *
