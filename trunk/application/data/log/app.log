@@ -25,6 +25,26 @@
     [name] => Collin's Plot
     [zipcode] => 60148
     [role] => Owner
+)2012-01-30T03:57:40+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-01-30T03:57:41+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-01-30T03:59:14+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-01-30T03:59:15+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-01-30T03:59:39+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-01-30T03:59:49+00:00 DEBUG (7): login-ajax
+2012-01-30T03:59:49+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-01-30T04:00:00+00:00 DEBUG (7): Array
+(
+    [latitude] => 41.878606317420555
+    [longitude] => -88.0246043648732
+    [user_id] => 1
+    [name] => Neighbors Garden
+    [zipcode] => 60148
+    [role] => Gardener
 )
-2012-01-30T03:49:06+00:00 DEBUG (7): view
-2012-01-30T03:49:40+00:00 DEBUG (7): view
+
+2012-01-30T04:00:00+00:00 DEBUG (7): Elm_Model_Plot::sendNewPlotEmail
+2012-01-30T04:00:14+00:00 DEBUG (7): view
+2012-01-30T04:00:20+00:00 DEBUG (7): view
+2012-01-30T04:00:23+00:00 DEBUG (7): view
+2012-01-30T04:00:28+00:00 DEBUG (7): view
+2012-01-30T04:00:47+00:00 DEBUG (7): view
