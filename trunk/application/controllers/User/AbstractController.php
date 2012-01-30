@@ -2,8 +2,6 @@
 
 class Elm_User_AbstractController extends Colony_Controller_Action
 {
-	protected $_urlHelper;
-
 	protected $_session;
 
 	public function init()
@@ -24,11 +22,11 @@ class Elm_User_AbstractController extends Colony_Controller_Action
 		return $this->_session;
 	}
 
-	public function getUrl($string, $params)
+	/**
+	 * Initializes the User layout objects
+	 */
+	protected function _initLayout()
 	{
-		if  (!$this->_urlHelper) {
-			$this->_urlHelper = new Elm_View_Helper_Url();
-		}
-		return $this->_urlHelper->url($string, $params);
+		$this->view->placeholder('sidebar')->set($this->view->render('user/_sidebar.phtml'));
 	}
 }

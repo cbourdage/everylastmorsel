@@ -18,9 +18,9 @@
 
 		<div class="clearfix fLeft">
 			<div id="columnLeft" role="aside" class="grid_3">
-				<?php //echo $this->Sidebar()->render(); ?>
-				<?php echo $this->partial('user/sidebar.phtml'); ?>
-				<?php //echo $this->layout()->sidebar; ?>
+				<?php if (strlen($this->placeholder('sidebar')) > 0) : ?>
+					<?= $this->placeholder('sidebar'); ?>
+				<?php endif; ?>
 			</div>
 			<div id="content" role="contentinfo" class="grid_9 omega clearfix">
 				<?= $this->layout()->content; ?>

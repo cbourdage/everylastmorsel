@@ -1,14 +1,30 @@
-2012-01-28T23:52:04+00:00 DEBUG (7): login-ajax
-2012-01-28T23:52:04+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-28T23:52:10+00:00 DEBUG (7): login-ajax
-2012-01-28T23:52:10+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-28T23:54:09+00:00 DEBUG (7): Array
+2012-01-30T03:35:57+00:00 DEBUG (7): create-ajax
+2012-01-30T03:35:57+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-01-30T03:36:02+00:00 DEBUG (7): create-ajax
+2012-01-30T03:36:02+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-01-30T03:41:48+00:00 DEBUG (7): create-ajax
+2012-01-30T03:41:48+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-01-30T03:41:48+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-01-30T03:41:48+00:00 DEBUG (7): Elm_Model_User::sendNewAccountEmail
+2012-01-30T03:44:01+00:00 DEBUG (7): create-ajax
+2012-01-30T03:44:01+00:00 DEBUG (7): Elm_Model_User::sendNewAccountEmail
+2012-01-30T03:47:06+00:00 DEBUG (7): create-ajax
+2012-01-30T03:47:06+00:00 DEBUG (7): Elm_Model_User::sendNewAccountEmail
+2012-01-30T03:47:06+00:00 DEBUG (7): Array
 (
-    [latitude] => -88.02993643018488
-    [longitude] => 
-    [user_id] => 1
-    [name] => Awesome garden!
-    [zipcode] => 60148
-    [role] => Gardener
+    [success] => 1
+    [error] => 
+    [location] => /u/collin.bourdage
 )
 
+2012-01-30T03:47:19+00:00 DEBUG (7): Array
+(
+    [latitude] => -88.02462321215512
+    [longitude] => 41.87817928136962
+    [user_id] => 1
+    [name] => Collin's Plot
+    [zipcode] => 60148
+    [role] => Owner
+)
+2012-01-30T03:49:06+00:00 DEBUG (7): view
+2012-01-30T03:49:40+00:00 DEBUG (7): view

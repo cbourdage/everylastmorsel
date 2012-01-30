@@ -7,6 +7,8 @@ class Elm_Model_User extends Colony_Model_Abstract
     const EXCEPTION_INVALID_EMAIL_OR_PASSWORD = 2;
     const EXCEPTION_EMAIL_EXISTS              = 3;
 
+	private $_plots = array();
+
 	/**
 	 * Constructor
 	 */
@@ -93,7 +95,7 @@ class Elm_Model_User extends Colony_Model_Abstract
 	 */
 	public function getPlots()
 	{
-		if (count($this->_plots) > 0) {
+		if (count($this->_plots) < 1) {
 			foreach ($this->getPlotIds() as $id => $role) {
 				if ($role != Elm_Model_Resource_Plot::ROLE_CREATOR) {
 					$plot = Bootstrap::getModel('plot')->load($id);
@@ -260,6 +262,17 @@ class Elm_Model_User extends Colony_Model_Abstract
         }
         return $errors;
     }
+
+	/**
+	 * Returns a user url
+	 *
+	 * @return string
+	 */
+	public function getUrl()
+	{
+		$url = '/u/' . $this->getAlias();
+		return $url;
+	}
 
     /**
      * Reset all model data

@@ -24,27 +24,6 @@ class Elm_UserController extends Elm_User_AbstractController
 	}
 
 	/**
-	 * Post Dispatch
-	 */
-	public function postDispatch()
-	{
-		parent::postDispatch();
-		if ($this->view->user) {
-			Zend_Registry::set('current_user', $this->view->user);
-		}
-	}
-
-	/**
-	 * Initializes the User layout objects
-	 */
-	protected function _initLayout()
-	{
-		//$this->render('user/sidebar', 'sidebar', true);
-		//$this->_helper->layout()->sidebar = '<h3>awesome</h3>';
-		//$this->_helper->layout()->sidebar = $this->_helper->viewRenderer->render('user/sidebar', 'sidebar', false);
-	}
-
-	/**
 	 * Initializes the layout for ajax requests
 	 */
 	protected function _initAjax()
@@ -72,15 +51,17 @@ class Elm_UserController extends Elm_User_AbstractController
 	 */
 	public function viewAction()
 	{
-		$this->_initLayout();
 		$userAlias = $this->getRequest()->getParam('alias');
 		$user = Bootstrap::getModel('user')->loadByAlias($userAlias);
 		if ($user->getId()) {
 			$this->view->user = $user;
+			Zend_Registry::set('current_user', $user);
 			$this->view->headTitle()->prepend($user->getFirstname() . ' ' . $user->getLastname());
 		} else {
 			$this->_forward('no-route');
 		}
+
+		$this->_initLayout();
 	}
 
 	/**
@@ -102,8 +83,7 @@ class Elm_UserController extends Elm_User_AbstractController
 			$post = $this->getRequest()->getPost();
 			$user = Bootstrap::getModel('user');
 			if ($form->isValid($post)) {
-				$user->setData($post)
-					->setPassword($post['password']);
+				$user->setData($post)->setPassword($post['password']);
 				$user->save();
 
 				// setup session, send email, add messages, move on
@@ -214,6 +194,55 @@ class Elm_UserController extends Elm_User_AbstractController
 			}
 		}
 
+		$this->_helper->json->sendJson($response);
+	}
+
+	/**
+	 * Registration and registration post action
+	 *
+	 * @return void
+	 */
+	public function createAjaxAction()
+	{
+		$this->_initAjax();
+		$this->_helper->viewRenderer->setNoRender(true);
+
+		$response = array();
+		$session = $this->_getSession();
+        if ($session->isLoggedIn()) {
+            $response = array(
+				'success' => true,
+				'error' => false,
+				'location' => $this->getUrl(null, array('alias' => $session->getUser()->getAlias(), '_route' => 'user'))
+			);
+        } else {
+			$form = new Elm_Model_Form_User_Create();
+			if ($this->getRequest()->isPost()) {
+				$post = $this->getRequest()->getPost();
+				if ($form->isValid($post)) {
+					$user = Bootstrap::getModel('user');
+					$user->setData($post)->setPassword($post['password']);
+					$user->save();
+
+					// setup session, send email, add messages, move on
+					$session->setUserAsLoggedIn($user);
+					$user->sendNewAccountEmail($session->beforeAuthUrl);
+					$response = array(
+						'success' => true,
+						'error' => false,
+						'location' => $this->getUrl(null, array('alias' => $user->getAlias(), '_route' => 'user'))
+					);
+				}
+				else {
+					$response = array(
+						'success' => false,
+						'error' => true,
+						'message' =>'Check all fields are filled out.'
+					);
+				}
+			}
+		}
+Bootstrap::log($response);
 		$this->_helper->json->sendJson($response);
 	}
 

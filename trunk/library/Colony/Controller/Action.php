@@ -22,6 +22,13 @@ class Colony_Controller_Action extends Zend_Controller_Action
      */
     protected $_sessionNamespace = 'frontend';
 
+	/**
+	 * Url helper object
+	 *
+	 * @var Elm_View_Helper_Url
+	 */
+	protected $_urlHelper;
+
     /**
      * Predispatch: shoud set layout area
      *
@@ -48,5 +55,13 @@ class Colony_Controller_Action extends Zend_Controller_Action
     public function getCurrentUrl()
 	{
 		return $this->getRequest()->getScheme() . '://' . $this->getRequest()->getHttpHost() . $this->getRequest()->getRequestUri();
+	}
+
+	public function getUrl($string, $params)
+	{
+		if  (!$this->_urlHelper) {
+			$this->_urlHelper = new Elm_View_Helper_Url();
+		}
+		return $this->_urlHelper->url($string, $params);
 	}
 }

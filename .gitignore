@@ -3,3 +3,4 @@ trunk/application/data/log
 trunk/muteor-Zend*
 *.idea
 trunk/*.zfproject.xml
+trunk/extras/

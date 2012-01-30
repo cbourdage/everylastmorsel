@@ -4,22 +4,38 @@ require_once 'controllers/Plot/AbstractController.php';
 
 class Elm_PlotController extends Elm_Plot_AbstractController
 {
+	/**
+	 * Default 404
+	 */
+	public function noRouteAction()
+	{
+	}
+
+	/**
+	 * view action
+	 */
 	public function indexAction()
 	{
 		$this->_forward('view');
 	}
 
+	/**
+	 * view action
+	 */
 	public function viewAction()
 	{
 		$id = $this->getRequest()->getParam('id');
-		if ($plot = Bootstrap::getModel('plot')->load($id)) {
-			$this->view->plot = $plot;
-			$this->view->message = 'Plot account: ';
+		try {
+			if ($plot = Bootstrap::getModel('plot')->load($id)) {
+				Zend_Registry::set('current_plot', $plot);
+				$this->view->plot = $plot;
+				$this->_initLayout();
+			} else {
+				$this->_forward('no-route');
+			}
 		}
-		else {
-			// forward to invalid
-			$this->view->message = 'Invalid plot account...';
-			//$this->_forward('noRoute');
+		catch (Exception $e) {
+			$this->_forward('no-route');
 		}
 	}
 

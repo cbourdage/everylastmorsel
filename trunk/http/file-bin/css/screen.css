@@ -96,7 +96,12 @@ div#content .inner-ontent-wrapper > h2 + ul li strong { color: #666; }
 div#content #tabMenu { margin-top: 10px; }
 div#content #tabMenu li { margin-right: 20px; }
 div#content #tabMenu li:last-child { margin: 0; }
-div#content .blocked-content { border-bottom: 1px solid #ddd; display: block; margin-bottom: 10px; padding: 10px; }
+div#content .blocked-content {
+	border-bottom: 1px solid #ddd;
+	display: block;
+	margin-bottom: 10px;
+	padding: 20px 10px;
+}
 
 /** Overlay */
 #overlayBg { background: rgba(255,255,255,.4); height: 100%; width: 100%; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 50; }
@@ -123,7 +128,20 @@ div#content .blocked-content { border-bottom: 1px solid #ddd; display: block; ma
 #overlay p.buttons button { float: left; }
 
 /** Plot main content */
-
+#socializing form { margin-bottom: 25px; }
+#socializing form p.input label { display: block; }
+#socializing form p.input textarea {
+	border: 2px solid #ccc;
+	clear: left;
+	font-size: 13px;
+	padding: 4px 8px;
+	height: 50px;
+	width: 400px;
+}
+#socializing .feed { margin: 10px 0; }
+#socializing .feed li { margin-bottom: 15px; }
+#socializing .feed li h4 { }
+#socializing .feed li p { }
 
 /** Left Column */
 div#columnLeft { border-right: 1px solid #ddd; min-height: 200px; }

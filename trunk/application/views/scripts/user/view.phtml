@@ -6,8 +6,12 @@ $_user = $this->user;
 <?php echo $this->Message()->render(); ?>
 
 <div class="inner-content-wrapper user">
-<?php if ($_session->isLoggedIn()) :  ?>
-	<h2><?php echo $_user->getName(); ?> <a href="#edit" title="Edit Account Information" id="userEdit">Edit</a></h2>
+	<h2>
+		<?php echo $_user->getName(); ?>
+		<?php if ($_session->isLoggedIn() && $_session->user->isMe()) : ?>
+			<a href="#edit" title="Edit Account Information" id="userEdit">Edit</a>
+		<?php endif; ?>
+	</h2>
 	<ul class="list-inline">
 		<li>
 			<strong>Location</strong>
@@ -41,11 +45,6 @@ $_user = $this->user;
 	<section id="about" class="blocked-content">
 		Who I am!
 	</section>
-
-<?php else : ?>
-	<h2><?php echo $_user->getName(); ?></h2>
-
-<?php endif; ?>
 </div>
 	
 <form action="<?php echo $this->url('user/save'); ?>" method="post" class="no-display" id="editForm">

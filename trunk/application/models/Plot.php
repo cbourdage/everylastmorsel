@@ -3,6 +3,8 @@
 
 class Elm_Model_Plot extends Colony_Model_Abstract
 {
+	private $_users = array();
+
 	public function _construct()
     {
         $this->_init('plot');
@@ -30,17 +32,35 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		return $this->_getResource()->getAllPlots();
 	}
 
+	/**
+	 * Get users
+	 *
+	 * @return mixed
+	 */
+	public function getUsers()
+	{
+		if (count($this->_users) < 1) {
+			foreach ($this->getUserIds() as $id => $role) {
+				if ($role != Elm_Model_Resource_Plot::ROLE_CREATOR) {
+					$user = Bootstrap::getModel('user')->load($id);
+					$user->setUserRole($role);
+					$this->_users[] = $user;
+				}
+			}
+		}
+		return $this->_users;
+	}
+
     /**
      * Send email with new account specific information
      *
-	 * @TODO send new plot email
+	 * @TODO send new plot email - http://stackoverflow.com/questions/1218191/how-can-i-make-email-template-in-zend-framework
 	 *
 	 * @param string $backUrl
      * @return Elm_Model_User
      */
     public function sendNewPlotEmail($backUrl = '')
     {
-        //http://stackoverflow.com/questions/1218191/how-can-i-make-email-template-in-zend-framework
 		Bootstrap::log(__METHOD__);
         return $this;
     }
@@ -58,6 +78,27 @@ class Elm_Model_Plot extends Colony_Model_Abstract
         return $this;
 	}
 
+	/**
+	 * Checks if the user is associated with this plot
+	 *
+	 * @param $user
+	 * @return bool
+	 */
+	public function isAssociated($user)
+	{
+		foreach ($this->getUsers() as $u) {
+			if ($user->getId() == $u->getId()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Returns a plots url
+	 *
+	 * @return string
+	 */
 	public function getUrl()
 	{
 		$url = '/p/' . $this->getId();

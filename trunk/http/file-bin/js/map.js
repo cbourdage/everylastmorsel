@@ -57,12 +57,15 @@ function initialize() {
 
 		google.maps.event.addListener(map, 'click', function(event) {
 			placeMarker(event.latLng);
+console.log('event:');
+console.log(event.latLng);
 
 			var coords = {
 				lat : event.latLng.Pa,
-				long : event.latLng.Qa
+				long : event.latLng.Oa
 			};
 
+			console.log(coords);
 			jQuery.ajax({
 			  	url: '/index/plot-point/',
 			  	data: jQuery.serializeJSON(coords),

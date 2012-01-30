@@ -5,10 +5,11 @@ $_plot = $this->plot;
 <?php echo $this->Message()->render(); ?>
 
 <div class="inner-content-wrapper plot">
-<?php if ($_session->isLoggedIn()) :  ?>
 	<h2><?php echo $_plot->getName(); ?></h2>
 	<ul class="list-inline">
 		<li><strong>Location</strong> <?php echo $_plot->getZipcode(); ?></li>
+		<li><strong>Location</strong> <?php echo $_plot->getLatitude(); ?></li>
+		<li><strong>Location</strong> <?php echo $_plot->getLongitude(); ?></li>
 	</ul>
 
 	<section class="photo-timeline">
@@ -27,10 +28,53 @@ $_plot = $this->plot;
 	</ul>
 
 	<section id="users" class="blocked-content">
-		<pre><?php echo print_r($_plot->getUsers(), true); ?></pre>
+		<?php if ($users = $_plot->getUsers()) : ?>
+			<ul>
+			<?php foreach ($users as $user) : ?>
+				<li>
+					<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
+					<?php echo $user->getUserRole(); ?>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		<?php else : ?>
+			<p>Sorry no users associated. Get growing!</p>
+		<?php endif; ?>
+		<?php if ($_session->isLoggedIn() && !$_plot->isAssociated($_session->user)) :  ?>
+			<p><button class="button" name="get-involved" id="get-involved">Get Involed</button></p>
+		<?php endif; ?>
 	</section>
+
 	<section id="socializing" class="blocked-content">
-		This is the socializing status messages
+	<?php //if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) :  ?>
+		<form action="<?php echo $this->url(''); ?>" method="post">
+			<p class="input">
+				<label for="blub">How's it growin'?</label>
+				<textarea id="blurb" name="blurb"></textarea>
+			</p>
+			<p class="buttons">
+				<button class="button" type="submit">Share</button>
+			</p>
+		</form>
+	<?php //endif; ?>
+		<h5>Thoughts:</h5>
+		<ul class="feed">
+			<li>
+				<h4>user name</h4>
+				<p>What is your git version and where have you got it from? Is your .gitignore written exactly like this
+					(case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?</p>
+			</li>
+			<li>
+				<h4>user name</h4>
+				<p>What is your git version and where have you got it from? Is your .gitignore written exactly like this
+					(case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?</p>
+			</li>
+			<li>
+				<h4>user name</h4>
+				<p>What is your git version and where have you got it from? Is your .gitignore written exactly like this
+					(case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?</p>
+			</li>
+		</ul>
 	</section>
 	<section id="crops" class="blocked-content">
 		Crop display
@@ -38,10 +82,4 @@ $_plot = $this->plot;
 	<section id="about" class="blocked-content">
 		About this garden
 	</section>
-	<pre><?php //echo print_r($_plot->getData(), true); ?></pre>
-
-<?php else : ?>
-	<h2><?php echo $_plot->getName(); ?></h2>
-
-<?php endif; ?>
 </div>

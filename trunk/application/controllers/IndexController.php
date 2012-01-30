@@ -22,6 +22,7 @@ class Elm_IndexController extends Colony_Controller_Action
 	public function plotPointAction()
 	{
 		$this->_initAjax();
+		//Bootstrap::log($this->getRequest()->getParams());
 		Bootstrap::getSingleton('user/session')->plot = array(
 			'latitude' => $this->getRequest()->getParam('lat'),
 			'longitude' => $this->getRequest()->getParam('long')
