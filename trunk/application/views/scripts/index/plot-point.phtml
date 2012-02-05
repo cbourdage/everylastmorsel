@@ -17,8 +17,8 @@ jQuery('#step-1').find('button').on('click', function(e) {
 					jQuery('.form-message', '#step-3').html(response.message).fadeIn();
 				}
 			} else {
-				elm.overlayUpdate(response);
-				elm.overlayResize();
+				jQuery('#overlayMap').find('.content').html(response);
+				//ResizeOverlay(jQuery('#overlayMap'));
 			}
 		},
 		error: function() {

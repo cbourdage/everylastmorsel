@@ -25,11 +25,12 @@ $_user = $this->user;
 		<li><a href="#about" title="Who am I?">About</a></li>
 	</ul>
 
-	<section id="plots" class="blocked-content">
+	<section id="plots" class="blocked-content clearfix">
 		<?php if ($plots = $_user->getPlots()) : ?>
-			<ul>
+			<ul class="list-block">
 			<?php foreach ($_user->getPlots() as $plot) : ?>
 				<li>
+					<img src="<?php echo $this->Map()->getStaticImage($plot, array('size' => array('height' => '100', 'width' => '100'))); ?>" title="<?php echo $plot->getName(); ?>" />
 					<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $plot->getName(); ?>"><?php echo $plot->getName(); ?></a></h3>
 					<?php echo $plot->getUserRole(); ?>
 				</li>

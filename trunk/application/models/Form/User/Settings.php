@@ -38,13 +38,9 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
         ));
 
 		$session = Bootstrap::getSingleton('user/session');
-		$session->user->setData('visibility', 'public');
 		foreach ($this->getElements() as $element) {
 			$element->setDecorators($this->defaultDecorators);
-
-			if ($session->isLoggedIn()) {
-				$element->setValue($session->user->getData($element->getName()));
-			}
+			$element->setValue($session->user->getData($element->getName()));
 		}
 	}
 }

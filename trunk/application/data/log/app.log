@@ -1,50 +1,228 @@
-2012-01-30T03:35:57+00:00 DEBUG (7): create-ajax
-2012-01-30T03:35:57+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-30T03:36:02+00:00 DEBUG (7): create-ajax
-2012-01-30T03:36:02+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-30T03:41:48+00:00 DEBUG (7): create-ajax
-2012-01-30T03:41:48+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-30T03:41:48+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-30T03:41:48+00:00 DEBUG (7): Elm_Model_User::sendNewAccountEmail
-2012-01-30T03:44:01+00:00 DEBUG (7): create-ajax
-2012-01-30T03:44:01+00:00 DEBUG (7): Elm_Model_User::sendNewAccountEmail
-2012-01-30T03:47:06+00:00 DEBUG (7): create-ajax
-2012-01-30T03:47:06+00:00 DEBUG (7): Elm_Model_User::sendNewAccountEmail
-2012-01-30T03:47:06+00:00 DEBUG (7): Array
+2012-02-05T00:35:12+00:00 DEBUG (7): Array
 (
-    [success] => 1
-    [error] => 
-    [location] => /u/collin.bourdage
+    [controller] => communication
+    [action] => send
+    [module] => Elm
+    [name] => Collin Bourdage
+    [email] => collin.bourdage@gmail.com
+    [subject] => Subject 1
+    [message] => this is an awesome message
 )
 
-2012-01-30T03:47:19+00:00 DEBUG (7): Array
+2012-02-05T00:35:12+00:00 DEBUG (7): Elm_Model_Communication Object
 (
-    [latitude] => -88.02462321215512
-    [longitude] => 41.87817928136962
-    [user_id] => 1
-    [name] => Collin's Plot
-    [zipcode] => 60148
-    [role] => Owner
-)2012-01-30T03:57:40+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-30T03:57:41+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-30T03:59:14+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-30T03:59:15+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-30T03:59:39+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-30T03:59:49+00:00 DEBUG (7): login-ajax
-2012-01-30T03:59:49+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-01-30T04:00:00+00:00 DEBUG (7): Array
-(
-    [latitude] => 41.878606317420555
-    [longitude] => -88.0246043648732
-    [user_id] => 1
-    [name] => Neighbors Garden
-    [zipcode] => 60148
-    [role] => Gardener
+    [_resourceName:protected] => communication
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [controller] => communication
+            [action] => send
+            [module] => Elm
+            [name] => Collin Bourdage
+            [email] => collin.bourdage@gmail.com
+            [subject] => Subject 1
+            [message] => this is an awesome message
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
 )
 
-2012-01-30T04:00:00+00:00 DEBUG (7): Elm_Model_Plot::sendNewPlotEmail
-2012-01-30T04:00:14+00:00 DEBUG (7): view
-2012-01-30T04:00:20+00:00 DEBUG (7): view
-2012-01-30T04:00:23+00:00 DEBUG (7): view
-2012-01-30T04:00:28+00:00 DEBUG (7): view
-2012-01-30T04:00:47+00:00 DEBUG (7): view
+2012-02-05T00:35:12+00:00 DEBUG (7): Array
+(
+    [controller] => communication
+    [action] => send
+    [module] => Elm
+    [name] => Collin Bourdage
+    [email] => collin.bourdage@gmail.com
+    [subject] => Subject 1
+    [message] => this is an awesome message
+)
+
+2012-02-05T00:46:55+00:00 DEBUG (7): view
+2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:46:55+00:00 DEBUG (7): not logged in: Elm_Model_User_Session::authenticate
+2012-02-05T00:46:55+00:00 DEBUG (7): Elm_UserController::preDispatch false
+2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:46:56+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:46:56+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:47:04+00:00 DEBUG (7): login
+2012-02-05T00:47:04+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:47:04+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:47:05+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:47:08+00:00 DEBUG (7): login
+2012-02-05T00:47:08+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T00:47:08+00:00 DEBUG (7): http://local.everylastmorsel.com/u/collin.bourdage
+2012-02-05T00:47:09+00:00 DEBUG (7): view
+2012-02-05T00:47:16+00:00 DEBUG (7): Array
+(
+    [controller] => communication
+    [action] => send
+    [module] => Elm
+    [name] => Collin Bourdage
+    [email] => collin.bourdage@gmail.com
+    [subject] => Subject 1
+    [message] => and a message
+)
+
+2012-02-05T00:47:16+00:00 DEBUG (7): Elm_Model_Communication Object
+(
+    [_resourceName:protected] => communication
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [controller] => communication
+            [action] => send
+            [module] => Elm
+            [name] => Collin Bourdage
+            [email] => collin.bourdage@gmail.com
+            [subject] => Subject 1
+            [message] => and a message
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-02-05T00:47:16+00:00 DEBUG (7): Array
+(
+    [controller] => communication
+    [action] => send
+    [module] => Elm
+    [name] => Collin Bourdage
+    [email] => collin.bourdage@gmail.com
+    [subject] => Subject 1
+    [message] => and a message
+)
+
+2012-02-05T00:48:17+00:00 DEBUG (7): Array
+(
+    [controller] => communication
+    [action] => send
+    [module] => Elm
+    [name] => Collin Bourdage
+    [email] => collin.bourdage@gmail.com
+    [subject] => Subject 1
+    [message] => and a message
+)
+
+2012-02-05T00:48:17+00:00 DEBUG (7): Elm_Model_Communication Object
+(
+    [_resourceName:protected] => communication
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [controller] => communication
+            [action] => send
+            [module] => Elm
+            [name] => Collin Bourdage
+            [email] => collin.bourdage@gmail.com
+            [subject] => Subject 1
+            [message] => and a message
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-02-05T00:48:17+00:00 DEBUG (7): Array
+(
+    [controller] => communication
+    [action] => send
+    [module] => Elm
+    [name] => Collin Bourdage
+    [email] => collin.bourdage@gmail.com
+    [subject] => Subject 1
+    [message] => and a message
+)
+
+2012-02-05T00:49:09+00:00 DEBUG (7): Array
+(
+    [controller] => communication
+    [action] => send
+    [module] => Elm
+    [name] => Collin Bourdage
+    [email] => collin.bourdage@gmail.com
+    [subject] => Subject 1
+    [message] => and a message
+)
+
+2012-02-05T00:49:09+00:00 DEBUG (7): Elm_Model_Communication Object
+(
+    [_resourceName:protected] => communication
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [controller] => communication
+            [action] => send
+            [module] => Elm
+            [name] => Collin Bourdage
+            [email] => collin.bourdage@gmail.com
+            [subject] => Subject 1
+            [message] => and a message
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-02-05T00:49:09+00:00 DEBUG (7): Array
+(
+    [controller] => communication
+    [action] => send
+    [module] => Elm
+    [name] => Collin Bourdage
+    [email] => collin.bourdage@gmail.com
+    [subject] => Subject 1
+    [message] => and a message
+)
+
+2012-02-05T00:49:09+00:00 DEBUG (7): Zend_Mime_Part Object
+(
+    [type] => text/html
+    [encoding] => quoted-printable
+    [id] => 
+    [disposition] => inline
+    [filename] => 
+    [description] => 
+    [charset] => utf-8
+    [boundary] => 
+    [location] => 
+    [language] => 
+    [_content:protected] => <body style="background: #ccc;">
+<table>
+	<tr>
+		<td>ELM Logo</td>
+	</tr>
+	<tr>
+		<td>
+			<h1>Subject 1</h1>
+			<p>Collin Bourdagecollin.bourdage@gmail.com</p>
+			<p>and a message</p>
+			<p><a href="#">link to user profile</a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>Footer links --</td>
+	</tr>
+</table>
+</body>
+    [_isStream:protected] => 
+)
+

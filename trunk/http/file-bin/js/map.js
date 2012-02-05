@@ -2,7 +2,7 @@
 var map;
 var initialLocation;
 var marker;
-var zoomLevel = 15;
+var zoomLevel = 14;
 //var browserSupportFlag = new Boolean();
 
 function initialize() {
@@ -69,9 +69,9 @@ function initialize() {
 			  	data: jQuery.serializeJSON(coords),
 				dataType: 'html',
 			  	success: function(response) {
-					// @TODO create lighbox object for entire project - hide, show, update, html, close
-				  	elm.overlayUpdate(response);
-				  	elm.overlayShow();
+					jQuery('#overlayMap').find('.content').html(response);
+					jQuery('#overlayMap').fadeIn();
+				  	jQuery('#overlayBg').fadeIn();
 				},
 				error: function() {
 					// @TODO create a simple error handler function to display global message

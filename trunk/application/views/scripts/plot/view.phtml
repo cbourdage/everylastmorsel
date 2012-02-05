@@ -2,10 +2,15 @@
 $_session = Bootstrap::getSingleton('user/session');
 $_plot = $this->plot;
 ?>
-<?php echo $this->Message()->render(); ?>
 
+<?php echo $this->Message()->render(); ?>
 <div class="inner-content-wrapper plot">
-	<h2><?php echo $_plot->getName(); ?></h2>
+	<h2>
+		<?php echo $_plot->getName(); ?>
+		<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) : ?>
+			<a href="#edit" title="Edit Plot Information" id="plotEdit">Edit</a>
+		<?php endif; ?>
+	</h2>
 	<ul class="list-inline">
 		<li><strong>Location</strong> <?php echo $_plot->getZipcode(); ?></li>
 		<li><strong>Location</strong> <?php echo $_plot->getLatitude(); ?></li>
@@ -13,11 +18,14 @@ $_plot = $this->plot;
 	</ul>
 
 	<section class="photo-timeline">
+		<?php if ($images = $_plot->getImages()) : ?>
 		<ul class="list list-block">
-			<li><img src="" title="" alt=""></li>
-			<li><img src="" title="" alt=""></li>
-			<li><img src="" title="" alt=""></li>
+			<?php foreach ($images as $image) : ?>
+				<li><img src="<?= $image->getUrl(); ?>" title="<?php echo $image->getTitle(); ?>" alt="<?php echo $image->getTitle(); ?>"></li>
+			<?php endforeach; ?>
 		</ul>
+		<?php endif; ?>
+		<a href="<?php echo $this->url('plot/images', array('p' => $_plot->getId())); ?>" title="Manage Photos">Manage Photos</a>
 	</section>
 
 	<ul id="tabMenu" class="list-inline">

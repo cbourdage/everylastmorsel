@@ -9,7 +9,7 @@ function initialize() {
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    map = new google.maps.Map(document.getElementById("mapCanvas"), options);
+    map = new google.maps.Map(document.getElementById("map-anvas"), options);
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -65,11 +65,11 @@ function initialize() {
 			  	data: $(event).serialize(),
 				dataType: 'html',
 			  	success: function(response) {
-					$('#overlay').html(response);
+					$('#overlayMap').html(response);
 
 					// @TODO create lighbox object for entire project - hide, show, update, html, close
 					$('#overlayBg').fadeIn();
-					$('#overlay').fadeIn();
+					$('#overlayMap').fadeIn();
 				},
 				error: function() {
 					// @TODO create a simple error handler function to display global message

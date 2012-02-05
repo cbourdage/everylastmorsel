@@ -52,11 +52,19 @@ class Colony_Controller_Action extends Zend_Controller_Action
         return $this;
     }
 
+	/**
+	 * @return string
+	 */
     public function getCurrentUrl()
 	{
 		return $this->getRequest()->getScheme() . '://' . $this->getRequest()->getHttpHost() . $this->getRequest()->getRequestUri();
 	}
 
+	/**
+	 * @param $string
+	 * @param $params
+	 * @return string
+	 */
 	public function getUrl($string, $params)
 	{
 		if  (!$this->_urlHelper) {

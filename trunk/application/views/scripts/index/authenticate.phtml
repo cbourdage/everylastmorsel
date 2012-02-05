@@ -1,6 +1,7 @@
 <div id="step-2">
 	<div class="wrapper">
 		<div id="login">
+			<h4>Login to keep plotting</h4>
 			<form action="<?php echo $this->loginForm->getAction() ?>" method="post" id="loginFormValidate">
 				<div class="form-message no-display"></div>
 				<ul class="fieldset">
@@ -8,18 +9,20 @@
 						<?php echo $element->render(); ?>
 					<?php endforeach; ?>
 				</ul>
-				<div class="button-set">
-					<input type="submit" name="submit" id="login-submit" value="submit">
+				<div class="buttons">
+					<button type="submit" name="Submit" id="login-submit">Submit</button>
+					<a class="fRight" href="#back" title="Back">Back &rang;</a>
 				</div>
 			</form>
 		</div>
 
 		<div id="middle">
-			<h4>Says who? (not authenticated - lets login/create</h4>
-			<p class="buttons"><button id="loginSlide">Login</button><button id="createSlide">Create Account</button></p>
+			<h4>Says who?</h4>
+			<p class="buttons"><button id="loginSlide">Login to Account</button><button id="createSlide">Create Account</button></p>
 		</div>
 
 		<div id="create">
+			<h4>Create an account and help us connect you with others</h4>
 			<form action="<?php echo $this->createForm->getAction() ?>" method="post" id="createFormValidate">
 				<div class="form-message no-display"></div>
 				<ul class="fieldset">
@@ -27,8 +30,9 @@
 						<?php echo $element->render(); ?>
 					<?php endforeach; ?>
 				</ul>
-				<div class="button-set">
-					<input type="submit" name="submit" id="create-submit" value="submit">
+				<div class="buttons">
+					<a class="fLight" href="#back" title="Back">&lang; Back</a>
+					<button type="submit" name="Submit" id="create-submit">Submit</button>
 				</div>
 			</form>
 		</div>
@@ -37,7 +41,11 @@
 
 <script>
 var $wrapper = jQuery('#step-2').find('.wrapper');
+var $login = $wrapper.find('#login');
+var $middle = $wrapper.find('#middle');
+var $create = $wrapper.find('#create');
 var isAGarden = <?php echo Bootstrap::getSingleton('user/session')->isA; ?>
+
 /**
  * Login button click - slide left
  */
@@ -51,11 +59,27 @@ jQuery('#loginSlide').on('click', function(e) {
  * Create button click - slide right
  */
 jQuery('#createSlide').on('click', function(e) {
-	$wrapper.animate({'right' : '0px'}, 'fast', function() {
+	var distance = $login.outerWidth(true) + $middle.outerWidth(true);
+	$wrapper.animate({'left' : -distance}, 'fast', function() {
 		jQuery('#createFormValidate input').eq(0).focus();
 	})
 });
 
+/**
+ * back button click - slide right to center
+ */
+$wrapper.find('a[href="#back"]').on('click', function(e) {
+	e.preventDefault();
+	var distance = $login.outerWidth(true);
+	$wrapper.animate({'left' : -distance}, 'fast', function() {
+		jQuery('#login-form-validate input').eq(0).blur();
+	});
+	return false;
+});
+
+/**
+ * Form submissions
+ */
 jQuery('form', '#step-2').on('submit', function(e) {
 	e.preventDefault();
 	var $form = jQuery(this);
@@ -70,10 +94,10 @@ jQuery('form', '#step-2').on('submit', function(e) {
 				$form.find('.form-message').html(response.message).fadeIn();
 			} else if (response.success) {
 				jQuery.get('/index/isgarden', function(response) {
-					elm.overlayUpdate(response);
+					jQuery('#overlayMap').find('.content').html(response);
 				})
 			} else {	// else success show next step
-				elm.overlayUpdate(response);
+				jQuery('#overlayMap').find('.content').html(response);
 			}
 		},
 		error: function() {

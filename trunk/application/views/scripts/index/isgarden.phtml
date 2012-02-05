@@ -12,14 +12,26 @@
 			<?php endforeach; ?>
 		</ul>
 
-		<div id="roles">
+		<div id="types" class="fLeft">
+			<p>What type of garden?</p>
+			<ul class="fieldset">
+			<?php foreach (Elm_Model_Resource_Plot::$plotTypes as $type) : ?>
+				<li class="radio">
+					<input type="radio" id="type<?php echo $type; ?>" class="radio-input" name="type" value="<?php echo $type; ?>">
+					<label><?php echo $type; ?></label>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		</div>
+
+		<div id="roles" class="fLeft">
 			<p>What is your role?</p>
 			<ul class="fieldset">
 			<?php foreach (Elm_Model_Resource_Plot::$userRoles as $role) : ?>
 				<?php if ($role == 'Creator') continue; ?>
-				<li>
-					<label><?php echo $role; ?></label>
+				<li class="radio">
 					<input type="radio" id="role<?php echo $role; ?>" class="radio-input" name="role" value="<?php echo $role; ?>">
+					<label><?php echo $role; ?></label>
 				</li>
 			<?php endforeach; ?>
 			</ul>

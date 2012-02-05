@@ -1,11 +1,36 @@
-<ul>
-<?php foreach ($this->users as $u) : ?>
-	<li><?php echo $u->getName() . ' -- ' . $u->getLocation(); ?>
-<?php endforeach; ?>
-</ul>
+<?php
+$_session = Bootstrap::getSingleton('user/session');
+?>
+<div class="community">
+	<h3>Gardeners & Owners</h3>
+	<ul class="list-block fLeft">
+	<?php foreach ($this->users as $u) : ?>
+		<li>
+			<img src="<?php echo $u->getImage(); ?>" alt="<?php echo $u->getName(); ?>" />
+			<h2><a href="<?php echo $u->getUrl(); ?>" title="<?php echo $u->getName(); ?>"><?php echo $u->getName(); ?></a></h2>
+			<p>
+				Location: <em><?php $u->getLocation(); ?></em>
+				<?php if ($_session->isLoggedIn() && $u->isMe($_session->user)) : ?>
+					Me!
+				<?php endif; ?>
+			</p>
+		</li>
+	<?php endforeach; ?>
+	</ul>
 
-<ul>
-<?php foreach ($this->plots as $p) : ?>
-	<li><?php echo $p->getName() . ' -- ' . $p->getLocation(); ?>
-<?php endforeach; ?>
-</ul>
+	<h3>Plots of Land</h3>
+	<ul class="list-block fLeft">
+	<?php foreach ($this->plots as $p) : ?>
+		<li>
+			<img src="<?php echo $this->Map()->getStaticImage($p, array('size' => array('height' => '100', 'width' => '100'))); ?>" title="<?php echo $p->getName(); ?>" />
+			<h2><a href="<?php echo $p->getUrl(); ?>" title="<?php echo $p->getName(); ?>"><?php echo $p->getName(); ?></a></h2>
+			<p>
+				Location: <em><?php $p->getLocation(); ?>
+				<?php if ($_session->isLoggedIn() && $p->isAssociated($_session->user)) : ?>
+					I'm associated!
+				<?php endif; ?>
+			</em>
+		</li>
+	<?php endforeach; ?>
+	</ul>
+</div>

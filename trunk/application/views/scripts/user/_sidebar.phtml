@@ -8,10 +8,10 @@ if (Zend_Registry::isRegistered('current_user')) : ?>
 	</div>
 	<div id="lowerColumn">
 		<?php //if ($session->isLoggedIn() && !$session->user->isMe()) : ?>
-		<?php if ($session->isLoggedIn()) : ?>
-		<p class="buttons">
-			<a href="#contact" class="button" title="Contact <?php echo $user->getFirstname() . ' ' . $user->getLastname(); ?>">Send Email</a>
-		</p>
+		<?php if ($session->isLoggedIn() && strlen($this->placeholder('contact-form')) > 0) : ?>
+			<p class="buttons">
+				<a href="#contact" class="button contact-button" title="Contact <?php echo $user->getFirstname() . ' ' . $user->getLastname(); ?>">Send Email</a>
+			</p>
 		<?php endif; ?>
 
 		<?php if ($session->isLoggedIn() && $user->isMe()) : ?>

@@ -3,11 +3,11 @@
 class Elm_View_Helper_Map extends Zend_View_Helper_Abstract
 {
 	const STATIC_MAP_URL = 'http://maps.googleapis.com/maps/api/staticmap?';
-	const STATIC_MAP_ZOOM = 'zoom=14';
 	const STATIC_MAP_TYPE = 'maptype=roadmap';
 	const STATIC_MAP_FORMAT = 'format=jpeg';
-	const STATIC_MAP_SIZE = 'size=200x200';
 	const STATIC_MAP_SENSOR = 'sensor=false';
+	const STATIC_MAP_ZOOM = 'zoom=14';
+	const STATIC_MAP_SIZE = 'size=200x200';
 
 	private $_plots = null;
 
@@ -34,19 +34,33 @@ class Elm_View_Helper_Map extends Zend_View_Helper_Abstract
 	 *
 	 * http://maps.googleapis.com/maps/api/staticmap?zoom=14&size=250x250&format=jpeg&maptype=roadmap&sensor=false&center=41.87983472,-88.03042598&marker=color:red|label:S|41.87983472,-88.03042598
 	 *
-	 * @param $plot
+	 * @param Elm_Model_Plot $plot
+	 * @param array $options
 	 * @return string
 	 */
-	public function getStaticImage($plot)
+	public function getStaticImage($plot, $options = array())
 	{
-		return self::STATIC_MAP_URL . implode('&', array(
-			self::STATIC_MAP_ZOOM,
-			self::STATIC_MAP_SIZE,
+		$size = self::STATIC_MAP_SIZE;
+		$zoom = self::STATIC_MAP_ZOOM;
+		if (count($options) > 0) {
+			if (isset($options['size'])) {
+				$size = sprintf('size=%dx%d', $options['size']['height'], $options['size']['width']);
+			}
+			if (isset($options['zoom'])) {
+				$size = sprintf('zoom=%d', $options['zoom']);
+			}
+		}
+
+		$url = self::STATIC_MAP_URL . implode('&', array(
+			$zoom,
+			$size,
 			self::STATIC_MAP_FORMAT,
 			self::STATIC_MAP_TYPE,
 			self::STATIC_MAP_SENSOR,
-			sprintf('center=%s,%s', $plot->getLongitude(), $plot->getLatitude()),
-			sprintf('markers=color:red|label:S|%s,%s', $plot->getLongitude(), $plot->getLatitude()),
+			sprintf('center=%s,%s', $plot->getLatitude(), $plot->getLongitude()),
+			sprintf('markers=color:red|label:S|%s,%s', $plot->getLatitude(), $plot->getLongitude()),
 		));
+
+		return $url;
 	}
 }

@@ -19,6 +19,27 @@ class Elm_IndexController extends Colony_Controller_Action
     {
     }
 
+	/**
+	 * Help Action
+	 *
+	 * @return void
+	 */
+	public function helpAction()
+	{
+	}
+
+	/**
+	 * FAQ page
+	 *
+	 * @return void
+	 */
+	public function faqAction()
+	{
+	}
+
+	/**
+	 * Ajax Step 1 to plot the point and store data
+	 */
 	public function plotPointAction()
 	{
 		$this->_initAjax();
@@ -30,6 +51,9 @@ class Elm_IndexController extends Colony_Controller_Action
 		$this->getResponse()->sendResponse();
 	}
 
+	/**
+	 * Ajax authentication method for overlay
+	 */
 	public function authenticateAction()
 	{
 		$this->_initAjax();
@@ -53,11 +77,15 @@ class Elm_IndexController extends Colony_Controller_Action
 
 			$createForm = new Elm_Model_Form_User_Create();
 			$createForm->setAction('/user/create-ajax');
+			$createForm->removeElement('location');
 			$this->view->createForm = $createForm;
 		}
 		$this->getResponse()->sendResponse();
 	}
 
+	/**
+	 * Ajax step 3 for when plot is a garden
+	 */
 	public function isgardenAction()
 	{
 		$this->_initAjax();
@@ -65,24 +93,6 @@ class Elm_IndexController extends Colony_Controller_Action
 		$form->setAction('/plot/create-ajax');
 		$form->removeElement('submit');
 		$this->view->form = $form;
-	}
-
-	/**
-	 * Help Action
-	 *
-	 * @return void
-	 */
-	public function helpAction()
-	{
-	}
-
-	/**
-	 * FAQ page
-	 *
-	 * @return void
-	 */
-	public function faqAction()
-	{
 	}
 }
 

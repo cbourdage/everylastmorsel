@@ -1,19 +1,14 @@
 <div class="account-settings">
 	<h4>Account Settings</h4>
     <?php echo $this->Message()->render() ?>
-    <form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
+    <form action="<?php //echo $this->form->getActionUrl() ?>" method="post" id="settings-form">
         <ul class="fieldset">
 			<?php foreach($this->form->getElements() as $element) : ?>
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
 		</ul>
 		<div class="button-set">
-			<input type="submit" name="submit" id="settings-submit" value="submit">
+			<button type="submit" name="Save" id="settings-submit">Save</button>
 		</div>
     </form>
-    <script type="text/javascript">
-    //<![CDATA[
-        //var dataForm = new VarienForm('form-validate', true);
-    //]]>
-    </script>
 </div>

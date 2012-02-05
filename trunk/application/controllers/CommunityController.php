@@ -3,16 +3,9 @@
 /**
  * Elm_CommunityController
  *
- * @TODO noRoute action
  */
 class Elm_CommunityController extends Colony_Controller_Action
 {
-
-	protected function _initAjax()
-	{
-		$this->_helper->layout()->disableLayout();
-	}
-
 	/**
 	 * @return void
 	 */
@@ -22,5 +15,12 @@ class Elm_CommunityController extends Colony_Controller_Action
 		$this->view->users = $model->getUsers();
 		$this->view->plots = $model->getPlots();
     }
+
+	/**
+	 * Default 404
+	 */
+	public function noRouteAction()
+	{
+	}
 }
 

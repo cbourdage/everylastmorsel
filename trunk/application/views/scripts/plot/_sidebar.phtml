@@ -1,7 +1,8 @@
 <?php
 $session = Bootstrap::getSingleton('user/session');
-if (Zend_Registry::isRegistered('current_plot')) : ?>
-	<?php $plot = Zend_Registry::get('current_plot'); ?>
+?>
+<?php if (Zend_Registry::isRegistered('current_plot') || $this->plot) : ?>
+	<?php $plot = $this->plot ? $this->plot : Zend_Registry::get('current_plot') ; ?>
 	<div id="mainImage">
 		<img src="<?php echo $this->Map()->getStaticImage($plot); ?>" title="" />
 	</div>

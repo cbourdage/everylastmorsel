@@ -1,5 +1,9 @@
 /* */
-body { font-family: Helvetica Nueue,Helvetica,Arial,sans-serif; color: #454545; }
+body {
+	color: #454545;
+	font-family: Helvetica Nueue,Helvetica,Arial,sans-serif;
+	font-size: 12px;
+}
 
 /** Defaults */
 h1 { font-weight: normal; font-size: 48px; }
@@ -19,17 +23,20 @@ a {
 a:hover { background: #F6FD79; color: #666; }
 
 /** Colors */
-.blue { color: #34B6ED; }
-.yellow { color: #F6FD79; }
+.dark-green { color: #95A868; }
+.dark-red { color: #452C18; }
+.red { color: #CC7254; }
+.yellow { color: #F4FCB8; }
 
 /** General Styles */
 .no-display { display: none; }
-.fLeft { float: right; }
+.fLeft { float: left; }
 .fRight { float: right; }
 .tRight { text-align: right; }
 .tCenter { text-align: center; }
 
 ul.list-inline li { display: inline; }
+ul.list-block { float: left; width: 100%; }
 ul.list-block li { display: block; float: left; }
 
 /** Buttons and forms */
@@ -47,19 +54,25 @@ button {
 	-webkit-box-shadow: 0 1px 1px rgba(100,0,0,.9);
 	color: #fff;
 	cursor: pointer;
+	display: inline-block;
 	font-size: 14px;
 	margin: 5px;
-	padding: 3px 8px;
+	padding: 13px 30px;
 	text-align: center;
 }
 a.button:active,
 button:active { position: relative; top: 1px; }
-
-/** Colors */
-.dark-green { color: #95A868; }
-.dark-red { color: #452C18; }
-.red { color: #CC7254; }
-.yellow { color: #F4FCB8; }
+input[type="text"], input[type="password"],
+input[type="email"], textarea {
+ 	border: 1px solid #ccc;
+	padding: 4px 8px;
+	width: 170px;
+}
+textarea { height: 50px; }
+.buttons { clear: both; }
+.fieldset { }
+.fieldset li { margin-bottom: 15px; }
+.fieldset li label { display: block; margin-bottom: 3px; }
 
 /** Outlining Wrappers */
 div#page { }
@@ -71,6 +84,56 @@ header ul li { color: #666; font-size: 11px;  margin-left: 10px; }
 header ul li:after { content: '|'; margin-left: 10px; }
 header ul li:last-child:after { content: ''; }
 
+
+/** Overlay */
+#overlayBg {
+	background: rgba(255,255,255,.4);
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+}
+.overlay {
+	background: #fff;
+	border: 1px solid #ddd;
+	box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+	-moz-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+	-o-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+	-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+	display: block;
+	overflow: hidden;
+	padding: 25px;
+	position: absolute;
+	z-index: 55;
+	top: 200px;
+	left: 40%;
+	min-height: 200px;
+	min-width: 300px;
+}
+.overlay a.close {
+	background: transparent url('../images/close.png');
+	display: block;
+	height: 20px;
+	width: 20px;
+	font-size: 12px;
+	position: absolute;
+	right: 3px;
+	top: 3px;
+}
+.overlay .content { }
+.overlay .content h4 { font-size: 16px; margin-bottom: 10px; }
+.overlay .content p.buttons {
+	margin-top: 20px;
+	text-align: center;
+	width: 100%;
+}
+.overlay .content p.buttons button { }
+
+
 /** Main content */
 div#content { }
 
@@ -78,17 +141,40 @@ div#content { }
 div#mapCanvas { height: 300px; }
 
 /** Steps */
-#step-1 { }
-#step-2 { }
-#step-2 .wrapper { position: relative; left: -350px; }
-#step-2 .wrapper > div { position: absolute; width: 350px; }
-#step-2 .wrapper #login { left: 0; }
-#step-2 .wrapper #middle { left: 350px; }
-#step-2 .wrapper #create { left: 700px; }
+#step-1,
+#step-2 { width: 400px; }
+#step-2 .wrapper { position: relative; left: -460px; width: 1350px; }
+#step-2 .wrapper > div { display: block; float: left; margin-right: 60px; width: 400px; }
+#step-2 .wrapper #login {  }
+#step-2 .wrapper #middle {  }
+#step-2 .wrapper #create { margin-right: 0; }
+#step-2 .wrapper #create .fieldset li { float: left; margin-right: 25px; }
+#step-2 .wrapper #create .fieldset li:nth-child(2n) { margin-right: 0; }
+#step-2 .wrapper #create .buttons { clear: both; }
 #step-3 { width: 500px; height: 350px; }
+#step-3 #types { width: 175px; }
+#step-3 #types p,
+#step-3 #roles p{ margin-bottom: 10px; }
+#step-3 ul li.radio { float: left; width: 100%; }
+#step-3 ul li.radio input,
+#step-3 ul li.radio label { float: left; margin-right: 10px }
+
+/** Community */
+div#content .community { }
+div#content .community h3 { margin-bottom: 20px; }
+div#content .community ul { clear: left; margin-bottom: 20px; width: 100%; }
+div#content .community ul li { margin: 0 25px 25px 0; width: 160px; }
+div#content .community ul li h2 { font-size: 15px; }
 
 /** Message displays */
 div#content .message-block { display: none; }
+.form-message {
+	border: 1px solid #452C18;
+	background: #CC7254;
+	color: #fff;
+	margin-bottom: 10px;
+	padding: 8px 10px;
+}
 
 /** User main content */
 div#content .inner-ontent-wrapper > h2 + ul li { color: #999; font-size: 11px; }
@@ -102,39 +188,14 @@ div#content .blocked-content {
 	margin-bottom: 10px;
 	padding: 20px 10px;
 }
-
-/** Overlay */
-#overlayBg { background: rgba(255,255,255,.4); height: 100%; width: 100%; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 50; }
-#overlay {
-	background: #fff;
-	border: 1px solid #ddd;
-	box-shadow: 2px 2px 4px rgba(0,0,0,.3);
-	-moz-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
-	-o-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
-	-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
-	display: block;
-	overflow: hidden;
-	padding: 15px 15px 10px;
-	position: absolute;
-	z-index: 55;
-	top: 200px;
-	left: 40%;
-	min-height: 200px;
-	min-width: 300px;
-}
-#overlay a.close { font-size: 12px; position: absolute; right: 5px; top: 5px; }
-#overlay h4 { font-size: 16px; margin-bottom: 10px; }
-#overlay p.buttons { }
-#overlay p.buttons button { float: left; }
+div#content #plots ul li { width: 160px; }
+div#content #plots ul li h3 { font-size: 16px; margin-top: 5px; }
 
 /** Plot main content */
 #socializing form { margin-bottom: 25px; }
-#socializing form p.input label { display: block; }
+#socializing form label { display: block; margin-bottom: 4px; }
 #socializing form p.input textarea {
-	border: 2px solid #ccc;
 	clear: left;
-	font-size: 13px;
-	padding: 4px 8px;
 	height: 50px;
 	width: 400px;
 }

@@ -27,6 +27,7 @@ class Elm_User_AbstractController extends Colony_Controller_Action
 	 */
 	protected function _initLayout()
 	{
+		$this->view->placeholder('contact-form')->set($this->view->render('communication/_form.phtml'));
 		$this->view->placeholder('sidebar')->set($this->view->render('user/_sidebar.phtml'));
 	}
 }

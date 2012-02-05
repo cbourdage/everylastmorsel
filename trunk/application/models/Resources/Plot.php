@@ -8,6 +8,7 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 	const ROLE_GARDENER = 'Gardener';
 
 	public static $userRoles = array('Creator', 'Owner', 'Gardener');
+	public static $plotTypes = array('Community', 'Personal');
 
     protected $_name = 'plot';
 

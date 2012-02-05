@@ -78,6 +78,9 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->view->form = $form;
 	}
 
+	/**
+	 * Registration and registration post action ajax
+	 */
 	public function createAjaxAction()
 	{
 		$response = array();
@@ -132,7 +135,46 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->_helper->json->sendJson($response);
 	}
 
+	/**
+	 * Plot startup action
+	 */
 	public function startupAction()
 	{
+	}
+
+	/**
+	 * Plot images default
+	 */
+	public function imagesAction()
+	{
+		if (!$id = $this->getRequest()->getParam('p')) {
+			$this->_forward('no-route');
+			return;
+		}
+
+		if (!$plot = Bootstrap::getModel('plot')->load($id)) {
+			$this->_forward('no-route');
+			return;
+		}
+
+		$this->view->plot = $plot;
+
+		// Posted = delete action
+		if ($this->getRequest()->isPost()) {
+			foreach ($this->getRequest()->getParam('delete', array()) as $key => $value) {
+				Bootstrap::log('deleting: ' . $key . ' == ' . $value);
+				//$plot->removeImage();
+			}
+		}
+
+		$this->_initLayout();
+	}
+
+	/**
+	 * Plot images upload action
+	 */
+	public function imageUploadAction()
+	{
+
 	}
 }

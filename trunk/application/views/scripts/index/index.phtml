@@ -12,7 +12,8 @@ var plots = <?php echo $this->Map()->getPlotJson(); ?>;
 var markers = new Array();
 for (var i = 0; i < plots.length; i++) {
 	var plot = plots[i];
-	window.setTimeout(plotPoint, (1000) + (i * 200), plot.latitude, plot.longitude);
+	var time = Math.floor(Math.random() * i * 200);
+	window.setTimeout(plotPoint, (1000) + time, plot.latitude, plot.longitude);
 }
 /**
  * Plots a point on the map based on lat and long

@@ -217,6 +217,7 @@ class Elm_UserController extends Elm_User_AbstractController
 			);
         } else {
 			$form = new Elm_Model_Form_User_Create();
+			$form->removeElement('location');
 			if ($this->getRequest()->isPost()) {
 				$post = $this->getRequest()->getPost();
 				if ($form->isValid($post)) {

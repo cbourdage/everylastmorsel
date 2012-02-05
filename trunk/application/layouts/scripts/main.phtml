@@ -10,6 +10,7 @@
 	<?= $this->headScript(); ?>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/file-bin/js/helper.js"></script>
 	<script type="text/javascript" src="/file-bin/js/elm.js"></script>
 	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=true"></script>
 </head>
@@ -19,13 +20,14 @@
 		<div id="content" role="contentinfo" class="grid_12 clearfix">
 			<?= $this->layout()->content; ?>
 		</div>
-		<div id="overlayBg" style="display: none;"></div>
-		<div id="overlay" style="display: none;">
-			<a class="close" onclick="elm.overlayHide();">Close</a>
-			<div class="content"></div>
-		</div>
 		<?= $this->render('footer.phtml'); ?>
 	</div>
+
+	<div class="overlay" id="overlayMap" style="display: none;">
+		<a class="close" onclick="CloseOverlay(this);"></a>
+		<div class="content"></div>
+	</div>
+	<div id="overlayBg" style="display: none;"></div>
 </body>
 </html>
 

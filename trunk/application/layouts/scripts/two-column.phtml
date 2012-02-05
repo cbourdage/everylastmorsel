@@ -7,10 +7,10 @@
 	<?= $this->headStyle(); ?>
 	<?= $this->headLink(); ?>
 	<?= $this->headScript(); ?>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=true"></script>
-    <script type="text/javascript" src="/file-bin/js/custom.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/file-bin/js/helper.js"></script>
+    <script type="text/javascript" src="/file-bin/js/elm.js"></script>
 </head>
 <body>
 	<div id="page" class="container_12 clearfix">
@@ -27,14 +27,17 @@
 			</div>
 		</div>
 
-		<div id="overlayBg" style="display: none;"></div>
-		<div id="overlay" style="display: none;">
-			<a class="close" onclick="elm.overlayHide();">Close</a>
-			<div class="content"></div>
-		</div>
-		
 		<?= $this->render('footer.phtml'); ?>
 	</div>
+
+	<?php if (strlen($this->placeholder('contact-form')) > 0) : ?>
+		<div class="overlay" id="overlayContact" style="display: none;">
+			<a class="close" onclick="CloseOverlay(this);"></a>
+			<div class="content"><?= $this->placeholder('contact-form'); ?></div>
+		</div>
+	<?php endif; ?>
+
+	<div id="overlayBg" style="display: none;"></div>
 </body>
 </html>
 

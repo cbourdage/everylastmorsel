@@ -1,0 +1,18 @@
+
+<?php if (Bootstrap::getSingleton('user/session')->isLoggedIn()) : ?>
+<?php $form = new Elm_Model_Form_Communication_Contact(); ?>
+<div id="contact-form-wrapper">
+	<h4>Note from...</h4>
+	<form action="<?php echo $form->getAction() ?>" method="post" id="contact-form">
+		<div class="form-message no-display"></div>
+		<ul class="fieldset">
+			<?php foreach($form->getElements() as $element) : ?>
+				<?php echo $element->render(); ?>
+			<?php endforeach; ?>
+		</ul>
+		<div class="buttons">
+			<button type="submit" name="Send" id="contact-submit">Send</button>
+		</div>
+	</form>
+</div>
+<?php endif; ?>
