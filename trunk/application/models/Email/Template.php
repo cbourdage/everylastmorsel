@@ -3,16 +3,18 @@
 class Elm_Model_Email_Template extends Colony_Object
 {
 	const DEFAULT_SUBJECT = 'Every Last Morsel Communication';
+	const DEFAULT_FROM_EMAIL = 'comm@everylastmorsel.com';
+	const DEFAULT_FROM_NAME = 'ELM Communication';
 
 	/**
 	 * @param $params
 	 */
 	public function __construct($params)
 	{
-		$this->setData($params);
 		$this->setSubject(self::DEFAULT_SUBJECT);
-		$this->setFromEmail('comm@everylastmorsel.com');
-		$this->setFromName('Every Last Morsel Communication');
+		$this->setFromEmail(self::DEFAULT_FROM_EMAIL);
+		$this->setFromName(self::DEFAULT_FROM_NAME);
+		$this->setData($params);
 	}
 
 	/**
@@ -30,7 +32,7 @@ class Elm_Model_Email_Template extends Colony_Object
 	/**
 	 * Sends email
 	 *
-	 * @param $to
+	 * @param array $to
 	 * @return Elm_Model_Email_Template
 	 * @throws Colony_Exception
 	 */
@@ -56,7 +58,7 @@ class Elm_Model_Email_Template extends Colony_Object
 		$bodyText = $html->render($this->getTemplate());
 
 		// configure base stuff
-		$mail->addTo($to);
+		$mail->addTo($to['email'], $to['name']);
 		$mail->setSubject($this->getSubject());
 		$mail->setFrom($this->getFromEmail(), $this->getEmailName());
 		$mail->setBodyHtml($bodyText);

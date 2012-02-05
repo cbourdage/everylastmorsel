@@ -1,15 +1,17 @@
-2012-02-05T00:35:12+00:00 DEBUG (7): Array
+2012-02-05T16:49:24+00:00 DEBUG (7): view
+2012-02-05T16:50:03+00:00 DEBUG (7): view
+2012-02-05T16:50:48+00:00 DEBUG (7): Array
 (
     [controller] => communication
     [action] => send
     [module] => Elm
     [name] => Collin Bourdage
-    [email] => collin.bourdage@gmail.com
+    [email] => quemercedes@yahoo.com
     [subject] => Subject 1
-    [message] => this is an awesome message
+    [message] => awesome message
 )
 
-2012-02-05T00:35:12+00:00 DEBUG (7): Elm_Model_Communication Object
+2012-02-05T16:50:48+00:00 DEBUG (7): Elm_Model_Communication Object
 (
     [_resourceName:protected] => communication
     [_resource:protected] => 
@@ -20,9 +22,9 @@
             [action] => send
             [module] => Elm
             [name] => Collin Bourdage
-            [email] => collin.bourdage@gmail.com
+            [email] => quemercedes@yahoo.com
             [subject] => Subject 1
-            [message] => this is an awesome message
+            [message] => awesome message
         )
 
     [_hasDataChanges:protected] => 1
@@ -31,48 +33,18 @@
     [_isDeleted:protected] => 
 )
 
-2012-02-05T00:35:12+00:00 DEBUG (7): Array
+2012-02-05T16:55:49+00:00 DEBUG (7): Array
 (
     [controller] => communication
     [action] => send
     [module] => Elm
     [name] => Collin Bourdage
-    [email] => collin.bourdage@gmail.com
+    [email] => quemercedes@yahoo.com
     [subject] => Subject 1
-    [message] => this is an awesome message
+    [message] => awesome message
 )
 
-2012-02-05T00:46:55+00:00 DEBUG (7): view
-2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:46:55+00:00 DEBUG (7): not logged in: Elm_Model_User_Session::authenticate
-2012-02-05T00:46:55+00:00 DEBUG (7): Elm_UserController::preDispatch false
-2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:46:55+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:46:56+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:46:56+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:47:04+00:00 DEBUG (7): login
-2012-02-05T00:47:04+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:47:04+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:47:05+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:47:08+00:00 DEBUG (7): login
-2012-02-05T00:47:08+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T00:47:08+00:00 DEBUG (7): http://local.everylastmorsel.com/u/collin.bourdage
-2012-02-05T00:47:09+00:00 DEBUG (7): view
-2012-02-05T00:47:16+00:00 DEBUG (7): Array
-(
-    [controller] => communication
-    [action] => send
-    [module] => Elm
-    [name] => Collin Bourdage
-    [email] => collin.bourdage@gmail.com
-    [subject] => Subject 1
-    [message] => and a message
-)
-
-2012-02-05T00:47:16+00:00 DEBUG (7): Elm_Model_Communication Object
+2012-02-05T16:55:49+00:00 DEBUG (7): Elm_Model_Communication Object
 (
     [_resourceName:protected] => communication
     [_resource:protected] => 
@@ -83,9 +55,9 @@
             [action] => send
             [module] => Elm
             [name] => Collin Bourdage
-            [email] => collin.bourdage@gmail.com
+            [email] => quemercedes@yahoo.com
             [subject] => Subject 1
-            [message] => and a message
+            [message] => awesome message
         )
 
     [_hasDataChanges:protected] => 1
@@ -94,29 +66,19 @@
     [_isDeleted:protected] => 
 )
 
-2012-02-05T00:47:16+00:00 DEBUG (7): Array
+2012-02-05T17:00:11+00:00 DEBUG (7): view
+2012-02-05T17:00:19+00:00 DEBUG (7): Array
 (
     [controller] => communication
     [action] => send
     [module] => Elm
     [name] => Collin Bourdage
-    [email] => collin.bourdage@gmail.com
+    [email] => quemercedes@yahoo.com
     [subject] => Subject 1
-    [message] => and a message
+    [message] => awesome!
 )
 
-2012-02-05T00:48:17+00:00 DEBUG (7): Array
-(
-    [controller] => communication
-    [action] => send
-    [module] => Elm
-    [name] => Collin Bourdage
-    [email] => collin.bourdage@gmail.com
-    [subject] => Subject 1
-    [message] => and a message
-)
-
-2012-02-05T00:48:17+00:00 DEBUG (7): Elm_Model_Communication Object
+2012-02-05T17:00:19+00:00 DEBUG (7): Elm_Model_Communication Object
 (
     [_resourceName:protected] => communication
     [_resource:protected] => 
@@ -127,9 +89,9 @@
             [action] => send
             [module] => Elm
             [name] => Collin Bourdage
-            [email] => collin.bourdage@gmail.com
+            [email] => quemercedes@yahoo.com
             [subject] => Subject 1
-            [message] => and a message
+            [message] => awesome!
         )
 
     [_hasDataChanges:protected] => 1
@@ -138,62 +100,26 @@
     [_isDeleted:protected] => 
 )
 
-2012-02-05T00:48:17+00:00 DEBUG (7): Array
-(
-    [controller] => communication
-    [action] => send
-    [module] => Elm
-    [name] => Collin Bourdage
-    [email] => collin.bourdage@gmail.com
-    [subject] => Subject 1
-    [message] => and a message
-)
-
-2012-02-05T00:49:09+00:00 DEBUG (7): Array
-(
-    [controller] => communication
-    [action] => send
-    [module] => Elm
-    [name] => Collin Bourdage
-    [email] => collin.bourdage@gmail.com
-    [subject] => Subject 1
-    [message] => and a message
-)
-
-2012-02-05T00:49:09+00:00 DEBUG (7): Elm_Model_Communication Object
-(
-    [_resourceName:protected] => communication
-    [_resource:protected] => 
-    [_isObjectNew:protected] => 
-    [_data:protected] => Array
-        (
-            [controller] => communication
-            [action] => send
-            [module] => Elm
-            [name] => Collin Bourdage
-            [email] => collin.bourdage@gmail.com
-            [subject] => Subject 1
-            [message] => and a message
-        )
-
-    [_hasDataChanges:protected] => 1
-    [_origData:protected] => 
-    [_idFieldName:protected] => 
-    [_isDeleted:protected] => 
-)
-
-2012-02-05T00:49:09+00:00 DEBUG (7): Array
-(
-    [controller] => communication
-    [action] => send
-    [module] => Elm
-    [name] => Collin Bourdage
-    [email] => collin.bourdage@gmail.com
-    [subject] => Subject 1
-    [message] => and a message
-)
-
-2012-02-05T00:49:09+00:00 DEBUG (7): Zend_Mime_Part Object
+2012-02-05T17:29:21+00:00 DEBUG (7): view
+2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:21+00:00 DEBUG (7): not logged in: Elm_Model_User_Session::authenticate
+2012-02-05T17:29:21+00:00 DEBUG (7): Elm_UserController::preDispatch false
+2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:22+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:22+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:25+00:00 DEBUG (7): login
+2012-02-05T17:29:25+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:25+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:26+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:30+00:00 DEBUG (7): login
+2012-02-05T17:29:30+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-05T17:29:30+00:00 DEBUG (7): http://local.everylastmorsel.com/u/collin.bourdage
+2012-02-05T17:29:31+00:00 DEBUG (7): view
+2012-02-05T17:37:21+00:00 DEBUG (7): Zend_Mime_Part Object
 (
     [type] => text/html
     [encoding] => quoted-printable
@@ -213,13 +139,19 @@
 	<tr>
 		<td>
 			<h1>Subject 1</h1>
-			<p>Collin Bourdagecollin.bourdage@gmail.com</p>
-			<p>and a message</p>
+			<p>Collin Bourdagequemercedes@yahoo.com</p>
+			<p>aweomse message</p>
 			<p><a href="#">link to user profile</a></p>
 		</td>
 	</tr>
 	<tr>
-		<td>Footer links --</td>
+		<td>
+			<ul>
+				<li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>
+		</td>
 	</tr>
 </table>
 </body>

@@ -1,0 +1,42 @@
+2012-02-05T17:05:33+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.1.2 We weren't able to find the recipient domain. Please check for any
+ 5.1.2 spelling errors, and make sure you didn't enter any spaces, periods,
+ 5.1.2 or other punctuation after the recipient's email address. cv10sm12059306igc.0
+' in /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Mail/Protocol/Smtp.php(289): Zend_Mail_Protocol_Abstract->_expect(Array, 300)
+#1 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Mail/Transport/Smtp.php(211): Zend_Mail_Protocol_Smtp->rcpt('email')
+#2 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#3 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#4 /Users/cbourdage/Sites/everylastmorsel/trunk/application/models/Email/Template.php(63): Zend_Mail->send(Object(Zend_Mail_Transport_Smtp))
+#5 /Users/cbourdage/Sites/everylastmorsel/trunk/application/models/Communication.php(28): Elm_Model_Email_Template->send(Array)
+#6 /Users/cbourdage/Sites/everylastmorsel/trunk/application/controllers/CommunicationController.php(35): Elm_Model_Communication->send()
+#7 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Controller/Action.php(513): Elm_CommunicationController->sendAction()
+#8 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('sendAction')
+#9 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#10 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#11 /Users/cbourdage/Sites/everylastmorsel/trunk/application/Bootstrap.php(21): Zend_Application_Bootstrap_Bootstrap->run()
+#12 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Application.php(366): Bootstrap->run()
+#13 /Users/cbourdage/Sites/everylastmorsel/trunk/http/index.php(34): Zend_Application->run()
+#14 {main}
+2012-02-05T17:29:39+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.1.2 We weren't able to find the recipient domain. Please check for any
+ 5.1.2 spelling errors, and make sure you didn't enter any spaces, periods,
+ 5.1.2 or other punctuation after the recipient's email address. fa7sm1111578igb.4
+' in /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Mail/Protocol/Smtp.php(289): Zend_Mail_Protocol_Abstract->_expect(Array, 300)
+#1 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Mail/Transport/Smtp.php(211): Zend_Mail_Protocol_Smtp->rcpt('Collin Bourdage')
+#2 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#3 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#4 /Users/cbourdage/Sites/everylastmorsel/trunk/application/models/Email/Template.php(63): Zend_Mail->send()
+#5 /Users/cbourdage/Sites/everylastmorsel/trunk/application/models/Communication.php(28): Elm_Model_Email_Template->send(Array)
+#6 /Users/cbourdage/Sites/everylastmorsel/trunk/application/controllers/CommunicationController.php(35): Elm_Model_Communication->send()
+#7 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Controller/Action.php(513): Elm_CommunicationController->sendAction()
+#8 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('sendAction')
+#9 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#10 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#11 /Users/cbourdage/Sites/everylastmorsel/trunk/application/Bootstrap.php(21): Zend_Application_Bootstrap_Bootstrap->run()
+#12 /Users/cbourdage/Sites/ZendFramework-1.11.0/library/Zend/Application.php(366): Bootstrap->run()
+#13 /Users/cbourdage/Sites/everylastmorsel/trunk/http/index.php(34): Zend_Application->run()
+#14 {main}

@@ -27,6 +27,24 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         Zend_Registry::set('Zend_Locale', $locale);
     }
 
+	protected function _initMailTransport()
+	{
+		try {
+			$config = array(
+				'auth' => 'login',
+				'username' => 'collin.bourdage@gmail.com',
+				'password' => 'stere0s!x',
+				'ssl' => 'tls',
+				'port' => 587
+			);
+
+			$mailTransport = new Zend_Mail_Transport_Smtp('smtp.gmail.com', $config);
+			Zend_Mail::setDefaultTransport($mailTransport);
+		} catch (Zend_Exception $e){
+			//Do something with exception
+		}
+	}
+	
 	/**
      * Add the config to the registry
      */

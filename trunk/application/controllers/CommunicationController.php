@@ -23,7 +23,6 @@ class Elm_CommunicationController extends Colony_Controller_Action
 					'error' => true,
 					'location' => $this->view->url('user/login')
 				));
-				return;
 			}
 		}
 	}
@@ -31,18 +30,21 @@ class Elm_CommunicationController extends Colony_Controller_Action
 	public function sendAction()
 	{
 		$this->_initAjax(true);
-		Bootstrap::log($this->getRequest()->getParams());
-
 		if ($this->getRequest()->isPost()) {
 			$message = Bootstrap::getModel('communication')->init($this->getRequest()->getParams());
-			Bootstrap::log($message);
-			$message->send();
-			$this->_helper->json->sendJson(array(
-				'success' => true,
-				'error' => false,
-				'message' => 'Successfully sent your message along!'
-			));
-			return;
+			if ($message->send()) {
+				$this->_helper->json->sendJson(array(
+					'success' => true,
+					'error' => false,
+					'message' => 'Successfully sent your message along!'
+				));
+			} else {
+				$this->_helper->json->sendJson(array(
+					'success' => true,
+					'error' => false,
+					'message' => 'Error sending message at this time. We sincerely apologize.'
+				));
+			}
 		}
 	}
 }

@@ -19,19 +19,19 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 		try {
 			$EmailTemplate = new Elm_Model_Email_Template(array('template' => 'communication.phtml'));
 			$EmailTemplate->setParams(array(
-					'reason' => $this->getSubject(),
-					'fromName' => $this->getName(),
-					'fromEmail' => $this->getEmail(),
-					'message' => $this->getMessage()
-				)
-			);
-			$EmailTemplate->send(array('email', 'name'));
+				'reason' => $this->getSubject(),
+				'fromName' => $this->getName(),
+				'fromEmail' => $this->getEmail(),
+				'message' => $this->getMessage()
+			));
+			$EmailTemplate->send(array('email' => 'collin.bourdage@gmail.com', 'name' => 'Collin Bourdage'));
 
 			// Save message
 			$this->save();
+			return true;
 		} catch(Exception $e) {
 			Bootstrap::logException($e);
+			return false;
 		}
-		return $this;
 	}
 }
