@@ -66,8 +66,8 @@ class Elm_View_Helper_Url extends Zend_View_Helper_Url
         return $router->assemble($urlOptions, $route, $reset, $encode);
     }
 
-	public function test()
+	public function getDomain()
 	{
-		echo '<script>alert("testing");</script>';
+		return Zend_Controller_Front::getInstance()->getRequest()->getHttpHost();
 	}
 }

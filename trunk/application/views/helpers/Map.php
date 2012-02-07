@@ -6,7 +6,7 @@ class Elm_View_Helper_Map extends Zend_View_Helper_Abstract
 	const STATIC_MAP_TYPE = 'maptype=roadmap';
 	const STATIC_MAP_FORMAT = 'format=jpeg';
 	const STATIC_MAP_SENSOR = 'sensor=false';
-	const STATIC_MAP_ZOOM = 'zoom=14';
+	const STATIC_MAP_ZOOM = 'zoom=13';
 	const STATIC_MAP_SIZE = 'size=200x200';
 
 	private $_plots = null;

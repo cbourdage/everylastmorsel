@@ -2,20 +2,20 @@
 $_session = Bootstrap::getSingleton('user/session');
 $_plot = $this->plot;
 ?>
-
 <?php echo $this->Message()->render(); ?>
 <div class="inner-content-wrapper plot">
-	<h2>
-		<?php echo $_plot->getName(); ?>
+	<div class="top">
+		<h2><?php echo $_plot->getName(); ?></h2>
+		<ul class="list-inline">
+			<li><strong>Location</strong> <?php echo $_plot->getZipcode(); ?></li>
+		</ul>
 		<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) : ?>
-			<a href="#edit" title="Edit Plot Information" id="plotEdit">Edit</a>
+			<a href="#edit" title="Edit Plot Information" class="plot-edit">Edit</a>
 		<?php endif; ?>
-	</h2>
-	<ul class="list-inline">
-		<li><strong>Location</strong> <?php echo $_plot->getZipcode(); ?></li>
-		<li><strong>Location</strong> <?php echo $_plot->getLatitude(); ?></li>
-		<li><strong>Location</strong> <?php echo $_plot->getLongitude(); ?></li>
-	</ul>
+		<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user) && $this->User()->canShowTips()) : ?>
+			<a href="#tips" title="Tool tips!" class="tips">Tool Tips</a>
+		<?php endif; ?>
+	</div>
 
 	<section class="photo-timeline">
 		<?php if ($images = $_plot->getImages()) : ?>
@@ -25,7 +25,9 @@ $_plot = $this->plot;
 			<?php endforeach; ?>
 		</ul>
 		<?php endif; ?>
-		<a href="<?php echo $this->url('plot/images', array('p' => $_plot->getId())); ?>" title="Manage Photos">Manage Photos</a>
+		<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) : ?>
+			<a href="<?php echo $this->url('plot/images', array('p' => $_plot->getId())); ?>" title="Manage Photos">Manage Photos</a>
+		<?php endif; ?>
 	</section>
 
 	<ul id="tabMenu" class="list-inline">
@@ -55,7 +57,7 @@ $_plot = $this->plot;
 
 	<section id="socializing" class="blocked-content">
 	<?php //if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) :  ?>
-		<form action="<?php echo $this->url(''); ?>" method="post">
+		<!--<form action="<?php /*echo $this->url(''); */?>" method="post">-->
 			<p class="input">
 				<label for="blub">How's it growin'?</label>
 				<textarea id="blurb" name="blurb"></textarea>
@@ -63,7 +65,7 @@ $_plot = $this->plot;
 			<p class="buttons">
 				<button class="button" type="submit">Share</button>
 			</p>
-		</form>
+		<!--</form>-->
 	<?php //endif; ?>
 		<h5>Thoughts:</h5>
 		<ul class="feed">
@@ -88,6 +90,99 @@ $_plot = $this->plot;
 		Crop display
 	</section>
 	<section id="about" class="blocked-content">
-		About this garden
+		<div class="editable" data-name="about" data-type="textarea">
+			<?= $_plot->getAbout() ? $_plot->getAbout() : 'A little about this plot...'; ?>
+		</div>
 	</section>
 </div>
+<div class="overlay" id="plot-edit-overlay" style="display: none;">
+	<a class="close" onclick="CloseOverlay(this);"></a>
+	<div class="content">
+		<form action="<?= $this->url('plot/save'); ?>" type="post" id="plot-save-form">
+			<div class="form-message no-display"></div>
+			<input type="hidden" name="plot_id" value="<?= $_plot->getId(); ?>" />
+			<input type="hidden" name="plot_update" value="" />
+			<div class="middle"></div>
+			<button type="submit" class="button" name="Update">Update</button>
+		</form>
+	</div>
+</div>
+<script>
+// This is my personal plot!
+jQuery('.plot-edit').on('click', function(e) {
+	var $this = jQuery(this);
+	var editableEls = jQuery('.editable');
+	var $form = jQuery('#plot-save-form');
+
+	if ($this.hasClass('editing')) {
+		$this.removeClass('editing');
+		$this.html('Edit');
+		editableEls.each(function(key, item) {
+			var $el = jQuery(item);
+			if ($el.next().hasClass('update-button')) {
+				$el.next().remove();
+			}
+		});
+	} else {
+		$this.addClass('editing');
+		$this.html('Done Editing');
+		editableEls.each(function(key, item) {
+			var $el = jQuery(item);
+			if (!$el.next().hasClass('update-button')) {
+				$el.after('<button class="update-button button">Update</button>');
+			}
+		});
+	}
+});
+
+jQuery(document).on('click', '.update-button', function(e) {
+	e.preventDefault();
+	var $this = jQuery(this);
+	var $form = jQuery('#plot-save-form');
+	var $el = $this.prev();
+
+	if ($el.attr('data-type') == 'textarea') {
+		var $input = jQuery('<textarea name="' + $el.attr('data-name') + '" id="">' +  $el.html().trim() + '</textarea>');
+	} else {
+		var $input = jQuery('<input type="' + $el.attr('data-type') + '" name="' + $el.attr('data-name') + '" id="" value="' +  $el.html().trim() + '" />');
+	}
+
+	$form.find('.middle').html($input);
+	$form.find('input[name="plot_update"]').val($el.attr('data-name'));
+	jQuery('#plot-edit-overlay').fadeIn();
+	jQuery('#overlayBg').fadeIn();
+});
+
+jQuery('#plot-save-form').on('submit', function(e) {
+	e.preventDefault();
+	var $form = jQuery(this);
+
+	jQuery.ajax({
+		url: '/plot/save/',
+		type: 'post',
+		data: $form.serialize(),
+		success: function(response) {
+			if (typeof response == 'object') {
+				jQuery('.form-message', $form).html(response.message).fadeIn();
+
+				var editedValue = $form.find('input[name="plot_update"]').val();
+				jQuery('.editable').each(function(key, item) {
+					var $el = jQuery(item);
+					if ($el.attr('data-name') == editedValue) {
+						$el.html(response.value);
+					}
+				});
+			} else {
+				jQuery('.form-message', $form).html(response).fadeIn();
+			}
+		},
+		error: function() {
+			alert('error in request');
+		},
+		exception: function() {
+			alert('error in request');
+		}
+	});
+	return false;
+});
+</script>

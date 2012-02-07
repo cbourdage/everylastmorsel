@@ -6,9 +6,9 @@
 	<tr>
 		<td>
 			<h1>Welcome to Every Last Morsel!</h1>
-			<p><?php echo $this->fromName; ?><?php echo $this->fromEmail; ?></p>
-			<p><?php echo $this->message; ?></p>
-			<p><a href="#">link to user profile</a></p>
+			<p><?php echo $this->user->getFirstname(); ?><?php echo $this->user->getLastname(); ?></p>
+			<p><?php echo $this->password; ?></p>
+			<p><a href="<?php echo $this->user->getUrl(); ?>">link to user profile</a></p>
 		</td>
 	</tr>
 	<tr>

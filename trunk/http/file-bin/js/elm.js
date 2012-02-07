@@ -11,22 +11,21 @@ jQuery.noConflict();
 			var $contactForm = jQuery('#contact-form');
 			$contactForm.on('submit', function(e) {
 				e.preventDefault();
-				var $form = $(this);
+				var $contactForm = $(this);
 				$.ajax({
-					url: $form.attr('action'),
+					url: $contactForm.attr('action'),
 					type: 'post',
-					data: $form.serialize(),
+					data: $contactForm.serialize(),
 					success: function(response) {
 						// if error - show above form
 						if (response.error) {
-							$form.find('.form-message').html(response.message).fadeIn();
+							$contactForm.find('.form-message').html(response.message).fadeIn();
 						} else {
-							$form.find('.form-message').html(response.message);
-							/*$contactOverlay.find('.content').html(response.message);
+							$contactOverlay.find('.content').html(response.message);
 							$contactOverlay.animate({dummy : 1}, 4000, function() {
 								$(this).fadeOut();
 								$('#overlayBg').fadeOut();
-							});*/
+							});
 						}
 					},
 					error: function() {

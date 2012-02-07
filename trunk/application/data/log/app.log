@@ -1,160 +1,249 @@
-2012-02-05T16:49:24+00:00 DEBUG (7): view
-2012-02-05T16:50:03+00:00 DEBUG (7): view
-2012-02-05T16:50:48+00:00 DEBUG (7): Array
+2012-02-06T05:07:09+00:00 DEBUG (7): Array
 (
-    [controller] => communication
-    [action] => send
+    [controller] => plot
+    [action] => save
     [module] => Elm
-    [name] => Collin Bourdage
-    [email] => quemercedes@yahoo.com
-    [subject] => Subject 1
-    [message] => awesome message
+    [plot_id] => 1
+    [blurb] => 
+    [about] => This is my personal plot!
 )
 
-2012-02-05T16:50:48+00:00 DEBUG (7): Elm_Model_Communication Object
+2012-02-06T05:11:41+00:00 DEBUG (7): view
+2012-02-06T05:11:42+00:00 DEBUG (7): settings
+2012-02-06T05:11:48+00:00 DEBUG (7): settings
+2012-02-06T05:11:48+00:00 DEBUG (7): Array
 (
-    [_resourceName:protected] => communication
-    [_resource:protected] => 
-    [_isObjectNew:protected] => 
-    [_data:protected] => Array
+    [user_id] => 1
+    [firstname] => Collin
+    [lastname] => Bourdage
+    [alias] => collin.bourdage
+    [email] => collin.bourdage@gmail.com
+    [location] => Lombard
+    [about] => 
+    [password_hash] => 6ce55cb21fa0a557fb084a7548e7e0b3:El
+    [visibility] => public
+    [is_new] => 1
+    [is_active] => 1
+    [last_login] => 1328503653
+    [created_at] => 2012-01-29 21:47:06
+    [modified_at] => 2012-01-29 21:47:06
+    [plot_ids] => Array
         (
-            [controller] => communication
-            [action] => send
-            [module] => Elm
-            [name] => Collin Bourdage
-            [email] => quemercedes@yahoo.com
-            [subject] => Subject 1
-            [message] => awesome message
+            [1] => Owner
+            [3] => Owner
+            [4] => Gardener
         )
 
-    [_hasDataChanges:protected] => 1
-    [_origData:protected] => 
-    [_idFieldName:protected] => 
-    [_isDeleted:protected] => 
-)
-
-2012-02-05T16:55:49+00:00 DEBUG (7): Array
-(
-    [controller] => communication
-    [action] => send
+    [controller] => user
+    [action] => settings
     [module] => Elm
-    [name] => Collin Bourdage
-    [email] => quemercedes@yahoo.com
-    [subject] => Subject 1
-    [message] => awesome message
+    [Save] => 
 )
 
-2012-02-05T16:55:49+00:00 DEBUG (7): Elm_Model_Communication Object
+2012-02-06T05:11:52+00:00 DEBUG (7): view
+2012-02-06T05:28:23+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:23+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:23+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:23+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:23+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:51+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:51+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:51+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:51+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:51+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:51+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:53+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:54+00:00 DEBUG (7): login
+2012-02-06T05:28:54+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:54+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:54+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:54+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:58+00:00 DEBUG (7): login
+2012-02-06T05:28:58+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-06T05:28:58+00:00 DEBUG (7): 
+2012-02-06T05:29:01+00:00 DEBUG (7): view
+2012-02-06T05:37:56+00:00 DEBUG (7): Array
 (
-    [_resourceName:protected] => communication
-    [_resource:protected] => 
-    [_isObjectNew:protected] => 
-    [_data:protected] => Array
+    [controller] => plot
+    [action] => save
+    [module] => Elm
+    [plot_id] => 1
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?
+)
+
+2012-02-06T05:39:59+00:00 DEBUG (7): Array
+(
+    [controller] => plot
+    [action] => save
+    [module] => Elm
+    [plot_id] => 1
+    [plot_update] => about
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?
+)
+
+2012-02-06T05:42:31+00:00 DEBUG (7): Array
+(
+    [plot_id] => 1
+    [plot_update] => about
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?
+)
+
+2012-02-06T05:42:31+00:00 DEBUG (7): Array
+(
+    [plot_id] => 1
+    [name] => Collin's Garden
+    [latitude] => 41.87799682
+    [longitude] => -88.02455831
+    [zipcode] => 60148
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?
+    [is_new] => 1
+    [is_active] => 1
+    [created_at] => 2012-02-01 22:17:04
+    [modified_at] => 2012-02-01 22:17:04
+    [user_ids] => Array
         (
-            [controller] => communication
-            [action] => send
-            [module] => Elm
-            [name] => Collin Bourdage
-            [email] => quemercedes@yahoo.com
-            [subject] => Subject 1
-            [message] => awesome message
+            [1] => Owner
         )
 
-    [_hasDataChanges:protected] => 1
-    [_origData:protected] => 
-    [_idFieldName:protected] => 
-    [_isDeleted:protected] => 
 )
 
-2012-02-05T17:00:11+00:00 DEBUG (7): view
-2012-02-05T17:00:19+00:00 DEBUG (7): Array
+2012-02-06T05:43:55+00:00 DEBUG (7): Array
 (
-    [controller] => communication
-    [action] => send
-    [module] => Elm
-    [name] => Collin Bourdage
-    [email] => quemercedes@yahoo.com
-    [subject] => Subject 1
-    [message] => awesome!
+    [plot_id] => 1
+    [plot_update] => about
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?
 )
 
-2012-02-05T17:00:19+00:00 DEBUG (7): Elm_Model_Communication Object
+2012-02-06T05:43:55+00:00 DEBUG (7): Array
 (
-    [_resourceName:protected] => communication
-    [_resource:protected] => 
-    [_isObjectNew:protected] => 
-    [_data:protected] => Array
+    [plot_id] => 1
+    [name] => Collin's Garden
+    [latitude] => 41.87799682
+    [longitude] => -88.02455831
+    [zipcode] => 60148
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?
+    [is_new] => 1
+    [is_active] => 1
+    [created_at] => 2012-02-01 22:17:04
+    [modified_at] => 2012-02-01 22:17:04
+    [user_ids] => Array
         (
-            [controller] => communication
-            [action] => send
-            [module] => Elm
-            [name] => Collin Bourdage
-            [email] => quemercedes@yahoo.com
-            [subject] => Subject 1
-            [message] => awesome!
+            [1] => Owner
         )
 
-    [_hasDataChanges:protected] => 1
-    [_origData:protected] => 
-    [_idFieldName:protected] => 
-    [_isDeleted:protected] => 
 )
 
-2012-02-05T17:29:21+00:00 DEBUG (7): view
-2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:21+00:00 DEBUG (7): not logged in: Elm_Model_User_Session::authenticate
-2012-02-05T17:29:21+00:00 DEBUG (7): Elm_UserController::preDispatch false
-2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:21+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:22+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:22+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:25+00:00 DEBUG (7): login
-2012-02-05T17:29:25+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:25+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:26+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:30+00:00 DEBUG (7): login
-2012-02-05T17:29:30+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
-2012-02-05T17:29:30+00:00 DEBUG (7): http://local.everylastmorsel.com/u/collin.bourdage
-2012-02-05T17:29:31+00:00 DEBUG (7): view
-2012-02-05T17:37:21+00:00 DEBUG (7): Zend_Mime_Part Object
+2012-02-06T05:54:04+00:00 DEBUG (7): Array
 (
-    [type] => text/html
-    [encoding] => quoted-printable
-    [id] => 
-    [disposition] => inline
-    [filename] => 
-    [description] => 
-    [charset] => utf-8
-    [boundary] => 
-    [location] => 
-    [language] => 
-    [_content:protected] => <body style="background: #ccc;">
-<table>
-	<tr>
-		<td>ELM Logo</td>
-	</tr>
-	<tr>
-		<td>
-			<h1>Subject 1</h1>
-			<p>Collin Bourdagequemercedes@yahoo.com</p>
-			<p>aweomse message</p>
-			<p><a href="#">link to user profile</a></p>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<ul>
-				<li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Contact Us</a></li>
-				<li><a href="#">FAQ</a></li>
-			</ul>
-		</td>
-	</tr>
-</table>
-</body>
-    [_isStream:protected] => 
+    [plot_id] => 1
+    [plot_update] => about
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?
 )
 
+2012-02-06T05:54:04+00:00 DEBUG (7): Array
+(
+    [plot_id] => 1
+    [name] => Collin's Garden
+    [latitude] => 41.87799682
+    [longitude] => -88.02455831
+    [zipcode] => 60148
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?
+    [is_new] => 1
+    [is_active] => 1
+    [created_at] => 2012-02-01 22:17:04
+    [modified_at] => 2012-02-01 22:17:04
+    [user_ids] => Array
+        (
+            [1] => Owner
+        )
+
+)
+
+2012-02-06T05:54:21+00:00 DEBUG (7): Array
+(
+    [plot_id] => 1
+    [plot_update] => about
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?
+)
+
+2012-02-06T05:54:21+00:00 DEBUG (7): Array
+(
+    [plot_id] => 1
+    [name] => Collin's Garden
+    [latitude] => 41.87799682
+    [longitude] => -88.02455831
+    [zipcode] => 60148
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?
+    [is_new] => 1
+    [is_active] => 1
+    [created_at] => 2012-02-01 22:17:04
+    [modified_at] => 2012-02-01 22:17:04
+    [user_ids] => Array
+        (
+            [1] => Owner
+        )
+
+)
+
+2012-02-06T05:54:45+00:00 DEBUG (7): Array
+(
+    [plot_id] => 1
+    [plot_update] => about
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in?
+)
+
+2012-02-06T05:54:45+00:00 DEBUG (7): Array
+(
+    [plot_id] => 1
+    [name] => Collin's Garden
+    [latitude] => 41.87799682
+    [longitude] => -88.02455831
+    [zipcode] => 60148
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters in?
+    [is_new] => 1
+    [is_active] => 1
+    [created_at] => 2012-02-01 22:17:04
+    [modified_at] => 2012-02-01 22:17:04
+    [user_ids] => Array
+        (
+            [1] => Owner
+        )
+
+)
+
+2012-02-06T05:55:47+00:00 DEBUG (7): Array
+(
+    [plot_id] => 1
+    [plot_update] => about
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters?
+)
+
+2012-02-06T05:55:47+00:00 DEBUG (7): Array
+(
+    [plot_id] => 1
+    [name] => Collin's Garden
+    [latitude] => 41.87799682
+    [longitude] => -88.02455831
+    [zipcode] => 60148
+    [about] => What is your git version and where have you got it from? Is your .gitignore written exactly like this (case, some hidden extension, like they do on Windows)? Any invisible characters?
+    [is_new] => 1
+    [is_active] => 1
+    [created_at] => 2012-02-01 22:17:04
+    [modified_at] => 2012-02-01 22:17:04
+    [user_ids] => Array
+        (
+            [1] => Owner
+        )
+
+)
+
+2012-02-06T05:55:58+00:00 DEBUG (7): settings
+2012-02-06T05:56:00+00:00 DEBUG (7): view
+2012-02-07T03:32:14+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-07T03:32:15+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-07T04:16:42+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-07T04:16:44+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in

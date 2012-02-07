@@ -6,13 +6,32 @@ $session = Bootstrap::getSingleton('user/session');
 	<div id="mainImage">
 		<img src="<?php echo $this->Map()->getStaticImage($plot); ?>" title="" />
 	</div>
+	<div class="social-links">
+		<ul>
+			<li>
+				<?php //echo $this->Social()->getTwitterLink(); ?>
+				<a href="https://twitter.com/share" class="twitter-share-button"
+				   data-related="everylastmorsel"
+				   data-url="<?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
+				   data-text="Support this garden: <?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
+				   data-hashtags="everylastmorsel"
+				   data-lang="en" data-size="large" data-count="none">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</li>
+			<li>
+				<div class="fb-send"  data-font="arial"
+					data-href="<?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
+				   	data-text="Support this garden: <?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"></div>
+			</li>
+		</ul>
+	</div>
 	<div id="lowerColumn">
 	<?php if ($session->isLoggedIn() && $plot->isAssociated($session->user)) : ?>
-		<ul id="userHub">
+		<!--<ul id="userHub">
 			<li>something here</li>
 			<li>something here 2</li>
 			<li>something here 3</li>
-		</ul>
+		</ul>-->
 	<?php endif; ?>
 	</div>
 <?php endif; ?>

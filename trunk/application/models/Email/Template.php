@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * TODO: Update template - create interface and add specific template sends (ie: user, plot, message, etc)
+ * 		this should extend 'message' object (communication becomes message)
+ */
 class Elm_Model_Email_Template extends Colony_Object
 {
 	const DEFAULT_SUBJECT = 'Every Last Morsel Communication';
@@ -11,10 +15,13 @@ class Elm_Model_Email_Template extends Colony_Object
 	 */
 	public function __construct($params)
 	{
+		// Set data first
+		$this->setData($params);
+
+		// Set specifics
 		$this->setSubject(self::DEFAULT_SUBJECT);
 		$this->setFromEmail(self::DEFAULT_FROM_EMAIL);
 		$this->setFromName(self::DEFAULT_FROM_NAME);
-		$this->setData($params);
 	}
 
 	/**
@@ -63,8 +70,6 @@ class Elm_Model_Email_Template extends Colony_Object
 		$mail->setFrom($this->getFromEmail(), $this->getEmailName());
 		$mail->setBodyHtml($bodyText);
 		$mail->send();
-
-		Bootstrap::log($mail->getBodyHtml());
 
 		return $this;
 	}

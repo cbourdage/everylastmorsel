@@ -53,6 +53,14 @@ class Colony_Controller_Action extends Zend_Controller_Action
     }
 
 	/**
+	 * Initializes the layout for ajax requests
+	 */
+	protected function _initAjax()
+	{
+		$this->_helper->layout()->disableLayout();
+	}
+
+	/**
 	 * @return string
 	 */
     public function getCurrentUrl()

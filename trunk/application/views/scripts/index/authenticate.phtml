@@ -93,7 +93,7 @@ jQuery('form', '#step-2').on('submit', function(e) {
 			if (response.error) {
 				$form.find('.form-message').html(response.message).fadeIn();
 			} else if (response.success) {
-				jQuery.get('/index/isgarden', function(response) {
+				jQuery.get('/index/garden-details', function(response) {
 					jQuery('#overlayMap').find('.content').html(response);
 				})
 			} else {	// else success show next step

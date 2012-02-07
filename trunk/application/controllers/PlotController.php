@@ -25,18 +25,15 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	public function viewAction()
 	{
 		$id = $this->getRequest()->getParam('id');
-		try {
-			if ($plot = Bootstrap::getModel('plot')->load($id)) {
-				Zend_Registry::set('current_plot', $plot);
-				$this->view->plot = $plot;
-				$this->_initLayout();
-			} else {
-				$this->_forward('no-route');
-			}
-		}
-		catch (Exception $e) {
+		if ($plot = Bootstrap::getModel('plot')->load($id)) {
+			Zend_Registry::set('current_plot', $plot);
+			$this->view->plot = $plot;
+			$this->view->headTitle()->prepend($plot->getName());
+
+		} else {
 			$this->_forward('no-route');
 		}
+		$this->_initLayout();
 	}
 
 	/**
@@ -110,11 +107,19 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 							$plot->associateUser($post['user_id'], $post['role']);
 						}
 
-						$response = array(
-							'success' => true,
-							'error' => false,
-							'location' => '/p/' . $plot->getId()
-						);
+						if (Bootstrap::getSingleton('user/session')->plot['type'] != 'isA') {
+							$response = array(
+								'success' => true,
+								'error' => false,
+								'location' => $this->view->url('plot/startup')
+							);
+						} else {
+							$response = array(
+								'success' => true,
+								'error' => false,
+								'location' => '/p/' . $plot->getId()
+							);
+						}
 					} catch (Exception $e) {
 						$response = array(
 							'success' => false,
@@ -140,6 +145,33 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 */
 	public function startupAction()
 	{
+	}
+
+	public function saveAction()
+	{
+		$this->_initAjax();
+		if ($this->getRequest()->isPost()) {
+			$post = $this->getRequest()->getPost();
+			Bootstrap::log($post);
+
+			$plot = Bootstrap::getModel('plot')->load($this->getRequest()->getParam('plot_id'));
+			$plot->setData($post['plot_update'], $post[$post['plot_update']]);
+			$plot->save();
+			$response = array(
+				'success' => true,
+				'error' => false,
+				'message' =>'Ah, success!',
+				'value' => $plot->getData($post['plot_update'])
+			);
+		} else {
+			$response = array(
+				'success' => false,
+				'error' => true,
+				'message' =>'Oops! Check required fields and try again.'
+			);
+		}
+
+		$this->_helper->json->sendJson($response);
 	}
 
 	/**

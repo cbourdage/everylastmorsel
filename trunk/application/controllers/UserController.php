@@ -24,14 +24,6 @@ class Elm_UserController extends Elm_User_AbstractController
 	}
 
 	/**
-	 * Initializes the layout for ajax requests
-	 */
-	protected function _initAjax()
-	{
-		$this->_helper->layout()->disableLayout();
-	}
-
-	/**
 	 * Default 404
 	 */
 	public function noRouteAction()
@@ -297,5 +289,10 @@ Bootstrap::log($response);
 		$this->view->headTitle()->prepend('Settings');
 		$this->view->headTitle()->prepend($session->user->getFirstname() . ' ' . $session->user->getLastname());
 		$this->view->form = $form;
+	}
+
+	public function saveAction()
+	{
+
 	}
 }

@@ -9,6 +9,8 @@ class Elm_Model_User extends Colony_Model_Abstract
 
 	private $_plots = array();
 
+	private $_messages = array();
+
 	/**
 	 * Constructor
 	 */
@@ -181,15 +183,21 @@ class Elm_Model_User extends Colony_Model_Abstract
 
     /**
      * Send email with new account specific information
-     *
-	 * @TODO send new account email
 	 *
      * @return Elm_Model_User
      */
     public function sendNewAccountEmail()
     {
-        //http://stackoverflow.com/questions/1218191/how-can-i-make-email-template-in-zend-framework
-		Bootstrap::log(__METHOD__);
+		try {
+			$EmailTemplate = new Elm_Model_Email_Template(array('template' => 'new-user.phtml'));
+			$EmailTemplate->setParams(array(
+				'user' => $this,
+				'password' => $this->getPassword()
+			));
+			$EmailTemplate->send(array('email' => $this->getEmail(), 'name' => $this->getName()));
+		} catch(Exception $e) {
+			Bootstrap::logException($e);
+		}
         return $this;
     }
 
@@ -272,6 +280,14 @@ class Elm_Model_User extends Colony_Model_Abstract
 	{
 		$url = '/u/' . $this->getAlias();
 		return $url;
+	}
+
+	public function getUnreadMessageCount()
+	{
+		if (!$this->_messages) {
+			$this->_messages = Bootstrap::getModel('communication')->getByUserId($this->getId());
+		}
+		return $this->_messages->count();
 	}
 
     /**

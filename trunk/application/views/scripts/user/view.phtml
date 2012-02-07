@@ -2,26 +2,23 @@
 $_session = Bootstrap::getSingleton('user/session');
 $_user = $this->user;
 ?>
-
 <?php echo $this->Message()->render(); ?>
-
 <div class="inner-content-wrapper user">
-	<h2>
-		<?php echo $_user->getName(); ?>
+	<div class="top">
+		<h2><?php echo $_user->getName(); ?></h2>
+		<ul class="list-inline">
+			<li>
+				<strong>Location</strong>
+				<span class="editable" data-name="Location" data-value="<?php echo $_user->getLocation(); ?>"><?php echo $_user->getLocation(); ?></span>
+			</li>
+		</ul>
 		<?php if ($_session->isLoggedIn() && $_session->user->isMe()) : ?>
 			<a href="#edit" title="Edit Account Information" id="userEdit">Edit</a>
 		<?php endif; ?>
-	</h2>
-	<ul class="list-inline">
-		<li>
-			<strong>Location</strong>
-			<span class="editable" data-name="Location" data-value="<?php echo $_user->getLocation(); ?>"><?php echo $_user->getLocation(); ?></span>
-		</li>
-	</ul>
+	</div>
 
 	<ul id="tabMenu" class="list-inline">
 		<li><a href="#plots" title="Where I'm Growing">Plots</a></li>
-		<li><a href="#socializing" title="What I'm Sharing">Status</a></li>
 		<li><a href="#about" title="Who am I?">About</a></li>
 	</ul>
 
@@ -40,20 +37,12 @@ $_user = $this->user;
 			<p>Sorry no plots associated. Get growing!</p>
 		<?php endif; ?>
 	</section>
-	<section id="socializing" class="blocked-content">
-		This is the socializing status messages
-	</section>
 	<section id="about" class="blocked-content">
-		Who I am!
+		<div class="editable" data-name="about" data-value="<?php echo $_user->getAbout(); ?>">
+			About me...
+		</div>
 	</section>
 </div>
-	
-<form action="<?php echo $this->url('user/save'); ?>" method="post" class="no-display" id="editForm">
-	<p>
-		<label></label>
-		<input type="text" value="" title="">
-	</p>
-</form>
 
 <script>
 jQuery('#edit').on('click', function(e) {

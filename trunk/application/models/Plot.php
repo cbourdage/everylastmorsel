@@ -61,7 +61,15 @@ class Elm_Model_Plot extends Colony_Model_Abstract
      */
     public function sendNewPlotEmail($backUrl = '')
     {
-		Bootstrap::log(__METHOD__);
+		try {
+			$EmailTemplate = new Elm_Model_Email_Template(array('template' => 'new-plot.phtml'));
+			$EmailTemplate->setParams(array(
+				'plot' => $this
+			));
+			$EmailTemplate->send(array('email' => 'collin.bourdage@gmail.com', 'name' => 'Collin Bourdage'));
+		} catch(Exception $e) {
+			Bootstrap::logException($e);
+		}
         return $this;
     }
 

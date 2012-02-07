@@ -60,15 +60,15 @@ class Elm_IndexController extends Colony_Controller_Action
 		Bootstrap::getSingleton('user/session')->plot['type'] = $this->getRequest()->getParam('type');
 		if (Bootstrap::getSingleton('user/session')->isLoggedIn()) {
 			if ($this->getRequest()->getParam('type') == 'isA') {
-				$this->_forward('isgarden');
+				$this->_forward('garden-details');
 			} else {
-				//$this->_forward('shouldbegarden');
-				$response = array(
+				$this->_forward('garden-details');
+				/*$response = array(
 					'success' => true,
 					'error' => false,
 					'location' => $this->view->url('plot/startup')
 				);
-				$this->_helper->json->sendJson($response);
+				$this->_helper->json->sendJson($response);*/
 			}
 		} else {
 			$loginForm = new Elm_Model_Form_User_Login();
@@ -86,7 +86,7 @@ class Elm_IndexController extends Colony_Controller_Action
 	/**
 	 * Ajax step 3 for when plot is a garden
 	 */
-	public function isgardenAction()
+	public function gardenDetailsAction()
 	{
 		$this->_initAjax();
 		$form = new Elm_Model_Form_Plot_Create();

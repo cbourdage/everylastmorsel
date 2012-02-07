@@ -7,6 +7,7 @@ $_session = Bootstrap::getSingleton('user/session');
 		<li><a href="<?= $this->url('community'); ?>">Community</a></li>
 		<?php if ($_session->isLoggedIn()) : ?>
 			<li><a href="<?= $this->url(null, array('alias' => $_session->getUser()->getAlias(), '_route' => 'user')); ?>">My Account</a></li>
+			<!--<li><a href="<?/*= $this->url('user/messages'); */?>">Messages <?/*= $this->User()->getUnreadMessageCount(true); */?></a></li>-->
 			<li><a href="<?= $this->url('user/settings'); ?>">Settings</a></li>
 			<li><a href="<?= $this->url('user/logout'); ?>">Logout</a></li>
 		<?php else : ?>
