@@ -346,8 +346,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
      * @return string
      */
     private function _getInflected($name)
-	{;
-		return ucwords(str_replace('/', '_', $name));
+	{
+		$name = ucwords(str_replace(array('/', '_'), ' ', $name));
+		return str_replace(' ', '_', $name);
     }
 }
 
