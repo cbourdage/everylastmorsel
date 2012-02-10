@@ -89,16 +89,16 @@ class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAg
         return;
     }
 
-    /**
-     * __construct() - Returns an instance object bound to a particular, isolated section
-     * of the session, identified by $namespace name (defaulting to 'Default').
-     * The optional argument $singleInstance will prevent construction of additional
-     * instance objects acting as accessors to this $namespace.
-     *
-     * @param string $namespace       - programmatic name of the requested namespace
-     * @param bool $singleInstance    - prevent creation of additional accessor instance objects for this namespace
-     * @return void
-     */
+	/**
+	 * __construct() - Returns an instance object bound to a particular, isolated section
+	 * of the session, identified by $namespace name (defaulting to 'Default').
+	 * The optional argument $singleInstance will prevent construction of additional
+	 * instance objects acting as accessors to this $namespace.
+	 *
+	 * @param string $namespace	   - programmatic name of the requested namespace
+	 * @param bool $singleInstance	- prevent creation of additional accessor instance objects for this namespace
+	 * @return \Zend_Session_Namespace
+	 */
     public function __construct($namespace = 'Default', $singleInstance = false)
     {
         if ($namespace === '') {

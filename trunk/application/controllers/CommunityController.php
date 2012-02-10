@@ -2,9 +2,10 @@
 
 /**
  * Elm_CommunityController
- *
  */
-class Elm_CommunityController extends Colony_Controller_Action
+require_once 'controllers/AbstractController.php';
+
+class Elm_CommunityController extends Elm_AbstractController
 {
 	/**
 	 * @return void

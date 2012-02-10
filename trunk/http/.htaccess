@@ -14,6 +14,7 @@ SetEnv APPLICATION_ENV development
 	## disable automatic session start
 	## before autoload was initialized
     php_flag session.auto_start off
+    php_value session.auto_start 0
 
 	## enable resulting html compression
     #php_flag zlib.output_compression on

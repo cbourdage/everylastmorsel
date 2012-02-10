@@ -2,11 +2,14 @@
 
 /**
  * Elm_IndexController
- *
  */
-class Elm_IndexController extends Colony_Controller_Action
-{
+require_once 'controllers/AbstractController.php';
 
+class Elm_IndexController extends Elm_AbstractController
+{
+	/**
+	 * initializes layout for ajax requests
+	 */
 	protected function _initAjax()
 	{
 		$this->_helper->layout()->disableLayout();

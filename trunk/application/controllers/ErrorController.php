@@ -1,6 +1,8 @@
 <?php
 
-class Elm_ErrorController extends Colony_Controller_Action
+require_once 'controllers/AbstractController.php';
+
+class Elm_ErrorController extends Elm_AbstractController
 {
 	/**
 	 * Controller for all errors

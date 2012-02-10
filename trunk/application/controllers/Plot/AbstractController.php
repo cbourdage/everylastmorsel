@@ -1,6 +1,8 @@
 <?php
 
-class Elm_Plot_AbstractController extends Colony_Controller_Action
+require_once 'controllers/AbstractController.php';
+
+class Elm_Plot_AbstractController extends Elm_AbstractController
 {
 	public function init()
 	{

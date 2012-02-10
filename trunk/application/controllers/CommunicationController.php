@@ -1,6 +1,8 @@
 <?php
 
-class Elm_CommunicationController extends Colony_Controller_Action
+require_once 'controllers/AbstractController.php';
+
+class Elm_CommunicationController extends Elm_AbstractController
 {
 	protected $_session;
 

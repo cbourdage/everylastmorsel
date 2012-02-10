@@ -3,7 +3,7 @@
 /**
  * Base front controller
  */
-class Colony_Controller_Action extends Zend_Controller_Action
+class Elm_AbstractController extends Zend_Controller_Action
 {
     /**
      * Currently used area

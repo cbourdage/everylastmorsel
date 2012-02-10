@@ -59,11 +59,10 @@ function initialize() {
 			placeMarker(event.latLng);
 
 			var coords = {
-				lat : event.latLng.Oa,
-				long : event.latLng.Pa
+				lat : event.latLng.lat(),
+				long : event.latLng.lng()
 			};
 
-			//console.log(coords);
 			jQuery.ajax({
 			  	url: '/index/plot-point/',
 			  	data: jQuery.serializeJSON(coords),
