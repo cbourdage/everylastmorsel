@@ -41,14 +41,14 @@ class Colony_Controller_Action extends Zend_Controller_Action
     }
 
     /**
-     * Postdispatch: should set last visited url
+     * Sets last visited url
      *
      * @return Mage_Core_Controller_Front_Action
      */
     public function postDispatch()
     {
         parent::postDispatch();
-		Bootstrap::getSingleton('user/session')->setLastUrl = $this->getCurrentUrl();
+		Bootstrap::getSingleton('session')->setLastUrl = $this->getCurrentUrl();
         return $this;
     }
 

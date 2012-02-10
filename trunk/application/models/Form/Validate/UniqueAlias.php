@@ -1,6 +1,6 @@
 <?php
 
-class Elm_Model_Form_Validate_UniqueEmail extends Zend_Validate_Abstract
+class Elm_Model_Form_Validate_UniqueAlias extends Zend_Validate_Abstract
 {
     const ALIAS_EXISTS = 'aliasExists';
 

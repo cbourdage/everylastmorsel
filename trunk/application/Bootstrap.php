@@ -112,7 +112,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     			'namespace' => 'Model'
     		),
 			'modelResources' => array(
-    			'path' => 'models/resources',
+    			'path' => 'models/Resources',
     			'namespace' => 'Model_Resource'
     		)
     	));

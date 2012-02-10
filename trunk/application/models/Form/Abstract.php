@@ -23,7 +23,7 @@ class Elm_Model_Form_Abstract extends Zend_Form
 	{
         $this->addElementPrefixPath(
             'Elm_Model_Form_Validate',
-            APPLICATION_PATH . '/models/form/validate/',
+            APPLICATION_PATH . '/models/Form/Validate/',
             Zend_Form_Element::VALIDATE
         );
 	}
