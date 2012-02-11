@@ -3,7 +3,11 @@
 
 class Elm_Model_Form_Abstract extends Zend_Form
 {
-	public $defaultDecorators = array(
+	/**
+	 * @TODO custom decorators
+	 * @var array
+	 */
+	protected $defaultDecorators = array(
 		'ViewHelper',
 		'Errors',
 		array(array('data' => 'HtmlTag')),
@@ -11,7 +15,15 @@ class Elm_Model_Form_Abstract extends Zend_Form
 		array(array('row' => 'HtmlTag'), array('tag' => 'li'))
 	);
 
-	public $hiddenDecorators = array('ViewHelper');
+	protected $fileDecorators = array(
+		'File',
+		'Errors',
+		array(array('data' => 'HtmlTag')),
+		array('Label'),
+		array(array('row' => 'HtmlTag'), array('tag' => 'li'))
+	);
+
+	protected $hiddenDecorators = array('ViewHelper');
 
 	protected $_hiddenElements = array();
 

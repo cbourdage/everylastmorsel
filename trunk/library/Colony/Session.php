@@ -11,8 +11,6 @@ class Colony_Session extends Zend_Session_Namespace
     const NOTICE    = 'notice';
     const SUCCESS   = 'success';
 
-	protected $_messages = array();
-
 	/**
      * Retrieve Session Form Key
      *

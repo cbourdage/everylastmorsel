@@ -26,28 +26,26 @@ $_plot = $this->plot;
 	</section>
 
 	<form action="<?php echo $this->url('plot/image-upload', array('p' => $_plot->getId())); ?>" method="post" enctype="multipart/form-data">
-		<ul class="input-fields">
-			<li>
-				<input type="file" name="image[]" title="Upload Image" />
-			</li>
-			<li>
-				<a href="#" id="addMore" title="Add Images">Add Another</a>
-			</li>
+		<ul class="fieldset list-block">
+			<?php foreach($this->form->getElements() as $element) : ?>
+				<?php echo $element->render(); ?>
+			<?php endforeach; ?>
 		</ul>
 		<p class="buttons">
+			<a href="#" id="addMore" title="Add Images">Add Another</a>
 			<button type="submit">Upload</button>
 		</p>
 	</form>
 </div>
 
 <script>
-//(function($) {
-	jQuery('#addMore').on('click', function(e) {
-		var $liListInput = jQuery(this).parent().prev();
-		var $duplicate = $liListInput.clone();
-		$duplicate.find('input').val('');
-		$liListInput.after($duplicate);
-	});
-//})(jQuery);
+jQuery('#addMore').on('click', function(e) {
+	e.preventDefault();
+	var $ulListInput = jQuery(this).parent().prev();
+	var $duplicate = $ulListInput.clone();
+	$duplicate.find('input').val('');
+	$ulListInput.after($duplicate);
+	return false;
+});
 </script>
 

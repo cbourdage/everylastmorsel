@@ -259,40 +259,52 @@ Bootstrap::log($response);
 	{
 		$session = $this->_getSession();
 		if (!$session->isLoggedIn()) {
-			if ($session->beforeAuthUrl && $session->beforeAuthUrl != $this->getCurrentUrl()) {
-				$this->_redirect($session->beforeAuthUrl);
-			} else {
-				$this->_redirect('/');
-			}
+			$this->_redirect('/user/login');
 			return;
-		}
-
-		$form = new Elm_Model_Form_User_Settings();
-		if ($this->getRequest()->isPost()) {
-			$post = $this->getRequest()->getParams();
-			if ($form->isValid($post)) {
-				try {
-					$user = $session->user;
-					$user->addData($post)->save();
-					$session->addSuccess('Successfully saved your settings!');
-				} catch (Colony_Exception $e) {
-					$session->addError($e->getMessage());
-				} catch (Exception $e) {
-					$session->addError($e->getMessage());
-				}
-
-			} else {
-				$session->addError('Check all fields are filled out!');
-			}
 		}
 
 		$this->view->headTitle()->prepend('Settings');
 		$this->view->headTitle()->prepend($session->user->getFirstname() . ' ' . $session->user->getLastname());
+
+		$form = new Elm_Model_Form_User_Settings();
+		$form->setAction('/user/settings-save');
 		$this->view->form = $form;
 	}
 
-	public function saveAction()
+	/**
+	 * Users settings save action
+	 *
+	 * @return mixed
+	 */
+	public function settingsSaveAction()
 	{
+		$session = $this->_getSession();
+		if (!$session->isLoggedIn()) {
+			$this->_redirect('/user/login');
+			return;
+		}
 
+		if (!$this->getRequest()->isPost()) {
+			$this->_redirect('/user/settings');
+			return;
+		}
+
+		$form = new Elm_Model_Form_User_Settings();
+		$post = $this->getRequest()->getParams();
+		if ($form->isValid($post)) {
+			try {
+				$user = $session->user;
+				$user->addData($post)->save();
+				$session->addSuccess('Successfully saved your settings!');
+			} catch (Colony_Exception $e) {
+				$session->addError($e->getMessage());
+			} catch (Exception $e) {
+				$session->addError($e->getMessage());
+			}
+		} else {
+			$session->addError('Check all fields are filled out!');
+		}
+
+		$this->_redirect('/user/settings');
 	}
 }

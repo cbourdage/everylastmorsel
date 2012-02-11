@@ -178,6 +178,19 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     }
 
 	/**
+	 * Returns base application directory path
+	 *
+	 * @static
+	 * @param null $path path to directory
+	 * @return string
+	 */
+	public static function getBaseDir($path = null)
+	{
+		self::log(dirname(APPLICATION_PATH . '/../' . $path));
+		return APPLICATION_PATH . '/../' . $path;
+	}
+
+	/**
      * Retrieve model object
      *
      * @param   string $modelClass

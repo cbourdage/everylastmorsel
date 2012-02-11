@@ -8,7 +8,7 @@ class Elm_View_Helper_Message extends Zend_View_Helper_Abstract
 		return $this;
 	}
 
-	public function render($clear = false)
+	public function render($clear = true)
 	{
 		$html = '';
 		$session = Bootstrap::getSingleton('user/session');

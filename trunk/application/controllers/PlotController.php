@@ -179,6 +179,11 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 */
 	public function imagesAction()
 	{
+		if (!$this->_getSession()->isLoggedIn()) {
+			$this->_redirect('user/login');
+			return;
+		}
+
 		if (!$id = $this->getRequest()->getParam('p')) {
 			$this->_forward('no-route');
 			return;
@@ -189,16 +194,19 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
-		$this->view->plot = $plot;
+		$form = new Elm_Model_Form_Plot_Images();
 
 		// Posted = delete action
 		if ($this->getRequest()->isPost()) {
 			foreach ($this->getRequest()->getParam('delete', array()) as $key => $value) {
+				//$exifData = exif_read_data()
 				Bootstrap::log('deleting: ' . $key . ' == ' . $value);
 				//$plot->removeImage();
 			}
 		}
 
+		$this->view->plot = $plot;
+		$this->view->form = $form;
 		$this->_initLayout();
 	}
 
