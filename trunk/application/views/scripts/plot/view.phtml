@@ -5,7 +5,7 @@ $_plot = $this->plot;
 <?php echo $this->Message()->render(); ?>
 <div class="inner-content-wrapper plot">
 	<div class="top">
-		<h2><?php echo $_plot->getName(); ?></h2>
+		<h2><span class="editable" data-name="name" data-type="input"><?php echo $_plot->getName(); ?></span></h2>
 		<ul class="list-inline">
 			<li><strong>Location</strong> <?php echo $_plot->getZipcode(); ?></li>
 		</ul>
@@ -18,10 +18,13 @@ $_plot = $this->plot;
 	</div>
 
 	<section class="photo-timeline">
+		<?php
+			// @TODO make a partial or whatever it is called
+		?>
 		<?php if ($images = $_plot->getImages()) : ?>
 		<ul class="list list-block">
 			<?php foreach ($images as $image) : ?>
-				<li><img src="<?= $image->getUrl(); ?>" title="<?php echo $image->getTitle(); ?>" alt="<?php echo $image->getTitle(); ?>"></li>
+				<li><img src="<?= Bootstrap::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" width="150px" title="<?php echo $image->getCaption(); ?>" alt="<?php echo $image->getCaption(); ?>"></li>
 			<?php endforeach; ?>
 		</ul>
 		<?php endif; ?>
@@ -95,6 +98,7 @@ $_plot = $this->plot;
 		</div>
 	</section>
 </div>
+
 <div class="overlay" id="plot-edit-overlay" style="display: none;">
 	<a class="close" onclick="CloseOverlay(this);"></a>
 	<div class="content">

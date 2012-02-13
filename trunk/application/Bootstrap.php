@@ -21,12 +21,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		return parent::run();
     }
 
+	/**
+	 *
+	 */
 	protected function _initLocale()
 	{
         $locale = new Zend_Locale('en_US');
         Zend_Registry::set('Zend_Locale', $locale);
     }
 
+	/**
+	 *
+	 */
 	protected function _initMailTransport()
 	{
 		try {
@@ -186,8 +192,14 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	 */
 	public static function getBaseDir($path = null)
 	{
-		self::log(dirname(APPLICATION_PATH . '/../' . $path));
 		return APPLICATION_PATH . '/../' . $path;
+	}
+
+	public static function getBaseUrl($type = null)
+	{
+		$config = Zend_Registry::get('config');
+		$baseUrl = $config['app']['baseurl'];
+		return $type !== null ? $baseUrl . $type : $baseUrl;
 	}
 
 	/**

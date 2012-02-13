@@ -180,7 +180,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	public function imagesAction()
 	{
 		if (!$this->_getSession()->isLoggedIn()) {
-			$this->_redirect('user/login');
+			$this->_redirect('/user/login');
 			return;
 		}
 
@@ -195,18 +195,9 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		}
 
 		$form = new Elm_Model_Form_Plot_Images();
-
-		// Posted = delete action
-		if ($this->getRequest()->isPost()) {
-			foreach ($this->getRequest()->getParam('delete', array()) as $key => $value) {
-				//$exifData = exif_read_data()
-				Bootstrap::log('deleting: ' . $key . ' == ' . $value);
-				//$plot->removeImage();
-			}
-		}
-
-		$this->view->plot = $plot;
+		$form->setAction('/plot/image-upload');
 		$this->view->form = $form;
+		$this->view->plot = $plot;
 		$this->_initLayout();
 	}
 
@@ -214,6 +205,44 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 * Plot images upload action
 	 */
 	public function imageUploadAction()
+	{
+		if (!$this->_getSession()->isLoggedIn()) {
+			$this->_redirect('/user/login');
+			return;
+		}
+
+		if (!$id = $this->getRequest()->getParam('p')) {
+			$this->_forward('no-route');
+			return;
+		}
+
+		if (!$this->getRequest()->isPost()) {
+			$this->_redirect('/plot/images/p/' . $id);
+			return;
+		}
+
+		try {
+			$form = new Elm_Model_Form_Plot_Images();
+			$post = $this->getRequest()->getParams();	// pass in directly
+			$plot = Bootstrap::getModel('plot')->load($id);
+
+			Bootstrap::log($post);
+			if ($plot->addImages($post)) {
+				$this->_getSession()->addSuccess('Successfully uploaded images');
+			} else {
+				$this->_getSession()->addError('Oops! Check the form fields are filled out accurately and try again.');
+			}
+		} catch (Exception $e) {
+			$this->_getSession()->addError($e->getMessage());
+		}
+
+		$this->_redirect('/plot/images/p/' . $post['p']);
+	}
+
+	/**
+	 * Removes image links from profiles based on an array of ids
+	 */
+	public function imageRemoveAction()
 	{
 
 	}

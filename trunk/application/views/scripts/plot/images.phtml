@@ -7,10 +7,7 @@ $_plot = $this->plot;
 
 <div class="inner-content-wrapper plot">
 	<h2>
-		<?php echo $_plot->getName(); ?>
-		<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) : ?>
-			<a href="#edit" title="Edit Plot Information" id="plotEdit">Edit</a>
-		<?php endif; ?>
+		<a href="<?php echo $_plot->getUrl(); ?>" title="<?php echo $_plot->getName(); ?>"><?php echo $_plot->getName(); ?></a>
 	</h2>
 
 	<h3>Current images</h3>
@@ -18,18 +15,22 @@ $_plot = $this->plot;
 		<?php if ($images = $_plot->getImages()) : ?>
 		<ul class="list list-block">
 			<?php foreach ($images as $image) : ?>
-				<li><img src="<?= $image->getUrl(); ?>" title="<?php echo $image->getTitle(); ?>" alt="<?php echo $image->getTitle(); ?>"></li>
+				<li><img src="<?= Bootstrap::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" width="150px" title="<?php echo $image->getCaption(); ?>" alt="<?php echo $image->getCaption(); ?>"></li>
 			<?php endforeach; ?>
 		</ul>
 		<?php endif; ?>
-		<a href="<?php echo $this->url('plot/images', array('p' => $_plot->getId())); ?>" title="Manage Photos">Manage Photos</a>
 	</section>
 
 	<form action="<?php echo $this->url('plot/image-upload', array('p' => $_plot->getId())); ?>" method="post" enctype="multipart/form-data">
 		<ul class="fieldset list-block">
-			<?php foreach($this->form->getElements() as $element) : ?>
-				<?php echo $element->render(); ?>
-			<?php endforeach; ?>
+			<li>
+				<label for="image-1" class="optional">Image</label>
+				<div><input type="file" name="image[]" id="image-1"></div>
+			</li>
+			<li>
+				<label for="caption-1" class="optional">Title/Caption</label>
+				<div><input type="text" name="caption[]" id="caption-1" value=""></div>
+			</li>
 		</ul>
 		<p class="buttons">
 			<a href="#" id="addMore" title="Add Images">Add Another</a>
@@ -39,11 +40,17 @@ $_plot = $this->plot;
 </div>
 
 <script>
+var total = 1;
 jQuery('#addMore').on('click', function(e) {
 	e.preventDefault();
+	total++;
 	var $ulListInput = jQuery(this).parent().prev();
 	var $duplicate = $ulListInput.clone();
-	$duplicate.find('input').val('');
+	$duplicate.find('input').each(function() {
+		var idPrefix = jQuery(this).attr('name').replace('[]', '-');
+		jQuery(this).val('').attr('id', idPrefix + total);
+		jQuery(this).parent().prev().attr('for', idPrefix + total);
+	});
 	$ulListInput.after($duplicate);
 	return false;
 });

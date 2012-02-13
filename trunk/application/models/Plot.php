@@ -3,13 +3,27 @@
 
 class Elm_Model_Plot extends Colony_Model_Abstract
 {
+	/**
+	 * @var array
+	 */
 	private $_users = array();
 
+	/**
+	 * @var array
+	 */
+	private $_images = array();
+
+	/**
+	 *
+	 */
 	public function _construct()
     {
         $this->_init('plot');
     }
 
+	/**
+	 *
+	 */
 	public function _beforeSave()
 	{
 	}
@@ -27,6 +41,11 @@ class Elm_Model_Plot extends Colony_Model_Abstract
         return $this;
     }
 
+	/**
+	 * Returns all plots
+	 *
+	 * @return mixed
+	 */
 	public function getAllPlots()
 	{
 		return $this->_getResource()->getAllPlots();
@@ -111,5 +130,85 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	{
 		$url = '/p/' . $this->getId();
 		return $url;
+	}
+
+	/**
+	 * Returns the plots images
+	 * @return array
+	 */
+	public function getImages()
+	{
+		if (!$this->_images) {
+			$this->_images = $this->_getResource()->getImages($this->getId());
+		}
+
+		return $this->_images;
+	}
+
+	/**
+	 * Adds a new image to the plot
+	 *
+	 * @param array $params
+	 * @return bool
+	 */
+	public function addImages($params)
+	{
+		$destination = $this->_getImageDestination();
+		$image = Bootstrap::getModel('plot_image');
+
+		$adapter = new Zend_File_Transfer_Adapter_Http();
+		$adapter->setDestination($destination)
+			->addValidator('Size', false, 102400)	// limit to 100K
+			->addValidator('Extension', false, 'jpg,png,gif,jpeg'); // only JPEG, PNG, and GIFs
+
+		$files = $adapter->getFileInfo();
+		foreach ($files as $file => $info) {
+			list($temp, $ext) = explode('.', $info['name']);
+			$newFilename = md5($temp) . '.' . $ext;
+			$imageIdx = preg_replace('/[^\d]/', '', $file);
+
+			try {
+				// Rename filter
+				$adapter->addFilter('Rename', array(
+					'target' => $destination . DIRECTORY_SEPARATOR . $newFilename,
+					'overwrite' => true
+				));
+
+				if ($adapter->receive($file)) {
+					$image->setData($info);
+					$image->setData('exif_data', exif_read_data($info['destination'] . DIRECTORY_SEPARATOR . $newFilename));
+					$image->setPlotId($this->getId())
+						->setCaption($params['caption'][$imageIdx]);
+
+					// Set image data
+					$image->setThumbnail(Elm_Model_Plot_Image::getPlotImageUrl($this) . '/' . $newFilename)
+						->setFull(Elm_Model_Plot_Image::getPlotImageUrl($this) . '/' . $newFilename);
+					$image->save();
+					$image->reset();
+				} else {
+					Bootstrap::log($adapter->getMessages(), Zend_Log::ERR, Elm_Model_Plot_Image::LOG_FILE);
+					throw new Colony_Exception('Image upload encountered an error. Please try again.', '600');
+				}
+			} catch (Exception $e) {
+				Bootstrap::logException($e);
+				Bootstrap::getSingleton('user/session')->addException('Bah! [' . $e->getCode() . '] ' . $e->getMessage());
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function _getImageDestination()
+	{
+		$destination = Bootstrap::getBaseDir(Elm_Model_Plot_Image::DESTINATION_DIR) . Elm_Model_Plot_Image::getPlotImagePath($this);
+		if (!is_dir($destination)) {
+			mkdir($destination, 0777, true);
+		}
+
+		return $destination;
 	}
 }

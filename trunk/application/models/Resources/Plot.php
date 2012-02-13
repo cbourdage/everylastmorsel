@@ -43,14 +43,14 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
 			$users = array();
 			foreach ($rows as $row) {
-				$users[$row->user_id] = $row->role; //Bootstrap::getModel('user')->load($row->user_id, false);
+				$users[$row->user_id] = $row->role;
 			}
 			$object->setUserIds($users);
 		}
 		else {
 			$object->setUserIds(null);
 		}
-		
+
 		return $this;
 	}
 
@@ -61,6 +61,18 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 			return $rows;
 		}
 		return null;
+	}
+
+	public function getImages($plotId)
+	{
+		$return = array();
+		$row = $this->find($plotId)->current();
+		$images = $row->findDependentRowset('Elm_Model_Resource_Plot_Image', 'Image');
+		foreach ($images as $img) {
+			$return[$img->image_id] = Bootstrap::getModel('plot_image')->load($img->image_id);
+		}
+
+		return $return;
 	}
 
 	public function loadByLatLong($object, $lat, $long)

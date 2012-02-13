@@ -32,7 +32,7 @@ $application = new Zend_Application(
 );
 
 // Start session
-Zend_Session::start();
+//Zend_Session::start();
 
 // Run it!
 $application->bootstrap()->run();
