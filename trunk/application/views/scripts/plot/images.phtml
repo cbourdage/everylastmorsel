@@ -15,7 +15,10 @@ $_plot = $this->plot;
 		<?php if ($images = $_plot->getImages()) : ?>
 		<ul class="list list-block">
 			<?php foreach ($images as $image) : ?>
-				<li><img src="<?= Bootstrap::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" width="150px" title="<?php echo $image->getCaption(); ?>" alt="<?php echo $image->getCaption(); ?>"></li>
+				<li>
+					<img src="<?= Bootstrap::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" width="150px" title="<?php echo $image->getCaption(); ?>" alt="<?php echo $image->getCaption(); ?>">
+					<a href="<?= $this->url('plot/image-remove', array('p' => $_plot->getId(), 'images' => $image->getId())); ?>" title="Remove Image">Remove</a>
+				</li>
 			<?php endforeach; ?>
 		</ul>
 		<?php endif; ?>

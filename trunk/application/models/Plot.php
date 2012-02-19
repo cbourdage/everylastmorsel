@@ -154,15 +154,21 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	public function addImages($params)
 	{
 		$destination = $this->_getImageDestination();
-		$image = Bootstrap::getModel('plot_image');
 
+		$session = Bootstrap::getSingleton('user/session');
 		$adapter = new Zend_File_Transfer_Adapter_Http();
 		$adapter->setDestination($destination)
 			->addValidator('Size', false, 102400)	// limit to 100K
 			->addValidator('Extension', false, 'jpg,png,gif,jpeg'); // only JPEG, PNG, and GIFs
 
 		$files = $adapter->getFileInfo();
+		$successful = 0;
 		foreach ($files as $file => $info) {
+			// Skip empty
+			if ($info['name'] == null) {
+				continue;
+			}
+
 			list($temp, $ext) = explode('.', $info['name']);
 			$newFilename = md5($temp) . '.' . $ext;
 			$imageIdx = preg_replace('/[^\d]/', '', $file);
@@ -174,7 +180,9 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 					'overwrite' => true
 				));
 
+				// Receive and save
 				if ($adapter->receive($file)) {
+					$image = new Elm_Model_Plot_Image();
 					$image->setData($info);
 					$image->setData('exif_data', exif_read_data($info['destination'] . DIRECTORY_SEPARATOR . $newFilename));
 					$image->setPlotId($this->getId())
@@ -184,19 +192,51 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 					$image->setThumbnail(Elm_Model_Plot_Image::getPlotImageUrl($this) . '/' . $newFilename)
 						->setFull(Elm_Model_Plot_Image::getPlotImageUrl($this) . '/' . $newFilename);
 					$image->save();
-					$image->reset();
+					$successful++;
 				} else {
-					Bootstrap::log($adapter->getMessages(), Zend_Log::ERR, Elm_Model_Plot_Image::LOG_FILE);
-					throw new Colony_Exception('Image upload encountered an error. Please try again.', '600');
+					$errors = $adapter->getMessages();
+					foreach ($errors as $e) {
+						$session->addError($e);
+					}
 				}
 			} catch (Exception $e) {
 				Bootstrap::logException($e);
-				Bootstrap::getSingleton('user/session')->addException('Bah! [' . $e->getCode() . '] ' . $e->getMessage());
-				return false;
+				$session->addException($e);
 			}
 		}
 
-		return true;
+		if ($successful > 0) {
+			$session->addSuccess('Successfully uploaded images');
+		}
+	}
+
+	/**
+	 * @param string|array $images
+	 */
+	public function removeImages($images)
+	{
+		if (!is_array($images)) {
+			$images = array($images);
+		}
+
+		$ctr = 0;
+		foreach ($images as $id) {
+			$image = Bootstrap::getModel('plot_image')->load($id);
+			$image->delete();
+			$ctr++;
+		}
+
+		$session = Bootstrap::getSingleton('user/session');
+		if ($ctr > 1) {
+			$session->addSuccess('Images removed');
+		} elseif ($ctr == 1) {
+			$session->addSuccess('Image removed');
+		}
+	}
+
+	public function addStatus($params)
+	{
+
 	}
 
 	/**

@@ -250,13 +250,14 @@ abstract class Colony_Model_Abstract extends Colony_Object
      */
     public function delete()
     {
-        $this->_getResource()->beginTransaction();
+        $dbAdapter = Zend_Db_Table::getDefaultAdapter();
+		$dbAdapter->beginTransaction();
         try {
             $this->_getResource()->delete($this);
-            $this->_getResource()->commit();
+            $dbAdapter->commit();
         }
         catch (Exception $e){
-            $this->_getResource()->rollBack();
+            $dbAdapter->rollBack();
             throw $e;
         }
         return $this;

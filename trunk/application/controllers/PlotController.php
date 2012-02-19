@@ -5,6 +5,24 @@ require_once 'controllers/Plot/AbstractController.php';
 class Elm_PlotController extends Elm_Plot_AbstractController
 {
 	/**
+	 * Pre Dispatch check for invalid session
+	 */
+	public function preDispatch()
+	{
+        parent::preDispatch();
+
+		// @TODO figure out redirects for login and registration pages - all pages for that matter.
+        $action = $this->getRequest()->getActionName();
+		Bootstrap::log($action);
+        $pattern = '/^(images|image)/i';
+        if (preg_match($pattern, $action)) {
+            if (!$this->_getSession()->authenticate($this)) {
+                $this->_redirect('/user/login');
+            }
+        }
+	}
+
+	/**
 	 * Default 404
 	 */
 	public function noRouteAction()
@@ -29,50 +47,10 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			Zend_Registry::set('current_plot', $plot);
 			$this->view->plot = $plot;
 			$this->view->headTitle()->prepend($plot->getName());
-
 		} else {
 			$this->_forward('no-route');
 		}
 		$this->_initLayout();
-	}
-
-	/**
-	 * Registration and registration post action
-	 *
-	 * @TODO create error messages
-	 * @TODO Error Validation
-	 * 
-	 * @return void
-	 */
-	public function createAction()
-	{
-		$session = $this->_getSession();
-		$form = new Elm_Model_Form_Plot_Create();
-		if ($this->getRequest()->isPost()) {
-			$errors = array();
-			$post = $this->getRequest()->getPost();
-			$plot = Bootstrap::getModel('plot');
-			if ($form->isValid($post)) {
-				$plot->setData($post)->save();
-
-				// setup session, send email, add messages, move on
-				$plot->sendNewPlotEmail();
-				$session->addSuccess("This location looks great!");
-				$this->_redirect('/p/' . $plot->getId());
-				return;
-			}
-			else {
-				/*if (is_array($errors)) {
-					foreach ($errors as $errorMessage) {
-						$session->addError($errorMessage);
-					}
-				} else {
-					$session->addError($this->__('Invalid user data'));
-				}*/
-			}
-		}
-
-		$this->view->form = $form;
 	}
 
 	/**
@@ -179,25 +157,17 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 */
 	public function imagesAction()
 	{
-		if (!$this->_getSession()->isLoggedIn()) {
-			$this->_redirect('/user/login');
-			return;
-		}
-
-		if (!$id = $this->getRequest()->getParam('p')) {
+		if (!$this->_isValid()) {
 			$this->_forward('no-route');
 			return;
 		}
 
-		if (!$plot = Bootstrap::getModel('plot')->load($id)) {
-			$this->_forward('no-route');
-			return;
-		}
+		$this->_initCurrentPlot();
 
 		$form = new Elm_Model_Form_Plot_Images();
-		$form->setAction('/plot/image-upload');
+		$form->setAction('/plot/image-upload/p/' . $this->_plot->getId());
 		$this->view->form = $form;
-		$this->view->plot = $plot;
+		$this->view->plot = $this->_plot;
 		$this->_initLayout();
 	}
 
@@ -206,37 +176,20 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 */
 	public function imageUploadAction()
 	{
-		if (!$this->_getSession()->isLoggedIn()) {
-			$this->_redirect('/user/login');
-			return;
-		}
-
-		if (!$id = $this->getRequest()->getParam('p')) {
+		if (!$this->_isValid()) {
 			$this->_forward('no-route');
 			return;
 		}
 
 		if (!$this->getRequest()->isPost()) {
-			$this->_redirect('/plot/images/p/' . $id);
+			$this->_redirect('/plot/images/p/' . $this->getRequest()->getParam('p'));
 			return;
 		}
 
-		try {
-			$form = new Elm_Model_Form_Plot_Images();
-			$post = $this->getRequest()->getParams();	// pass in directly
-			$plot = Bootstrap::getModel('plot')->load($id);
+		$this->_initCurrentPlot();
+		$this->_plot->addImages($this->getRequest()->getParams());
 
-			Bootstrap::log($post);
-			if ($plot->addImages($post)) {
-				$this->_getSession()->addSuccess('Successfully uploaded images');
-			} else {
-				$this->_getSession()->addError('Oops! Check the form fields are filled out accurately and try again.');
-			}
-		} catch (Exception $e) {
-			$this->_getSession()->addError($e->getMessage());
-		}
-
-		$this->_redirect('/plot/images/p/' . $post['p']);
+		$this->_redirect('/plot/images/p/' . $this->getRequest()->getParam('p'));
 	}
 
 	/**
@@ -244,6 +197,29 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 */
 	public function imageRemoveAction()
 	{
+		if (!$this->_isValid()) {
+			$this->_forward('no-route');
+			return;
+		}
 
+		if (!$this->getRequest()->getParam('images', null)) {
+			$this->_redirect('/plot/images/p/' . $this->getRequest()->getParam('p'));
+			return;
+		}
+
+		$this->_initCurrentPlot();
+		$this->_plot->removeImages($this->getRequest()->getParam('images'));
+
+		$this->_redirect('/plot/images/p/' . $this->getRequest()->getParam('p'));
+	}
+
+	public function addStatusAction()
+	{
+		if (!$this->_isValid()) {
+			$this->_forward('no-route');
+			return;
+		}
+
+		$this->_initCurrentPlot();
 	}
 }

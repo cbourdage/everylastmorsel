@@ -62,6 +62,12 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
         return $this;
     }
 
+	public function getIdFieldName()
+	{
+		$idFieldName = array_shift($this->_primary);
+		return $idFieldName;
+	}
+
 	/**
      * Save a row to the database
      *
@@ -134,7 +140,7 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
     {
         return $this;
     }
-	
+
     /**
      * Delete the object
      *
@@ -144,7 +150,7 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
     public function delete(Colony_Model_Abstract $object)
     {
         $this->_beforeDelete($object);
-        $this->delete($this->quoteInto($this->_primary . '=?', $object->getId()));
+        parent::delete($this->getDefaultAdapter()->quoteInto($this->getIdFieldName() . ' = ?', $object->getId()));
         $this->_afterDelete($object);
         return $this;
     }
