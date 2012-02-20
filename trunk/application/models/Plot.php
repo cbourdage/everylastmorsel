@@ -14,7 +14,12 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	private $_images = array();
 
 	/**
-	 *
+	 * @var array
+	 */
+	private $_statusUpdates = array();
+
+	/**
+	 * Construct
 	 */
 	public function _construct()
     {
@@ -22,7 +27,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
     }
 
 	/**
-	 *
+	 * Before save
 	 */
 	public function _beforeSave()
 	{
@@ -68,6 +73,20 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 			}
 		}
 		return $this->_users;
+	}
+
+	/**
+	 * Returns top level status updates associated to the plot
+	 *
+	 * @param null $limit
+	 * @return array
+	 */
+	public function getStatusUpdates($limit = null)
+	{
+		if (count($this->_statusUpdates) < 1) {
+			$this->_statusUpdates = Bootstrap::getModel('plot_status')->getByPlotId($this->getId(), $limit);
+		}
+		return $this->_statusUpdates;
 	}
 
     /**
@@ -128,7 +147,8 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 */
 	public function getUrl()
 	{
-		$url = '/p/' . $this->getId();
+		$helper = new Elm_View_Helper_Url();
+		$url = $helper->url(null, array('p' => $this->getId(), '_route' => 'plot'));
 		return $url;
 	}
 
@@ -232,11 +252,6 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		} elseif ($ctr == 1) {
 			$session->addSuccess('Image removed');
 		}
-	}
-
-	public function addStatus($params)
-	{
-
 	}
 
 	/**

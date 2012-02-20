@@ -13,7 +13,6 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 
 		// @TODO figure out redirects for login and registration pages - all pages for that matter.
         $action = $this->getRequest()->getActionName();
-		Bootstrap::log($action);
         $pattern = '/^(images|image)/i';
         if (preg_match($pattern, $action)) {
             if (!$this->_getSession()->authenticate($this)) {
@@ -42,13 +41,12 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 */
 	public function viewAction()
 	{
-		$id = $this->getRequest()->getParam('id');
-		if ($plot = Bootstrap::getModel('plot')->load($id)) {
-			Zend_Registry::set('current_plot', $plot);
-			$this->view->plot = $plot;
-			$this->view->headTitle()->prepend($plot->getName());
-		} else {
+		if (!$this->_isValid()) {
 			$this->_forward('no-route');
+		} else {
+			$this->_initCurrentPlot();
+			$this->view->plot = $this->_plot;
+			$this->view->headTitle()->prepend($this->_plot->getName());
 		}
 		$this->_initLayout();
 	}
@@ -130,6 +128,8 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->_initAjax();
 		if ($this->getRequest()->isPost()) {
 			$post = $this->getRequest()->getPost();
+
+			Bootstrap::log(__METHOD__);
 			Bootstrap::log($post);
 
 			$plot = Bootstrap::getModel('plot')->load($this->getRequest()->getParam('plot_id'));
@@ -211,15 +211,5 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->_plot->removeImages($this->getRequest()->getParam('images'));
 
 		$this->_redirect('/plot/images/p/' . $this->getRequest()->getParam('p'));
-	}
-
-	public function addStatusAction()
-	{
-		if (!$this->_isValid()) {
-			$this->_forward('no-route');
-			return;
-		}
-
-		$this->_initCurrentPlot();
 	}
 }

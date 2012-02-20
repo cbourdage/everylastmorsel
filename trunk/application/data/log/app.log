@@ -1,3 +1,8 @@
-2012-02-19T23:42:53+00:00 DEBUG (7): image-remove
-2012-02-19T23:42:53+00:00 DEBUG (7): images
-2012-02-19T23:43:00+00:00 DEBUG (7): view
+2012-02-20T05:38:35+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T05:38:35+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T05:38:35+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T05:38:35+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T05:38:35+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T05:38:35+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T05:38:35+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T05:38:42+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in

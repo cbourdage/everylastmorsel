@@ -278,7 +278,8 @@ class Elm_Model_User extends Colony_Model_Abstract
 	 */
 	public function getUrl()
 	{
-		$url = '/u/' . $this->getAlias();
+		$helper = new Elm_View_Helper_Url();
+		$url = $helper->url(null, array('alias' => $this->getAlias(), '_route' => 'user'));
 		return $url;
 	}
 

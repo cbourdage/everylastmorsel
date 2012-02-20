@@ -1,8 +1,8 @@
 <?php
 
-require_once 'controllers/Plot/AbstractController.php';
+require_once 'controllers/User/AbstractController.php';
 
-class Elm_PlotController extends Elm_Plot_AbstractController
+class Elm_StatusController extends Elm_User_AbstractController
 {
 	/**
 	 * Pre Dispatch check for invalid session
@@ -15,16 +15,9 @@ class Elm_PlotController extends Elm_Plot_AbstractController
         $pattern = '/^(image|view)/i';
         if (!preg_match($pattern, $action)) {
             if (!$this->_getSession()->authenticate($this)) {
-                $this->_redirect('/user/login');
+                //$this->_redirect('/user/login');
             }
         }
-	}
-
-	/**
-	 * Default 404
-	 */
-	public function noRouteAction()
-	{
 	}
 
 	/**
@@ -74,34 +67,20 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 				'location' => $this->_helper->url('user/login')
 			);
         } else {
-			$form = new Elm_Model_Form_Plot_Create();
 			if ($this->getRequest()->isPost()) {
-				$post = $this->getRequest()->getPost();
-				Bootstrap::log($post);
-				$plot = Bootstrap::getModel('plot');
-				if ($form->isValid($post)) {
+				//Bootstrap::log($this->getRequest()->getPost());
+				$status = Bootstrap::getModel('plot/status')->setData($this->getRequest()->getPost());
+				if ($status->isValid()) {
 					try {
-						$plot->setData($post)->save();
-						$plot->sendNewPlotEmail();
-						$session->addSuccess("This location looks great!");
-
-						if (isset($post['role'])) {
-							$plot->associateUser($post['user_id'], $post['role']);
-						}
-
-						if (Bootstrap::getSingleton('user/session')->plot['type'] != 'isA') {
-							$response = array(
-								'success' => true,
-								'error' => false,
-								'location' => $this->view->url('plot/startup')
-							);
-						} else {
-							$response = array(
-								'success' => true,
-								'error' => false,
-								'location' => '/p/' . $plot->getId()
-							);
-						}
+						$status->save();
+						//$status->sendNewStatusUpdate();
+						//$session->addSuccess("This location looks great!");
+						$response = array(
+							'success' => true,
+							'error' => false,
+							//'message' => '/p/' . $plot->getId()
+							'data' => '<li><h4>' . $status->getUser()->getName() . '</h4><p>' . $status->getContent() . '</p></li>'
+						);
 					} catch (Exception $e) {
 						$response = array(
 							'success' => false,

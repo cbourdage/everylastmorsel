@@ -150,14 +150,14 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 		// plot
         $route = new Zend_Controller_Router_Route(
-		    'p/:id',
+		    'p/:p',
 		    array(
 		    	'controller' => 'plot',
         		'action' => 'view',
-				'id' => ''
+				'p' => ''
 		    ),
 			array(
-				'id' => '\d+'
+				'p' => '\d+'
 			)
 		);
 		$frontController->getRouter()->addRoute('plot', $route);

@@ -54,40 +54,46 @@ $_plot = $this->plot;
 			<p>Sorry no users associated. Get growing!</p>
 		<?php endif; ?>
 		<?php if ($_session->isLoggedIn() && !$_plot->isAssociated($_session->user)) :  ?>
-			<p><button class="button" name="get-involved" id="get-involved">Get Involed</button></p>
+			<p><button class="button" name="get-involved" id="get-involved"><span>Get Involed</span></button></p>
 		<?php endif; ?>
 	</section>
 
 	<section id="socializing" class="blocked-content">
-	<?php //if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) :  ?>
-		<!--<form action="<?php /*echo $this->url(''); */?>" method="post">-->
+	<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) :  ?>
+		<form action="<?php echo $this->url('status/create'); ?>" method="post" id="status-form">
+			<div class="form-message no-display"></div>
+			<input type="hidden" name="plot_id" value="<?= $_plot->getId(); ?>" />
+			<input type="hidden" name="user_id" value="<?= $_session->user->getId(); ?>" />
 			<p class="input">
-				<label for="blub">How's it growin'?</label>
-				<textarea id="blurb" name="blurb"></textarea>
+				<label for="status-type-text">Text</label>
+				<input type="radio" id="status-type-text" name="type" value="text" />
+				<!--<label for="status-type-link">Link</label>
+				<input type="radio" id="status-type-link" name="type" value="link" />
+				<label for="status-type-crop">Crop</label>
+				<input type="radio" id="status-type-crop" name="type" value="crop" />-->
+			</p>
+			<p class="input">
+				<label for="status-content">How's it growin'?</label>
+				<textarea id="status-content" name="content"></textarea>
 			</p>
 			<p class="buttons">
-				<button class="button" type="submit">Share</button>
+				<button class="button" type="submit"><span>Share</span></button>
 			</p>
-		<!--</form>-->
-	<?php //endif; ?>
+		</form>
+	<?php endif; ?>
+
+	<?php if ($statuses = $_plot->getStatusUpdates(10)) : ?>
 		<h5>Thoughts:</h5>
 		<ul class="feed">
+			<?php foreach ($statuses as $status) : ?>
 			<li>
-				<h4>user name</h4>
-				<p>What is your git version and where have you got it from? Is your .gitignore written exactly like this
-					(case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?</p>
+				<h4><?= $status->getUser()->getName(); ?></h4>
+				<p><?= $status->getCreatedAt(); ?></p>
+				<p><?= $status->getContent(); ?></p>
 			</li>
-			<li>
-				<h4>user name</h4>
-				<p>What is your git version and where have you got it from? Is your .gitignore written exactly like this
-					(case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?</p>
-			</li>
-			<li>
-				<h4>user name</h4>
-				<p>What is your git version and where have you got it from? Is your .gitignore written exactly like this
-					(case, some hidden extension, like they do on Windows)? Any invisible characters in .gitignore?</p>
-			</li>
+			<?php endforeach; ?>
 		</ul>
+	<?php endif; ?>
 	</section>
 	<section id="crops" class="blocked-content">
 		Crop display
@@ -112,7 +118,49 @@ $_plot = $this->plot;
 	</div>
 </div>
 <script>
-// This is my personal plot!
+jQuery.formReset(jQuery('#status-form'));
+jQuery('#status-form').on('submit', function(e) {
+	e.preventDefault();
+	var $form = jQuery(this);
+
+	jQuery.ajax({
+		url: $form.attr('action'),
+		type: 'post',
+		data: $form.serialize(),
+		success: function(response) {
+			/**
+			 * @TODO: create the response objects for session timeouts and redirects
+			 */
+			if (response.error && response.location) {
+				window.location = response.location;
+				return;
+			}
+
+			if (response.success) {
+				jQuery.formReset($form);
+			}
+
+			var $li = jQuery(response.data).hide();
+			$form.parent().find('.feed').prepend($li);
+			$li.fadeIn();
+
+			if (response.message) {
+				jQuery('.form-message', $form).html(response.message).fadeIn();
+			} else {
+				jQuery('.form-message', $form).fadeOut();
+			}
+		},
+		error: function() {
+			alert('error in request');
+		},
+		exception: function() {
+			alert('error in request');
+		}
+	});
+	return false;
+});
+// Plot Edit/Save functionality
+// @TODO: abstract out
 jQuery('.plot-edit').on('click', function(e) {
 	var $this = jQuery(this);
 	var editableEls = jQuery('.editable');
@@ -162,7 +210,7 @@ jQuery('#plot-save-form').on('submit', function(e) {
 	var $form = jQuery(this);
 
 	jQuery.ajax({
-		url: '/plot/save/',
+		url: $form.attr('action'),
 		type: 'post',
 		data: $form.serialize(),
 		success: function(response) {
