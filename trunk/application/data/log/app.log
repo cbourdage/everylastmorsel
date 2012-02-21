@@ -6,3 +6,54 @@
 2012-02-20T05:38:35+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
 2012-02-20T05:38:35+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
 2012-02-20T05:38:42+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T13:33:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T13:33:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T13:33:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T13:33:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T13:33:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T13:33:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T13:33:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T13:33:24+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T13:33:26+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:03+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:03+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:03+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:03+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:03+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:03+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:03+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:03+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:05+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:05+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:06+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:35:07+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:36:23+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:36:54+00:00 DEBUG (7): login-ajax
+2012-02-20T23:36:54+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:38:00+00:00 DEBUG (7): Array
+(
+    [latitude] => 41.87529987365555
+    [longitude] => -88.01084707409666
+    [user_id] => 1
+    [name] => Test Garden 101
+    [zipcode] => 60148
+    [type] => Personal
+    [role] => Owner
+)
+
+2012-02-20T23:40:56+00:00 DEBUG (7): view
+2012-02-20T23:50:42+00:00 DEBUG (7): logout
+2012-02-20T23:50:42+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:50:43+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:50:43+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:50:43+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:50:45+00:00 DEBUG (7): login
+2012-02-20T23:50:45+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:50:45+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:50:45+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:50:45+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:50:45+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:50:52+00:00 DEBUG (7): login
+2012-02-20T23:50:52+00:00 DEBUG (7): Elm_Model_User_Session::isLoggedIn -- not logged in
+2012-02-20T23:50:52+00:00 DEBUG (7): /u/quemercedes
+2012-02-20T23:50:52+00:00 DEBUG (7): view
