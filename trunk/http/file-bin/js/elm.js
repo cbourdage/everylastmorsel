@@ -1,118 +1,283 @@
-
 jQuery.noConflict();
-(function ($) {
-
-	$(function() {
-		/**
-		 * Contact form button and overlay clicks
-		 */
-		var $contactOverlay = $('#overlayContact');
-		if ($contactOverlay.length > 0) {
-			var $contactForm = jQuery('#contact-form');
-			$contactForm.on('submit', function(e) {
-				e.preventDefault();
-				var $contactForm = $(this);
-				$.ajax({
-					url: $contactForm.attr('action'),
-					type: 'post',
-					data: $contactForm.serialize(),
-					success: function(response) {
-						// if error - show above form
-						if (response.error) {
-							$contactForm.find('.form-message').html(response.message).fadeIn();
-						} else {
-							$contactOverlay.find('.content').html(response.message);
-							$contactOverlay.animate({dummy : 1}, 4000, function() {
-								$(this).fadeOut();
-								$('#overlayBg').fadeOut();
-							});
-						}
-					},
-					error: function() {
-						alert('error in request');
-					},
-					exception: function() {
-						alert('error in request');
-					}
-				});
-				return false;
-			});
-
-			// Bind clicks
-			$('.contact-button').on('click', function(e) {
-				$contactOverlay.fadeIn();
-				$('#overlayBg').fadeIn();
-			});
-		}
-	});
-}(jQuery));
-
 
 /**
- * Resizes an element
- *
- * @param $object
+ * Globals
  */
-function ResizeOverlay($object) {
-	var $overlay = jQuery($object);
-	return;
-}
-
-/**
- * Closes overlay
- *
- * @param $anchor
- */
-function CloseOverlay($anchor) {
-	jQuery($anchor).parent().fadeOut();
-	jQuery('#overlayBg').fadeOut();
-	return false;
-}
-
-
-
-
-
-
-
-
-/**
- * Not used...
- */
-var Overlay = {
-	/*
-	 * Show the lightbox-style page-overlay.  Accepts a single, optional
-	 * parameter of type function to be executed after the overlay is shown.
-	 */
-	overlayShow: function(fn) {
-		$('#overlayBg').fadeIn('slow');
-		elm.config.overlay.fadeIn('slow', function () {
-			elm.exec(fn);
-		});
-	},
-
-	/*
-	 * Hide the lightbox-style page-overlay.  Accepts a single, optional
-	 * parameter of type function to be executed after the overlay is
-	 * hidden.
-	 */
-	overlayHide: function(fn) {
-		$('#overlayBg').fadeOut('slow');
-		elm.config.overlay.fadeOut('fast', function () {
-			elm.exec(fn);
-		});
-	},
-
-	overlayUpdate: function(s) {
-		elm.config.overlay.find('.content').fadeOut('fast', function() {
-			$(this).html(s);
-			$(this).fadeIn('fast');
-		});
-	},
-
-	overlayResize: function(s) {
-		// resize in here
-	}
+var elm = {
+	domain : 'http://local.everylastmorsel.com/',
+	environment : 'development',
+	api : 'AIzaSyB5wrozaPkDDIO0Kh6tNyHEru-2gOvO40w'
 };
 
-//Overlay.prototype = new Overlay($object);
+window.elm = elm;
+
+
+// Location check
+if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(initLocation, handleNoGeolocation);
+} else if (google.gears) {
+	var geo = google.gears.factory.create('beta.geolocation');
+	geo.getCurrentPosition(initLocation, handleNoGeolocation);
+} else {
+	handleNoGeolocation();
+}
+
+function initLocation(position) {
+
+	return true;
+
+	if (jQuery('#proximity').html().length) {
+		return;
+	}
+
+	var coords = {
+		lat : position.coords.latitude,
+		long : position.coords.longitude
+	};
+
+	jQuery.ajax({
+		url: '/index/init-location/',
+		data: jQuery.serializeJSON(coords),
+		dataType: 'json',
+		success: function(response) {
+			if (response.location) {
+				window.location = response.location;
+			}
+
+			if (response.success) {
+				console.log(response);
+			} else {
+				alert('error in request');
+			}
+		},
+		error: function() {
+			// @TODO create a simple error handler function to display global message
+			alert('error in request');
+		},
+		exception: function() {
+			// @TODO create a simple error handler function to display global message
+			alert('exception in request');
+		}
+	});
+}
+function handleNoGeolocation() {
+	window.location = elm.domain + 'coming-soon/';
+}
+
+window.elm.success = function(response) {
+	/**
+	 * @TODO: create the response objects for session timeouts and redirects
+	 */
+	if (response.location) {
+		window.location = response.location;
+		return false;
+	}
+
+	return true;
+}
+
+window.elm.error = function(message, $el, location) {
+	var $message = jQuery.createErrorAlert(message).hide();
+
+	switch(location) {
+		case 'after':
+			$el.after($message);
+			break;
+		case 'before':
+			$el.before($message);
+			break;
+		case 'append':
+			$el.append($message);
+			break;
+		default:
+		case 'prepend':
+			$el.prepend($message);
+			break;
+	}
+
+	$message.fadeIn();
+}
+
+
+/**
+ * Helper functions
+ */
+jQuery.extend({
+	serializeJSON : function(json) {
+		var string = JSON.stringify(json);
+		return string.replace(/([{}"])/g, '').replace(/:/g, '=').replace(/,/g, '&');
+	},
+
+	/**
+	 * <div class="alert hide fade in">
+		  <a class="close" data-dismiss="alert">×</a>
+		  message
+		</div>
+	 */
+	createAlert : function(type, message) {
+		return jQuery('<div class="alert hide fade in ' + type + '"><a class="close" data-dismiss="alert">×</a>' + message + '</div>');
+	},
+
+	createErrorAlert : function(message) {
+		return jQuery.createAlert('alert-error', message);
+	},
+
+	createInfoAlert : function(message) {
+		return jQuery.createAlert('alert-info', message);
+	},
+
+	createWarningAlert : function(message) {
+		return jQuery.createAlert('alert-warning', message);
+	},
+
+	createSuccessAlert : function(message) {
+		return jQuery.createAlert('alert-success', message);
+	},
+
+	formReset : function(form) {
+		var formEls = form.get(0).elements;
+		for (var i = 0; i < formEls.length; i++) {
+			switch (formEls[i].type.toLowerCase()) {
+				case "text":
+				case "password":
+				case "textarea":
+					formEls[i].value = "";
+					break;
+				case "radio":
+				case "checkbox":
+					if (formEls[i].checked) {
+						formEls[i].checked = false;
+					}
+					break;
+				case "select-one":
+				case "select-multi":
+					formEls[i].selectedIndex = -1;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+});
+
+
+
+
+(function ($) {
+
+	/**
+	 * Refactor into the bootstrap plugin called
+	 * @TODO: $.fn.editable.Constructor = Editable
+	 */
+	elm.editables = function() {
+		var editable = '[data-edit="editable"]',
+			$form = null,
+			$modal = null;
+
+		// bind on click to editable trigger
+		$('body').on('click', editable, function(e) {
+			var editableEls = $('.editable');
+			$modal = $($(this).attr('data-target'));
+			$form = $modal.find('form');
+
+			if ($(this).hasClass('editing')) {
+				$(this).removeClass('editing').html('Edit');
+				editableEls.each(function(key, item) {
+					var $el = $(item);
+					if ($el.next().hasClass('update-button')) {
+						$el.next().remove();
+					}
+				});
+			} else {
+				$(this).addClass('editing').html('Done Editing');
+				editableEls.each(function(key, item) {
+					var $el = $(item);
+					if (!$el.next().hasClass('update-button')) {
+						$el.after('<button class="btn btn-warning btn-mini update-button">Update</button>');
+					}
+				});
+			}
+		});
+
+
+		$('body').on('click', '.update-button', function(e) {
+			e.preventDefault();
+			var $el = $(this).prev(),
+				dataType = $el.attr('data-type'),
+				$input = null;
+
+			switch (dataType) {
+				case 'textarea':
+					$input = $('<textarea name="' + $el.attr('data-name') + '" id="">' +  $el.html().trim() + '</textarea>');
+					break;
+				default:
+					$input = $('<input type="' + dataType + '" name="' + $el.attr('data-name') + '" id="" value="' +  $el.html().trim() + '" />');
+					break;
+			}
+
+			$form.find('.wrapper').html($input);
+			$form.find('[data-name="update"]').val($el.attr('data-name'));
+			console.log($form.find('[data-name="update"]').val());
+			$modal.find('h3').html($el.attr('data-title'));
+			$modal.modal('show');
+		});
+
+
+		$('body').on('click', '[data-submit="form"]', function(e) {
+			e.preventDefault();
+			var $form = $($(this).attr('data-form'));
+			var $alert = $form.find('.alert');
+
+			if ($alert.length) {
+				$alert.alert('close');
+			}
+
+			$.ajax({
+				url: $form.attr('action'),
+				type: 'post',
+				data: $form.serialize(),
+				success: function(response) {
+					if (!elm.success(response)) {
+						return;
+					}
+
+					if (response.success) {
+						$alert = jQuery.createSuccessAlert(response.message).hide();
+
+						var inputName = $form.find('[data-name="update"]').val();
+						console.log($form.find('[data-name="update"]').val());
+						$('.editable').each(function(key, item) {
+							var $el = $(item);
+							if ($el.attr('data-name') == inputName) {
+								$el.html(response.value);
+							}
+						});
+
+						window.setTimeout(function() {
+							$modal.modal('hide');
+							$.formReset($form);
+							$alert.alert('close');
+						}, 2000);
+					} else {
+						$alert = jQuery.createErrorAlert(response.message).hide();
+					}
+
+					if ($alert.length) {
+						$form.prepend($alert);
+						$alert.fadeIn();
+					}
+				},
+				error: function() {
+					elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
+				},
+				exception: function() {
+					elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
+				}
+			});
+		});
+	};
+
+	$(function() {
+		elm.editables();
+	});
+}(jQuery));

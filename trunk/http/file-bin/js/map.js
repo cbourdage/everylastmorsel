@@ -10,38 +10,24 @@ function initialize() {
         zoom: zoomLevel,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    map = new google.maps.Map(document.getElementById("mapCanvas"), options);
+    map = new google.maps.Map(document.getElementById("map-canvas"), options);
 	window.map = map;
 
 	// Setup initial location
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-			map.setCenter(initialLocation);
-			initializeMarker(initialLocation);
-        }, function() {
-            handleNoGeolocation(true);
-        });
-    }
-	else if (google.gears) {
+        navigator.geolocation.getCurrentPosition(initializeMarker);
+    } else if (google.gears) {
         var geo = google.gears.factory.create('beta.geolocation');
-        geo.getCurrentPosition(function(position) {
-            initialLocation = new google.maps.LatLng(position.latitude, position.longitude);
-            map.setCenter(initialLocation);
-        }, function() {
-            handleNoGeolocation(true);
-        });
-    }
-    else {
-        handleNoGeolocation(true);
+        geo.getCurrentPosition(initializeMarker);
     }
 
-	function initializeMarker(initialLocation) {
+	function initializeMarker(position) {
 		var isFirst = true;
+		var initialLocation = new google.maps.LatLng(position.latitude, position.longitude)
 		marker = new google.maps.Marker({
 			map: map,
 			draggable: true,
-			animation: google.maps.Animation.DROP,
+			animation: google.maps.Animation.DROP
 			//position: initialLocation
 		});
 
@@ -62,7 +48,6 @@ function initialize() {
 				lat : event.latLng.lat(),
 				long : event.latLng.lng()
 			};
-
 			jQuery.ajax({
 			  	url: '/index/plot-point/',
 			  	data: jQuery.serializeJSON(coords),
@@ -89,19 +74,3 @@ function initialize() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
-function handleNoGeolocation(errorFlag) {
-	if (errorFlag == true) {
-		alert("Geolocation service failed.");
-		return;
-	}
-
-	var options = {
-		map: map,
-		position: initialLocation,
-		content: 'Supported'
-	};
-
-	var infowindow = new google.maps.InfoWindow(options);
-	map.setCenter(initialLocation);
-}

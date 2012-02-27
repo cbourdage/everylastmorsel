@@ -13,7 +13,6 @@ class Elm_UserController extends Elm_User_AbstractController
 
 		// @TODO figure out redirects for login and registration pages - all pages for that matter.
         $action = $this->getRequest()->getActionName();
-		Bootstrap::log($action);
         $pattern = '/^(create|login)/i';
         if (!preg_match($pattern, $action)) {
             if (!$this->_getSession()->authenticate($this)) {
@@ -306,5 +305,60 @@ Bootstrap::log($response);
 		}
 
 		$this->_redirect('/user/settings');
+	}
+
+	/**
+	 *
+	 */
+	public function saveAction()
+	{
+		$this->_initAjax();
+		$session = $this->_getSession();
+		if (!$session->isLoggedIn()) {
+			$response = array(
+				'success' => false,
+				'error' => true,
+				'location' => $this->_helper->url('user/login')
+			);
+        } else {
+			if ($this->getRequest()->isPost()) {
+				$post = $this->getRequest()->getPost();
+				$user = Bootstrap::getModel('user')->load($post['user_id']);
+				$user->setData($post['user_update'], $post[$post['user_update']]);
+				$user->save();
+				$response = array(
+					'success' => true,
+					'error' => false,
+					'message' =>'Ah, success!',
+					'value' => $user->getData($post['user_update'])
+				);
+			} else {
+				$response = array(
+					'success' => false,
+					'error' => true,
+					'message' =>'Oops! Check required fields and try again.'
+				);
+			}
+		}
+
+		$this->_helper->json->sendJson($response);
+	}
+
+	/**
+	 * User image upload action
+	 */
+	public function imageUploadAction()
+	{
+		$request = $this->getRequest();
+		if (!$request->getParam('u', false)) {
+			$this->_redirect('/');
+		}
+
+		$user = Bootstrap::getModel('user')->load($request->getParam('u'));
+		if ($request->isPost()) {
+			$user->uploadImage($request->getParams());
+		}
+
+		$this->_redirect('/u/' . $user->getAlias());
 	}
 }

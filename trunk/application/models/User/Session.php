@@ -77,9 +77,6 @@ class Elm_Model_User_Session extends Colony_Session
      */
     public function isLoggedIn()
     {
-		if (!(bool)$this->user) {
-			Bootstrap::log(__METHOD__ . ' -- not logged in');
-		}
         return (bool)$this->user && (bool)$this->checkUserId($this->user->getId());
     }
 
@@ -136,6 +133,7 @@ class Elm_Model_User_Session extends Colony_Session
         if (!$this->isLoggedIn()) {
             $this->beforeAuthUrl = $action->getCurrentUrl();
 			Bootstrap::log('not logged in: ' . __METHOD__);
+			Bootstrap::log($this->beforeAuthUrl);
             return false;
         }
         return true;

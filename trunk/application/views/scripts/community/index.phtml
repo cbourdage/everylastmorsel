@@ -10,7 +10,7 @@ $_session = Bootstrap::getSingleton('user/session');
 			<h2><a href="<?php echo $u->getUrl(); ?>" title="<?php echo $u->getName(); ?>"><?php echo $u->getName(); ?></a></h2>
 			<p>
 				Location: <em><?php $u->getLocation(); ?></em>
-				<?php if ($_session->isLoggedIn() && $u->isMe($_session->user)) : ?>
+				<?php if ($_session->isLoggedIn() && $_session->user->isMe($u)) : ?>
 					Me!
 				<?php endif; ?>
 			</p>

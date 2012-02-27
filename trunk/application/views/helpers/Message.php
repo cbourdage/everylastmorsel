@@ -13,13 +13,16 @@ class Elm_View_Helper_Message extends Zend_View_Helper_Abstract
 		$html = '';
 		$session = Bootstrap::getSingleton('user/session');
 		if ($allMessages = $session->getMessages($clear)) {
-			$html = '<ul class="messages">';
+			//$html = '<ul class="messages">';
 			foreach ($allMessages as $type => $messages) {
 				foreach ($messages as $message) {
-					$html .= '<li class="' . $type . '">' . $message . '</li>';
+					$html .= '<div class="alert fade in alert-' . $type . '">'
+						. '<a class="close" data-dismiss="alert">×</a>'
+						. '<p>' . $message . '</p>'
+						. '</div>';
 				}
 			}
-			$html .= '</ul>';
+			//$html .= '</ul>';
 		}
 		return $html;
 	}

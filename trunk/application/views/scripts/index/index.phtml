@@ -1,13 +1,16 @@
 
 <h3>Map your Produce</h3>
 <div role="aside" class="grid_5 alpha omega left-column">
-	left content
+	Left greeting!
 </div>
 <div class="grid_7 alpha omega right-column">
-	<div id="mapCanvas"></div>
+	<div id="map-canvas"></div>
 </div>
+
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=<?php echo Bootstrap::getAppConfig('mapsapi'); ?>&sensor=false"></script>
 <script type="text/javascript" src="/file-bin/js/map.js"></script>
 <script>
+plotPoint('41.8787730197', '-88.0089498803');
 var plots = <?php echo $this->Map()->getPlotJson(); ?>;
 var markers = new Array();
 for (var i = 0; i < plots.length; i++) {

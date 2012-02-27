@@ -20,15 +20,6 @@
 
 		<?= $this->render('footer.phtml'); ?>
 	</div>
-
-	<?php if (strlen($this->placeholder('contact-form')) > 0) : ?>
-		<div class="overlay" id="overlayContact" style="display: none;">
-			<a class="close" onclick="CloseOverlay(this);"></a>
-			<div class="content"><?= $this->placeholder('contact-form'); ?></div>
-		</div>
-	<?php endif; ?>
-
-	<div id="overlayBg" style="display: none;"></div>
 	<div id="fb-root"></div>
 </body>
 </html>

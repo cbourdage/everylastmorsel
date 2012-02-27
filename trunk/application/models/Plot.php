@@ -178,7 +178,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		$session = Bootstrap::getSingleton('user/session');
 		$adapter = new Zend_File_Transfer_Adapter_Http();
 		$adapter->setDestination($destination)
-			->addValidator('Size', false, 102400)	// limit to 100K
+			->addValidator('Size', false, (102400*6))	// limit to 100K
 			->addValidator('Extension', false, 'jpg,png,gif,jpeg'); // only JPEG, PNG, and GIFs
 
 		$files = $adapter->getFileInfo();
@@ -209,8 +209,8 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 						->setCaption($params['caption'][$imageIdx]);
 
 					// Set image data
-					$image->setThumbnail(Elm_Model_Plot_Image::getPlotImageUrl($this) . '/' . $newFilename)
-						->setFull(Elm_Model_Plot_Image::getPlotImageUrl($this) . '/' . $newFilename);
+					$image->setThumbnail(Elm_Model_Plot_Image::getImageUrl($this) . '/' . $newFilename);
+					$image->setFull(Elm_Model_Plot_Image::getImageUrl($this) . '/' . $newFilename);
 					$image->save();
 					$successful++;
 				} else {
@@ -259,7 +259,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 */
 	protected function _getImageDestination()
 	{
-		$destination = Bootstrap::getBaseDir(Elm_Model_Plot_Image::DESTINATION_DIR) . Elm_Model_Plot_Image::getPlotImagePath($this);
+		$destination = Bootstrap::getBaseDir(Elm_Model_Plot_Image::DESTINATION_DIR) . Elm_Model_Plot_Image::getImagePath($this);
 		if (!is_dir($destination)) {
 			mkdir($destination, 0777, true);
 		}

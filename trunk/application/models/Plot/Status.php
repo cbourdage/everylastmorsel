@@ -37,6 +37,29 @@ class Elm_Model_Plot_Status extends Colony_Model_Abstract
 	}
 
 	/**
+	 * @param $id
+	 * @param null $limit
+	 * @return array
+	 */
+	public function getByUserId($id, $limit = null)
+	{
+		$select = $this->_getResource()->select()
+			->where('user_id IN ?', $id)
+			->order('created_at DESC');
+
+		if ($limit) {
+			$select->limit($limit);
+		}
+
+		$statuses = array();
+		foreach ($this->_getResource()->fetchAll($select) as $row) {
+			$statuses[] = Bootstrap::getModel('plot_status')->load($row->update_id);
+		}
+
+		return $statuses;
+	}
+
+	/**
 	 * @return bool
 	 */
 	public function isValid()

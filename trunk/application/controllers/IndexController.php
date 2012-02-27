@@ -22,6 +22,50 @@ class Elm_IndexController extends Elm_AbstractController
     {
     }
 
+	public function comingSoonAction()
+	{
+		$this->_initAjax();
+		die('deadd');
+	}
+
+	public function initLocationAction()
+	{
+		$this->_initAjax();
+
+		if ($location = Bootstrap::getSingleton('session')->location) {
+			$response = array(
+				'success' => true,
+				'error' => false,
+				'city' => $location->getCity(),
+				'state' => $location->getState(),
+				'zip' => $location->getZip()
+			);
+		} else {
+			$request = $this->getRequest();
+			if ($request->getParam('lat', false) && $request->getParam('long', false)) {
+				$geo = new Elm_Model_Geolocation($request->getParam('lat'), $request->getParam('long'));
+
+				// set into session to reduce the # of calls
+				Bootstrap::getSingleton('session')->location = $geo;
+				$response = array(
+					'success' => true,
+					'error' => false,
+					'city' => $geo->getCity(),
+					'state' => $geo->getState(),
+					'zip' => $geo->getZip()
+				);
+			} else {
+				$response = array(
+					'success' => false,
+					'error' => true,
+					'location' => $this->view->url('plot/startup')
+				);
+			}
+		}
+
+		$this->_helper->json->sendJson($response);
+	}
+
 	/**
 	 * Help Action
 	 *

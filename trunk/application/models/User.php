@@ -7,6 +7,8 @@ class Elm_Model_User extends Colony_Model_Abstract
     const EXCEPTION_INVALID_EMAIL_OR_PASSWORD = 2;
     const EXCEPTION_EMAIL_EXISTS              = 3;
 
+	const DESTINATION_DIR = 'http/media/user';
+
 	private $_plots = array();
 
 	private $_messages = array();
@@ -79,12 +81,13 @@ class Elm_Model_User extends Colony_Model_Abstract
 	 * Checks if the current session user matches the
 	 * instantiated user
 	 *
+	 * @param \Elm_Model_User $user
 	 * @return bool
 	 */
-	public function isMe()
+	public function isMe(Elm_Model_User $user)
 	{
 		$session = Bootstrap::getSingleton('user/session');
-		if ($session->isLoggedIn() && $session->user->getId() == $this->getId()) {
+		if ($session->isLoggedIn() && $session->user->getId() == $user->getId()) {
 			return true;
 		}
 		return false;
@@ -218,58 +221,64 @@ class Elm_Model_User extends Colony_Model_Abstract
     }
 
     /**
-     * Validate customer attribute values.
-     * For existing customer password + confirmation will be validated only when password is set (i.e. its change is requested)
-     *
-     * @return bool
-     */
-    public function validate()
-    {
-        $errors = array();
-        $customerHelper = Mage::helper('customer');
-        if (!Zend_Validate::is( trim($this->getFirstname()) , 'NotEmpty')) {
-            $errors[] = $customerHelper->__('The first name cannot be empty.');
-        }
+	 * Adds a new image to the plot
+	 *
+	 * @param array $params
+	 * @return bool
+	 */
+	public function uploadImage($params)
+	{
+		$destination = $this->_getImageDestination();
 
-        if (!Zend_Validate::is( trim($this->getLastname()) , 'NotEmpty')) {
-            $errors[] = $customerHelper->__('The last name cannot be empty.');
-        }
+		$session = Bootstrap::getSingleton('user/session');
+		$adapter = new Zend_File_Transfer_Adapter_Http();
+		$adapter->setDestination($destination)
+			->addValidator('Size', false, (102400*6))	// limit to x*100K
+			->addValidator('Extension', false, 'jpg,png,gif,jpeg'); // only JPEG, PNG, and GIFs
 
-        if (!Zend_Validate::is($this->getEmail(), 'EmailAddress')) {
-            $errors[] = $customerHelper->__('Invalid email address "%s".', $this->getEmail());
-        }
+		$info = $adapter->getFileInfo('image');
+		list($temp, $ext) = explode('.', $info['name']);
+		$newFilename = md5($temp) . '.' . $ext;
 
-        $password = $this->getPassword();
-        if (!$this->getId() && !Zend_Validate::is($password , 'NotEmpty')) {
-            $errors[] = $customerHelper->__('The password cannot be empty.');
-        }
-        if (strlen($password) && !Zend_Validate::is($password, 'StringLength', array(6))) {
-            $errors[] = $customerHelper->__('The minimum password length is %s', 6);
-        }
-        $confirmation = $this->getConfirmation();
-        if ($password != $confirmation) {
-            $errors[] = $customerHelper->__('Please make sure your passwords match.');
-        }
+		try {
+			// Rename filter
+			$adapter->addFilter('Rename', array(
+				'target' => $destination . DIRECTORY_SEPARATOR . $newFilename,
+				'overwrite' => true
+			));
 
-        $entityType = Mage::getSingleton('eav/config')->getEntityType('customer');
-        $attribute = Mage::getModel('customer/attribute')->loadByCode($entityType, 'dob');
-        if ($attribute->getIsRequired() && '' == trim($this->getDob())) {
-            $errors[] = $customerHelper->__('The Date of Birth is required.');
-        }
-        $attribute = Mage::getModel('customer/attribute')->loadByCode($entityType, 'taxvat');
-        if ($attribute->getIsRequired() && '' == trim($this->getTaxvat())) {
-            $errors[] = $customerHelper->__('The TAX/VAT number is required.');
-        }
-        $attribute = Mage::getModel('customer/attribute')->loadByCode($entityType, 'gender');
-        if ($attribute->getIsRequired() && '' == trim($this->getGender())) {
-            $errors[] = $customerHelper->__('Gender is required.');
-        }
+			// Receive and save
+			if ($adapter->receive('image')) {
+				// Set image data
+				//$this->setData('exif_data', exif_read_data($info['destination'] . DIRECTORY_SEPARATOR . $newFilename));
+				$this->setImage(Elm_Model_User_Image::getImageUrl($this) . '/' . $newFilename);
+				$this->save();
+				$session->addSuccess('Successfully updated your image');
+			} else {
+				$errors = $adapter->getMessages();
+				foreach ($errors as $e) {
+					$session->addError($e);
+				}
+			}
+		} catch (Exception $e) {
+			Bootstrap::logException($e);
+			$session->addException($e);
+		}
+	}
 
-        if (empty($errors)) {
-            return true;
-        }
-        return $errors;
-    }
+	/**
+	 * @return string
+	 */
+	protected function _getImageDestination()
+	{
+		$destination = Bootstrap::getBaseDir(self::DESTINATION_DIR) . Elm_Model_User_Image::getImagePath($this);
+		Bootstrap::log($destination);
+		if (!is_dir($destination)) {
+			mkdir($destination, 0777, true);
+		}
+
+		return $destination;
+	}
 
 	/**
 	 * Returns a user url

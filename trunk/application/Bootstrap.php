@@ -68,11 +68,14 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $this->_view->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8');
         $this->_view->headMeta()->appendHttpEquiv('Content-Language', 'en-US');
         $this->_view->headLink()
-             ->appendStylesheet('/file-bin/css/960/reset.css')
-             ->appendStylesheet('/file-bin/css/960/960.css')
-             ->appendStylesheet('/file-bin/css/screen.css');
+            ->appendStylesheet('/file-bin/css/960/reset.css')
+		 	->appendStylesheet('/file-bin/css/960/960.css')
+			->appendStylesheet('/file-bin/css/bootstrap.css')
+            ->appendStylesheet('/file-bin/css/screen.css');
+		$this->_view->headScript()
+			->appendFile('/file-bin/js/elm.js', 'text/javascript');
         $this->_view->headTitle('Every Last Morsel')
-			->setSeparator('|');
+			->setSeparator(' | ');
     }
 
     /**
@@ -181,6 +184,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		    )
 		);
 		$frontController->getRouter()->addRoute('faq', $route);
+
+		// coming-soon
+		$route = new Zend_Controller_Router_Route(
+		    'coming-soon',
+		    array(
+		    	'controller' => 'index',
+        		'action' => 'coming-soon',
+		    )
+		);
+		$frontController->getRouter()->addRoute('coming-soon', $route);
     }
 
 	/**
@@ -195,11 +208,33 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		return APPLICATION_PATH . '/../' . $path;
 	}
 
+	/**
+	 * Returns the base url for the app
+	 *
+	 * @static
+	 * @param null $type
+	 * @return string
+	 */
 	public static function getBaseUrl($type = null)
 	{
-		$config = Zend_Registry::get('config');
-		$baseUrl = $config['app']['baseurl'];
+		$baseUrl = self::getAppConfig('baseurl');
 		return $type !== null ? $baseUrl . $type : $baseUrl;
+	}
+
+	/**
+	 * Returns the app. namespace config settings
+	 *
+	 * @static
+	 * @param null $option
+	 * @return mixed
+	 */
+	public static function getAppConfig($option = null)
+	{
+		$config = Zend_Registry::get('config');
+		if ($option === null) {
+			return $config['app'];
+		}
+		return $config['app'][$option];
 	}
 
 	/**

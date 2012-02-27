@@ -32,21 +32,32 @@ class Elm_CommunicationController extends Elm_AbstractController
 	public function sendAction()
 	{
 		$this->_initAjax(true);
+
 		if ($this->getRequest()->isPost()) {
-			$message = Bootstrap::getModel('communication')->init($this->getRequest()->getParams());
-			if ($message->send()) {
-				$this->_helper->json->sendJson(array(
-					'success' => true,
-					'error' => false,
-					'message' => 'Successfully sent your message along!'
-				));
-			} else {
-				$this->_helper->json->sendJson(array(
-					'success' => true,
-					'error' => false,
-					'message' => 'Error sending message at this time. We sincerely apologize.'
-				));
-			}
+			$data = $this->getRequest()->getParams();
+			$form = new Elm_Model_Form_Communication_Contact();
+			if ($form->isValid($data)) {
+				$message = Bootstrap::getModel('communication')->init($data);
+				if ($message->send()) {
+					$this->_helper->json->sendJson(array(
+						'success' => true,
+						'error' => false,
+						'message' => 'Successfully sent your message along!'
+					));
+				} else {
+					$this->_helper->json->sendJson(array(
+						'success' => false,
+						'error' => true,
+						'message' => 'Error sending message at this time. We sincerely apologize.'
+					));
+				}
+			}  else {
+					$this->_helper->json->sendJson(array(
+						'success' => false,
+						'error' => true,
+						'message' => 'Check the form is filled out.'
+					));
+				}
 		}
 	}
 }

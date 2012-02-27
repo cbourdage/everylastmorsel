@@ -4,18 +4,21 @@
 <div id="contact-form-wrapper">
 	<h4>Note from...</h4>
 	<form action="<?php echo $form->getAction() ?>" method="post" id="contact-form">
+		<div class="alert fade in" style="display: none;">
+		  <a class="close" data-dismiss="alert">×</a>
+		  <p></p>
+		</div>
 		<?php if (Zend_Registry::isRegistered('current_user')) : ?>
 			<input type="hidden" name="user_to_id" value="<?php echo Zend_Registry::get('current_user')->getId(); ?>" />
 		<?php endif; ?>
 		<input type="hidden" name="user_from_id" value="<?php echo Bootstrap::getSingleton('user/session')->user->getId(); ?>" />
-		<div class="form-message no-display"></div>
 		<ul class="fieldset">
 			<?php foreach($form->getElements() as $element) : ?>
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
 		</ul>
 		<div class="buttons">
-			<button type="submit" name="Send" id="contact-submit">Send</button>
+			<button type="submit" class="btn btn-primary" name="Send" id="contact-submit">Send</button>
 		</div>
 	</form>
 </div>

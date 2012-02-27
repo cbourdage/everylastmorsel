@@ -6,6 +6,8 @@ class Elm_User_AbstractController extends Elm_AbstractController
 {
 	protected $_session;
 
+	protected $_user;
+
 	public function init()
 	{
 		$action = $this->getRequest()->getActionName();
@@ -24,12 +26,19 @@ class Elm_User_AbstractController extends Elm_AbstractController
 		return $this->_session;
 	}
 
+	protected function _initCurrentUser()
+	{
+		$this->_user= Bootstrap::getModel('user')->loadByAlias($this->getRequest()->getParam('alias'));
+		Zend_Registry::set('current_plot', $this->_user);
+		return $this;
+	}
+
 	/**
 	 * Initializes the User layout objects
 	 */
 	protected function _initLayout()
 	{
-		$this->view->placeholder('contact-form')->set($this->view->render('communication/_form.phtml'));
+		$this->view->placeholder('contact-modal')->set($this->view->render('communication/_modal.phtml'));
 		$this->view->placeholder('sidebar')->set($this->view->render('user/_sidebar.phtml'));
 	}
 }

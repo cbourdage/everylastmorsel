@@ -6,11 +6,8 @@ $_plot = $this->plot;
 <?php echo $this->Message()->render(); ?>
 
 <div class="inner-content-wrapper plot">
-	<h2>
-		<a href="<?php echo $_plot->getUrl(); ?>" title="<?php echo $_plot->getName(); ?>"><?php echo $_plot->getName(); ?></a>
-	</h2>
-
-	<h3>Current images</h3>
+	<h2><a href="<?php echo $_plot->getUrl(); ?>" title="<?php echo $_plot->getName(); ?>"><?php echo $_plot->getName(); ?></a></h2>
+	<h4>Current images</h4>
 	<section class="photo-timeline">
 		<?php if ($images = $_plot->getImages()) : ?>
 		<ul class="list list-block">

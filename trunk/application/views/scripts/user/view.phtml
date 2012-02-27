@@ -9,16 +9,22 @@ $_user = $this->user;
 		<ul class="list-inline">
 			<li>
 				<strong>Location</strong>
-				<span class="editable" data-name="Location" data-value="<?php echo $_user->getLocation(); ?>"><?php echo $_user->getLocation(); ?></span>
+				<span class="editable" data-title="Location" data-name="location" data-type="input"><?php echo $_user->getLocation(); ?></span>
 			</li>
 		</ul>
-		<?php if ($_session->isLoggedIn() && $_session->user->isMe()) : ?>
-			<a href="#edit" title="Edit Account Information" id="userEdit">Edit</a>
-		<?php endif; ?>
+		<p class="controls">
+			<?php if ($_session->isLoggedIn() && $_session->user->isMe($_user)) : ?>
+				<a href="#" class="btn" title="Edit Account Information" data-edit="editable" data-target="#editModalUser" id="editUserTrigger">Edit</a>
+			<?php endif; ?>
+			<?php if ($_session->isLoggedIn() && $_session->user->isMe($_user) && $this->User()->canShowTips()) : ?>
+				<a href="#" title="Tool tips!" class="tips">Tool Tips/help is available</a>
+			<?php endif; ?>
+		</p>
 	</div>
 
 	<ul id="tabMenu" class="list-inline">
 		<li><a href="#plots" title="Where I'm Growing">Plots</a></li>
+		<li><a href="#feed" title="What's new?">Latest</a></li>
 		<li><a href="#about" title="Who am I?">About</a></li>
 	</ul>
 
@@ -37,24 +43,57 @@ $_user = $this->user;
 			<p>Sorry no plots associated. Get growing!</p>
 		<?php endif; ?>
 	</section>
+
+	<section id="feed" class="blocked-content">
+		<?php $feed = $this->User()->getFeed($_user); ?>
+
+		<?php if (count($feed) > 0) : ?>
+		<ul>
+		<?php foreach ($feed as $item) : ?>
+			<li class="<?php echo $item->getType(); ?>">
+				<?php echo $item->getContent(); ?>
+				<?php echo $item->getCreatedAt(); ?>
+			</li>
+		<?php endforeach; ?>
+		</ul>
+		<?php else : ?>
+			<div class="alert alert-info fade in">
+				<a class="close" data-dismiss="alert">×</a>
+				<p>Hey! Lets get involved.</p>
+			</div>
+		<?php endif; ?>
+	</section>
+
 	<section id="about" class="blocked-content">
-		<div class="editable" data-name="about" data-value="<?php echo $_user->getAbout(); ?>">
-			About me...
+		<div class="editable" data-title="About myself" data-name="about" data-type="textarea">
+			<?= $_user->getAbout() ? $_user->getAbout() : 'Tell us a little about yourself...'; ?>
 		</div>
 	</section>
 </div>
 
+<div class="modal hide fade edit-modal" id="editModalUser">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+		<h3></h3>
+	</div>
+	<div class="modal-body">
+		<form action="<?= $this->url('user/save'); ?>" type="post" id="editFormUser">
+			<input type="hidden" data-name="identifier" name="user_id" value="<?= $_user->getId(); ?>" />
+			<input type="hidden" data-name="update" name="user_update" value="" />
+			<div class="wrapper"></div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn" data-dismiss="modal">Close</a>
+		<a href="#" class="btn btn-primary" data-submit="form" data-form="#editFormUser">Save</a>
+	</div>
+</div>
+
 <script>
-jQuery('#edit').on('click', function(e) {
-	var $this = jQuery(this);
-	var editableEls = jQuery('.editable');
-
-	editableEls.each(function(key, item) {
-
-	})
-});
-
-jQuery('.editable').on('click', function(e) {
-	var $this = jQuery(this);
+jQuery('#editUserTrigger').on('click', function(e) {
+	var $imageForm = jQuery('#imageUploadForm');
+	if ($imageForm.length) {
+		$imageForm.toggleClass('hide');
+	}
 });
 </script>

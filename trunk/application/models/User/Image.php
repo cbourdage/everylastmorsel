@@ -1,15 +1,10 @@
 <?php
 
 
-class Elm_Model_Plot_Image extends Colony_Model_Abstract implements Elm_Model_Image_Interface
+class Elm_Model_User_Image implements Elm_Model_Image_Interface
 {
-	const LOG_FILE = 'plot-images.log';
-	const DESTINATION_DIR = 'http/media/plot';
-
-	public function _construct()
-    {
-        $this->_init('plot_image');
-    }
+	const LOG_FILE = 'user-images.log';
+	const DESTINATION_DIR = 'http/media/user';
 
 	/**
 	 * @static

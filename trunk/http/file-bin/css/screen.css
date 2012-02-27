@@ -35,44 +35,22 @@ a:hover { background: #F6FD79; color: #666; }
 .tRight { text-align: right; }
 .tCenter { text-align: center; }
 
+ul.list-inline { margin: 0; }
 ul.list-inline li { display: inline; }
-ul.list-block { float: left; width: 100%; }
+ul.list-block { float: left; margin: 0; width: 100%; }
 ul.list-block li { display: block; float: left; }
 
-/** Buttons and forms */
-a.button,
-button {
-	background: #CC7254;
-	border: 0;
-	border-radius: 2px;
-	-moz-border-radius: 2px;
-	-o-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	box-shadow: 0 1px 1px rgba(100,0,0,.9);
-	-moz-box-shadow: 0 1px 1px rgba(100,0,0,.9);
-	-o-box-shadow: 0 1px 1px rgba(100,0,0,.9);
-	-webkit-box-shadow: 0 1px 1px rgba(100,0,0,.9);
-	color: #fff;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 14px;
-	margin: 5px;
-	padding: 7px 30px;
-	text-align: center;
-}
-a.button:active,
-button:active { position: relative; top: 1px; }
-input[type="text"], input[type="password"],
-input[type="email"], textarea {
- 	border: 1px solid #ccc;
-	padding: 4px 8px;
-	width: 170px;
-}
-textarea { height: 50px; }
-.buttons { clear: both; }
-.fieldset { }
-.fieldset li { margin-bottom: 15px; }
-.fieldset li label { display: block; margin-bottom: 3px; }
+/** Buttons and form defaults */
+button.btn, a.btn { }
+form ul.fieldset { list-style: none; margin-left: 0; }
+form ul.fieldset li { margin-bottom: 5px; }
+form ul.fieldset li label { margin: 0; }
+form ul.fieldset li input { margin: 0; }
+
+/** Overlay */
+.modal { max-height: 600px; }
+.modal .modal-header h3 { font-size: 20px; margin-top: 10px; }
+.modal form { margin-bottom: 0; }
 
 /** Outlining Wrappers */
 div#page { }
@@ -84,61 +62,11 @@ header ul li { color: #666; font-size: 11px;  margin-left: 10px; }
 header ul li:after { content: '|'; margin-left: 10px; }
 header ul li:last-child:after { content: ''; }
 
-
-/** Overlay */
-#overlayBg {
-	background: rgba(255,255,255,.4);
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 50;
-}
-.overlay {
-	background: #fff;
-	border: 1px solid #ddd;
-	box-shadow: 2px 2px 4px rgba(0,0,0,.3);
-	-moz-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
-	-o-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
-	-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
-	display: block;
-	overflow: hidden;
-	padding: 25px;
-	position: absolute;
-	z-index: 55;
-	top: 200px;
-	left: 40%;
-	min-height: 200px;
-	min-width: 300px;
-}
-.overlay a.close {
-	background: transparent url('../images/close.png');
-	display: block;
-	height: 20px;
-	width: 20px;
-	font-size: 12px;
-	position: absolute;
-	right: 3px;
-	top: 3px;
-}
-.overlay .content { }
-.overlay .content h4 { font-size: 16px; margin-bottom: 10px; }
-.overlay .content p.buttons {
-	margin-top: 20px;
-	text-align: center;
-	width: 100%;
-}
-.overlay .content p.buttons button { }
-
-
 /** Main content */
 div#content { }
 
 /** Map Canvas */
-div#mapCanvas { height: 300px; }
+div#map-canvas { height: 300px; }
 
 /** Steps */
 #step-1,
@@ -167,18 +95,13 @@ div#content .community ul li { margin: 0 25px 25px 0; width: 160px; }
 div#content .community ul li h2 { font-size: 15px; }
 
 /** Message displays */
-div#content .message-block { display: none; }
-.form-message {
-	border: 1px solid #452C18;
-	background: #CC7254;
-	color: #fff;
-	margin-bottom: 10px;
-	padding: 8px 10px;
-}
+.alert p { margin: 0; }
 
 /** User main content */
-div#content .inner-ontent-wrapper > h2 + ul li { color: #999; font-size: 11px; }
-div#content .inner-ontent-wrapper > h2 + ul li strong { color: #666; }
+div#content .inner-content-wrapper > h2 + ul li { color: #999; font-size: 11px; }
+div#content .inner-content-wrapper > h2 + ul li strong { color: #666; }
+div#content .inner-content-wrapper .top { position: relative; }
+div#content .inner-content-wrapper .top .controls { position: absolute; top: 5px; right: 10px; }
 div#content #tabMenu { margin-top: 10px; }
 div#content #tabMenu li { margin-right: 20px; }
 div#content #tabMenu li:last-child { margin: 0; }
@@ -193,7 +116,9 @@ div#content #plots ul li h3 { font-size: 16px; margin-top: 5px; }
 
 /** Plot main content */
 #socializing form { margin-bottom: 25px; }
-#socializing form label { display: block; margin-bottom: 4px; }
+#socializing form .type-selection { float: left; width: 100%; }
+#socializing form .type-selection label { float: left; margin-right: 10px; }
+#socializing form .type-selection label input { margin-right: 3px; }
 #socializing form p.input textarea {
 	clear: left;
 	height: 50px;
@@ -203,6 +128,12 @@ div#content #plots ul li h3 { font-size: 16px; margin-top: 5px; }
 #socializing .feed li { margin-bottom: 15px; }
 #socializing .feed li h4 { }
 #socializing .feed li p { }
+
+/** Contact form modal */
+#contactModalForm textarea { height: 100px; width: 520px; }
+
+/** Edit modals */
+.edit-modal textarea { height: 130px; width: 520px; }
 
 /** Left Column */
 div#columnLeft { border-right: 1px solid #ddd; min-height: 200px; }

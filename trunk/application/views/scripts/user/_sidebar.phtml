@@ -1,20 +1,32 @@
 <?php
 $session = Bootstrap::getSingleton('user/session');
 if (Zend_Registry::isRegistered('current_user')) : ?>
-	<?php $user = Zend_Registry::get('current_user'); ?>
-	<h3><?php echo $user->getFirstname() . ' ' . $user->getLastname(); ?></h3>
+	<?php $_user = Zend_Registry::get('current_user'); ?>
 	<div id="mainImage">
-		<img src="/blank.jpg" title="" width="200px" />
+		<img src="<?php echo $this->User()->getImage($_user); ?>" title="<?php echo $_user->getName(); ?>" width="200px" />
+
+		<form class="hide" id="imageUploadForm" action="<?php echo $this->url('user/image-upload', array('u' => $_user->getId())); ?>" method="post" enctype="multipart/form-data">
+			<ul class="fieldset list-block">
+				<li>
+					<label for="image-1" class="optional">Image</label>
+					<div><input type="file" name="image" id="image-1"></div>
+				</li>
+			</ul>
+			<p class="buttons">
+				<button type="submit" class="btn btn-danger">Upload</button>
+			</p>
+		</form>
 	</div>
 	<div id="lowerColumn">
-		<?php //if ($session->isLoggedIn() && !$session->user->isMe()) : ?>
-		<?php if ($session->isLoggedIn() && strlen($this->placeholder('contact-form')) > 0) : ?>
+		<?php if ($session->isLoggedIn() && !$session->user->isMe($_user) && strlen($this->placeholder('contact-modal')) > 0) : ?>
 			<p class="buttons">
-				<a href="#contact" class="button contact-button" title="Contact <?php echo $user->getFirstname() . ' ' . $user->getLastname(); ?>">Send Email</a>
+				<a href="#contactModal" class="btn btn-primary contact-button" data-toggle="modal" title="Contact <?php echo $_user->getFirstname() . ' ' . $_user->getLastname(); ?>">Send Email</a>
 			</p>
+
+			<?= $this->placeholder('contact-modal'); ?>
 		<?php endif; ?>
 
-		<?php if ($session->isLoggedIn() && $user->isMe()) : ?>
+		<?php if ($session->isLoggedIn() && $session->user->isMe($_user)) : ?>
 		<!--<ul id="userHub">
 			<li>something here</li>
 			<li>something here 2</li>

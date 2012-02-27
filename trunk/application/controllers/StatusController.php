@@ -79,7 +79,7 @@ class Elm_StatusController extends Elm_User_AbstractController
 							'success' => true,
 							'error' => false,
 							//'message' => '/p/' . $plot->getId()
-							'data' => '<li><h4>' . $status->getUser()->getName() . '</h4><p>' . $status->getContent() . '</p></li>'
+							'html' => '<li><h4>' . $status->getUser()->getName() . '</h4><p>' . $status->getContent() . '</p></li>'
 						);
 					} catch (Exception $e) {
 						$response = array(

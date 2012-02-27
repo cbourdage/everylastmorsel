@@ -13,7 +13,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 
 		// @TODO figure out redirects for login and registration pages - all pages for that matter.
         $action = $this->getRequest()->getActionName();
-        $pattern = '/^(images|image)/i';
+        $pattern = '/^(image|image)/i';
         if (preg_match($pattern, $action)) {
             if (!$this->_getSession()->authenticate($this)) {
                 $this->_redirect('/user/login');
@@ -126,27 +126,33 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	public function saveAction()
 	{
 		$this->_initAjax();
-		if ($this->getRequest()->isPost()) {
-			$post = $this->getRequest()->getPost();
+		$session = $this->_getSession();
 
-			Bootstrap::log(__METHOD__);
-			Bootstrap::log($post);
-
-			$plot = Bootstrap::getModel('plot')->load($this->getRequest()->getParam('plot_id'));
-			$plot->setData($post['plot_update'], $post[$post['plot_update']]);
-			$plot->save();
-			$response = array(
-				'success' => true,
-				'error' => false,
-				'message' =>'Ah, success!',
-				'value' => $plot->getData($post['plot_update'])
-			);
-		} else {
+		if (!$session->isLoggedIn()) {
 			$response = array(
 				'success' => false,
 				'error' => true,
-				'message' =>'Oops! Check required fields and try again.'
+				'location' => $this->_helper->url('user/login')
 			);
+        } else {
+			if ($this->getRequest()->isPost()) {
+				$post = $this->getRequest()->getPost();
+				$plot = Bootstrap::getModel('plot')->load($post['plot_id']);
+				$plot->setData($post['plot_update'], $post[$post['plot_update']]);
+				$plot->save();
+				$response = array(
+					'success' => true,
+					'error' => false,
+					'message' =>'Ah, success!',
+					'value' => $plot->getData($post['plot_update'])
+				);
+			} else {
+				$response = array(
+					'success' => false,
+					'error' => true,
+					'message' =>'Oops! Check required fields and try again.'
+				);
+			}
 		}
 
 		$this->_helper->json->sendJson($response);
