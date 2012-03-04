@@ -11,29 +11,37 @@ var elm = {
 
 window.elm = elm;
 
-
-// Location check
-if (navigator.geolocation) {
-	navigator.geolocation.getCurrentPosition(initLocation, handleNoGeolocation);
-} else if (google.gears) {
-	var geo = google.gears.factory.create('beta.geolocation');
-	geo.getCurrentPosition(initLocation, handleNoGeolocation);
-} else {
-	handleNoGeolocation();
-}
-
-function initLocation(position) {
-
-	return true;
-
-	if (jQuery('#proximity').html().length) {
-		return;
+// Initialize the users location
+function initLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(initPosition, handleNoGeolocation);
+	} else if (google.gears) {
+		var geo = google.gears.factory.create('beta.geolocation');
+		geo.getCurrentPosition(initPosition, handleNoGeolocation);
+	} else {
+		handleNoGeolocation();
 	}
 
-	var coords = {
-		lat : position.coords.latitude,
-		long : position.coords.longitude
-	};
+	/**
+	 * No location
+	 */
+	function handleNoGeolocation() {
+		window.location = elm.domain + 'coming-soon/';
+	}
+
+	/**
+	 * Init position
+	 *
+	 * @param position
+	 */
+	function initPosition(position) {
+		elm.myPosition = {
+			lat : position.coords.latitude,
+			long : position.coords.longitude
+		};
+	}
+
+	return;
 
 	jQuery.ajax({
 		url: '/index/init-location/',
@@ -60,22 +68,36 @@ function initLocation(position) {
 		}
 	});
 }
-function handleNoGeolocation() {
-	window.location = elm.domain + 'coming-soon/';
-}
 
+
+// Initialize location
+initLocation();
+
+
+/**
+ * Elm specifics
+ */
+
+/**
+ * checks response for location and redirects
+ *
+ * @param response
+ */
 window.elm.success = function(response) {
-	/**
-	 * @TODO: create the response objects for session timeouts and redirects
-	 */
 	if (response.location) {
 		window.location = response.location;
 		return false;
 	}
-
 	return true;
 }
 
+/**
+ * Handles logging errors for application
+ *
+ * @param message
+ * @param $el
+ * @param location
+ */
 window.elm.error = function(message, $el, location) {
 	var $message = jQuery.createErrorAlert(message).hide();
 
@@ -159,7 +181,6 @@ jQuery.extend({
 		}
 	}
 });
-
 
 
 

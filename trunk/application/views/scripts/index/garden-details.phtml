@@ -1,64 +1,104 @@
-
-<div id="step-3">
-	<h4>Well done! What would you like to call this location?</h4>
-	<div class="form-message no-display"></div>
-	<form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="formValidate">
+<div class="modal-header">
+	<a class="close" data-dismiss="modal">×</a>
+	<h3>Well done! What would you like to call this location?</h3>
+</div>
+<div class="modal-body step-3" id="stepContent">
+	<form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="formCreatePlot">
 		<?php foreach($this->form->getHiddenElements() as $element) : ?>
 			<?php echo $element->render(); ?>
 		<?php endforeach; ?>
-        <ul class="fieldset">
+		<ul class="fieldset">
 			<?php foreach($this->form->getVisibleElements() as $element) : ?>
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
 		</ul>
 
-		<div id="types" class="fLeft">
-			<p>What type of garden?</p>
-			<ul class="fieldset">
-			<?php foreach (Elm_Model_Resource_Plot::$plotTypes as $type) : ?>
-				<li class="radio">
-					<input type="radio" id="type<?php echo $type; ?>" class="radio-input" name="type" value="<?php echo $type; ?>">
-					<label><?php echo $type; ?></label>
-				</li>
-			<?php endforeach; ?>
-			</ul>
-		</div>
+		<div class="fLeft">
+			<div id="types">
+				<p>What type of garden?</p>
+				<ul class="fieldset">
+				<?php foreach (Elm_Model_Resource_Plot::$plotTypes as $key => $type) : ?>
+					<li class="radio">
+						<?php if (!is_array($type)) $key = $type; ?>
+						<label for="type<?php echo $key; ?>" class="radio">
+							<input type="radio" id="type<?php echo $key; ?>" class="radio" name="type" value="<?php echo $key; ?>">
+							<?php echo $key; ?>
+						</label>
 
-		<div id="roles" class="fLeft">
-			<p>What is your role?</p>
-			<ul class="fieldset">
-			<?php foreach (Elm_Model_Resource_Plot::$userRoles as $role) : ?>
-				<?php if ($role == 'Creator') continue; ?>
-				<li class="radio">
-					<input type="radio" id="role<?php echo $role; ?>" class="radio-input" name="role" value="<?php echo $role; ?>">
-					<label><?php echo $role; ?></label>
-				</li>
-			<?php endforeach; ?>
-			</ul>
+					<?php if (is_array($type)) : ?>
+						<div class="hide sub-types">
+						<?php foreach ($type as $key) : ?>
+							<label for="type<?php echo $key; ?>" class="radio">
+								<input type="radio" id="type<?php echo $key; ?>" class="radio" name="sub_type" value="<?php echo $key; ?>">
+								<?php echo $key; ?>
+							</label>
+						<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
+					</li>
+				<?php endforeach; ?>
+				</ul>
+			</div>
+
+			<div id="roles" class="fLeft">
+				<p>What is your role?</p>
+				<ul class="fieldset">
+				<?php foreach (Elm_Model_Resource_Plot::$userRoles as $role) : ?>
+					<?php if ($role == 'Creator') continue; ?>
+					<li class="radio">
+						<label for="role<?php echo $role; ?>" class="radio">
+							<input type="radio" id="role<?php echo $role; ?>" class="radio-input" name="role" value="<?php echo $role; ?>">
+							<?php echo $role; ?>
+						</label>
+					</li>
+				<?php endforeach; ?>
+				</ul>
+			</div>
 		</div>
-		<p class="buttons"><button id="plotCreate">Create!</button></p>
 	</form>
 </div>
+<div class="modal-footer">
+	<div class="buttons-set fLeft">
+		<button id="plotCreate" class="btn btn-primary" data-form="#formCreatePlot">Create Plot</button>
+	</div>
+	<a href="#" class="btn fRight" data-dismiss="modal">Close</a>
+</div>
+
 <script>
-jQuery('#step-3').find('#formValidate').on('submit', function(e) {
+jQuery('#types').on('click', 'input[name="type"]', function(e) {
+	var $this = jQuery(this);
+	$this.parents('ul').find('.sub-types').hide();
+	if ($this.parents('li').find('.sub-types').length) {
+		$this.parents('li').find('.sub-types').show();
+	}
+});
+
+jQuery('#plotCreate').on('click', function(e) {
 	e.preventDefault();
+	var $form = jQuery(jQuery(this).attr('data-form')),
+		$alert = $form.find('.alert');
+
+	if ($alert.length) {
+		$alert.alert('close');
+	}
+
 	jQuery.ajax({
 		url: '/plot/create-ajax/',
 		type: 'post',
-		data: jQuery(this).serialize(),
+		data: $form.serialize(),
 		dataType: 'json',
 		success: function(response) {
-			if (response.success) {
-				window.location = response.location;
-			} else {
-				jQuery('.form-message', '#step-3').html(response.message).fadeIn();
+			if (elm.success(response)) {
+				$alert = jQuery.createErrorAlert(response.message).hide();
+				$form.prepend($alert);
+				$alert.fadeIn();
 			}
 		},
 		error: function() {
-			alert('error in request');
+			elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
 		},
 		exception: function() {
-			alert('error in request');
+			elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
 		}
 	});
 	return false;

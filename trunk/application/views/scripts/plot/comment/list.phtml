@@ -1,0 +1,19 @@
+<?php if ($statuses = $this->plot->getStatusUpdates(10)) : ?>
+<div class="comment-list">
+	<h4>Comments</h4>
+	<ul class="feed list-block">
+		<?php foreach ($statuses as $status) : ?>
+		<li>
+			<div class="fLeft">
+				<img src="<?php echo $this->User()->getImage($status->getUser()); ?>" title="<?php echo $status->getUser()->getName(); ?>" width="75px" />
+		 		<h3><?= $status->getUser()->getName(); ?></h3>
+				<p><?= $status->getCreatedAt(); ?></p>
+			</div>
+			<div class="fLeft">
+				<p><?= $status->getContent(); ?></p>
+			</div>
+		</li>
+		<?php endforeach; ?>
+	</ul>
+</div>
+<?php endif; ?>

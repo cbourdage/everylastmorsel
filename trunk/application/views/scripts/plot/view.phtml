@@ -15,12 +15,12 @@ $_plot = $this->plot;
 				<a href="#" class="btn" title="Edit Plot Information" data-edit="editable" data-target="#editModalPlot">Edit</a>
 			<?php endif; ?>
 			<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user) && $this->User()->canShowTips()) : ?>
-				<a href="#" title="Tool tips!" class="tips">Tool Tips</a>
+				<a href="#"  title="Tool tips!" class="tips">Tool Tips</a>
 			<?php endif; ?>
 		</p>
 	</div>
 
-	<section class="photo-timeline">
+	<section class="photo-timeline blocked-content">
 		<?php
 			// @TODO make a partial or whatever it is called
 		?>
@@ -32,7 +32,27 @@ $_plot = $this->plot;
 		</ul>
 		<?php endif; ?>
 		<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) : ?>
-			<a href="<?php echo $this->url('plot/images', array('p' => $_plot->getId())); ?>" title="Manage Photos">Manage Photos</a>
+			<div id="imageEditContainer">
+				<a class="" href="#" id="expandImagesForm" title="Manage Photos">Manage Photos</a>
+				<div class="hide">
+					<form action="<?php echo $this->url('plot/image-upload', array('p' => $_plot->getId())); ?>" method="post" enctype="multipart/form-data">
+						<ul class="fieldset list-block">
+							<li>
+								<label for="image-1" class="optional">Image</label>
+								<div><input type="file" name="image[]" id="image-1"></div>
+							</li>
+							<li>
+								<label for="caption-1" class="optional">Title/Caption</label>
+								<div><input type="text" name="caption[]" id="caption-1" value=""></div>
+							</li>
+						</ul>
+						<p class="buttons-set">
+							<a href="#" id="addMore" title="Add Images">Add Another</a>
+							<button type="submit" class="btn btn-primary">Upload</button>
+						</p>
+					</form>
+				</div>
+			</div>
 		<?php endif; ?>
 	</section>
 
@@ -44,98 +64,17 @@ $_plot = $this->plot;
 	</ul>
 
 	<section id="users" class="blocked-content">
-		<?php if ($users = $_plot->getUsers()) : ?>
-			<ul>
-			<?php foreach ($users as $user) : ?>
-				<li>
-					<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
-					<?php echo $user->getUserRole(); ?>
-				</li>
-			<?php endforeach; ?>
-			</ul>
-		<?php else : ?>
-			<p>Sorry no users associated. Get growing!</p>
-		<?php endif; ?>
-
-		<?php /** @TODO Create a modal partial/template */ ?>
+		<?php echo $this->partial('plot/user/list.phtml', array('plot' => $_plot)); ?>
 		<?php if ($_session->isLoggedIn() && !$_plot->isAssociated($_session->user)) :  ?>
-			<p id="get-involved">
-				<a href="#getInvolvedModal" class="btn btn-success btn-large" data-toggle="modal"><span>Get Involed</span></a>
-			</p>
-			<div class="modal hide fade" id="getInvolvedModal">
-				<div class="modal-header">
-					<a class="close" data-dismiss="modal">×</a>
-					<h3>Get Involved</h3>
-				</div>
-				<div class="modal-body">
-					<form action="<?= $this->url('plot/get-involved'); ?>" type="post" id="getInvolvedForm">
-						<input type="hidden" name="user_id" value="<?php echo Bootstrap::getSingleton('user/session')->user->getId(); ?>" />
-						<input type="hidden" name="plot_id" value="<?php echo Zend_Registry::get('current_plot')->getId(); ?>" />
-						<ul class="fieldset">
-						<?php foreach (Elm_Model_Resource_Plot::$userRoles as $role) : ?>
-							<?php if ($role == 'Creator') continue; ?>
-							<li class="radio">
-								<input type="radio" id="role<?php echo $role; ?>" class="radio-input" name="role" value="<?php echo $role; ?>">
-								<label><?php echo $role; ?></label>
-							</li>
-						<?php endforeach; ?>
-						</ul>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<a href="#" class="btn" data-dismiss="modal">Close</a>
-					<a href="#" class="btn btn-primary" data-submit="form" data-form="#editFormPlot">Save</a>
-				</div>
-			</div>
+			<?php echo $this->partial('plot/user/associate.phtml', array('plot' => $_plot)); ?>
 		<?php endif; ?>
 	</section>
 
-	<section id="socializing" class="blocked-content">
-	<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) :  ?>
-		<form action="<?php echo $this->url('status/create'); ?>" method="post" id="statusForm">
-			<input type="hidden" name="plot_id" value="<?= $_plot->getId(); ?>" />
-			<input type="hidden" name="user_id" value="<?= $_session->user->getId(); ?>" />
-
-			<?php /** @TODO Create partial */ ?>
-			<ul class="list-inline type-selection">
-				<li>
-					<label for="status-type-text" class="radio">
-						<input type="radio" id="status-type-text" name="type" value="text" /> Text
-					</label>
-				</li>
-				<li>
-					<label for="status-type-link" class="radio">
-						<input type="radio" id="status-type-link" name="type" value="link" /> Link
-					</label>
-				</li>
-				<li>
-					<label for="status-type-crop" class="radio">
-						<input type="radio" id="status-type-crop" name="type" value="crop" /> Crop
-					</label>
-				</li>
-			</ul>
-			<p class="input">
-				<label for="status-content">How's it growin'?</label>
-				<textarea id="status-content" name="content"></textarea>
-			</p>
-			<p class="buttons">
-				<button class="btn btn-inverse" type="submit"><span>Share</span></button>
-			</p>
-		</form>
-	<?php endif; ?>
-
-	<?php if ($statuses = $_plot->getStatusUpdates(10)) : ?>
-		<h5>Thoughts:</h5>
-		<ul class="feed">
-			<?php foreach ($statuses as $status) : ?>
-			<li>
-				<h4><?= $status->getUser()->getName(); ?></h4>
-				<p><?= $status->getCreatedAt(); ?></p>
-				<p><?= $status->getContent(); ?></p>
-			</li>
-			<?php endforeach; ?>
-		</ul>
-	<?php endif; ?>
+	<section id="socializing" class="blocked-content comments">
+		<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) :  ?>
+			<?php echo $this->partial('plot/comment/form.phtml', array('plot' => $_plot)); ?>
+		<?php endif; ?>
+		<?php echo $this->partial('plot/comment/list.phtml', array('plot' => $_plot)); ?>
 	</section>
 
 	<section id="crops" class="blocked-content">
@@ -168,46 +107,69 @@ $_plot = $this->plot;
 </div>
 
 
-<script>
-jQuery('#statusForm').on('submit', function(e) {
-	e.preventDefault();
-	var $form = jQuery(this);
-	var $alert = $form.find('.alert');
-
-	if ($alert.length) {
-		$alert.alert('close');
-	}
-
-	jQuery.ajax({
-		url: $form.attr('action'),
-		type: 'post',
-		data: $form.serialize(),
-		success: function(response) {
-			if (!elm.success(response)) {
-				return;
-			}
-
-			if (response.success) {
-				jQuery.formReset($form);
-				var $li = jQuery(response.html).hide();
-				$form.parent().find('.feed').prepend($li);
-				$li.fadeIn();
-			} else {
-				$alert = jQuery.createErrorAlert(response.message).hide();
-			}
-
-			if ($alert.length) {
-				$form.prepend($alert);
-				$alert.fadeIn();
-			}
-		},
-		error: function() {
-			elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
-		},
-		exception: function() {
-			elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
-		}
+<script defer="defer">
+!function($) {
+	var total = 1;
+	var $imageEditContainer = $('#imageEditContainer');
+	$imageEditContainer.on('click', '#expandImagesForm', function(e) {
+		e.preventDefault();
+		$(this).next().slideToggle();
+		$(this).parent().toggleClass('active');
 	});
-	return false;
-});
+	$imageEditContainer.on('click', '#addMore', function(e) {
+		e.preventDefault();
+		total++;
+		var $ulListInput = jQuery(this).parent().prev();
+		var $duplicate = $ulListInput.clone();
+		$duplicate.find('input').each(function() {
+			var idPrefix = jQuery(this).attr('name').replace('[]', '-');
+			$(this).val('').attr('id', idPrefix + total);
+			$(this).parent().prev().attr('for', idPrefix + total);
+		});
+		$ulListInput.after($duplicate);
+		return false;
+	});
+
+	$('#statusForm').on('submit', function(e) {
+		e.preventDefault();
+		var $form = $(this);
+		var $alert = $form.find('.alert');
+
+		if ($alert.length) {
+			$alert.alert('close');
+		}
+
+		$.ajax({
+			url: $form.attr('action'),
+			type: 'post',
+			data: $form.serialize(),
+			success: function(response) {
+				if (!elm.success(response)) {
+					return;
+				}
+
+				if (response.success) {
+					$.formReset($form);
+					var $li = $(response.html).hide();
+					$form.parent().find('.feed').prepend($li);
+					$li.fadeIn();
+				} else {
+					$alert = jQuery.createErrorAlert(response.message).hide();
+				}
+
+				if ($alert.length) {
+					$form.prepend($alert);
+					$alert.fadeIn();
+				}
+			},
+			error: function() {
+				elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
+			},
+			exception: function() {
+				elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
+			}
+		});
+		return false;
+	});
+}(window.jQuery);
 </script>

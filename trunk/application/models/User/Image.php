@@ -28,4 +28,19 @@ class Elm_Model_User_Image implements Elm_Model_Image_Interface
 	{
 		return str_replace(DIRECTORY_SEPARATOR, '/', self::getImagePath($object));
 	}
+
+	/**
+	 * @param $object
+	 * @return string
+	 */
+	public static function getImageDestination($object)
+	{
+		$destination = Bootstrap::getBaseDir(self::DESTINATION_DIR) . self::getImagePath($object);
+		Bootstrap::log($destination);
+		if (!is_dir($destination)) {
+			mkdir($destination, 0777, true);
+		}
+
+		return $destination;
+	}
 }

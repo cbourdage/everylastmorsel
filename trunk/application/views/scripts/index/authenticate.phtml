@@ -1,57 +1,71 @@
-<div id="step-2">
+<div class="modal-header">
+	<a class="close" data-dismiss="modal">×</a>
+	<h3>Says Who?</h3>
+</div>
+<div class="modal-body step-2" id="stepContent">
 	<div class="wrapper">
 		<div id="login">
-			<h4>Login to keep plotting</h4>
-			<form action="<?php echo $this->loginForm->getAction() ?>" method="post" id="loginFormValidate">
-				<div class="form-message no-display"></div>
+			<p>Login to keep plotting</p>
+			<form action="<?php echo $this->loginForm->getAction() ?>" method="post" id="loginForm">
 				<ul class="fieldset">
 					<?php foreach($this->loginForm->getElements() as $element) : ?>
 						<?php echo $element->render(); ?>
 					<?php endforeach; ?>
 				</ul>
-				<div class="buttons">
-					<button type="submit" name="Submit" id="login-submit">Submit</button>
-					<a class="fRight" href="#back" title="Back">Back &rang;</a>
-				</div>
 			</form>
 		</div>
 
 		<div id="middle">
-			<h4>Says who?</h4>
-			<p class="buttons"><button id="loginSlide">Login to Account</button><button id="createSlide">Create Account</button></p>
+			<p>Some descriptive content to show login or create an account information</p>
 		</div>
 
 		<div id="create">
-			<h4>Create an account and help us connect you with others</h4>
-			<form action="<?php echo $this->createForm->getAction() ?>" method="post" id="createFormValidate">
-				<div class="form-message no-display"></div>
+			<p>Create an account and help us connect you with others</p>
+			<form action="<?php echo $this->createForm->getAction() ?>" method="post" id="createForm">
 				<ul class="fieldset">
 					<?php foreach($this->createForm->getElements() as $element) : ?>
 						<?php echo $element->render(); ?>
 					<?php endforeach; ?>
 				</ul>
-				<div class="buttons">
-					<a class="fLight" href="#back" title="Back">&lang; Back</a>
-					<button type="submit" name="Submit" id="create-submit">Submit</button>
-				</div>
 			</form>
 		</div>
 	</div>
 </div>
+<div class="modal-footer">
+	<div class="buttons-set middle fLeft">
+		<button id="loginSlide" class="btn btn-primary">Login to Account</button>
+		<button id="createSlide" class="btn btn-primary">Create Account</button>
+	</div>
+
+	<div class="buttons-set login hide fLeft">
+		<button id="login-submit" class="btn btn-primary form-submit" data-form="#loginForm">Login</button>
+		<a class="" href="#back" title="Back">Back &rang;</a>
+	</div>
+
+	<div class="buttons-set create hide fLeft">
+		<a class="fLeft" href="#back" title="Back">&lang; Back</a>
+		<button id="create-submit" class="btn btn-primary form-submit" data-form="#createForm">Submit</button>
+	</div>
+
+	<a href="#" class="btn fRight" data-dismiss="modal">Close</a>
+</div>
 
 <script>
-var $wrapper = jQuery('#step-2').find('.wrapper');
-var $login = $wrapper.find('#login');
-var $middle = $wrapper.find('#middle');
-var $create = $wrapper.find('#create');
-var isAGarden = <?php echo Bootstrap::getSingleton('user/session')->isA; ?>
+var isAGarden = "<?php echo Bootstrap::getSingleton('user/session')->isA; ?>";
+var $modal = jQuery('#mapModal'),
+	$content = $modal.find('.modal-body'),
+	$wrapper = $modal.find('.wrapper'),
+	$login = $wrapper.find('#login'),
+	$middle = $wrapper.find('#middle'),
+	$create = $wrapper.find('#create');
 
 /**
  * Login button click - slide left
  */
 jQuery('#loginSlide').on('click', function(e) {
-	$wrapper.animate({'left' : '0px'}, 'fast', function() {
-		jQuery('#login-form-validate input').eq(0).focus();
+	$wrapper.animate({'left' : -15}, 'fast', function() {
+		$login.find('form input').eq(0).focus();
+		setButtons('.login');
 	})
 });
 
@@ -60,51 +74,64 @@ jQuery('#loginSlide').on('click', function(e) {
  */
 jQuery('#createSlide').on('click', function(e) {
 	var distance = $login.outerWidth(true) + $middle.outerWidth(true);
-	$wrapper.animate({'left' : -distance}, 'fast', function() {
-		jQuery('#createFormValidate input').eq(0).focus();
+	$wrapper.animate({'left' : -distance + 15}, 'fast', function() {
+		$create.find('form input').eq(0).focus();
+		setButtons('.create');
 	})
 });
 
 /**
  * back button click - slide right to center
  */
-$wrapper.find('a[href="#back"]').on('click', function(e) {
+$modal.on('click', 'a[href="#back"]', function(e) {
 	e.preventDefault();
 	var distance = $login.outerWidth(true);
 	$wrapper.animate({'left' : -distance}, 'fast', function() {
-		jQuery('#login-form-validate input').eq(0).blur();
+		setButtons('.middle');
 	});
 	return false;
 });
 
+function setButtons(className) {
+	$modal.find('.modal-footer .buttons-set').hide();
+	$modal.find('.modal-footer .buttons-set' + className).show();
+}
+
 /**
  * Form submissions
  */
-jQuery('form', '#step-2').on('submit', function(e) {
+$modal.on('click', '.form-submit', function(e) {
 	e.preventDefault();
-	var $form = jQuery(this);
-	var $wrap = $form.parent();
+	var $form = jQuery(jQuery(this).attr('data-form')),
+		$alert = $form.find('.alert');
+
+	if ($alert.length) {
+		$alert.alert('close');
+	}
+
 	jQuery.ajax({
-		url: jQuery(this).attr('action'),
+		url: $form.attr('action'),
 		type: 'post',
-		data: jQuery(this).serialize(),
+		data: $form.serialize(),
 		success: function(response) {
 			// if error - show above form
 			if (response.error) {
-				$form.find('.form-message').html(response.message).fadeIn();
+				$alert = jQuery.createErrorAlert(response.message).hide();
+				$form.prepend($alert);
+				$alert.fadeIn();
 			} else if (response.success) {
 				jQuery.get('/index/garden-details', function(response) {
-					jQuery('#overlayMap').find('.content').html(response);
-				})
+					$modal.html(response);
+				});
 			} else {	// else success show next step
-				jQuery('#overlayMap').find('.content').html(response);
+				$modal.html(response);
 			}
 		},
 		error: function() {
-			alert('error in request');
+			elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
 		},
 		exception: function() {
-			alert('error in request');
+			elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
 		}
 	});
 	return false;

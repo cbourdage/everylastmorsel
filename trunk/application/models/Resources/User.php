@@ -40,15 +40,14 @@ class Elm_Model_Resource_User extends Colony_Db_Table
 		$select = $this->getDefaultAdapter()
 			->select()
 			->from(Elm_Model_Resource_Plot::RELATIONSHIP_TABLE)
-			->where('user_id=?', $object->getId());
+			->where('user_id = ?', $object->getId());
 		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
 			$plots = array();
 			foreach ($rows as $row) {
 				$plots[$row->plot_id] = $row->role; //Bootstrap::getModel('plot')->load($row->plot_id, false);
 			}
 			$object->setPlotIds($plots);
-		}
-		else {
+		} else {
 			$object->setPlotIds(null);
 		}
 
@@ -65,7 +64,7 @@ class Elm_Model_Resource_User extends Colony_Db_Table
      */
     public function loadByEmail(Elm_Model_User $user, $email)
     {
-		$row = $this->fetchRow(Zend_Db_Table::getDefaultAdapter()->quoteInto('email=?', $email));
+		$row = $this->fetchRow(Zend_Db_Table::getDefaultAdapter()->quoteInto('email = ?', $email));
         if ($row !== null) {
             $this->load($user, $row->user_id);
         } else {
@@ -84,7 +83,7 @@ class Elm_Model_Resource_User extends Colony_Db_Table
      */
     public function loadByAlias(Elm_Model_User $user, $alias)
     {
-		$row = $this->fetchRow(Zend_Db_Table::getDefaultAdapter()->quoteInto('alias=?', $alias));
+		$row = $this->fetchRow(Zend_Db_Table::getDefaultAdapter()->quoteInto('alias = ?', $alias));
         if ($row !== null) {
             $this->load($user, $row->user_id);
         } else {
@@ -103,6 +102,22 @@ class Elm_Model_Resource_User extends Colony_Db_Table
     {
         return $select = $this->find($userId)->current();
     }
+
+	/**
+	 * @param Elm_Model_User $user
+	 * @param $key
+	 * @return bool
+	 */
+	public function checkConfirmationKey(Elm_Model_User $user, $key)
+	{
+		//$row = $this->fetchRow("SELECT 1 FROM user WHERE confirmation_key = ?", $key));
+		$row = $this->fetchRow(Zend_Db_Table::getDefaultAdapter()->quoteInto('confirmation_key = ?', $key));
+		if ($row !== null) {
+            return $this->load($user, $row->user_id);
+        } else {
+            return false;
+        }
+	}
 
 
 

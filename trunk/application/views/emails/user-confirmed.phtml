@@ -1,0 +1,34 @@
+<?php
+$urlHelper = new Elm_View_Helper_Url()
+?>
+<body style="background: #efefef;">
+<table>
+	<tr>
+		<td>ELM Logo</td>
+	</tr>
+	<tr>
+		<td>
+			<h1>Confirmed</h1>
+			<p>We believed you all along but we want to curate the site and help you share the produce.</p>
+			<p>
+				You can log into your profile <a href="<?php echo $urlHelper->url('user/login'); ?>">here</a> and you can view your profile
+				from <a href="<?php echo $this->user->getUrl(); ?>">here</a>. Additionally, if you'd like to engage in your community
+				you can do so <a href="<?php echo $urlHelper->url('community'); ?>">here</a>!
+			</p>
+			<p>
+				Thanks, <br />
+				Every Last Morsel
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<ul>
+				<li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+</body>

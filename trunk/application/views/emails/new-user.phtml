@@ -1,3 +1,6 @@
+<?php
+$urlHelper = new Elm_View_Helper_Url()
+?>
 <body style="background: #efefef;">
 <table>
 	<tr>
@@ -8,7 +11,11 @@
 			<h1>Welcome to Every Last Morsel!</h1>
 			<p><?php echo $this->user->getFirstname(); ?><?php echo $this->user->getLastname(); ?></p>
 			<p><?php echo $this->password; ?></p>
-			<p><a href="<?php echo $this->user->getUrl(); ?>">link to user profile</a></p>
+			<p>Please confirm you are who you say you are by clicking the following link:
+				<a href="<?php echo $urlHelper->url('user/confirmation', array('uid' => $this->user->getConfirmationKey())); ?>">
+					<?php echo $urlHelper->url('user/confirmation', array('uid' => $this->user->getConfirmationKey())); ?>
+				</a>
+			</p>
 		</td>
 	</tr>
 	<tr>

@@ -39,20 +39,4 @@ $_plot = $this->plot;
 	</form>
 </div>
 
-<script>
-var total = 1;
-jQuery('#addMore').on('click', function(e) {
-	e.preventDefault();
-	total++;
-	var $ulListInput = jQuery(this).parent().prev();
-	var $duplicate = $ulListInput.clone();
-	$duplicate.find('input').each(function() {
-		var idPrefix = jQuery(this).attr('name').replace('[]', '-');
-		jQuery(this).val('').attr('id', idPrefix + total);
-		jQuery(this).parent().prev().attr('for', idPrefix + total);
-	});
-	$ulListInput.after($duplicate);
-	return false;
-});
-</script>
 

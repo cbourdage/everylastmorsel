@@ -37,6 +37,27 @@ class Elm_UserController extends Elm_User_AbstractController
 		$this->_forward('view');
 	}
 
+	public function confirmationAction()
+	{
+		if ($key = $this->getRequest()->getParam('uid', null)) {
+			$user = new Elm_Model_User();
+			if ($user->checkConfirmationKey($key)) {
+				if (!$user->getIsConfirmed()) {
+					$user->setIsConfirmed(true)->save();
+					$user->sendConfirmedAccountEmail();
+					$this->_getSession()->addSuccess("Excellent! Let's get growin'.");
+				}
+				$this->_forward('confirmed');
+			} else {
+				$this->_getSession()->addError('Gasp! This key does not match anything on file.');
+			}
+		}
+	}
+
+	public function confirmedAction()
+	{
+	}
+
 	/**
 	 * Index/view action
 	 */
@@ -53,51 +74,6 @@ class Elm_UserController extends Elm_User_AbstractController
 		}
 
 		$this->_initLayout();
-	}
-
-	/**
-	 * Registration and registration post action
-	 * 
-	 * @return void
-	 */
-	public function createAction()
-	{
-		$session = $this->_getSession();
-        if ($session->isLoggedIn()) {
-            $this->_redirect('/u/' . $session->getUser()->alias);
-            return;
-        }
-
-		$form = new Elm_Model_Form_User_Create();
-		if ($this->getRequest()->isPost()) {
-			$errors = array();
-			$post = $this->getRequest()->getPost();
-			$user = Bootstrap::getModel('user');
-			if ($form->isValid($post)) {
-				$user->setData($post)->setPassword($post['password']);
-				$user->save();
-
-				// setup session, send email, add messages, move on
-				$session->setUserAsLoggedIn($user);
-				$user->sendNewAccountEmail($session->beforeAuthUrl);
-				$session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
-				$url = '/u/' . $user->getAlias();
-				$this->_redirect($url);
-				return;
-			}
-			else {
-				if (is_array($errors)) {
-					foreach ($errors as $errorMessage) {
-						$session->addError($errorMessage);
-					}
-				} else {
-					$session->addError($this->__('Invalid user data'));
-				}
-			}
-		}
-
-		$this->view->headTitle()->prepend('Create Account');
-		$this->view->form = $form;
 	}
 
 	/**
@@ -186,6 +162,51 @@ class Elm_UserController extends Elm_User_AbstractController
 		}
 
 		$this->_helper->json->sendJson($response);
+	}
+
+	/**
+	 * Registration and registration post action
+	 *
+	 * @return void
+	 */
+	public function createAction()
+	{
+		$session = $this->_getSession();
+        if ($session->isLoggedIn()) {
+            $this->_redirect('/u/' . $session->getUser()->alias);
+            return;
+        }
+
+		$form = new Elm_Model_Form_User_Create();
+		if ($this->getRequest()->isPost()) {
+			$errors = array();
+			$post = $this->getRequest()->getPost();
+			$user = Bootstrap::getModel('user');
+			if ($form->isValid($post)) {
+				$user->setData($post)->setPassword($post['password']);
+				$user->save();
+
+				// setup session, send email, add messages, move on
+				$session->setUserAsLoggedIn($user);
+				$user->sendNewAccountEmail($session->beforeAuthUrl);
+				$session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
+				$url = '/u/' . $user->getAlias();
+				$this->_redirect($url);
+				return;
+			}
+			else {
+				if (is_array($errors)) {
+					foreach ($errors as $errorMessage) {
+						$session->addError($errorMessage);
+					}
+				} else {
+					$session->addError($this->__('Invalid user data'));
+				}
+			}
+		}
+
+		$this->view->headTitle()->prepend('Create Account');
+		$this->view->form = $form;
 	}
 
 	/**

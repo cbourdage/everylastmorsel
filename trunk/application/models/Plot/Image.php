@@ -33,4 +33,18 @@ class Elm_Model_Plot_Image extends Colony_Model_Abstract implements Elm_Model_Im
 	{
 		return str_replace(DIRECTORY_SEPARATOR, '/', self::getImagePath($object));
 	}
+
+	/**
+	 * @param $object
+	 * @return string
+	 */
+	public  static function getImageDestination($object)
+	{
+		$destination = Bootstrap::getBaseDir(self::DESTINATION_DIR) . self::getImagePath($object);
+		if (!is_dir($destination)) {
+			mkdir($destination, 0777, true);
+		}
+
+		return $destination;
+	}
 }

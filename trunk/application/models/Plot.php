@@ -63,7 +63,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 */
 	public function getUsers()
 	{
-		if (count($this->_users) < 1) {
+		if (count($this->_users) < 1 && count($this->getUserIds()) > 0) {
 			foreach ($this->getUserIds() as $id => $role) {
 				if ($role != Elm_Model_Resource_Plot::ROLE_CREATOR) {
 					$user = Bootstrap::getModel('user')->load($id);
@@ -110,6 +110,18 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		}
         return $this;
     }
+
+	public function createNewPlotStatus()
+	{
+		$status = Bootstrap::getModel('plot/status');
+		$status->setPlotId($this->getId())
+			->setUserId($this->getUserId())
+			->setType('text')
+			->setTitle('New Plot!')
+			->setContent(sprintf('<a href="%s">%s</a> created!', $this->getUrl(), $this->getName()));
+		$status->save();
+		return $this;
+	}
 
 	/**
 	 * Associates a user and a plot with an assigned role
@@ -173,9 +185,9 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 */
 	public function addImages($params)
 	{
-		$destination = $this->_getImageDestination();
-
 		$session = Bootstrap::getSingleton('user/session');
+		$destination = Elm_Model_Plot_Image::getImageDestination($this);
+
 		$adapter = new Zend_File_Transfer_Adapter_Http();
 		$adapter->setDestination($destination)
 			->addValidator('Size', false, (102400*6))	// limit to 100K
@@ -252,18 +264,5 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		} elseif ($ctr == 1) {
 			$session->addSuccess('Image removed');
 		}
-	}
-
-	/**
-	 * @return string
-	 */
-	protected function _getImageDestination()
-	{
-		$destination = Bootstrap::getBaseDir(Elm_Model_Plot_Image::DESTINATION_DIR) . Elm_Model_Plot_Image::getImagePath($this);
-		if (!is_dir($destination)) {
-			mkdir($destination, 0777, true);
-		}
-
-		return $destination;
 	}
 }

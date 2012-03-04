@@ -127,6 +127,7 @@ class Elm_IndexController extends Elm_AbstractController
 			$createForm->removeElement('location');
 			$this->view->createForm = $createForm;
 		}
+
 		$this->getResponse()->sendResponse();
 	}
 

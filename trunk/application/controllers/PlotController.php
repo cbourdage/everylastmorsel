@@ -47,6 +47,10 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			$this->_initCurrentPlot();
 			$this->view->plot = $this->_plot;
 			$this->view->headTitle()->prepend($this->_plot->getName());
+
+			if ($this->_plot->getIsStartup()) {
+				$this->_forward('startup');
+			}
 		}
 		$this->_initLayout();
 	}
@@ -65,7 +69,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			$response = array(
 				'success' => false,
 				'error' => true,
-				'location' => $this->_helper->url('user/login')
+				'location' => $this->_helper->url('/user/login')
 			);
         } else {
 			$form = new Elm_Model_Form_Plot_Create();
@@ -76,7 +80,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 				if ($form->isValid($post)) {
 					try {
 						$plot->setData($post)->save();
-						$plot->sendNewPlotEmail();
+						$plot->createNewPlotStatus()->sendNewPlotEmail();
 						$session->addSuccess("This location looks great!");
 
 						if (isset($post['role'])) {
@@ -195,7 +199,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->_initCurrentPlot();
 		$this->_plot->addImages($this->getRequest()->getParams());
 
-		$this->_redirect('/plot/images/p/' . $this->getRequest()->getParam('p'));
+		$this->_redirect('/p/' . $this->getRequest()->getParam('p'));
 	}
 
 	/**

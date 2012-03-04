@@ -74,7 +74,6 @@ class Elm_StatusController extends Elm_User_AbstractController
 					try {
 						$status->save();
 						//$status->sendNewStatusUpdate();
-						//$session->addSuccess("This location looks great!");
 						$response = array(
 							'success' => true,
 							'error' => false,
