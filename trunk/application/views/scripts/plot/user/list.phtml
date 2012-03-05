@@ -1,10 +1,16 @@
-<?php if ($users = $this->plot->getUsers()) : ?>
-	<ul class="list-inline">
-	<?php foreach ($users as $user) : ?>
+<?php if (count($this->users)) : ?>
+	<?php $_session = Bootstrap::getSingleton('user/session'); ?>
+	<ul class="list-block">
+	<?php foreach ($this->users as $user) : ?>
 		<li>
 			<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="150px" />
 			<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
-			<?php echo $user->getUserRole(); ?>
+			<p>
+				<?php echo $user->getUserRole(); ?>
+				<?php if ($_session->isLoggedIn() && $_session->user->isMe($user)) : ?>
+					<i>Me!</i>
+				<?php endif; ?>
+			</p>
 		</li>
 	<?php endforeach; ?>
 	</ul>

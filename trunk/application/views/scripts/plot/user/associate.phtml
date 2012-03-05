@@ -7,15 +7,17 @@
 		<h3>Get Involved</h3>
 	</div>
 	<div class="modal-body">
-		<form action="<?= $this->url('plot/get-involved'); ?>" type="post" id="getInvolvedForm">
+		<form action="<?= $this->url('plot/involve-me'); ?>" method="post" id="getInvolvedForm">
 			<input type="hidden" name="user_id" value="<?php echo Bootstrap::getSingleton('user/session')->user->getId(); ?>" />
 			<input type="hidden" name="plot_id" value="<?php echo $this->plot->getId(); ?>" />
 			<ul class="fieldset">
 			<?php foreach (Elm_Model_Resource_Plot::$userRoles as $role) : ?>
 				<?php if ($role == 'Creator') continue; ?>
 				<li class="radio">
-					<input type="radio" id="role<?php echo $role; ?>" class="radio-input" name="role" value="<?php echo $role; ?>">
-					<label><?php echo $role; ?></label>
+					<label class="radio" for="role<?php echo $role; ?>">
+						<input type="radio" id="role<?php echo $role; ?>" class="radio-input" name="role" value="<?php echo $role; ?>">
+						<?php echo $role; ?>
+					</label>
 				</li>
 			<?php endforeach; ?>
 			</ul>
@@ -23,6 +25,12 @@
 	</div>
 	<div class="modal-footer">
 		<a href="#" class="btn" data-dismiss="modal">Close</a>
-		<a href="#" class="btn btn-primary" data-submit="form" data-form="#editFormPlot">Save</a>
+		<a href="#" class="btn btn-primary" data-form="#getInvolvedForm">Save</a>
 	</div>
 </div>
+<script>
+jQuery('#getInvolvedModal').on('click', '[data-form="#getInvolvedForm"]', function(e) {
+	var $this = jQuery(this);
+	jQuery($this.attr('data-form')).submit();
+});
+</script>

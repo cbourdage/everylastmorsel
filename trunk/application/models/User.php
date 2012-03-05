@@ -277,8 +277,8 @@ class Elm_Model_User extends Colony_Model_Abstract
 
 		$adapter = new Zend_File_Transfer_Adapter_Http();
 		$adapter->setDestination($destination)
-			->addValidator('Size', false, (102400*6))	// limit to x*100K
-			->addValidator('Extension', false, 'jpg,png,gif,jpeg'); // only JPEG, PNG, and GIFs
+			->addValidator('Size', false, Elm_Model_User_Image::MAX_FILE_SIZE)
+			->addValidator('Extension', false, 'jpg,png,gif,jpeg');
 
 		$info = $adapter->getFileInfo('image');
 		$info = $info['image'];

@@ -84,7 +84,7 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		if (in_array($role, self::$userRoles)) {
 				$this->getDefaultAdapter()->insert(
 					self::RELATIONSHIP_TABLE,
-					array('user_id' => $userId, 'plot_id' => $object->getId(), 'role' => $object->getRole())
+					array('user_id' => $userId, 'plot_id' => $object->getId(), 'role' => $role)
 				);
 			}
 	}

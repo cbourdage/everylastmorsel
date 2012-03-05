@@ -16,7 +16,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	/**
 	 * @var array
 	 */
-	private $_statusUpdates = array();
+	private $_comments = array();
 
 	/**
 	 * Construct
@@ -81,12 +81,12 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 * @param null $limit
 	 * @return array
 	 */
-	public function getStatusUpdates($limit = null)
+	public function getFeed($limit = null)
 	{
-		if (count($this->_statusUpdates) < 1) {
-			$this->_statusUpdates = Bootstrap::getModel('plot_status')->getByPlotId($this->getId(), $limit);
+		if (count($this->_comments) < 1) {
+			$this->_comments = Bootstrap::getModel('plot_status')->getByPlotId($this->getId(), $limit);
 		}
-		return $this->_statusUpdates;
+		return $this->_comments;
 	}
 
     /**
@@ -190,8 +190,8 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 
 		$adapter = new Zend_File_Transfer_Adapter_Http();
 		$adapter->setDestination($destination)
-			->addValidator('Size', false, (102400*6))	// limit to 100K
-			->addValidator('Extension', false, 'jpg,png,gif,jpeg'); // only JPEG, PNG, and GIFs
+			->addValidator('Size', false, Elm_Model_Plot_Image::MAX_FILE_SIZE)
+			->addValidator('Extension', false, 'jpg,png,gif,jpeg');
 
 		$files = $adapter->getFileInfo();
 		$successful = 0;

@@ -21,39 +21,7 @@ $_plot = $this->plot;
 	</div>
 
 	<section class="photo-timeline blocked-content">
-		<?php
-			// @TODO make a partial or whatever it is called
-		?>
-		<?php if ($images = $_plot->getImages()) : ?>
-		<ul class="list list-block">
-			<?php foreach ($images as $image) : ?>
-				<li><img src="<?= Bootstrap::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" width="150px" title="<?php echo $image->getCaption(); ?>" alt="<?php echo $image->getCaption(); ?>"></li>
-			<?php endforeach; ?>
-		</ul>
-		<?php endif; ?>
-		<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) : ?>
-			<div id="imageEditContainer">
-				<a class="" href="#" id="expandImagesForm" title="Manage Photos">Manage Photos</a>
-				<div class="hide">
-					<form action="<?php echo $this->url('plot/image-upload', array('p' => $_plot->getId())); ?>" method="post" enctype="multipart/form-data">
-						<ul class="fieldset list-block">
-							<li>
-								<label for="image-1" class="optional">Image</label>
-								<div><input type="file" name="image[]" id="image-1"></div>
-							</li>
-							<li>
-								<label for="caption-1" class="optional">Title/Caption</label>
-								<div><input type="text" name="caption[]" id="caption-1" value=""></div>
-							</li>
-						</ul>
-						<p class="buttons-set">
-							<a href="#" id="addMore" title="Add Images">Add Another</a>
-							<button type="submit" class="btn btn-primary">Upload</button>
-						</p>
-					</form>
-				</div>
-			</div>
-		<?php endif; ?>
+		<?php echo $this->partial('plot/view/images.phtml', array('plot' => $_plot)); ?>
 	</section>
 
 	<ul id="tabMenu" class="list-inline">
@@ -64,7 +32,7 @@ $_plot = $this->plot;
 	</ul>
 
 	<section id="users" class="blocked-content">
-		<?php echo $this->partial('plot/user/list.phtml', array('plot' => $_plot)); ?>
+		<?php echo $this->partial('plot/user/list.phtml', array('users' => $_plot->getUsers())); ?>
 		<?php if ($_session->isLoggedIn() && !$_plot->isAssociated($_session->user)) :  ?>
 			<?php echo $this->partial('plot/user/associate.phtml', array('plot' => $_plot)); ?>
 		<?php endif; ?>
@@ -109,28 +77,7 @@ $_plot = $this->plot;
 
 <script defer="defer">
 !function($) {
-	var total = 1;
-	var $imageEditContainer = $('#imageEditContainer');
-	$imageEditContainer.on('click', '#expandImagesForm', function(e) {
-		e.preventDefault();
-		$(this).next().slideToggle();
-		$(this).parent().toggleClass('active');
-	});
-	$imageEditContainer.on('click', '#addMore', function(e) {
-		e.preventDefault();
-		total++;
-		var $ulListInput = jQuery(this).parent().prev();
-		var $duplicate = $ulListInput.clone();
-		$duplicate.find('input').each(function() {
-			var idPrefix = jQuery(this).attr('name').replace('[]', '-');
-			$(this).val('').attr('id', idPrefix + total);
-			$(this).parent().prev().attr('for', idPrefix + total);
-		});
-		$ulListInput.after($duplicate);
-		return false;
-	});
-
-	$('#statusForm').on('submit', function(e) {
+	$('#commentForm').on('submit', function(e) {
 		e.preventDefault();
 		var $form = $(this);
 		var $alert = $form.find('.alert');
@@ -151,7 +98,7 @@ $_plot = $this->plot;
 				if (response.success) {
 					$.formReset($form);
 					var $li = $(response.html).hide();
-					$form.parent().find('.feed').prepend($li);
+					$('.feed', '#socializing').prepend($li);
 					$li.fadeIn();
 				} else {
 					$alert = jQuery.createErrorAlert(response.message).hide();

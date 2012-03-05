@@ -2,35 +2,13 @@
 $_session = Bootstrap::getSingleton('user/session');
 ?>
 <div class="community">
-	<h3>Gardeners & Owners</h3>
-	<ul class="list-block fLeft">
-	<?php foreach ($this->users as $u) : ?>
-		<li>
-			<img src="<?php echo $u->getImage(); ?>" alt="<?php echo $u->getName(); ?>" />
-			<h2><a href="<?php echo $u->getUrl(); ?>" title="<?php echo $u->getName(); ?>"><?php echo $u->getName(); ?></a></h2>
-			<p>
-				Location: <em><?php $u->getLocation(); ?></em>
-				<?php if ($_session->isLoggedIn() && $_session->user->isMe($u)) : ?>
-					Me!
-				<?php endif; ?>
-			</p>
-		</li>
-	<?php endforeach; ?>
-	</ul>
+	<div class="fLeft">
+		<h3>Gardeners & Owners</h3>
+		<?php echo $this->partial('plot/user/list.phtml', array('users' => $this->users)); ?>
+	</div>
 
-	<h3>Plots of Land</h3>
-	<ul class="list-block fLeft">
-	<?php foreach ($this->plots as $p) : ?>
-		<li>
-			<img src="<?php echo $this->Map()->getStaticImage($p, array('size' => array('height' => '100', 'width' => '100'))); ?>" title="<?php echo $p->getName(); ?>" />
-			<h2><a href="<?php echo $p->getUrl(); ?>" title="<?php echo $p->getName(); ?>"><?php echo $p->getName(); ?></a></h2>
-			<p>
-				Location: <em><?php $p->getLocation(); ?>
-				<?php if ($_session->isLoggedIn() && $p->isAssociated($_session->user)) : ?>
-					I'm associated!
-				<?php endif; ?>
-			</em>
-		</li>
-	<?php endforeach; ?>
-	</ul>
+	<div class="fLeft">
+		<h3>Plots of Land</h3>
+		<?php echo $this->partial('user/plot/list.phtml', array('plots' => $this->plots)); ?>
+	</div>
 </div>

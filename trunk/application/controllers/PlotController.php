@@ -75,10 +75,9 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			$form = new Elm_Model_Form_Plot_Create();
 			if ($this->getRequest()->isPost()) {
 				$post = $this->getRequest()->getPost();
-				Bootstrap::log($post);
-				$plot = Bootstrap::getModel('plot');
 				if ($form->isValid($post)) {
 					try {
+						$plot = Bootstrap::getModel('plot');
 						$plot->setData($post)->save();
 						$plot->createNewPlotStatus()->sendNewPlotEmail();
 						$session->addSuccess("This location looks great!");
@@ -87,19 +86,11 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 							$plot->associateUser($post['user_id'], $post['role']);
 						}
 
-						if (Bootstrap::getSingleton('user/session')->plot['type'] != 'isA') {
-							$response = array(
-								'success' => true,
-								'error' => false,
-								'location' => $this->view->url('plot/startup')
-							);
-						} else {
-							$response = array(
-								'success' => true,
-								'error' => false,
-								'location' => '/p/' . $plot->getId()
-							);
-						}
+						$response = array(
+							'success' => true,
+							'error' => false,
+							'location' => '/p/' . $plot->getId()
+						);
 					} catch (Exception $e) {
 						$response = array(
 							'success' => false,
@@ -160,6 +151,20 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		}
 
 		$this->_helper->json->sendJson($response);
+	}
+
+	public function involveMeAction()
+	{
+		if ($this->getRequest()->isPost()) {
+			$post = $this->getRequest()->getPost();
+			if (isset($post['role'])) {
+				$plot = Bootstrap::getModel('plot')->load($post['plot_id']);
+				$plot->associateUser($post['user_id'], $post['role']);
+			}
+			$this->_redirect('/p/' . $post['plot_id']);
+		} else {
+			$this->_redirect('/');
+		}
 	}
 
 	/**

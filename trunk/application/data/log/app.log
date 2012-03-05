@@ -1,3 +1,76 @@
-2012-03-04T21:02:38+00:00 DEBUG (7): not logged in: Elm_Model_User_Session::authenticate
-2012-03-04T21:02:38+00:00 DEBUG (7): http://local.everylastmorsel.com/u/collin.bourdage/
-2012-03-04T21:02:38+00:00 DEBUG (7): Elm_UserController::preDispatch false
+2012-03-05T02:30:41+00:00 DEBUG (7): Array
+(
+    [user_id] => 2
+    [plot_id] => 2
+    [role] => Gardener
+)
+
+2012-03-05T02:30:41+00:00 DEBUG (7): Array
+(
+    [plot_id] => 2
+    [name] => Should-be-a-garden Garden
+    [latitude] => 41.87847613
+    [longitude] => -88.01305653
+    [zipcode] => 60148
+    [about] => 
+    [is_new] => 1
+    [is_startup] => 0
+    [is_active] => 1
+    [created_at] => 2012-03-04 18:40:04
+    [modified_at] => 2012-03-04 18:40:04
+    [user_ids] => 
+)
+
+2012-03-05T02:32:22+00:00 DEBUG (7): Array
+(
+    [user_id] => 2
+    [plot_id] => 2
+    [role] => Gardener
+)
+
+2012-03-05T02:32:22+00:00 DEBUG (7): Array
+(
+    [plot_id] => 2
+    [name] => Should-be-a-garden Garden
+    [latitude] => 41.87847613
+    [longitude] => -88.01305653
+    [zipcode] => 60148
+    [about] => 
+    [is_new] => 1
+    [is_startup] => 0
+    [is_active] => 1
+    [created_at] => 2012-03-04 18:40:04
+    [modified_at] => 2012-03-04 18:40:04
+    [user_ids] => 
+)
+
+2012-03-05T02:35:16+00:00 DEBUG (7): Array
+(
+    [user_id] => 2
+    [firstname] => Collin
+    [lastname] => Bourdage
+    [alias] => quemercedes
+    [email] => quemercedes@yahoo.com
+    [location] => Elmhurst
+    [image] => 
+    [about] => 
+    [password_hash] => 6559a9fd0531070c7b8d7098b48d3fc0:Ip
+    [confirmation_key] => 749391ca98a2876bb961052b3ae015b0
+    [visibility] => public
+    [is_new] => 0
+    [is_active] => 1
+    [is_confirmed] => 0
+    [last_login] => Zend_Db_Expr Object
+        (
+            [_expression:protected] => now()
+        )
+
+    [created_at] => 2012-03-04 19:57:48
+    [modified_at] => 2012-03-04 19:57:48
+    [plot_ids] => 
+    [controller] => user
+    [action] => settings-save
+    [module] => Elm
+    [Save] => 
+)
+

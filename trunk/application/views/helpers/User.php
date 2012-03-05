@@ -4,6 +4,9 @@ class Elm_View_Helper_User extends Zend_View_Helper_Abstract
 {
 	private $_session = null;
 
+	/**
+	 * @return Elm_View_Helper_User
+	 */
 	public function User()
 	{
 		$this->_session = Bootstrap::getSingleton('user/session');
@@ -42,7 +45,7 @@ class Elm_View_Helper_User extends Zend_View_Helper_Abstract
 
 	public function getFeed($user)
 	{
-		$status = Bootstrap::getModel('user_feed')->getItems($user, 10);
-		return $status;
+		$feed = Bootstrap::getModel('user_feed')->getItems($user, 10);
+		return $feed;
 	}
 }

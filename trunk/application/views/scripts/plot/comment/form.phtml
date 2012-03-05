@@ -1,6 +1,6 @@
 <?php $_session = Bootstrap::getSingleton('user/session'); ?>
 <div class="container">
-	<form action="<?php echo $this->url('status/create'); ?>" method="post" id="statusForm">
+	<form action="<?php echo $this->url('comment/create'); ?>" method="post" id="commentForm">
 		<input type="hidden" name="plot_id" value="<?= $this->plot->getId(); ?>" />
 		<input type="hidden" name="user_id" value="<?= $_session->user->getId(); ?>" />
 
