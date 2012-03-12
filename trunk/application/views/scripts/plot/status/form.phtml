@@ -1,0 +1,32 @@
+<?php $_session = Bootstrap::getSingleton('user/session'); ?>
+<div class="container">
+	<form action="<?php echo $this->url('comment/create'); ?>" method="post" id="commentForm">
+		<input type="hidden" name="plot_id" value="<?= $this->plot->getId(); ?>" />
+		<input type="hidden" name="user_id" value="<?= $_session->user->getId(); ?>" />
+
+		<ul class="list-inline type-selection">
+			<li>
+				<label for="status-type-text" class="radio">
+					<input type="radio" id="status-type-text" name="type" value="text" /> Text
+				</label>
+			</li>
+			<li>
+				<label for="status-type-link" class="radio">
+					<input type="radio" id="status-type-link" name="type" value="link" /> Link
+				</label>
+			</li>
+			<li>
+				<label for="status-type-crop" class="radio">
+					<input type="radio" id="status-type-crop" name="type" value="crop" /> Crop
+				</label>
+			</li>
+		</ul>
+		<p class="input">
+			<label for="status-content">How's it growin'?</label>
+			<textarea id="status-content" name="content"></textarea>
+		</p>
+		<p class="buttons">
+			<button class="btn btn-inverse" type="submit"><span>Share</span></button>
+		</p>
+	</form>
+</div>

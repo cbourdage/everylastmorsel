@@ -1,0 +1,20 @@
+<?php $_session = Bootstrap::getSingleton('user/session'); ?>
+<?php $item = $this->item; ?>
+<div class="lower">
+	<a href="#" class="leave-comment" title="Leave a Comment">Leave a Comment</a>
+	<div class="comment-container hide" id="comment-form-<?= $item->getId(); ?>">
+		<form action="<?php echo $this->url('comment/create'); ?>" method="post" class="comment-form">
+			<input type="hidden" name="plot_id" value="<?= $item->getPlotId(); ?>" />
+			<input type="hidden" name="user_id" value="<?= $_session->user->getId(); ?>" />
+			<input type="hidden" name="parent_id" id="parent_id" value="<?= $item->getId(); ?>" />
+			<input type="hidden" name="type" value="text" />
+			<p class="input">
+				<label for="status-content">Leave a comment</label>
+				<textarea id="status-content" name="content"></textarea>
+			</p>
+			<p class="buttons-set">
+				<button class="btn btn-inverse" type="submit"><span>Share</span></button>
+			</p>
+		</form>
+	</div>
+</div>

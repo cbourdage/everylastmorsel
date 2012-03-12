@@ -1,0 +1,117 @@
+<?php $_session = Bootstrap::getSingleton('user/session'); ?>
+<?php if ($feed = $this->Plot()->getFeed($this->plot, 10)) : ?>
+<div class="comment-list">
+	<h4>Comments</h4>
+	<ul class="feed list-block" id="comment-feed-<?= $this->plot->getId(); ?>">
+		<?php foreach ($feed as $item) : ?>
+			<li class="<?php echo $item->getType(); ?>">
+				<?php echo $this->partial('plot/status/item.phtml', array('item' => $item)); ?>
+				<?php echo $this->partial('plot/status/comment/list.phtml', array('item' => $item)); ?>
+				<?php if ($_session->isLoggedIn()) : ?>
+					<?php echo $this->partial('plot/status/comment/form.phtml', array('item' => $item)); ?>
+				<?php endif; ?>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+</div>
+
+<script defer="defer">
+!function($) {
+	$('ul.feed').on('click', '.leave-comment', function(e) {
+		e.preventDefault();
+		var $container = $(this).parents('li').find('.comment-container');
+		$container.slideToggle().toggleClass('active');
+	});
+
+	$('ul.feed').on('click', '.comments-toggle', function(e) {
+		e.preventDefault();
+		var $container = $(this).parent().next();
+		$container.slideToggle().toggleClass('collapsed');
+		if ($container.hasClass('collapsed')) {
+			$(this).html('Expand')
+		} else {
+			$(this).html('Collapse')
+		}
+	});
+
+	$('ul.feed').on('submit', '.comment-form', function(e) {
+		e.preventDefault();
+		var $form = $(this);
+		var $alert = $form.find('.alert'),
+			parentId = $form.find('#parent_id').val();
+
+		if ($alert.length) {
+			$alert.alert('close');
+		}
+
+		$.ajax({
+			url: $form.attr('action'),
+			type: 'post',
+			data: $form.serialize(),
+			success: function(response) {
+				if (!elm.success(response)) {
+					return;
+				}
+
+				if (response.success) {
+					var $li = $(response.html).hide();
+					$.formReset($form);
+					var $commentList = $('#comments-' + parentId);
+
+					if ($commentList.find('li').length == 0) {
+						$commentList.parent().prev().removeClass('hide');
+					}
+
+					if ($commentList.parent().hasClass('hide')) {
+						$commentList.parent().removeClass('hide');
+					}
+
+					$commentList.append($li);
+					$li.fadeIn();
+					$form.parents('li').find('.leave-comment').trigger('click');
+				} else {
+					$alert = $.createErrorAlert(response.message).hide();
+				}
+
+				if ($alert.length) {
+					$form.prepend($alert);
+					$alert.fadeIn();
+				}
+			},
+			error: function() {
+				elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
+			},
+			exception: function() {
+				elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
+			}
+		});
+		return false;
+	});
+
+	$('a.rate-it').on('click', function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		var data = {
+			'comment_id' : $this.attr('data-comment'),
+			'rating' : $this.hasClass('rated') ? true : false
+		};
+
+		$.ajax({
+			url: '/comment/rate-it/',
+			type: 'post',
+			data: $.serializeJSON(data),
+			success: function(response) {
+				if (!elm.success(response)) {
+					return;
+				}
+
+				if (response.success) {
+					$this.toggleClass('rated');
+				}
+			}
+		});
+		return false;
+	});
+}(window.jQuery);
+</script>
+<?php endif; ?>

@@ -1,0 +1,10 @@
+<?php $item = $this->item; ?>
+<?php $comments = $item->getComments(); ?>
+<div class="comments-toggle-container<?php echo !count($comments) ? ' hide' : ''; ?>"><a href="#" class="comments-toggle">Expand</a></div>
+<div class="collapsed hide">
+	<ul class="comments" id="comments-<?= $item->getId(); ?>">
+	<?php foreach ($comments as $comment) : ?>
+		<li><?php echo $this->partial('plot/status/item.phtml', array('item' => $comment)); ?></li>
+	<?php endforeach; ?>
+	</ul>
+</div>

@@ -1,0 +1,18 @@
+<?php $item = $this->item; ?>
+<?php $_session = Bootstrap::getSingleton('user/session'); ?>
+<div class="fLeft user-info">
+	<img src="<?php echo $this->User()->getImage($item->getUser()); ?>" title="<?php echo $item->getUser()->getName(); ?>" width="75px" />
+	<h3><?= $item->getUser()->getName(); ?></h3>
+</div>
+<div class="fLeft">
+	<p><?= $item->getContent(); ?></p>
+	<p><?= $item->getCreatedAt(); ?></p>
+</div>
+<?php if ($_session->isLoggedIn()) : ?>
+	<?php
+	/**
+	 * @TODO check if user has rated item and add '.rated' class
+	 */
+	?>
+	<a class="rate-it" href="#" data-comment="<?= $item->getId(); ?>" id="rate-<?= $item->getId(); ?>">Rate it!</a>
+<?php endif; ?>
