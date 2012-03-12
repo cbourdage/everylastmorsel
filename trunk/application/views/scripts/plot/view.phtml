@@ -32,7 +32,7 @@ $_plot = $this->plot;
 	</ul>
 
 	<section id="users" class="blocked-content">
-		<?php echo $this->partial('plot/user/list.phtml', array('users' => $_plot->getUsers())); ?>
+		<?php echo $this->partial('plot/user/list.phtml', array('users' => $this->Plot()->filterUsers($_plot->getUsers()))); ?>
 		<?php if ($_session->isLoggedIn() && !$_plot->isAssociated($_session->user)) :  ?>
 			<?php echo $this->partial('plot/user/associate.phtml', array('plot' => $_plot)); ?>
 		<?php endif; ?>
@@ -40,13 +40,19 @@ $_plot = $this->plot;
 
 	<section id="socializing" class="blocked-content comments">
 		<?php if ($_session->isLoggedIn() && $_plot->isAssociated($_session->user)) :  ?>
-			<?php echo $this->partial('plot/comment/form.phtml', array('plot' => $_plot)); ?>
+			<?php echo $this->partial('plot/status/form.phtml', array('plot' => $_plot)); ?>
 		<?php endif; ?>
-		<?php echo $this->partial('plot/comment/list.phtml', array('plot' => $_plot)); ?>
+		<?php echo $this->partial('plot/status/list.phtml', array('plot' => $_plot)); ?>
 	</section>
 
 	<section id="crops" class="blocked-content">
-		Crop display
+		<form>
+			<ul>
+				<li>
+					<input type="text" id="" title="" />
+				</li>
+			</ul>
+		</form>
 	</section>
 
 	<section id="about" class="blocked-content">

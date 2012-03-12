@@ -27,24 +27,36 @@
 <script>
 var plots = <?php echo $this->Map()->getPlotJson(); ?>;
 var markers = new Array();
+var infoWindow = new google.maps.InfoWindow({maxWidth : '200px'});
 for (var i = 0; i < plots.length; i++) {
 	var plot = plots[i];
 	var time = Math.floor(Math.random() * i * 200);
-	window.setTimeout(plotPoint, (1000) + time, plot.latitude, plot.longitude);
+	window.setTimeout(plotPoint, (1000) + time, plot);
 }
+
 /**
  * Plots a point on the map based on lat and long
  *
  * @param lat
  * @param long
  */
-function plotPoint(lat, long) {
-	markers.push(new google.maps.Marker({
+function plotPoint(plot) {
+	var marker = new google.maps.Marker({
 		map: map,
+		title: plot.name,
 		draggable: false,
+		clickable: true,
 		animation: google.maps.Animation.DROP,
-		position: new google.maps.LatLng(lat, long)
-	}));
+		position: new google.maps.LatLng(plot.latitude, plot.longitude),
+		content: plot.infoWindowHtml
+	});
+	markers.push(marker);
+
+	google.maps.event.addListener(marker, 'click', function() {
+		console.log(marker.content);
+		infoWindow.setContent(marker.content);
+		infoWindow.open(map, marker);
+	});
 }
 </script>
 

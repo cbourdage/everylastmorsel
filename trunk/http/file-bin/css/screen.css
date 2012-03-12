@@ -172,11 +172,15 @@ ul.feed li a.rate-it {
 	right: 10px;
 	top: 20px;
 }
+ul.feed li a.rate-it.rated { color: red; }
+ul.feed li div.comments-toggle-container { clear: both; }
 ul.feed li div.lower { clear: both; }
 ul.feed li div.user-info { width: 175px; }
 ul.feed li div.user-info img { width: 125px; }
 ul.feed li div.user-info h3 { font-size: 13px; }
 ul.feed li div.user-info p { }
+
+ul.user-list li.pending { background: #efefef; }
 
 /** Contact form modal */
 #contactModalForm textarea { height: 100px; width: 520px; }

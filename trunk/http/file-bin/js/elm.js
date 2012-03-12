@@ -4,7 +4,7 @@ jQuery.noConflict();
  * Globals
  */
 var elm = {
-	domain : 'http://local.everylastmorsel.com/',
+	domain : 'http://local.elm-1-0.com/',
 	environment : 'development',
 	api : 'AIzaSyB5wrozaPkDDIO0Kh6tNyHEru-2gOvO40w'
 };

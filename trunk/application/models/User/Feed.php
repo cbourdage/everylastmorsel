@@ -5,6 +5,8 @@ class Elm_Model_User_Feed extends Colony_Model_Abstract
 {
 	private $_user = null;
 
+	protected $_feed = array();
+
 	public function _construct()
     {
         $this->_init('plot_status');
@@ -17,20 +19,9 @@ class Elm_Model_User_Feed extends Colony_Model_Abstract
 	 */
 	public function getItems($user, $limit)
 	{
-		$comments = array();
-		if (count($user->getPlotIds()) > 0) {
-			$select = $this->_getResource()->select()
-				->where('plot_id IN (?)', array_keys($user->getPlotIds()))
-				->order('created_at DESC');
-
-			if ($limit) {
-				$select->limit($limit);
-			}
-
-			foreach ($this->_getResource()->fetchAll($select) as $row) {
-				$comments[] = Bootstrap::getModel('plot_status')->load($row->update_id);
-			}
+		if (count($this->_feed) < 1 && count($user->getPlotIds()) > 0) {
+			$this->_feed = $this->_getResource()->getUserFeed($user);
 		}
-		return $comments;
+		return $this->_feed;
 	}
 }

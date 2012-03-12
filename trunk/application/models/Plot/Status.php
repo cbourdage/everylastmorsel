@@ -7,6 +7,8 @@ class Elm_Model_Plot_Status extends Colony_Model_Abstract
 
 	protected $_plot = null;
 
+	protected $_comments = array();
+
 	public function _construct()
     {
         $this->_init('plot_status');
@@ -19,21 +21,7 @@ class Elm_Model_Plot_Status extends Colony_Model_Abstract
 	 */
 	public function getByPlotId($id, $limit = null)
 	{
-		$select = $this->_getResource()->select()
-			->where('plot_id = ?', $id)
-			->order('created_at DESC');
-
-		if ($limit) {
-			$select->limit($limit);
-		}
-
-		$statuses = array();
-		foreach ($this->_getResource()->fetchAll($select) as $row) {
-			//Bootstrap::log(get_class_methods(Bootstrap::getModel('plot_status')->load($row->update_id)));
-			$statuses[] = Bootstrap::getModel('plot_status')->load($row->update_id);
-		}
-
-		return $statuses;
+		return $this->_getResource()->getByPlotId($id, $limit);
 	}
 
 	/**
@@ -43,20 +31,19 @@ class Elm_Model_Plot_Status extends Colony_Model_Abstract
 	 */
 	public function getByUserId($id, $limit = null)
 	{
-		$select = $this->_getResource()->select()
-			->where('user_id IN ?', $id)
-			->order('created_at DESC');
+		return $this->_getResource()->getByUserId($id, $limit);
+	}
 
-		if ($limit) {
-			$select->limit($limit);
+	/**
+	 * @return mixed
+	 */
+	public function getComments()
+	{
+		if (count($this->_comments) < 1) {
+			$this->_comments = $this->_getResource()->getComments($this->getId());
+			$this->_comments = array_reverse($this->_comments, true);
 		}
-
-		$statuses = array();
-		foreach ($this->_getResource()->fetchAll($select) as $row) {
-			$statuses[] = Bootstrap::getModel('plot_status')->load($row->update_id);
-		}
-
-		return $statuses;
+		return $this->_comments;
 	}
 
 	/**

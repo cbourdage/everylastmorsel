@@ -11,6 +11,11 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	/**
 	 * @var array
 	 */
+	private $_watchers = array();
+
+	/**
+	 * @var array
+	 */
 	private $_images = array();
 
 	/**
@@ -65,14 +70,32 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	{
 		if (count($this->_users) < 1 && count($this->getUserIds()) > 0) {
 			foreach ($this->getUserIds() as $id => $role) {
-				if ($role != Elm_Model_Resource_Plot::ROLE_CREATOR) {
+				$user = Bootstrap::getModel('user')->load($id);
+				$user->setUserRole($role);
+				$this->_users[] = $user;
+			}
+		}
+
+		return $this->_users;
+	}
+
+	/**
+	 * Get users
+	 *
+	 * @return mixed
+	 */
+	public function getWatchers()
+	{
+		if (count($this->_watchers) < 1 && count($this->getUserIds()) > 0) {
+			foreach ($this->getUserIds() as $id => $role) {
+				if ($role == Elm_Model_Resource_Plot::ROLE_WATCHER) {
 					$user = Bootstrap::getModel('user')->load($id);
 					$user->setUserRole($role);
-					$this->_users[] = $user;
+					$this->_watchers[] = $user;
 				}
 			}
 		}
-		return $this->_users;
+		return $this->_watchers;
 	}
 
 	/**
@@ -111,6 +134,11 @@ class Elm_Model_Plot extends Colony_Model_Abstract
         return $this;
     }
 
+	/**
+	 * Creates a new status post for current plot
+	 *
+	 * @return Elm_Model_Plot
+	 */
 	public function createNewPlotStatus()
 	{
 		$status = Bootstrap::getModel('plot/status');
@@ -128,12 +156,27 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 *
 	 * @param $userId int
 	 * @param $role string
+	 * @param bool $approved
 	 * @return Elm_Model_Plot
 	 */
-	public function associateUser($userId, $role)
+	public function associateUser($userId, $role, $approved = false)
 	{
-		$this->_getResource()->associateUser($this, $userId, $role);
+		if (!$this->_getResource()->isUserAssociated($this, $userId, $role)) {
+			$this->_getResource()->associateUser($this, $userId, $role, $approved);
+		}
         return $this;
+	}
+
+	public function approveUser($userId, $role)
+	{
+		$this->_getResource()->updateAssociatedUser($this, $userId, $role, true);
+		return $this;
+	}
+
+	public function denyUser($userId, $role)
+	{
+		$this->_getResource()->updateAssociatedUser($this, $userId, $role, false);
+		return $this;
 	}
 
 	/**
@@ -145,6 +188,52 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	public function isAssociated($user)
 	{
 		foreach ($this->getUsers() as $u) {
+			if ($user->getId() == $u->getId()) {
+				foreach ($u->getUserRole() as $role) {
+					if ($role['is_approved'] && (
+							$role['role'] != Elm_Model_Resource_Plot::ROLE_CREATOR
+							&& $role['role'] != Elm_Model_Resource_Plot::ROLE_WATCHER
+					)) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Checks if the user is the owner/creator of the plot
+	 *
+	 * @param $user
+	 * @return bool
+	 */
+	public function isOwner($user)
+	{
+		foreach ($this->getUsers() as $u) {
+			if ($user->getId() == $u->getId()) {
+				foreach ($u->getUserRole() as $role) {
+					if ($role['is_approved'] && (
+							$role['role'] == Elm_Model_Resource_Plot::ROLE_CREATOR
+							|| $role['role'] == Elm_Model_Resource_Plot::ROLE_OWNER
+					)) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Checks if the user is watching this plot
+	 *
+	 * @param $user
+	 * @return bool
+	 */
+	public function isWatching($user)
+	{
+		foreach ($this->getWatchers() as $u) {
 			if ($user->getId() == $u->getId()) {
 				return true;
 			}

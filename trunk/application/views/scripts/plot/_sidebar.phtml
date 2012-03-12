@@ -1,10 +1,8 @@
-<?php
-$session = Bootstrap::getSingleton('user/session');
-?>
+<?php $session = Bootstrap::getSingleton('user/session'); ?>
 <?php if (Zend_Registry::isRegistered('current_plot') || $this->plot) : ?>
 	<?php $plot = $this->plot ? $this->plot : Zend_Registry::get('current_plot') ; ?>
 	<div id="mainImage">
-		<img src="<?php echo $this->Map()->getStaticImage($plot); ?>" title="" />
+		<img src="<?php echo $this->Map()->getStaticImage($plot); ?>" title="<?php echo $plot->getName(); ?>" />
 	</div>
 	<div class="social-links">
 		<ul>
@@ -23,15 +21,22 @@ $session = Bootstrap::getSingleton('user/session');
 					data-href="<?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
 				   	data-text="Support this garden: <?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"></div>
 			</li>
+			<li>
+				<div class="g-plusone" data-annotation="none" href="<?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"></div>
+			</li>
 		</ul>
 	</div>
-	<div id="lowerColumn">
-	<?php if ($session->isLoggedIn() && $plot->isAssociated($session->user)) : ?>
-		<!--<ul id="userHub">
-			<li>something here</li>
-			<li>something here 2</li>
-			<li>something here 3</li>
-		</ul>-->
+
+<?php if ($session->isLoggedIn()) : ?>
+	<?php if (!$plot->isWatching($session->user)) : ?>
+		<div class="btn-group">
+			<form action="/plot/watch-this/" method="post">
+				<input type="hidden" name="plot_id" value="<?php echo $plot->getId(); ?>" />
+				<input type="hidden" name="user_id" value="<?php echo $session->user->getId(); ?>" />
+				<button type="submit" class="btn btn-primary">Watch This</button>
+			</form>
+		</div>
 	<?php endif; ?>
-	</div>
+<?php endif; ?>
+
 <?php endif; ?>

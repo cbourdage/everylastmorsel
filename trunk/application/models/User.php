@@ -103,6 +103,21 @@ class Elm_Model_User extends Colony_Model_Abstract
 	}
 
 	/**
+	 * Checks if current user is waiting approval
+	 *
+	 * @return boolean
+	 */
+	public function isWaitingApproval()
+	{
+		foreach ($this->getData('user_role') as $role) {
+			if ($role['role'] != Elm_Model_Resource_Plot::ROLE_CREATOR && $role['role'] != Elm_Model_Resource_Plot::ROLE_OWNER) {
+				return $role['is_approved'] == 0;
+			}
+		}
+		return false;
+	}
+
+	/**
 	 * Get plots
 	 *
 	 * @return mixed
@@ -322,6 +337,22 @@ class Elm_Model_User extends Colony_Model_Abstract
 		$url = $helper->url(null, array('alias' => $this->getAlias(), '_route' => 'user'));
 		return $url;
 	}
+
+	/**
+	 * Gets the role of a user on a plot
+	 *
+	 * @return string|null
+	 */
+	public function getRole()
+	{
+		foreach ($this->getUserRole() as $role) {
+			if ($role['role'] != Elm_Model_Resource_Plot::ROLE_CREATOR && $role['role'] != Elm_Model_Resource_Plot::ROLE_WATCHER) {
+				return $role['role'];
+			}
+		}
+		return null;
+	}
+
 
 	public function getUnreadMessageCount()
 	{

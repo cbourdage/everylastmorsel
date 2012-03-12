@@ -3,7 +3,7 @@
 	<h3>Well done! What would you like to call this location?</h3>
 </div>
 <div class="modal-body step-3" id="stepContent">
-	<form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="formCreatePlot">
+	<form action="<?php echo $this->form->getAction(); ?>" method="post" id="formCreatePlot">
 		<?php foreach($this->form->getHiddenElements() as $element) : ?>
 			<?php echo $element->render(); ?>
 		<?php endforeach; ?>
@@ -83,7 +83,7 @@ jQuery('#plotCreate').on('click', function(e) {
 	}
 
 	jQuery.ajax({
-		url: '/plot/create-ajax/',
+		url: $form.attr('action'),
 		type: 'post',
 		data: $form.serialize(),
 		dataType: 'json',

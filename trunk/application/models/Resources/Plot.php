@@ -6,8 +6,9 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 	const ROLE_CREATOR = 'Creator';
 	const ROLE_OWNER = 'Owner';
 	const ROLE_GARDENER = 'Gardener';
+	const ROLE_WATCHER = 'Watcher';
 
-	public static $userRoles = array('Creator', 'Owner', 'Gardener');
+	public static $userRoles = array('Creator', 'Owner', 'Gardener', 'Watcher');
 	public static $plotTypes = array('Community' => array('Individual', 'Group'), 'Personal', 'Farm');
 
     protected $_name = 'plot';
@@ -18,16 +19,9 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 	{
 		parent::_afterSave($object);
 
-		if ($object->getUserId()) {
-			if ($object->getIsNewPlot()) {
-				$this->getDefaultAdapter()->insert(
-					self::RELATIONSHIP_TABLE,
-					array('user_id' => $object->getUserId(), 'plot_id' => $object->getId(), 'role' => 'Creator')
-				);
-				$object->setIsNewPlot(false);
-			}
+		if ($object->getUserId() && !$this->isUserAssociated($object, $object->getUserId(), self::ROLE_CREATOR)) {
+			$this->associateUser($object, $object->getUserId(), self::ROLE_CREATOR, true);
 		}
-
 		return $this;
 	}
 
@@ -39,30 +33,44 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		$select = $this->getDefaultAdapter()
 			->select()
 			->from(self::RELATIONSHIP_TABLE)
-			->where('plot_id=?', $object->getId());
+			->where('plot_id = ?', $object->getId());
 		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
 			$users = array();
 			foreach ($rows as $row) {
-				$users[$row->user_id] = $row->role;
+				$users[$row->user_id][] = array(
+					'role' => $row->role,
+					'is_approved' => $row->is_approved
+				);
 			}
 			$object->setUserIds($users);
-		}
-		else {
+		} else {
 			$object->setUserIds(null);
 		}
 
 		return $this;
 	}
 
+	/**
+	 * Returns array of all plots
+	 *
+	 * @return array
+	 */
 	public function getAllPlots()
 	{
-		$select = $this->select(); //->where('is_active', '1');
-		if ($rows = $this->fetchAll($select)) {
-			return $rows;
+		$select = $this->select()->where('is_active', '1');
+
+		$items = array();
+		foreach ($this->fetchAll($select) as $row) {
+			$items[] = Bootstrap::getModel('plot')->load($row->plot_id);
 		}
-		return null;
+
+		return $items;
 	}
 
+	/**
+	 * @param $plotId
+	 * @return array
+	 */
 	public function getImages($plotId)
 	{
 		$return = array();
@@ -79,14 +87,48 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 	{
 	}
 
-	public function associateUser($object, $userId, $role)
+	/**
+	 * Checks if a user is already associated with a plot with a specific role
+	 *
+	 * @param $object
+	 * @param $userId
+	 * @param $role
+	 * @return bool
+	 */
+	public function isUserAssociated($object, $userId, $role)
+	{
+		$exists = $this->getDefaultAdapter()->fetchOne("SELECT 1
+			FROM " . self::RELATIONSHIP_TABLE . "
+			WHERE plot_id = {$object->getId()} AND user_id = {$userId} AND role = '{$role}'");
+
+		return !empty($exists);
+	}
+
+	/**
+	 * @param $object
+	 * @param $userId
+	 * @param $role
+	 * @param $approved
+	 */
+	public function associateUser($object, $userId, $role, $approved)
 	{
 		if (in_array($role, self::$userRoles)) {
-				$this->getDefaultAdapter()->insert(
-					self::RELATIONSHIP_TABLE,
-					array('user_id' => $userId, 'plot_id' => $object->getId(), 'role' => $role)
-				);
-			}
+			$this->getDefaultAdapter()->insert(
+				self::RELATIONSHIP_TABLE,
+				array('user_id' => $userId, 'plot_id' => $object->getId(), 'role' => $role, 'is_approved' => $approved)
+			);
+		}
+	}
+
+	public function updateAssociatedUser($object, $userId, $role, $isApproved)
+	{
+		if (in_array($role, self::$userRoles)) {
+			$this->getDefaultAdapter()->update(
+				self::RELATIONSHIP_TABLE,
+				array('is_approved' => $isApproved),
+				"plot_id = {$object->getId()} AND user_id = {$userId} AND role = '{$role}'"
+			);
+		}
 	}
 }
 

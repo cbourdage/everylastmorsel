@@ -119,11 +119,11 @@ class Elm_IndexController extends Elm_AbstractController
 			}
 		} else {
 			$loginForm = new Elm_Model_Form_User_Login();
-			$loginForm->setAction('/user/login-ajax');
+			$loginForm->setAction('/user/login-ajax?type=' . $this->getRequest()->getParam('type'));
 			$this->view->loginForm = $loginForm;
 
 			$createForm = new Elm_Model_Form_User_Create();
-			$createForm->setAction('/user/create-ajax');
+			$createForm->setAction('/user/create-ajax?type=' . $this->getRequest()->getParam('type'));
 			$createForm->removeElement('location');
 			$this->view->createForm = $createForm;
 		}
@@ -138,7 +138,7 @@ class Elm_IndexController extends Elm_AbstractController
 	{
 		$this->_initAjax();
 		$form = new Elm_Model_Form_Plot_Create();
-		$form->setAction('/plot/create-ajax');
+		$form->setAction('/plot/create-ajax?type=' . $this->getRequest()->getParam('type'));
 		$form->removeElement('submit');
 		$this->view->form = $form;
 	}

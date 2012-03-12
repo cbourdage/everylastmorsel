@@ -19,7 +19,16 @@ class Elm_View_Helper_Map extends Zend_View_Helper_Abstract
 	public function getPlotJson()
 	{
 		$this->_plots = Bootstrap::getModel('plot')->getAllPlots();
-		return Zend_Json::encode($this->_plots->toArray());
+		$tempJson = array();
+		foreach ($this->_plots as $key => $plot) {
+			$html = '<div><h3><a href="' . $plot->getUrl() . '" title="' . $plot->getName() . '">' . $plot->getName() . '</a></h3>'
+				. '<p>' . ($plot->getAbout() ? $plot->getAbout() : '') . '</p>';
+			$html .= ($plot->getIsStartup()) ? '<p><strong>Help me startup</strong>' : '';
+			$html .= '</div>';
+			$plot->setData('infoWindowHtml', $html);
+			array_push($tempJson, $plot->getData());
+		}
+		return Zend_Json::encode($tempJson);
 	}
 
 	/**
@@ -60,6 +69,8 @@ class Elm_View_Helper_Map extends Zend_View_Helper_Abstract
 			sprintf('center=%s,%s', $plot->getLatitude(), $plot->getLongitude()),
 			sprintf('markers=color:red|label:S|%s,%s', $plot->getLatitude(), $plot->getLongitude()),
 		));
+
+		Bootstrap::logGoogleRequest($url);
 
 		return $url;
 	}

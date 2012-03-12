@@ -79,7 +79,7 @@ class Elm_CommentController extends Elm_User_AbstractController
 						$response = array(
 							'success' => true,
 							'error' => false,
-							'html' => $this->view->partial('plot/comment/item.phtml', array('item' => $comment))
+							'html' => $this->view->partial('plot/status/item.phtml', array('item' => $comment))
 							//'html' => '<li><h4>' . $comment->getUser()->getName() . '</h4><p>' . $comment->getContent() . '</p></li>'
 						);
 					} catch (Exception $e) {
@@ -97,6 +97,41 @@ class Elm_CommentController extends Elm_User_AbstractController
 					);
 				}
 			}
+		}
+
+		$this->_helper->json->sendJson($response);
+	}
+
+
+	/**
+	 * Create new status message action
+	 */
+	public function rateItAction()
+	{
+		$response = array();
+		$session = $this->_getSession();
+
+		//if ($this->getRequest()->getParam('isAjax', true)) {
+			$this->_helper->layout()->disableLayout();
+			$this->_helper->viewRenderer->setNoRender(true);
+		//}
+
+        if (!$session->isLoggedIn()) {
+			$response = array(
+				'success' => false,
+				'error' => true,
+				'location' => $this->_helper->url('user/login')
+			);
+        } else {
+			// @TODO finish the rating system
+			$comment = Bootstrap::getModel('plot/status')->load($this->getRequest()->getParam('comment_id'));
+			Bootstrap::log('rating: ' . $comment->getId());
+			//$comment->rate($this->getRequest()->getParam('rating'));
+			$response = array(
+				'success' => true,
+				'error' => false,
+				'message' => 'Successfully rated'
+			);
 		}
 
 		$this->_helper->json->sendJson($response);

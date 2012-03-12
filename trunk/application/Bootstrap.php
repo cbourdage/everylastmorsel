@@ -350,7 +350,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
         try {
             if (!isset($loggers[$file])) {
-				$logDir = APPLICATION_PATH . '/data/log/';
+				$logDir = APPLICATION_PATH . '/var/log/';
                 $logFile = $logDir . $file;
 
                 if (!is_dir($logDir)) {
@@ -386,6 +386,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     public static function logException(Exception $e)
     {
         self::log("\n" . $e->__toString(), Zend_Log::ERR, 'exception.log');
+    }
+
+	/**
+     * Write exception to log
+     *
+     * @param Exception $e
+     */
+    public static function logGoogleRequest($s)
+    {
+        self::log($s, Zend_Log::DEBUG, date('Y-m-d-') . 'google-request.log');
     }
 
 	/**

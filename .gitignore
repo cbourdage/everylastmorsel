@@ -2,6 +2,6 @@ trunk/application/configs/application.ini
 trunk/application/data/session
 trunk/application/data/log
 trunk/muteor-Zend*
-*.idea
+*.idea*
 trunk/*.zfproject.xml
 trunk/extras/

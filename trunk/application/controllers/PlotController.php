@@ -13,7 +13,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 
 		// @TODO figure out redirects for login and registration pages - all pages for that matter.
         $action = $this->getRequest()->getActionName();
-        $pattern = '/^(image|image)/i';
+        $pattern = '/^(image|image|involve|watch)/i';
         if (preg_match($pattern, $action)) {
             if (!$this->_getSession()->authenticate($this)) {
                 $this->_redirect('/user/login');
@@ -78,12 +78,17 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 				if ($form->isValid($post)) {
 					try {
 						$plot = Bootstrap::getModel('plot');
-						$plot->setData($post)->save();
+						$plot->setData($post);
+						if ($this->getRequest()->getParam('type') == 'shouldBeA') {
+							$plot->setIsStartup(true);
+						}
+						$plot->save();
+
 						$plot->createNewPlotStatus()->sendNewPlotEmail();
 						$session->addSuccess("This location looks great!");
 
 						if (isset($post['role'])) {
-							$plot->associateUser($post['user_id'], $post['role']);
+							$plot->associateUser($post['user_id'], $post['role'], true);
 						}
 
 						$response = array(
@@ -118,6 +123,9 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	{
 	}
 
+	/**
+	 * Saving properties on the profile page
+	 */
 	public function saveAction()
 	{
 		$this->_initAjax();
@@ -153,14 +161,44 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->_helper->json->sendJson($response);
 	}
 
+	/**
+	 * Involves a user to a plot
+	 */
 	public function involveMeAction()
 	{
 		if ($this->getRequest()->isPost()) {
 			$post = $this->getRequest()->getPost();
 			if (isset($post['role'])) {
 				$plot = Bootstrap::getModel('plot')->load($post['plot_id']);
-				$plot->associateUser($post['user_id'], $post['role']);
+				$plot->associateUser($post['user_id'], $post['role'], false);
 			}
+			$this->_redirect('/p/' . $post['plot_id']);
+		} else {
+			$this->_redirect('/');
+		}
+	}
+
+	public function approveUserAction()
+	{
+		$request = $this->getRequest();
+		if ($request->getParam('user_id') && $request->getParam('plot_id')) {
+			$plot = Bootstrap::getModel('plot')->load($request->getParam('plot_id'));
+			$plot->approveUser($request->getParam('user_id'), $request->getParam('role'));
+			$this->_redirect('/p/' . $request->getParam('plot_id'));
+		} else {
+			$this->_redirect('/');
+		}
+	}
+
+	/**
+	 * Sets a user to 'watching' a plot
+	 */
+	public function watchThisAction()
+	{
+		if ($this->getRequest()->isPost()) {
+			$post = $this->getRequest()->getPost();
+			$plot = Bootstrap::getModel('plot')->load($post['plot_id']);
+			$plot->associateUser($post['user_id'], Elm_Model_Resource_Plot::ROLE_WATCHER, true);
 			$this->_redirect('/p/' . $post['plot_id']);
 		} else {
 			$this->_redirect('/');

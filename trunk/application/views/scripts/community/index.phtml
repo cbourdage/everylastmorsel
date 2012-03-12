@@ -4,7 +4,24 @@ $_session = Bootstrap::getSingleton('user/session');
 <div class="community">
 	<div class="fLeft">
 		<h3>Gardeners & Owners</h3>
-		<?php echo $this->partial('plot/user/list.phtml', array('users' => $this->users)); ?>
+		<?php //echo $this->partial('plot/user/list.phtml', array('users' => $this->users)); ?>
+		<?php if (count($this->users)) : ?>
+			<?php $session = Bootstrap::getSingleton('user/session'); ?>
+			<ul class="list-block user-list">
+			<?php foreach ($this->users as $user) : ?>
+				<li>
+					<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="150px" />
+					<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
+					<p>
+						<?php echo $user->getData('user_role/role'); ?>
+						<?php if ($session->isLoggedIn() && $session->user->isMe($user)) : ?>
+							<i>Me!</i>
+						<?php endif; ?>
+					</p>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
 	</div>
 
 	<div class="fLeft">

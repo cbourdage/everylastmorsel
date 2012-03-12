@@ -12,7 +12,7 @@
 			<input type="hidden" name="plot_id" value="<?php echo $this->plot->getId(); ?>" />
 			<ul class="fieldset">
 			<?php foreach (Elm_Model_Resource_Plot::$userRoles as $role) : ?>
-				<?php if ($role == 'Creator') continue; ?>
+				<?php if ($role == 'Creator' || $role == 'Watcher') continue; ?>
 				<li class="radio">
 					<label class="radio" for="role<?php echo $role; ?>">
 						<input type="radio" id="role<?php echo $role; ?>" class="radio-input" name="role" value="<?php echo $role; ?>">
