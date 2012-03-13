@@ -5,3 +5,4 @@ trunk/muteor-Zend*
 *.idea*
 trunk/*.zfproject.xml
 trunk/extras/
+trunk/application/var*

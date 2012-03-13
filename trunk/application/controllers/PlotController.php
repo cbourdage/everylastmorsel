@@ -13,7 +13,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 
 		// @TODO figure out redirects for login and registration pages - all pages for that matter.
         $action = $this->getRequest()->getActionName();
-        $pattern = '/^(image|image|involve|watch)/i';
+        $pattern = '/^(image|image|involve|watch|pendingApproval)/i';
         if (preg_match($pattern, $action)) {
             if (!$this->_getSession()->authenticate($this)) {
                 $this->_redirect('/user/login');
@@ -162,6 +162,28 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	}
 
 	/**
+	 * Shows list of users pending approval for specified plot
+	 */
+	public function pendingUsersAction()
+	{
+		if (!$this->_isValid()) {
+			$this->_forward('no-route');
+		} else {
+			$this->_initCurrentPlot();
+			$this->view->headTitle()->prepend('Pending Users');
+			$this->view->headTitle()->prepend($this->_plot->getName());
+
+			if (!$this->_plot->isOwner($this->_getSession()->user)) {
+				$this->_redirect('/p/' . $this->_plot->getId());
+				return;
+			}
+			$this->view->plot = $this->_plot;
+			$this->view->users = $this->_plot->getPendingUsers();
+		}
+		$this->_initLayout();
+	}
+
+	/**
 	 * Involves a user to a plot
 	 */
 	public function involveMeAction()
@@ -178,12 +200,30 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		}
 	}
 
+	/**
+	 * Approves user action
+	 */
 	public function approveUserAction()
 	{
 		$request = $this->getRequest();
 		if ($request->getParam('user_id') && $request->getParam('plot_id')) {
 			$plot = Bootstrap::getModel('plot')->load($request->getParam('plot_id'));
 			$plot->approveUser($request->getParam('user_id'), $request->getParam('role'));
+			$this->_redirect('/p/' . $request->getParam('plot_id'));
+		} else {
+			$this->_redirect('/');
+		}
+	}
+
+	/**
+	 * Approves user action
+	 */
+	public function denyUserAction()
+	{
+		$request = $this->getRequest();
+		if ($request->getParam('user_id') && $request->getParam('plot_id')) {
+			$plot = Bootstrap::getModel('plot')->load($request->getParam('plot_id'));
+			$plot->denyUser($request->getParam('user_id'), $request->getParam('role'));
 			$this->_redirect('/p/' . $request->getParam('plot_id'));
 		} else {
 			$this->_redirect('/');

@@ -28,7 +28,7 @@
 	</div>
 
 <?php if ($session->isLoggedIn()) : ?>
-	<?php if (!$plot->isWatching($session->user)) : ?>
+	<?php if (!$plot->isWatching($session->user) && !$plot->isAssociated($session->user, true)) : ?>
 		<div class="btn-group">
 			<form action="/plot/watch-this/" method="post">
 				<input type="hidden" name="plot_id" value="<?php echo $plot->getId(); ?>" />

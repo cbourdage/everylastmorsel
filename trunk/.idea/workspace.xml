@@ -31,10 +31,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/user/list.phtml">
+      <file leaf-file-name="PlotController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/PlotController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="45" selection-start="443" selection-end="443" vertical-scroll-proportion="-4.2608695">
+            <state line="226" column="23" selection-start="5528" selection-end="5528" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#preDispatch#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#viewAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#startupAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#pendingUsersAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#involveMeAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#approveUserAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#watchThisAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#imagesAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#imageUploadAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#imageRemoveAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pending-users.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/pending-users.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="30" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -55,22 +75,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/scripts/plot/user/associate.phtml" />
-        <option value="$PROJECT_DIR$/application/models/Resources/User.php" />
-        <option value="$PROJECT_DIR$/http/file-bin/css/screen.css" />
         <option value="$PROJECT_DIR$/application/views/scripts/community/index.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/plot/_sidebar.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/plot/view.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/plot/list.phtml" />
         <option value="$PROJECT_DIR$/application/models/Plot/Associations.php" />
         <option value="$PROJECT_DIR$/application/models/Plot/Association.php" />
-        <option value="$PROJECT_DIR$/application/models/Plot.php" />
+        <option value="$PROJECT_DIR$/application/models/User.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/pending-approval.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/plot/user/list.phtml" />
         <option value="$PROJECT_DIR$/application/views/helpers/Plot.php" />
-        <option value="$PROJECT_DIR$/application/controllers/PlotController.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/_sidebar.phtml" />
         <option value="$PROJECT_DIR$/application/models/Resources/Plot.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/view.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/pending-users.phtml" />
+        <option value="$PROJECT_DIR$/application/controllers/PlotController.php" />
+        <option value="$PROJECT_DIR$/application/models/Plot.php" />
+        <option value="$PROJECT_DIR$/application/models/Resources/User.php" />
         <option value="$PROJECT_DIR$/application/var/log/app.log" />
-        <option value="$PROJECT_DIR$/application/models/User.php" />
       </list>
     </option>
   </component>
@@ -215,40 +235,6 @@
               <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -303,28 +289,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -409,28 +373,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="var" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="var" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -691,7 +633,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2546634" sideWeight="0.43333334" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23355263" sideWeight="0.9969372" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18914473" sideWeight="0.9969372" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -760,51 +702,10 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/user/associate.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="65" selection-start="767" selection-end="767" vertical-scroll-proportion="-8.521739">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/var/log/exception.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Resources/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="5" selection-start="3131" selection-end="3131" vertical-scroll-proportion="0.5730337">
-          <folding>
-            <element signature="n#checkConfirmationKey#0;n#Elm_Model_Resource_User#0;n#!!top" expanded="true" />
-            <element signature="n#findEmailDuplicates#0;n#Elm_Model_Resource_User#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/http/file-bin/css/screen.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="45" selection-start="5711" selection-end="5711" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/community/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="21" selection-start="869" selection-end="869" vertical-scroll-proportion="0.4770017">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/_sidebar.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1331509176000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1331509176000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -822,57 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/view.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="121" selection-start="1492" selection-end="1492" vertical-scroll-proportion="0.5366667">
-          <folding>
-            <element signature="e#3162#4126#0" expanded="true" />
-            <element signature="e#3208#4122#0" expanded="true" />
-            <element signature="e#3464#3847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/PlotController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="90" selection-start="4435" selection-end="4435" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#startupAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
-            <element signature="n#involveMeAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Plot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="7" selection-start="4269" selection-end="4269" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#_construct#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getUsers#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#associateUser#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#approveUser#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#denyUser#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#addImages#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#removeImages#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Resources/Plot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="48" selection-start="3036" selection-end="3036" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#_afterSave#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#_afterLoad#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getAllPlots#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getImages#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#loadByLatLong#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#isUserAssociated#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#associateUser#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="347" column="49" selection-start="8307" selection-end="8307" vertical-scroll-proportion="0.0">
@@ -880,20 +730,131 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/_sidebar.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="21" selection-start="655" selection-end="655" vertical-scroll-proportion="0.28620103">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/helpers/Plot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="42" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0">
+        <state line="20" column="20" selection-start="396" selection-end="396" vertical-scroll-proportion="0.38202247">
           <folding>
             <element signature="n#getFeed#0;n#Elm_View_Helper_Plot#0;n#!!top" expanded="true" />
             <element signature="n#filterUsers#0;n#Elm_View_Helper_Plot#0;n#!!top" expanded="true" />
             <element signature="n#getApprovalUrl#0;n#Elm_View_Helper_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#getDenyUrl#0;n#Elm_View_Helper_Plot#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/_sidebar.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="93" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.6337308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/pending-users.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="30" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Zend/Controller/Action.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="683" column="23" selection-start="21626" selection-end="21626" vertical-scroll-proportion="0.7977528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/PlotController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="226" column="23" selection-start="5528" selection-end="5528" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#preDispatch#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#viewAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#startupAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#pendingUsersAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#involveMeAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#approveUserAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#watchThisAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#imagesAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#imageUploadAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#imageRemoveAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Resources/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="44" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.47191012">
+          <folding>
+            <element signature="n#_afterSave#0;n#Elm_Model_Resource_User#0;n#!!top" expanded="true" />
+            <element signature="n#checkConfirmationKey#0;n#Elm_Model_Resource_User#0;n#!!top" expanded="true" />
+            <element signature="n#findEmailDuplicates#0;n#Elm_Model_Resource_User#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Resources/Plot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="0" selection-start="3172" selection-end="3172" vertical-scroll-proportion="0.123595506">
+          <folding>
+            <element signature="n#_afterSave#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#_afterLoad#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#getPendingUsers#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#getAllPlots#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#getImages#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#loadByLatLong#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#associateUser#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#updateAssociatedUser#0;n#Elm_Model_Resource_Plot#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Plot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="201" column="77" selection-start="4298" selection-end="4298" vertical-scroll-proportion="0.30337077">
+          <folding>
+            <element signature="n#_construct#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#getUsers#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#getPendingUsers#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#getWatchers#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#getFeed#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#sendNewPlotEmail#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#createNewPlotStatus#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#associateUser#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#approveUser#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#isAssociated#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#isOwner#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#isWatching#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#getUrl#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#getImages#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#addImages#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+            <element signature="n#removeImages#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/view.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="113" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.4531516">
+          <folding>
+            <element signature="e#3438#4402#0" expanded="true" />
+            <element signature="e#3484#4398#0" expanded="true" />
+            <element signature="e#3740#4123#0" expanded="true" />
+            <element signature="e#4146#4246#0" expanded="true" />
+            <element signature="e#4273#4373#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/user/list.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="45" selection-start="443" selection-end="443" vertical-scroll-proportion="-4.2608695">
+        <state line="1" column="40" selection-start="0" selection-end="749" vertical-scroll-proportion="0.023333333">
           <folding />
         </state>
       </provider>

@@ -30,10 +30,11 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 	{
 		parent::_afterLoad($object);
 		
-		$select = $this->getDefaultAdapter()
-			->select()
+		$select = $this->getDefaultAdapter()->select()
 			->from(self::RELATIONSHIP_TABLE)
-			->where('plot_id = ?', $object->getId());
+			->where('plot_id = ?', $object->getId())
+			->where('is_approved = 1');
+
 		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
 			$users = array();
 			foreach ($rows as $row) {
@@ -48,6 +49,26 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		}
 
 		return $this;
+	}
+
+	public function getPendingUsers($object)
+	{
+		$select = $this->getDefaultAdapter()->select()
+			->from(self::RELATIONSHIP_TABLE)
+			->where('plot_id = ?', $object->getId())
+			->where('is_approved = 0');
+
+		$users = array();
+		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
+			foreach ($rows as $row) {
+				$users[$row->user_id][] = array(
+					'role' => $row->role,
+					'is_approved' => $row->is_approved
+				);
+			}
+		}
+
+		return $users;
 	}
 
 	/**
@@ -93,14 +114,24 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 	 * @param $object
 	 * @param $userId
 	 * @param $role
+	 * @param int $active
 	 * @return bool
 	 */
-	public function isUserAssociated($object, $userId, $role)
+	public function isUserAssociated($object, $userId, $role = null, $active = 0)
 	{
-		$exists = $this->getDefaultAdapter()->fetchOne("SELECT 1
-			FROM " . self::RELATIONSHIP_TABLE . "
-			WHERE plot_id = {$object->getId()} AND user_id = {$userId} AND role = '{$role}'");
+		$exists = null;
+		$where = "WHERE plot_id = {$object->getId()} AND user_id = {$userId}";
+		if (is_array($role)) {
+			$where .= " AND role IN ('" . implode("','", $role) . "')";
+		} elseif (in_array($role, self::$userRoles)) {
+			$where .= " AND role = '{$role}'";
+		}
 
+		if ($active == 1) {
+			$where .= " AND is_approved = 1";
+		}
+
+		$exists = $this->getDefaultAdapter()->fetchOne("SELECT 1 FROM " . self::RELATIONSHIP_TABLE . " $where");
 		return !empty($exists);
 	}
 

@@ -13,6 +13,14 @@ class Elm_View_Helper_Plot extends Zend_View_Helper_Abstract
 		return $this;
 	}
 
+	public function getPlot()
+	{
+		if (Zend_Registry::isRegistered('current_plot')) {
+			return Zend_Registry::get('current_plot');
+		}
+		return null;
+	}
+
 	/**
 	 * @param $plot
 	 * @param int $count
@@ -46,6 +54,13 @@ class Elm_View_Helper_Plot extends Zend_View_Helper_Abstract
 		return $users;
 	}
 
+	/**
+	 * Returns string url for user approval
+	 *
+	 * @param $plot
+	 * @param $user
+	 * @return mixed
+	 */
 	public function getApprovalUrl($plot, $user)
 	{
 		return $this->view->url('plot/approve-user', array(
@@ -55,6 +70,11 @@ class Elm_View_Helper_Plot extends Zend_View_Helper_Abstract
 		));
 	}
 
+	/**
+	 * @param $plot
+	 * @param $user
+	 * @return mixed
+	 */
 	public function getDenyUrl($plot, $user)
 	{
 		return $this->view->url('plot/deny-user', array(

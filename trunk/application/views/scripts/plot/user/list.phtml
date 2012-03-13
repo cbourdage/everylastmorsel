@@ -1,14 +1,9 @@
-<?php $plot = Zend_Registry::get('current_plot'); ?>
+<?php $session = Bootstrap::getSingleton('user/session'); ?>
+<?php $plot = $this->Plot()->getPlot(); ?>
 <?php if (count($this->users)) : ?>
-	<?php $session = Bootstrap::getSingleton('user/session'); ?>
 	<ul class="list-block user-list">
 	<?php foreach ($this->users as $user) : ?>
-		<li class="<?php echo $user->isWaitingApproval() ? 'pending' : ''; ?>">
-			<?php if ($user->isWaitingApproval() && $session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
-				<?php echo $user->getId(); ?>
-				<a href="<?php echo $this->Plot()->getApprovalUrl($plot, $user); ?>" title="Approve">Approve</a>
-				<a href="<?php echo $this->Plot()->getDenyUrl($plot, $user); ?>" title="Deny">Deny</a>
-			<?php endif; ?>
+		<li>
 			<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="150px" />
 			<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
 			<p>

@@ -37,10 +37,10 @@ class Elm_Model_Resource_User extends Colony_Db_Table
 	{
 		parent::_afterLoad($object);
 		
-		$select = $this->getDefaultAdapter()
-			->select()
+		$select = $this->getDefaultAdapter()->select()
 			->from(Elm_Model_Resource_Plot::RELATIONSHIP_TABLE)
-			->where('user_id = ?', $object->getId());
+			->where('user_id = ?', $object->getId())
+			->where('is_approved = 1');
 		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
 			$plots = array();
 			foreach ($rows as $row) {
