@@ -1,0 +1,145 @@
+
+/*		Main
+***************************************************************/
+body {
+	color: #222;
+	cursor: default;
+	font: normal 100%/1.5 "Open Sans", Arial, sans-serif;
+	overflow-x: hidden;
+	padding-bottom: 25px;
+	width: 100%;
+}
+h1 { }
+h2 {
+	text-shadow: 1px 1px #fff;
+	-moz-text-shadow: 1px 1px #fff;
+	-o-text-shadow: 1px 1px #fff;
+	-webkit-text-shadow: 1px 1px #fff;
+}
+a {
+	transition: color, .2s, ease-in;
+	-moz-transition: color, .2s, ease-in;
+	-o-transition: color, .2s, ease-in;
+	-webkit-transition: color, .2s, ease-in;
+}
+
+
+/*		Sections and Titles Layout 	****************************************/
+header { margin: 10px auto; text-align: center; width: 800px; }
+header h1 {
+	background: url('../images/logo-sm.png') no-repeat;
+	height: 100px;
+	margin: 0 auto;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	width: 125px;
+}
+section { margin: 0 auto; overflow: hidden; width: 800px; }
+section h3 {
+	color: #1DA5B1;
+	font-size: 24px;
+	font-weight: 300;
+	font-style: italic;
+	margin: 50px 0 160px 150px;
+	position: relative;
+	width: 280px;
+	text-shadow: 1px 1px #95D8E1;
+	-moz-text-shadow: 1px 1px #95D8E1;
+	-o-text-shadow: 1px 1px #95D8E1;
+	-webkit-text-shadow: 1px 1px #95D8E1;
+}
+section h3 span {
+	font-family: "Junge", serif;
+	font-size: 120px;
+	font-style: normal;
+	font-weight: 400;
+	position: absolute;
+	right: -250px;
+	top: -28px;
+}
+section h3 span + span { font-size: 32px; top: 100px; }
+section p.thank-you {
+	background: #F8F6F4;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: #1DA5B1;
+	font-size: 14px;
+	margin-bottom: 20px;
+	padding: 10px;
+	text-align: center;
+	text-shadow: 1px 1px #fff;
+}
+section p.message {
+	background: #F8F6F4;
+	border: 10px solid rgba(185, 168, 148, .1);
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	float: left;
+	padding: 20px;
+	width: 320px;
+}
+section p.message i { color: #1DA5B1; }
+
+/*		Newsletter Signup Form 	****************************************/
+form[role="newsletter"] { float: right; width: 340px; }
+form[role="newsletter"] ul li { font-size: .875em; margin-bottom: 15px; position: relative; text-align: left; }
+form[role="newsletter"] ul li span { color: #E65C00; font-style: italic; }
+form[role="newsletter"] ul li label {
+	color: #b9a894;
+	font-size: 14px;
+	letter-spacing: 1px;
+	position: absolute;
+	left: 8px;
+	top: 9px;
+	text-shadow: 1px 1px #fff;
+	-moz-text-shadow: 1px 1px #fff;
+	-o-text-shadow: 1px 1px #fff;
+	-webkit-text-shadow: 1px 1px #fff;
+	z-index: 6;
+}
+form[role="newsletter"] ul li input {
+	background: transparent;
+	background: rgba(185,168,148,.2);
+	border: 0;
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-webkit-border-radius: 3px;
+
+	color: #b9a894;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 8px 0 8px 70px;
+	width: 340px;
+}
+form[role="newsletter"] ul + p { clear: both; }
+form[role="newsletter"] input[type="submit"] {
+	background: #B3CF58;
+	border: 0;
+	border-bottom: 1px solid #696;
+	border-right: 1px solid #696;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-webkit-border-radius: 3px;
+
+	color: #fff;
+	cursor: pointer;
+	font: normal 1.375em/1.5 "Book Antique", Georgia, "Times New Roman", serif;
+	padding: 4px 8px;
+}
+form[role="newsletter"] input[type="submit"]:hover { background: rgba(230,92,0,.8); }
+form[role="newsletter"] input[type="submit"]:active { border: 0; border-top: 1px solid #b9a894; border-left: 1px solid #b9a894; }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	/*form[role="newsletter"] label { top: 5px; }
+	form[role="newsletter"] input[type="email"] { padding-top: 6px; }*/
+}
+

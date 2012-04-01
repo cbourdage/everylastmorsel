@@ -1,0 +1,48 @@
+<html dir="ltr" lang="en-US" dir="ltr">
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<?= $this->headMeta(); ?>
+	<?= $this->headTitle(); ?>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300|Junge' rel='stylesheet' type='text/css'>
+	<?= $this->headStyle(); ?>
+	<?= $this->headLink(); ?>
+
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+	<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : 'YOUR_APP_ID', // App ID
+			//channelUrl : '//<?php echo $this->Data()->getDomain() . $this->baseUrl('channel.html'); ?>', // Channel File
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			xfbml      : true  // parse XFBML
+		});
+	};
+
+	// Load Asynchronously
+	(function(d){
+		// FB
+		var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+		js = d.createElement('script'); js.id = id; js.async = true;
+		js.src = "//connect.facebook.net/en_US/all.js";
+		d.getElementsByTagName('head')[0].appendChild(js);
+
+		// g+
+		var po = d.createElement('script');
+		po.type = 'text/javascript';
+		po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = d.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(po, s);
+	}(document));
+	</script>
+</head>
+
+<body id="page">
+	<?= $this->layout()->content; ?>
+</body>
+</html>

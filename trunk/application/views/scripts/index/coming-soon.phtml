@@ -1,0 +1,27 @@
+<header>
+	<h1 class="text-hide">Every Last Morsel</h1>
+</header>
+
+<section class="group">
+	<h3>mary, mary, quite contrary <span>where</span> <span>does your garden grow</span></h3>
+
+	<?php if ($message !== null) : ?>
+		<p class="thank-you"><?php echo $message; ?></p>
+	<?php endif; ?>
+
+	<p class="message">We know you're eager to <i>dig</i> in (and we're excited that you're excited!) but we're still laying the ground work here. Let us know where we can find you when we're ready; until then mum's the word.</p>
+
+	<form role="newsletter" class="group" action="" method="post">
+		<ul>
+			<li>
+				<label for="email">Email:</label>
+				<div><input type="email" name="email" id="email" value="<?= $email; ?>" /></div>
+			</li>
+			<li>
+				<label for="email">Region:</label>
+				<div><input type="text" name="region" id="region" value="<?= $region; ?>" placeholder="(Chicago, Boston, LA, etc.)" /></div>
+			</li>
+		</ul>
+		<p><input type="submit" name="submit" value="Sign Up" /></p>
+	</form>
+</section>
