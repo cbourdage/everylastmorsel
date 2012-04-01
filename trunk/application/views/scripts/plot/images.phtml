@@ -1,5 +1,5 @@
 <?php
-$_session = Bootstrap::getSingleton('user/session');
+$_session = Elm::getSingleton('user/session');
 $_plot = $this->plot;
 ?>
 
@@ -13,7 +13,7 @@ $_plot = $this->plot;
 		<ul class="list list-block">
 			<?php foreach ($images as $image) : ?>
 				<li>
-					<img src="<?= Bootstrap::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" width="150px" title="<?php echo $image->getCaption(); ?>" alt="<?php echo $image->getCaption(); ?>">
+					<img src="<?= Elm::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" width="150px" title="<?php echo $image->getCaption(); ?>" alt="<?php echo $image->getCaption(); ?>">
 					<a href="<?= $this->url('plot/image-remove', array('p' => $_plot->getId(), 'images' => $image->getId())); ?>" title="Remove Image">Remove</a>
 				</li>
 			<?php endforeach; ?>

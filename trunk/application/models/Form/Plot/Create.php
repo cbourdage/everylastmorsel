@@ -20,14 +20,14 @@ class Elm_Model_Form_Plot_Create extends Elm_Model_Form_Abstract
             'filters'    => array('StringTrim'),
             'validators' => array('Float'),
             'required'   => true,
-			'value'      => Bootstrap::getSingleton('user/session')->plot['latitude']
+			'value'      => Elm::getSingleton('user/session')->plot['latitude']
         ));
 
         $this->addElement('hidden', 'longitude', array(
             'filters'    => array('StringTrim'),
             'validators' => array('Float'),
             'required'   => true,
-			'value'      => Bootstrap::getSingleton('user/session')->plot['longitude']
+			'value'      => Elm::getSingleton('user/session')->plot['longitude']
         ));
 
 		// @TODO Auto-populate zipcode based on lat & long
@@ -38,10 +38,10 @@ class Elm_Model_Form_Plot_Create extends Elm_Model_Form_Abstract
             'label'      => 'Zipcode'
         ));
 
-		if (Bootstrap::getSingleton('user/session')->isLoggedIn()) {
+		if (Elm::getSingleton('user/session')->isLoggedIn()) {
 			$this->addElement('hidden', 'user_id', array(
 				'required'   => true,
-				'value'      => Bootstrap::getSingleton('user/session')->id
+				'value'      => Elm::getSingleton('user/session')->id
 			));
 		}
 		

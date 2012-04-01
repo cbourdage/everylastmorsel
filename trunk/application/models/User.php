@@ -95,7 +95,7 @@ class Elm_Model_User extends Colony_Model_Abstract
 	 */
 	public function isMe(Elm_Model_User $user)
 	{
-		$session = Bootstrap::getSingleton('user/session');
+		$session = Elm::getSingleton('user/session');
 		if ($session->isLoggedIn() && $session->user->getId() == $user->getId()) {
 			return true;
 		}
@@ -127,13 +127,18 @@ class Elm_Model_User extends Colony_Model_Abstract
 		if (count($this->_plots) < 1 && count($this->getPlotIds()) > 0) {
 			foreach ($this->getPlotIds() as $id => $role) {
 				if ($role != Elm_Model_Resource_Plot::ROLE_CREATOR) {
-					$plot = Bootstrap::getModel('plot')->load($id);
+					$plot = Elm::getModel('plot')->load($id);
 					$plot->setUserRole($role);
 					$this->_plots[] = $plot;
 				}
 			}
 		}
 		return $this->_plots;
+	}
+
+	public function hasPlots()
+	{
+		return count($this->getPlots()) > 0;
 	}
 
     /**
@@ -235,7 +240,7 @@ class Elm_Model_User extends Colony_Model_Abstract
 			));
 			$EmailTemplate->send(array('email' => $this->getEmail(), 'name' => $this->getName()));
 		} catch(Exception $e) {
-			Bootstrap::logException($e);
+			Elm::logException($e);
 		}
         return $this;
     }
@@ -252,7 +257,7 @@ class Elm_Model_User extends Colony_Model_Abstract
 			$EmailTemplate->setParams(array('user' => $this));
 			$EmailTemplate->send(array('email' => $this->getEmail(), 'name' => $this->getName()));
 		} catch(Exception $e) {
-			Bootstrap::logException($e);
+			Elm::logException($e);
 		}
         return $this;
     }
@@ -273,58 +278,11 @@ class Elm_Model_User extends Colony_Model_Abstract
 			));
 			$EmailTemplate->send(array('email' => $this->getEmail(), 'name' => $this->getName()));
 		} catch(Exception $e) {
-			Bootstrap::logException($e);
+			Elm::logException($e);
 		}
         return $this;
         return $this;
     }
-
-    /**
-	 * Adds a new image to the plot
-	 *
-	 * @param array $params
-	 * @return bool
-	 */
-	public function uploadImage($params)
-	{
-		$session = Bootstrap::getSingleton('user/session');
-		$destination = Elm_Model_User_Image::getImageDestination($this);
-
-		$adapter = new Zend_File_Transfer_Adapter_Http();
-		$adapter->setDestination($destination)
-			->addValidator('Size', false, Elm_Model_User_Image::MAX_FILE_SIZE)
-			->addValidator('Extension', false, 'jpg,png,gif,jpeg');
-
-		$info = $adapter->getFileInfo('image');
-		$info = $info['image'];
-		list($temp, $ext) = explode('.', $info['name']);
-		$newFilename = md5($temp) . '.' . $ext;
-
-		try {
-			// Rename filter
-			$adapter->addFilter('Rename', array(
-				'target' => $destination . DIRECTORY_SEPARATOR . $newFilename,
-				'overwrite' => true
-			));
-
-			// Receive and save
-			if ($adapter->receive('image')) {
-				// Set image data
-				//$this->setData('exif_data', exif_read_data($info['destination'] . DIRECTORY_SEPARATOR . $newFilename));
-				$this->setImage(Elm_Model_User_Image::getImageUrl($this) . '/' . $newFilename);
-				$this->save();
-				$session->addSuccess('Successfully updated your image');
-			} else {
-				$errors = $adapter->getMessages();
-				foreach ($errors as $e) {
-					$session->addError($e);
-				}
-			}
-		} catch (Exception $e) {
-			Bootstrap::logException($e);
-			$session->addException($e);
-		}
-	}
 
 	/**
 	 * Returns a user url
@@ -357,7 +315,7 @@ class Elm_Model_User extends Colony_Model_Abstract
 	public function getUnreadMessageCount()
 	{
 		if (!$this->_messages) {
-			$this->_messages = Bootstrap::getModel('communication')->getByUserId($this->getId());
+			$this->_messages = Elm::getModel('communication')->getByUserId($this->getId());
 		}
 		return $this->_messages->count();
 	}

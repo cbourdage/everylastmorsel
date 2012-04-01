@@ -24,4 +24,12 @@ interface Elm_Model_Image_Interface
 	 * @return string
 	 */
 	public static function getImageUrl($plot);
+
+	/**
+	 * @static
+	 * @abstract
+	 * @param $object
+	 * @param $params
+	 */
+	//public static function upload($object, $params);
 }

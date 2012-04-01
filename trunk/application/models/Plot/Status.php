@@ -69,7 +69,7 @@ class Elm_Model_Plot_Status extends Colony_Model_Abstract
 	public function getUser()
 	{
 		if (!$this->_user) {
-			$this->_user = Bootstrap::getSingleton('user')->load($this->getUserId());
+			$this->_user = Elm::getSingleton('user')->load($this->getUserId());
 		}
 
 		return $this->_user;

@@ -1,4 +1,4 @@
-<?php $session = Bootstrap::getSingleton('user/session'); ?>
+<?php $session = Elm::getSingleton('user/session'); ?>`
 <?php $plot = $this->Plot()->getPlot(); ?>
 <?php if (count($this->users)) : ?>
 	<ul class="list-block user-list">
@@ -9,7 +9,7 @@
 			<p>
 				<?php echo $user->getRole(); ?>
 				<?php if ($session->isLoggedIn() && $session->user->isMe($user)) : ?>
-					<i>Me!</i>
+					<i>Me!</i>~``~
 				<?php endif; ?>
 			</p>
 		</li>

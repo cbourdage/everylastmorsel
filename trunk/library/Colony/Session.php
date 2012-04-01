@@ -53,7 +53,7 @@ class Colony_Session extends Zend_Session_Namespace
             $exception->getMessage(),
             "\n",
             $exception->getTraceAsString());
-        Bootstrap::log($message, Zend_Log::DEBUG, self::EXCEPTION_FILE);
+        Elm::log($message, Zend_Log::DEBUG, self::EXCEPTION_FILE);
         $this->addMessage(self::ERROR, $alternativeText);
         return $this;
     }

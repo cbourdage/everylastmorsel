@@ -8,13 +8,13 @@ class Elm_Model_Form_Plot_Images extends Elm_Model_Form_Abstract
 	{
 		parent::__construct();
 
-		//Bootstrap::log(Bootstrap::getBaseDir('http/media/plots'));
+		//Elm::log(Elm::getBaseDir('http/media/plots'));
 		$this->setAttrib('enctype', 'multipart/form-data');
 		$this->setIsArray(true);
 		// Images input
 		$element = new Zend_Form_Element_File('image');
 		$element->setLabel('Image')
-			//->setDestination(Bootstrap::getBaseDir('http/media/plots') . '/upload')
+			//->setDestination(Elm::getBaseDir('http/media/plots') . '/upload')
 			->addValidator('Size', false, 102400)	// limit to 100K
 			->addValidator('Extension', false, 'jpg,png,gif,jpeg'); // only JPEG, PNG, and GIFs
 		$element->setDecorators($this->fileDecorators);

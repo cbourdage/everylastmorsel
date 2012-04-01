@@ -1,5 +1,5 @@
 <?php
-$session = Bootstrap::getSingleton('user/session');
+$session = Elm::getSingleton('user/session');
 if (Zend_Registry::isRegistered('current_user')) : ?>
 	<?php $_user = Zend_Registry::get('current_user'); ?>
 	<div id="mainImage">

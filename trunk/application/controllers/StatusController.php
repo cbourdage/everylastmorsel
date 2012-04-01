@@ -37,7 +37,7 @@ class Elm_StatusController extends Elm_User_AbstractController
 	public function viewAction()
 	{
 		$id = $this->getRequest()->getParam('id');
-		if ($plot = Bootstrap::getModel('plot')->load($id)) {
+		if ($plot = Elm::getModel('plot')->load($id)) {
 			Zend_Registry::set('current_plot', $plot);
 			$this->view->plot = $plot;
 			$this->view->headTitle()->prepend($plot->getName());
@@ -68,8 +68,8 @@ class Elm_StatusController extends Elm_User_AbstractController
 			);
         } else {
 			if ($this->getRequest()->isPost()) {
-				//Bootstrap::log($this->getRequest()->getPost());
-				$status = Bootstrap::getModel('plot/status')->setData($this->getRequest()->getPost());
+				//Elm::log($this->getRequest()->getPost());
+				$status = Elm::getModel('plot/status')->setData($this->getRequest()->getPost());
 				if ($status->isValid()) {
 					try {
 						$status->save();

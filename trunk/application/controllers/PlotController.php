@@ -77,7 +77,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 				$post = $this->getRequest()->getPost();
 				if ($form->isValid($post)) {
 					try {
-						$plot = Bootstrap::getModel('plot');
+						$plot = Elm::getModel('plot');
 						$plot->setData($post);
 						if ($this->getRequest()->getParam('type') == 'shouldBeA') {
 							$plot->setIsStartup(true);
@@ -140,7 +140,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
         } else {
 			if ($this->getRequest()->isPost()) {
 				$post = $this->getRequest()->getPost();
-				$plot = Bootstrap::getModel('plot')->load($post['plot_id']);
+				$plot = Elm::getModel('plot')->load($post['plot_id']);
 				$plot->setData($post['plot_update'], $post[$post['plot_update']]);
 				$plot->save();
 				$response = array(
@@ -191,7 +191,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		if ($this->getRequest()->isPost()) {
 			$post = $this->getRequest()->getPost();
 			if (isset($post['role'])) {
-				$plot = Bootstrap::getModel('plot')->load($post['plot_id']);
+				$plot = Elm::getModel('plot')->load($post['plot_id']);
 				$plot->associateUser($post['user_id'], $post['role'], false);
 			}
 			$this->_redirect('/p/' . $post['plot_id']);
@@ -207,7 +207,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	{
 		$request = $this->getRequest();
 		if ($request->getParam('user_id') && $request->getParam('plot_id')) {
-			$plot = Bootstrap::getModel('plot')->load($request->getParam('plot_id'));
+			$plot = Elm::getModel('plot')->load($request->getParam('plot_id'));
 			$plot->approveUser($request->getParam('user_id'), $request->getParam('role'));
 			$this->_redirect('/p/' . $request->getParam('plot_id'));
 		} else {
@@ -222,7 +222,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	{
 		$request = $this->getRequest();
 		if ($request->getParam('user_id') && $request->getParam('plot_id')) {
-			$plot = Bootstrap::getModel('plot')->load($request->getParam('plot_id'));
+			$plot = Elm::getModel('plot')->load($request->getParam('plot_id'));
 			$plot->denyUser($request->getParam('user_id'), $request->getParam('role'));
 			$this->_redirect('/p/' . $request->getParam('plot_id'));
 		} else {
@@ -237,7 +237,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	{
 		if ($this->getRequest()->isPost()) {
 			$post = $this->getRequest()->getPost();
-			$plot = Bootstrap::getModel('plot')->load($post['plot_id']);
+			$plot = Elm::getModel('plot')->load($post['plot_id']);
 			$plot->associateUser($post['user_id'], Elm_Model_Resource_Plot::ROLE_WATCHER, true);
 			$this->_redirect('/p/' . $post['plot_id']);
 		} else {

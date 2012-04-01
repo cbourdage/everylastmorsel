@@ -1,5 +1,5 @@
 
-<?php if (Bootstrap::getSingleton('user/session')->isLoggedIn()) : ?>
+<?php if (Elm::getSingleton('user/session')->isLoggedIn()) : ?>
 <?php $form = new Elm_Model_Form_Communication_Contact(); ?>
 <div id="contact-form-wrapper">
 	<h4>Note from...</h4>
@@ -11,7 +11,7 @@
 		<?php if (Zend_Registry::isRegistered('current_user')) : ?>
 			<input type="hidden" name="user_to_id" value="<?php echo Zend_Registry::get('current_user')->getId(); ?>" />
 		<?php endif; ?>
-		<input type="hidden" name="user_from_id" value="<?php echo Bootstrap::getSingleton('user/session')->user->getId(); ?>" />
+		<input type="hidden" name="user_from_id" value="<?php echo Elm::getSingleton('user/session')->user->getId(); ?>" />
 		<ul class="fieldset">
 			<?php foreach($form->getElements() as $element) : ?>
 				<?php echo $element->render(); ?>

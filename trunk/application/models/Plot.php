@@ -75,7 +75,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	{
 		if (count($this->_users) < 1 && count($this->getUserIds()) > 0) {
 			foreach ($this->getUserIds() as $id => $role) {
-				$user = Bootstrap::getModel('user')->load($id);
+				$user = Elm::getModel('user')->load($id);
 				$user->setUserRole($role);
 				$this->_users[] = $user;
 			}
@@ -94,7 +94,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		if (count($this->_pendingUsers) < 1) {
 			$users = $this->_getResource()->getPendingUsers($this);
 			foreach ($users as $id => $role) {
-				$user = Bootstrap::getModel('user')->load($id);
+				$user = Elm::getModel('user')->load($id);
 				$user->setUserRole($role);
 				$this->_pendingUsers[] = $user;
 			}
@@ -113,7 +113,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		if (count($this->_watchers) < 1 && count($this->getUserIds()) > 0) {
 			foreach ($this->getUserIds() as $id => $role) {
 				if ($role == Elm_Model_Resource_Plot::ROLE_WATCHER) {
-					$user = Bootstrap::getModel('user')->load($id);
+					$user = Elm::getModel('user')->load($id);
 					$user->setUserRole($role);
 					$this->_watchers[] = $user;
 				}
@@ -131,7 +131,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	public function getFeed($limit = null)
 	{
 		if (count($this->_comments) < 1) {
-			$this->_comments = Bootstrap::getModel('plot_status')->getByPlotId($this->getId(), $limit);
+			$this->_comments = Elm::getModel('plot_status')->getByPlotId($this->getId(), $limit);
 		}
 		return $this->_comments;
 	}
@@ -153,7 +153,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 			));
 			$EmailTemplate->send(array('email' => 'collin.bourdage@gmail.com', 'name' => 'Collin Bourdage'));
 		} catch(Exception $e) {
-			Bootstrap::logException($e);
+			Elm::logException($e);
 		}
         return $this;
     }
@@ -165,7 +165,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 */
 	public function createNewPlotStatus()
 	{
-		$status = Bootstrap::getModel('plot/status');
+		$status = Elm::getModel('plot/status');
 		$status->setPlotId($this->getId())
 			->setUserId($this->getUserId())
 			->setType('text')
@@ -292,6 +292,12 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		return $url;
 	}
 
+	public function addImages($params)
+	{
+		Elm::getModel('plot/image')->upload($this, $params);
+		return $this;
+	}
+
 	/**
 	 * Returns the plots images
 	 * @return array
@@ -306,71 +312,6 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	}
 
 	/**
-	 * Adds a new image to the plot
-	 *
-	 * @param array $params
-	 * @return bool
-	 */
-	public function addImages($params)
-	{
-		$session = Bootstrap::getSingleton('user/session');
-		$destination = Elm_Model_Plot_Image::getImageDestination($this);
-
-		$adapter = new Zend_File_Transfer_Adapter_Http();
-		$adapter->setDestination($destination)
-			->addValidator('Size', false, Elm_Model_Plot_Image::MAX_FILE_SIZE)
-			->addValidator('Extension', false, 'jpg,png,gif,jpeg');
-
-		$files = $adapter->getFileInfo();
-		$successful = 0;
-		foreach ($files as $file => $info) {
-			// Skip empty
-			if ($info['name'] == null) {
-				continue;
-			}
-
-			list($temp, $ext) = explode('.', $info['name']);
-			$newFilename = md5($temp) . '.' . $ext;
-			$imageIdx = preg_replace('/[^\d]/', '', $file);
-
-			try {
-				// Rename filter
-				$adapter->addFilter('Rename', array(
-					'target' => $destination . DIRECTORY_SEPARATOR . $newFilename,
-					'overwrite' => true
-				));
-
-				// Receive and save
-				if ($adapter->receive($file)) {
-					$image = new Elm_Model_Plot_Image();
-					$image->setData($info);
-					$image->setData('exif_data', exif_read_data($info['destination'] . DIRECTORY_SEPARATOR . $newFilename));
-					$image->setPlotId($this->getId())
-						->setCaption($params['caption'][$imageIdx]);
-
-					// Set image data
-					$image->setThumbnail(Elm_Model_Plot_Image::getImageUrl($this) . '/' . $newFilename);
-					$image->setFull(Elm_Model_Plot_Image::getImageUrl($this) . '/' . $newFilename);
-					$image->save();
-					$successful++;
-				} else {
-					$errors = $adapter->getMessages();
-					foreach ($errors as $e) {
-						$session->addError($e);
-					}
-				}
-			} catch (Exception $e) {
-				Bootstrap::logException($e);
-				$session->addException($e);
-			}
-		}
-
-		if ($successful > 0) {
-			$session->addSuccess('Successfully uploaded images');
-		}
-	}
-
-	/**
 	 * @param string|array $images
 	 */
 	public function removeImages($images)
@@ -381,16 +322,21 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 
 		$ctr = 0;
 		foreach ($images as $id) {
-			$image = Bootstrap::getModel('plot_image')->load($id);
+			$image = Elm::getModel('plot_image')->load($id);
 			$image->delete();
 			$ctr++;
 		}
 
-		$session = Bootstrap::getSingleton('user/session');
+		$session = Elm::getSingleton('user/session');
 		if ($ctr > 1) {
 			$session->addSuccess('Images removed');
 		} elseif ($ctr == 1) {
 			$session->addSuccess('Image removed');
 		}
+	}
+
+	public function addCrop($data)
+	{
+
 	}
 }

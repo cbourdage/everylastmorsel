@@ -18,7 +18,7 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 			return false;
 		}
 
-		if (!$plot = Bootstrap::getModel('plot')->load($id)) {
+		if (!$plot = Elm::getModel('plot')->load($id)) {
 			return false;
 		}
 
@@ -27,7 +27,7 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 
 	protected function _initCurrentPlot()
 	{
-		$this->_plot = Bootstrap::getModel('plot')->load($this->getRequest()->getParam('p'));
+		$this->_plot = Elm::getModel('plot')->load($this->getRequest()->getParam('p'));
 		Zend_Registry::set('current_plot', $this->_plot);
 		return $this;
 	}
@@ -39,6 +39,6 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 
 	protected function _getSession()
 	{
-		return Bootstrap::getSingleton('user/session');
+		return Elm::getSingleton('user/session');
 	}
 }

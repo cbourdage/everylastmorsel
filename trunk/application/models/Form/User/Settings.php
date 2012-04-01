@@ -18,7 +18,7 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
             'validators' => array(
                 array('StringLength', true, array(3, 128)),
                 array('EmailAddress'),
-                array('UniqueEmail', false, array(Bootstrap::getModel('user'))),
+                array('UniqueEmail', false, array(Elm::getModel('user'))),
             ),
             'required'   => true,
             'label'      => 'Email'
@@ -37,7 +37,7 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
 			)
         ));
 
-		$session = Bootstrap::getSingleton('user/session');
+		$session = Elm::getSingleton('user/session');
 		foreach ($this->getElements() as $element) {
 			$element->setDecorators($this->defaultDecorators);
 			$element->setValue($session->user->getData($element->getName()));

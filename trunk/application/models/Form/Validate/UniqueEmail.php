@@ -20,13 +20,13 @@ class Elm_Model_Form_Validate_UniqueEmail extends Zend_Validate_Abstract
     public function isValid($value, $context = null)
     {
 		// Validate current users email as true
-		$session = Bootstrap::getSingleton('user/session');
+		$session = Elm::getSingleton('user/session');
 		if ($session->isLoggedIn() && $session->user->getEmail() == $value) {
 			return true;
 		}
 
         $this->_setValue($value);
-		$user = Bootstrap::getModel('user')->loadByEmail($value);
+		$user = Elm::getModel('user')->loadByEmail($value);
         if (!$user->getEmail()) {
             return true;
         }

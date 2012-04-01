@@ -34,7 +34,7 @@ class Elm_Model_Resource_Plot_Status extends Colony_Db_Table
 
 		$items = array();
 		foreach ($this->fetchAll($select) as $row) {
-			$items[] = Bootstrap::getModel('plot_status')->load($row->update_id);
+			$items[] = Elm::getModel('plot_status')->load($row->update_id);
 		}
 
 		return $items;
@@ -60,7 +60,7 @@ class Elm_Model_Resource_Plot_Status extends Colony_Db_Table
 
 		$items = array();
 		foreach ($this->fetchAll($select) as $row) {
-			$items[] = Bootstrap::getModel('plot_status')->load($row->update_id);
+			$items[] = Elm::getModel('plot_status')->load($row->update_id);
 		}
 
 		return $items;
@@ -80,7 +80,7 @@ class Elm_Model_Resource_Plot_Status extends Colony_Db_Table
 
 		$items = array();
 		foreach ($this->fetchAll($select) as $row) {
-			$items[] = Bootstrap::getModel('plot_status')->load($row->update_id);
+			$items[] = Elm::getModel('plot_status')->load($row->update_id);
 		}
 
 		return $items;
@@ -104,7 +104,7 @@ class Elm_Model_Resource_Plot_Status extends Colony_Db_Table
 
 		$items = array();
 		foreach ($this->fetchAll($select) as $row) {
-			$items[] = Bootstrap::getModel('plot_status')->load($row->update_id);
+			$items[] = Elm::getModel('plot_status')->load($row->update_id);
 		}
 
 		return $items;

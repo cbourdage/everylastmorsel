@@ -20,12 +20,12 @@ class Elm_Model_Form_Validate_UniqueAlias extends Zend_Validate_Abstract
     public function isValid($value, $context = null)
     {
 		// Validate current users alias as true
-		if (Bootstrap::getSingleton('user/session')->user->getAlias() == $value) {
+		if (Elm::getSingleton('user/session')->user->getAlias() == $value) {
 			return true;
 		}
 
         $this->_setValue($value);
-		$user = Bootstrap::getModel('user')->loadByAlias($value);
+		$user = Elm::getModel('user')->loadByAlias($value);
         if (!$user->getAlias()) {
             return true;
         }

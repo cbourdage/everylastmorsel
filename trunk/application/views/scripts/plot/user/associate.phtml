@@ -8,7 +8,7 @@
 	</div>
 	<div class="modal-body">
 		<form action="<?= $this->url('plot/involve-me'); ?>" method="post" id="getInvolvedForm">
-			<input type="hidden" name="user_id" value="<?php echo Bootstrap::getSingleton('user/session')->user->getId(); ?>" />
+			<input type="hidden" name="user_id" value="<?php echo Elm::getSingleton('user/session')->user->getId(); ?>" />
 			<input type="hidden" name="plot_id" value="<?php echo $this->plot->getId(); ?>" />
 			<ul class="fieldset">
 			<?php foreach (Elm_Model_Resource_Plot::$userRoles as $role) : ?>

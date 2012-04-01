@@ -1,4 +1,4 @@
-<?php $_session = Bootstrap::getSingleton('user/session'); ?>
+<?php $_session = Elm::getSingleton('user/session'); ?>
 <div class="container">
 	<form action="<?php echo $this->url('comment/create'); ?>" method="post" id="commentForm">
 		<input type="hidden" name="plot_id" value="<?= $this->plot->getId(); ?>" />

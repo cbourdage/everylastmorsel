@@ -53,7 +53,7 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 			$this->save();
 			return true;
 		} catch(Exception $e) {
-			Bootstrap::logException($e);
+			Elm::logException($e);
 			return false;
 		}
 	}

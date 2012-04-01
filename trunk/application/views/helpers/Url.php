@@ -63,7 +63,7 @@ class Elm_View_Helper_Url extends Zend_View_Helper_Url
 		}
 
 		$router = Zend_Controller_Front::getInstance()->getRouter();
-		$url = Bootstrap::getBaseUrl() . ltrim($router->assemble($urlOptions, $route, $reset, $encode), '/');
+		$url = Elm::getBaseUrl() . ltrim($router->assemble($urlOptions, $route, $reset, $encode), '/');
 		$url = substr($url, -1) == '/' ? $url : $url . '/';
         return $url;
     }

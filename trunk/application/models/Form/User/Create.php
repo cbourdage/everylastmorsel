@@ -7,6 +7,18 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
 	{
 		parent::__construct();
 
+		if (!Elm::getAppConfig('public')) {
+			$this->addElement('text', 'invite_code', array(
+				'filters'    => array('StringTrim'),
+				'validators' => array(
+					array('StringLength', true, array(3, 24)),
+					array('InviteCode', true),
+				),
+				'required'   => true,
+				'label'      => 'Invite Code'
+			));
+		}
+
 		$this->addElement('text', 'firstname', array(
             'filters'    => array('StringTrim'),
             'validators' => array(
@@ -32,7 +44,7 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
             'validators' => array(
                 array('StringLength', true, array(3, 128)),
                 array('EmailAddress'),
-                array('UniqueEmail', false, array(Bootstrap::getModel('user'))),
+                array('UniqueEmail', true, array(Elm::getModel('user'))),
             ),
             'required'   => true,
             'label'      => 'Email'
@@ -42,7 +54,7 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
             'filters'    => array('StringTrim'),
             'validators' => array(
                 array('StringLength', true, array(3, 24)),
-                //array('UniqueAlias', false, array(Bootstrap::getModel('user'))),
+                //array('UniqueAlias', false, array(Elm::getModel('user'))),
             ),
             'required'   => true,
             'label'      => 'Username'

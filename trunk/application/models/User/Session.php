@@ -53,7 +53,7 @@ class Elm_Model_User_Session extends Colony_Session
         if ($this->user instanceof Elm_Model_User) {
             return $this->user;
         }
-        $this->user = Bootstrap::getModel('user');
+        $this->user = Elm::getModel('user');
         return $this->user;
     }
 
@@ -88,7 +88,7 @@ class Elm_Model_User_Session extends Colony_Session
 	 */
 	public function checkUserId($id)
 	{
-		return Bootstrap::getModel('user')->getResource()->checkUserId($id);
+		return Elm::getModel('user')->getResource()->checkUserId($id);
 	}
 
     /**
@@ -100,7 +100,7 @@ class Elm_Model_User_Session extends Colony_Session
      */
     public function login($username, $password)
     {
-        $user = Bootstrap::getModel('user');
+        $user = Elm::getModel('user');
         if ($user->authenticate($username, $password)) {
             $this->setUserAsLoggedIn($user);
             return true;
@@ -132,8 +132,8 @@ class Elm_Model_User_Session extends Colony_Session
     {
         if (!$this->isLoggedIn()) {
             $this->beforeAuthUrl = $action->getCurrentUrl();
-			Bootstrap::log('not logged in: ' . __METHOD__);
-			Bootstrap::log($this->beforeAuthUrl);
+			Elm::log('not logged in: ' . __METHOD__);
+			Elm::log($this->beforeAuthUrl);
             return false;
         }
         return true;

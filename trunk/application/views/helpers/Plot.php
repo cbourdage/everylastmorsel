@@ -9,7 +9,7 @@ class Elm_View_Helper_Plot extends Zend_View_Helper_Abstract
 	 */
 	public function Plot()
 	{
-		$this->_session = Bootstrap::getSingleton('user/session');
+		$this->_session = Elm::getSingleton('user/session');
 		return $this;
 	}
 

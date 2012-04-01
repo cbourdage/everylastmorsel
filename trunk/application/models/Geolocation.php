@@ -17,7 +17,7 @@ class Elm_Model_Geolocation extends Colony_Object
 	 */
 	protected function _init($lat, $long)
 	{
-		Bootstrap::log('prevent d');
+		Elm::log('prevent d');
 		return;
 
 		if (!$this->_location) {
@@ -30,10 +30,10 @@ class Elm_Model_Geolocation extends Colony_Object
 			//$results = file_get_contents("http://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$long&sensor=false");
 			//$this->_results = Zend_Json::decode($results);
 
-			Bootstrap::log($url, Zend_Log::INFO, 'geolocation-requests.log');
+			Elm::log($url, Zend_Log::INFO, 'geolocation-requests.log');
 
 			$this->_location = $this->_results['results'][0];
-			Bootstrap::log($this->_location);
+			Elm::log($this->_location);
 		}
 	}
 

@@ -17,7 +17,7 @@ class Elm_Model_Resource_User extends Colony_Db_Table
     {
         parent::_beforeSave($object);
         if (!$object->getEmail()) {
-            Bootstrap::throwException('User email is required.');
+            Elm::throwException('User email is required.');
         }
         return $this;
     }
@@ -44,7 +44,7 @@ class Elm_Model_Resource_User extends Colony_Db_Table
 		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
 			$plots = array();
 			foreach ($rows as $row) {
-				$plots[$row->plot_id] = $row->role; //Bootstrap::getModel('plot')->load($row->plot_id, false);
+				$plots[$row->plot_id] = $row->role; //Elm::getModel('plot')->load($row->plot_id, false);
 			}
 			$object->setPlotIds($plots);
 		} else {

@@ -12,7 +12,7 @@ class Elm_CommunityController extends Elm_AbstractController
 	 */
     public function indexAction()
     {
-		$model = Bootstrap::getSingleton('community');
+		$model = Elm::getSingleton('community');
 		$this->view->users = $model->getUsers();
 		$this->view->plots = $model->getPlots();
     }

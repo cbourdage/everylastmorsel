@@ -37,7 +37,7 @@ class Elm_CommentController extends Elm_User_AbstractController
 	public function viewAction()
 	{
 		$id = $this->getRequest()->getParam('id');
-		if ($plot = Bootstrap::getModel('plot')->load($id)) {
+		if ($plot = Elm::getModel('plot')->load($id)) {
 			Zend_Registry::set('current_plot', $plot);
 			$this->view->plot = $plot;
 			$this->view->headTitle()->prepend($plot->getName());
@@ -68,8 +68,8 @@ class Elm_CommentController extends Elm_User_AbstractController
 			);
         } else {
 			if ($this->getRequest()->isPost()) {
-				//Bootstrap::log($this->getRequest()->getPost());
-				$comment = Bootstrap::getModel('plot/status')->setData($this->getRequest()->getPost());
+				//Elm::log($this->getRequest()->getPost());
+				$comment = Elm::getModel('plot/status')->setData($this->getRequest()->getPost());
 				if ($comment->isValid()) {
 					try {
 						$comment->save();
@@ -124,8 +124,8 @@ class Elm_CommentController extends Elm_User_AbstractController
 			);
         } else {
 			// @TODO finish the rating system
-			$comment = Bootstrap::getModel('plot/status')->load($this->getRequest()->getParam('comment_id'));
-			Bootstrap::log('rating: ' . $comment->getId());
+			$comment = Elm::getModel('plot/status')->load($this->getRequest()->getParam('comment_id'));
+			Elm::log('rating: ' . $comment->getId());
 			//$comment->rate($this->getRequest()->getParam('rating'));
 			$response = array(
 				'success' => true,

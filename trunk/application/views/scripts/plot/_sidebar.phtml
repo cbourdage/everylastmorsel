@@ -1,8 +1,8 @@
-<?php $session = Bootstrap::getSingleton('user/session'); ?>
+<?php $session = Elm::getSingleton('user/session'); ?>
 <?php if (Zend_Registry::isRegistered('current_plot') || $this->plot) : ?>
 	<?php $plot = $this->plot ? $this->plot : Zend_Registry::get('current_plot') ; ?>
 	<div id="mainImage">
-		<img src="<?php echo $this->Map()->getStaticImage($plot); ?>" title="<?php echo $plot->getName(); ?>" />
+		<img src="<?php echo $this->Map()->getMapImage($plot); ?>" title="<?php echo $plot->getName(); ?>" />
 	</div>
 	<div class="social-links">
 		<ul>
@@ -28,15 +28,19 @@
 	</div>
 
 <?php if ($session->isLoggedIn()) : ?>
-	<?php if (!$plot->isWatching($session->user) && !$plot->isAssociated($session->user, true)) : ?>
-		<div class="btn-group">
+	<div class="btn-group">
+		<?php if (!$plot->isWatching($session->user) && !$plot->isAssociated($session->user, true)) : ?>
 			<form action="/plot/watch-this/" method="post">
 				<input type="hidden" name="plot_id" value="<?php echo $plot->getId(); ?>" />
 				<input type="hidden" name="user_id" value="<?php echo $session->user->getId(); ?>" />
 				<button type="submit" class="btn btn-primary">Watch This</button>
 			</form>
-		</div>
-	<?php endif; ?>
+		<?php endif; ?>
+
+		<?php if ($plot->isWatching($session->user)) : ?>
+			<button type="button" class="btn btn-inverse">Watching this Garden</button>
+		<?php endif; ?>
+	</div>
 <?php endif; ?>
 
 <?php endif; ?>

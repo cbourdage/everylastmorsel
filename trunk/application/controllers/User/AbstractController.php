@@ -21,14 +21,14 @@ class Elm_User_AbstractController extends Elm_AbstractController
 	protected function _getSession()
 	{
 		if (!$this->_session) {
-			$this->_session = Bootstrap::getSingleton('user/session');
+			$this->_session = Elm::getSingleton('user/session');
 		}
 		return $this->_session;
 	}
 
 	protected function _initCurrentUser()
 	{
-		$this->_user= Bootstrap::getModel('user')->loadByAlias($this->getRequest()->getParam('alias'));
+		$this->_user= Elm::getModel('user')->loadByAlias($this->getRequest()->getParam('alias'));
 		Zend_Registry::set('current_plot', $this->_user);
 		return $this;
 	}
@@ -39,6 +39,6 @@ class Elm_User_AbstractController extends Elm_AbstractController
 	protected function _initLayout()
 	{
 		$this->view->placeholder('contact-modal')->set($this->view->render('communication/_modal.phtml'));
-		$this->view->placeholder('sidebar')->set($this->view->render('user/_sidebar.phtml'));
+		$this->view->placeholder('sidebar')->set($this->view->render('profile/_sidebar.phtml'));
 	}
 }

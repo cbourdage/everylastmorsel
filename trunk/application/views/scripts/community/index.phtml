@@ -1,12 +1,12 @@
 <?php
-$_session = Bootstrap::getSingleton('user/session');
+$_session = Elm::getSingleton('user/session');
 ?>
 <div class="community">
 	<div class="fLeft">
 		<h3>Gardeners & Owners</h3>
 		<?php //echo $this->partial('plot/user/list.phtml', array('users' => $this->users)); ?>
 		<?php if (count($this->users)) : ?>
-			<?php $session = Bootstrap::getSingleton('user/session'); ?>
+			<?php $session = Elm::getSingleton('user/session'); ?>
 			<ul class="list-block user-list">
 			<?php foreach ($this->users as $user) : ?>
 				<li>

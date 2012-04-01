@@ -9,7 +9,7 @@ class Elm_View_Helper_User extends Zend_View_Helper_Abstract
 	 */
 	public function User()
 	{
-		$this->_session = Bootstrap::getSingleton('user/session');
+		$this->_session = Elm::getSingleton('user/session');
 		return $this;
 	}
 
@@ -30,7 +30,7 @@ class Elm_View_Helper_User extends Zend_View_Helper_Abstract
 
 	public function getProximity()
 	{
-		if ($location = Bootstrap::getSingleton('session')->location) {
+		if ($location = Elm::getSingleton('session')->location) {
 			return $location->getCity() . ', ' . $location->getState();
 		}
 
@@ -39,13 +39,13 @@ class Elm_View_Helper_User extends Zend_View_Helper_Abstract
 
 	public function getImage($user)
 	{
-		$imageUrl = ($user->getImage()) ? $user->getImage() : '/placeholder.gif';
-		return Bootstrap::getBaseUrl('media/user') . $imageUrl;
+		$imageUrl = $user->getImage() ? $user->getImage() : '/placeholder.gif';
+		return Elm::getBaseUrl('media/user') . $imageUrl;
 	}
 
 	public function getFeed($user)
 	{
-		$feed = Bootstrap::getModel('user_feed')->getItems($user, 10);
+		$feed = Elm::getModel('user_feed')->getItems($user, 10);
 		return $feed;
 	}
 }

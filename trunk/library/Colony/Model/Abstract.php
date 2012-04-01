@@ -45,10 +45,10 @@ abstract class Colony_Model_Abstract extends Colony_Object
     protected function _getResource()
     {
         if (empty($this->_resourceName)) {
-            Bootstrap::throwException('Resource is not set.');
+            Elm::throwException('Resource is not set.');
         }
 
-        return Bootstrap::getResourceSingleton($this->_resourceName);
+        return Elm::getResourceSingleton($this->_resourceName);
     }
 
 	/**

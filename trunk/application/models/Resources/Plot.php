@@ -82,7 +82,7 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 
 		$items = array();
 		foreach ($this->fetchAll($select) as $row) {
-			$items[] = Bootstrap::getModel('plot')->load($row->plot_id);
+			$items[] = Elm::getModel('plot')->load($row->plot_id);
 		}
 
 		return $items;
@@ -98,7 +98,7 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		$row = $this->find($plotId)->current();
 		$images = $row->findDependentRowset('Elm_Model_Resource_Plot_Image', 'Image');
 		foreach ($images as $img) {
-			$return[$img->image_id] = Bootstrap::getModel('plot_image')->load($img->image_id);
+			$return[$img->image_id] = Elm::getModel('plot_image')->load($img->image_id);
 		}
 
 		return $return;

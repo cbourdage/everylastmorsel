@@ -4,14 +4,14 @@ class Elm_View_Helper_Message extends Zend_View_Helper_Abstract
 {
 	public function Message()
 	{
-		//$this->_messages = Bootstrap::
+		//$this->_messages = Elm::
 		return $this;
 	}
 
 	public function render($clear = true)
 	{
 		$html = '';
-		$session = Bootstrap::getSingleton('user/session');
+		$session = Elm::getSingleton('user/session');
 		if ($allMessages = $session->getMessages($clear)) {
 			//$html = '<ul class="messages">';
 			foreach ($allMessages as $type => $messages) {

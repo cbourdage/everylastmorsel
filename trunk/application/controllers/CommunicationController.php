@@ -9,7 +9,7 @@ class Elm_CommunicationController extends Elm_AbstractController
 	protected function _getSession()
 	{
 		if (!$this->_session) {
-			$this->_session = Bootstrap::getSingleton('user/session');
+			$this->_session = Elm::getSingleton('user/session');
 		}
 		return $this->_session;
 	}
@@ -19,7 +19,7 @@ class Elm_CommunicationController extends Elm_AbstractController
 		$this->_helper->layout()->disableLayout();
 
 		if ($auth !== false) {
-			if (!Bootstrap::getSingleton('user/session')->isLoggedIn()) {
+			if (!Elm::getSingleton('user/session')->isLoggedIn()) {
 				$this->_helper->json->sendJson(array(
 					'success' => false,
 					'error' => true,
@@ -37,7 +37,7 @@ class Elm_CommunicationController extends Elm_AbstractController
 			$data = $this->getRequest()->getParams();
 			$form = new Elm_Model_Form_Communication_Contact();
 			if ($form->isValid($data)) {
-				$message = Bootstrap::getModel('communication')->init($data);
+				$message = Elm::getModel('communication')->init($data);
 				if ($message->send()) {
 					$this->_helper->json->sendJson(array(
 						'success' => true,

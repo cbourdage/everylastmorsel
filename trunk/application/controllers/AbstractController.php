@@ -34,6 +34,12 @@ class Elm_AbstractController extends Zend_Controller_Action
     public function preDispatch()
     {
         parent::preDispatch();
+
+		if (!preg_match('/^(login|create|coming-soon|error)/i', $this->getRequest()->getActionName())) {
+			if (!Elm::getSingleton('user/session')->isLoggedIn()) {
+				$this->_redirect('/coming-soon/');
+			}
+		}
         return $this;
     }
 
@@ -45,7 +51,7 @@ class Elm_AbstractController extends Zend_Controller_Action
     public function postDispatch()
     {
         parent::postDispatch();
-		Bootstrap::getSingleton('session')->setLastUrl = $this->getCurrentUrl();
+		Elm::getSingleton('session')->setLastUrl = $this->getCurrentUrl();
         return $this;
     }
 
@@ -70,7 +76,7 @@ class Elm_AbstractController extends Zend_Controller_Action
 	 * @param $params
 	 * @return string
 	 */
-	public function getUrl($string, $params)
+	public function getUrl($string, $params = array())
 	{
 		if  (!$this->_urlHelper) {
 			$this->_urlHelper = new Elm_View_Helper_Url();

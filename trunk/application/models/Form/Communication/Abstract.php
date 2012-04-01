@@ -13,7 +13,7 @@ class Elm_Model_Form_Communication_Abstract extends Elm_Model_Form_Abstract
 		parent::__construct();
 
 		$this->setAction('/communication/send');
-		$session = Bootstrap::getSingleton('user/session');
+		$session = Elm::getSingleton('user/session');
 
 		$this->addElement('text', 'name', array(
             'filters'    => array('StringTrim'),

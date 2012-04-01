@@ -1,5 +1,5 @@
 <?php $item = $this->item; ?>
-<?php $_session = Bootstrap::getSingleton('user/session'); ?>
+<?php $_session = Elm::getSingleton('user/session'); ?>
 <div class="fLeft user-info">
 	<img src="<?php echo $this->User()->getImage($item->getUser()); ?>" title="<?php echo $item->getUser()->getName(); ?>" width="75px" />
 	<h3><?= $item->getUser()->getName(); ?></h3>

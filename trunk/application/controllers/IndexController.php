@@ -24,15 +24,27 @@ class Elm_IndexController extends Elm_AbstractController
 
 	public function comingSoonAction()
 	{
-		$this->_initAjax();
-		die('deadd');
+		$this->_helper->layout()->setLayout('coming-soon');
+		$this->view->headLink()->offsetUnset(3);
+		$this->view->headLink()->offsetUnset(2);
+		$this->view->headLink()->appendStylesheet('/file-bin/css/coming-soon.css');
+	}
+
+	public function comingSoonPostAction()
+	{
+		if ($this->getRequest()->isPost()) {
+			/**
+			 * @TODO send email and handle the request
+			 */
+		}
+		$this->_redirect('/profile/create');
 	}
 
 	public function initLocationAction()
 	{
 		$this->_initAjax();
 
-		if ($location = Bootstrap::getSingleton('session')->location) {
+		if ($location = Elm::getSingleton('session')->location) {
 			$response = array(
 				'success' => true,
 				'error' => false,
@@ -46,7 +58,7 @@ class Elm_IndexController extends Elm_AbstractController
 				$geo = new Elm_Model_Geolocation($request->getParam('lat'), $request->getParam('long'));
 
 				// set into session to reduce the # of calls
-				Bootstrap::getSingleton('session')->location = $geo;
+				Elm::getSingleton('session')->location = $geo;
 				$response = array(
 					'success' => true,
 					'error' => false,
@@ -90,8 +102,8 @@ class Elm_IndexController extends Elm_AbstractController
 	public function plotPointAction()
 	{
 		$this->_initAjax();
-		//Bootstrap::log($this->getRequest()->getParams());
-		Bootstrap::getSingleton('user/session')->plot = array(
+		//Elm::log($this->getRequest()->getParams());
+		Elm::getSingleton('user/session')->plot = array(
 			'latitude' => $this->getRequest()->getParam('lat'),
 			'longitude' => $this->getRequest()->getParam('long')
 		);
@@ -104,8 +116,8 @@ class Elm_IndexController extends Elm_AbstractController
 	public function authenticateAction()
 	{
 		$this->_initAjax();
-		Bootstrap::getSingleton('user/session')->plot['type'] = $this->getRequest()->getParam('type');
-		if (Bootstrap::getSingleton('user/session')->isLoggedIn()) {
+		Elm::getSingleton('user/session')->plot['type'] = $this->getRequest()->getParam('type');
+		if (Elm::getSingleton('user/session')->isLoggedIn()) {
 			if ($this->getRequest()->getParam('type') == 'isA') {
 				$this->_forward('garden-details');
 			} else {

@@ -84,7 +84,6 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
 
 		$this->setRowClass('Colony_Db_Table_Row');
 		if ($object->getId()) {
-			Bootstrap::log($object->toArray());
         	$row = $this->createRow($object->toArray());
 		} else {
 			$row = $this->createRow();

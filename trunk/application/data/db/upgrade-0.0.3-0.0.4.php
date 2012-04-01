@@ -11,13 +11,6 @@ ALTER TABLE `user` ADD COLUMN `visibility` VARCHAR(16) DEFAULT 'public' AFTER `p
 ALTER TABLE `plot` ADD COLUMN `active` TINYINT DEFAULT 1 AFTER `zipcode`;
 ALTER TABLE `plot` ADD COLUMN `is_new` TINYINT DEFAULT 1 AFTER `zipcode`;
 
-
--- create images
-
-
--- create status messages
-
-
 ");
 
 $this->endSetup();
