@@ -1,6 +1,7 @@
 <?php
 $_session = Elm::getSingleton('user/session');
 $user = $this->user;
+$formData = $this->formData;
 ?>
 <?php echo $this->Message()->render(); ?>
 <div class="inner-content-wrapper user">
@@ -13,7 +14,7 @@ $user = $this->user;
 					<li>
 						<label for="quantity">Plot</label>
 						<select name="plot_id">
-							<option>- Select -</option>
+							<option value="">- Select -</option>
 							<?php foreach ($user->getPlots() as $plot) : ?>
 							<option value="<?= $plot->getId(); ?>"><?= $plot->getName(); ?></option>
 							<?php endforeach; ?>
@@ -21,19 +22,26 @@ $user = $this->user;
 					</li>
 					<li>
 						<label for="name">Crop</label>
-						<input type="text" name="crop" id="crop" />
+						<input type="text" name="name" id="name" value="<?= $formData->getName(); ?>" />
+						or
+						<select name="crop_id">
+							<option value="">- Select -</option>
+							<?php foreach (Elm::getModel('crop')->getCrops() as $crop) : ?>
+							<option value="<?= $crop->getId(); ?>"><?= $crop->getName(); ?></option>
+							<?php endforeach; ?>
+						</select>
 					</li>
 					<li>
 						<label for="quantity">Number Planted</label>
-						<input type="text" name="quantity" id="quantity" />
+						<input type="text" name="quantity" id="quantity" value="<?= $formData->getQuantity(); ?>" />
 					</li>
 					<li>
 						<label for="coverage">Coverage (sq ft)</label>
-						<input type="text" name="coverage" id="coverage" />
+						<input type="text" name="coverage" id="coverage" value="<?= $formData->getCoverage(); ?>" />
 					</li>
 					<li>
 						<label for="date_planted">Date Planted</label>
-						<input type="text" name="date_planted" id="date_planted" />
+						<input type="text" name="date_planted" id="date_planted" value="<?= $formData->getDatePlanted(); ?>" />
 					</li>
 					<li>
 						<label>Starting Type</label>
@@ -65,7 +73,7 @@ $user = $this->user;
 		</div>
 	</section>
 	<section id="crops" class="blocked-content clearfix">
-		<?php echo $this->partial('crops/list.phtml', array('crops' => $user->getPlots())); ?>
+		<?php echo $this->partial('crops/list.phtml', array('plots' => $user->getPlots())); ?>
 	</section>
 </div>
 

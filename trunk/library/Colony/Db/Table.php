@@ -62,6 +62,9 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
         return $this;
     }
 
+	/**
+	 * @return mixed
+	 */
 	public function getIdFieldName()
 	{
 		$idFieldName = array_shift($this->_primary);

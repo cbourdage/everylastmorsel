@@ -26,6 +26,12 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 	{
 		$this->_init();
 		$this->view->headTitle()->prepend('My Crops');
+
+		if ($this->_getSession()->formData) {
+			$this->view->formData = $this->_getSession()->formData;
+		} else {
+			$this->view->formData = new Colony_Object(array(''));
+		}
 		$this->_initLayout();
 	}
 
@@ -36,24 +42,24 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 	{
 		//$this->_
 		if ($this->getRequest()->isPost()) {
-			try {
-				$data = $this->getRequest()->getPost();
-				Elm::log($data);
-				die('deaddd');
-				$crop = new Elm_Model_Crop();
-				$crop->setData($data);
-				if ($crop->isValid()) {
-					$plot = Elm::getSingleton('plot')->load($this->getRequest()->getParam('plot_id'));
-					$result = $plot->addCrop($crop);
+			$data = $this->getRequest()->getPost();
+			$form = new Elm_Model_Form_Plot_Crop();
+			if ($form->isValid($data)) {
+				try {
+					$plotCrop = new Elm_Model_Plot_Crop();
+					$plotCrop->extractData($data);
+					$plotCrop->save();
 					$this->_getSession()->addSuccess('Crop added');
-				} else {
-					$this->_getSession()->addError('Check all form fields are filled out.');
+				} catch (Exception $e) {
+					Elm::logException($e);
+					$this->_getSession()->addError("Ah, we've run into an error. Try again");
 				}
-			} catch (Exception $e) {
-				$this->_getSession()->addError("Ah, we've run into an error. Try again");
-				Elm::logException($e);
+			} else {
+				$this->_getSession()->formData = new Colony_Object($data);
+				$this->_getSession()->addError('Check all form fields are filled out.');
 			}
 		}
+
 		$this->_redirect('/crops/');
 	}
 }

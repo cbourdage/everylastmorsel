@@ -26,6 +26,11 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	/**
 	 * @var array
 	 */
+	private $_crops = array();
+
+	/**
+	 * @var array
+	 */
 	private $_comments = array();
 
 	/**
@@ -335,8 +340,15 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		}
 	}
 
-	public function addCrop($data)
+	/**
+	 * @return mixed
+	 */
+	public function getCrops()
 	{
+		if (!$this->_crops) {
+			$this->_crops = $this->_getResource()->getCrops($this->getId());
+		}
 
+		return $this->_crops;
 	}
 }

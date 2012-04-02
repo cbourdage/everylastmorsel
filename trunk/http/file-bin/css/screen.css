@@ -146,6 +146,9 @@ div#content .blocked-content {
 div#content #plots ul li { width: 160px; }
 div#content #plots ul li h3 { font-size: 16px; margin-top: 5px; }
 
+/** Crops content */
+section#crops ul li { width: 100%; }
+
 /** Plot main content */
 #imageEditContainer {
 	border: 1px solid transparent;

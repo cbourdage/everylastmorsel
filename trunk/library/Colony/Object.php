@@ -56,6 +56,11 @@ class Colony_Object implements ArrayAccess
         $this->_construct();
     }
 
+	protected function _construct()
+	{
+		return $this;
+	}
+
     /**
      * Set _isDeleted flag value (if $isDeleted param is defined) and return current flag value
      *

@@ -25,7 +25,10 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		return $this;
 	}
 
-	// load all users
+	/**
+	 * @param $object
+	 * @return Elm_Model_Resource_Plot
+	 */
 	protected function _afterLoad($object)
 	{
 		parent::_afterLoad($object);
@@ -51,6 +54,10 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		return $this;
 	}
 
+	/**
+	 * @param $object
+	 * @return array
+	 */
 	public function getPendingUsers($object)
 	{
 		$select = $this->getDefaultAdapter()->select()
@@ -78,9 +85,8 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 	 */
 	public function getAllPlots()
 	{
-		$select = $this->select()->where('is_active', '1');
-
 		$items = array();
+		$select = $this->select()->where('is_active', '1');
 		foreach ($this->fetchAll($select) as $row) {
 			$items[] = Elm::getModel('plot')->load($row->plot_id);
 		}
@@ -94,14 +100,30 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 	 */
 	public function getImages($plotId)
 	{
-		$return = array();
-		$row = $this->find($plotId)->current();
-		$images = $row->findDependentRowset('Elm_Model_Resource_Plot_Image', 'Image');
-		foreach ($images as $img) {
-			$return[$img->image_id] = Elm::getModel('plot_image')->load($img->image_id);
+		$items = array();
+		$rows = $this->find($plotId)->current()
+			->findDependentRowset('Elm_Model_Resource_Plot_Image', 'Image');
+		foreach ($rows as $row) {
+			$items[$row->image_id] = Elm::getModel('plot_image')->load($row->image_id);
 		}
 
-		return $return;
+		return $items;
+	}
+
+	/**
+	 * @param $plotId
+	 * @return array
+	 */
+	public function getCrops($plotId)
+	{
+		$items = array();
+		$rows = $this->find($plotId)->current()
+			->findDependentRowset('Elm_Model_Resource_Plot_Crop', 'Crop');
+		foreach ($rows as $row) {
+			$items[$row->entity_id] = Elm::getModel('plot_crop')->load($row->entity_id);
+		}
+
+		return $items;
 	}
 
 	public function loadByLatLong($object, $lat, $long)
@@ -151,6 +173,12 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		}
 	}
 
+	/**
+	 * @param $object
+	 * @param $userId
+	 * @param $role
+	 * @param $isApproved
+	 */
 	public function updateAssociatedUser($object, $userId, $role, $isApproved)
 	{
 		if (in_array($role, self::$userRoles)) {
