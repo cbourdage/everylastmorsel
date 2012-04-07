@@ -22,6 +22,14 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
     }
 
 	/**
+     * Add the config to the registry
+     */
+    protected function _initConfig()
+    {
+        Zend_Registry::set('config', $this->getOptions());
+    }
+
+	/**
 	 *
 	 */
 	protected function _initLocale()
@@ -35,29 +43,23 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 	 */
 	protected function _initMailTransport()
 	{
-		try {
-			$config = array(
-				'auth' => 'login',
-				'username' => 'collin.bourdage@gmail.com',
-				'password' => 'stere0s!x',
-				'ssl' => 'tls',
-				'port' => 587
-			);
+		if (self::getAppConfig('initEmail')) {
+			try {
+				$config = array(
+					'auth' => 'login',
+					'username' => 'collin.bourdage@gmail.com',
+					'password' => 'stere0s!x',
+					'ssl' => 'tls',
+					'port' => 587
+				);
 
-			$mailTransport = new Zend_Mail_Transport_Smtp('smtp.gmail.com', $config);
-			Zend_Mail::setDefaultTransport($mailTransport);
-		} catch (Zend_Exception $e){
-			//Do something with exception
+				$mailTransport = new Zend_Mail_Transport_Smtp('smtp.gmail.com', $config);
+				Zend_Mail::setDefaultTransport($mailTransport);
+			} catch (Zend_Exception $e) {
+				//Do something with exception
+			}
 		}
 	}
-	
-	/**
-     * Add the config to the registry
-     */
-    protected function _initConfig()
-    {
-        Zend_Registry::set('config', $this->getOptions());
-    }
 
 	/**
 	 * Initizlize view settings
@@ -393,10 +395,10 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
     }
 
 	/**
-     * Write exception to log
-     *
-     * @param Exception $e
-     */
+	 * Write exception to log
+	 *
+	 * @param $s
+	 */
     public static function logGoogleRequest($s)
     {
         self::log($s, Zend_Log::DEBUG, date('Y-m-d-') . 'google-request.log');
