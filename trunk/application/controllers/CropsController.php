@@ -49,6 +49,7 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 					$plotCrop = new Elm_Model_Plot_Crop();
 					$plotCrop->extractData($data);
 					$plotCrop->save();
+					$plotCrop->createNewCropStatus();
 					$this->_getSession()->addSuccess('Crop added');
 				} catch (Exception $e) {
 					Elm::logException($e);

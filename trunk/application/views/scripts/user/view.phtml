@@ -28,19 +28,19 @@ $_user = $this->user;
 		<li><a href="#about" title="Who am I?">About</a></li>
 	</ul>
 
-	<section id="plots" class="blocked-content clearfix">
+	<div id="plots" class="blocked-content clearfix">
 		<?php echo $this->partial('user/plot/list.phtml', array('plots' => $_user->getPlots())); ?>
-	</section>
+	</div>
 
-	<section id="feed" class="blocked-content">
+	<div id="feed" class="blocked-content">
 		<?php echo $this->partial('user/comment/list.phtml', array('user' => $_user)); ?>
-	</section>
+	</div>
 
-	<section id="about" class="blocked-content">
+	<div id="about" class="blocked-content">
 		<div class="editable" data-title="About myself" data-name="about" data-type="textarea">
 			<?= $_user->getAbout() ? $_user->getAbout() : 'Tell us a little about yourself...'; ?>
 		</div>
-	</section>
+	</div>
 </div>
 
 <div class="modal hide fade edit-modal" id="editModalUser">

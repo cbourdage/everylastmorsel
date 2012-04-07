@@ -22,9 +22,9 @@ $plot = $this->plot;
 	<?php endif; ?>
 	</div>
 
-	<section class="photo-timeline blocked-content">
+	<div class="photo-timeline blocked-content">
 		<?php echo $this->partial('plot/view/images.phtml', array('plot' => $plot)); ?>
-	</section>
+	</div >
 
 	<ul id="tabMenu" class="list-inline">
 		<li><a href="#plots" title="Where I'm Growing">Users</a></li>
@@ -33,7 +33,7 @@ $plot = $this->plot;
 		<li><a href="#about" title="Who am I?">About</a></li>
 	</ul>
 
-	<section id="users" class="blocked-content">
+	<div id="users" class="blocked-content">
 		<?php if (count($plot->getPendingUsers()) && $session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
 			<div class="alert alert-info">
 				You have pending users! Please review and take <a href="<?php echo $this->url('plot/pending-users', array('p' => $plot->getId())); ?>">action</a>
@@ -44,30 +44,24 @@ $plot = $this->plot;
 		<?php if ($session->isLoggedIn() && !$plot->isAssociated($session->user)) :  ?>
 			<?php echo $this->partial('plot/user/associate.phtml', array('plot' => $plot)); ?>
 		<?php endif; ?>
-	</section>
+	</div >
 
-	<section id="socializing" class="blocked-content comments">
+	<div id="socializing" class="blocked-content comments">
 		<?php if ($session->isLoggedIn() && $plot->isAssociated($session->user)) :  ?>
 			<?php echo $this->partial('plot/status/form.phtml', array('plot' => $plot)); ?>
 		<?php endif; ?>
 		<?php echo $this->partial('plot/status/list.phtml', array('plot' => $plot)); ?>
-	</section>
+	</div >
 
-	<section id="crops" class="blocked-content">
-		<form>
-			<ul>
-				<li>
-					<input type="text" id="" title="" />
-				</li>
-			</ul>
-		</form>
-	</section>
+	<div id="crops" class="blocked-content">
+		<?php echo $this->partial('plot/crops/list.phtml', array('plot' => $plot)); ?>
+	</div >
 
-	<section id="about" class="blocked-content">
+	<div id="about" class="blocked-content">
 		<div class="editable" data-title="About this plot" data-name="about" data-type="textarea">
 			<?= $plot->getAbout() ? $plot->getAbout() : 'A little about this plot...'; ?>
 		</div>
-	</section>
+	</div >
 </div>
 
 <div class="modal hide fade edit-modal" id="editModalPlot">

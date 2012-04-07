@@ -24,7 +24,7 @@ class Elm_Model_Resource_Crop extends Colony_Db_Table
         return $this;
 	}
 
-	public function getPlots()
+	public function getCrops()
 	{
 		$items = array();
 		$select = $this->select(); //->where('is_active', '1');

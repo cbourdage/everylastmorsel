@@ -8,7 +8,7 @@ $_plot = $this->plot;
 <div class="inner-content-wrapper plot">
 	<h2><a href="<?php echo $_plot->getUrl(); ?>" title="<?php echo $_plot->getName(); ?>"><?php echo $_plot->getName(); ?></a></h2>
 	<h4>Current images</h4>
-	<section class="photo-timeline">
+	<div class="photo-timeline">
 		<?php if ($images = $_plot->getImages()) : ?>
 		<ul class="list list-block">
 			<?php foreach ($images as $image) : ?>
@@ -19,7 +19,7 @@ $_plot = $this->plot;
 			<?php endforeach; ?>
 		</ul>
 		<?php endif; ?>
-	</section>
+	</div>
 
 	<form action="<?php echo $this->url('plot/image-upload', array('p' => $_plot->getId())); ?>" method="post" enctype="multipart/form-data">
 		<ul class="fieldset list-block">

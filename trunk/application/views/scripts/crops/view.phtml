@@ -5,7 +5,7 @@ $formData = $this->formData;
 ?>
 <?php echo $this->Message()->render(); ?>
 <div class="inner-content-wrapper user">
-	<section id="cropsFormContainer" class="blocked-content clearfix">
+	<div id="cropsFormContainer" class="blocked-content clearfix">
 		<a class="" href="#" id="expandForm" title="Manage Photos">Add Crop</a>
 		<div class="hide">
 			<form action="<?php echo $this->url('crops/add'); ?>" method="post" enctype="multipart/form-data">
@@ -71,10 +71,10 @@ $formData = $this->formData;
 				</p>
 			</form>
 		</div>
-	</section>
-	<section id="crops" class="blocked-content clearfix">
+	</div>
+	<div id="crops" class="blocked-content clearfix">
 		<?php echo $this->partial('crops/list.phtml', array('plots' => $user->getPlots())); ?>
-	</section>
+	</div>
 </div>
 
 <script defer="defer">

@@ -22,7 +22,7 @@ class Elm_Model_Crop extends Colony_Model_Abstract
 	 */
 	public function getCrops()
 	{
-		return $this->_getResource()->getPlots();
+		return $this->_getResource()->getCrops();
 	}
 
 	/**

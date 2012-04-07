@@ -59,6 +59,30 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 	}
 
 	/**
+	 * Creates a new status post for current plot
+	 *
+	 * @return Elm_Model_Plot
+	 */
+	public function createNewCropStatus()
+	{
+		$user = Elm::getModel('user')->load($this->getUserId());
+		$status = Elm::getModel('plot/status');
+		$status->setPlotId($this->getPlotId())
+			->setUserId($this->getUserId())
+			->setType('text')
+			->setTitle('New Crop Added!')
+			->setContent(sprintf(
+				'<a href="%s">%s</a> has planted %s %s!',
+				$user->getUrl(),
+				$user->getName(),
+				$this->getQuantity(),
+				$this->getCrop()->getName()
+			));
+		$status->save();
+		return $this;
+	}
+
+	/**
 	 * @return mixed
 	 */
 	public function getCrop()
@@ -86,6 +110,8 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 			$crop = new Elm_Model_Crop();
 			if (!$this->getCropId()) {
 				//if (!$crop->lookupLoad($this->getCropName())) {
+					unset($data['crop_id']);
+					//$result = $crop->getResource()->insert($data);
 					$crop->setData($data);
 					$crop->save();
 				//}
@@ -97,5 +123,11 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 		}
 
 		return $this;
+	}
+
+	public function getDatePlanted($format = 'MM/dd/YYYY')
+	{
+		$date = new Zend_Date($this->getData('date_planted'));
+		return $date->toString($format);
 	}
 }

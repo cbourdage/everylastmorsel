@@ -147,7 +147,15 @@ div#content #plots ul li { width: 160px; }
 div#content #plots ul li h3 { font-size: 16px; margin-top: 5px; }
 
 /** Crops content */
-section#crops ul li { width: 100%; }
+div#crops ul li { margin-bottom: 5px; width: 100%; }
+div#crops ul li.heading { border-bottom: 1px solid #ccc; }
+div#crops ul li ul { margin: 0; }
+div#crops ul li ul li * { float: left; display: block; }
+div#crops ul li ul li h4 { width: 150px; }
+div#crops ul li ul li span { margin: 0 5px; width: 50px; }
+div#crops ul li ul li span.date { width: 75px; }
+div#crops ul li ul li span.actions { width: 150px; }
+div#crops ul li.crop span.actions a:after { content: ' | '; margin: 0 5px; }
 
 /** Plot main content */
 #imageEditContainer {

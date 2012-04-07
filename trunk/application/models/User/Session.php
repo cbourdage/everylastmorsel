@@ -44,13 +44,14 @@ class Elm_Model_User_Session extends Colony_Session
     }
 
     /**
-     * Retrieve costomer model object
+     * Retrieve user model object
      *
      * @return Elm_Model_User
      */
     public function getUser()
     {
         if ($this->user instanceof Elm_Model_User) {
+			$this->user = Elm::getModel('user')->load($this->getUserId());
             return $this->user;
         }
         $this->user = Elm::getModel('user');
