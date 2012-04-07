@@ -22,78 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.log" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/var/log/app.log">
+      <file leaf-file-name="AbstractController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/AbstractController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="2001" selection-end="2001" vertical-scroll-proportion="0.0">
+            <state line="54" column="38" selection-start="1108" selection-end="1108" vertical-scroll-proportion="0.40334857">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/crops/list.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="9" selection-start="1247" selection-end="1247" vertical-scroll-proportion="-22.52174">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Crop.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/models/Plot/Crop.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="41" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.41856927">
-              <folding>
-                <element signature="n#_construct#0;n#Elm_Model_Plot_Crop#0;n#!!top" expanded="true" />
-                <element signature="n#_beforeSave#0;n#Elm_Model_Plot_Crop#0;n#!!top" expanded="true" />
-                <element signature="n#_afterLoad#0;n#Elm_Model_Plot_Crop#0;n#!!top" expanded="true" />
-                <element signature="n#getCrop#0;n#Elm_Model_Plot_Crop#0;n#!!top" expanded="true" />
-                <element signature="n#extractData#0;n#Elm_Model_Plot_Crop#0;n#!!top" expanded="true" />
-                <element signature="n#getDatePlanted#0;n#Elm_Model_Plot_Crop#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CropsController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/CropsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="44" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#viewAction#0;n#Elm_CropsController#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exception.log" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/var/log/exception.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Crop.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Resources/Plot/Crop.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Crop.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Crop.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="46" selection-start="425" selection-end="425" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#_construct#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
-                <element signature="n#lookupLoad#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
-                <element signature="n#isValid#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -113,8 +46,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/library/Colony/Db/Table.php" />
-        <option value="$PROJECT_DIR$/library/Colony/Model/Abstract.php" />
         <option value="$PROJECT_DIR$/library/Zend/Db/Table/Row/Abstract.php" />
         <option value="$PROJECT_DIR$/application/models/Crop.php" />
         <option value="$PROJECT_DIR$/application/models/Resources/Crop.php" />
@@ -129,6 +60,8 @@
         <option value="$PROJECT_DIR$/application/controllers/CropsController.php" />
         <option value="$PROJECT_DIR$/application/var/log/exception.log" />
         <option value="$PROJECT_DIR$/application/models/Plot/Crop.php" />
+        <option value="$PROJECT_DIR$/application/layouts/scripts/header.phtml" />
+        <option value="$PROJECT_DIR$/application/controllers/AbstractController.php" />
       </list>
     </option>
   </component>
@@ -192,131 +125,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Colony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Colony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Colony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Table" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plot" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -610,121 +419,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="var" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="log" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="User" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Plot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Plot" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -960,69 +659,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/Plot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="495" selection-end="495" vertical-scroll-proportion="0.31811264">
-          <folding>
-            <element signature="n#_beforeSave#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#loadByLatLong#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getAllPlots#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getUsers#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getPendingUsers#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getWatchers#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getFeed#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#sendNewPlotEmail#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#createNewPlotStatus#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#associateUser#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#approveUser#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#denyUser#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#isAssociated#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#isOwner#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#isWatching#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getUrl#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#addImages#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getImages#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#removeImages#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-            <element signature="n#getCrops#0;n#Elm_Model_Plot#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="53" selection-start="2870" selection-end="2870" vertical-scroll-proportion="0.2541857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Resources/Plot/Crop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Crop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="46" selection-start="425" selection-end="425" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#_construct#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
-            <element signature="n#lookupLoad#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
-            <element signature="n#isValid#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Profile/AbstractController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="43" selection-start="771" selection-end="771" vertical-scroll-proportion="0.3759513">
-          <folding>
-            <element signature="n#_getSession#0;n#Elm_Profile_AbstractController#0;n#!!top" expanded="true" />
-            <element signature="n#_initLayout#0;n#Elm_Profile_AbstractController#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Resources/Plot.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="0" selection-start="1459" selection-end="1459" vertical-scroll-proportion="0.6392694">
@@ -1060,13 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/var/log/app.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="2001" selection-end="2001" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/view.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="40" selection-start="2373" selection-end="2373" vertical-scroll-proportion="0.16586152">
@@ -1080,25 +709,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/crops/list.phtml">
+    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="9" selection-start="1247" selection-end="1247" vertical-scroll-proportion="-22.52174">
+        <state line="17" column="50" selection-start="952" selection-end="952" vertical-scroll-proportion="0.3753943">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/var/log/exception.log">
+    <entry file="file://$PROJECT_DIR$/application/Elm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/CropsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="44" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0">
+        <state line="287" column="5" selection-start="7030" selection-end="7030" vertical-scroll-proportion="0.7458143">
           <folding>
-            <element signature="n#viewAction#0;n#Elm_CropsController#0;n#!!top" expanded="true" />
+            <element signature="n#getSingleton#0;n#Elm#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1114,6 +736,61 @@
             <element signature="n#extractData#0;n#Elm_Model_Plot_Crop#0;n#!!top" expanded="true" />
             <element signature="n#getDatePlanted#0;n#Elm_Model_Plot_Crop#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/crops/list.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="9" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.8170347">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/var/log/app.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="0" selection-start="4735" selection-end="4735" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/CropsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="44" selection-start="976" selection-end="976" vertical-scroll-proportion="0.5951294">
+          <folding>
+            <element signature="n#viewAction#0;n#Elm_CropsController#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/var/log/exception.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Resources/Plot/Crop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Crop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="46" selection-start="425" selection-end="425" vertical-scroll-proportion="0.51141554">
+          <folding>
+            <element signature="n#_construct#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
+            <element signature="n#lookupLoad#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
+            <element signature="n#isValid#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/AbstractController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="38" selection-start="1108" selection-end="1108" vertical-scroll-proportion="0.40334857">
+          <folding />
         </state>
       </provider>
     </entry>
