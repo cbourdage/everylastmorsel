@@ -17,8 +17,8 @@ $_session = Elm::getSingleton('user/session');
 			<li><a href="<?= $this->url('profile/settings'); ?>">Settings</a></li>
 			<li><a href="<?= $this->url('profile/logout'); ?>">Logout</a></li>
 		<?php else : ?>
-			<li><a href="<?= $this->url('user/create'); ?>">Create Account</a></li>
-			<li><a href="<?= $this->url('user/login'); ?>">Login</a></li>
+			<li><a href="<?= $this->url('profile/create'); ?>">Create Account</a></li>
+			<li><a href="<?= $this->url('profile/login'); ?>">Login</a></li>
 		<?php endif; ?>
 	</ul>
 

@@ -51,7 +51,9 @@ class Elm_AbstractController extends Zend_Controller_Action
     public function postDispatch()
     {
         parent::postDispatch();
-		Elm::getSingleton('session')->setLastUrl = $this->getCurrentUrl();
+		Elm::getSingleton('user/session')->setLastUrl = $this->getCurrentUrl();
+		// @TODO start using $helper->escape();
+		$this->view->setEscape('stripslashes');
         return $this;
     }
 
