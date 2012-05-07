@@ -37,7 +37,7 @@ class Elm_AbstractController extends Zend_Controller_Action
 
 		if (!preg_match('/^(login|create|coming-soon|error)/i', $this->getRequest()->getActionName())) {
 			if (!Elm::getSingleton('user/session')->isLoggedIn()) {
-				$this->_redirect('/coming-soon/');
+				//$this->_redirect('/coming-soon/');
 			}
 		}
         return $this;

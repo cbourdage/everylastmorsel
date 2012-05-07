@@ -1,15 +1,26 @@
 <footer id="footer" role="" class="grid_12 clearfix">
-	<ul class="list grid_3">
-		<li><a href="<?= $this->url('/'); ?>">Home</a></li>
-		<li><a href="<?= $this->url('faq', array('_route' => 'faq')); ?>">FAQ</a></li>
-		<li><a href="<?= $this->url('help', array('_route' => 'help')); ?>">Help</a></li>
+	<ul class="list left">
+		<li><a href="<?= $this->url('about-us'); ?>">About Us</a></li>
+		<li><a href="<?= $this->url(''); ?>">Map A Garden</a></li>
+		<li><a href="<?= $this->url('help-us-grow'); ?>">Help Us Grow</a></li>
+		<li></li>
 	</ul>
 
-	<ul class="list grid_3">
-		<li><a href="<?= $this->url('index'); ?>">Home</a></li>
-		<li><a href="<?= $this->url('faq', array('_route' => 'faq')); ?>">FAQ</a></li>
-		<li><a href="<?= $this->url('help', array('_route' => 'help')); ?>">Help</a></li>
-	</ul>
+	<div class="signups">
+		<h4>Help us grow</h4>
+		<ul>
+			<li></li>
+			<li></li>
+		</ul>
+		<form class="email-signup">
+			<input type="email" name="email" />
+			<button type="submit" name="submit" class="link-btn">submit</button>
+		</form>
+		<form class="search">
+			<input type="text" name="search" />
+			<button type="submit" name="submit" class="link-btn">search</button>
+		</form>
+	</div>
 	<p><a href="http://twitter.com/@everylastmorsel" target="_blank">@everylastmorsel</a></p>
 </footer>
 

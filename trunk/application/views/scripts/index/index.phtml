@@ -1,16 +1,40 @@
 
-
-<h3>Map your Produce</h3>
-<?php
-/**
-<div role="aside" class="grid_12 alpha omega left-column">
-	Left greeting!
+<div class="map-container">
+	<div class="top"></div>
+	<div id="mapCanvas"></div>
+	<div class="bottom"></div>
 </div>
-<div class="grid_12 alpha omega right-column">
-*/
-?>
-<div id="mapCanvas"></div>
 
+<div id="howItWorks" class="container_12">
+	<h4>Here's how it works:</h4>
+	<ul class="list-block">
+		<li class="claim-it">
+			<?php //<figure class="claim"></figure> ?>
+			<h3>Claim your space</h3>
+			<p>Simply drop a pin to map your garden's location.</p>
+		</li>
+		<li class="track-it">
+			<?php //<figure class="claim"></figure> ?>
+			<h3>Claim your space</h3>
+			<p>Simply drop a pin to map your garden's location.</p>
+		</li>
+		<li class="learn-it">
+			<?php //<figure class="claim"></figure> ?>
+			<h3>Claim your space</h3>
+			<p>Simply drop a pin to map your garden's location.</p>
+		</li>
+		<li class="share-it">
+			<?php //<figure class="claim"></figure> ?>
+			<h3>Claim your space</h3>
+			<p>Simply drop a pin to map your garden's location.</p>
+		</li>
+		<li class="build-it">
+			<?php //<figure class="claim"></figure> ?>
+			<h3>Claim your space</h3>
+			<p>Simply drop a pin to map your garden's location.</p>
+		</li>
+	</ul>
+</div>
 <div class="modal hide fade edit-modal" id="mapModal">
 	<div class="modal-header">
 		<a class="close" data-dismiss="modal">×</a>
@@ -22,7 +46,7 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=<?php echo Elm::getAppConfig('mapsapi'); ?>&sensor=true"></script>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=<?php //echo Elm::getAppConfig('mapsapi'); ?>&sensor=true"></script>
 <script type="text/javascript" src="/file-bin/js/map.js"></script>
 <script>
 var plots = <?php echo $this->Map()->getPlotJson(); ?>;

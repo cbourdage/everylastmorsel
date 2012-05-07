@@ -5,14 +5,20 @@
 	<?= $this->render('head.phtml'); ?>
 </head>
 <body>
-	<div id="page" class="container_12 clearfix">
-		<?= $this->render('header.phtml'); ?>
-		<div id="content" role="contentinfo" class="grid_12 clearfix">
-			<?= $this->layout()->content; ?>
+	<div class="wrapper">
+		<div id="page" class="clearfix">
+			<div class="container_12">
+				<?= $this->render('header.phtml'); ?>
+			</div>
+			<div id="content" role="contentinfo" class="clearfix">
+				<?= $this->layout()->content; ?>
+			</div>
+			<div class="container_12">
+				<?= $this->render('footer.phtml'); ?>
+			</div>
 		</div>
-		<?= $this->render('footer.phtml'); ?>
+		<div id="fb-root"></div>
 	</div>
-	<div id="fb-root"></div>
 </body>
 </html>
 
