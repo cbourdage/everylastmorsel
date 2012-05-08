@@ -40,6 +40,12 @@ class Elm_AbstractController extends Zend_Controller_Action
 				//$this->_redirect('/coming-soon/');
 			}
 		}
+
+		$this->view->bodyClass = strtolower(implode('_', array(
+			$this->getRequest()->getModuleName(),
+			$this->getRequest()->getControllerName(),
+			$this->getRequest()->getActionName()
+		)));
         return $this;
     }
 

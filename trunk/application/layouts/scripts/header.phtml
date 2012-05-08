@@ -9,33 +9,29 @@ $_session = Elm::getSingleton('user/session');
 	</h1>
 
 	<nav>
-		<div class="left-container">
-			<ul class="list">
-				<li><a href="<?= $this->url('about-us'); ?>">About Us</a></li>
-				<li><a href="<?= $this->url(''); ?>">Map A Garden</a></li>
-				<li><a href="<?= $this->url('help-us-grow'); ?>">Help Us Grow</a></li>
-				<li>&nbsp;</li>
-			</ul>
-		</div>
+		<ul class="list left">
+			<li><a href="<?= $this->url('about-us'); ?>">About Us</a></li>
+			<li><a href="<?= $this->url(''); ?>">Map A Garden</a></li>
+			<li><a href="<?= $this->url('help-us-grow'); ?>">Help Us Grow</a></li>
+			<li>&nbsp;</li>
+		</ul>
 
-		<div class="right-container">
-			<ul class="list">
-			<?php if ($_session->isLoggedIn()) : ?>
-				<li><a href="<?= $this->url('profile'); ?>">Account</a></li>
-				<!--<li><a href="<?/*= $this->url('profile/settings'); */?>">Settings</a></li>-->
-				<li><a href="<?= $this->url('profile/logout'); ?>">Logout</a></li>
-			<?php else : ?>
-				<li><a href="<?= $this->url('profile/login'); ?>">Login</a></li>
-				<li><a href="<?= $this->url('profile/create'); ?>">Sign Up</a></li>
-			<?php endif; ?>
-				<li><a href="<?= $this->url('profile/create'); ?>">Help</a></li>
-				<li class="social">
-					<ul class="list-block social">
-						<li><a href="#twitter" rel="twitter" title="Tweet With Us"></a></li>
-						<li><a href="#facebook" rel="facebook" title="Facebook Us"></a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
+		<ul class="list right">
+		<?php if ($_session->isLoggedIn()) : ?>
+			<li><a href="<?= $this->url('profile'); ?>">Account</a></li>
+			<!--<li><a href="<?/*= $this->url('profile/settings'); */?>">Settings</a></li>-->
+			<li><a href="<?= $this->url('profile/logout'); ?>">Logout</a></li>
+		<?php else : ?>
+			<li><a href="<?= $this->url('profile/login'); ?>">Login</a></li>
+			<li><a href="<?= $this->url('profile/create'); ?>">Sign Up</a></li>
+		<?php endif; ?>
+			<li><a href="<?= $this->url('profile/create'); ?>">Help</a></li>
+			<li class="social">
+				<ul class="list-block social">
+					<li><a href="#twitter" rel="twitter" title="Tweet With Us"></a></li>
+					<li><a href="#facebook" rel="facebook" title="Facebook Us"></a></li>
+				</ul>
+			</li>
+		</ul>
 	</nav>
 </header>

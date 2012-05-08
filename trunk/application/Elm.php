@@ -76,7 +76,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
             ->appendStylesheet('/file-bin/css/960/reset.css')
 		 	->appendStylesheet('/file-bin/css/960/960.css')
 			->appendStylesheet('/file-bin/css/smoothness/jquery-ui-1.8.18.custom.css')
-			->appendStylesheet('/file-bin/css/bootstrap.css')
+			//->appendStylesheet('/file-bin/css/bootstrap.css')
             ->appendStylesheet('/file-bin/css/screen.css');
 		$this->_view->headScript()
 			->appendFile('/file-bin/js/elm.js', 'text/javascript');

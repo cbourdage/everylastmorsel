@@ -4,7 +4,7 @@
 <head>
 	<?= $this->render('head.phtml'); ?>
 </head>
-<body>
+<body class="<?= $this->bodyClass; ?>">
 	<div class="wrapper">
 		<div id="page" class="clearfix">
 			<div class="container_12">
@@ -13,9 +13,8 @@
 			<div id="content" role="contentinfo" class="clearfix">
 				<?= $this->layout()->content; ?>
 			</div>
-			<div class="container_12">
-				<?= $this->render('footer.phtml'); ?>
-			</div>
+
+			<?= $this->render('footer.phtml'); ?>
 		</div>
 		<div id="fb-root"></div>
 	</div>
