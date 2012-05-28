@@ -299,6 +299,18 @@ jQuery.extend({
 	};
 
 	$(function() {
-		elm.editables();
+
+		/**
+		 * Login form clicks/actions
+		 */
+		$('body').on('click', '[href*="profile/login/"]', function(e) {
+			e.preventDefault();
+			$('#headerLoginForm').stop(true).slideDown(function() {
+				$(this).find('.cancel').on('click', function(e) {
+					e.preventDefault();
+					$('#headerLoginForm').stop(true).slideUp();
+				})
+			});
+		});
 	});
 }(jQuery));
