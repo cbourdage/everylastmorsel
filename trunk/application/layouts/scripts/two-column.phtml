@@ -3,24 +3,28 @@
 <head>
 	<?= $this->render('head.phtml'); ?>
 </head>
-<body>
-	<div id="page" class="container_12 clearfix">
-		<?= $this->render('header.phtml'); ?>
+<body class="<?= $this->bodyClass; ?>">
+	<div class="wrapper">
+		<div id="page" class="clearfix">
+			<div class="container_12">
+				<?= $this->render('header.phtml'); ?>
+			</div>
 
-		<div class="clearfix fLeft">
-			<div id="columnLeft" role="aside" class="grid_3">
-				<?php if (strlen($this->placeholder('sidebar')) > 0) : ?>
-					<?= $this->placeholder('sidebar'); ?>
-				<?php endif; ?>
+			<div class="two-column clearfix container_12">
+				<div id="columnLeft" role="aside" class="grid_3">
+					<?php if (strlen($this->placeholder('sidebar')) > 0) : ?>
+						<?= $this->placeholder('sidebar'); ?>
+					<?php endif; ?>
+				</div>
+				<div id="content" role="contentinfo" class="grid_9 omega clearfix">
+					<?= $this->layout()->content; ?>
+				</div>
 			</div>
-			<div id="content" role="contentinfo" class="grid_9 omega clearfix">
-				<?= $this->layout()->content; ?>
-			</div>
+
+			<?= $this->render('footer.phtml'); ?>
 		</div>
-
-		<?= $this->render('footer.phtml'); ?>
+		<div id="fb-root"></div>
 	</div>
-	<div id="fb-root"></div>
 </body>
 </html>
 

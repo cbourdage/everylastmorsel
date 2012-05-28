@@ -1,15 +1,15 @@
 
-<div class="account-create">
-	<h1>Create an Account</h1>
-    <?php //echo $this->getMessagesBlock()->getGroupedHtml() ?>
-    <form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
+<div class="account-form account-create container_12">
+	<h1 class="turquiose">Sign Up. <span class="light-green">It's as easy as watching grass grow!</span></h1>
+    <?php echo $this->Message()->render(); ?>
+    <form action="<?php echo $this->form->getAction() ?>" method="post" id="form-validate">
         <ul class="fieldset">
 			<?php foreach($this->form->getElements() as $element) : ?>
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
 		</ul>
 		<div class="buttons-set">
-			<button type="submit" class="btn btn-primary" id="create-submit">Create Account</button>
+			<button type="submit" class="btn btn-blue" id="create-submit"><span><span>Now sign me up!</span></span></button>
 		</div>
     </form>
     <script type="text/javascript">

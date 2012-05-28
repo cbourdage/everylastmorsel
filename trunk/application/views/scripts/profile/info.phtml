@@ -1,14 +1,21 @@
-<div class="account-settings">
-	<h4>Account Settings</h4>
-    <?php echo $this->Message()->render() ?>
-    <form action="<?php echo $this->form->getAction() ?>" method="post" id="settingsForm">
+
+<div class="account-form account-info container_12">
+	<h1 class="turquiose">Let's configure your profile.<br /><span class="light-green">Help people get to know you!</span></h1>
+    <?php echo $this->Message()->render(); ?>
+    <form action="<?php echo $this->form->getAction() ?>" method="post" id="form-validate">
+		<?php $elements = $this->form->getElements(); ?>
         <ul class="fieldset">
 			<?php foreach($this->form->getElements() as $element) : ?>
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
 		</ul>
-		<div class="button-set">
-			<button type="submit" name="Save" class="btn btn-primary" id="settingsFormSubmit">Save</button>
+		<div class="buttons-set">
+			<button type="submit" class="btn btn-blue" id="create-submit"><span><span>Save info</span></span></button>
 		</div>
     </form>
+    <script type="text/javascript">
+    //<![CDATA[
+        //var dataForm = new VarienForm('form-validate', true);
+    //]]>
+    </script>
 </div>

@@ -19,7 +19,6 @@ $_session = Elm::getSingleton('user/session');
 		<ul class="list right">
 		<?php if ($_session->isLoggedIn()) : ?>
 			<li><a href="<?= $this->url('profile'); ?>">Account</a></li>
-			<!--<li><a href="<?/*= $this->url('profile/settings'); */?>">Settings</a></li>-->
 			<li><a href="<?= $this->url('profile/logout'); ?>">Logout</a></li>
 		<?php else : ?>
 			<li><a href="<?= $this->url('profile/login'); ?>">Login</a></li>

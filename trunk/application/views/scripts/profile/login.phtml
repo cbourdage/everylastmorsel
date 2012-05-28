@@ -1,15 +1,15 @@
 
-<div class="account-login">
-	<h4>Login to your Account</h4>
+<div class="account-form account-login container_12">
+	<h1 class="turquiose">Welcome back. <span class="light-green">Login and get growin'!</span></h1>
     <?php echo $this->Message()->render(); ?>
-    <form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
+    <form action="<?php echo $this->form->getAction() ?>" method="post" id="form-validate">
         <ul class="fieldset">
 			<?php foreach($this->form->getElements() as $element) : ?>
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
 		</ul>
-		<div class="button-set">
-			<input type="submit" name="submit" class="btn btn-primary" id="login-submit" value="submit">
+		<div class="buttons-set">
+			<button type="submit" class="btn btn-blue" id="login-submit"><span><span>Sign In!</span></span></button>
 		</div>
     </form>
     <script type="text/javascript"></script>

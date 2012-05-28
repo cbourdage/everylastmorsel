@@ -1,0 +1,36 @@
+<?php if (!Elm::getSingleton('user/session')->isLoggedIn()) : ?>
+	<div id="headerLoginForm" class="no-display">
+		<div class="container_12">
+			<div class="grid_6">
+				<h4>Login to your <strong class="white">Every Last Morsel</strong> account!</h4>
+				<form action="<?php echo $this->Form()->getLoginForm()->getAction(); ?>" method="post" id="header-form-validate">
+					<ul class="fieldset">
+						<li>
+							<label for="email">Email:</label>
+							<div>
+								<input type="email" name="email" />
+							</div>
+						</li>
+						<li>
+							<label for="email">Password:</label>
+							<div>
+								<input type="password" name="password" />
+							</div>
+						</li>
+					</ul>
+					<div class="buttons-set">
+						<button type="submit" class="btn btn-green" id="login-submit"><span><span>Sign me in!</span></span></button>
+						<a href="#cancel" class="cancel">cancel</a>
+					</div>
+				</form>
+			</div>
+			<div class="grid_6">
+				<h4>Don't have an account with us?</h4>
+				<a href="<?= $this->url('profile/create'); ?>" title="Create an account">Get one here!</a>
+
+				<h4>Forgot you info?</h4>
+				<a href="<?= $this->url('profile/password-reset'); ?>" title="Password reset">Click here!</a>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>

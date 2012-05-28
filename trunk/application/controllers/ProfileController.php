@@ -139,7 +139,6 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	{
 		$session = $this->_getSession();
         if ($session->isLoggedIn()) {
-            //$this->_redirect('/u/' . $session->getUser()->alias);
 			$this->_redirect('/profile/');
             return;
         }
@@ -148,8 +147,8 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		if ($this->getRequest()->isPost()) {
 			$errors = array();
 			$post = $this->getRequest()->getPost();
-			$user = Elm::getModel('user');
 			if ($form->isValid($post)) {
+				$user = Elm::getModel('user');
 				$user->setData($post)->setPassword($post['password']);
 				$user->save();
 
@@ -161,23 +160,79 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 				$session->setUserAsLoggedIn($user);
 				$user->sendNewAccountEmail($session->beforeAuthUrl);
 				$session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
-				//$url = '/u/' . $user->getAlias();
 				$this->_redirect('/profile/');
 				return;
-			}
-			else {
-				if (is_array($errors)) {
+			} else {
+				//$session->formData = $this->getRequest()->getParams();
+				if (count($errors) > 0) {
 					foreach ($errors as $errorMessage) {
+						//$session->addError('Ah! Check all fields are filled out and try again.');
 						$session->addError($errorMessage);
 					}
 				} else {
-					$session->addError($this->__('Invalid user data'));
+					$session->addError('Ah! Check all fields are filled out and try again.');
 				}
+				//$this->_redirect('/profile/create/');
 			}
 		}
+		/*if ($session->formData) {
+			foreach ($form->getElements() as $element) {
+				$element->setValue($session->formData[$element->getName()]);
+			}
+		}*/
 
 		$this->view->headTitle()->prepend('Create Account');
 		$this->view->form = $form;
+	}
+
+	/**
+	 * Registration and registration post action
+	 *
+	 * @return void
+	 */
+	public function createpostAction()
+	{
+		$session = $this->_getSession();
+        if ($session->isLoggedIn()) {
+			$this->_redirect('/profile/');
+            return;
+        }
+
+		if (!$this->getRequest()->isPost()) {
+			$this->_redirect('/profile/create/');
+			return;
+		}
+
+		$errors = array();
+		$post = $this->getRequest()->getPost();
+		$form = new Elm_Model_Form_User_Create();
+		if ($form->isValid($post)) {
+			$user = Elm::getModel('user');
+			$user->setData($post)->setPassword($post['password']);
+			$user->save();
+
+			// Increment inviteCode
+			$inviteCode = Elm::getSingleton('inviteCode')->load($post['invite_code']);
+			$inviteCode->increment()->save();
+
+			// setup session, send email, add messages, move on
+			$session->setUserAsLoggedIn($user);
+			$user->sendNewAccountEmail($session->beforeAuthUrl);
+			$session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
+			$this->_redirect('/profile/');
+			return;
+		} else {
+			$session->formData = $this->getRequest()->getParams();
+			if ($errors = $form->getErrors()) {
+				$top = array_shift($errors);
+				//foreach ($errors as $errorMessage) {
+					$session->addError('Ah! Check all fields are filled out and try again.');
+				//}
+			} else {
+				$session->addError('A user data');
+			}
+			$this->_redirect('/profile/create/');
+		}
 	}
 
 	/**
@@ -235,6 +290,61 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	 *
 	 * @return mixed
 	 */
+	public function infoAction()
+	{
+		$session = $this->_getSession();
+		if (!$session->isLoggedIn()) {
+			$this->_redirect('/profile/login');
+			return;
+		}
+
+		$this->view->headTitle()->prepend('Info');
+		$this->view->headTitle()->prepend($session->user->getFirstname() . ' ' . $session->user->getLastname());
+
+		$form = new Elm_Model_Form_User_Info();
+		$form->setAction('/profile/info-save');
+		$this->view->form = $form;
+	}
+
+	/**
+	 * Users settings save action
+	 *
+	 * @return mixed
+	 */
+	public function infoSaveAction()
+	{
+		if (!$this->getRequest()->isPost()) {
+			$this->_redirect('/profile/info');
+			return;
+		}
+
+		$this->_init();
+		$session = $this->_getSession();
+
+		$form = new Elm_Model_Form_User_Settings();
+		$post = $this->getRequest()->getParams();
+		if ($form->isValid($post)) {
+			try {
+				$user = $session->getUser();
+				$user->addData($post)->save();
+				$session->addSuccess('Successfully saved your info!');
+			} catch (Colony_Exception $e) {
+				$session->addError($e->getMessage());
+			} catch (Exception $e) {
+				$session->addError($e->getMessage());
+			}
+		} else {
+			$session->addError('Check all fields are filled out!');
+		}
+
+		$this->_redirect('/profile/info');
+	}
+
+	/**
+	 * Users settings page
+	 *
+	 * @return mixed
+	 */
 	public function settingsAction()
 	{
 		$session = $this->_getSession();
@@ -250,6 +360,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		$form->setAction('/profile/settings-save');
 		$this->view->form = $form;
 	}
+
 
 	/**
 	 * Users settings save action

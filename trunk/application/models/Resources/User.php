@@ -6,6 +6,8 @@ class Elm_Model_Resource_User extends Colony_Db_Table
 
 	protected $_primary = 'user_id';
 
+	public static $gardenerTypes = array('Casual', 'Farmer', 'Community');
+
     /**
      * Check customer scope, email and confirmation key before saving
      *

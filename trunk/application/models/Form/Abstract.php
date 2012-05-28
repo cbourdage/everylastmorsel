@@ -4,7 +4,6 @@
 class Elm_Model_Form_Abstract extends Zend_Form
 {
 	/**
-	 * @TODO custom decorators
 	 * @var array
 	 */
 	protected $defaultDecorators = array(
@@ -38,6 +37,11 @@ class Elm_Model_Form_Abstract extends Zend_Form
             APPLICATION_PATH . '/models/Form/Validate/',
             Zend_Form_Element::VALIDATE
         );
+		$this->addElementPrefixPath(
+			'Elm_Model_Form_Decorator',
+            APPLICATION_PATH . '/models/Form/Decorator/',
+            Zend_Form_Element::DECORATOR
+		);
 	}
 
 	/**

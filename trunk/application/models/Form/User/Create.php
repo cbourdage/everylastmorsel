@@ -7,6 +7,8 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
 	{
 		parent::__construct();
 
+		$this->setAction('/profile/create/');
+
 		if (!Elm::getAppConfig('public')) {
 			$this->addElement('text', 'invite_code', array(
 				'filters'    => array('StringTrim'),

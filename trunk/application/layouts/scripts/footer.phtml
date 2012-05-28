@@ -13,12 +13,12 @@
 				<li><a href="#twitter" rel="twitter" title="Tweet With Us"></a></li>
 				<li><a href="#facebook" rel="facebook" title="Facebook Us"></a></li>
 			</ul>
-			<form class="email-signup">
+			<form class="email-signup" action="newsletter/signup" method="post">
 				<label for="email">Email sign up:</label>
 				<input type="email" name="email" id="email" />
 				<button type="submit" name="submit" class="link-btn">submit</button>
 			</form>
-			<form class="search">
+			<form class="search" action="<?= $this->url('search'); ?>" method="post">
 				<label for="search">Search:</label>
 				<input type="text" name="search" id="search" />
 				<button type="submit" name="submit" class="link-btn">search</button>
@@ -27,7 +27,9 @@
 	</footer>
 </div>
 
-<script src="/file-bin/js/lib/bootstrap/bootstrap-button.js" type="text/javascript"></script>
+<?php echo $this->partial('profile/_login.phtml', array('user' => $_user)); ?>
+
+<!--<script src="/file-bin/js/lib/bootstrap/bootstrap-button.js" type="text/javascript"></script>-->
 <script src="/file-bin/js/lib/bootstrap/bootstrap-alert.js" type="text/javascript"></script>
 <script src="/file-bin/js/lib/bootstrap/bootstrap-transition.js" type="text/javascript"></script>
 <script src="/file-bin/js/lib/bootstrap/bootstrap-modal.js" type="text/javascript"></script>
