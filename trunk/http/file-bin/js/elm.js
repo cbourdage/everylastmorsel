@@ -1,5 +1,6 @@
 jQuery.noConflict();
 
+
 /**
  * Globals
  */
@@ -10,115 +11,6 @@ var elm = {
 };
 
 window.elm = elm;
-
-// Initialize the users location
-function initLocation() {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(initPosition, handleNoGeolocation);
-	} else if (google.gears) {
-		var geo = google.gears.factory.create('beta.geolocation');
-		geo.getCurrentPosition(initPosition, handleNoGeolocation);
-	} else {
-		handleNoGeolocation();
-	}
-
-	/**
-	 * No location
-	 */
-	function handleNoGeolocation() {
-		window.location = elm.domain + 'coming-soon/';
-	}
-
-	/**
-	 * Init position
-	 *
-	 * @param position
-	 */
-	function initPosition(position) {
-		elm.myPosition = {
-			lat : position.coords.latitude,
-			long : position.coords.longitude
-		};
-	}
-
-	return;
-
-	jQuery.ajax({
-		url: '/index/init-location/',
-		data: jQuery.serializeJSON(coords),
-		dataType: 'json',
-		success: function(response) {
-			if (response.location) {
-				window.location = response.location;
-			}
-
-			if (response.success) {
-				console.log(response);
-			} else {
-				alert('error in request');
-			}
-		},
-		error: function() {
-			// @TODO create a simple error handler function to display global message
-			alert('error in request');
-		},
-		exception: function() {
-			// @TODO create a simple error handler function to display global message
-			alert('exception in request');
-		}
-	});
-}
-
-
-// Initialize location
-initLocation();
-
-
-/**
- * Elm specifics
- */
-
-/**
- * checks response for location and redirects
- *
- * @param response
- */
-window.elm.success = function(response) {
-	if (response.location) {
-		window.location = response.location;
-		return false;
-	}
-	return true;
-}
-
-/**
- * Handles logging errors for application
- *
- * @param message
- * @param $el
- * @param location
- */
-window.elm.error = function(message, $el, location) {
-	var $message = jQuery.createErrorAlert(message).hide();
-
-	switch(location) {
-		case 'after':
-			$el.after($message);
-			break;
-		case 'before':
-			$el.before($message);
-			break;
-		case 'append':
-			$el.append($message);
-			break;
-		default:
-		case 'prepend':
-			$el.prepend($message);
-			break;
-	}
-
-	$message.fadeIn();
-}
 
 
 /**
@@ -181,6 +73,113 @@ jQuery.extend({
 		}
 	}
 });
+
+
+// Initialize the users location
+function initLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(initPosition, handleNoGeolocation);
+	} else if (google.gears) {
+		var geo = google.gears.factory.create('beta.geolocation');
+		geo.getCurrentPosition(initPosition, handleNoGeolocation);
+	} else {
+		handleNoGeolocation();
+	}
+
+	/**
+	 * No location
+	 */
+	function handleNoGeolocation() {
+		window.location = elm.domain + 'coming-soon/';
+	}
+
+	/**
+	 * Init position
+	 *
+	 * @param position
+	 */
+	function initPosition(position) {
+		elm.myPosition = {
+			lat : position.coords.latitude,
+			long : position.coords.longitude
+		};
+
+		/**
+		 * Request to get users location if have coordinates - will store the data on session and in db
+		 */
+		jQuery.ajax({
+			url: '/index/init-location/',
+			data: jQuery.serializeJSON(elm.myPosition),
+			dataType: 'json',
+			success: function(response) {
+				if (response.location) {
+					window.location = response.location;
+				}
+
+				if (response.success) {
+					console.log(response);
+				} else {
+					alert('error in request');
+				}
+			},
+			error: function() {
+				// @TODO create a simple error handler function to display global message
+				//alert('error in request');
+			}
+		});
+	}
+}
+
+
+// Initialize location
+initLocation();
+
+
+/**
+ * Elm specifics
+ */
+
+/**
+ * checks response for location and redirects
+ *
+ * @param response
+ */
+window.elm.success = function(response) {
+	if (response.location) {
+		window.location = response.location;
+		return false;
+	}
+	return true;
+}
+
+/**
+ * Handles logging errors for application
+ *
+ * @param message
+ * @param $el
+ * @param location
+ */
+window.elm.error = function(message, $el, location) {
+	var $message = jQuery.createErrorAlert(message).hide();
+
+	switch(location) {
+		case 'after':
+			$el.after($message);
+			break;
+		case 'before':
+			$el.before($message);
+			break;
+		case 'append':
+			$el.append($message);
+			break;
+		default:
+		case 'prepend':
+			$el.prepend($message);
+			break;
+	}
+
+	$message.fadeIn();
+};
 
 
 
@@ -289,9 +288,6 @@ jQuery.extend({
 					}
 				},
 				error: function() {
-					elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
-				},
-				exception: function() {
 					elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
 				}
 			});

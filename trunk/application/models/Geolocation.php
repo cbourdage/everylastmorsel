@@ -17,8 +17,8 @@ class Elm_Model_Geolocation extends Colony_Object
 	 */
 	protected function _init($lat, $long)
 	{
-		Elm::log('prevent d');
-		return;
+		//Elm::log('prevent d');
+		//return;
 
 		if (!$this->_location) {
 			$url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$long&sensor=false";
@@ -30,10 +30,17 @@ class Elm_Model_Geolocation extends Colony_Object
 			//$results = file_get_contents("http://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$long&sensor=false");
 			//$this->_results = Zend_Json::decode($results);
 
-			Elm::log($url, Zend_Log::INFO, 'geolocation-requests.log');
+			Elm::log($url, Zend_Log::INFO, date('Y-m-d') . '-geolocation-requests.log');
+			Elm::log($this->_results, Zend_Log::INFO, date('Y-m-d') . '-geolocation-requests.log');
 
 			$this->_location = $this->_results['results'][0];
-			Elm::log($this->_location);
+
+			// Log data
+			Elm::log(
+				sprintf("%s,%s:%s,%s,%s,%s", $lat, $long, $this->getCity(), $this->getState(), $this->getZip(), $this->getCounty()),
+				Zend_Log::INFO,
+				'geolocation-data.log'
+			);
 		}
 	}
 
@@ -52,7 +59,17 @@ class Elm_Model_Geolocation extends Colony_Object
 	 */
 	public function getCity()
 	{
-		return $this->_location['address_components'][0]['long_name'];
+		return $this->_results['results'][0]['address_components'][2]['long_name'];
+	}
+
+	/**
+	 * Returns county information
+	 *
+	 * @return string
+	 */
+	public function getCounty()
+	{
+		return $this->_results['results'][0]['address_components'][4]['long_name'];
 	}
 
 	/**
@@ -62,7 +79,7 @@ class Elm_Model_Geolocation extends Colony_Object
 	 */
 	public function getState()
 	{
-		return $this->_location['address_components'][3]['long_name'];
+		return $this->_results['results'][0]['address_components'][5]['long_name'];
 	}
 
 	/**
@@ -72,6 +89,6 @@ class Elm_Model_Geolocation extends Colony_Object
 	 */
 	public function getZip()
 	{
-		return $this->_results['results'][3]['address_components'][0]['long_name'];
+		return $this->_results['results'][0]['address_components'][7]['long_name'];
 	}
 }

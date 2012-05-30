@@ -102,6 +102,7 @@ HTMLBODY;
 	public function initLocationAction()
 	{
 		$this->_initAjax();
+		$response = array();
 
 		if ($location = Elm::getSingleton('session')->location) {
 			$response = array(
@@ -124,12 +125,6 @@ HTMLBODY;
 					'city' => $geo->getCity(),
 					'state' => $geo->getState(),
 					'zip' => $geo->getZip()
-				);
-			} else {
-				$response = array(
-					'success' => false,
-					'error' => true,
-					'location' => $this->view->url('plot/startup')
 				);
 			}
 		}
