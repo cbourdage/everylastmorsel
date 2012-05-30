@@ -13,7 +13,7 @@
 				<li><a href="#twitter" rel="twitter" title="Tweet With Us"></a></li>
 				<li><a href="#facebook" rel="facebook" title="Facebook Us"></a></li>
 			</ul>
-			<form class="email-signup" action="newsletter/signup" method="post">
+			<form class="email-signup" action="<?= $this->url('newsletter/signup'); ?>" method="post">
 				<label for="email">Email sign up:</label>
 				<input type="email" name="email" id="email" />
 				<button type="submit" name="submit" class="link-btn">submit</button>

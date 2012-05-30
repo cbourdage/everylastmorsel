@@ -12,7 +12,7 @@ class Elm_NewsletterController extends Elm_AbstractController
 	 */
     public function signupAction()
     {
-		if ($email = $this->getRequest()->isParam('email', null)) {
+		if ($email = $this->getRequest()->getParam('email', null)) {
 			if (Elm::getModel('newsletter')->signUp($email)) {
 				Elm::getSingleton('user/session')->addSuccess('Thank you for signing up!');
 			} else {
