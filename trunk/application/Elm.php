@@ -174,6 +174,16 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 		);
 		$frontController->getRouter()->addRoute('plot', $route);
 
+		// about-us
+		$route = new Zend_Controller_Router_Route(
+		    'about-us',
+		    array(
+		    	'controller' => 'index',
+        		'action' => 'about',
+		    )
+		);
+		$frontController->getRouter()->addRoute('about-us', $route);
+
 		// help
 		$route = new Zend_Controller_Router_Route(
 		    'help',

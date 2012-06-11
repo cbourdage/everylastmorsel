@@ -246,6 +246,7 @@ footer ul.list.left { border-right: 4px double #545B17; float: left; text-align:
 /** right signup forms */
 footer .signups { float: right; }
 footer .signups h4 {
+	color: #fff;
 	font-family: 'Varela', sans-serif;
 	font-size: 36px;
 	float: left;
@@ -317,7 +318,7 @@ footer > p a { color: #fff; }
 /**
 	Home page
 */
-.elm_index_index div#content { padding-top: 0; }
+body.elm-index-index div.main-container { padding-top: 0; }
 /** Map Canvas */
 div.map-container { position: relative; }
 div.map-container > .top,

@@ -133,6 +133,15 @@ HTMLBODY;
 	}
 
 	/**
+	 * About Us Action
+	 *
+	 * @return void
+	 */
+	public function aboutAction()
+	{
+	}
+
+	/**
 	 * Help Action
 	 *
 	 * @return void
