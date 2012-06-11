@@ -1,36 +1,44 @@
 <?php
 $_session = Elm::getSingleton('user/session');
 ?>
-<header id="header" role="banner" class="clearfix grid_12">
-	<h1>
-		<a href="<?= $this->url('/'); ?>" title="Every Last Morsel" class="ext-hide">
-			<img src="<?= Elm::getBaseUrl('file-bin/images/logo.png'); ?>" alt="Every Last Morsel" title="Every Last Morsel" />
-		</a>
-	</h1>
+<div class="container_12 clearfix">
+	<header id="header" role="banner" class="clearfix grid_12">
+		<h1>
+			<a href="<?= $this->url('/'); ?>" title="Every Last Morsel" class="ext-hide">
+				<img src="<?= Elm::getBaseUrl('file-bin/images/logo.png'); ?>" alt="Every Last Morsel" title="Every Last Morsel" />
+			</a>
+		</h1>
 
-	<nav>
-		<ul class="list left">
-			<li><a href="<?= $this->url('about-us'); ?>">About Us</a></li>
-			<li><a href="<?= $this->url(''); ?>">Map A Garden</a></li>
-			<li><a href="<?= $this->url('help-us-grow'); ?>">Help Us Grow</a></li>
-			<li>&nbsp;</li>
-		</ul>
+		<nav>
+			<ul class="list left">
+				<li><a href="<?= $this->url('about-us'); ?>" title="About Us">About Us</a></li>
+				<li><a href="<?= $this->url('crops'); ?>" title="My Crops">My Crops</a></li>
+				<li><a href="<?= $this->url('plots'); ?>" title="My Plots">My Plots</a></li>
+				<li><a href="<?= $this->url('community'); ?>" title="Community">Community</a></li>
+			</ul>
 
-		<ul class="list right">
-		<?php if ($_session->isLoggedIn()) : ?>
-			<li><a href="<?= $this->url('profile'); ?>">Account</a></li>
-			<li><a href="<?= $this->url('profile/logout'); ?>">Logout</a></li>
-		<?php else : ?>
-			<li><a href="<?= $this->url('profile/login'); ?>">Login</a></li>
-			<li><a href="<?= $this->url('profile/create'); ?>">Sign Up</a></li>
-		<?php endif; ?>
-			<li><a href="<?= $this->url('profile/create'); ?>">Help</a></li>
-			<li class="social">
-				<ul class="list-block social">
-					<li><a href="#twitter" rel="twitter" title="Tweet With Us"></a></li>
-					<li><a href="#facebook" rel="facebook" title="Facebook Us"></a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
-</header>
+			<ul class="list right">
+			<?php if ($_session->isLoggedIn()) : ?>
+				<li>
+					<a href="<?= $this->url('profile'); ?>" title="My Account">My Account</a>
+					<ul class="child">
+						<li><a href="<?= $this->url('profile/info'); ?>" title="Edit Profile">Profile Info</a></li>
+						<li><a href="<?= $this->url('profile/settings'); ?>" title="Edit Profile">Settings</a></li>
+					</ul>
+				</li>
+				<li><a href="<?= $this->url('profile/logout'); ?>" title="Logout">Logout</a></li>
+			<?php else : ?>
+				<li><a href="<?= $this->url('profile/login'); ?>" title="Login">Login</a></li>
+				<li><a href="<?= $this->url('profile/create'); ?>" title="Sign Up">Sign Up</a></li>
+			<?php endif; ?>
+				<li><a href="<?= $this->url('help'); ?>" title="Help">Help</a></li>
+				<li class="social">
+					<ul class="list-block social">
+						<li><a href="#twitter" rel="twitter" title="Tweet With Us"></a></li>
+						<li><a href="#facebook" rel="facebook" title="Facebook Us"></a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+</div>

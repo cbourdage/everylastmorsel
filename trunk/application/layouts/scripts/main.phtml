@@ -6,13 +6,14 @@
 <body class="<?= $this->bodyClass; ?>">
 	<div class="wrapper">
 		<div id="page" class="clearfix">
-			<div class="container_12">
+			<div class="header-container">
 				<?= $this->render('header.phtml'); ?>
 			</div>
-			<div id="content" role="contentinfo" class="clearfix">
-				<?= $this->layout()->content; ?>
+			<div class="main-container">
+				<div id="content" role="contentinfo" class="clearfix">
+					<?= $this->layout()->content; ?>
+				</div>
 			</div>
-
 			<?= $this->render('footer.phtml'); ?>
 		</div>
 		<div id="fb-root"></div>

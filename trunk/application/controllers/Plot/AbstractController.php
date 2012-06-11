@@ -9,7 +9,7 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 	public function init()
 	{
 		$layout = $this->_helper->layout();
-		$layout->setLayout('two-column');
+		$layout->setLayout('profile-layout');
 	}
 
 	protected function _isValid()

@@ -1,15 +1,35 @@
 <?php /** @TODO filter plots based on ones you're approved to be associated with */ ?>
 
 <?php if (count($this->plots) > 0) : ?>
-	<ul class="list-block">
-	<?php foreach ($this->plots as $plot) : ?>
-		<li>
-			<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '100', 'width' => '100'))); ?>" title="<?php echo $plot->getName(); ?>" />
-			<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $plot->getName(); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
-			<?php echo $plot->getUserRole(); ?>
-		</li>
-	<?php endforeach; ?>
-	</ul>
+	<?php if ($this->details) : ?>
+		<ul class="list-block details">
+		<?php foreach ($this->plots as $plot) : ?>
+			<li>
+				<figure>
+					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '175', 'width' => '175'))); ?>" title="<?php echo $plot->getName(); ?>" />
+				</figure>
+				<div class="plot-details">
+					<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $plot->getName(); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
+					<p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
+					<p><?php echo $plot->getAbout(); ?></p>
+				</div>
+			</li>
+		<?php endforeach; ?>
+		</ul>
+
+	<?php else : ?>
+		<ul class="list-block">
+		<?php foreach ($this->plots as $plot) : ?>
+			<li>
+				<figure>
+					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '125', 'width' => '125'))); ?>" title="<?php echo $plot->getName(); ?>" />
+				</figure>
+				<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $plot->getName(); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
+				<p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
+			</li>
+		<?php endforeach; ?>
+		</ul>
+	<?php endif; ?>
 <?php else : ?>
 	<p>Sorry no plots associated. Get growing!</p>
 <?php endif; ?>

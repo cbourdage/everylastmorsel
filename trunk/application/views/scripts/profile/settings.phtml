@@ -1,5 +1,8 @@
-<div class="account-settings">
-	<h4>Account Settings</h4>
+<?php
+$_user = $this->user;
+?>
+<div class="account-form account-info container_12">
+	<h1 class="turquiose">Update your settings. <span class="light-green">Share with others!</span></h1>
     <?php echo $this->Message()->render() ?>
     <form action="<?php echo $this->form->getAction() ?>" method="post" id="settingsForm">
         <ul class="fieldset">
@@ -7,8 +10,8 @@
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
 		</ul>
-		<div class="button-set">
-			<button type="submit" name="Save" class="btn btn-primary" id="settingsFormSubmit">Save</button>
+		<div class="buttons-set">
+			<button type="submit" class="btn btn-blue" id="create-submit"><span>Save Settings</span></button>
 		</div>
     </form>
 </div>

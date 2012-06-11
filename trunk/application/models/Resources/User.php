@@ -38,19 +38,21 @@ class Elm_Model_Resource_User extends Colony_Db_Table
 	protected function _afterLoad($object)
 	{
 		parent::_afterLoad($object);
-		
-		$select = $this->getDefaultAdapter()->select()
-			->from(Elm_Model_Resource_Plot::RELATIONSHIP_TABLE)
-			->where('user_id = ?', $object->getId())
-			->where('is_approved = 1');
-		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
-			$plots = array();
-			foreach ($rows as $row) {
-				$plots[$row->plot_id] = $row->role; //Elm::getModel('plot')->load($row->plot_id, false);
+
+		if ($object->getId()) {
+			$select = $this->getDefaultAdapter()->select()
+				->from(Elm_Model_Resource_Plot::RELATIONSHIP_TABLE)
+				->where('user_id = ?', $object->getId())
+				->where('is_approved = 1');
+			if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
+				$plots = array();
+				foreach ($rows as $row) {
+					$plots[$row->plot_id] = $row->role; //Elm::getModel('plot')->load($row->plot_id, false);
+				}
+				$object->setPlotIds($plots);
+			} else {
+				$object->setPlotIds(null);
 			}
-			$object->setPlotIds($plots);
-		} else {
-			$object->setPlotIds(null);
 		}
 
 		return $this;

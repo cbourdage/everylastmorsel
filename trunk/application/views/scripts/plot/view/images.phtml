@@ -1,7 +1,16 @@
-<?php $_session = Elm::getSingleton('user/session'); ?>
+<?php
+$_session = Elm::getSingleton('user/session');
+$_plot = $this->plot;
+/**
+ * @TODO implement helper method to display plot images for missing images
+ * @TODO implement the scroller for the images
+ */
+?>
 <?php if ($images = $this->plot->getImages()) : ?>
 <ul class="list list-block">
-	<?php foreach ($images as $image) : ?>
+	<?php $ctr = 0; ?>
+	<?php foreach ($images as $key => $image) : ?>
+		<?php if ($ctr++ > 3) break; ?>
 		<li><img src="<?= Elm::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" width="150px" title="<?php echo $image->getCaption(); ?>" alt="<?php echo $image->getCaption(); ?>"></li>
 	<?php endforeach; ?>
 </ul>

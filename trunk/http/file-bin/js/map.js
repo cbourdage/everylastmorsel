@@ -56,43 +56,47 @@ jQuery(function($) {
 			animation: google.maps.Animation.DROP
 		});
 
-		var contentString = '<div id="content">'+
-			'<div id="siteNotice">'+
-			'</div>'+
-			'<h2 id="firstHeading" class="firstHeading">Uluru</h2>'+
-			'<div id="bodyContent">'+
+		var contentString = '<div class="content">'+
+			'<h2 class="heading">Uluru</h2>'+
+			'<div class="bodyContent">'+
 			'<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
 			'sandstone rock formation in the southern part of the '+
 			'Northern Territory, central Australia. It lies 335 km (208 mi) '+
 			'south west of the nearest large town, Alice Springs; 450 km '+
 			'(280 mi) by road. Kata Tjuta and Uluru are the two major '+
-			'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-			'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-			'Aboriginal people of the area. It has many springs, waterholes, '+
-			'rock caves and ancient paintings. Uluru is listed as a World '+
 			'Heritage Site.</p>'+
 			'<p>Attribution: Uluru, <a href="http://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
 			'http://en.wikipedia.org/w/index.php?title=Uluru</a> (last visited June 22, 2009).</p>'+
 			'</div>'+
 			'</div>';
 
-		var infowindow = new google.maps.InfoWindow({
-			content: contentString,
-			maxWidth: 400
-		});
+		/*var boxText = document.createElement("div");
+        boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: red; padding: 5px;";
+        boxText.innerHTML = "City Hall, Sechelt<br>British Columbia<br>Canada";*/
 
+        var options = {
+		 	content: contentString,
+			//disableAutoPan: false,
+			maxWidth: 400,
+			pixelOffset: new google.maps.Size(50, -150),
+			//zIndex: null,
+			boxStyle: {
+			  	background: "url('tipbox.gif') no-repeat",
+				opacity: 0.75,
+				width: "400px"
+			},
+			closeBoxMargin: "10px 2px 2px 2px",
+			closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
+			infoBoxClearance: new google.maps.Size(1, 1),
+			//isHidden: false,
+			pane: "floatPane",
+			//enableEventPropagation: false
+        };
+
+        var infowindow = new InfoBox(options);
 		// Trigger infowindow when map is loaded
 		google.maps.event.addDomListener(window, 'load', function() {
 			infowindow.open(map, initialMarker);
-
-			/*console.log(infowindow.content);
-			console.log(infowindow.content.parentNode);
-			console.log(infowindow.content.parentNode.parentNode);
-			if (infowindow.content && infowindow.content.parentNode && infowindow.content.parentNode.parentNode) {
-				if (infowindow.content.parentNode.parentNode.previousElementSibling) {
-					infowindow.content.parentNode.parentNode.previousElementSibling.className = 'my-custom-popup-container-css-classname';
-				}
-			}*/
 		});
 
 
@@ -124,6 +128,7 @@ jQuery(function($) {
 
 		google.maps.event.addListener(initialMarker, 'dragend', function(event) {
 			placeMarker(event.latLng);
+			infowindow.setContent('<div class="content">new content</div>');
 		});
 
 

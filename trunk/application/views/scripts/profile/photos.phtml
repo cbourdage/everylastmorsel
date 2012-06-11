@@ -12,13 +12,9 @@ $_user = $this->user;
 		</ul>
 	</div>
 
-	<?php echo $this->partial('profile/_navigation.phtml'); ?>
+	<?php echo $this->partial('profile/_navigation.phtml', array('plots' => $_user->getPlots())); ?>
 
-	<div id="plotsList" class="blocked-content clearfix plots-list">
-		<?php echo $this->partial('plots/list.phtml', array('plots' => $_user->getPlots())); ?>
-	</div>
-
-	<div id="feed" class="blocked-content">
-		<?php //echo $this->partial('profile/feed/list.phtml', array('user' => $_user)); ?>
+	<div id="plots" class="blocked-content clearfix">
+		<?php echo $this->partial('plot/list.phtml', array('plots' => $_user->getPlots())); ?>
 	</div>
 </div>

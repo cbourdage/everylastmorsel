@@ -12,13 +12,10 @@ $_user = $this->user;
 		</ul>
 	</div>
 
-	<?php echo $this->partial('profile/_navigation.phtml'); ?>
+	<?php echo $this->partial('profile/_navigation.phtml', array('plots' => $_user->getPlots())); ?>
 
-	<div id="plotsList" class="blocked-content clearfix plots-list">
-		<?php echo $this->partial('plots/list.phtml', array('plots' => $_user->getPlots())); ?>
-	</div>
-
-	<div id="feed" class="blocked-content">
-		<?php //echo $this->partial('profile/feed/list.phtml', array('user' => $_user)); ?>
+	<h2 class="blue">About <?= $_user->getFirstname(); ?>:</h2>
+	<div id="about" class="blocked-content about-me">
+		<p><?= str_replace('<br />', '</p><p>', nl2br($_user->getAbout())); ?></p>
 	</div>
 </div>

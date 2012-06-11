@@ -52,7 +52,7 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
             'label'      => 'Email'
         ));
 
-		$this->addElement('text', 'alias', array(
+		/*$this->addElement('text', 'alias', array(
             'filters'    => array('StringTrim'),
             'validators' => array(
                 array('StringLength', true, array(3, 24)),
@@ -60,6 +60,14 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
             ),
             'required'   => true,
             'label'      => 'Username'
+        ));*/
+
+		// @TODO Auto-populate zipcode based on ip address
+		$this->addElement('text', 'location', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(),
+            'required'   => false,
+            'label'      => 'Location'
         ));
 
         $this->addElement('password', 'password', array(
@@ -80,13 +88,6 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
             'label'      => 'Confirm Password'
         ));
 
-		// @TODO Auto-populate zipcode based on ip address
-		$this->addElement('text', 'location', array(
-            'filters'    => array('StringTrim'),
-            'validators' => array(),
-            'required'   => false,
-            'label'      => 'Location'
-        ));
 
 		foreach ($this->getElements() as $element) {
 			$element->setDecorators($this->defaultDecorators);

@@ -56,7 +56,7 @@ class Elm_Profile_AbstractController extends Elm_AbstractController
         $pattern = '/^(create|login)/i';
         if (!preg_match($pattern, $action)) {
          	$layout = $this->_helper->layout();
-			$layout->setLayout('two-column');
+			$layout->setLayout('profile-layout');
         }
 
 		$this->view->placeholder('contact-modal')->set($this->view->render('communication/_modal.phtml'));

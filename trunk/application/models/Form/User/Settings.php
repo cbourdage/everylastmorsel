@@ -24,13 +24,14 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
             'label'      => 'Email'
         ));
 
-		$this->addElement('checkbox', 'is_new', array(
+		/*$this->addElement('checkbox', 'is_new', array(
             'required'   => false,
             'label'      => 'Show/Hide Tips'
-        ));
+        ));*/
 
 		$this->addElement('radio', 'visibility', array(
             'required'   => true,
+			'label' => 'Account Visibility',
 			'multiOptions' => array(
 				self::VISIBILITY_PUBLIC => 'Public',
 				self::VISIBILITY_PRIVATE => 'Private'

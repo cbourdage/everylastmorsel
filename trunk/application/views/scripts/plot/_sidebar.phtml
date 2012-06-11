@@ -1,9 +1,9 @@
 <?php $session = Elm::getSingleton('user/session'); ?>
 <?php if (Zend_Registry::isRegistered('current_plot') || $this->plot) : ?>
 	<?php $plot = $this->plot ? $this->plot : Zend_Registry::get('current_plot') ; ?>
-	<div id="mainImage">
+	<figure id="mainImage">
 		<img src="<?php echo $this->Map()->getMapImage($plot); ?>" title="<?php echo $plot->getName(); ?>" />
-	</div>
+	</figure>
 	<div class="social-links">
 		<ul>
 			<li>
@@ -30,7 +30,7 @@
 <?php if ($session->isLoggedIn()) : ?>
 	<div class="btn-group">
 		<?php if (!$plot->isWatching($session->user) && !$plot->isAssociated($session->user, true)) : ?>
-			<form action="/plot/watch-this/" method="post">
+			<form action="<?php echo $this->url('plot/watch-this'); ?>" method="post">
 				<input type="hidden" name="plot_id" value="<?php echo $plot->getId(); ?>" />
 				<input type="hidden" name="user_id" value="<?php echo $session->user->getId(); ?>" />
 				<button type="submit" class="btn btn-primary">Watch This</button>

@@ -145,14 +145,17 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 
 		// user
         $route = new Zend_Controller_Router_Route(
-		    'u/:alias',
+		    //'u/:alias',
+		    'u/:u',
 		    array(
 		    	'controller' => 'user',
         		'action' => 'view',
-				'alias' => ''
+				//'alias' => ''
+				'u' => ''
 		    ),
 			array(
-				'alias' => '[a-zA-Z-_0-9\.]+'
+				//'alias' => '[a-zA-Z-_0-9\.]+'
+				'u' => '[0-9]+'
 			)
 		);
 		$frontController->getRouter()->addRoute('user', $route);
@@ -211,7 +214,12 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 	 */
 	public static function getBaseDir($path = null)
 	{
-		return APPLICATION_PATH . '/../' . $path;
+		$pattern = '/^(media|file-bin)/i';
+		if (preg_match($pattern, $path)) {
+			$path = '/http/' . $path;
+		}
+		//Elm::log(realpath(APPLICATION_PATH . '/../http/') . $path);
+		return realpath(APPLICATION_PATH . '/../') . $path;
 	}
 
 	/**

@@ -75,12 +75,16 @@ class Elm_Model_User_Image implements Elm_Model_Image_Interface
 
 			// Receive and save
 			if ($adapter->receive('image')) {
+				Elm::log('received image' . self::getImageUrl($user) . '/' . $newFilename);
 				// Set image data
 				//$this->setData('exif_data', exif_read_data($info['destination'] . DIRECTORY_SEPARATOR . $newFilename));
 				$user->setImage(self::getImageUrl($user) . '/' . $newFilename);
 				$user->save();
-				$session->addSuccess('Successfully updated your image');
+				//$session->addSuccess('Successfully updated your image');
+				return array('Successfully updated your image');
 			} else {
+				return $adapter->getMessages();
+
 				$errors = $adapter->getMessages();
 				foreach ($errors as $e) {
 					$session->addError($e);

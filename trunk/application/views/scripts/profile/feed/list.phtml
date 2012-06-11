@@ -1,6 +1,6 @@
 <?php if ($feed = $this->User()->getFeed($this->user)) : ?>
 <div class="comment-list">
-	<h4>Comments</h4>
+	<h2 class="blue">Feed</h2>
 	<ul class="feed list-block">
 		<?php foreach ($feed as $item) : ?>
 		<li class="<?php echo $item->getType(); ?>">

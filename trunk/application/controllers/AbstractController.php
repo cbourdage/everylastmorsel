@@ -41,11 +41,16 @@ class Elm_AbstractController extends Zend_Controller_Action
 			}
 		}
 
-		$this->view->bodyClass = strtolower(implode('_', array(
+		$this->view->bodyClass = strtolower(implode('-', array(
+			$this->getRequest()->getModuleName(),
+			$this->getRequest()->getControllerName(),
+		)));
+		$this->view->bodyClass .= ' ' . strtolower(implode('-', array(
 			$this->getRequest()->getModuleName(),
 			$this->getRequest()->getControllerName(),
 			$this->getRequest()->getActionName()
 		)));
+
         return $this;
     }
 

@@ -3,6 +3,8 @@ $this->startSetup();
 
 $this->run("
 
+ALTER TABLE `user` ADD COLUMN `gardener_type` ENUM('Casual', 'Farmer', 'Community') NULL AFTER `about`;
+
 DROP TABLE IF EXISTS `newsletter`;
 CREATE TABLE  `newsletter` (
 	`newsletter_id` int(10) unsigned NOT NULL AUTO_INCREMENT,

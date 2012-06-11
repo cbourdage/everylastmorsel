@@ -9,6 +9,8 @@ class Elm_UserController extends Elm_User_AbstractController
 	 */
 	public function noRouteAction()
 	{
+		$layout = $this->_helper->layout();
+		$layout->setLayout('main');
 	}
 
 	/**
@@ -24,8 +26,10 @@ class Elm_UserController extends Elm_User_AbstractController
 	 */
 	public function viewAction()
 	{
-		$userAlias = $this->getRequest()->getParam('alias');
-		$user = Elm::getModel('user')->loadByAlias($userAlias);
+		//$userAlias = $this->getRequest()->getParam('alias');
+		//$user = Elm::getModel('user')->loadByAlias($userAlias);
+		$userId = $this->getRequest()->getParam('u');
+		$user = Elm::getModel('user')->load($userId);
 		if ($user->getId()) {
 			$this->view->user = $user;
 			Zend_Registry::set('current_user', $user);

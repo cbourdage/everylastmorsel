@@ -1,6 +1,5 @@
 
 <div class="map-container">
-	<div class="top"></div>
 	<div id="mapCanvas"></div>
 	<div class="bottom"></div>
 </div>
@@ -60,6 +59,7 @@
 </div>-->
 
 <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=<?php //echo Elm::getAppConfig('mapsapi'); ?>&sensor=true"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 <script type="text/javascript" src="/file-bin/js/map.js"></script>
 <script>
 var plots = <?php echo $this->Map()->getPlotJson(); ?>;

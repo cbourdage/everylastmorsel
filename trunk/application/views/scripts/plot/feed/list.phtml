@@ -1,14 +1,13 @@
 <?php $_session = Elm::getSingleton('user/session'); ?>
 <?php if ($feed = $this->Plot()->getFeed($this->plot, 10)) : ?>
 <div class="comment-list">
-	<h4>Comments</h4>
 	<ul class="feed list-block" id="comment-feed-<?= $this->plot->getId(); ?>">
 		<?php foreach ($feed as $item) : ?>
 			<li class="<?php echo $item->getType(); ?>">
-				<?php echo $this->partial('plot/status/item.phtml', array('item' => $item)); ?>
-				<?php echo $this->partial('plot/status/comment/list.phtml', array('item' => $item)); ?>
+				<?php echo $this->partial('plot/feed/item.phtml', array('item' => $item)); ?>
+				<?php //echo $this->partial('plot/feed/replies/list.phtml', array('item' => $item)); ?>
 				<?php if ($_session->isLoggedIn()) : ?>
-					<?php echo $this->partial('plot/status/comment/form.phtml', array('item' => $item)); ?>
+					<?php //echo $this->partial('plot/feed/replies/form.phtml', array('item' => $item)); ?>
 				<?php endif; ?>
 			</li>
 		<?php endforeach; ?>

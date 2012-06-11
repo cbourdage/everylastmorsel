@@ -7,6 +7,7 @@ SetEnv APPLICATION_ENV development
 	## adjust memory limit
     php_value memory_limit 256M
     php_value max_execution_time 18000
+    php_value upload_max_filesize 512M
 
 	## disable magic quotes for php request vars
     php_flag magic_quotes_gpc off

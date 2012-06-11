@@ -1,21 +1,31 @@
-
+<?php
+$_user = $this->user;
+?>
 <div class="account-form account-info container_12">
 	<h1 class="turquiose">Let's configure your profile.<br /><span class="light-green">Help people get to know you!</span></h1>
     <?php echo $this->Message()->render(); ?>
-    <form action="<?php echo $this->form->getAction() ?>" method="post" id="form-validate">
+    <form action="<?php echo $this->form->getAction() ?>" method="post" id="form-validate" enctype="<?php echo $this->form->getEnctype(); ?>">
 		<?php $elements = $this->form->getElements(); ?>
         <ul class="fieldset">
 			<?php foreach($this->form->getElements() as $element) : ?>
+				<?php
+					if ($element->getName() == 'image') {
+						$photoInput = $element;
+						continue;
+					}
+				 ?>
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
+			<li>
+				<?= $photoInput->renderLabel(); ?>
+				<div>
+					<figure><img src="<?php echo $this->User()->getImage($_user); ?>" title="<?php echo $_user->getName(); ?>" width="255px" /></figure>
+					<p><?= $photoInput->renderFile(); ?></p>
+				</div>
+			</li>
 		</ul>
 		<div class="buttons-set">
-			<button type="submit" class="btn btn-blue" id="create-submit"><span><span>Save info</span></span></button>
+			<button type="submit" class="btn btn-blue" id="create-submit"><span>Save info</span></button>
 		</div>
     </form>
-    <script type="text/javascript">
-    //<![CDATA[
-        //var dataForm = new VarienForm('form-validate', true);
-    //]]>
-    </script>
 </div>

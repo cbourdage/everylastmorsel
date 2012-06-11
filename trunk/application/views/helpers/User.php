@@ -39,8 +39,13 @@ class Elm_View_Helper_User extends Zend_View_Helper_Abstract
 
 	public function getImage($user)
 	{
-		$imageUrl = $user->getImage() ? $user->getImage() : '/placeholder.gif';
-		return Elm::getBaseUrl('media/user') . $imageUrl;
+		if ($imageUrl = $user->getImage()) {
+			if (file_exists(Elm::getBaseDir('media/user') . $imageUrl)) {
+				return Elm::getBaseUrl('media/user') . $imageUrl;
+			}
+		}
+
+		return Elm::getBaseUrl('media/user') . '/placeholder.gif';
 	}
 
 	public function getFeed($user)

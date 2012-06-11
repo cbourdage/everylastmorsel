@@ -32,30 +32,17 @@ class Elm_Model_Form_User_Info extends Elm_Model_Form_Abstract
             'label'      => 'Email'
         ));
 
-		$this->addElement('checkbox', 'is_new', array(
-            'required'   => false,
-            'label'      => 'Show/Hide Tips'
-        ));
-
 		// Image input
-		$this->setAttrib('enctype', 'multipart/form-data');
 		$element = new Zend_Form_Element_File('image');
 		$element->setLabel('Upload a profile picture')
 			//->setDestination(Elm::getBaseDir('http/media/plots') . '/upload')
-			->addValidator('Size', false, 102400)	// limit to 100K
+			->addValidator('Size', false, 102400 * 4)	// limit to 100K
 			->addValidator('Extension', false, 'jpg,png,gif,jpeg'); // only JPEG, PNG, and GIFs
 		$element->setDecorators($this->fileDecorators);
 		$element->setBelongsTo('image');
 		$this->addElement($element, 'image');
+		$this->setAttrib('enctype', 'multipart/form-data');
 
-		$this->addElement('radio', 'visibility', array(
-            'required'   => true,
-			'label' => 'Account Visibility',
-			'multiOptions' => array(
-				self::VISIBILITY_PUBLIC => 'Public',
-				self::VISIBILITY_PRIVATE => 'Private'
-			)
-        ));
 
 		$session = Elm::getSingleton('user/session');
 		foreach ($this->getElements() as $element) {

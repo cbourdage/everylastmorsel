@@ -3,69 +3,18 @@ $_session = Elm::getSingleton('user/session');
 $_user = $this->user;
 ?>
 <?php echo $this->Message()->render(); ?>
-<div class="inner-content-wrapper user">
+<div class="inner-content-wrapper profile">
 	<div class="top">
 		<h2><?php echo $_user->getName(); ?></h2>
 		<ul class="list-inline">
-			<li>
-				<strong>Location</strong>
-				<span class="editable" data-title="Location" data-name="location" data-type="input"><?php echo $_user->getLocation(); ?></span>
-			</li>
+			<li><?php echo $_user->getLocation(); ?></li>
+			<li><?php echo $_user->getLocation(); ?></li>
 		</ul>
-		<p class="controls">
-			<?php if ($_session->isLoggedIn() && $_session->user->isMe($_user)) : ?>
-				<a href="#" class="btn" title="Edit Account Information" data-edit="editable" data-target="#editModalUser" id="editUserTrigger">Edit</a>
-			<?php endif; ?>
-			<?php if ($_session->isLoggedIn() && $_session->user->isMe($_user) && $this->User()->canShowTips()) : ?>
-				<a href="#" title="Tool tips!" class="tips">Tool Tips/help is available</a>
-			<?php endif; ?>
-		</p>
 	</div>
 
-	<ul id="tabMenu" class="list-inline">
-		<li><a href="#plots" title="Where I'm Growing">Plots</a></li>
-		<li><a href="#feed" title="What's new?">Latest</a></li>
-		<li><a href="#about" title="Who am I?">About</a></li>
-	</ul>
+	<?php echo $this->partial('profile/_navigation.phtml'); ?>
 
-	<div id="plots" class="blocked-content clearfix">
-		<?php echo $this->partial('user/plot/list.phtml', array('plots' => $_user->getPlots())); ?>
-	</div>
-
-	<div id="feed" class="blocked-content">
-		<?php echo $this->partial('user/comment/list.phtml', array('user' => $_user)); ?>
-	</div>
-
-	<div id="about" class="blocked-content">
-		<div class="editable" data-title="About myself" data-name="about" data-type="textarea">
-			<?= $_user->getAbout() ? $_user->getAbout() : 'Tell us a little about yourself...'; ?>
-		</div>
+	<div id="plotsList" class="blocked-content clearfix plots-list">
+		<?php echo $this->partial('plots/list.phtml', array('plots' => $_user->getPlots(), 'detail' => true)); ?>
 	</div>
 </div>
-
-<div class="modal hide fade edit-modal" id="editModalUser">
-	<div class="modal-header">
-		<a class="close" data-dismiss="modal">×</a>
-		<h3></h3>
-	</div>
-	<div class="modal-body">
-		<form action="<?= $this->url('user/save'); ?>" type="post" id="editFormUser">
-			<input type="hidden" data-name="identifier" name="user_id" value="<?= $_user->getId(); ?>" />
-			<input type="hidden" data-name="update" name="user_update" value="" />
-			<div class="wrapper"></div>
-		</form>
-	</div>
-	<div class="modal-footer">
-		<a href="#" class="btn" data-dismiss="modal">Close</a>
-		<a href="#" class="btn btn-primary" data-submit="form" data-form="#editFormUser">Save</a>
-	</div>
-</div>
-
-<script>
-jQuery('#editUserTrigger').on('click', function(e) {
-	var $imageForm = jQuery('#imageUploadForm');
-	if ($imageForm.length) {
-		$imageForm.toggleClass('hide');
-	}
-});
-</script>

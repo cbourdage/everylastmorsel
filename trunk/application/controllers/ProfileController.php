@@ -286,7 +286,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	}
 
 	/**
-	 * Users settings page
+	 * Users info page
 	 *
 	 * @return mixed
 	 */
@@ -298,16 +298,24 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 			return;
 		}
 
+		$this->_init();
+
 		$this->view->headTitle()->prepend('Info');
 		$this->view->headTitle()->prepend($session->user->getFirstname() . ' ' . $session->user->getLastname());
 
 		$form = new Elm_Model_Form_User_Info();
 		$form->setAction('/profile/info-save');
+
+		// Set data if stored in session b/c of an error
+		if ($session->formData) {
+			$form->setDefaults($session->formData);
+		}
+
 		$this->view->form = $form;
 	}
 
 	/**
-	 * Users settings save action
+	 * Users info save action
 	 *
 	 * @return mixed
 	 */
@@ -321,11 +329,13 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		$this->_init();
 		$session = $this->_getSession();
 
-		$form = new Elm_Model_Form_User_Settings();
+		$form = new Elm_Model_Form_User_Info();
 		$post = $this->getRequest()->getParams();
+
 		if ($form->isValid($post)) {
 			try {
 				$user = $session->getUser();
+				Elm::getModel('user/image')->upload($session->user, $post);
 				$user->addData($post)->save();
 				$session->addSuccess('Successfully saved your info!');
 			} catch (Colony_Exception $e) {
@@ -334,10 +344,21 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 				$session->addError($e->getMessage());
 			}
 		} else {
+			unset($post['image']);
+			$session->formData = $post;
 			$session->addError('Check all fields are filled out!');
 		}
 
 		$this->_redirect('/profile/info');
+	}
+
+	/**
+	 * About action
+	 */
+	public function aboutAction()
+	{
+		$this->_init();
+		$this->_initLayout();
 	}
 
 	/**
@@ -353,11 +374,19 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 			return;
 		}
 
+		$this->_init();
+
 		$this->view->headTitle()->prepend('Settings');
 		$this->view->headTitle()->prepend($session->user->getFirstname() . ' ' . $session->user->getLastname());
 
 		$form = new Elm_Model_Form_User_Settings();
 		$form->setAction('/profile/settings-save');
+
+		// Set data if stored in session b/c of an error
+		if ($session->formData) {
+			$form->setDefaults($session->formData);
+		}
+
 		$this->view->form = $form;
 	}
 
@@ -414,14 +443,6 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 				$this->_getSession()->addError('Gasp! This key does not match anything on file.');
 			}
 		}
-	}
-
-	/**
-	 *
-	 */
-	public function confirmedAction()
-	{
-		//$this->_init();
 	}
 
 	/**

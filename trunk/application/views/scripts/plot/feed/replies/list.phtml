@@ -4,7 +4,7 @@
 <div class="collapsed hide">
 	<ul class="comments" id="comments-<?= $item->getId(); ?>">
 	<?php foreach ($comments as $comment) : ?>
-		<li><?php echo $this->partial('plot/status/item.phtml', array('item' => $comment)); ?></li>
+		<li><?php echo $this->partial('plot/feed/item.phtml', array('item' => $comment)); ?></li>
 	<?php endforeach; ?>
 	</ul>
 </div>
