@@ -21,6 +21,15 @@ class Elm_View_Helper_Plot extends Zend_View_Helper_Abstract
 		return null;
 	}
 
+	public function getImage($image)
+	{
+		if (file_exists(Elm::getBaseDir('http/media/plot') . $image)) {
+			return Elm::getBaseUrl('media/plot') . $image;
+		}
+
+		return Elm::getBaseUrl('media') . '/placeholder.jpg';
+	}
+
 	/**
 	 * @param $plot
 	 * @param int $count

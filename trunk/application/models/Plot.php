@@ -351,9 +351,9 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 */
 	public function getCrops()
 	{
-		Elm::log(__METHOD__);
-		Elm::log($this->getId());
-		Elm::log(count($this->_crops));
+		//Elm::log(__METHOD__);
+		//Elm::log($this->getId());
+		//Elm::log(count($this->_crops));
 		if (!$this->_crops) {
 			$this->_crops = $this->_getResource()->getCrops($this->getId());
 		}

@@ -224,12 +224,12 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 	 */
 	public static function getBaseDir($path = null)
 	{
-		$pattern = '/^(media|file-bin)/i';
+		/*$pattern = '/^(media|file-bin)/i';
 		if (preg_match($pattern, $path)) {
 			$path = '/http/' . $path;
-		}
-		//Elm::log(realpath(APPLICATION_PATH . '/../http/') . $path);
-		return realpath(APPLICATION_PATH . '/../') . $path;
+		}*/
+		//Elm::log(realpath(APPLICATION_PATH . '/../') . DIRECTORY_SEPARATOR . $path);
+		return realpath(APPLICATION_PATH . '/../') . DIRECTORY_SEPARATOR . $path;
 	}
 
 	/**
