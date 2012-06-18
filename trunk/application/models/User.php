@@ -149,7 +149,8 @@ class Elm_Model_User extends Colony_Model_Abstract
      */
     public function changePassword($newPassword)
     {
-        $this->_getResource()->changePassword($this, $newPassword);
+		$this->setPassword($newPassword)->save();
+        //$this->_getResource()->changePassword($this, $newPassword);
         return $this;
     }
 
@@ -264,7 +265,6 @@ class Elm_Model_User extends Colony_Model_Abstract
 
     /**
      * Send email with new temp/user password
-	 * @TODO: create template, create action, test
      *
      * @return Elm_Model_User
      */
@@ -280,7 +280,6 @@ class Elm_Model_User extends Colony_Model_Abstract
 		} catch(Exception $e) {
 			Elm::logException($e);
 		}
-        return $this;
         return $this;
     }
 

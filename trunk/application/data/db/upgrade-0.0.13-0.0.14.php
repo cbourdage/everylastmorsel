@@ -3,7 +3,7 @@ $this->startSetup();
 
 $this->run("
 
-ALTER TABLE `user` ADD COLUMN `gardener_type` ENUM('Casual', 'Farmer', 'Community') NULL AFTER `about`;
+ALTER TABLE `user` ADD COLUMN `gardener_type` ENUM('casual', 'farmer', 'community') NULL AFTER `about`;
 
 DROP TABLE IF EXISTS `newsletter`;
 CREATE TABLE  `newsletter` (

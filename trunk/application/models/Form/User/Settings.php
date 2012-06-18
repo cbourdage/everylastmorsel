@@ -6,7 +6,6 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
 	const VISIBILITY_PRIVATE = 'private';
 	const VISIBILITY_PUBLIC = 'public';
 
-	// @TODO add password reset
 	// @TODO add social settings
 	// @TODO add notes to fields (ie: Visiblity - publicly people can view you and search for you, but privately they can only see your listing)
 	public function __construct()
@@ -36,6 +35,34 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
 				self::VISIBILITY_PUBLIC => 'Public',
 				self::VISIBILITY_PRIVATE => 'Private'
 			)
+        ));
+
+		$this->addElement('password', 'passwordCurrent', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(6, 128)),
+                array('MatchingPassword', false, array(Elm::getModel('user'))),
+            ),
+            'required'   => true,
+            'label'      => 'Current Password'
+        ));
+
+		$this->addElement('password', 'password', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(6, 128))
+            ),
+            'required'   => true,
+            'label'      => 'New Password'
+        ));
+
+        $this->addElement('password', 'passwordVerify', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(
+				'PasswordVerification'
+			),
+            'required'   => true,
+            'label'      => 'Confirm Password'
         ));
 
 		$session = Elm::getSingleton('user/session');

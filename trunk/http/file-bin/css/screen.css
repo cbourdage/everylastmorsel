@@ -123,6 +123,20 @@ form ul.fieldset > li ul.errors > li { background: #CC7254; color: #fff; margin-
 .buttons-set .btn { float: left; }
 
 /**
+	Global Messages
+*/
+div.alert {
+	background: #ccc;
+	color: #fff;
+	margin: 10px auto;
+	padding: 10px;
+	width: 500px;
+}
+div.alert > a.close { display: none; float: right; color: #fff; }
+div.alert.alert-success { background: #6C722C; }
+div.alert.alert-error { background: #F9BB2A; }
+
+/**
 	Overlay
 */
 .modal { max-height: 600px; overflow: hidden; }
@@ -471,6 +485,7 @@ div#mapCanvas { height: 450px; margin-bottom: 50px; }
 	padding: 10px 0;
 }
 .main-content .blocked-content > h4 { }
+.main-content .blocked-content > p { margin-bottom: 20px; }
 /** plots list */
 .plots-list ul { }
 .plots-list ul li { margin-right: 10px; width: 150px; }

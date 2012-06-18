@@ -15,9 +15,7 @@ class Elm_Model_Form_Validate_PasswordVerification extends Zend_Validate_Abstrac
         $this->_setValue($value);
 
         if (is_array($context)) {
-            if (isset($context['password'])
-                && ($value == $context['password']))
-            {
+            if (isset($context['password']) && ($value == $context['password'])) {
                 return true;
             }
         } elseif (is_string($context) && ($value == $context)) {

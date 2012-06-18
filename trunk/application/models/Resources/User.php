@@ -6,7 +6,11 @@ class Elm_Model_Resource_User extends Colony_Db_Table
 
 	protected $_primary = 'user_id';
 
-	public static $gardenerTypes = array('Casual', 'Farmer', 'Community');
+	public static $gardenerTypes = array(
+		'casual' => 'Casual',
+		'farmer' => 'Farmer',
+		'community' => 'Community'
+	);
 
     /**
      * Check customer scope, email and confirmation key before saving
@@ -123,31 +127,6 @@ class Elm_Model_Resource_User extends Colony_Db_Table
         }
 	}
 
-
-
-
-
-
-	
-
-
-
-
-	
-    /**
-     * Change customer password
-     *
-     * @param   Mage_Customer_Model_Customer
-     * @param   string $newPassword
-     * @return  this
-     */
-    public function changePassword(Mage_Customer_Model_Customer $customer, $newPassword)
-    {
-        $customer->setPassword($newPassword);
-        $this->saveAttribute($customer, 'password_hash');
-        return $this;
-    }
-
     /**
      * Check whether there are email duplicates of customers in global scope
      *
@@ -155,10 +134,14 @@ class Elm_Model_Resource_User extends Colony_Db_Table
      */
     public function findEmailDuplicates()
     {
-        $lookup = $this->_getReadAdapter()->fetchRow("SELECT email, COUNT(*) AS `qty`
-            FROM `{$this->getTable('customer/entity')}`
-            GROUP BY 1 ORDER BY 2 DESC LIMIT 1
+        $lookup = $this->getDefaultAdapter()->fetchRow("
+			SELECT email, COUNT(*) AS `qty`
+            FROM `user`
+            GROUP BY 1
+            ORDER BY 2 DESC
+            LIMIT 1
         ");
+
         if (empty($lookup)) {
             return false;
         }

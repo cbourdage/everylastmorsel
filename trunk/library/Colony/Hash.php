@@ -2,6 +2,12 @@
 
 class Colony_Hash
 {
+	/**
+	 * @static
+	 * @param $len
+	 * @param null $chars
+	 * @return string
+	 */
 	public static function getRandomString($len, $chars=null)
     {
         if (is_null($chars)) {
@@ -62,6 +68,6 @@ class Colony_Hash
             case 2:
                 return self::hash($hashArr[1] . $password) === $hashArr[0];
         }
-        Mage::throwException('Invalid hash.');
+        Elm::throwException('Invalid hash.');
     }
 }

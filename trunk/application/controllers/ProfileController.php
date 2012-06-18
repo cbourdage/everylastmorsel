@@ -31,6 +31,15 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	}
 
 	/**
+	 * About action
+	 */
+	public function aboutAction()
+	{
+		$this->_init();
+		$this->_initLayout();
+	}
+
+	/**
 	 * Login and login post actions
 	 *
 	 * @return void
@@ -126,7 +135,9 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	 */
 	public function logoutAction()
 	{
-		$this->_getSession()->logout()->beforeAuthUrl = $this->getCurrentUrl();
+		$_session = $this->_getSession();
+		$_session->logout();
+		$_session->beforeAuthUrl = $this->getCurrentUrl();
         $this->_redirect('/');
 	}
 
@@ -187,7 +198,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 
 	/**
 	 * Registration and registration post action
-	 *
+	 * @deprecated ?
 	 * @return void
 	 */
 	public function createpostAction()
@@ -238,6 +249,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	/**
 	 * Registration and registration post action
 	 *
+	 * @deprecated ?
 	 * @return void
 	 */
 	public function createAjaxAction()
@@ -286,6 +298,43 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	}
 
 	/**
+	 * Password reset action request
+	 *
+	 * @return void
+	 */
+	public function forgotPasswordAction()
+	{
+		$_session = $this->_getSession();
+
+		if ($this->getRequest()->isPost()) {
+			$email = $this->getRequest()->getParam('email');
+			if (!Zend_Validate::is($email, 'EmailAddress')) {
+				$_session->addError('Invalid email address');
+				$_session->forgotPasswordEmail = $email;
+			} else {
+				$user = Elm::getSingleton('user')->loadByEmail($email);
+				if ($user->getId()) {
+					try {
+						$newPassword = $user->generatePassword();
+						$user->changePassword($newPassword);
+						$user->sendPasswordResetEmail();
+						$_session->addSuccess('A new password has been sent.');
+						$_session->forgotPasswordEmail = null;
+					} catch (Exception $e) {
+						$_session->addError($e->getMessage());
+						$_session->forgotPasswordEmail = $email;
+					}
+				} else {
+					$_session->addError('This email address was not found in our records.');
+                	$_session->forgotPasswordEmail = $email;
+				}
+			}
+		}
+
+		$this->view->headTitle()->prepend('Forgot Password');
+	}
+
+	/**
 	 * Users info page
 	 *
 	 * @return mixed
@@ -309,6 +358,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		// Set data if stored in session b/c of an error
 		if ($session->formData) {
 			$form->setDefaults($session->formData);
+			$session->formData = null;
 		}
 
 		$this->view->form = $form;
@@ -335,8 +385,9 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		if ($form->isValid($post)) {
 			try {
 				$user = $session->getUser();
-				Elm::getModel('user/image')->upload($session->user, $post);
 				$user->addData($post)->save();
+				// Upload image
+				Elm::getModel('user/image')->upload($session->user, $post);
 				$session->addSuccess('Successfully saved your info!');
 			} catch (Colony_Exception $e) {
 				$session->addError($e->getMessage());
@@ -346,19 +397,10 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		} else {
 			unset($post['image']);
 			$session->formData = $post;
-			$session->addError('Check all fields are filled out!');
+			$session->addError('Check all fields are filled out correctly.');
 		}
 
 		$this->_redirect('/profile/info');
-	}
-
-	/**
-	 * About action
-	 */
-	public function aboutAction()
-	{
-		$this->_init();
-		$this->_initLayout();
 	}
 
 	/**
@@ -385,6 +427,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		// Set data if stored in session b/c of an error
 		if ($session->formData) {
 			$form->setDefaults($session->formData);
+			$session->formData = null;
 		}
 
 		$this->view->form = $form;
@@ -410,8 +453,15 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		$post = $this->getRequest()->getParams();
 		if ($form->isValid($post)) {
 			try {
+				/** @var $user Elm_Model_User */
 				$user = $session->getUser();
-				$user->addData($post)->save();
+				$user->addData($post);
+
+				if ($post['password']) {
+					$user->changePassword($post['password']);
+				}
+
+				$user->save();
 				$session->addSuccess('Successfully saved your settings!');
 			} catch (Colony_Exception $e) {
 				$session->addError($e->getMessage());
@@ -446,7 +496,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	}
 
 	/**
-	 *
+	 * @deprecated ?
 	 */
 	public function saveAction()
 	{
