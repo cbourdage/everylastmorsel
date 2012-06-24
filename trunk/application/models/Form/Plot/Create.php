@@ -3,9 +3,19 @@
 
 class Elm_Model_Form_Plot_Create extends Elm_Model_Form_Abstract
 {
+	const VISIBILITY_PRIVATE = 'private';
+	const VISIBILITY_PUBLIC = 'public';
+
 	public function __construct()
 	{
 		parent::__construct();
+
+		if (Elm::getSingleton('user/session')->isLoggedIn()) {
+			$this->addElement('hidden', 'user_id', array(
+				'required'   => true,
+				'value'      => Elm::getSingleton('user/session')->id
+			));
+		}
 
         $this->addElement('text', 'name', array(
             'filters'    => array('StringTrim'),
@@ -13,7 +23,7 @@ class Elm_Model_Form_Plot_Create extends Elm_Model_Form_Abstract
                 array('StringLength', true, array(3, 128))
             ),
             'required'   => true,
-            'label'      => 'Name',
+            'label'      => 'Plot Name',
         ));
 
 		$this->addElement('hidden', 'latitude', array(
@@ -30,7 +40,34 @@ class Elm_Model_Form_Plot_Create extends Elm_Model_Form_Abstract
 			'value'      => Elm::getSingleton('user/session')->plot['longitude']
         ));
 
-		// @TODO Auto-populate zipcode based on lat & long
+		$this->addElement('text', 'address', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(3, 128))
+            ),
+            'required'   => true,
+            'label'      => 'Address'
+        ));
+
+		$this->addElement('text', 'city', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(2, 32))
+            ),
+            'required'   => true,
+            'label'      => 'City'
+        ));
+
+		$this->addElement('text', 'state', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(2, 32))
+            ),
+			'value'		 => 'IL',
+            'required'   => true,
+            'label'      => 'State'
+        ));
+
 		$this->addElement('text', 'zipcode', array(
             'filters'    => array('StringTrim'),
             'validators' => array('PostCode'),
@@ -38,12 +75,14 @@ class Elm_Model_Form_Plot_Create extends Elm_Model_Form_Abstract
             'label'      => 'Zipcode'
         ));
 
-		if (Elm::getSingleton('user/session')->isLoggedIn()) {
-			$this->addElement('hidden', 'user_id', array(
-				'required'   => true,
-				'value'      => Elm::getSingleton('user/session')->id
-			));
-		}
+		$this->addElement('radio', 'visibility', array(
+            'required'   => true,
+			'label' => 'Plot Visibility',
+			'multiOptions' => array(
+				self::VISIBILITY_PUBLIC => 'Public',
+				self::VISIBILITY_PRIVATE => 'Private'
+			)
+        ));
 		
         foreach ($this->getElements() as $element) {
 			if ($element instanceof Zend_Form_Element_Hidden) {

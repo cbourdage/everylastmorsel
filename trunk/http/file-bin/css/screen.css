@@ -86,8 +86,17 @@ button span, button.btn span, a.btn span { display: block; cursor: pointer; text
 	-webkit-text-shadow: 0 1px 1px rgba(0,0,0,.4);
 	text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
-.btn-blue span { background: #74D2D1; border: 2px solid #33a3a9; border-top: 2px solid #9de5e9; }
-.btn-green span { background: #59601C; border: 2px solid #3f431e; border-top: 2px solid #757b41; }
+.btn-blue span {
+	background: #74D2D1;
+	border: 1px solid #33a3a9;
+	border-bottom-width: 2px;
+	border-top: 2px solid #9de5e9;
+}
+.btn-green span {
+	background: #59601C;
+	border: 2px solid #3f431e;
+	border-top: 2px solid #757b41;
+}
 .btn.oversized span { padding: 10px 15px; }
 
 /**
@@ -118,7 +127,23 @@ form ul.fieldset > li textarea {
 	width: 250px;
 }
 form ul.fieldset > li ul.errors { width: 268px; }
-form ul.fieldset > li ul.errors > li { background: #CC7254; color: #fff; margin-top: 3px; text-align: left; padding: 5px; }
+form ul.fieldset > li ul.errors > li {
+	background: #CC7254;
+	color: #fff;
+	margin-top: 3px;
+	text-align: left;
+	padding: 5px;
+}
+form ul.fieldset > li > div label,
+form ul.fieldset > li > div label {
+	color: #7dc6ca;
+	line-height: 20px;
+	text-transform: capitalize;
+	text-align: left;
+	width: 250px;
+}
+form ul.fieldset > li > div label > input,
+form ul.fieldset > li > div label > input { margin-right: 10px; width: auto; }
 .buttons-set { overflow: hidden; }
 .buttons-set .btn { float: left; }
 
@@ -355,9 +380,66 @@ div.map-container > .bottom {
 	-webkit-box-shadow: 0 -2px 5px rgba(0,0,0,.2);
 	box-shadow: 0 -2px 5px rgba(0,0,0,.2);
 }
-div#mapCanvas { height: 450px; margin-bottom: 50px; }
+div#mapCanvas {
+	height: 450px;
+	margin-bottom: 50px;
+	/*position: absolute;
+	top: 100px;
+	bottom: 0;*/
+}
+div#mapMarker > div {
+	background: #818940;
+	background: rgba(129,137,64,.8);
+	/*border: 1px solid #595d3b;*/
+	color: #414710;
+	line-height: 1.2;
+	padding: 25px;
+	/*height: 225px;*/
+	width: 470px;
+}
+div#mapMarker > div:after {
+	background: url('../images/infobox-arrow.png') no-repeat;
+	/*background: #818940;
+	background: rgba(129,137,64,.8);*/
+	content: '\0020';
+	display: block;
+	height: 45px;
+	width: 50px;
+	position: absolute;
+	bottom: -45px;
+	left: 40px;
+}
+div#mapMarker > div h3 {
+	color: #fff;
+	font-size: 32px;
+	font-weight: bold;
+	-moz-text-shadow: 0 1px 1px rgba(0,0,0,.6);
+	-webkit-text-shadow: 0 1px 1px rgba(0,0,0,.6);
+	text-shadow: 0 1px 1px rgba(0,0,0,.6);
+}
+div#mapMarker > div h3 > span { color: #7acfd3; }
+div#mapMarker > div div.content { margin-top: 20px; }
+div#mapMarker > div div.content p {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+div#mapMarker > div div.content input[type="text"] {
+	border: 1px solid #d6d6d6;
+	font-size: 16px;
+	float: left;
+	padding: 10px 6px;
+	width: 410px;
+}
+div#mapMarker > div div.content button {
+	background: url('../images/sprites.png') no-repeat -345px -3px;
+	float: left;
+	margin-left: 10px;
+	height: 50px;
+	width: 50px;
+}
+
 /** How it works */
-#howItWorks { overflow: hidden; }
+#howItWorks { display: none; overflow: hidden; }
 #howItWorks h4 { font-family: 'Varela', sans-serif; font-size: 36px; color: #8d9548; }
 #howItWorks ul { margin-top: 10px; }
 #howItWorks ul li {
@@ -504,12 +586,14 @@ div#mapCanvas { height: 450px; margin-bottom: 50px; }
 body.elm-profile-settings .account-form form,
 body.elm-profile-info .account-form form { text-align: left; }
 body.elm-profile-info .account-form textarea { height: 150px; }
-body.elm-profile-settings .account-form form ul li > div label,
+/*body.elm-profile-settings .account-form form ul li > div label,
 body.elm-profile-info .account-form form ul li > div label { line-height: 20px; text-align: left; width: auto; }
 body.elm-profile-settings .account-form form ul li > div label > input,
-body.elm-profile-info .account-form form ul li > div label > input { margin-right: 10px; width: auto; }
+body.elm-profile-info .account-form form ul li > div label > input { margin-right: 10px; width: auto; }*/
+body.elm-plot-create .account-form form .buttons-set,
 body.elm-profile-settings .account-form form .buttons-set,
-body.elm-profile-info .account-form form .buttons-set { border-top: 3px double #CCC; margin-right: 15px; padding-top: 10px; width: 275px; }
+body.elm-profile-info .account-form form .buttons-set { border-top: 4px double #CCC; padding-top: 10px; width: 275px; }
+body.elm-plot-create .account-form form .buttons-set button,
 body.elm-profile-settings .account-form form .buttons-set button,
 body.elm-profile-info .account-form form .buttons-set button { float: right; }
 

@@ -1,0 +1,12 @@
+<?php
+$session = Elm::getSingleton('user/session');
+$_plot = $this->plot;
+?>
+<nav id="profileNavigation">
+	<ul class="list-block">
+		<li><a href="<?= $_plot->getUrl(); ?>" title="<?= $_plot->getName(); ?>">About</a></li>
+		<li><a href="<?= $this->url('', array('_route' => 'plot-photos', 'p' => $_plot->getId())); ?>" title="Photos">Photos</a></li>
+		<li><a href="<?= $this->url('', array('_route' => 'plot-crops', 'p' => $_plot->getId())); ?>" title="Crops">Crops</a></li>
+		<li><a href="<?= $this->url('', array('_route' => 'plot-people', 'p' => $_plot->getId())); ?>" title="Users">People</a></li>
+	</ul>
+</nav>

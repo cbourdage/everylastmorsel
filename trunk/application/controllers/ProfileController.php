@@ -2,8 +2,6 @@
 
 require_once 'controllers/Profile/AbstractController.php';
 
-// @TODO CHECK ON OBJECT FOR SAVING "CITY, ST" VALUES
-
 class Elm_ProfileController extends Elm_Profile_AbstractController
 {
 	/**
@@ -93,7 +91,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 			$response = array(
 				'success' => true,
 				'error' => false,
-				'location' => $this->getUrl('profile')
+				'location' => $this->getRequest()->getParam('') ? $this->getRequest()->getParam('') : $this->getUrl('profile')
 			);
         } else {
 			$form = new Elm_Model_Form_User_Login();
@@ -105,8 +103,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 						$response = array(
 							'success' => true,
 							'error' => false,
-							//'location' => $this->getUrl(null, array('alias' => $session->getUser()->getAlias(), '_route' => 'user'))
-							'location' => $this->getUrl('profile')
+							'location' => $this->getRequest()->getParam('') ? $this->getRequest()->getParam('') : $this->getUrl('profile')
 						);
 					} catch (Exception $e) {
 						$response = array(
@@ -126,6 +123,46 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		}
 
 		$this->_helper->json->sendJson($response);
+	}
+
+	/**
+	 * Ajax authentication method for overlay
+	 */
+	public function authenticateAction()
+	{
+		$this->_initAjax();
+		$this->_helper->viewRenderer->setNoRender(true);
+
+		// Set session data
+		Elm::getSingleton('user/session')->plot = array(
+			'latitude' => $this->getRequest()->getParam('lat'),
+			'longitude' => $this->getRequest()->getParam('long'),
+			'type' => $this->getRequest()->getParam('type'),
+		);
+
+		if (Elm::getSingleton('user/session')->isLoggedIn()) {
+			$response = array(
+				'success' => true,
+				'error' => false,
+				'location' => $this->view->url('plot/create')
+			);
+			$this->_helper->json->sendJson($response);
+		} else {
+			$loginForm = new Elm_Model_Form_User_Login();
+			$loginForm->setAction('/profile/login-ajax');
+
+			$html = new Zend_View();
+			$html->setScriptPath(APPLICATION_PATH . '/views/user/');
+			$html->assign('loginForm', $loginForm);
+			$response = array(
+				'success' => false,
+				'error' => true,
+				'html' => $html->render('_login.phtml')
+			);
+			$this->_helper->json->sendJson($response);
+		}
+
+		//$this->getResponse()->sendResponse();
 	}
 
 	/**
@@ -194,107 +231,6 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 
 		$this->view->headTitle()->prepend('Create Account');
 		$this->view->form = $form;
-	}
-
-	/**
-	 * Registration and registration post action
-	 * @deprecated ?
-	 * @return void
-	 */
-	public function createpostAction()
-	{
-		$session = $this->_getSession();
-        if ($session->isLoggedIn()) {
-			$this->_redirect('/profile/');
-            return;
-        }
-
-		if (!$this->getRequest()->isPost()) {
-			$this->_redirect('/profile/create/');
-			return;
-		}
-
-		$errors = array();
-		$post = $this->getRequest()->getPost();
-		$form = new Elm_Model_Form_User_Create();
-		if ($form->isValid($post)) {
-			$user = Elm::getModel('user');
-			$user->setData($post)->setPassword($post['password']);
-			$user->save();
-
-			// Increment inviteCode
-			$inviteCode = Elm::getSingleton('inviteCode')->load($post['invite_code']);
-			$inviteCode->increment()->save();
-
-			// setup session, send email, add messages, move on
-			$session->setUserAsLoggedIn($user);
-			$user->sendNewAccountEmail($session->beforeAuthUrl);
-			$session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
-			$this->_redirect('/profile/');
-			return;
-		} else {
-			$session->formData = $this->getRequest()->getParams();
-			if ($errors = $form->getErrors()) {
-				$top = array_shift($errors);
-				//foreach ($errors as $errorMessage) {
-					$session->addError('Ah! Check all fields are filled out and try again.');
-				//}
-			} else {
-				$session->addError('A user data');
-			}
-			$this->_redirect('/profile/create/');
-		}
-	}
-
-	/**
-	 * Registration and registration post action
-	 *
-	 * @deprecated ?
-	 * @return void
-	 */
-	public function createAjaxAction()
-	{
-		$this->_initAjax();
-		$this->_helper->viewRenderer->setNoRender(true);
-
-		$response = array();
-		$session = $this->_getSession();
-        if ($session->isLoggedIn()) {
-            $response = array(
-				'success' => true,
-				'error' => false,
-				'location' => $this->getUrl(null, array('alias' => $session->getUser()->getAlias(), '_route' => 'user'))
-			);
-        } else {
-			$form = new Elm_Model_Form_User_Create();
-			$form->removeElement('location');
-			if ($this->getRequest()->isPost()) {
-				$post = $this->getRequest()->getPost();
-				if ($form->isValid($post)) {
-					$user = Elm::getModel('user');
-					$user->setData($post)->setPassword($post['password']);
-					$user->save();
-
-					// setup session, send email, add messages, move on
-					$session->setUserAsLoggedIn($user);
-					$user->sendNewAccountEmail($session->beforeAuthUrl);
-					$response = array(
-						'success' => true,
-						'error' => false,
-						'location' => $this->getUrl(null, array('alias' => $user->getAlias(), '_route' => 'user'))
-					);
-				}
-				else {
-					$response = array(
-						'success' => false,
-						'error' => true,
-						'message' =>'Check all fields are filled out.'
-					);
-				}
-			}
-		}
-
-		$this->_helper->json->sendJson($response);
 	}
 
 	/**
@@ -493,43 +429,6 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 				$this->_getSession()->addError('Gasp! This key does not match anything on file.');
 			}
 		}
-	}
-
-	/**
-	 * @deprecated ?
-	 */
-	public function saveAction()
-	{
-		$this->_initAjax();
-		$session = $this->_getSession();
-		if (!$session->isLoggedIn()) {
-			$response = array(
-				'success' => false,
-				'error' => true,
-				'location' => $this->_helper->url('profile/login')
-			);
-        } else {
-			if ($this->getRequest()->isPost()) {
-				$field = $this->getRequest()->getPost('user_update');
-				$user = $this->_getSession()->getUser();
-				$user->setData($field, $this->getRequest()->getPost($field))
-					->save();
-				$response = array(
-					'success' => true,
-					'error' => false,
-					'message' =>'Ah, success!',
-					'value' => $user->getData($field)
-				);
-			} else {
-				$response = array(
-					'success' => false,
-					'error' => true,
-					'message' =>'Oops! Check required fields and try again.'
-				);
-			}
-		}
-
-		$this->_helper->json->sendJson($response);
 	}
 
 	/**

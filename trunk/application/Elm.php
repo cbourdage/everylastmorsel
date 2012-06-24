@@ -174,6 +174,48 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 		);
 		$frontController->getRouter()->addRoute('plot', $route);
 
+		// plot photos
+        $route = new Zend_Controller_Router_Route(
+		    'p/photos/:p',
+		    array(
+		    	'controller' => 'plot',
+        		'action' => 'photos',
+				'p' => ''
+		    ),
+			array(
+				'p' => '\d+'
+			)
+		);
+		$frontController->getRouter()->addRoute('plot-photos', $route);
+
+		// plot crops
+        $route = new Zend_Controller_Router_Route(
+		    'p/crops/:p',
+		    array(
+		    	'controller' => 'plot',
+        		'action' => 'crops',
+				'p' => ''
+		    ),
+			array(
+				'p' => '\d+'
+			)
+		);
+		$frontController->getRouter()->addRoute('plot-crops', $route);
+
+		// plot users
+        $route = new Zend_Controller_Router_Route(
+		    'p/people/:p',
+		    array(
+		    	'controller' => 'plot',
+        		'action' => 'people',
+				'p' => ''
+		    ),
+			array(
+				'p' => '\d+'
+			)
+		);
+		$frontController->getRouter()->addRoute('plot-people', $route);
+
 		// about-us
 		$route = new Zend_Controller_Router_Route(
 		    'about-us',

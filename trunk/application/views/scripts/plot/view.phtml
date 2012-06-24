@@ -1,51 +1,46 @@
 <?php
-$session = Elm::getSingleton('user/session');
-$plot = $this->plot;
+$_session = Elm::getSingleton('user/session');
+$_plot = $this->plot;
 ?>
 <?php echo $this->Message()->render(); ?>
 <div class="inner-content-wrapper profile plot">
 	<div class="top">
-		<h2><?php echo $plot->getName(); ?></h2>
+		<h2><?php echo $_plot->getName(); ?></h2>
 		<ul class="list-inline">
-			<li><?php echo $plot->getLocation(); ?></li>
-			<li><?php echo $plot->getZipcode(); ?></li>
+			<li><?php echo $_plot->getCity(); ?></li>
+			<li><?php echo $_plot->getState(); ?></li>
+			<li><?php echo $_plot->getZipcode(); ?></li>
 		</ul>
 	</div>
 
-	<?php echo $this->partial('profile/_navigation.phtml'); ?>
+	<?php echo $this->partial('plot/_navigation.phtml', array('plot' => $_plot)); ?>
 
 	<div class="photo-timeline blocked-content">
-		<?php echo $this->partial('plot/view/images.phtml', array('plot' => $plot)); ?>
+		<?php echo $this->partial('plot/view/images.phtml', array('plot' => $_plot)); ?>
 	</div >
 
 	<div id="about" class="blocked-content">
-		<?= $plot->getAbout(); ?>
+		<?= $_plot->getAbout(); ?>
 	</div >
 
+<?php if ($_plot->getAbout()) : ?>
+	<h2 class="blue">About <?= $_plot->getName(); ?></h2>
+	<div id="about" class="blocked-content about-me">
+		<p><?= str_replace('<br />', '</p><p>', nl2br($_plot->getAbout())); ?></p>
+	</div>
+<?php endif; ?>
+
+	<h2 class="blue">Faithful</h2>
 	<div id="users" class="blocked-content users-list">
-		<h4>Faithful Users</h4>
-		<?php if (count($plot->getPendingUsers()) && $session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
+		<?php if (count($_plot->getPendingUsers()) && $_session->isLoggedIn() && $_plot->isOwner($_session->user)) : ?>
 			<div class="alert alert-info">
-				You have pending users! Please review and take <a href="<?php echo $this->url('plot/pending-users', array('p' => $plot->getId())); ?>">action</a>
+				You have pending users! Please review and take <a href="<?php echo $this->url('plot/pending-users', array('p' => $_plot->getId())); ?>">action</a>
 			</div>
 		<?php endif; ?>
-		<?php echo $this->partial('plot/user/list.phtml', array('users' => $plot->getUsers())); ?>
+		<?php echo $this->partial('plot/users/list.phtml', array('users' => $_plot->getUsers())); ?>
 
-		<?php if ($session->isLoggedIn() && !$plot->isAssociated($session->user)) :  ?>
-			<?php echo $this->partial('plot/user/associate.phtml', array('plot' => $plot)); ?>
+		<?php if ($_session->isLoggedIn() && !$_plot->isAssociated($_session->user)) :  ?>
+			<?php echo $this->partial('plot/users/associate.phtml', array('plot' => $_plot)); ?>
 		<?php endif; ?>
-	</div >
-
-	<div id="socializing" class="blocked-content feed">
-		<h4>Feed</h4>
-		<?php if ($session->isLoggedIn() && $plot->isAssociated($session->user)) :  ?>
-			<?php echo $this->partial('plot/feed/form.phtml', array('plot' => $plot)); ?>
-		<?php endif; ?>
-		<?php echo $this->partial('plot/feed/list.phtml', array('plot' => $plot)); ?>
-	</div >
-
-	<div id="crops" class="blocked-content crops-list">
-		<h4>Crops</h4>
-		<?php echo $this->partial('plot/crops/list.phtml', array('plot' => $plot)); ?>
 	</div >
 </div>

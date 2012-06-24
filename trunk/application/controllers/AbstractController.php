@@ -26,6 +26,8 @@ class Elm_AbstractController extends Zend_Controller_Action
 	 */
 	protected $_urlHelper;
 
+	protected $_session;
+
     /**
      * Predispatch: should set layout area
      *
@@ -67,6 +69,19 @@ class Elm_AbstractController extends Zend_Controller_Action
 		$this->view->setEscape('stripslashes');
         return $this;
     }
+
+	/**
+	 * Returns users session object
+	 *
+	 * @return Elm_Model_User_Session
+	 */
+	protected function _getSession()
+	{
+		if (!$this->_session) {
+			$this->_session = Elm::getSingleton('user/session');
+		}
+		return $this->_session;
+	}
 
 	/**
 	 * Initializes the layout for ajax requests

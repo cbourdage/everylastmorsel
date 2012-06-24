@@ -4,10 +4,11 @@ require_once 'controllers/AbstractController.php';
 
 class Elm_Profile_AbstractController extends Elm_AbstractController
 {
-	protected $_session;
+	protected $_user = null;
 
-	protected $_user;
-
+	/**
+	 *
+	 */
 	public function preDispatch()
 	{
 		parent::preDispatch();
@@ -19,19 +20,6 @@ class Elm_Profile_AbstractController extends Elm_AbstractController
 				$this->_redirect('/profile/login');
 			}
 		}
-	}
-
-	/**
-	 * Returns users session object
-	 *
-	 * @return Elm_Model_User_Session
-	 */
-	protected function _getSession()
-	{
-		if (!$this->_session) {
-			$this->_session = Elm::getSingleton('user/session');
-		}
-		return $this->_session;
 	}
 
 	/**

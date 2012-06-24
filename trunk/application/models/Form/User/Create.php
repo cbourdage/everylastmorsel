@@ -92,11 +92,5 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
 		foreach ($this->getElements() as $element) {
 			$element->setDecorators($this->defaultDecorators);
 		}
-
-        /*$this->addElement('submit', 'submit', array(
-            'required' => false,
-            'ignore'   => true,
-            'decorators' => array('ViewHelper',array('HtmlTag', array('tag' => 'dd', 'id' => 'form-submit')))
-        ));*/
 	}
 }

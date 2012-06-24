@@ -2,7 +2,7 @@
 var map;
 var initialLocation;
 var initialMarker;
-var zoomLevel = 15;
+var zoomLevel = 14;
 //var browserSupportFlag = new Boolean();
 
 jQuery(function($) {
@@ -56,81 +56,96 @@ jQuery(function($) {
 			animation: google.maps.Animation.DROP
 		});
 
-		var contentString = '<div class="content">'+
-			'<h2 class="heading">Uluru</h2>'+
-			'<div class="bodyContent">'+
-			'<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-			'sandstone rock formation in the southern part of the '+
-			'Northern Territory, central Australia. It lies 335 km (208 mi) '+
-			'south west of the nearest large town, Alice Springs; 450 km '+
-			'(280 mi) by road. Kata Tjuta and Uluru are the two major '+
-			'Heritage Site.</p>'+
-			'<p>Attribution: Uluru, <a href="http://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-			'http://en.wikipedia.org/w/index.php?title=Uluru</a> (last visited June 22, 2009).</p>'+
-			'</div>'+
-			'</div>';
+		var initContentString = '<div class="content" id="mapMarker">' +
+			'<div>' +
+				'<h3 class="heading"><span>Howdy!</span> From the pitchfork to salad fork we are an <span>urban gardeners dream</span> come true...</h3>'+
+				'<div class="content clearfix">' +
+					//'<p>Move marker on the map to plot location or type in the address:</p>' +
+					'<p>Move the marker on the map to plot location</p>' +
+					//'<p><input type="text" name="location" id="location" />' +
+					//'<button type="button" name="location_lookup"></button></p>' +
+				'</div>' +
+			'</div>' +
+		'</div>';
 
-		/*var boxText = document.createElement("div");
-        boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: red; padding: 5px;";
-        boxText.innerHTML = "City Hall, Sechelt<br>British Columbia<br>Canada";*/
+		var changeContentString = '<div class="content" id="mapMarker">' +
+			'<div>' +
+				'<h3 class="heading"><span>Fantastic!</span> This location looks great, is there a garden here?</h3>'+
+				'<div class="content clearfix">' +
+					'<p>Move the marker on the map to plot location or select this location!</p>' +
+					'<p><button type="button" class="btn authenticate" id="is_a_garden"><span>Absolutely</span></button></p>' +
+					//'<p><input type="text" name="location" id="location" />' +
+					//'<button type="button" name="location_lookup"></button></p>' +
+				'</div>' +
+			'</div>' +
+		'</div>';
 
         var options = {
-		 	content: contentString,
+		 	content: initContentString,
 			//disableAutoPan: false,
-			maxWidth: 400,
-			pixelOffset: new google.maps.Size(50, -150),
+			maxWidth: 575,
+			//maxHeight: 275,
+			pixelOffset: new google.maps.Size(-65, -350),
 			//zIndex: null,
 			boxStyle: {
-			  	background: "url('tipbox.gif') no-repeat",
-				opacity: 0.75,
-				width: "400px"
+			  	//background: "url('tipbox.gif') no-repeat",
+				//opacity: 0.8,
+				//height: "225px",
+				//width: "450px"
 			},
-			closeBoxMargin: "10px 2px 2px 2px",
-			closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
+			//closeBoxMargin: "10px 2px 2px 2px",
+			closeBoxURL: "",
 			infoBoxClearance: new google.maps.Size(1, 1),
 			//isHidden: false,
 			pane: "floatPane",
-			//enableEventPropagation: false
+			enableEventPropagation: true
         };
 
-        var infowindow = new InfoBox(options);
-		// Trigger infowindow when map is loaded
+		// Init infobox display - Trigger infowindow when map is loaded
+        var infoWindow = new InfoBox(options);
 		google.maps.event.addDomListener(window, 'load', function() {
-			infowindow.open(map, initialMarker);
+			infoWindow.open(map, initialMarker);
 		});
 
-
-		/*google.maps.event.addListener(map, 'click', function(event) {
+		// Marker drag functionality
+		var coords = { };
+		google.maps.event.addListener(initialMarker, 'dragend', function(event) {
 			placeMarker(event.latLng);
+			infoWindow.setContent(changeContentString);
+			//console.log(infoWindow.getPosition());
+			//console.log(new google.maps.Size(-50, -400));
+			map.panTo(infoWindow.getPosition());
 
-			var coords = {
+			coords = {
 				lat : event.latLng.lat(),
 				long : event.latLng.lng()
 			};
-
-			var $modal = jQuery('#mapModal'),
-				$content = $modal.find('.modal-body');
-
-			$modal.modal('show');
-
-			jQuery.ajax({
-				url: '/index/plot-point/',
-				data: jQuery.serializeJSON(coords),
-				dataType: 'html',
-				success: function(response) {
-					$modal.html(response);
-				},
-				error: function() {
-					elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
-				}
-			});
-		});*/
-
-		google.maps.event.addListener(initialMarker, 'dragend', function(event) {
-			placeMarker(event.latLng);
-			infowindow.setContent('<div class="content">new content</div>');
 		});
 
+		jQuery(function() {
+			jQuery('#mapCanvas').on('click', 'button.authenticate', function(e) {
+				var $modal = jQuery('#mapModal'),
+					$content = $modal.find('.modal-body');
+
+				jQuery.ajax({
+					url: '/profile/authenticate/',
+					data: jQuery.serializeJSON(coords) + '&type=garden',
+					dataType: 'json',
+					success: function(response) {
+						if (response.success) {
+							window.location = response.location;
+						}  else {
+							$modal.modal('show');
+							$modal.html(response.html);
+						}
+					},
+					error: function() {
+						elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+						$modal.modal('show');
+					}
+				});
+			});
+		});
 
 		/**
 		 * Places a marker at the provided latLng

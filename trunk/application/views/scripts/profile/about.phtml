@@ -14,7 +14,7 @@ $_user = $this->user;
 
 	<?php echo $this->partial('profile/_navigation.phtml', array('plots' => $_user->getPlots())); ?>
 
-	<h2 class="blue">About <?= $_user->getFirstname(); ?>:</h2>
+	<h2 class="blue">About <?= $_user->getFirstname(); ?></h2>
 	<div id="about" class="blocked-content about-me">
 		<p><?= str_replace('<br />', '</p><p>', nl2br($_user->getAbout())); ?></p>
 	</div>

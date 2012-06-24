@@ -4,24 +4,34 @@
     <bookmark url="file://$PROJECT_DIR$/http/welcome.php" mnemonic="6" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98fa6b8d-50e5-4d7b-807b-b0f55e92db2c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/data/db/upgrade-0.0.14-0.0.15.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/Form/Validate/MatchingPassword.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/emails/password-reset.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/profile/forgot-password.phtml" />
+    <list default="true" id="98fa6b8d-50e5-4d7b-807b-b0f55e92db2c" name="Default" comment="Addition of password reset. Settings password updates. Password email. Global message styling. Updates to communictaion tools for archiving. Code cleanup and commenting.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/http/file-bin/images/infobox-arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/data/db/upgrade-0.0.15-0.0.16.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/home-page.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/plot/_navigation.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/plot/crops.phtml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/scripts/profile/photos.phtml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/scripts/plot/images.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/plot/photos.phtml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/scripts/plot/user/associate.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/plot/users/associate.phtml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/scripts/plot/user/list.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/plot/users/list.phtml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/scripts/plot/view/images.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/plot/view-old/images.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/Elm.php" afterPath="$PROJECT_DIR$/application/Elm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/AbstractController.php" afterPath="$PROJECT_DIR$/application/controllers/AbstractController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/IndexController.php" afterPath="$PROJECT_DIR$/application/controllers/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Plot/AbstractController.php" afterPath="$PROJECT_DIR$/application/controllers/Plot/AbstractController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/PlotController.php" afterPath="$PROJECT_DIR$/application/controllers/PlotController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Profile/AbstractController.php" afterPath="$PROJECT_DIR$/application/controllers/Profile/AbstractController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ProfileController.php" afterPath="$PROJECT_DIR$/application/controllers/ProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/data/db/upgrade-0.0.13-0.0.14.php" afterPath="$PROJECT_DIR$/application/data/db/upgrade-0.0.13-0.0.14.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/layouts/scripts/footer.phtml" afterPath="$PROJECT_DIR$/application/layouts/scripts/footer.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Form/User/Settings.php" afterPath="$PROJECT_DIR$/application/models/Form/User/Settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Form/Validate/PasswordVerification.php" afterPath="$PROJECT_DIR$/application/models/Form/Validate/PasswordVerification.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Form/Validate/UniqueEmail.php" afterPath="$PROJECT_DIR$/application/models/Form/Validate/UniqueEmail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Resources/User.php" afterPath="$PROJECT_DIR$/application/models/Resources/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/User.php" afterPath="$PROJECT_DIR$/application/models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/profile/_login.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/profile/_login.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Form/Plot/Create.php" afterPath="$PROJECT_DIR$/application/models/Form/Plot/Create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Form/User/Create.php" afterPath="$PROJECT_DIR$/application/models/Form/User/Create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Form/User/Info.php" afterPath="$PROJECT_DIR$/application/models/Form/User/Info.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/index/index.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/index/index.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/plot/create.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/plot/create.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/plot/view.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/plot/view.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/profile/about.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/profile/about.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/file-bin/css/screen.css" afterPath="$PROJECT_DIR$/http/file-bin/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/Colony/Hash.php" afterPath="$PROJECT_DIR$/library/Colony/Hash.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/file-bin/js/map.js" afterPath="$PROJECT_DIR$/http/file-bin/js/map.js" />
     </list>
     <ignored path="everylastmorsel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,6 +52,10 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="everylastmorsel" />
   </component>
@@ -50,37 +64,105 @@
       <file leaf-file-name="app.log" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/var/log/app.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="0" selection-start="2744" selection-end="2744" vertical-scroll-proportion="0.0">
+            <state line="8" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="screen.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/http/file-bin/css/screen.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="37" selection-start="3613" selection-end="3613" vertical-scroll-proportion="1.0023867">
+            <state line="140" column="31" selection-start="3557" selection-end="3557" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/layouts/scripts/footer.phtml">
+      <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/http/file-bin/js/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="92" selection-start="1423" selection-end="1515" vertical-scroll-proportion="-20.086956">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Info.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Form/User/Info.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="87" column="49" selection-start="2678" selection-end="2678" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#__construct#0;n#Elm_Model_Form_User_Info#0;n#!!top" expanded="true" />
+                <element signature="e#217#595#0" expanded="true" />
+                <element signature="e#3711#4386#0" expanded="true" />
+                <element signature="e#3784#4380#0" expanded="true" />
+                <element signature="e#4037#4207#0" expanded="true" />
+                <element signature="e#4232#4367#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlotController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/PlotController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="141" column="29" selection-start="2933" selection-end="2933" vertical-scroll-proportion="0.7016743">
+              <folding>
+                <element signature="e#128#152#0" expanded="false" />
+                <element signature="e#1972#1996#0" expanded="false" />
+                <element signature="e#2063#2087#0" expanded="false" />
+                <element signature="e#2123#2325#0" expanded="false" />
+                <element signature="e#2185#2325#0" expanded="false" />
+                <element signature="n#photosAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#photosUploadAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#imageRemoveAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="e#4262#4330#0" expanded="false" />
+                <element signature="e#4374#4820#0" expanded="false" />
+                <element signature="e#4436#4820#0" expanded="false" />
+                <element signature="e#4595#4722#0" expanded="false" />
+                <element signature="e#4850#4888#0" expanded="false" />
+                <element signature="e#4929#5257#0" expanded="false" />
+                <element signature="e#5012#5169#0" expanded="false" />
+                <element signature="e#5221#5257#0" expanded="false" />
+                <element signature="e#5263#5296#0" expanded="false" />
+                <element signature="e#5373#5696#0" expanded="false" />
+                <element signature="e#5660#5696#0" expanded="false" />
+                <element signature="e#5702#5735#0" expanded="false" />
+                <element signature="e#5809#6129#0" expanded="false" />
+                <element signature="e#6093#6129#0" expanded="false" />
+                <element signature="e#6135#6180#0" expanded="false" />
+                <element signature="e#6221#6534#0" expanded="false" />
+                <element signature="e#6498#6534#0" expanded="false" />
+                <element signature="n#createAjaxAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+                <element signature="n#saveAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="photos.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/photos.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="32" selection-start="0" selection-end="1859" vertical-scroll-proportion="-9.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crops.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/crops.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="66" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/scripts/crops/list.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="23" selection-start="175" selection-end="1383" vertical-scroll-proportion="-23.73913">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/view.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="4" selection-start="994" selection-end="1045" vertical-scroll-proportion="-16.043478">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,22 +182,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/models/Form/Validate/PasswordVerification.php" />
-        <option value="$PROJECT_DIR$/application/models/Form/Validate/ValidPassword.php" />
-        <option value="$PROJECT_DIR$/application/models/Form/Validate/UniqueEmail.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Profile/AbstractController.php" />
-        <option value="$PROJECT_DIR$/application/models/Form/User/Settings.php" />
-        <option value="$PROJECT_DIR$/library/Colony/Hash.php" />
-        <option value="$PROJECT_DIR$/application/models/User.php" />
-        <option value="$PROJECT_DIR$/application/var/log/app.log" />
-        <option value="$PROJECT_DIR$/application/models/Form/Validate/MatchingPassword.php" />
-        <option value="$PROJECT_DIR$/application/models/Resources/User.php" />
-        <option value="$PROJECT_DIR$/application/data/db/upgrade-0.0.13-0.0.14.php" />
+        <option value="$PROJECT_DIR$/application/models/Form/User/Create.php" />
+        <option value="$PROJECT_DIR$/application/models/Form/Plot/Create.php" />
+        <option value="$PROJECT_DIR$/application/controllers/IndexController.php" />
+        <option value="$PROJECT_DIR$/application/data/db/upgrade-0.0.15-0.0.16.php" />
         <option value="$PROJECT_DIR$/application/configs/application.ini" />
-        <option value="$PROJECT_DIR$/application/data/db/upgrade-0.0.14-0.0.15.php" />
+        <option value="$PROJECT_DIR$/application/var/log/app.log" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/create.phtml" />
         <option value="$PROJECT_DIR$/application/controllers/ProfileController.php" />
-        <option value="$PROJECT_DIR$/application/layouts/scripts/footer.phtml" />
-        <option value="$PROJECT_DIR$/http/file-bin/css/screen.css" />
+        <option value="$PROJECT_DIR$/application/views/scripts/profile/about.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/users/list.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/view.phtml" />
+        <option value="$PROJECT_DIR$/application/Elm.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/_navigation.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/photos.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/crops.phtml" />
+        <option value="$PROJECT_DIR$/application/controllers/PlotController.php" />
       </list>
     </option>
   </component>
@@ -255,6 +337,28 @@
               <option name="myItemId" value="file-bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="everylastmorsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -335,6 +439,14 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -354,7 +466,81 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="emails" />
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view-old" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="everylastmorsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crops" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="everylastmorsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="everylastmorsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -373,28 +559,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -417,32 +581,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Validate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -486,11 +624,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Plot" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -538,16 +680,16 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="true" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="PublishConfig" serverName="local.elm1-0.com" serverId="df00e4d4-0426-4f00-84bf-dee2296fea24">
     <servers>
@@ -596,15 +738,15 @@
     </servers>
   </component>
   <component name="RecentsManager">
-    <key name="OPEN_URL_DIALOG">
-      <recent name="http://revival.collectivecolony.com" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/views/scripts/plot" />
+      <recent name="$PROJECT_DIR$/application/data/db" />
+      <recent name="$PROJECT_DIR$/application/layouts/scripts" />
       <recent name="$PROJECT_DIR$/application/models/Form/Validate" />
       <recent name="$PROJECT_DIR$/application/views/scripts/profile" />
-      <recent name="$PROJECT_DIR$/application/views/scripts/index" />
-      <recent name="$PROJECT_DIR$/application/views/scripts/user" />
-      <recent name="$PROJECT_DIR$/application/layouts/scripts" />
+    </key>
+    <key name="OPEN_URL_DIALOG">
+      <recent name="http://revival.collectivecolony.com" />
     </key>
   </component>
   <component name="RunManager">
@@ -688,26 +830,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.48701298" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3240469" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.49756494" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2564935" sideWeight="0.21847507" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.49025974" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32991204" sideWeight="0.4935065" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.49675325" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3240469" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2564935" sideWeight="0.67302054" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22077923" sideWeight="0.670088" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22483766" sideWeight="0.670088" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2564935" sideWeight="0.21847507" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.49756494" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.49025974" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2111437" sideWeight="0.4935065" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -775,137 +917,224 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.13-0.0.14.php">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/create.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="0" selection-end="525" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.11-0.0.12.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="649" selection-end="649" vertical-scroll-proportion="0.38356164">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.10-0.0.11.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="0.25570777">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.9-0.0.10.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.66210043">
-          <folding>
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- update to..." />
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- -- Crops ..." />
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- -- Crops ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.8-0.0.9.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- -- Crops ..." />
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- -- Crops ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.7-0.0.8.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- -- Defini..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.6-0.0.7.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.25722983">
-          <folding>
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- -- Defini..." />
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- -- Defini..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.5-0.0.6.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- -- Defini..." />
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- -- Defini..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.4-0.0.5.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.3-0.0.4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.2-0.0.3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="951" selection-end="1610" vertical-scroll-proportion="0.5327245">
-          <folding>
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- update to..." />
-            <marker date="1331418025000" expanded="true" signature="-1:-1" placeholder="-- Add addit..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.14-0.0.15.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="41" selection-end="41" vertical-scroll-proportion="0.08523592">
-          <folding>
-            <marker date="1339992545000" expanded="true" signature="-1:-1" placeholder="-- Add addit..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/configs/application.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="126" selection-end="126" vertical-scroll-proportion="0.12785389">
+        <state line="14" column="73" selection-start="658" selection-end="658" vertical-scroll-proportion="0.30914825">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="411" column="5" selection-start="10383" selection-end="10383" vertical-scroll-proportion="0.44901064">
+        <state line="3" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#imageUploadAction#0;n#Elm_ProfileController#0;n#!!top" expanded="true" />
+            <element signature="e#137#161#0" expanded="false" />
+            <element signature="e#203#233#0" expanded="false" />
+            <element signature="e#300#330#0" expanded="false" />
+            <element signature="e#411#436#0" expanded="false" />
+            <element signature="e#518#580#0" expanded="false" />
+            <element signature="e#658#760#0" expanded="false" />
+            <element signature="e#807#1564#0" expanded="false" />
+            <element signature="e#908#1554#0" expanded="false" />
+            <element signature="e#953#1447#0" expanded="false" />
+            <element signature="e#1042#1151#0" expanded="false" />
+            <element signature="e#1258#1363#0" expanded="false" />
+            <element signature="e#1364#1447#0" expanded="false" />
+            <element signature="e#1462#1554#0" expanded="false" />
+            <element signature="e#1654#1705#0" expanded="false" />
+            <element signature="e#1884#2872#0" expanded="false" />
+            <element signature="e#1929#2100#0" expanded="false" />
+            <element signature="e#2112#2872#0" expanded="false" />
+            <element signature="e#2166#2868#0" expanded="false" />
+            <element signature="e#2251#2863#0" expanded="false" />
+            <element signature="e#2285#2710#0" expanded="false" />
+            <element signature="e#2367#2550#0" expanded="false" />
+            <element signature="e#2559#2710#0" expanded="false" />
+            <element signature="e#2600#2702#0" expanded="false" />
+            <element signature="e#2717#2863#0" expanded="false" />
+            <element signature="e#2741#2856#0" expanded="false" />
+            <element signature="e#2924#2975#0" expanded="false" />
+            <element signature="e#3157#3331#0" expanded="false" />
+            <element signature="e#3336#3967#0" expanded="false" />
+            <element signature="e#3406#3512#0" expanded="false" />
+            <element signature="e#3564#3967#0" expanded="false" />
+            <element signature="e#3816#3916#0" expanded="false" />
+            <element signature="e#4016#4071#0" expanded="false" />
+            <element signature="e#4255#4330#0" expanded="false" />
+            <element signature="e#4409#4502#0" expanded="false" />
+            <element signature="e#4550#5661#0" expanded="false" />
+            <element signature="e#4655#5657#0" expanded="false" />
+            <element signature="e#5241#5657#0" expanded="false" />
+            <element signature="e#5313#5608#0" expanded="false" />
+            <element signature="e#5344#5510#0" expanded="false" />
+            <element signature="e#5517#5608#0" expanded="false" />
+            <element signature="e#5664#5815#0" expanded="false" />
+            <element signature="e#5906#5969#0" expanded="false" />
+            <element signature="e#6052#6927#0" expanded="false" />
+            <element signature="e#6144#6923#0" expanded="false" />
+            <element signature="e#6294#6923#0" expanded="false" />
+            <element signature="e#6365#6918#0" expanded="false" />
+            <element signature="e#6392#6763#0" expanded="false" />
+            <element signature="e#6642#6763#0" expanded="false" />
+            <element signature="e#6770#6918#0" expanded="false" />
+            <element signature="e#6990#7040#0" expanded="false" />
+            <element signature="e#7111#7195#0" expanded="false" />
+            <element signature="e#7507#7609#0" expanded="false" />
+            <element signature="e#7645#7702#0" expanded="false" />
+            <element signature="e#7742#7832#0" expanded="false" />
+            <element signature="e#7977#8518#0" expanded="false" />
+            <element signature="e#8009#8377#0" expanded="false" />
+            <element signature="e#8231#8307#0" expanded="false" />
+            <element signature="e#8308#8377#0" expanded="false" />
+            <element signature="e#8382#8518#0" expanded="false" />
+            <element signature="e#8562#8616#0" expanded="false" />
+            <element signature="e#8691#8775#0" expanded="false" />
+            <element signature="e#9099#9201#0" expanded="false" />
+            <element signature="e#9238#9299#0" expanded="false" />
+            <element signature="e#9343#9437#0" expanded="false" />
+            <element signature="e#9585#10111#0" expanded="false" />
+            <element signature="e#9617#10037#0" expanded="false" />
+            <element signature="e#9725#9802#0" expanded="false" />
+            <element signature="e#9891#9967#0" expanded="false" />
+            <element signature="e#9968#10037#0" expanded="false" />
+            <element signature="e#10042#10111#0" expanded="false" />
+            <element signature="e#10159#10171#0" expanded="false" />
+            <element signature="e#10215#10687#0" expanded="false" />
+            <element signature="e#10308#10683#0" expanded="false" />
+            <element signature="e#10353#10545#0" expanded="false" />
+            <element signature="e#10585#10683#0" expanded="false" />
+            <element signature="e#10693#10730#0" expanded="false" />
+            <element signature="e#10773#10974#0" expanded="false" />
+            <element signature="e#10813#10969#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/footer.phtml">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/view.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="92" selection-start="1423" selection-end="1515" vertical-scroll-proportion="-20.086956">
+        <state line="6" column="4" selection-start="165" selection-end="367" vertical-scroll-proportion="-3.652174">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/http/file-bin/css/screen.css">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/about.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="37" selection-start="3613" selection-end="3613" vertical-scroll-proportion="1.0023867">
+        <state line="16" column="57" selection-start="522" selection-end="522" vertical-scroll-proportion="0.3533123">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/list.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="539" selection-end="539" vertical-scroll-proportion="0.26498422">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/community/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/helpers/Url.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="5" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#url#0;n#Elm_View_Helper_Url#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/users/list.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="55" selection-start="510" selection-end="510" vertical-scroll-proportion="0.2429022">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/Elm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="216" column="60" selection-start="5399" selection-end="5399" vertical-scroll-proportion="0.78843224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/_navigation.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="70" selection-start="538" selection-end="538" vertical-scroll-proportion="0.19873817">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/photos.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="32" selection-start="0" selection-end="1859" vertical-scroll-proportion="-9.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/view.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="4" selection-start="994" selection-end="1045" vertical-scroll-proportion="-16.043478">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/crops/view.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="72" selection-start="2905" selection-end="2905" vertical-scroll-proportion="0.7129338">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/crops/list.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="23" selection-start="175" selection-end="1383" vertical-scroll-proportion="-23.73913">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/crops.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="66" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/PlotController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="29" selection-start="2933" selection-end="2933" vertical-scroll-proportion="0.7016743">
+          <folding>
+            <element signature="e#128#152#0" expanded="false" />
+            <element signature="e#1972#1996#0" expanded="false" />
+            <element signature="e#2063#2087#0" expanded="false" />
+            <element signature="e#2123#2325#0" expanded="false" />
+            <element signature="e#2185#2325#0" expanded="false" />
+            <element signature="n#photosAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#photosUploadAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#imageRemoveAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="e#4262#4330#0" expanded="false" />
+            <element signature="e#4374#4820#0" expanded="false" />
+            <element signature="e#4436#4820#0" expanded="false" />
+            <element signature="e#4595#4722#0" expanded="false" />
+            <element signature="e#4850#4888#0" expanded="false" />
+            <element signature="e#4929#5257#0" expanded="false" />
+            <element signature="e#5012#5169#0" expanded="false" />
+            <element signature="e#5221#5257#0" expanded="false" />
+            <element signature="e#5263#5296#0" expanded="false" />
+            <element signature="e#5373#5696#0" expanded="false" />
+            <element signature="e#5660#5696#0" expanded="false" />
+            <element signature="e#5702#5735#0" expanded="false" />
+            <element signature="e#5809#6129#0" expanded="false" />
+            <element signature="e#6093#6129#0" expanded="false" />
+            <element signature="e#6135#6180#0" expanded="false" />
+            <element signature="e#6221#6534#0" expanded="false" />
+            <element signature="e#6498#6534#0" expanded="false" />
+            <element signature="n#createAjaxAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+            <element signature="n#saveAction#0;n#Elm_PlotController#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

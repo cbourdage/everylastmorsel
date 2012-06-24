@@ -6,10 +6,24 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 {
 	protected $_plot = null;
 
+	/**
+	 * Pre Dispatch check for invalid session
+	 */
+	public function preDispatch()
+	{
+        parent::preDispatch();
+
+        $action = $this->getRequest()->getActionName();
+        $pattern = '/^(image|involve|watch|pendingApproval|create)/i';
+        if (preg_match($pattern, $action)) {
+            if (!$this->_getSession()->authenticate($this)) {
+                $this->_redirect('/profile/login');
+            }
+        }
+	}
+
 	public function init()
 	{
-		$layout = $this->_helper->layout();
-		$layout->setLayout('profile-layout');
 	}
 
 	protected function _isValid()
@@ -32,13 +46,19 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 		return $this;
 	}
 
+	/**
+	 * Initializes the User layout objects
+	 */
 	protected function _initLayout()
 	{
-		$this->view->placeholder('sidebar')->set($this->view->render('plot/_sidebar.phtml'));
-	}
+		$action = $this->getRequest()->getActionName();
+        $pattern = '/^(create|login)/i';
+        if (!preg_match($pattern, $action)) {
+         	$layout = $this->_helper->layout();
+			$layout->setLayout('profile-layout');
+        }
 
-	protected function _getSession()
-	{
-		return Elm::getSingleton('user/session');
+		$this->view->placeholder('contact-modal')->set($this->view->render('communication/_modal.phtml'));
+		$this->view->placeholder('sidebar')->set($this->view->render('plot/_sidebar.phtml'));
 	}
 }

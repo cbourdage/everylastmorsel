@@ -3,9 +3,6 @@
 
 class Elm_Model_Form_User_Info extends Elm_Model_Form_Abstract
 {
-	const VISIBILITY_PRIVATE = 'private';
-	const VISIBILITY_PUBLIC = 'public';
-
 	public function __construct()
 	{
 		parent::__construct();

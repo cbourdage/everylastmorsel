@@ -1,0 +1,22 @@
+<?= $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<?= $this->render('head.phtml'); ?>
+</head>
+<body class="<?= $this->bodyClass; ?>">
+	<div class="wrapper">
+		<div id="page" class="clearfix">
+			<div class="header-container">
+				<?= $this->render('header.phtml'); ?>
+			</div>
+			<div class="main-container">
+				<div id="content" role="contentinfo" class="clearfix">
+					<?= $this->layout()->content; ?>
+				</div>
+			</div>
+		</div>
+		<div id="fb-root"></div>
+	</div>
+</body>
+</html>
+

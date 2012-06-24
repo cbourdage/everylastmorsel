@@ -1,18 +1,18 @@
-
-<div class="account-create">
-	<h1>Create a Plot</h1>
-    <?php //echo $this->getMessagesBlock()->getGroupedHtml() ?>
-    <form action="<?php //echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
-        <div class="fieldset">
+<?php
+$session = Elm::getSingleton('user/session')->user;
+?>
+<div class="account-form account-create container_12">
+	<h1 class="turquiose">Howdy <?= $session->getFirstname(); ?>! Configure your plot.<br />
+		<span class="light-green">Create your garden!</span></h1>
+    <?php echo $this->Message()->render(); ?>
+    <form action="<?php echo $this->form->getAction() ?>" method="post" id="form-validate">
+        <ul class="fieldset">
 			<?php foreach($this->form->getElements() as $element) : ?>
 				<?php echo $element->render(); ?>
 			<?php endforeach; ?>
+		</ul>
+		<div class="buttons-set">
+			<button type="submit" class="btn btn-blue" id="create-submit"><span>Create Plot!</span></button>
 		</div>
-        <p class="required">* Required Fields</p>
     </form>
-    <script type="text/javascript">
-    //<![CDATA[
-        //var dataForm = new VarienForm('form-validate', true);
-    //]]>
-    </script>
 </div>
