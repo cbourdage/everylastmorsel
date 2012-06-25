@@ -2,7 +2,6 @@
 $_session = Elm::getSingleton('user/session');
 $_user = $this->user;
 ?>
-<?php echo $this->Message()->render(); ?>
 <div class="inner-content-wrapper profile">
 	<div class="top">
 		<h2><?php echo $_user->getName(); ?></h2>
@@ -12,18 +11,14 @@ $_user = $this->user;
 		</ul>
 	</div>
 
+	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('user/_navigation.phtml', array('user' => $_user)); ?>
 
 <?php if ($_user->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC) : ?>
 	<h2 class="private-user">This user is private.</h2>
 <?php else : ?>
-	<h2 class="blue">About <?= $_user->getFirstname(); ?></h2>
-	<div id="about" class="blocked-content about-me">
-		<p><?= str_replace('<br />', '</p><p>', nl2br($_user->getAbout())); ?></p>
-	</div>
-
-	<div id="feed" class="blocked-content">
-		<?php //echo $this->partial('profile/feed/list.phtml', array('user' => $_user)); ?>
+	<div id="plotsList" class="blocked-content clearfix plots-list">
+		<?php echo $this->partial('plots/list.phtml', array('plots' => $_user->getPlots(), 'details' => true)); ?>
 	</div>
 <?php endif; ?>
 </div>

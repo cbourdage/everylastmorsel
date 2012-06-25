@@ -110,6 +110,38 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	/**
 	 * Plot images default
 	 */
+	public function cropsAction()
+	{
+		if (!$this->_isValid()) {
+			$this->_forward('no-route');
+			return;
+		}
+
+		$this->_initCurrentPlot();
+
+		$this->_initLayout();
+		$this->view->plot = $this->_plot;
+	}
+
+	/**
+	 * Plot images default
+	 */
+	public function peopleAction()
+	{
+		if (!$this->_isValid()) {
+			$this->_forward('no-route');
+			return;
+		}
+
+		$this->_initCurrentPlot();
+
+		$this->_initLayout();
+		$this->view->plot = $this->_plot;
+	}
+
+	/**
+	 * Plot images default
+	 */
 	public function photosAction()
 	{
 		if (!$this->_isValid()) {
@@ -128,25 +160,9 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	}
 
 	/**
-	 * Plot images default
-	 */
-	public function cropsAction()
-	{
-		if (!$this->_isValid()) {
-			$this->_forward('no-route');
-			return;
-		}
-
-		$this->_initCurrentPlot();
-
-		$this->_initLayout();
-		$this->view->plot = $this->_plot;
-	}
-
-	/**
 	 * Plot images upload action
 	 */
-	public function photosUploadAction()
+	public function photoUploadAction()
 	{
 		if (!$this->_isValid()) {
 			$this->_forward('no-route');
@@ -172,21 +188,21 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	/**
 	 * Removes image links from profiles based on an array of ids
 	 */
-	public function imageRemoveAction()
+	public function photoRemoveAction()
 	{
 		if (!$this->_isValid()) {
 			$this->_forward('no-route');
 			return;
 		}
 
-		if (!$this->getRequest()->getParam('images', null)) {
+		if (!$this->getRequest()->getParam('photo', null)) {
 			$this->_redirect('/p/photos/' . $this->getRequest()->getParam('p'));
 			return;
 		}
 
 		$this->_initCurrentPlot();
 		try {
-			$this->_plot->removeImages($this->getRequest()->getParam('images'));
+			$this->_plot->removeImages($this->getRequest()->getParam('photo'));
 		} catch (Colony_Exception $e) {
 			Elm::logException($e);
 			$this->_getSession()->addError('Ah! Sorry, there was an error removing your photos.');

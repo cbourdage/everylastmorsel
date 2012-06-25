@@ -340,9 +340,9 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 
 		$session = Elm::getSingleton('user/session');
 		if ($ctr > 1) {
-			$session->addSuccess('Images removed');
+			$session->addSuccess('Photos have been removed.');
 		} elseif ($ctr == 1) {
-			$session->addSuccess('Image removed');
+			$session->addSuccess('Photo has been removed.');
 		}
 	}
 

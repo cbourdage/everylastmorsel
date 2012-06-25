@@ -297,6 +297,32 @@ window.elm.error = function(message, $el, location) {
 	$(function() {
 
 		/**
+		 * Photo timeline slider
+		 *
+		 * @TODO use scroller for this
+		 */
+		if ($('.photo-timeline').length) {
+			//$('.photo-timeline').simpleScroll({});
+		}
+
+		/**
+		 * Photo timeline main image switch
+		 *
+		 * @TODO use bibles.com code for this
+		 */
+		if ($('.photo-main').length) {
+			$('.photo-timeline').on('click', 'ul.photo-timeline-list img', function(e) {
+				$('.photo-main').find('figure img').attr('src', '');
+			});
+		}
+
+
+		$('body').on('click', 'a.action', function(e) {
+			e.preventDefault();
+			$($(this).attr('href')).show();
+		})
+
+		/**
 		 * Login form clicks/actions
 		 */
 		$('body').on('click', '[href*="profile/login/"]', function(e) {

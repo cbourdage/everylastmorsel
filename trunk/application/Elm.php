@@ -160,6 +160,34 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 		);
 		$frontController->getRouter()->addRoute('user', $route);
 
+		// user plots
+		$route = new Zend_Controller_Router_Route(
+		    'u/plots/:u',
+		    array(
+		    	'controller' => 'user',
+        		'action' => 'plots',
+				'u' => ''
+		    ),
+			array(
+				'u' => '[0-9]+'
+			)
+		);
+		$frontController->getRouter()->addRoute('user-plots', $route);
+
+		// user crops
+		$route = new Zend_Controller_Router_Route(
+		    'u/crops/:u',
+		    array(
+		    	'controller' => 'user',
+        		'action' => 'crops',
+				'u' => ''
+		    ),
+			array(
+				'u' => '[0-9]+'
+			)
+		);
+		$frontController->getRouter()->addRoute('user-crops', $route);
+
 		// plot
         $route = new Zend_Controller_Router_Route(
 		    'p/:p',

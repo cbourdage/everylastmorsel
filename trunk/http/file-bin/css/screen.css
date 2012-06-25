@@ -45,9 +45,9 @@ a {
 a:hover { color: #F7BE4B; text-decoration: none; }
 img {
 	border: 1px solid #ececec;
-	border-radius: 4px;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
 	padding: 5px;
 }
 
@@ -160,6 +160,8 @@ div.alert {
 div.alert > a.close { display: none; float: right; color: #fff; }
 div.alert.alert-success { background: #6C722C; }
 div.alert.alert-error { background: #F9BB2A; }
+
+div.inner-content-wrapper div.alert { width: 645px; }
 
 /**
 	Overlay
@@ -520,7 +522,12 @@ div#mapMarker > div div.content button {
 /** left */
 .profile-layout .column-left { margin: 30px 0 20px 20px; position: relative; }
 .profile-layout .column-left figure { margin: 0; }
-.profile-layout .column-left figure img { background: #fff; border-radius: 0; padding: 10px; border: 1px solid #ccc;  }
+.profile-layout .column-left figure img {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 1px;
+	padding: 10px;
+}
 /** main */
 .profile-layout .main-content {
 	float: right;
@@ -538,6 +545,7 @@ div#mapMarker > div div.content button {
 .profile-layout .main-content nav ul li a {
 	border: 1px solid #ccc;
 	border-left: 0;
+	cursor: pointer;
 	color: #7b6b59;
 	font-size: 14px;
 	font-weight: bold;
@@ -550,14 +558,21 @@ div#mapMarker > div div.content button {
 .profile-layout .main-content nav ul li a[href*="plots"] { background: url(../images/sprites.png) no-repeat 18px -601px; }
 .profile-layout .main-content nav ul li a[href*="photos"] { background: url(../images/sprites.png) no-repeat 15px -630px; }
 .profile-layout .main-content nav ul li a[href*="crops"] { background: url(../images/sprites.png) no-repeat 17px -659px; }
+.profile-layout .main-content nav ul li a[href*="people"] { background: url(../images/sprites.png) no-repeat 13px -690px; }
 .profile-layout .main-content nav ul li:hover { background: url(../images/nav-gradient-over.png) repeat-x left top; }
 .profile-layout .main-content nav ul li:hover a { color: #7dc6ca }
 .profile-layout .main-content nav ul li:hover a[href*="about"] { background-position: -180px -570px; }
 .profile-layout .main-content nav ul li:hover a[href*="plots"] { background-position: -177px -601px; }
 .profile-layout .main-content nav ul li:hover a[href*="photos"] { background-position: -180px -630px; }
 .profile-layout .main-content nav ul li:hover a[href*="crops"] { background-position: -178px -659px; }
+.profile-layout .main-content nav ul li:hover a[href*="people"] { background-position: -184px -690px; }
 /** content */
 .profile-layout .main-content h2 { clear: both; margin-bottom: 10px; }
+.profile-layout .main-content a.action {
+	font-size: 12px;
+	color: #58585A;
+	text-decoration: underline;
+}
 .main-content .blocked-content {
 	color: #848484;
 	clear: both;
@@ -599,8 +614,12 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 
 
 
-
-
+/** Photos */
+.photo-timeline ul {}
+.photo-timeline ul li { margin-right: 10px; position: relative; }
+.photo-timeline ul li img { border: 0; height: 80px; }
+/*.photo-timeline ul li a { position: absolute; bottom: 0; left: 0; }*/
+.photo-main figure img { width: 630px; }
 
 
 

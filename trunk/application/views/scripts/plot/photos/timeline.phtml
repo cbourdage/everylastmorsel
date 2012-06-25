@@ -1,0 +1,20 @@
+<?php
+$_session = Elm::getSingleton('user/session');
+$_plot = $this->plot;
+if (!$this->showRemove) {
+	$this->showRemove = false;
+}
+?>
+<?php if ($images = $_plot->getImages()) : Elm::log($images); ?>
+<ul class="photo-timeline-list list list-block">
+	<?php foreach ($images as $image) : ?>
+		<li>
+			<img src="<?= Elm::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" title="<?php echo $image->getCaption(); ?>" alt="<?php echo $image->getCaption(); ?>">
+			<?php if ($_session->isLoggedIn() && $_plot->isOwner($_session->user) && $this->showRemove) : ?>
+				<br /><a href="<?= $this->url('plot/photo-remove', array('p' => $_plot->getId(), 'photo' => $image->getId())); ?>" title="Remove Image">Remove</a>
+			<?php endif; ?>
+		</li>
+	<?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
