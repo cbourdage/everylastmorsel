@@ -20,7 +20,6 @@ class Elm_View_Helper_Form extends Zend_View_Helper_Abstract
 		if (!$this->_loginForm) {
 			$this->_loginForm = new Elm_Model_Form_User_Login();
 		}
-
 		return $this->_loginForm;
 	}
 }

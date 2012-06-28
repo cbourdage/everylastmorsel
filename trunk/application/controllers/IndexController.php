@@ -23,6 +23,40 @@ class Elm_IndexController extends Elm_AbstractController
 		$this->_helper->layout()->setLayout('home-page');
     }
 
+	public function plotPointAction()
+	{
+		$this->_initAjax();
+		$this->_helper->viewRenderer->setNoRender(true);
+
+		// Set session data
+		Elm::getSingleton('user/session')->plot = array(
+			'latitude' => $this->getRequest()->getParam('lat'),
+			'longitude' => $this->getRequest()->getParam('long'),
+			'type' => $this->getRequest()->getParam('type'),
+		);
+
+		if (Elm::getSingleton('user/session')->isLoggedIn()) {
+			$response = array(
+				'success' => true,
+				'error' => false,
+				'location' => $this->view->url('plot/create')
+			);
+			$this->_helper->json->sendJson($response);
+		} else {
+			$html = new Zend_View();
+			$html->setScriptPath(APPLICATION_PATH . '/views/scripts/profile/');
+			$response = array(
+				'success' => false,
+				'error' => true,
+				'title' => 'Login to your account!',
+				'html' => $html->render('_login.phtml')
+			);
+			$this->_helper->json->sendJson($response);
+		}
+
+		//$this->getResponse()->sendResponse();
+	}
+
 	/**
 	 *
 	 */

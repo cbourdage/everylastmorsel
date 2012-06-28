@@ -5,33 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98fa6b8d-50e5-4d7b-807b-b0f55e92db2c" name="Default" comment="Addition of password reset. Settings password updates. Password email. Global message styling. Updates to communictaion tools for archiving. Code cleanup and commenting.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/plot/people.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/plot/photos/timeline.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/user/_navigation.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/user/crops.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/user/plots.phtml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/scripts/plot/view-old/images.phtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/scripts/user/confirmation.phtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/scripts/user/confirmed.phtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/scripts/user/create.phtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/scripts/user/login.phtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/scripts/user/settings.phtml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/file-bin/images/orange-pin.png" afterPath="$PROJECT_DIR$/http/file-bin/images/orange-pin.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/file-bin/images/sprites.png" afterPath="$PROJECT_DIR$/http/file-bin/images/sprites.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/profile/_login-menu.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/http/file-bin/js/lib/infobox.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/Elm.php" afterPath="$PROJECT_DIR$/application/Elm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/PlotController.php" afterPath="$PROJECT_DIR$/application/controllers/PlotController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/UserController.php" afterPath="$PROJECT_DIR$/application/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Plot.php" afterPath="$PROJECT_DIR$/application/models/Plot.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/plot/_navigation.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/plot/_navigation.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/plot/crops.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/plot/crops.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/plot/photos.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/plot/photos.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/plot/view.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/plot/view.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/profile/_navigation.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/profile/_navigation.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/profile/view.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/profile/view.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/user/view.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/user/view.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/IndexController.php" afterPath="$PROJECT_DIR$/application/controllers/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ProfileController.php" afterPath="$PROJECT_DIR$/application/controllers/ProfileController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/layouts/scripts/footer.phtml" afterPath="$PROJECT_DIR$/application/layouts/scripts/footer.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/layouts/scripts/header.phtml" afterPath="$PROJECT_DIR$/application/layouts/scripts/header.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/helpers/Form.php" afterPath="$PROJECT_DIR$/application/views/helpers/Form.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/communication/_modal.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/communication/_modal.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/index/index.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/index/index.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/profile/_login.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/profile/_login.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/file-bin/css/screen.css" afterPath="$PROJECT_DIR$/http/file-bin/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/file-bin/js/elm.js" afterPath="$PROJECT_DIR$/http/file-bin/js/elm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/file-bin/js/map.js" afterPath="$PROJECT_DIR$/http/file-bin/js/map.js" />
     </list>
     <ignored path="everylastmorsel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,58 +59,98 @@
       <file leaf-file-name="screen.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/http/file-bin/css/screen.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="572" column="19" selection-start="17431" selection-end="17431" vertical-scroll-proportion="0.0">
+            <state line="223" column="42" selection-start="5480" selection-end="5480" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/user/view.phtml">
+      <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/http/file-bin/js/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="15" selection-start="451" selection-end="959" vertical-scroll-proportion="-16.434782">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_navigation.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/user/_navigation.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="130" selection-start="454" selection-end="454" vertical-scroll-proportion="-4.869565">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="40" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.0">
+            <state line="114" column="38" selection-start="3562" selection-end="3562" vertical-scroll-proportion="0.5869565">
               <folding>
-                <element signature="n#preDispatch#0;n#Elm_UserController#0;n#!!top" expanded="true" />
-                <element signature="n#noRouteAction#0;n#Elm_UserController#0;n#!!top" expanded="true" />
-                <element signature="n#indexAction#0;n#Elm_UserController#0;n#!!top" expanded="true" />
-                <element signature="n#viewAction#0;n#Elm_UserController#0;n#!!top" expanded="true" />
-                <element signature="n#plotsAction#0;n#Elm_UserController#0;n#!!top" expanded="true" />
+                <element signature="e#3670#4390#0" expanded="true" />
+                <element signature="e#3743#4384#0" expanded="true" />
+                <element signature="e#3992#4211#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plots.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/user/plots.phtml">
+      <file leaf-file-name="infobox.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/http/file-bin/js/lib/infobox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="453" selection-end="811" vertical-scroll-proportion="0.0">
+            <state line="304" column="25" selection-start="10323" selection-end="10330" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#!!block;n#InfoBox#0" expanded="true" />
+                <element signature="e#5928#8721#0" expanded="true" />
+                <element signature="e#6106#6200#0" expanded="true" />
+                <element signature="e#6415#6581#0" expanded="true" />
+                <element signature="e#8347#8395#0" expanded="true" />
+                <element signature="e#8841#9246#0" expanded="true" />
+                <element signature="e#9370#9621#0" expanded="true" />
+                <element signature="e#9780#10198#0" expanded="true" />
+                <element signature="e#9823#10195#0" expanded="true" />
+                <element signature="e#10355#12329#0" expanded="true" />
+                <element signature="e#12506#13427#0" expanded="true" />
+                <element signature="e#13605#14697#0" expanded="true" />
+                <element signature="e#14816#14915#0" expanded="true" />
+                <element signature="e#15036#15555#0" expanded="true" />
+                <element signature="e#15934#17517#0" expanded="true" />
+                <element signature="e#17701#18926#0" expanded="true" />
+                <element signature="e#19061#19317#0" expanded="true" />
+                <element signature="e#19442#19708#0" expanded="true" />
+                <element signature="e#19822#19850#0" expanded="true" />
+                <element signature="e#19977#20006#0" expanded="true" />
+                <element signature="e#20119#20146#0" expanded="true" />
+                <element signature="e#20216#20313#0" expanded="true" />
+                <element signature="e#20383#20478#0" expanded="true" />
+                <element signature="e#20904#21203#0" expanded="true" />
+                <element signature="e#21080#21129#0" expanded="true" />
+                <element signature="e#21289#21902#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/IndexController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="79" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#indexAction#0;n#Elm_IndexController#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/scripts/index/index.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="36" selection-start="1495" selection-end="1495" vertical-scroll-proportion="-16.608696">
+              <folding>
+                <element signature="e#2095#2546#0" expanded="true" />
+                <element signature="e#2434#2542#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Elm.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/Elm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="53" selection-start="2068" selection-end="2068" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crops.phtml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/user/crops.phtml">
+      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/http/file-bin/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="10" selection-start="795" selection-end="795" vertical-scroll-proportion="0.4637224">
+            <state line="2860" column="16" selection-start="64609" selection-end="64609" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -145,22 +171,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/PlotController.php" />
-        <option value="$PROJECT_DIR$/http/file-bin/js/elm.js" />
-        <option value="$PROJECT_DIR$/http/file-bin/css/screen.css" />
-        <option value="$PROJECT_DIR$/application/views/scripts/plot/view.phtml" />
-        <option value="$PROJECT_DIR$/application/var/log/app.log" />
-        <option value="$PROJECT_DIR$/application/views/scripts/plot/photos/timeline.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/plot/photos.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/profile/view.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/profile/_navigation.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/plot/_navigation.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/user/_navigation.phtml" />
-        <option value="$PROJECT_DIR$/application/Elm.php" />
-        <option value="$PROJECT_DIR$/application/controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/application/views/scripts/user/view.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/plots.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/crops.phtml" />
+        <option value="$PROJECT_DIR$/application/controllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/application/layouts/scripts/footer.phtml" />
+        <option value="$PROJECT_DIR$/application/layouts/scripts/header.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/profile/_login-menu.phtml" />
+        <option value="$PROJECT_DIR$/application/views/helpers/Form.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/profile/_login.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/communication/_modal.phtml" />
+        <option value="$PROJECT_DIR$/application/var/log/app.log" />
+        <option value="$PROJECT_DIR$/application/controllers/IndexController.php" />
+        <option value="$PROJECT_DIR$/application/Elm.php" />
+        <option value="$PROJECT_DIR$/http/file-bin/css/screen.css" />
+        <option value="$PROJECT_DIR$/application/views/scripts/index/index.phtml" />
+        <option value="$PROJECT_DIR$/http/file-bin/js/lib/infobox.js" />
+        <option value="$PROJECT_DIR$/http/file-bin/js/map.js" />
       </list>
     </option>
   </component>
@@ -196,7 +222,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,6 +326,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="everylastmorsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -320,6 +371,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="file-bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,10 +411,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -410,30 +461,8 @@
               <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plot" />
+              <option name="myItemId" value="index" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -459,7 +488,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="crops" />
+              <option name="myItemId" value="communication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="everylastmorsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -495,7 +546,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -537,6 +592,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -545,13 +601,13 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="184" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="202" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="186" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="627" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="632" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="627" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="181" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -617,15 +673,15 @@
     </servers>
   </component>
   <component name="RecentsManager">
+    <key name="OPEN_URL_DIALOG">
+      <recent name="http://revival.collectivecolony.com" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/views/scripts/profile" />
       <recent name="$PROJECT_DIR$/application/views/scripts/user" />
       <recent name="$PROJECT_DIR$/application/views/scripts/plot/photos" />
       <recent name="$PROJECT_DIR$/application/views/scripts/plot/view-old" />
       <recent name="$PROJECT_DIR$/application/views/scripts/plot" />
-      <recent name="$PROJECT_DIR$/application/data/db" />
-    </key>
-    <key name="OPEN_URL_DIALOG">
-      <recent name="http://revival.collectivecolony.com" />
     </key>
   </component>
   <component name="RunManager">
@@ -710,15 +766,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.48701298" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.49675325" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3240469" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2564935" sideWeight="0.67302054" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22483766" sideWeight="0.670088" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22889611" sideWeight="0.670088" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2564935" sideWeight="0.21847507" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.49756494" order="7" side_tool="true" content_ui="tabs" />
@@ -728,6 +783,7 @@
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3240469" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2111437" sideWeight="0.4935065" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -796,6 +852,68 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/header.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="58" selection-start="1847" selection-end="1847" vertical-scroll-proportion="-23.913044">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/_login-menu.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="57" selection-start="295" selection-end="295" vertical-scroll-proportion="-3.0434783">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/helpers/Form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="26" selection-start="13" selection-end="33" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#getLoginForm#0;n#Elm_View_Helper_Form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/communication/_form.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/http/file-bin/js/elm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="296" column="17" selection-start="6635" selection-end="6635" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#6635#7534#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/_login.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="55" selection-start="366" selection-end="366" vertical-scroll-proportion="0.22082019">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/_sidebar.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/communication/_modal.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="57" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.4258675">
+          <folding>
+            <element signature="e#1134#2224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/var/log/app.log">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -803,117 +921,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/photos.phtml">
+    <entry file="file://$PROJECT_DIR$/application/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="18" selection-start="2261" selection-end="2261" vertical-scroll-proportion="-20.086956">
+        <state line="46" column="79" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#1572#2007#0" expanded="true" />
-            <element signature="e#1752#1946#0" expanded="true" />
+            <element signature="n#indexAction#0;n#Elm_IndexController#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/photos/timeline.phtml">
+    <entry file="file://$PROJECT_DIR$/http/file-bin/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="59" selection-start="193" selection-end="193" vertical-scroll-proportion="-4.2608695">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/_navigation.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="9" selection-start="15" selection-end="15" vertical-scroll-proportion="0.02208202">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/plots/view.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="128" selection-start="525" selection-end="645" vertical-scroll-proportion="0.39747635">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/_navigation.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="133" selection-start="224" selection-end="349" vertical-scroll-proportion="-4.2608695">
+        <state line="2860" column="16" selection-start="64609" selection-end="64609" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/Elm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="59" selection-start="4829" selection-end="4829" vertical-scroll-proportion="0.6803653">
+        <state line="78" column="53" selection-start="2068" selection-end="2068" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/_navigation.phtml">
+    <entry file="file://$PROJECT_DIR$/http/file-bin/css/screen.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="130" selection-start="454" selection-end="454" vertical-scroll-proportion="-4.869565">
+        <state line="223" column="42" selection-start="5480" selection-end="5480" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/UserController.php">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/index/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="40" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.0">
+        <state line="47" column="36" selection-start="1495" selection-end="1495" vertical-scroll-proportion="-16.608696">
           <folding>
-            <element signature="n#preDispatch#0;n#Elm_UserController#0;n#!!top" expanded="true" />
-            <element signature="n#noRouteAction#0;n#Elm_UserController#0;n#!!top" expanded="true" />
-            <element signature="n#indexAction#0;n#Elm_UserController#0;n#!!top" expanded="true" />
-            <element signature="n#viewAction#0;n#Elm_UserController#0;n#!!top" expanded="true" />
-            <element signature="n#plotsAction#0;n#Elm_UserController#0;n#!!top" expanded="true" />
+            <element signature="e#2095#2546#0" expanded="true" />
+            <element signature="e#2434#2542#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/view.phtml">
+    <entry file="file://$PROJECT_DIR$/http/file-bin/js/lib/infobox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="68" selection-start="495" selection-end="495" vertical-scroll-proportion="0.3533123">
-          <folding />
+        <state line="304" column="25" selection-start="10323" selection-end="10330" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#InfoBox#0" expanded="true" />
+            <element signature="e#5928#8721#0" expanded="true" />
+            <element signature="e#6106#6200#0" expanded="true" />
+            <element signature="e#6415#6581#0" expanded="true" />
+            <element signature="e#8347#8395#0" expanded="true" />
+            <element signature="e#8841#9246#0" expanded="true" />
+            <element signature="e#9370#9621#0" expanded="true" />
+            <element signature="e#9780#10198#0" expanded="true" />
+            <element signature="e#9823#10195#0" expanded="true" />
+            <element signature="e#10355#12329#0" expanded="true" />
+            <element signature="e#12506#13427#0" expanded="true" />
+            <element signature="e#13605#14697#0" expanded="true" />
+            <element signature="e#14816#14915#0" expanded="true" />
+            <element signature="e#15036#15555#0" expanded="true" />
+            <element signature="e#15934#17517#0" expanded="true" />
+            <element signature="e#17701#18926#0" expanded="true" />
+            <element signature="e#19061#19317#0" expanded="true" />
+            <element signature="e#19442#19708#0" expanded="true" />
+            <element signature="e#19822#19850#0" expanded="true" />
+            <element signature="e#19977#20006#0" expanded="true" />
+            <element signature="e#20119#20146#0" expanded="true" />
+            <element signature="e#20216#20313#0" expanded="true" />
+            <element signature="e#20383#20478#0" expanded="true" />
+            <element signature="e#20904#21203#0" expanded="true" />
+            <element signature="e#21080#21129#0" expanded="true" />
+            <element signature="e#21289#21902#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/about.phtml">
+    <entry file="file://$PROJECT_DIR$/http/file-bin/js/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="10" selection-start="469" selection-end="663" vertical-scroll-proportion="-11.565217">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Form/User/Create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="6" selection-start="14" selection-end="14" vertical-scroll-proportion="0.06392694">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Form/Plot/Create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="28" selection-start="82" selection-end="100" vertical-scroll-proportion="0.106544904">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/view.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="15" selection-start="451" selection-end="959" vertical-scroll-proportion="-16.434782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/plots.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="453" selection-end="811" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/crops.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="10" selection-start="795" selection-end="795" vertical-scroll-proportion="0.4637224">
-          <folding />
+        <state line="114" column="38" selection-start="3562" selection-end="3562" vertical-scroll-proportion="0.5869565">
+          <folding>
+            <element signature="e#3670#4390#0" expanded="true" />
+            <element signature="e#3743#4384#0" expanded="true" />
+            <element signature="e#3992#4211#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

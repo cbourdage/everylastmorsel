@@ -1,0 +1,17 @@
+<?php if (!Elm::getSingleton('user/session')->isLoggedIn()) : ?>
+	<div id="headerLoginForm" class="no-display">
+		<div class="container_12">
+			<div class="grid_6">
+				<h4>Login to your <strong class="white">Every Last Morsel</strong> account!</h4>
+				<?php echo $this->partial('profile/_login.phtml'); ?>
+			</div>
+			<div class="grid_6">
+				<h4>Don't have an account with us?</h4>
+				<a href="<?= $this->url('profile/create'); ?>" title="Create an account">Get one here!</a>
+
+				<h4>Forgot your info?</h4>
+				<a href="<?= $this->url('profile/forgot-password'); ?>" title="Password reset">Click here!</a>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>

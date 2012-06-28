@@ -166,10 +166,69 @@ div.inner-content-wrapper div.alert { width: 645px; }
 /**
 	Overlay
 */
-.modal { max-height: 600px; overflow: hidden; }
-.modal .modal-header h3 { font-size: 20px; margin-top: 10px; }
+.fade {
+	-webkit-transition: opacity .3s linear, top .3s ease-out;
+	-moz-transition: opacity .3s linear, top .3s ease-out;
+	-ms-transition: opacity .3s linear, top .3s ease-out;
+	-o-transition: opacity .3s linear, top .3s ease-out;
+	transition: opacity .3s linear, top .3s ease-out;
+	top: 50%;
+	margin-top: -300px;
+}
+.fade.in { opacity: 1; }
+.modal-backdrop {
+	background: #5d5d5e;
+	margin: 0 !important;
+	top: 0 !important;
+	opacity: .6;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 500;
+}
+.modal-backdrop.fade.in { opacity: .6; }
+.modal {
+	background: #59601C;
+	max-height: 600px;
+	overflow: hidden;
+	padding: 20px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 501;
+}
+.modal .modal-header {
+	border-bottom: 4px double #80883b;
+	padding-bottom: 10px;
+	margin-bottom: 5px;
+}
+.modal .modal-header h3 { color: #fff; font-size: 20px; margin-top: 10px; }
+.modal .modal-header a.close { color: #fff; position: absolute; top: 10px; right: 15px; }
 .modal form { margin-bottom: 0; }
 .modal .modal-body { overflow: hidden; }
+.modal .modal-body label {
+	color: #fff;
+	float: none;
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	margin-bottom: 5px;
+	text-align: left;
+}
+.modal .modal-body input {
+	border: 0;
+	border-top: 3px solid #d1c8b4;
+	color: #222;
+	width: 360px;
+}
+#mapModal { height: 240px; margin-top: -140px; margin-left: -200px; width: 400px; }
+#mapModal .buttons-set .btn span {
+	background: #74D2D1;
+	border: 1px solid #33a3a9;
+	border-bottom-width: 2px;
+	border-top: 2px solid #9de5e9;
+}
+#mapModal .buttons-set a.cancel { display: none; }
 
 /**
 	Layout Specs
@@ -337,7 +396,7 @@ footer > p a { color: #fff; }
 	height: 150px;
 	padding-top: 15px;
 	position: absolute;
-	top: 0;
+	top: -5px;
 	left: 0;
 	right: 0;
 	z-index: 500;
@@ -391,7 +450,7 @@ div#mapCanvas {
 }
 div#mapMarker > div {
 	background: #818940;
-	background: rgba(129,137,64,.8);
+	background: rgba(129,137,64,.87);
 	/*border: 1px solid #595d3b;*/
 	color: #414710;
 	line-height: 1.2;
@@ -432,7 +491,9 @@ div#mapMarker > div div.content input[type="text"] {
 	padding: 10px 6px;
 	width: 410px;
 }
-div#mapMarker > div div.content button {
+div#mapMarker > div div.content p.buttons-set { text-align: center; }
+div#mapMarker > div div.content button.btn { margin: 0; float: none; }
+div#mapMarker > div div.content button.search {
 	background: url('../images/sprites.png') no-repeat -345px -3px;
 	float: left;
 	margin-left: 10px;

@@ -133,31 +133,17 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		$this->_initAjax();
 		$this->_helper->viewRenderer->setNoRender(true);
 
-		// Set session data
-		Elm::getSingleton('user/session')->plot = array(
-			'latitude' => $this->getRequest()->getParam('lat'),
-			'longitude' => $this->getRequest()->getParam('long'),
-			'type' => $this->getRequest()->getParam('type'),
-		);
-
 		if (Elm::getSingleton('user/session')->isLoggedIn()) {
 			$response = array(
 				'success' => true,
-				'error' => false,
-				'location' => $this->view->url('plot/create')
+				'error' => false
 			);
 			$this->_helper->json->sendJson($response);
 		} else {
-			$loginForm = new Elm_Model_Form_User_Login();
-			$loginForm->setAction('/profile/login-ajax');
-
-			$html = new Zend_View();
-			$html->setScriptPath(APPLICATION_PATH . '/views/user/');
-			$html->assign('loginForm', $loginForm);
 			$response = array(
 				'success' => false,
 				'error' => true,
-				'html' => $html->render('_login.phtml')
+				'location' => $this->view->url('plot/create')
 			);
 			$this->_helper->json->sendJson($response);
 		}

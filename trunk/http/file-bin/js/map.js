@@ -73,9 +73,9 @@ jQuery(function($) {
 				'<h3 class="heading"><span>Fantastic!</span> This location looks great, is there a garden here?</h3>'+
 				'<div class="content clearfix">' +
 					'<p>Move the marker on the map to plot location or select this location!</p>' +
-					'<p><button type="button" class="btn authenticate" id="is_a_garden"><span>Absolutely</span></button></p>' +
+					'<p class="buttons-set"><button type="button" class="btn btn-blue authenticate" id="is_a_garden"><span>Absolutely! Lets plot it.</span></button></p>' +
 					//'<p><input type="text" name="location" id="location" />' +
-					//'<button type="button" name="location_lookup"></button></p>' +
+					//'<button type="button" name="location_lookup" class="btn search"></button></p>' +
 				'</div>' +
 			'</div>' +
 		'</div>';
@@ -85,7 +85,8 @@ jQuery(function($) {
 			//disableAutoPan: false,
 			maxWidth: 575,
 			//maxHeight: 275,
-			pixelOffset: new google.maps.Size(-65, -350),
+			pixelOffset: new google.maps.Size(-65, -320),
+			infoBoxClearance: new google.maps.Size(25, 25),
 			//zIndex: null,
 			boxStyle: {
 			  	//background: "url('tipbox.gif') no-repeat",
@@ -95,7 +96,6 @@ jQuery(function($) {
 			},
 			//closeBoxMargin: "10px 2px 2px 2px",
 			closeBoxURL: "",
-			infoBoxClearance: new google.maps.Size(1, 1),
 			//isHidden: false,
 			pane: "floatPane",
 			enableEventPropagation: true
@@ -112,10 +112,7 @@ jQuery(function($) {
 		google.maps.event.addListener(initialMarker, 'dragend', function(event) {
 			placeMarker(event.latLng);
 			infoWindow.setContent(changeContentString);
-			//console.log(infoWindow.getPosition());
-			//console.log(new google.maps.Size(-50, -400));
-			map.panTo(infoWindow.getPosition());
-
+			infoWindow.panBox_(false);
 			coords = {
 				lat : event.latLng.lat(),
 				long : event.latLng.lng()
@@ -128,15 +125,16 @@ jQuery(function($) {
 					$content = $modal.find('.modal-body');
 
 				jQuery.ajax({
-					url: '/profile/authenticate/',
+					url: '/index/plot-point/',
 					data: jQuery.serializeJSON(coords) + '&type=garden',
 					dataType: 'json',
 					success: function(response) {
 						if (response.success) {
 							window.location = response.location;
 						}  else {
+							$modal.find('h3').html(response.title);
+							$content.html(response.html);
 							$modal.modal('show');
-							$modal.html(response.html);
 						}
 					},
 					error: function() {
