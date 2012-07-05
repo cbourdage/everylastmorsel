@@ -43,10 +43,10 @@ abstract class Colony_Db_Table extends Zend_Db_Table_Abstract
     {
 		if ($data = $this->find($id)) {
 			$object->setData(array_shift($data->toArray()));
-		}
 
-		if ($additional) {
-			$this->_afterLoad($object);
+			if ($object->getId() && $additional) {
+				$this->_afterLoad($object);
+			}
 		}
         return $this;
     }

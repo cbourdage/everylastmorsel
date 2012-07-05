@@ -40,7 +40,8 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 			return false;
 		}
 
-		if (!$plot = Elm::getModel('plot')->load($id)) {
+		$plot = Elm::getModel('plot')->load($id);
+		if (!$plot->getId()) {
 			return false;
 		}
 
