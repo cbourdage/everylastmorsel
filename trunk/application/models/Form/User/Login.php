@@ -7,7 +7,7 @@ class Elm_Model_Form_User_Login extends Elm_Model_Form_Abstract
 	{
 		parent::__construct();
 
-		$this->setAction('/profile/login/');
+		$this->setAction('/profile/login-post/');
 
         $this->addElement('text', 'email', array(
             'filters'    => array('StringTrim', 'StringToLower'),

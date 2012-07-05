@@ -4,6 +4,16 @@ require_once 'controllers/Plot/AbstractController.php';
 
 class Elm_PlotController extends Elm_Plot_AbstractController
 {
+	public function preDispatch()
+	{
+		if ($plotId = $this->getRequest()->getParam('p')) {
+			$plot = Elm::getModel('plot')->load($plotId);
+			if ($plot->getId()) {
+				$this->_init();
+			}
+		}
+	}
+
 	/**
 	 * Default 404
 	 */
@@ -11,6 +21,11 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	{
 	}
 
+	/**
+	 * Create action
+	 *
+	 * @return mixed
+	 */
 	public function createAction()
 	{
 		// Set session data
@@ -43,6 +58,11 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->view->form = $form;
 	}
 
+	/**
+	 * Create post action
+	 *
+	 * @return mixed
+	 */
 	public function createPostAction()
 	{
 		if (!$this->getRequest()->isPost()) {
@@ -50,10 +70,9 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
-		$session = $this->_getSession();
-
 		$form = new Elm_Model_Form_Plot_Create();
 		$post = $this->getRequest()->getParams();
+		$session = $this->_getSession();
 
 		if ($form->isValid($post)) {
 			try {
@@ -99,11 +118,9 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	{
 		if (!$this->_isValid()) {
 			$this->_forward('no-route');
-		} else {
-			$this->_initCurrentPlot();
-			$this->view->plot = $this->_plot;
-			$this->view->headTitle()->prepend($this->_plot->getName());
+			return;
 		}
+
 		$this->_initLayout();
 	}
 
@@ -117,10 +134,8 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
-		$this->_initCurrentPlot();
-
 		$this->_initLayout();
-		$this->view->plot = $this->_plot;
+		$this->view->headTitle()->append("Crops");
 	}
 
 	/**
@@ -133,10 +148,8 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
-		$this->_initCurrentPlot();
-
 		$this->_initLayout();
-		$this->view->plot = $this->_plot;
+		$this->view->headTitle()->append("People");
 	}
 
 	/**
@@ -149,13 +162,11 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
-		$this->_initCurrentPlot();
+		$this->_initLayout();
+		$this->view->headTitle()->append("People");
 
 		$form = new Elm_Model_Form_Plot_Images();
 		$form->setAction('/plot/image-upload/p/' . $this->_plot->getId());
-
-		$this->_initLayout();
-		$this->view->plot = $this->_plot;
 		$this->view->form = $form;
 	}
 
@@ -174,7 +185,6 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
-		$this->_initCurrentPlot();
 		try {
 			$this->_plot->addImages($this->getRequest()->getParams());
 		} catch (Colony_Exception $e) {
@@ -200,7 +210,6 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
-		$this->_initCurrentPlot();
 		try {
 			$this->_plot->removeImages($this->getRequest()->getParam('photo'));
 		} catch (Colony_Exception $e) {
@@ -218,19 +227,16 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	{
 		if (!$this->_isValid()) {
 			$this->_forward('no-route');
-		} else {
-			$this->_initCurrentPlot();
-			$this->view->headTitle()->prepend('Pending Users');
-			$this->view->headTitle()->prepend($this->_plot->getName());
-
-			if (!$this->_plot->isOwner($this->_getSession()->user)) {
-				$this->_redirect('/p/' . $this->_plot->getId());
-				return;
-			}
-			$this->view->plot = $this->_plot;
-			$this->view->users = $this->_plot->getPendingUsers();
+			return;
 		}
+		if (!$this->_plot->isOwner($this->_getSession()->user)) {
+			$this->_redirect('/p/' . $this->_plot->getId());
+			return;
+		}
+
 		$this->_initLayout();
+		$this->view->headTitle()->prepend('Pending Users');
+		$this->view->users = $this->_plot->getPendingUsers();
 	}
 
 	/**
@@ -238,16 +244,23 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 */
 	public function involveMeAction()
 	{
-		if ($this->getRequest()->isPost()) {
-			$post = $this->getRequest()->getPost();
-			if (isset($post['role'])) {
-				$plot = Elm::getModel('plot')->load($post['plot_id']);
-				$plot->associateUser($post['user_id'], $post['role'], false);
-			}
-			$this->_redirect('/p/' . $post['plot_id']);
-		} else {
+		if (!$this->getRequest()->isPost()) {
 			$this->_redirect('/');
 		}
+
+		$post = $this->getRequest()->getPost();
+		if (isset($post['role'])) {
+			try {
+				$plot = Elm::getModel('plot')->load($post['plot_id']);
+				$plot->associateUser($post['user_id'], $post['role'], false);
+				$this->_getSession()->addSuccess('Your involvement is pending owners approval. Hang tight!');
+			} catch (Colony_Exception $e) {
+				Elm::logException($e);
+				$this->_getSession()->addError($e);
+			}
+		}
+		// $session->lastUrl;...
+		$this->_redirect('/p/people/' . $post['plot_id']);
 	}
 
 	/**
@@ -257,24 +270,38 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	{
 		$request = $this->getRequest();
 		if ($request->getParam('user_id') && $request->getParam('plot_id')) {
-			$plot = Elm::getModel('plot')->load($request->getParam('plot_id'));
-			$plot->approveUser($request->getParam('user_id'), $request->getParam('role'));
-			$this->_redirect('/p/' . $request->getParam('plot_id'));
+			try {
+				$plot = Elm::getModel('plot')->load($request->getParam('plot_id'));
+				$plot->approveUser($request->getParam('user_id'), $request->getParam('role'));
+				$this->_getSession()->addSuccess('User has been approved.');
+			} catch (Colony_Exception $e) {
+				Elm::logException($e);
+				$this->_getSession()->addError($e);
+			}
+			// $session->lastUrl;...
+			$this->_redirect('/p/people/' . $request->getParam('plot_id'));
 		} else {
 			$this->_redirect('/');
 		}
 	}
 
 	/**
-	 * Approves user action
+	 * Deny user action
 	 */
 	public function denyUserAction()
 	{
 		$request = $this->getRequest();
 		if ($request->getParam('user_id') && $request->getParam('plot_id')) {
-			$plot = Elm::getModel('plot')->load($request->getParam('plot_id'));
-			$plot->denyUser($request->getParam('user_id'), $request->getParam('role'));
-			$this->_redirect('/p/' . $request->getParam('plot_id'));
+			try {
+				$plot = Elm::getModel('plot')->load($request->getParam('plot_id'));
+				$plot->denyUser($request->getParam('user_id'), $request->getParam('role'));
+				$this->_getSession()->addSuccess('User has been denied.');
+			} catch (Colony_Exception $e) {
+				Elm::logException($e);
+				$this->_getSession()->addError($e);
+			}
+			// $session->lastUrl;...
+			$this->_redirect('/p/people/' . $request->getParam('plot_id'));
 		} else {
 			$this->_redirect('/');
 		}
@@ -285,123 +312,21 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 */
 	public function watchThisAction()
 	{
-		if ($this->getRequest()->isPost()) {
-			$post = $this->getRequest()->getPost();
-			$plot = Elm::getModel('plot')->load($post['plot_id']);
-			$plot->associateUser($post['user_id'], Elm_Model_Resource_Plot::ROLE_WATCHER, true);
-			$this->_redirect('/p/' . $post['plot_id']);
-		} else {
+		if (!$this->getRequest()->isPost()) {
 			$this->_redirect('/');
 		}
-	}
 
-
-
-
-
-
-
-	/**
-	 * Registration and registration post action ajax
-	 *
-	 * @Deprecated
-	 */
-	public function createAjaxAction()
-	{
-		$response = array();
-		$session = $this->_getSession();
-		$this->_helper->layout()->disableLayout();
-		$this->_helper->viewRenderer->setNoRender(true);
-
-        if (!$session->isLoggedIn()) {
-			$response = array(
-				'success' => false,
-				'error' => true,
-				'location' => $this->_helper->url('/user/login')
-			);
-        } else {
-			$form = new Elm_Model_Form_Plot_Create();
-			if ($this->getRequest()->isPost()) {
-				$post = $this->getRequest()->getPost();
-				if ($form->isValid($post)) {
-					try {
-						$plot = Elm::getModel('plot');
-						$plot->setData($post);
-						if ($this->getRequest()->getParam('type') == 'shouldBeA') {
-							$plot->setIsStartup(true);
-						}
-						$plot->save();
-
-						$plot->createNewPlotStatus()->sendNewPlotEmail();
-						$session->addSuccess("This location looks great!");
-
-						if (isset($post['role'])) {
-							$plot->associateUser($post['user_id'], $post['role'], true);
-						}
-
-						$response = array(
-							'success' => true,
-							'error' => false,
-							'location' => '/p/' . $plot->getId()
-						);
-					} catch (Exception $e) {
-						$response = array(
-							'success' => false,
-							'error' => true,
-							'message' => $e->getMessage()
-						);
-					}
-				} else {
-					$response = array(
-						'success' => false,
-						'error' => true,
-						'message' =>'Oops! Check required fields and try again.'
-					);
-				}
-			}
+		$post = $this->getRequest()->getPost();
+		try {
+			$plot = Elm::getModel('plot')->load($post['plot_id']);
+			$plot->associateUser($post['user_id'], Elm_Model_Resource_Plot::ROLE_WATCHER, true);
+			$this->_getSession()->addSuccess('Thanks for showing interest. You are now watching this plot.');
+		} catch (Colony_Exception $e) {
+			Elm::logException($e);
+			$this->_getSession()->addError($e);
 		}
 
-		$this->_helper->json->sendJson($response);
-	}
-
-
-	/**
-	 * Saving properties on the profile page
-	 *
-	 * @Deprecated
-	 */
-	public function saveAction()
-	{
-		$this->_initAjax();
-		$session = $this->_getSession();
-
-		if (!$session->isLoggedIn()) {
-			$response = array(
-				'success' => false,
-				'error' => true,
-				'location' => $this->_helper->url('user/login')
-			);
-        } else {
-			if ($this->getRequest()->isPost()) {
-				$post = $this->getRequest()->getPost();
-				$plot = Elm::getModel('plot')->load($post['plot_id']);
-				$plot->setData($post['plot_update'], $post[$post['plot_update']]);
-				$plot->save();
-				$response = array(
-					'success' => true,
-					'error' => false,
-					'message' =>'Ah, success!',
-					'value' => $plot->getData($post['plot_update'])
-				);
-			} else {
-				$response = array(
-					'success' => false,
-					'error' => true,
-					'message' =>'Oops! Check required fields and try again.'
-				);
-			}
-		}
-
-		$this->_helper->json->sendJson($response);
+		// $session->lastUrl;...
+		$this->_redirect('/p/' . $post['plot_id']);
 	}
 }

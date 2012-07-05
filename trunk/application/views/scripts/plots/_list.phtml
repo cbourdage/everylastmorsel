@@ -2,13 +2,13 @@
 
 <?php if (count($this->plots) > 0) : ?>
 	<?php if ($this->details) : ?>
-		<ul class="list-block details">
+		<ul class="list-block list details">
 		<?php foreach ($this->plots as $plot) : ?>
 			<li>
 				<figure>
 					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '175', 'width' => '175'))); ?>" title="<?php echo $plot->getName(); ?>" />
 				</figure>
-				<div class="plot-details">
+				<div class="plot-details details">
 					<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $plot->getName(); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
 					<p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
 					<p><?php echo $plot->getAbout(); ?></p>
@@ -18,7 +18,7 @@
 		</ul>
 
 	<?php else : ?>
-		<ul class="list-block">
+		<ul class="list-block list">
 		<?php foreach ($this->plots as $plot) : ?>
 			<li>
 				<figure>

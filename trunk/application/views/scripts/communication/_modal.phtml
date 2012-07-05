@@ -1,4 +1,10 @@
-
+<?php
+/**
+ * needs:
+ * 	user_from_id (current user id)
+ * 	user_to_id (user to send to id)
+ */
+?>
 <?php if (Elm::getSingleton('user/session')->isLoggedIn()) : ?>
 	<div class="modal hide fade" id="contactModal">
 		<div class="modal-header">
@@ -9,8 +15,11 @@
 			<?php $form = new Elm_Model_Form_Communication_Contact(); ?>
 			<form action="<?php echo $form->getAction() ?>" method="post" id="contactModalForm">
 				<input type="hidden" name="user_from_id" value="<?php echo Elm::getSingleton('user/session')->user->getId(); ?>" />
+
 				<?php if (Zend_Registry::isRegistered('current_user')) : ?>
 					<input type="hidden" name="user_to_id" value="<?php echo Zend_Registry::get('current_user')->getId(); ?>" />
+				<?php else : ?>
+					<input type="hidden" name="user_to_id" value="" />
 				<?php endif; ?>
 
 				<ul class="fieldset">
@@ -18,54 +27,15 @@
 						<?php echo $element->render(); ?>
 					<?php endforeach; ?>
 				</ul>
+				<div class="buttons-set">
+					<button type="submit" class="btn btn-green" id="contact-submit"><span>Send Note</span></button>
+					<a href="#cancel" class="cancel" data-dismiss="modal">cancel</a>
+				</div>
 			</form>
 		</div>
-		<div class="modal-footer">
-			<a href="#" class="btn" data-dismiss="modal">Close</a>
-			<a href="#" class="btn btn-primary" id="contactSubmit">Send</a>
-		</div>
 	</div>
-	<script>
-		jQuery('#contactSubmit').on('click', function(e) {
-			e.preventDefault();
-			var $contactForm = jQuery('#contactModalForm');
-			var $alert = $contactForm.find('.alert');
-
-			if ($alert.length) {
-				$alert.alert('close');
-			}
-
-			jQuery.ajax({
-				url: $contactForm.attr('action'),
-				type: 'post',
-				data: $contactForm.serialize(),
-				success: function(response) {
-					if (!elm.success(response)) {
-						return;
-					}
-
-					if (response.success) {
-						$alert = jQuery.createSuccessAlert(response.message).hide();
-						window.setTimeout(function() {
-							jQuery('#contactModal').modal('hide');
-							jQuery.formReset($contactForm);
-							$alert.alert('close');
-						}, 2000);
-					} else {
-						$alert = jQuery.createErrorAlert(response.message).hide();
-					}
-
-					$contactForm.prepend($alert);
-					$alert.fadeIn();
-				},
-				error: function() {
-					elm.error("Oops! We've encountered some troubles. Try again shortly!", $contactForm, 'prepend');
-				},
-				exception: function() {
-					elm.error("Oops! We've encountered some troubles. Try again shortly!", $contactForm, 'prepend');
-				}
-			});
-			return false;
-		});
-	</script>
+	<div class="modal hide fade" id="contactSuccessModal">
+		<div class="modal-header"><a class="close" data-dismiss="modal">×</a></div>
+		<div class="modal-body"><h3>Successfully sent note!</h3></div>
+	</div>
 <?php endif; ?>

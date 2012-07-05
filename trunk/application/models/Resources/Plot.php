@@ -45,14 +45,11 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
 			$users = array();
 			foreach ($rows as $row) {
-				$users[$row->user_id][] = array(
-					'role' => $row->role,
-					'is_approved' => $row->is_approved
-				);
+				$users[$row->user_id][] = new Colony_Object(Elm::toArray($row));
 			}
-			$object->setUserIds($users);
+			$object->setAssociatedUsers($users);
 		} else {
-			$object->setUserIds(null);
+			$object->setAssociatedUsers(null);
 		}
 
 		return $this;
@@ -72,10 +69,7 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		$users = array();
 		if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
 			foreach ($rows as $row) {
-				$users[$row->user_id][] = array(
-					'role' => $row->role,
-					'is_approved' => $row->is_approved
-				);
+				$users[$row->user_id] = new Colony_Object(Elm::toArray($row));
 			}
 		}
 
@@ -133,6 +127,11 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 		return $items;
 	}
 
+	/**
+	 * @param $object
+	 * @param $lat
+	 * @param $long
+	 */
 	public function loadByLatLong($object, $lat, $long)
 	{
 	}

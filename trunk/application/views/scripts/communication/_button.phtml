@@ -1,0 +1,7 @@
+<?php if (Elm::getSingleton('user/session')->isLoggedIn()) : ?>
+	<a href="#contact" class="btn btn-blue contact-button" title="Contact <?php echo $this->user->getName(); ?>"
+			data-toggle="modal"
+			data-to="<?php echo $this->user->getId(); ?>">
+		<span>Send Email</span>
+	</a>
+<?php endif; ?>

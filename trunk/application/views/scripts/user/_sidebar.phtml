@@ -1,32 +1,18 @@
 <?php
 $session = Elm::getSingleton('user/session');
-if (Zend_Registry::isRegistered('current_user')) : ?>
-	<?php $_user = Zend_Registry::get('current_user'); ?>
+?>
+<?php if (Zend_Registry::isRegistered('current_user')) : ?>
+	<?php $user = Zend_Registry::get('current_user'); ?>
 	<div id="mainImage">
-		<img src="<?php echo $this->User()->getImage($_user); ?>" title="<?php echo $_user->getName(); ?>" width="200px" />
-
-		<form class="hide" id="imageUploadForm" action="<?php echo $this->url('user/image-upload', array('u' => $_user->getId())); ?>" method="post" enctype="multipart/form-data">
-			<ul class="fieldset list-block">
-				<li>
-					<label for="image-1" class="optional">Image</label>
-					<div><input type="file" name="image" id="image-1"></div>
-				</li>
-			</ul>
-			<p class="buttons">
-				<button type="submit" class="btn btn-danger">Upload</button>
-			</p>
-		</form>
+		<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="200px" />
 	</div>
 	<div id="lowerColumn">
-		<?php if ($session->isLoggedIn() && !$session->user->isMe($_user) && strlen($this->placeholder('contact-modal')) > 0) : ?>
-			<p class="buttons">
-				<a href="#contactModal" class="btn btn-primary contact-button" data-toggle="modal" title="Contact <?php echo $_user->getFirstname() . ' ' . $_user->getLastname(); ?>">Send Email</a>
-			</p>
-
-			<?= $this->placeholder('contact-modal'); ?>
+		<?php //if ($session->isLoggedIn() && !$session->user->isMe($_user) && strlen($this->placeholder('contact-modal')) > 0) : ?>
+		<?php if ($session->isLoggedIn() && !$session->user->isMe($user) && $this->view->canContact) : ?>
+			<?php echo $this->partial('communication/_button.phtml', array('user' => $user)); ?>
 		<?php endif; ?>
 
-		<?php if ($session->isLoggedIn() && $session->user->isMe($_user)) : ?>
+		<?php if ($session->isLoggedIn() && $session->user->isMe($user)) : ?>
 		<!--<ul id="userHub">
 			<li>something here</li>
 			<li>something here 2</li>

@@ -1,13 +1,8 @@
 
-<?php if (Elm::getSingleton('user/session')->isLoggedIn()) : ?>
 <?php $form = new Elm_Model_Form_Communication_Contact(); ?>
 <div id="contact-form-wrapper">
 	<h4>Note from...</h4>
 	<form action="<?php echo $form->getAction() ?>" method="post" id="contact-form">
-		<div class="alert fade in" style="display: none;">
-		  <a class="close" data-dismiss="alert">×</a>
-		  <p></p>
-		</div>
 		<?php if (Zend_Registry::isRegistered('current_user')) : ?>
 			<input type="hidden" name="user_to_id" value="<?php echo Zend_Registry::get('current_user')->getId(); ?>" />
 		<?php endif; ?>
@@ -22,4 +17,3 @@
 		</div>
 	</form>
 </div>
-<?php endif; ?>

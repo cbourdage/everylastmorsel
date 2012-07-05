@@ -7,11 +7,11 @@ $_session = Elm::getSingleton('user/session');
 
 	<div class="blocked-content people">
 		<h4>Gardeners & Owners</h4>
-		<?php echo $this->partial('user/list.phtml', array('users' => $this->users)); ?>
+		<?php echo $this->partial('user/_list.phtml', array('users' => $this->users)); ?>
 	</div>
 
 	<div class="blocked-content plots">
 		<h4>Plots of Land</h4>
-		<?php echo $this->partial('plots/list.phtml', array('plots' => $this->plots)); ?>
+		<?php echo $this->partial('plots/_list.phtml', array('plots' => $this->plots)); ?>
 	</div>
 </div>

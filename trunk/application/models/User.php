@@ -90,16 +90,35 @@ class Elm_Model_User extends Colony_Model_Abstract
 	 * Checks if the current session user matches the
 	 * instantiated user
 	 *
-	 * @param \Elm_Model_User $user
 	 * @return bool
 	 */
-	public function isMe(Elm_Model_User $user)
+	public function isMe()
 	{
 		$session = Elm::getSingleton('user/session');
-		if ($session->isLoggedIn() && $session->user->getId() == $user->getId()) {
+		if ($session->isLoggedIn() && $session->user->getId() == $this->getId()) {
 			return true;
 		}
 		return false;
+	}
+
+	/**
+	 * Checks if the user is a public profile
+	 *
+	 * @return bool
+	 */
+	public function isPublic()
+	{
+		return $this->isMe() || $this->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC;
+	}
+
+	/**
+	 * Checks if the user is a private profile
+	 *
+	 * @return bool
+	 */
+	public function isPrivate()
+	{
+		return !$this->isMe() && $this->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PRIVATE;
 	}
 
 	/**
@@ -124,16 +143,49 @@ class Elm_Model_User extends Colony_Model_Abstract
 	 */
 	public function getPlots()
 	{
-		if (count($this->_plots) < 1 && count($this->getPlotIds()) > 0) {
-			foreach ($this->getPlotIds() as $id => $role) {
-				if ($role != Elm_Model_Resource_Plot::ROLE_CREATOR) {
-					$plot = Elm::getModel('plot')->load($id);
-					$plot->setUserRole($role);
-					$this->_plots[] = $plot;
+		if (count($this->_plots) < 1 && count($this->getAssociatedPlots()) > 0) {
+			foreach ($this->getAssociatedPlots() as $id => $roles) {
+				foreach ($roles as $r) {
+					if ($r->getRole() != Elm_Model_Resource_Plot::ROLE_CREATOR) {
+						$plot = Elm::getModel('plot')->load($id);
+						$plot->setUserRole($r->getRole());
+						$plot->setAssociationDate($r->getCreatedAt());
+						$this->_plots[] = $plot;
+					}
 				}
 			}
 		}
 		return $this->_plots;
+	}
+
+	/**
+	 * Get plots
+	 *
+	 * @return mixed
+	 */
+	public function getNonWatching()
+	{
+		foreach ($this->getPlots() as $plot) {
+			if ($plot->getUserRole() != Elm_Model_Resource_Plot::ROLE_CREATOR && $plot->getUserRole() != Elm_Model_Resource_Plot::ROLE_WATCHER) {
+				$plots[] = $plot;
+			}
+		}
+		return $plots;
+	}
+
+	/**
+	 * Get plots
+	 *
+	 * @return mixed
+	 */
+	public function getWatching()
+	{
+		foreach ($this->getPlots() as $plot) {
+			if ($plot->getUserRole() == Elm_Model_Resource_Plot::ROLE_WATCHER) {
+				$plots[] = $plot;
+			}
+		}
+		return $plots;
 	}
 
 	public function hasPlots()
@@ -303,6 +355,8 @@ class Elm_Model_User extends Colony_Model_Abstract
 	 */
 	public function getRole()
 	{
+		return $this->getUserRole();
+
 		foreach ($this->getUserRole() as $role) {
 			if ($role['role'] != Elm_Model_Resource_Plot::ROLE_CREATOR && $role['role'] != Elm_Model_Resource_Plot::ROLE_WATCHER) {
 				return $role['role'];

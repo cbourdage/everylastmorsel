@@ -1,0 +1,34 @@
+<?php
+$users = $this->users;
+?>
+<?php if (count($users)) : ?>
+	<ul class="list-block user-list list details">
+	<?php foreach ($users as $user) : ?>
+		<li>
+			<figure>
+				<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="150px" />
+			</figure>
+			<div class="user-details details">
+				<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
+				<p class="role">
+					<b><?php echo $user->getRole(); ?></b>
+					<i>since <?php echo $this->Data()->formatDate($user->getCreatedAt()); ?></i>
+					<?php if ($user->isMe()) : ?>
+						<i>(Me)</i>
+					<?php endif; ?>
+				</p>
+				<p><?php echo $user->getAbout(); ?></p>
+				<?php if (!$user->isMe() && $this->canContact) : ?>
+					<p class="buttons-set">
+						<a href="#contact" class="btn btn-grey contact-button" title="Contact <?php echo $user->getName(); ?>" data-toggle="modal" data-to="<?php echo $user->getId(); ?>">
+							<span>Contact <?php echo $user->getName(); ?></span>
+						</a>
+					</p>
+				<?php endif; ?>
+			</div>
+		</li>
+	<?php endforeach; ?>
+	</ul>
+<?php else : ?>
+	<p>Sorry no users associated. Get sharing!</p>
+<?php endif; ?>

@@ -4,15 +4,16 @@ require_once 'controllers/User/AbstractController.php';
 
 class Elm_UserController extends Elm_User_AbstractController
 {
+	/**
+	 *
+	 */
 	public function preDispatch()
 	{
-		$userId = $this->getRequest()->getParam('u');
-		$user = Elm::getModel('user')->load($userId);
-
-		if ($user->getId()) {
-			$this->view->user = $user;
-			Zend_Registry::set('current_user', $user);
-			$this->view->headTitle()->prepend($this->view->user->getFullname());
+		if ($userId = $this->getRequest()->getParam('u')) {
+			$user = Elm::getModel('user')->load($userId);
+			if ($user->getId()) {
+				$this->_init();
+			}
 		}
 	}
 

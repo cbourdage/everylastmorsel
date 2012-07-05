@@ -1,29 +1,29 @@
 <?php
-$_session = Elm::getSingleton('user/session');
-$_user = $this->user;
+$session = Elm::getSingleton('user/session');
+$user = $this->user;
 ?>
 <?php echo $this->Message()->render(); ?>
 <div class="inner-content-wrapper profile">
 	<div class="top">
-		<h2><?php echo $_user->getName(); ?></h2>
+		<h2><?php echo $user->getName(); ?></h2>
 		<ul class="list-inline">
-			<li><?php echo $_user->getLocation(); ?></li>
-			<li><?php echo $_user->getLocation(); ?></li>
+			<li><?php echo $user->getLocation(); ?></li>
+			<li><?php echo $user->getLocation(); ?></li>
 		</ul>
 	</div>
 
-	<?php echo $this->partial('user/_navigation.phtml', array('user' => $_user)); ?>
+	<?php echo $this->partial('user/_navigation.phtml', array('user' => $user)); ?>
 
-<?php if ($_user->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC) : ?>
+<?php if ($user->isPrivate()) : ?>
 	<h2 class="private-user">This user is private.</h2>
 <?php else : ?>
-	<h2 class="blue">About <?= $_user->getFirstname(); ?></h2>
+	<h2 class="blue">About <?= $user->getFirstname(); ?></h2>
 	<div id="about" class="blocked-content about-me">
-		<p><?= str_replace('<br />', '</p><p>', nl2br($_user->getAbout())); ?></p>
+		<p><?= str_replace('<br />', '</p><p>', nl2br($user->getAbout())); ?></p>
 	</div>
 
 	<div id="feed" class="blocked-content">
-		<?php //echo $this->partial('profile/feed/list.phtml', array('user' => $_user)); ?>
+		<?php //echo $this->partial('profile/feed/list.phtml', array('user' => $user)); ?>
 	</div>
 <?php endif; ?>
 </div>

@@ -28,6 +28,8 @@ class Elm_AbstractController extends Zend_Controller_Action
 
 	protected $_session;
 
+	protected $_isAjax = false;
+
     /**
      * Predispatch: should set layout area
      *
@@ -59,12 +61,17 @@ class Elm_AbstractController extends Zend_Controller_Action
     /**
      * Sets last visited url
      *
-     * @return Colony_Controller_Action
+     * @return Zend_Controller_Action
      */
     public function postDispatch()
     {
         parent::postDispatch();
-		Elm::getSingleton('user/session')->setLastUrl = $this->getCurrentUrl();
+		$session = Elm::getSingleton('user/session');
+
+		if (!$this->_isAjax && !preg_match('/(favicon)/i', $this->getCurrentUrl())) {
+			$session->lastUrl = $this->getCurrentUrl();
+			$session->beforeAuthUrl = $this->getCurrentUrl();
+		}
 		// @TODO start using $helper->escape();
 		$this->view->setEscape('stripslashes');
         return $this;
@@ -89,6 +96,7 @@ class Elm_AbstractController extends Zend_Controller_Action
 	protected function _initAjax()
 	{
 		$this->_helper->layout()->disableLayout();
+		$this->_isAjax = true;
 	}
 
 	/**

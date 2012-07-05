@@ -1,4 +1,6 @@
-<?php $session = Elm::getSingleton('user/session'); ?>
+<?php
+$session = Elm::getSingleton('user/session');
+?>
 <?php if (Zend_Registry::isRegistered('current_plot') || $this->plot) : ?>
 	<?php $plot = $this->plot ? $this->plot : Zend_Registry::get('current_plot') ; ?>
 	<figure id="mainImage">
@@ -10,37 +12,37 @@
 				<?php //echo $this->Social()->getTwitterLink(); ?>
 				<a href="https://twitter.com/share" class="twitter-share-button"
 				   data-related="everylastmorsel"
-				   data-url="<?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
-				   data-text="Support this garden: <?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
+				   data-url="<?php //Zend_Controller_Front::getInstance()->getCurrentUrl(); ?>"
+				   data-url="<?php echo Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
+				   data-text="Support this garden: <?php echo Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
 				   data-hashtags="everylastmorsel"
 				   data-lang="en" data-size="large" data-count="none">Tweet</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			</li>
 			<li>
-				<div class="fb-send"  data-font="arial"
-					data-href="<?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
-				   	data-text="Support this garden: <?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"></div>
+				<div class="fb-send" data-font="arial"
+					data-href="<?php echo Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
+				   	data-text="Support this garden: <?php echo Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"></div>
 			</li>
 			<li>
-				<div class="g-plusone" data-annotation="none" href="<?php Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"></div>
+				<div class="g-plusone" data-annotation="none" href="<?php echo Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"></div>
 			</li>
 		</ul>
 	</div>
 
-<?php if ($session->isLoggedIn()) : ?>
-	<div class="btn-group">
-		<?php if (!$plot->isWatching($session->user) && !$plot->isAssociated($session->user, true)) : ?>
-			<form action="<?php echo $this->url('plot/watch-this'); ?>" method="post">
-				<input type="hidden" name="plot_id" value="<?php echo $plot->getId(); ?>" />
-				<input type="hidden" name="user_id" value="<?php echo $session->user->getId(); ?>" />
-				<button type="submit" class="btn btn-primary">Watch This</button>
-			</form>
-		<?php endif; ?>
-
-		<?php if ($plot->isWatching($session->user)) : ?>
-			<button type="button" class="btn btn-inverse">Watching this Garden</button>
-		<?php endif; ?>
-	</div>
-<?php endif; ?>
+	<?php if ($session->isLoggedIn()) : ?>
+		<div class="btn-group">
+			<?php if ($plot->isWatching($session->user)) : ?>
+				<button type="button" class="btn btn-grey"><span>Watching this Garden</span></button>
+			<?php else : ?>
+				<form action="<?php echo $this->url('plot/watch-this'); ?>" method="post">
+					<input type="hidden" name="plot_id" value="<?php echo $plot->getId(); ?>" />
+					<input type="hidden" name="user_id" value="<?php echo $session->user->getId(); ?>" />
+					<button type="submit" class="btn btn-blue watch-this"><span>Watch This Garden</span></button>
+				</form>
+			<?php endif; ?>
+		</div>
+		<button type="button" class="btn btn-yellow contact-owner"><span>Contact Owner!</span></button>
+	<?php endif; ?>
 
 <?php endif; ?>

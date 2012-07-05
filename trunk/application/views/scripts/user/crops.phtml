@@ -14,7 +14,7 @@ $_user = $this->user;
 	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('user/_navigation.phtml', array('user' => $_user)); ?>
 
-<?php if ($_user->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC) : ?>
+<?php if ($user->isPrivate()) : ?>
 	<h2 class="private-user">This user is private.</h2>
 <?php else : ?>
 	<div id="plotsList" class="blocked-content clearfix plots-list">

@@ -62,12 +62,20 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
             'label'      => 'Username'
         ));*/
 
-		// @TODO Auto-populate zipcode based on ip address
-		$this->addElement('text', 'location', array(
+		$this->addElement('text', 'city', array(
             'filters'    => array('StringTrim'),
             'validators' => array(),
             'required'   => false,
-            'label'      => 'Location'
+            'label'      => 'City'
+        ));
+
+		$this->addElement('text', 'state', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(),
+            'required'   => false,
+            'label'      => 'State',
+			'value' => 'Illinois',
+			'disabled' => 'disabled'
         ));
 
         $this->addElement('password', 'password', array(

@@ -19,4 +19,13 @@ class Elm_View_Helper_Data extends Zend_View_Helper_Url
 	{
 		return Zend_Controller_Front::getInstance()->getRequest()->getHttpHost();
 	}
+
+	public function formatDate($date, $format = null)
+	{
+		$date = new Zend_Date($date);
+		if ($format === null) {
+			$format = 'MMMM d, YYYY';
+		}
+		return $date->toString($format);
+	}
 }

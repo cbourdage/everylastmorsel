@@ -8,8 +8,8 @@ $session = Elm::getSingleton('user/session');
 	</figure>
 	<div id="lowerColumn">
 		<?php if ($session->isLoggedIn() && !$session->user->isMe($_user) && strlen($this->placeholder('contact-modal')) > 0) : ?>
-			<p class="buttons">
-				<a href="#contactModal" class="btn btn-primary contact-button" data-toggle="modal" title="Contact <?php echo $_user->getName(); ?>"><span>Send Email</span></a>
+			<p class="buttons-set">
+				<a href="#contactModal" class="btn btn-yellow contact-button" title="Contact <?php echo $_user->getName(); ?>"><span>Send Email</span></a>
 			</p>
 
 			<?= $this->placeholder('contact-modal'); ?>

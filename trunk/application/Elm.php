@@ -73,12 +73,13 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
         $this->_view->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8');
         $this->_view->headMeta()->appendHttpEquiv('Content-Language', 'en-US');
         $this->_view->headLink()
-            ->appendStylesheet('/file-bin/css/960/reset.css')
+            //->appendStylesheet('/file-bin/css/960/reset.css')
 		 	->appendStylesheet('/file-bin/css/960/960.css')
-			->appendStylesheet('/file-bin/css/smoothness/jquery-ui-1.8.18.custom.css')
+			//->appendStylesheet('/file-bin/css/smoothness/jquery-ui-1.8.18.custom.css')
 			//->appendStylesheet('/file-bin/css/bootstrap.css')
             ->appendStylesheet('/file-bin/css/screen.css');
 		$this->_view->headScript()
+			->appendFile('/file-bin/js/lib/jquery-1.7.1.min.js', 'text/javascript')
 			->appendFile('/file-bin/js/elm.js', 'text/javascript');
         $this->_view->headTitle('Every Last Morsel')
 			->setSeparator(' | ');
@@ -493,6 +494,40 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
     }
 
 	/**
+	 * Profile method tracks timing of execution of certain actions. The name
+	 * parameter namespaces the action that is passed in. Accepts actions of
+	 * "start", "end" and null
+	 *
+	 * @static
+	 * @param string $name
+	 * @param string $action null|start|end
+	 */
+	public static function profile($name, $action = null)
+	{
+		static $profiles = array();
+		try {
+            if (!isset($profiles[$name])) {
+				$profiles[$name] = array(
+					'start' => array(),
+					'checkpoint' => array(),
+					'end' => array()
+				);
+            }
+
+			if ($action == 'start') {
+				$profiles[$name]['start'] = microtime(true);
+			} else if ($action == 'end') {
+				$profiles[$name]['end'] = microtime(true) - $profiles[$name]['start'];
+				self::log($profiles[$name], Zend_Log::INFO, 'profiles/' . $name . '.log');
+			} else {
+				$profiles[$name]['checkout'][] = microtime(true) - $profiles[$name]['start'];
+			}
+        }
+        catch (Exception $e) {
+        }
+	}
+
+	/**
      * Classes are named spaced using their module name
      * this returns that module name or the first class name segment.
      *
@@ -514,5 +549,30 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 		$name = ucwords(str_replace(array('/', '_'), ' ', $name));
 		return str_replace(' ', '_', $name);
     }
+
+	/**
+	 * Put in place because of row objects - should move out
+	 * and create own row objects for each row... abstract the zend_table_row
+	 * results out.
+	 *
+	 * @TODO abstract out the Zend_Table query results
+	 *
+	 * @static
+	 * @param $data
+	 * @return array
+	 */
+	public static function toArray($data)
+	{
+		if (is_object($data)) {
+			$data = get_object_vars($data);
+		}
+ 		// if is array loop through to check nested items for objects
+		if (is_array($data)) {
+			return array_map(__METHOD__, $data);
+		} else {
+			// Return array
+			return $data;
+		}
+	}
 }
 

@@ -5,7 +5,21 @@ var initialMarker;
 var zoomLevel = 14;
 //var browserSupportFlag = new Boolean();
 
-jQuery(function($) {
+!function($) {
+
+	// Init map height
+	var resizeMap = null;
+	(resizeMap = function() {
+		$('#mapCanvas').height($(window).height() - $('.header-container').outerHeight(true));
+	})();
+	window.onresize = function(e) {
+		resizeMap();
+	}
+
+	$('#howItWorks').on('click', function(e) {
+		$(this).toggleClass('active');
+	});
+
 	// Init location
 	_initRecurse();
 
@@ -135,6 +149,36 @@ jQuery(function($) {
 							$modal.find('h3').html(response.title);
 							$content.html(response.html);
 							$modal.modal('show');
+
+							// @TODO abstract out - create a login modal object
+							$('#mapModal form').on('submit', function(e) {
+								e.preventDefault();
+
+								$content.find('.alert').slideUp('fast', function() {
+									$(this).remove();
+								});
+
+								jQuery.ajax({
+									url: '/profile/login-ajax/?after_auth=/plot/create/',
+									//url: '/profile/login-ajax/',
+									data: $(this).serialize(),
+									type: 'post',
+									dataType: 'json',
+									success: function(response) {
+										if (response.success) {
+											window.location = response.location;
+										}  else {
+											elm.error(response.message, $content, 'prepend');
+											$modal.modal('show');
+										}
+									},
+									error: function() {
+										elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+										$modal.modal('show');
+									}
+								});
+								return false;
+							});
 						}
 					},
 					error: function() {
@@ -160,4 +204,4 @@ jQuery(function($) {
 			}
 		}
 	}
-});
+}(window.jQuery);

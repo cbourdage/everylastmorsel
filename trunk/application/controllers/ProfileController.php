@@ -46,33 +46,52 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	{
 		$session = $this->_getSession();
         if ($session->isLoggedIn()) {
-            $this->_redirect('/profile/');
+			$this->_redirect('/profile/');
             return;
         }
 
-		$form = new Elm_Model_Form_User_Login();
-		if ($this->getRequest()->isPost()) {
-            $post = $this->getRequest()->getPost();
-            if ($form->isValid($post)) {
-                try {
-                    $session->login($post['email'], $post['password']);
-        			if (preg_match('/(logout)/i', $session->beforeAuthUrl)) {
-						$session->beforeAuthUrl = '/profile/';
-					}
-					Elm::log($session->beforeAuthUrl);
-					$this->_redirect($session->beforeAuthUrl);
-                } catch (Colony_Exception $e) {
-                    $session->addError($e->getMessage());
-                } catch (Exception $e) {
-					$session->addError($e->getMessage());
-                }
-            } else {
-                $session->addError('Login and password are required.');
-            }
-        }
+		$form = new Elm_Model_Form_User_Create();
+		if ($session->formData) {
+			$form->setDefaults($session->formData);
+			$session->formData = null;
+		}
 
 		$this->view->headTitle()->prepend('Account Login');
 		$this->view->form = $form;
+	}
+
+	public function loginPostAction()
+	{
+		if (!$this->getRequest()->isPost()) {
+			$this->_redirect('/profile/login');
+			return;
+		}
+
+		$form = new Elm_Model_Form_User_Login();
+		$post = $this->getRequest()->getParams();
+		$session = $this->_getSession();
+
+		if ($form->isValid($post)) {
+			try {
+				$session->login($post['email'], $post['password']);
+				if (preg_match('/(logout)/i', $session->beforeAuthUrl)) {
+					$session->beforeAuthUrl = '/profile/';
+				}
+				$this->_redirect($session->beforeAuthUrl);
+				return;
+			} catch (Colony_Exception $e) {
+				$session->addError($e->getMessage());
+				Elm::logException($e);
+			} catch (Exception $e) {
+				$session->addError($e->getMessage());
+				Elm::logException($e);
+			}
+		} else {
+			$session->formData = $post;
+			$session->addError('Login and password are required.');
+		}
+
+		$this->_redirect('/profile/login');
 	}
 
 	/**
@@ -85,40 +104,39 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		$this->_initAjax();
 		$this->_helper->viewRenderer->setNoRender(true);
 
+		$request = $this->getRequest();
 		$response = array();
 		$session = $this->_getSession();
         if ($session->isLoggedIn()) {
 			$response = array(
 				'success' => true,
 				'error' => false,
-				'location' => $this->getRequest()->getParam('') ? $this->getRequest()->getParam('') : $this->getUrl('profile')
+				'location' => $request->getParam('after_auth') ? $request->getParam('after_auth') : $this->getUrl('profile')
 			);
         } else {
 			$form = new Elm_Model_Form_User_Login();
-			if ($this->getRequest()->isPost()) {
-				$post = $this->getRequest()->getPost();
-				if ($form->isValid($post)) {
-					try {
-						$session->login($post['email'], $post['password']);
-						$response = array(
-							'success' => true,
-							'error' => false,
-							'location' => $this->getRequest()->getParam('') ? $this->getRequest()->getParam('') : $this->getUrl('profile')
-						);
-					} catch (Exception $e) {
-						$response = array(
-							'success' => false,
-							'error' => true,
-							'message' => $e->getMessage()
-						);
-					}
-				} else {
+			$post = $this->getRequest()->getPost();
+			if ($this->getRequest()->isPost() && $form->isValid($post)) {
+				try {
+					$session->login($post['email'], $post['password']);
+					$response = array(
+						'success' => true,
+						'error' => false,
+						'location' => $request->getParam('after_auth') ? $request->getParam('after_auth') : $this->getUrl('profile')
+					);
+				} catch (Exception $e) {
 					$response = array(
 						'success' => false,
 						'error' => true,
-						'message' =>'Login and password are required.'
+						'message' => $e->getMessage()
 					);
 				}
+			} else {
+				$response = array(
+					'success' => false,
+					'error' => true,
+					'message' => 'Login and password are required.'
+				);
 			}
 		}
 
@@ -178,10 +196,39 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
         }
 
 		$form = new Elm_Model_Form_User_Create();
-		if ($this->getRequest()->isPost()) {
-			$errors = array();
-			$post = $this->getRequest()->getPost();
-			if ($form->isValid($post)) {
+		$form->setAction('/profile/create-post');
+
+		// Set data if stored in session b/c of an error
+		if ($location = Elm::getSingleton('session')->location) {
+			$form->setDefaults(array(
+				'city' => $location->getCity(),
+				'state' => $location->getState(),
+				'zipcode' => $location->getZip()
+			));
+		}
+
+		if ($session->formData) {
+			$form->setDefaults($session->formData);
+			$session->formData = null;
+		}
+
+		$this->view->headTitle()->prepend('Create Account');
+		$this->view->form = $form;
+	}
+
+	public function createPostAction()
+	{
+		if (!$this->getRequest()->isPost()) {
+			$this->_redirect('/profile/create');
+			return;
+		}
+
+		$form = new Elm_Model_Form_User_Create();
+		$post = $this->getRequest()->getParams();
+		$session = $this->_getSession();
+
+		if ($form->isValid($post)) {
+			try {
 				$user = Elm::getModel('user');
 				$user->setData($post)->setPassword($post['password']);
 				$user->save();
@@ -196,27 +243,19 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 				$session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
 				$this->_redirect('/profile/');
 				return;
-			} else {
-				//$session->formData = $this->getRequest()->getParams();
-				if (count($errors) > 0) {
-					foreach ($errors as $errorMessage) {
-						//$session->addError('Ah! Check all fields are filled out and try again.');
-						$session->addError($errorMessage);
-					}
-				} else {
-					$session->addError('Ah! Check all fields are filled out and try again.');
-				}
-				//$this->_redirect('/profile/create/');
+			} catch (Colony_Exception $e) {
+				$session->addError($e->getMessage());
+				Elm::logException($e);
+			} catch (Exception $e) {
+				$session->addError($e->getMessage());
+				Elm::logException($e);
 			}
+		} else {
+			$session->formData = $post;
+			$session->addError('Check all fields are filled out correctly.');
 		}
-		/*if ($session->formData) {
-			foreach ($form->getElements() as $element) {
-				$element->setValue($session->formData[$element->getName()]);
-			}
-		}*/
 
-		$this->view->headTitle()->prepend('Create Account');
-		$this->view->form = $form;
+		$this->_redirect('/plot/create');
 	}
 
 	/**
@@ -354,7 +393,6 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 
 		$this->view->form = $form;
 	}
-
 
 	/**
 	 * Users settings save action

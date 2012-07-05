@@ -1,24 +1,24 @@
 <?php
-$_session = Elm::getSingleton('user/session');
-$_user = $this->user;
+$session = Elm::getSingleton('user/session');
+$user = $this->user;
 ?>
 <div class="inner-content-wrapper profile">
 	<div class="top">
-		<h2><?php echo $_user->getName(); ?></h2>
+		<h2><?php echo $user->getName(); ?></h2>
 		<ul class="list-inline">
-			<li><?php echo $_user->getLocation(); ?></li>
-			<li><?php echo $_user->getLocation(); ?></li>
+			<li><?php echo $user->getLocation(); ?></li>
+			<li><?php echo $user->getLocation(); ?></li>
 		</ul>
 	</div>
 
 	<?php echo $this->Message()->render(); ?>
-	<?php echo $this->partial('user/_navigation.phtml', array('user' => $_user)); ?>
+	<?php echo $this->partial('user/_navigation.phtml', array('user' => $user)); ?>
 
-<?php if ($_user->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC) : ?>
+<?php if ($user->isPrivate()) : ?>
 	<h2 class="private-user">This user is private.</h2>
 <?php else : ?>
 	<div id="plotsList" class="blocked-content clearfix plots-list">
-		<?php echo $this->partial('plots/list.phtml', array('plots' => $_user->getPlots(), 'details' => true)); ?>
+		<?php echo $this->partial('plots/_list.phtml', array('plots' => $user->getPlots(), 'details' => true)); ?>
 	</div>
 <?php endif; ?>
 </div>

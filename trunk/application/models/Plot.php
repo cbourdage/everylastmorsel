@@ -78,11 +78,14 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 */
 	public function getUsers()
 	{
-		if (count($this->_users) < 1 && count($this->getUserIds()) > 0) {
-			foreach ($this->getUserIds() as $id => $role) {
-				$user = Elm::getModel('user')->load($id);
-				$user->setUserRole($role);
-				$this->_users[] = $user;
+		if (count($this->_users) < 1 && count($this->getAssociatedUsers()) > 0) {
+			foreach ($this->getAssociatedUsers() as $id => $roles) {
+				foreach ($roles as $r) {
+					$user = Elm::getModel('user')->load($id);
+					$user->setUserRole($r->getRole());
+					$user->setAssociationDate($r->getCreatedAt());
+					$this->_users[] = $user;
+				}
 			}
 		}
 
@@ -98,9 +101,10 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	{
 		if (count($this->_pendingUsers) < 1) {
 			$users = $this->_getResource()->getPendingUsers($this);
-			foreach ($users as $id => $role) {
+			foreach ($users as $id => $u) {
 				$user = Elm::getModel('user')->load($id);
-				$user->setUserRole($role);
+				$user->setUserRole($u->getRole());
+				$user->setAssociationDate($u->getCreatedAt());
 				$this->_pendingUsers[] = $user;
 			}
 		}
@@ -113,13 +117,27 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 *
 	 * @return mixed
 	 */
+	public function getNonWatchers()
+	{
+		foreach ($this->getUsers() as $user) {
+			if ($user->getRole() != Elm_Model_Resource_Plot::ROLE_CREATOR && $user->getRole() != Elm_Model_Resource_Plot::ROLE_WATCHER) {
+				$users[] = $user;
+			}
+		}
+
+		return $users;
+	}
+
+	/**
+	 * Get users
+	 *
+	 * @return mixed
+	 */
 	public function getWatchers()
 	{
-		if (count($this->_watchers) < 1 && count($this->getUserIds()) > 0) {
-			foreach ($this->getUserIds() as $id => $role) {
-				if ($role == Elm_Model_Resource_Plot::ROLE_WATCHER) {
-					$user = Elm::getModel('user')->load($id);
-					$user->setUserRole($role);
+		if (count($this->_watchers) < 1 && count($this->getAssociatedUsers()) > 0) {
+			foreach ($this->getUsers() as $user) {
+				if ($user->getRole() == Elm_Model_Resource_Plot::ROLE_WATCHER) {
 					$this->_watchers[] = $user;
 				}
 			}
@@ -144,7 +162,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
     /**
      * Send email with new account specific information
      *
-	 * @TODO send new plot email - http://stackoverflow.com/questions/1218191/how-can-i-make-email-template-in-zend-framework
+	 * @reference http://stackoverflow.com/questions/1218191/how-can-i-make-email-template-in-zend-framework
 	 *
 	 * @param string $backUrl
      * @return Elm_Model_User
@@ -196,6 +214,11 @@ class Elm_Model_Plot extends Colony_Model_Abstract
         return $this;
 	}
 
+	/**
+	 * @param $userId
+	 * @param $role
+	 * @return Elm_Model_Plot
+	 */
 	public function approveUser($userId, $role)
 	{
 		$this->_getResource()->updateAssociatedUser($this, $userId, $role, true);
@@ -217,23 +240,23 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 */
 	public function isAssociated($user, $isApproved = false)
 	{
-		return $this->_getResource()->isUserAssociated($this, $user->getId(), null, $isApproved);
-
-
-		/** Deprecated */
-		foreach ($this->getUsers() as $u) {
-			if ($user->getId() == $u->getId()) {
-				foreach ($u->getUserRole() as $role) {
-					if ($role['is_approved'] >= 0 && (
-							$role['role'] != Elm_Model_Resource_Plot::ROLE_CREATOR
-							&& $role['role'] != Elm_Model_Resource_Plot::ROLE_WATCHER
-					)) {
-						return true;
-					}
-				}
+		return $this->_getResource()->isUserAssociated(
+			$this,
+			$user->getId(),
+			array(
+				Elm_Model_Resource_Plot::ROLE_GARDENER,
+				Elm_Model_Resource_Plot::ROLE_OWNER
+			),
+			$isApproved
+		);
+		foreach ($user->getPlotIds() as $id => $role) {
+			if ($this->getId() == $id && $role != Elm_Model_Resource_Plot::ROLE_WATCHER) {
+				return true;
 			}
 		}
 		return false;
+		// checks all associations - we only want those !watchers
+		//return $this->_getResource()->isUserAssociated($this, $user->getId(), null, $isApproved);
 	}
 
 	/**
@@ -276,7 +299,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	{
 		return $this->_getResource()->isUserAssociated($this, $user->getId(), Elm_Model_Resource_Plot::ROLE_WATCHER);
 
-		/** Deprecated */
+		/** @Deprecated */
 		foreach ($this->getWatchers() as $u) {
 			if ($user->getId() == $u->getId()) {
 				return true;

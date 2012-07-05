@@ -183,117 +183,7 @@ window.elm.error = function(message, $el, location) {
 
 
 
-(function ($) {
-
-	/**
-	 * Refactor into the bootstrap plugin called
-	 * @TODO: $.fn.editable.Constructor = Editable
-	 */
-	elm.editables = function() {
-		var editable = '[data-edit="editable"]',
-			$form = null,
-			$modal = null;
-
-		// bind on click to editable trigger
-		$('body').on('click', editable, function(e) {
-			var editableEls = $('.editable');
-			$modal = $($(this).attr('data-target'));
-			$form = $modal.find('form');
-
-			if ($(this).hasClass('editing')) {
-				$(this).removeClass('editing').html('Edit');
-				editableEls.each(function(key, item) {
-					var $el = $(item);
-					if ($el.next().hasClass('update-button')) {
-						$el.next().remove();
-					}
-				});
-			} else {
-				$(this).addClass('editing').html('Done Editing');
-				editableEls.each(function(key, item) {
-					var $el = $(item);
-					if (!$el.next().hasClass('update-button')) {
-						$el.after('<button class="btn btn-warning btn-mini update-button">Update</button>');
-					}
-				});
-			}
-		});
-
-
-		$('body').on('click', '.update-button', function(e) {
-			e.preventDefault();
-			var $el = $(this).prev(),
-				dataType = $el.attr('data-type'),
-				$input = null;
-
-			switch (dataType) {
-				case 'textarea':
-					$input = $('<textarea name="' + $el.attr('data-name') + '" id="">' +  $el.html().trim() + '</textarea>');
-					break;
-				default:
-					$input = $('<input type="' + dataType + '" name="' + $el.attr('data-name') + '" id="" value="' +  $el.html().trim() + '" />');
-					break;
-			}
-
-			$form.find('.wrapper').html($input);
-			$form.find('[data-name="update"]').val($el.attr('data-name'));
-			console.log($form.find('[data-name="update"]').val());
-			$modal.find('h3').html($el.attr('data-title'));
-			$modal.modal('show');
-		});
-
-
-		$('body').on('click', '[data-submit="form"]', function(e) {
-			e.preventDefault();
-			var $form = $($(this).attr('data-form'));
-			var $alert = $form.find('.alert');
-
-			if ($alert.length) {
-				$alert.alert('close');
-			}
-
-			$.ajax({
-				url: $form.attr('action'),
-				type: 'post',
-				data: $form.serialize(),
-				success: function(response) {
-					if (!elm.success(response)) {
-						return;
-					}
-
-					if (response.success) {
-						$alert = jQuery.createSuccessAlert(response.message).hide();
-
-						var inputName = $form.find('[data-name="update"]').val();
-						console.log($form.find('[data-name="update"]').val());
-						$('.editable').each(function(key, item) {
-							var $el = $(item);
-							if ($el.attr('data-name') == inputName) {
-								$el.html(response.value);
-							}
-						});
-
-						window.setTimeout(function() {
-							$modal.modal('hide');
-							$.formReset($form);
-							$alert.alert('close');
-						}, 2000);
-					} else {
-						$alert = jQuery.createErrorAlert(response.message).hide();
-					}
-
-					if ($alert.length) {
-						$form.prepend($alert);
-						$alert.fadeIn();
-					}
-				},
-				error: function() {
-					elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
-				}
-			});
-		});
-	};
-
+!function ($) {
 	$(function() {
 
 		/**
@@ -316,7 +206,102 @@ window.elm.error = function(message, $el, location) {
 			});
 		}
 
+		/**
+		 * Invole me button click to open modal
+		 */
+		$('body').on('click', 'a[href="#involve-me"]', function(e) {
+			e.preventDefault();
+			$('#involveMeModal').modal('show');
+		});
 
+		/**
+		 * Involve me form submit
+		 */
+		$('#getInvolvedModalForm').on('submit', function(e) {
+			return;
+
+			e.preventDefault();
+			var $form = $(this),
+				$modal = $('#involveMeModal'),
+				$content = $modal.find('.modal-body'),
+				$successModal = $('#involveMeSuccessModal');
+
+			$content.find('.alert').slideUp('fast', function() {
+				$(this).remove();
+			});
+
+			$.ajax({
+				url: $form.attr('action'),
+				type: 'post',
+				data: $form.serialize(),
+				success: function(response) {
+					if (response.success) {
+						$.formReset($form);
+						$modal.modal('hide');
+						$successModal.find('.modal-body h3').html(response.message);
+						$successModal.modal('show').delay(3000, function(e) { });
+					} else {
+						elm.error(response.message, $content, 'prepend');
+					}
+				},
+				error: function() {
+					elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+				}
+			});
+			return false;
+		});
+
+
+		/**
+		 * Contact button click to open modal
+		 */
+		$('body').on('click', '.contact-button', function(e) {
+			e.preventDefault();
+			$('#contactModal').modal('show');
+			if ($(this).data('to')) {
+				$('#contactModalForm').find('input[name="user_to_id"]').val($(this).data('to'));
+			}
+		});
+
+		/**
+		 * Involve me form submit
+		 */
+		$('#contactModalForm').on('submit', function(e) {
+			e.preventDefault();
+			var $form = $(this),
+				$modal = $('#contactModal'),
+				$content = $modal.find('.modal-body'),
+				$successModal = $('#contactSuccessModal');
+
+			$content.find('.alert').slideUp('fast', function() {
+				$(this).remove();
+			});
+
+			$.ajax({
+				url: $form.attr('action'),
+				type: 'post',
+				data: $form.serialize(),
+				success: function(response) {
+					if (response.success) {
+						$.formReset($form);
+						$modal.modal('hide');
+
+						$successModal.find('.modal-body h3').html(response.message);
+						$successModal.modal('show').delay(3000, function(e) { });
+					} else {
+						elm.error(response.message, $content, 'prepend');
+					}
+				},
+				error: function() {
+					elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+				}
+			});
+			return false;
+		});
+
+		/**
+		 * Simple toggle to show additional content
+		 */
 		$('body').on('click', 'a.action', function(e) {
 			e.preventDefault();
 			$($(this).attr('href')).show();
@@ -335,4 +320,4 @@ window.elm.error = function(message, $el, location) {
 			});
 		});
 	});
-}(jQuery));
+}(window.jQuery);

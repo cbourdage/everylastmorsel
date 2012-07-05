@@ -30,8 +30,11 @@ class Elm_Model_Geolocation extends Colony_Object
 			//$results = file_get_contents("http://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$long&sensor=false");
 			//$this->_results = Zend_Json::decode($results);
 
-			Elm::log($url, Zend_Log::INFO, date('Y-m-d') . '-geolocation-requests.log');
-			Elm::log($this->_results, Zend_Log::INFO, date('Y-m-d') . '-geolocation-requests.log');
+			/**
+			 * @TODO store location data in database
+			 */
+			Elm::log($url, Zend_Log::INFO, 'google/' . date('Y-m-d') . '-geolocation-requests.log');
+			Elm::log($this->_results, Zend_Log::INFO, 'google/' . date('Y-m-d') . '-geolocation-requests.log');
 
 			$this->_location = $this->_results['results'][0];
 

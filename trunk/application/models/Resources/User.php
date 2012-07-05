@@ -39,6 +39,10 @@ class Elm_Model_Resource_User extends Colony_Db_Table
         return parent::_afterSave($object);
     }
 
+	/**
+	 * @param $object
+	 * @return Elm_Model_Resource_User
+	 */
 	protected function _afterLoad($object)
 	{
 		parent::_afterLoad($object);
@@ -51,11 +55,11 @@ class Elm_Model_Resource_User extends Colony_Db_Table
 			if ($rows = $this->getDefaultAdapter()->fetchAll($select)) {
 				$plots = array();
 				foreach ($rows as $row) {
-					$plots[$row->plot_id] = $row->role; //Elm::getModel('plot')->load($row->plot_id, false);
+					$plots[$row->plot_id][] = new Colony_Object(Elm::toArray($row)); //Elm::getModel('plot')->load($row->plot_id, false);
 				}
-				$object->setPlotIds($plots);
+				$object->setAssociatedPlots($plots);
 			} else {
-				$object->setPlotIds(null);
+				$object->setAssociatedPlots(null);
 			}
 		}
 

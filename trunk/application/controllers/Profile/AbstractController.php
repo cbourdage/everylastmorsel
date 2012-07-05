@@ -28,11 +28,12 @@ class Elm_Profile_AbstractController extends Elm_AbstractController
 	protected function _init()
 	{
 		$user = $this->_getSession()->getUser();
-		$this->view->headTitle()->prepend($user->getFirstname() . ' ' . $user->getLastname());
-
 		$this->_user = $user;
-		$this->view->user = $user;
 		Zend_Registry::set('current_user', $user);
+
+		$this->view->headTitle()->prepend($this->_user->getName());
+		$this->view->user = $this->_user;
+		$this->view->canContact = $this->_user->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC ? true : false;
 
 		return $this;
 	}
@@ -49,7 +50,7 @@ class Elm_Profile_AbstractController extends Elm_AbstractController
 			$layout->setLayout('profile-layout');
         }
 
-		$this->view->placeholder('contact-modal')->set($this->view->render('communication/_modal.phtml'));
+		//$this->view->placeholder('contact-modal')->set($this->view->render('communication/_modal.phtml'));
 		$this->view->placeholder('sidebar')->set($this->view->render('profile/_sidebar.phtml'));
 	}
 }
