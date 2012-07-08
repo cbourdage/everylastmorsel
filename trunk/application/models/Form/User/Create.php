@@ -52,16 +52,6 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
             'label'      => 'Email'
         ));
 
-		/*$this->addElement('text', 'alias', array(
-            'filters'    => array('StringTrim'),
-            'validators' => array(
-                array('StringLength', true, array(3, 24)),
-                //array('UniqueAlias', false, array(Elm::getModel('user'))),
-            ),
-            'required'   => true,
-            'label'      => 'Username'
-        ));*/
-
 		$this->addElement('text', 'city', array(
             'filters'    => array('StringTrim'),
             'validators' => array(),
@@ -74,9 +64,16 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
             'validators' => array(),
             'required'   => false,
             'label'      => 'State',
-			'value' => 'Illinois',
-			'disabled' => 'disabled'
+			'value' => 'Illinois'
         ));
+
+/*		$this->addElement('text', 'zipcode', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(),
+            'required'   => false,
+            'label'      => 'State',
+			'value' => 'Illinois'
+        ));*/
 
         $this->addElement('password', 'password', array(
             'filters'    => array('StringTrim'),

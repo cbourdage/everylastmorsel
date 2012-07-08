@@ -1,34 +1,23 @@
 <?php
-$urlHelper = new Elm_View_Helper_Url()
+$urlHelper = new Elm_View_Helper_Url();
 ?>
-<body style="background: #efefef;">
-<table>
-	<tr>
-		<td>ELM Logo</td>
-	</tr>
-	<tr>
-		<td>
-			<h1>Confirmed</h1>
-			<p>We believed you all along but we want to curate the site and help you share the produce.</p>
-			<p>
-				You can log into your profile <a href="<?php echo $urlHelper->url('user/login'); ?>">here</a> and you can view your profile
-				from <a href="<?php echo $this->user->getUrl(); ?>">here</a>. Additionally, if you'd like to engage in your community
-				you can do so <a href="<?php echo $urlHelper->url('community'); ?>">here</a>!
-			</p>
-			<p>
-				Thanks, <br />
-				Every Last Morsel
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<ul>
-				<li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Contact Us</a></li>
-				<li><a href="#">FAQ</a></li>
-			</ul>
-		</td>
-	</tr>
-</table>
+<body style="color: #222; text-align: center">
+	<table style="background: #F8F6F4; border-bottom: 2px solid #ccc; color: #666; font-family: arial, sans-serif; font-size: 13px; margin: 0 auto; text-align: left;" width="450">
+		<?php echo $this->partial('_header.phtml'); ?>
+		<tr>
+			<td style="padding: 15px;">
+				<p style="color: #1DA5B1; font-size: 16px;">Now that that is settled...</p>
+				<p>
+					You can log into your profile <a style="color: #1DA5B1;" href="<?php echo $urlHelper->url('profile/login'); ?>">here</a>
+					and you can view your profile from <a style="color: #1DA5B1;" href="<?php echo $this->user->getUrl(); ?>">here</a>.
+				</p>
+				<p>Keep an eye out as we continue to grow and provide more services.</p>
+				<p>
+					Thanks, <br />
+					Every Last Morsel
+				</p>
+			</td>
+		</tr>
+		<?php echo $this->partial('_footer.phtml'); ?>
+	</table>
 </body>

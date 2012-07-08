@@ -2,16 +2,16 @@
 $session = Elm::getSingleton('user/session');
 $user = $this->user;
 ?>
-<?php echo $this->Message()->render(); ?>
 <div class="inner-content-wrapper plots">
 	<div class="top">
 		<h2><?php echo $user->getName(); ?></h2>
 		<ul class="list-inline">
-			<li><?php echo $user->getLocation(); ?></li>
-			<li><?php echo $user->getLocation(); ?></li>
+			<li><?php echo $user->getCity(); ?>,</li>
+			<li><?php echo $user->getState(); ?></li>
 		</ul>
 	</div>
 
+	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('profile/_navigation.phtml'); ?>
 
 	<h2 class="blue">Plots</h2>

@@ -1,5 +1,3 @@
-jQuery.noConflict();
-
 
 /**
  * Globals
@@ -11,69 +9,6 @@ var elm = {
 };
 
 window.elm = elm;
-
-
-/**
- * Helper functions
- */
-jQuery.extend({
-	serializeJSON : function(json) {
-		var string = JSON.stringify(json);
-		return string.replace(/([{}"])/g, '').replace(/:/g, '=').replace(/,/g, '&');
-	},
-
-	/**
-	 * <div class="alert hide fade in">
-		  <a class="close" data-dismiss="alert">×</a>
-		  message
-		</div>
-	 */
-	createAlert : function(type, message) {
-		return jQuery('<div class="alert hide fade in ' + type + '"><a class="close" data-dismiss="alert">×</a>' + message + '</div>');
-	},
-
-	createErrorAlert : function(message) {
-		return jQuery.createAlert('alert-error', message);
-	},
-
-	createInfoAlert : function(message) {
-		return jQuery.createAlert('alert-info', message);
-	},
-
-	createWarningAlert : function(message) {
-		return jQuery.createAlert('alert-warning', message);
-	},
-
-	createSuccessAlert : function(message) {
-		return jQuery.createAlert('alert-success', message);
-	},
-
-	formReset : function(form) {
-		var formEls = form.get(0).elements;
-		for (var i = 0; i < formEls.length; i++) {
-			switch (formEls[i].type.toLowerCase()) {
-				case "text":
-				case "password":
-				case "textarea":
-					formEls[i].value = "";
-					break;
-				case "radio":
-				case "checkbox":
-					if (formEls[i].checked) {
-						formEls[i].checked = false;
-					}
-					break;
-				case "select-one":
-				case "select-multi":
-					formEls[i].selectedIndex = -1;
-					break;
-				default:
-					break;
-			}
-		}
-	}
-});
-
 
 // Initialize the users location
 function initLocation() {
@@ -130,14 +65,9 @@ function initLocation() {
 	}
 }
 
-
 // Initialize location
 initLocation();
 
-
-/**
- * Elm specifics
- */
 
 /**
  * checks response for location and redirects
@@ -180,7 +110,6 @@ window.elm.error = function(message, $el, location) {
 
 	$message.fadeIn();
 };
-
 
 
 !function ($) {
@@ -251,7 +180,6 @@ window.elm.error = function(message, $el, location) {
 			return false;
 		});
 
-
 		/**
 		 * Contact button click to open modal
 		 */
@@ -271,21 +199,26 @@ window.elm.error = function(message, $el, location) {
 			var $form = $(this),
 				$modal = $('#contactModal'),
 				$content = $modal.find('.modal-body'),
-				$successModal = $('#contactSuccessModal');
+				$successModal = $('#contactSuccessModal'),
+				$loader = $('<span class="loader green">Loading...</span>');
 
 			$content.find('.alert').slideUp('fast', function() {
 				$(this).remove();
 			});
+			$content.find('button').attr('disable', 'disable').after($loader);
 
 			$.ajax({
 				url: $form.attr('action'),
 				type: 'post',
 				data: $form.serialize(),
+				complete: function(response) {
+					$loader.remove();
+					$content.find('button').attr('disable', '');
+				},
 				success: function(response) {
 					if (response.success) {
 						$.formReset($form);
 						$modal.modal('hide');
-
 						$successModal.find('.modal-body h3').html(response.message);
 						$successModal.modal('show').delay(3000, function(e) { });
 					} else {
@@ -321,3 +254,65 @@ window.elm.error = function(message, $el, location) {
 		});
 	});
 }(window.jQuery);
+
+
+/**
+ * Helper functions
+ */
+jQuery.extend({
+	serializeJSON : function(json) {
+		var string = JSON.stringify(json);
+		return string.replace(/([{}"])/g, '').replace(/:/g, '=').replace(/,/g, '&');
+	},
+
+	/**
+	 * <div class="alert hide fade in">
+		  <a class="close" data-dismiss="alert">×</a>
+		  message
+		</div>
+	 */
+	createAlert : function(type, message) {
+		return jQuery('<div class="alert hide fade in ' + type + '"><a class="close" data-dismiss="alert">×</a>' + message + '</div>');
+	},
+
+	createErrorAlert : function(message) {
+		return jQuery.createAlert('alert-error', message);
+	},
+
+	createInfoAlert : function(message) {
+		return jQuery.createAlert('alert-info', message);
+	},
+
+	createWarningAlert : function(message) {
+		return jQuery.createAlert('alert-warning', message);
+	},
+
+	createSuccessAlert : function(message) {
+		return jQuery.createAlert('alert-success', message);
+	},
+
+	formReset : function(form) {
+		var formEls = form.get(0).elements;
+		for (var i = 0; i < formEls.length; i++) {
+			switch (formEls[i].type.toLowerCase()) {
+				case "text":
+				case "password":
+				case "textarea":
+					formEls[i].value = "";
+					break;
+				case "radio":
+				case "checkbox":
+					if (formEls[i].checked) {
+						formEls[i].checked = false;
+					}
+					break;
+				case "select-one":
+				case "select-multi":
+					formEls[i].selectedIndex = -1;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+});

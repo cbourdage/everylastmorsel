@@ -23,6 +23,9 @@ class Elm_IndexController extends Elm_AbstractController
 		$this->_helper->layout()->setLayout('home-page');
     }
 
+	/**
+	 *
+	 */
 	public function plotPointAction()
 	{
 		$this->_initAjax();
@@ -120,6 +123,9 @@ class Elm_IndexController extends Elm_AbstractController
 	{
 	}
 
+	/**
+	 *
+	 */
 	public function comingSoonAction()
 	{
 		$this->_helper->layout()->setLayout('coming-soon');
@@ -129,6 +135,9 @@ class Elm_IndexController extends Elm_AbstractController
 		$this->view->headLink()->appendStylesheet('/file-bin/css/coming-soon.css');
 	}
 
+	/**
+	 *
+	 */
 	public function comingSoonPostAction()
 	{
 		if ($this->getRequest()->isPost()) {
@@ -182,7 +191,7 @@ HTMLBODY;
 					try {
 						// send email out
 						$mail = new Zend_Mail('utf-8');
-						$mail->addTo("", $email);
+						$mail->addTo("", $model->getEmail());
 						$mail->setSubject("Every Last Morsel welcomes you.");
 						$mail->setFrom("greetings@everylastmorsel.com", "Every Last Morsel Communication");
 						$mail->setBodyHtml($bodyHtml);

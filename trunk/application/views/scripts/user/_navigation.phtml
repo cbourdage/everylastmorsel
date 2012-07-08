@@ -1,11 +1,11 @@
 <?php
-$_session = Elm::getSingleton('user/session');
-$_user = $this->user;
+$session = Elm::getSingleton('user/session');
+$user = $this->user;
 ?>
 <nav id="profileNavigation">
 	<ul class="list-block">
-		<li><a href="<?= $_user->getUrl(); ?>" title="About Me">About</a></li>
-		<li><a href="<?= $this->url('', array('_route' => 'user-plots', 'u' => $_user->getId())); ?>" title="Plots">Plots</a></li>
-		<li><a href="<?= $this->url('', array('_route' => 'user-crops', 'u' => $_user->getId())); ?>" title="Crops">Crops</a></li>
+		<li><a href="<?= $user->getUrl(); ?>" title="About Me">About</a></li>
+		<li><a href="<?= $this->url('', array('_route' => 'user-plots', 'u' => $user->getId())); ?>" title="Plots">Plots</a></li>
+		<li><a href="<?= $this->url('', array('_route' => 'user-crops', 'u' => $user->getId())); ?>" title="Crops">Crops</a></li>
 	</ul>
 </nav>

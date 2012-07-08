@@ -29,6 +29,9 @@ class Elm_CommunicationController extends Elm_AbstractController
 		}
 	}
 
+	/**
+	 * @return mixed
+	 */
 	public function sendAction()
 	{
 		$this->_initAjax(true);
@@ -46,9 +49,14 @@ class Elm_CommunicationController extends Elm_AbstractController
 				$this->_helper->json->sendJson(array(
 					'success' => true,
 					'error' => false,
-					'message' => 'Successfully sent your message along!'
+					'message' => "You're message has been successfully sent!"
 				));
 			} else {
+				$this->_helper->json->sendJson(array(
+					'success' => true,
+					'error' => false,
+					'message' => "You're message has been successfully sent!"
+				));
 				$this->_helper->json->sendJson(array(
 					'success' => false,
 					'error' => true,

@@ -21,7 +21,7 @@ $users = $this->users;
 				<?php if (!$user->isMe() && $this->canContact) : ?>
 					<p class="buttons-set">
 						<a href="#contact" class="btn btn-grey contact-button" title="Contact <?php echo $user->getName(); ?>" data-toggle="modal" data-to="<?php echo $user->getId(); ?>">
-							<span>Contact <?php echo $user->getName(); ?></span>
+							<span>Contact <?php echo $user->getFirstname(); ?></span>
 						</a>
 					</p>
 				<?php endif; ?>

@@ -45,6 +45,7 @@ VALUES ('GROW4YOU', 'General bucket for testing.', 50, 0, 1, NOW()),
 	('PEASINAPOD', 'Invite code for early adopters to share with friends.', 300, 0, 1, NOW());
 
 
+ALTER TABLE `plot` ADD COLUMN `visibility` varchar(16) DEFAULT 'public' AFTER `privacy`;
 ALTER TABLE `user_plot_relationships` ADD COLUMN `created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `is_approved`;
 
 ");

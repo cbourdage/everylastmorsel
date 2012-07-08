@@ -2,8 +2,10 @@
 $session = Elm::getSingleton('user/session')->user;
 ?>
 <div class="account-form account-create container_12">
-	<h1 class="turquiose">Howdy <?= $session->getFirstname(); ?>! Configure your plot.<br />
-		<span class="light-green">Create your garden!</span></h1>
+	<h1 class="turquiose">
+		Howdy <?= $session->getFirstname(); ?>! Configure your plot.<br />
+		<span class="light-green">Create your garden!</span>
+	</h1>
     <?php echo $this->Message()->render(); ?>
     <form action="<?php echo $this->form->getAction() ?>" method="post" id="form-validate">
         <ul class="fieldset">

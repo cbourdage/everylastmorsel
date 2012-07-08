@@ -83,7 +83,10 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 
 				if (isset($post['role'])) {
 					$plot->associateUser($post['user_id'], $post['role'], true);
+				} else {
+					$plot->associateUser($post['user_id'], 'Owner', true);
 				}
+
 				$user = $session->getUser();
 				$user->addData($post)->save();
 				$plot->createNewPlotStatus()->sendNewPlotEmail();
@@ -225,6 +228,10 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 */
 	public function pendingUsersAction()
 	{
+		if (!$this->_getSession()->isLoggedIn()) {
+			$this->_redirect('/profile/login');
+			return;
+		}
 		if (!$this->_isValid()) {
 			$this->_forward('no-route');
 			return;

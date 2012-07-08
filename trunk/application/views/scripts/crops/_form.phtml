@@ -1,0 +1,67 @@
+<?php
+$user = $this->user;
+$plot = $this->plot;
+$formData = $this->formData;
+?>
+<form action="<?php echo $this->url('crops/add'); ?>" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="user_id" value="<?= $user->getId(); ?>" />
+	<ul class="fieldset">
+		<li>
+			<label for="quantity">Plot</label>
+			<select name="plot_id">
+				<option value="">- Select -</option>
+				<?php foreach ($user->getPlots() as $plot) : ?>
+				<option value="<?= $plot->getId(); ?>"><?= $plot->getName(); ?></option>
+				<?php endforeach; ?>
+			</select>
+		</li>
+		<li>
+			<label for="name">Crop</label>
+			<input type="text" name="name" id="name" value="<?= $formData->getName(); ?>" />
+			or
+			<select name="crop_id">
+				<option value="">- Select -</option>
+				<?php foreach (Elm::getModel('crop')->getCrops() as $crop) : ?>
+				<option value="<?= $crop->getId(); ?>"><?= $crop->getName(); ?></option>
+				<?php endforeach; ?>
+			</select>
+		</li>
+		<li>
+			<label for="quantity">Number Planted</label>
+			<input type="text" name="quantity" id="quantity" value="<?= $formData->getQuantity(); ?>" />
+		</li>
+		<li>
+			<label for="coverage">Coverage (sq ft)</label>
+			<input type="text" name="coverage" id="coverage" value="<?= $formData->getCoverage(); ?>" />
+		</li>
+		<li>
+			<label for="date_planted">Date Planted</label>
+			<input type="text" name="date_planted" id="date_planted" value="<?= $formData->getDatePlanted(); ?>" />
+		</li>
+		<li>
+			<label>Starting Type</label>
+			<label for="starting_type_seed" class="radio">
+				<input type="radio" name="starting_type" id="starting_type_seed" value="seed" />
+				Seed
+			</label>
+			<label for="starting_type_seedling" class="radio">
+				<input type="radio" name="starting_type" id="starting_type_seedling" value="seedling" />
+				Seedling
+			</label>
+		</li>
+		<li>
+			<label for="conditions">Conditions</label>
+			<label for="conditions_sunny" class="radio">
+				<input type="radio" name="conditions" id="conditions_sunny" value="sunny" />
+				Sunny
+			</label>
+			<label for="conditions_partial_sun" class="radio">
+				<input type="radio" name="conditions" id="conditions_partial_sun" value="partial_sun" />
+				Partial Sun
+			</label>
+		</li>
+	</ul>
+	<p class="buttons-set">
+		<button type="submit" class="btn btn-primary">Add Crop</button>
+	</p>
+</form>

@@ -29,6 +29,20 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	}
 
 	/**
+	 * Index/view action
+	 */
+	public function emailTestingAction()
+	{
+		$this->_init();
+		$this->_helper->viewRenderer->setNoRender(true);
+
+		// email testing
+		//$this->_user->sendPasswordResetEmail();
+		//$plot = Elm::getModel('plot')->load(2);
+		//$plot->sendNewPlotEmail();
+	}
+
+	/**
 	 * About action
 	 */
 	public function aboutAction()
@@ -38,7 +52,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	}
 
 	/**
-	 * Login and login post actions
+	 * Login action
 	 *
 	 * @return void
 	 */
@@ -50,7 +64,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
             return;
         }
 
-		$form = new Elm_Model_Form_User_Create();
+		$form = new Elm_Model_Form_User_Login();
 		if ($session->formData) {
 			$form->setDefaults($session->formData);
 			$session->formData = null;
@@ -60,6 +74,11 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		$this->view->form = $form;
 	}
 
+	/**
+	 * Login post action
+	 *
+	 * @return mixed
+	 */
 	public function loginPostAction()
 	{
 		if (!$this->getRequest()->isPost()) {
@@ -183,7 +202,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	}
 
 	/**
-	 * Registration and registration post action
+	 * Registration action
 	 *
 	 * @return void
 	 */
@@ -216,6 +235,11 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		$this->view->form = $form;
 	}
 
+	/**
+	 * registration post action
+	 *
+	 * @return mixed
+	 */
 	public function createPostAction()
 	{
 		if (!$this->getRequest()->isPost()) {

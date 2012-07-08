@@ -5,32 +5,28 @@
 </div>
 
 <section id="howItWorks" class="container_12">
+	<a href="#how-it-works" title="How it works!"></a>
 	<h4>Here's how it works:</h4>
 	<ul class="list-block">
 		<li class="claim-it">
-			<?php //<figure class="claim"></figure> ?>
 			<h3>Claim your space</h3>
 			<p>Simply drop a pin to map your garden's location.</p>
 		</li>
 		<li class="track-it">
-			<?php //<figure class="claim"></figure> ?>
-			<h3>Claim your space</h3>
-			<p>Simply drop a pin to map your garden's location.</p>
+			<h3>Track<br /> your progress</h3>
+			<p>Keep tabs on your plants and share results with neighbors and friends.</p>
 		</li>
 		<li class="learn-it">
-			<?php //<figure class="claim"></figure> ?>
-			<h3>Claim your space</h3>
-			<p>Simply drop a pin to map your garden's location.</p>
+			<h3>Learn from others</h3>
+			<p>Pick-up on tricks of the trade by following city farms and green thumbs.</p>
 		</li>
 		<li class="share-it">
-			<?php //<figure class="claim"></figure> ?>
-			<h3>Claim your space</h3>
-			<p>Simply drop a pin to map your garden's location.</p>
+			<h3>Share your bumper crop</h3>
+			<p>Donate, barter, or exchange IOU's - just don't let it go to waste!.</p>
 		</li>
 		<li class="build-it">
-			<?php //<figure class="claim"></figure> ?>
-			<h3>Claim your space</h3>
-			<p>Simply drop a pin to map your garden's location.</p>
+			<h3>Build a community</h3>
+			<p>Establish a potential garden and rally your neighbors to help build it!</p>
 		</li>
 	</ul>
 </section>
@@ -63,21 +59,41 @@ for (var i = 0; i < plots.length; i++) {
  * @param lat
  * @param long
  */
+var infoWindowOpen = '<div class="content mapMarker small plot-info"><div>',
+	infoWindowClose = '</div></div>';
+
+var options = {
+	boxStyle: { },
+	closeBoxMargin: "10px 2px 2px 2px; border: 0",
+	closeBoxURL: "/file-bin/images/close.png",
+	pane: "floatPane",
+	enableEventPropagation: false,
+	//disableAutoPan: false,
+	maxWidth: 370,
+	pixelOffset: new google.maps.Size(-65, -220),
+	infoBoxClearance: new google.maps.Size(25, 25),
+	zIndex: 50
+};
 function plotPoint(plot) {
+	console.log(plot);
 	var marker = new google.maps.Marker({
 		map: map,
+		position: new google.maps.LatLng(plot.latitude, plot.longitude),
+		icon: '/file-bin/images/marker-blue.png',
 		title: plot.name,
+		content: plot.infoWindowHtml,
 		draggable: false,
 		clickable: true,
-		animation: google.maps.Animation.DROP,
-		position: new google.maps.LatLng(plot.latitude, plot.longitude),
-		content: plot.infoWindowHtml
+		animation: google.maps.Animation.DROP
 	});
-	markers.push(marker);
 
+	// Init infobox display - Trigger infowindow when map is loaded
+	var infoWindow = new InfoBox(options);
+
+	markers.push(marker);
 	google.maps.event.addListener(marker, 'click', function() {
 		console.log(marker.content);
-		infoWindow.setContent(marker.content);
+		infoWindow.setContent(infoWindowOpen + marker.content + infoWindowClose);
 		infoWindow.open(map, marker);
 	});
 }

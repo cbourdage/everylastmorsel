@@ -28,14 +28,19 @@
 					<?php endforeach; ?>
 				</ul>
 				<div class="buttons-set">
-					<button type="submit" class="btn btn-green" id="contact-submit"><span>Send Note</span></button>
 					<a href="#cancel" class="cancel" data-dismiss="modal">cancel</a>
+					<button type="submit" class="btn btn-blue" id="contact-submit"><span>Send Note</span></button>
 				</div>
 			</form>
 		</div>
 	</div>
 	<div class="modal hide fade" id="contactSuccessModal">
 		<div class="modal-header"><a class="close" data-dismiss="modal">×</a></div>
-		<div class="modal-body"><h3>Successfully sent note!</h3></div>
+		<div class="modal-body">
+			<h3>Successfully sent note!</h3>
+			<div class="buttons-set">
+				<a class="button-link close" data-dismiss="modal">Close</a>
+			</div>
+		</div>
 	</div>
 <?php endif; ?>

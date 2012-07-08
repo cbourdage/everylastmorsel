@@ -30,8 +30,8 @@ $session = Elm::getSingleton('user/session');
 		</ul>
 	</div>
 
-	<?php if ($session->isLoggedIn()) : ?>
-		<div class="btn-group">
+	<?php if ($session->isLoggedIn() && !$plot->isOwner($session->user)) : ?>
+		<div class="buttons-set">
 			<?php if ($plot->isWatching($session->user)) : ?>
 				<button type="button" class="btn btn-grey"><span>Watching this Garden</span></button>
 			<?php else : ?>
@@ -41,8 +41,11 @@ $session = Elm::getSingleton('user/session');
 					<button type="submit" class="btn btn-blue watch-this"><span>Watch This Garden</span></button>
 				</form>
 			<?php endif; ?>
+
+			<?php if ($this->canContact) : ?>
+				<button type="button" class="btn btn-orange contact-owner contact-button" data-to="<?php echo $plot->getOwner()->getId(); ?>"><span>Contact Owner!</span></button>
+			<?php endif; ?>
 		</div>
-		<button type="button" class="btn btn-yellow contact-owner"><span>Contact Owner!</span></button>
 	<?php endif; ?>
 
 <?php endif; ?>

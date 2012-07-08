@@ -1,8 +1,7 @@
 /* */
 body {
 	color: #58585A;
-	font-family: Helvetica,Arial,sans-serif;
-	font-size: 13px;
+	font: normal 13px/1.2 Helvetica,Arial,sans-serif;
 }
 
 /**
@@ -53,6 +52,15 @@ img {
 	border-radius: 3px;
 	padding: 5px;
 }
+.loader {
+	background: url(../images/loader.gif) no-repeat;
+	color: #fff;
+	display: inline-block;
+	line-height: 23px;
+	padding-left: 28px;
+	white-space: nowrap;
+}
+.loader.green { background: url(../images/loader-green.gif) no-repeat; }
 
 /**
 	General Styles
@@ -81,6 +89,10 @@ button.btn {
 	cursor: pointer;
 	padding: 0;
 }
+button[disable="disable"],
+button.btn[disable="disable"] {
+	opacity: .6;
+}
 a.btn span,
 button span,
 button.btn span {
@@ -103,33 +115,45 @@ button.btn span {
 	-webkit-text-shadow: 0 1px 1px rgba(0,0,0,.4);
 	text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
-a.btn-yellow span,
-button.btn-yellow span {
-	background: #F9BB2A;
-	border: 1px solid #D08F01;
+a.btn-orange span,
+button.btn-orange span {
+	background-color: #fac13d;
+	border: 1px solid #efad12;
 	border-bottom-width: 2px;
-	border-top: 2px solid #9de5e9;
+	border-top: 2px solid #fedc8a;
 }
 a.btn-blue span,
 button.btn-blue span {
-	background: #74D2D1;
+	background-color: #74D2D1;
 	border: 1px solid #33a3a9;
 	border-bottom-width: 2px;
 	border-top: 2px solid #9de5e9;
 }
 a.btn-green span,
 button.btn-green span {
-	background: #59601C;
+	background-color: #59601C;
 	border: 2px solid #3f431e;
 	border-top: 2px solid #757b41;
 }
 a.btn-grey span,
 button.btn-grey span {
-	background: #ccc;
-	border: 2px solid #3f431e;
-	border-top: 2px solid #757b41;
+	background-color: #ccc;
+	border: 2px solid #a5a5a5;
+	border-top: 2px solid #e5e5e5;
 }
 .btn.oversized span { padding: 10px 15px; }
+/** Left column buttons */
+#columnLeft .buttons-set button.btn { margin-bottom: 10px; width: 100%; }
+#columnLeft .buttons-set button.btn span {
+	font-size: 15px;
+	padding: 10px 15px 10px 55px;
+	text-align: left;
+}
+#columnLeft .buttons-set button.contact-button span {
+	background-image: url(../images/sprites.png);
+	background-repeat: no-repeat;
+	background-position: 10px -340px;
+}
 
 /**
 	Form defaults
@@ -191,13 +215,22 @@ form ul.fieldset > li > div label > input {
 div.alert {
 	background: #ccc;
 	color: #fff;
+	clear: both;
 	margin: 10px auto;
 	padding: 10px;
 	width: 500px;
 }
-div.alert > a.close { display: none; float: right; color: #fff; }
+div.alert a {
+	color: #fff;
+	text-decoration: underline;
+}
+div.alert > a.close {
+	display: none;
+	float: right;
+}
 div.alert.alert-success { background: #6C722C; }
 div.alert.alert-error { background: #80883b; }
+div.alert.alert-info { background: #FAC13D; }
 div.inner-content-wrapper div.alert { width: 645px; }
 
 /**
@@ -243,8 +276,15 @@ div.inner-content-wrapper div.alert { width: 645px; }
 	padding-bottom: 10px;
 	margin-bottom: 15px;
 }
-.modal .modal-header h3 { color: #fff; font-size: 20px; margin-top: 10px; }
-.modal .modal-header a.close { color: #fff; position: absolute; top: 10px; right: 15px; }
+.modal h3 { color: #fff; font-size: 20px; }
+.modal a { color: #fff; }
+.modal .modal-header h3 { margin-top: 10px; }
+.modal .modal-header a.close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	text-decoration: none;
+}
 .modal .modal-body { overflow: hidden; }
 .modal .modal-body form { margin-bottom: 0; }
 .modal .modal-body form label {
@@ -271,9 +311,21 @@ div.inner-content-wrapper div.alert { width: 645px; }
 	width: 360px;
 }
 /*.modal .modal-body .buttons-set { float: right; }*/
+.modal .modal-body .buttons-set { text-align: right; }
 .modal .modal-body .buttons-set .btn { float: none; }
-.modal .modal-body .buttons-set a.cancel { color: #fff; margin-top: 5px; margin-left: 10px; }
-#mapModal { margin-top: -140px; margin-left: -200px; width: 400px; }
+.modal .modal-body .buttons-set .btn + .loader { margin-left: 10px; }
+.modal .modal-body .buttons-set a.close,
+.modal .modal-body .buttons-set a.cancel {
+	margin-top: 5px;
+	margin-right: 10px;
+	text-transform: capitalize;
+	text-decoration: underline;
+}
+#mapModal {
+	margin-top: -140px;
+	margin-left: -200px;
+	width: 400px;
+}
 #mapModal .buttons-set .btn span {
 	background: #74D2D1;
 	border: 1px solid #33a3a9;
@@ -281,8 +333,25 @@ div.inner-content-wrapper div.alert { width: 645px; }
 	border-top: 2px solid #9de5e9;
 }
 #mapModal .buttons-set a.cancel { display: none; }
-#contactModal { margin-top: -250px; margin-left: -200px; width: 400px; }
+#contactModal {
+	margin-top: -250px;
+	margin-left: -190px;
+	width: 380px;
+}
+#contactSuccessModal { min-height: 0; }
+#contactSuccessModal .modal-header { display: none; }
+#contactSuccessModal .modal-body {
+	margin: 20px 0;
+	text-align: center;
+	width: 340px;
+}
+#contactSuccessModal .modal-body h3 { font-size: 26px; }
+#contactSuccessModal .modal-body .buttons-set {
+	margin-top: 30px;
+	text-align: center;
+}
 #involveMeModal .buttons-set { margin-top: 25px; }
+
 /**
 	Layout Specs
 */
@@ -447,7 +516,7 @@ footer > p a { color: #fff; }
 	border-top: 5px solid #59601c;
 	background: #8d9548;
 	background: rgba(141,149,72,.85);
-	height: 150px;
+	height: 170px;
 	padding-top: 15px;
 	position: absolute;
 	top: -5px;
@@ -456,12 +525,17 @@ footer > p a { color: #fff; }
 	z-index: 500;
 }
 #headerLoginForm div.grid_6 + div { text-align: right; }
-#headerLoginForm h4 { color: #59601c; font-size: 17px; margin-bottom: 10px; }
+#headerLoginForm h4 {
+	color: #59601c;
+	font-size: 17px;
+	margin-bottom: 15px;
+}
+#headerLoginForm div.colset-1 h4 { margin-left: 60px; }
 #headerLoginForm h4 strong { text-transform: uppercase; color: #fff; }
 #headerLoginForm a { color: #fff; text-decoration: underline; }
 #headerLoginForm form label { color: #fff; }
-#headerLoginForm form ul.fieldset { margin-bottom: 10px; }
-#headerLoginForm form ul.fieldset > li { margin-bottom: 5px; }
+#headerLoginForm form ul.fieldset { margin-bottom: 12px; }
+#headerLoginForm form ul.fieldset > li { margin-bottom: 9px; }
 #headerLoginForm form .buttons-set { margin-left: 160px; }
 #headerLoginForm form .buttons-set button.btn + a { line-height: 45px; margin-left: 15px; }
 #headerLoginForm div.grid_6 + div h4 { color: #fff; }
@@ -505,7 +579,7 @@ div#mapCanvas {
 	right: 0;
 	height: 75%;
 }
-div#mapMarker > div {
+div.mapMarker > div {
 	background: #818940;
 	background: rgba(129,137,64,.87);
 	/*border: 1px solid #595d3b;*/
@@ -515,19 +589,20 @@ div#mapMarker > div {
 	/*height: 225px;*/
 	width: 470px;
 }
-div#mapMarker > div:after {
+div.mapMarker.small > div { width: 320px; }
+div.mapMarker > div:after {
 	background: url('../images/infobox-arrow.png') no-repeat;
 	/*background: #818940;
 	background: rgba(129,137,64,.8);*/
 	content: '\0020';
 	display: block;
 	height: 45px;
-	width: 50px;
 	position: absolute;
 	bottom: -45px;
 	left: 40px;
+	width: 50px;
 }
-div#mapMarker > div h3 {
+div.mapMarker > div h3 {
 	color: #fff;
 	font-size: 32px;
 	font-weight: bold;
@@ -535,39 +610,47 @@ div#mapMarker > div h3 {
 	-webkit-text-shadow: 0 1px 1px rgba(0,0,0,.6);
 	text-shadow: 0 1px 1px rgba(0,0,0,.6);
 }
-div#mapMarker > div h3 > span { color: #7acfd3; }
-div#mapMarker > div div.content { margin-top: 20px; }
-div#mapMarker > div div.content p {
+div.mapMarker > div h3 > span { color: #7acfd3; }
+div.mapMarker > div div.content { margin-top: 20px; }
+div.mapMarker > div div.content p {
 	font-size: 16px;
 	margin-bottom: 10px;
 }
-div#mapMarker > div div.content input[type="text"] {
+div.mapMarker > div div.content input[type="text"] {
 	border: 1px solid #d6d6d6;
 	font-size: 16px;
 	float: left;
 	padding: 10px 6px;
 	width: 410px;
 }
-div#mapMarker > div div.content p.buttons-set { text-align: center; }
-div#mapMarker > div div.content button.btn { margin: 0; float: none; }
-div#mapMarker > div div.content button.search {
+div.mapMarker > div div.content p.buttons-set { text-align: center; }
+div.mapMarker > div div.content button.btn { margin: 0; float: none; }
+div.mapMarker > div div.content button.search {
 	background: url('../images/sprites.png') no-repeat -345px -3px;
 	float: left;
 	margin-left: 10px;
 	height: 50px;
 	width: 50px;
 }
+div.mapMarker.plot-info > div div.content p.buttons-set { text-align: left; }
+div.mapMarker.plot-info > div div.content p.buttons-set a {
+	color: #fff;
+	font-size: 13px;
+	text-decoration: underline;
+	text-transform: lowercase;
+}
 
 /** How it works */
 #howItWorks {
-	background: #6dbece;
+	background: #64c4c8;
 	overflow: hidden;
+	padding: 25px 0 25px 55px;
 	position: absolute;
-	right: -775px;
+	right: -960px;
 	top: 200px;
-	height: 300px;
+	height: 270px;
 	z-index: 100;
-	width: 800px;
+	width: 940px;
 
 	-moz-transition: right .3s ease-in-out;
 	-o-transition: right .3s ease-in-out;
@@ -576,35 +659,50 @@ div#mapMarker > div div.content button.search {
 
 }
 #howItWorks.active { right: 0; }
-#howItWorks h4 { font-family: 'Varela', sans-serif; font-size: 36px; color: #8d9548; }
+#howItWorks a[href="#how-it-works"] {
+	background: url('../images/sprites.png') no-repeat -192px -425px;
+	height: 75px;
+	position: absolute;
+	left: 0;
+	top: 115px;
+	width: 40px;
+}
+#howItWorks.active a[href="#how-it-works"] {
+	background-position: -230px -425px;
+}
+#howItWorks h4 {
+	color: #fff;
+	font: bold 34px/1 'Varela', Helvetica, Arial, sans-serif;
+	letter-spacing: -2px;
+}
 #howItWorks ul { margin-top: 10px; }
 #howItWorks ul li {
-	color: #7d8080;
-	font-size: 15px;
-	margin-right: 17px;
+	color: #fff;
+	margin-left: 25px;
 	text-align: center;
-	width: 175px;
+	width: 145px;
 }
-#howItWorks ul li:lastchild { margin-right: 0; }
-#howItWorks ul li:hover { color: #6dbece; }
+#howItWorks ul li:first-child { margin-left: 0; }
 #howItWorks ul li h3 {
 	background: url(../images/sprites.png) no-repeat;
-	color: #7d8080;
-	cursor: pointer;
-	font-size: 18px;
-	padding-top: 175px;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding-top: 135px;
 }
-#howItWorks ul li:hover h3 { color: #6dbece; }
-#howItWorks ul li.claim-it h3 { background-position: -190px -130px; }
-#howItWorks ul li.track-it h3 { background-position: -385px -130px; }
-#howItWorks ul li.learn-it h3 { background-position: -585px -130px; }
-#howItWorks ul li.share-it h3 { background-position: -780px -130px; }
-#howItWorks ul li.build-it h3 { background-position: -975px -130px; }
+#howItWorks ul li.claim-it h3 { background-position: -180px -130px; }
+#howItWorks ul li.track-it h3 { background-position: -337px -130px; }
+#howItWorks ul li.learn-it h3 { background-position: -492px -130px; }
+#howItWorks ul li.share-it h3 { background-position: -650px -130px; }
+#howItWorks ul li.build-it h3 { background-position: -807px -130px; }
+#howItWorks ul li p { font-size: 13px; }
+/*
 #howItWorks ul li.claim-it:hover h3 { background-position: -190px -340px; }
 #howItWorks ul li.track-it:hover h3 { background-position: -385px -340px; }
 #howItWorks ul li.learn-it:hover h3 { background-position: -585px -340px; }
 #howItWorks ul li.share-it:hover h3 { background-position: -780px -340px; }
 #howItWorks ul li.build-it:hover h3 { background-position: -975px -340px; }
+*/
 
 
 /**
@@ -664,10 +762,20 @@ div#mapMarker > div div.content button.search {
 	font-size: 14px;
 	font-weight: bold;
 	display: block;
+	line-height: 1;
 	padding: 10px 30px 10px 45px;
 }
-.profile-layout .main-content nav ul li:first-child a { border: 1px solid #ccc; border-top-left-radius: 3px; border-bottom-left-radius: 3px; padding-left: 30px; }
-.profile-layout .main-content nav ul li:last-child a { border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-left: 0; }
+.profile-layout .main-content nav ul li:first-child a {
+	border: 1px solid #ccc;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	padding-left: 30px;
+}
+.profile-layout .main-content nav ul li:last-child a {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-left: 0;
+}
 .profile-layout .main-content nav ul li a[href*="about"] { background: url(../images/sprites.png) no-repeat 15px -570px; }
 .profile-layout .main-content nav ul li a[href*="plots"] { background: url(../images/sprites.png) no-repeat 18px -601px; }
 .profile-layout .main-content nav ul li a[href*="photos"] { background: url(../images/sprites.png) no-repeat 15px -630px; }
@@ -701,20 +809,29 @@ div#mapMarker > div div.content button.search {
 .main-content .blocked-content > h4 { }
 .main-content .blocked-content > p { margin-bottom: 20px; }
 /** Listings: plots & people */
+ul.list-block li h3 { font-size: 16px; margin-bottom: 5px; }
+ul.list-block li h3 a { color: #8d9548; }
+ul.list-block li h3 a:hover { text-decoration: underline; }
+ul.list-block li p.role { font-size: 14px; }
+ul.list-block li p.role b { color: #000; font-weight: bold; }
+ul.list-block li p.role i { color: #98989A; font-weight: bold; }
 ul.list-block.list  { }
 ul.list-block.list li { margin-right: 10px; width: 150px; }
 ul.list-block.list li:last-child { margin-right: 0; }
 ul.list-block.list li figure { margin: 0 0 8px; }
-ul.list-block.list li h3 { font-size: 16px; margin-bottom: 5px; }
-ul.list-block.list li h3 a { color: #8d9548; }
-ul.list-block.list li h3 a:hover { text-decoration: underline; }
-ul.list-block.list li p.role { font-size: 14px; }
-ul.list-block.list li p.role b { color: #000; font-weight: bold; }
-ul.list-block.list li p.role i { color: #98989A; font-weight: bold; }
 /** Detailed Listings */
 ul.list-block.details li { margin-bottom: 10px; width: 100%; }
-ul.list-block.details li figure { float: left; margin-right: 20px; width: 180px; }
-ul.list-block.details li div.details { float: left; margin-left: 5px; padding: 8px 0; width: 400px; }
+ul.list-block.details li figure {
+	float: left;
+	margin-right: 25px;
+	width: 160px;
+}
+ul.list-block.details li div.details {
+	float: left;
+	margin-left: 5px;
+	padding: 8px 0;
+	width: 400px;
+}
 ul.list-block.details li div.details p.role { margin-bottom: 15px; }
 ul.list-block.details li div.details p.buttons-set button { width: auto; }
 
@@ -730,7 +847,11 @@ body.elm-profile-settings .account-form form ul li > div label > input,
 body.elm-profile-info .account-form form ul li > div label > input { margin-right: 10px; width: auto; }*/
 body.elm-plot-create .account-form form .buttons-set,
 body.elm-profile-settings .account-form form .buttons-set,
-body.elm-profile-info .account-form form .buttons-set { border-top: 4px double #CCC; padding-top: 10px; width: 275px; }
+body.elm-profile-info .account-form form .buttons-set {
+	border-top: 4px double #CCC;
+	padding-top: 10px;
+	width: 275px;
+}
 body.elm-plot-create .account-form form .buttons-set button,
 body.elm-profile-settings .account-form form .buttons-set button,
 body.elm-profile-info .account-form form .buttons-set button { float: right; }

@@ -15,13 +15,14 @@ $plot = $this->plot;
 	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
 
+	<?php if (count($plot->getPendingUsers()) && $session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
+		<div class="alert alert-info">
+			Look at that, you have pending users. Take a <a href="<?php echo $this->url('plot/pending-users', array('p' => $plot->getId())); ?>">look</a>.
+		</div>
+	<?php endif; ?>
+
 	<h2 class="blue">People</h2>
 	<div id="users" class="blocked-content users-list">
-		<?php if (count($plot->getPendingUsers()) && $session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
-			<div class="alert alert-info">
-				You have pending users! Please review and take <a href="<?php echo $this->url('plot/pending-users', array('p' => $plot->getId())); ?>">action</a>
-			</div>
-		<?php endif; ?>
 		<?php
 			echo $this->partial('plot/user/_list.phtml', array(
 				'users' => $plot->getNonWatchers(),

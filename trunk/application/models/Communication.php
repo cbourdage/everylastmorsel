@@ -19,6 +19,8 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 	public function init($params)
 	{
 		$this->setData($params);
+		$this->setToUser(Elm::getModel('user')->load($this->getUserToId()));
+		$this->setFromUser(Elm::getModel('user')->load($this->getUserFromId()));
 		return $this;
 	}
 
@@ -44,15 +46,17 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 				'reason' => $this->getSubject(),
 				'fromName' => $this->getName(),
 				'fromEmail' => $this->getEmail(),
-				'message' => $this->getMessage()
+				'message' => $this->getMessage(),
+				'fromUser' => $this->getFromUser(),
+				'toUser' => $this->getFromUser()
 			));
-			$EmailTemplate->send(array('email' => 'collin.bourdage@gmail.com', 'name' => 'Collin Bourdage'));
+			$EmailTemplate->send(array('email' => $this->getToUser()->getEmail(), 'name' => $this->getToUser()->getName()));
 
 			// Save message
-			$this->setDelivered(true);
-			$this->save();
+			$this->setDelivered(true)->save();
 			return true;
 		} catch(Exception $e) {
+			$this->setDelivered(false)->save();
 			Elm::logException($e);
 			return false;
 		}

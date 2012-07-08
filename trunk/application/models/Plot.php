@@ -369,6 +369,21 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		}
 	}
 
+
+	public function getOwner()
+	{
+		if ($this->_owner) {
+			return $this->_owner;
+		}
+
+		foreach ($this->getUsers() as $user) {
+			if ($user->getRole() == Elm_Model_Resource_Plot::ROLE_OWNER) {
+				$this->_owner = $user;
+				return $this->_owner;
+			}
+		}
+	}
+
 	/**
 	 * @return mixed
 	 */

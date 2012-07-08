@@ -4,6 +4,9 @@ require_once 'controllers/AbstractController.php';
 
 class Elm_Profile_AbstractController extends Elm_AbstractController
 {
+	/**
+	 * @var Elm_Model_User | null
+	 */
 	protected $_user = null;
 
 	/**

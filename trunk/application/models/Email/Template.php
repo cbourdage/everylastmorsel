@@ -69,6 +69,9 @@ class Elm_Model_Email_Template extends Colony_Object
 		$mail->setSubject($this->getSubject());
 		$mail->setFrom($this->getFromEmail(), $this->getEmailName());
 		$mail->setBodyHtml($bodyText);
+
+		//Elm::log($mail->getFrom(), Zend_Log::INFO, 'communication-emails.log');
+		//Elm::log($mail->getRecipients(), Zend_Log::INFO, 'communication-emails.log');
 		$mail->send();
 
 		return $this;

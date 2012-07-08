@@ -16,8 +16,8 @@ var zoomLevel = 14;
 		resizeMap();
 	}
 
-	$('#howItWorks').on('click', function(e) {
-		$(this).toggleClass('active');
+	$('a[href="#how-it-works"]').on('click', function(e) {
+		$(this).parent().toggleClass('active');
 	});
 
 	// Init location
@@ -65,12 +65,12 @@ var zoomLevel = 14;
 		initialMarker = new google.maps.Marker({
 			map: map,
 			position: initialLocation,
-			icon: '/file-bin/images/orange-pin.png',
+			icon: '/file-bin/images/marker-orange.png',
 			draggable: true,
 			animation: google.maps.Animation.DROP
 		});
 
-		var initContentString = '<div class="content" id="mapMarker">' +
+		var initContentString = '<div class="content mapMarker">' +
 			'<div>' +
 				'<h3 class="heading"><span>Howdy!</span> From the pitchfork to salad fork we are an <span>urban gardeners dream</span> come true...</h3>'+
 				'<div class="content clearfix">' +
@@ -82,7 +82,7 @@ var zoomLevel = 14;
 			'</div>' +
 		'</div>';
 
-		var changeContentString = '<div class="content" id="mapMarker">' +
+		var changeContentString = '<div class="content mapMarker">' +
 			'<div>' +
 				'<h3 class="heading"><span>Fantastic!</span> This location looks great, is there a garden here?</h3>'+
 				'<div class="content clearfix">' +
@@ -95,24 +95,16 @@ var zoomLevel = 14;
 		'</div>';
 
         var options = {
-		 	content: initContentString,
-			//disableAutoPan: false,
-			maxWidth: 575,
-			//maxHeight: 275,
-			pixelOffset: new google.maps.Size(-65, -320),
-			infoBoxClearance: new google.maps.Size(25, 25),
-			//zIndex: null,
-			boxStyle: {
-			  	//background: "url('tipbox.gif') no-repeat",
-				//opacity: 0.8,
-				//height: "225px",
-				//width: "450px"
-			},
-			//closeBoxMargin: "10px 2px 2px 2px",
+			boxStyle: { },
 			closeBoxURL: "",
 			//isHidden: false,
 			pane: "floatPane",
-			enableEventPropagation: true
+			enableEventPropagation: true,
+			maxWidth: 575,
+			pixelOffset: new google.maps.Size(-65, -320),
+			infoBoxClearance: new google.maps.Size(25, 25),
+			zIndex: 10,
+			content: initContentString
         };
 
 		// Init infobox display - Trigger infowindow when map is loaded
@@ -136,7 +128,8 @@ var zoomLevel = 14;
 		jQuery(function() {
 			jQuery('#mapCanvas').on('click', 'button.authenticate', function(e) {
 				var $modal = jQuery('#mapModal'),
-					$content = $modal.find('.modal-body');
+					$content = $modal.find('.modal-body'),
+					$loader = jQuery('<span class="loader green">Loading...</span>');
 
 				jQuery.ajax({
 					url: '/index/plot-point/',
@@ -153,17 +146,20 @@ var zoomLevel = 14;
 							// @TODO abstract out - create a login modal object
 							$('#mapModal form').on('submit', function(e) {
 								e.preventDefault();
-
 								$content.find('.alert').slideUp('fast', function() {
 									$(this).remove();
 								});
+								$content.find('button').attr('disable', 'disable').after($loader);
 
 								jQuery.ajax({
 									url: '/profile/login-ajax/?after_auth=/plot/create/',
-									//url: '/profile/login-ajax/',
 									data: $(this).serialize(),
 									type: 'post',
 									dataType: 'json',
+									complete: function(response) {
+										$loader.remove();
+										$content.find('button').attr('disable', '');
+									},
 									success: function(response) {
 										if (response.success) {
 											window.location = response.location;

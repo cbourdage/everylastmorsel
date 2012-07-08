@@ -3,18 +3,36 @@ $session = Elm::getSingleton('user/session');
 $plot = $this->Plot()->getPlot();
 $users = $this->users;
 ?>
-<?php if (count($users)) : ?>
-	<ul class="list-block pending-user-list">
-	<?php foreach ($users as $user) : ?>
-		<li>
-			<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="150px" />
-			<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
-			<p><?php echo $user->getRole(); ?></p>
-			<p class="actions">
-				<a href="<?php echo $this->Plot()->getApprovalUrl($plot, $user); ?>" title="Approve">Approve</a>
-				<a href="<?php echo $this->Plot()->getDenyUrl($plot, $user); ?>" title="Deny">Deny</a>
-			</p>
-		</li>
-	<?php endforeach; ?>
-	</ul>
-<?php endif; ?>
+<div class="inner-content-wrapper profile plot">
+	<div class="top">
+		<h2><?php echo $plot->getName(); ?></h2>
+		<ul class="list-inline">
+			<li><?php echo $plot->getCity(); ?>,</li>
+			<li><?php echo $plot->getState(); ?></li>
+			<li><?php echo $plot->getZipcode(); ?></li>
+		</ul>
+	</div>
+
+	<?php echo $this->Message()->render(); ?>
+	<?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
+
+	<h2 class="blue">Pending</h2>
+	<div id="users" class="blocked-content pending-users-list">
+		<?php if (count($users)) : ?>
+			<ul class="list-block">
+			<?php foreach ($users as $user) : ?>
+				<li>
+					<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="150px" />
+					<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
+					<p class="role">Says they are a <b><?php echo $user->getRole(); ?></b></p>
+					<p class="actions">
+						<a href="<?php echo $this->Plot()->getApprovalUrl($plot, $user); ?>" title="Approve">Approve</a>
+						<span class="separator">|</span>
+						<a href="<?php echo $this->Plot()->getDenyUrl($plot, $user); ?>" title="Deny" onclick="return confirm('Are you sure you would like to deny this user?');">Deny</a>
+					</p>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
+	</div>
+</div>
