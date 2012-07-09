@@ -17,16 +17,23 @@ class Elm_Model_Form_Plot_Crop extends Elm_Model_Form_Abstract
             'required'   => true
         ));
 
+		$this->addElement('hidden', 'crop_id', array(
+            'filters'    => array('Digits'),
+            'required'   => true
+        ));
+
 		$this->addElement('text', 'date_planted', array(
             'filters'    => array('StringTrim'),
             'validators' => array('Date'),
             'required'   => true
         ));
 
-		$this->addElement('text', 'quantity', array(
-			'label' => 'Number of Plants',
+		$this->addElement('text', 'variety', array(
+			'label' => 'Crop Variety',
             'filters'    => array('StringTrim'),
-            'validators' => array('Digits'),
+            'validators' => array(
+                array('StringLength', true, array(3, 128))
+            ),
             'required'   => true
         ));
 
@@ -37,10 +44,10 @@ class Elm_Model_Form_Plot_Crop extends Elm_Model_Form_Abstract
             'required'   => true
         ));
 
-		$this->addElement('radio', 'conditions', array(
-			'label' => 'Conditions',
+		$this->addElement('select', 'coverage_unit', array(
+			'label' => 'Units',
             'required'   => true,
-			'multiOptions' => Elm_Model_Plot_Crop::$conditions
+			'multiOptions' => Elm_Model_Plot_Crop::$coverageUnits
         ));
 
 		$this->addElement('radio', 'starting_type', array(
@@ -48,6 +55,13 @@ class Elm_Model_Form_Plot_Crop extends Elm_Model_Form_Abstract
             'required'   => true,
 			'multiOptions' => Elm_Model_Plot_Crop::$startingType
         ));
+
+		/*
+		$this->addElement('radio', 'conditions', array(
+			'label' => 'Conditions',
+            'required'   => true,
+			'multiOptions' => Elm_Model_Plot_Crop::$conditions
+        ));*/
 		
         foreach ($this->getElements() as $element) {
 			if ($element instanceof Zend_Form_Element_Hidden) {

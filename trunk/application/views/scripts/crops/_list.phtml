@@ -1,0 +1,46 @@
+<?php
+$plot = $this->plot;
+?>
+<?php if ($plot->getCrops()) : ?>
+	<table class="data-table" width="100%">
+		<colgroup>
+			<col class="plant-type" />
+			<col class="variety" />
+			<col class="date" />
+			<col class="coverage" />
+			<col class="yield" />
+			<col class="actions" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th>Plant Type</th>
+				<th>Variety</th>
+				<th>Date Planted</th>
+				<th>Coverage</th>
+				<th>Yield</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php $ctr = 0; ?>
+		<?php foreach ($plot->getCrops() as $pCrop) : ?>
+			<tr class="<?php echo ($ctr++ % 2) ? '' : 'alt'; ?>">
+				<td><?= ucwords($pCrop->getCrop()->getType()); ?></td>
+				<td><?= $pCrop->getCrop()->getVariety(); ?></td>
+				<td><?= $this->Data()->formatDate($pCrop->getPlantedDate()); ?></td>
+				<td><?= $pCrop->getCoverage(); ?> <?= $pCrop->getCoverageUnits(); ?></td>
+				<td><?= $pCrop->getYield(); ?></td>
+				<td>
+					<!--<a href="#">Add Yield</a>
+					<?php /*if (!$pCrop->getIsForSale()) : */?>
+						<span class="separator">|</span>
+						<a href="#">Flag For Sale</a>
+					--><?php /*endif; */?>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+		</tbody>
+	</table>
+<?php else : ?>
+	<p>Nothing has been planted yet. Get growin'!</p>
+<?php endif; ?>

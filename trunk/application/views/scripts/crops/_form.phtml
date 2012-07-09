@@ -1,67 +1,87 @@
 <?php
-$user = $this->user;
-$plot = $this->plot;
-$formData = $this->formData;
+$user = $this->view->user;
+$plot = $this->view->plot;
+$form = $this->view->form;
 ?>
-<form action="<?php echo $this->url('crops/add'); ?>" method="post" enctype="multipart/form-data">
+<form action="<?php echo $this->url('crops/add-post'); ?>" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="user_id" value="<?= $user->getId(); ?>" />
+	<input type="hidden" name="plot_id" value="<?= $plot->getId(); ?>" />
 	<ul class="fieldset">
 		<li>
-			<label for="quantity">Plot</label>
-			<select name="plot_id">
-				<option value="">- Select -</option>
-				<?php foreach ($user->getPlots() as $plot) : ?>
-				<option value="<?= $plot->getId(); ?>"><?= $plot->getName(); ?></option>
-				<?php endforeach; ?>
-			</select>
+			<label for="crop_type">Crop Type</label>
+			<div>
+				<select name="crop_type" id="crop_type">
+					<option value="">Type</option>
+					<?php foreach (Elm::getModel('crop')->getCropTypes() as $type) : ?>
+					<option value="<?= $type; ?>"><?= ucwords($type); ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
 		</li>
 		<li>
-			<label for="name">Crop</label>
-			<input type="text" name="name" id="name" value="<?= $formData->getName(); ?>" />
-			or
-			<select name="crop_id">
-				<option value="">- Select -</option>
-				<?php foreach (Elm::getModel('crop')->getCrops() as $crop) : ?>
-				<option value="<?= $crop->getId(); ?>"><?= $crop->getName(); ?></option>
-				<?php endforeach; ?>
-			</select>
+			<label for="variety">Crop Variety</label>
+			<div>
+				<input type="hidden" name="crop_id" id="crop_id" value="<?php // $form->getElement('variety')->getValue(); ?>" />
+				<input type="text" name="variety" id="variety" value="<?php // $form->getElement('variety')->getValue(); ?>" />
+				<div id="varietySuggest"></div>
+			</div>
 		</li>
 		<li>
-			<label for="quantity">Number Planted</label>
-			<input type="text" name="quantity" id="quantity" value="<?= $formData->getQuantity(); ?>" />
-		</li>
-		<li>
-			<label for="coverage">Coverage (sq ft)</label>
-			<input type="text" name="coverage" id="coverage" value="<?= $formData->getCoverage(); ?>" />
+			<label for="coverage">Coverage</label>
+			<div>
+				<input type="text" name="coverage" id="coverage" value="<?= $form->getElement('coverage')->getValue(); ?>" />
+				<select name="coverage_unit">
+					<option value="individual"># of plants</option>
+					<option value="sq_ft">square feet</option>
+				</select>
+			</div>
 		</li>
 		<li>
 			<label for="date_planted">Date Planted</label>
-			<input type="text" name="date_planted" id="date_planted" value="<?= $formData->getDatePlanted(); ?>" />
+			<div>
+				<input type="text" name="date_planted" id="date_planted" value="<?= $form->getElement('date_planted')->getValue(); ?>" />
+			</div>
 		</li>
 		<li>
 			<label>Starting Type</label>
-			<label for="starting_type_seed" class="radio">
-				<input type="radio" name="starting_type" id="starting_type_seed" value="seed" />
-				Seed
-			</label>
-			<label for="starting_type_seedling" class="radio">
-				<input type="radio" name="starting_type" id="starting_type_seedling" value="seedling" />
-				Seedling
-			</label>
-		</li>
-		<li>
-			<label for="conditions">Conditions</label>
-			<label for="conditions_sunny" class="radio">
-				<input type="radio" name="conditions" id="conditions_sunny" value="sunny" />
-				Sunny
-			</label>
-			<label for="conditions_partial_sun" class="radio">
-				<input type="radio" name="conditions" id="conditions_partial_sun" value="partial_sun" />
-				Partial Sun
-			</label>
+			<div class="multi-control">
+				<label for="starting_type_seed" class="radio">
+					<input type="radio" name="starting_type" id="starting_type_seed" value="seed" />
+					Seed
+				</label>
+				<label for="starting_type_seedling" class="radio">
+					<input type="radio" name="starting_type" id="starting_type_seedling" value="seedling" />
+					Seedling
+				</label>
+			</div>
 		</li>
 	</ul>
 	<p class="buttons-set">
-		<button type="submit" class="btn btn-primary">Add Crop</button>
+		<button type="submit" class="btn btn-blue"><span>Add Crop</span></button>
 	</p>
 </form>
+<script src="/file-bin/js/lib/jquery-ui-1.8.18.custom.min.js"></script>
+<script defer="defer">
+	jQuery("#date_planted").datepicker();
+	jQuery("#variety").autocomplete({
+		source: function(event, add) {
+			jQuery.ajax({
+				url: "/crops/search/",
+				data: 'limit=6&type=' + jQuery('#crop_type').val() + '&term=' + jQuery('#variety').val(),
+				dataType: 'json',
+				success:function(data) {
+                	var items = [];
+                	jQuery.each(data, function(i, val){
+                		items.push(val);
+                	});
+                	add(items);
+				}
+			});
+		},
+		minLength: 2,
+		appendTo: '#varietySuggest',
+		select: function(event, ui) {
+			jQuery('#crop_id').val(ui.item.id);
+		}
+	});
+</script>

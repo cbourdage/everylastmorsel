@@ -245,7 +245,7 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
                     }
                 } catch (Exception $e){
                     echo "<pre>".print_r($e,1)."</pre>";
-                    throw Mage::exception('Colony', 'Error in file: "%s" - %s', $sqlFile, $e->getMessage());
+                    throw Elm::exception('Colony', sprintf('Error in file: "%s" - %s', $sqlFile, $e->getMessage()));
                 }
             }
             $modifyVersion = $file['toVersion'];

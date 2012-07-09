@@ -171,7 +171,10 @@ form ul.fieldset > li label {
 	vertical-align: top;
 	width: 150px;
 }
-form ul.fieldset > li label + div { display: inline-block; }
+form ul.fieldset > li label + div {
+	display: inline-block;
+	width: 270px;
+}
 form ul.fieldset > li figure { margin: 0 0 10px; }
 form ul.fieldset > li input,
 form ul.fieldset > li textarea {
@@ -834,6 +837,25 @@ ul.list-block.details li div.details {
 }
 ul.list-block.details li div.details p.role { margin-bottom: 15px; }
 ul.list-block.details li div.details p.buttons-set button { width: auto; }
+/** Data Lists: crops */
+table.data-table { }
+table.data-table tr th,
+table.data-table tr td {
+	color: #010101;
+	font-size: 13px;
+	padding: 5px 8px;
+	text-align: left;
+	white-space: nowrap;
+}
+table.data-table tr th {
+	color: #a8a9a9;
+	font-size: 14px;
+	padding: 7px 3px;
+	text-transform: capitalize;
+}
+table.data-table tr td { }
+table.data-table tr.alt td { background: #e5f1f2; }
+table.data-table tr td a { color: #010101; text-decoration: underline; }
 
 /**
 	My Account forms: settings, info, create
@@ -870,6 +892,18 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
  	People
 */
 .get-involved { clear: both; }
+
+/**
+	Crops
+*/
+#cropsForm form ul.fieldset li select#crop_id + label { width: 100px; }
+#cropsForm form ul.fieldset li input#name { width: 175px; }
+#cropsForm form ul.fieldset li input#coverage {
+	margin-right: 10px;
+	width: 100px;
+}
+#cropsForm form ul.fieldset li input#date_planted { width: 100px; }
+#cropsForm form ul.fieldset li div.multi-control { width: 270px; }
 
 
 /** Print Styles */

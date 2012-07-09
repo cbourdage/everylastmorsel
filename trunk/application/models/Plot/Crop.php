@@ -2,6 +2,11 @@
 
 class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 {
+	public static $coverageUnits = array(
+		'individual' => '# of plants',
+		'sq_ft' => 'square feet'
+	);
+
 	/**
 	 * Available crop starting types
 	 *
@@ -125,9 +130,35 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 		return $this;
 	}
 
+	/**
+	 * Formats date
+	 *
+	 * @param string $format
+	 * @return string
+	 */
 	public function getDatePlanted($format = 'MM/dd/YYYY')
 	{
 		$date = new Zend_Date($this->getData('date_planted'));
 		return $date->toString($format);
+	}
+
+	/**
+	 * Returns the covereage units in readable format
+	 *
+	 * @return mixed|string
+	 */
+	public function getCoverageUnits()
+	{
+		$units = $this->getData('coverage_unit');
+		switch ($units) {
+			case 'individual':
+				$units = 'plant';
+				break;
+			case 'sq_ft':
+			default:
+				$units = 'sq/ft';
+				break;
+		}
+		return $units;
 	}
 }

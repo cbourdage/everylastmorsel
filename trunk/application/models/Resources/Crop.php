@@ -24,6 +24,9 @@ class Elm_Model_Resource_Crop extends Colony_Db_Table
         return $this;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getCrops()
 	{
 		$items = array();
@@ -31,7 +34,41 @@ class Elm_Model_Resource_Crop extends Colony_Db_Table
 		foreach ($this->fetchAll($select) as $row) {
 			$items[] = Elm::getModel('crop')->load($row->crop_id);
 		}
+		return $items;
+	}
 
+	/**
+	 * @return array
+	 */
+	public function uniqueTypes()
+	{
+		$items = array();
+		$select = $this->select()
+			->distinct()
+			->from($this->_name, 'type');
+		foreach ($this->fetchAll($select) as $row) {
+			$items[] = $row->type;
+		}
+		return $items;
+	}
+
+	public function searchVarieties($term, $type=null, $limit=null)
+	{
+		$items = array();
+		$select = $this->select()
+			->where('variety LIKE ?', "%$term%");
+
+		if ($type !== null) {
+			$select->where('type = ?', $type);
+		}
+
+		if ($limit !== null) {
+			$select->limit($limit, 0);
+		}
+Elm::log($select->__toString());
+		foreach ($this->fetchAll($select) as $row) {
+			$items[$row->crop_id] = $row->variety;
+		}
 		return $items;
 	}
 }

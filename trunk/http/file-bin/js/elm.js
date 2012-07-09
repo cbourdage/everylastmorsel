@@ -235,7 +235,7 @@ window.elm.error = function(message, $el, location) {
 		/**
 		 * Simple toggle to show additional content
 		 */
-		$('body').on('click', 'a.action', function(e) {
+		$('body').on('click', 'a.action[href^="#"]', function(e) {
 			e.preventDefault();
 			$($(this).attr('href')).show();
 		})
