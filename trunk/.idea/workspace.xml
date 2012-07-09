@@ -4,20 +4,22 @@
     <bookmark url="file://$PROJECT_DIR$/http/welcome.php" mnemonic="6" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98fa6b8d-50e5-4d7b-807b-b0f55e92db2c" name="Default" comment="Addition of password reset. Settings password updates. Password email. Global message styling. Updates to communictaion tools for archiving. Code cleanup and commenting.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/profile/_login-menu.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/http/file-bin/js/lib/infobox.js" />
+    <list default="true" id="98fa6b8d-50e5-4d7b-807b-b0f55e92db2c" name="Default" comment="Update to add email templates.&#10;Updates to user/people section.&#10;Home page updates.&#10;Communication changes.&#10;Adding of loader icon.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/http/file-bin/images/loader-green.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/http/file-bin/images/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/http/file-bin/images/logo_sm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/http/file-bin/images/marker-blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/http/file-bin/images/marker-orange.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/http/temp-test.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/var/log/2012-03-11-google-request.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/var/log/2012-03-12-google-request.log" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/http/file-bin/images/logo-sm.png" afterPath="$PROJECT_DIR$/http/file-bin/images/logo-sm_orig.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/http/file-bin/images/logo.png" afterPath="$PROJECT_DIR$/http/file-bin/images/logo_orig.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/file-bin/images/logo.png" afterPath="$PROJECT_DIR$/http/file-bin/images/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/IndexController.php" afterPath="$PROJECT_DIR$/application/controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ProfileController.php" afterPath="$PROJECT_DIR$/application/controllers/ProfileController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/layouts/scripts/footer.phtml" afterPath="$PROJECT_DIR$/application/layouts/scripts/footer.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/layouts/scripts/header.phtml" afterPath="$PROJECT_DIR$/application/layouts/scripts/header.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/helpers/Form.php" afterPath="$PROJECT_DIR$/application/views/helpers/Form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/communication/_modal.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/communication/_modal.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/index/index.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/index/index.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/profile/_login.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/profile/_login.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/file-bin/css/screen.css" afterPath="$PROJECT_DIR$/http/file-bin/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/file-bin/js/map.js" afterPath="$PROJECT_DIR$/http/file-bin/js/map.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/var/log/exception.log" afterPath="$PROJECT_DIR$/application/var/log/exception.log" />
     </list>
     <ignored path="everylastmorsel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,107 +52,16 @@
       <file leaf-file-name="app.log" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/var/log/app.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="186" column="0" selection-start="9201" selection-end="9201" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="screen.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/http/file-bin/css/screen.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="223" column="42" selection-start="5480" selection-end="5480" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/http/file-bin/js/map.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="38" selection-start="3562" selection-end="3562" vertical-scroll-proportion="0.5869565">
-              <folding>
-                <element signature="e#3670#4390#0" expanded="true" />
-                <element signature="e#3743#4384#0" expanded="true" />
-                <element signature="e#3992#4211#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="infobox.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http/file-bin/js/lib/infobox.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="304" column="25" selection-start="10323" selection-end="10330" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="n#!!block;n#InfoBox#0" expanded="true" />
-                <element signature="e#5928#8721#0" expanded="true" />
-                <element signature="e#6106#6200#0" expanded="true" />
-                <element signature="e#6415#6581#0" expanded="true" />
-                <element signature="e#8347#8395#0" expanded="true" />
-                <element signature="e#8841#9246#0" expanded="true" />
-                <element signature="e#9370#9621#0" expanded="true" />
-                <element signature="e#9780#10198#0" expanded="true" />
-                <element signature="e#9823#10195#0" expanded="true" />
-                <element signature="e#10355#12329#0" expanded="true" />
-                <element signature="e#12506#13427#0" expanded="true" />
-                <element signature="e#13605#14697#0" expanded="true" />
-                <element signature="e#14816#14915#0" expanded="true" />
-                <element signature="e#15036#15555#0" expanded="true" />
-                <element signature="e#15934#17517#0" expanded="true" />
-                <element signature="e#17701#18926#0" expanded="true" />
-                <element signature="e#19061#19317#0" expanded="true" />
-                <element signature="e#19442#19708#0" expanded="true" />
-                <element signature="e#19822#19850#0" expanded="true" />
-                <element signature="e#19977#20006#0" expanded="true" />
-                <element signature="e#20119#20146#0" expanded="true" />
-                <element signature="e#20216#20313#0" expanded="true" />
-                <element signature="e#20383#20478#0" expanded="true" />
-                <element signature="e#20904#21203#0" expanded="true" />
-                <element signature="e#21080#21129#0" expanded="true" />
-                <element signature="e#21289#21902#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/IndexController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="79" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#indexAction#0;n#Elm_IndexController#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/index/index.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="36" selection-start="1495" selection-end="1495" vertical-scroll-proportion="-16.608696">
-              <folding>
-                <element signature="e#2095#2546#0" expanded="true" />
-                <element signature="e#2434#2542#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Elm.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/Elm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="53" selection-start="2068" selection-end="2068" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http/file-bin/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2860" column="16" selection-start="64609" selection-end="64609" vertical-scroll-proportion="0.0">
+            <state line="857" column="71" selection-start="23555" selection-end="23555" vertical-scroll-proportion="1.1707317">
               <folding />
             </state>
           </provider>
@@ -171,27 +82,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/scripts/user/plots.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/user/crops.phtml" />
-        <option value="$PROJECT_DIR$/application/controllers/ProfileController.php" />
-        <option value="$PROJECT_DIR$/application/layouts/scripts/footer.phtml" />
-        <option value="$PROJECT_DIR$/application/layouts/scripts/header.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/profile/_login-menu.phtml" />
-        <option value="$PROJECT_DIR$/application/views/helpers/Form.php" />
-        <option value="$PROJECT_DIR$/application/views/scripts/profile/_login.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/communication/_modal.phtml" />
+        <option value="$PROJECT_DIR$/application/models/Form/Plot/Crop.php" />
         <option value="$PROJECT_DIR$/application/var/log/app.log" />
-        <option value="$PROJECT_DIR$/application/controllers/IndexController.php" />
-        <option value="$PROJECT_DIR$/application/Elm.php" />
         <option value="$PROJECT_DIR$/http/file-bin/css/screen.css" />
-        <option value="$PROJECT_DIR$/application/views/scripts/index/index.phtml" />
-        <option value="$PROJECT_DIR$/http/file-bin/js/lib/infobox.js" />
-        <option value="$PROJECT_DIR$/http/file-bin/js/map.js" />
+        <option value="$PROJECT_DIR$/application/views/scripts/crops/_list.phtml" />
+        <option value="$PROJECT_DIR$/http/file-bin/js/elm.js" />
+        <option value="$PROJECT_DIR$/application/views/scripts/plot/crops.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/crops/_form.phtml" />
+        <option value="$PROJECT_DIR$/application/models/Plot/Crop.php" />
+        <option value="$PROJECT_DIR$/application/models/Crop.php" />
+        <option value="$PROJECT_DIR$/application/models/Resources/Crop.php" />
+        <option value="$PROJECT_DIR$/application/controllers/CropsController.php" />
+        <option value="$PROJECT_DIR$/application/data/db/upgrade-0.0.18-0.0.19.php" />
+        <option value="$PROJECT_DIR$/application/configs/application.ini" />
+        <option value="$PROJECT_DIR$/application/Elm.php" />
+        <option value="$PROJECT_DIR$/application/layouts/scripts/header.phtml" />
+        <option value="$PROJECT_DIR$/application/layouts/scripts/footer.phtml" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="774" />
@@ -250,39 +162,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -351,32 +231,6 @@
               <option name="myItemId" value="file-bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="file-bin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -389,146 +243,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="communication" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -554,42 +268,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="everylastmorsel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -597,21 +275,21 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="187" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="184" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="190" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="187" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="202" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="205" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="186" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="632" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="627" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="181" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="190" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="630" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="635" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="185" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="179" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="182" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
@@ -673,15 +351,15 @@
     </servers>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/data/db" />
+      <recent name="$PROJECT_DIR$/application/data" />
+      <recent name="$PROJECT_DIR$/application/views/scripts/plot" />
+      <recent name="$PROJECT_DIR$/application/views/scripts/plot/user" />
+      <recent name="$PROJECT_DIR$/application/views/scripts/profile" />
+    </key>
     <key name="OPEN_URL_DIALOG">
       <recent name="http://revival.collectivecolony.com" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/application/views/scripts/profile" />
-      <recent name="$PROJECT_DIR$/application/views/scripts/user" />
-      <recent name="$PROJECT_DIR$/application/views/scripts/plot/photos" />
-      <recent name="$PROJECT_DIR$/application/views/scripts/plot/view-old" />
-      <recent name="$PROJECT_DIR$/application/views/scripts/plot" />
     </key>
   </component>
   <component name="RunManager">
@@ -765,26 +443,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
+    <frame x="-1" y="22" width="1280" height="774" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21068703" sideWeight="0.4935065" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.48701298" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.49675325" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.48701298" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.49675325" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2564935" sideWeight="0.67302054" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22889611" sideWeight="0.670088" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23295455" sideWeight="0.78931296" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2564935" sideWeight="0.21847507" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.49756494" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.49025974" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41221374" sideWeight="0.49025974" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3240469" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2111437" sideWeight="0.4935065" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -797,8 +475,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <value>
         <are-packages-shown value="false" />
@@ -826,7 +504,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Addition of password reset. Settings password updates. Password email. Global message styling. Updates to communictaion tools for archiving. Code cleanup and commenting." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update to add email templates.&#10;Updates to user/people section.&#10;Home page updates.&#10;Communication changes.&#10;Adding of loader icon." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -847,163 +525,143 @@
     <MESSAGE value="fix to image storage" />
     <MESSAGE value="added media and placeholder" />
     <MESSAGE value="Addition of password reset. Settings password updates. Password email. Global message styling. Updates to communictaion tools for archiving. Code cleanup and commenting." />
+    <MESSAGE value="updates to home page styling and map.&#10;updates to how users are associated.&#10;updates to watching plots.&#10;updates to individual plot view.&#10;updates to individual user view." />
+    <MESSAGE value="Updates to home page map.&#10;Updates to plot users.&#10;Updates to user associations.&#10;Updates to watching users.&#10;Updates to pending users.&#10;Updates to individual user and plot views." />
+    <MESSAGE value="bug fix for empty loading." />
+    <MESSAGE value="Added crop displays.&#10;Added crop form.&#10;Added crop data." />
+    <MESSAGE value="Implement data import on upgrade script.&#10;Fix for bootstrap loading issue - during upgrade scripts was applying updates before bootstrap object was assigned therefore no namespace was declared during upgrade scripts." />
+    <MESSAGE value="addition of image assets.&#10;Update to add facebook link." />
+    <MESSAGE value="adding image assets.&#10;adding facebook link." />
+    <MESSAGE value="Update to add email templates.&#10;Updates to user/people section.&#10;Home page updates.&#10;Communication changes.&#10;Adding of loader icon." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/header.phtml">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/plot/crops.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="58" selection-start="1847" selection-end="1847" vertical-scroll-proportion="-23.913044">
+        <state line="19" column="59" selection-start="642" selection-end="642" vertical-scroll-proportion="0.43822077">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/_login-menu.phtml">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/crops/_list.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="57" selection-start="295" selection-end="295" vertical-scroll-proportion="-3.0434783">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/helpers/Form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="26" selection-start="13" selection-end="33" vertical-scroll-proportion="0.0">
+        <state line="4" column="42" selection-start="103" selection-end="103" vertical-scroll-proportion="0.092257">
           <folding>
-            <element signature="n#getLoginForm#0;n#Elm_View_Helper_Form#0;n#!!top" expanded="true" />
+            <marker date="1341804945000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/communication/_form.phtml">
+    <entry file="file://$PROJECT_DIR$/application/models/Crop.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/http/file-bin/js/elm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="296" column="17" selection-start="6635" selection-end="6635" vertical-scroll-proportion="0.0">
+        <state line="52" column="80" selection-start="955" selection-end="955" vertical-scroll-proportion="0.7777778">
           <folding>
-            <element signature="e#6635#7534#0" expanded="true" />
+            <element signature="n#getCrops#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
+            <element signature="n#getCropTypes#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
+            <element signature="n#import#0;n#Elm_Model_Crop#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/_login.phtml">
+    <entry file="file://$PROJECT_DIR$/application/models/Resources/Crop.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="55" selection-start="366" selection-end="366" vertical-scroll-proportion="0.22082019">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/profile/_sidebar.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/communication/_modal.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="57" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.4258675">
+        <state line="67" column="32" selection-start="1403" selection-end="1403" vertical-scroll-proportion="0.8">
           <folding>
-            <element signature="e#1134#2224#0" expanded="true" />
+            <element signature="n#getCrops#0;n#Elm_Model_Resource_Crop#0;n#!!top" expanded="true" />
+            <element signature="n#uniqueTypes#0;n#Elm_Model_Resource_Crop#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/var/log/app.log">
+    <entry file="file://$PROJECT_DIR$/application/controllers/CropsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="79" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0">
+        <state line="118" column="52" selection-start="2562" selection-end="2658" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#indexAction#0;n#Elm_IndexController#0;n#!!top" expanded="true" />
+            <element signature="n#viewAction#0;n#Elm_CropsController#0;n#!!top" expanded="true" />
+            <element signature="n#addAction#0;n#Elm_CropsController#0;n#!!top" expanded="true" />
+            <element signature="n#addPostAction#0;n#Elm_CropsController#0;n#!!top" expanded="true" />
+            <element signature="n#searchAction#0;n#Elm_CropsController#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/http/file-bin/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/library/Zend/Application/Bootstrap/BootstrapAbstract.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2860" column="16" selection-start="64609" selection-end="64609" vertical-scroll-proportion="0.0">
+        <state line="33" column="15" selection-start="1218" selection-end="1218" vertical-scroll-proportion="-7.888889">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/Elm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="53" selection-start="2068" selection-end="2068" vertical-scroll-proportion="0.0">
+        <state line="357" column="82" selection-start="8745" selection-end="8745" vertical-scroll-proportion="0.42222223">
+          <folding>
+            <element signature="n#run#0;n#Elm#0;n#!!top" expanded="true" />
+            <element signature="n#exception#0;n#Elm#0;n#!!top" expanded="true" />
+            <element signature="n#log#0;n#Elm#0;n#!!top" expanded="true" />
+            <element signature="n#profile#0;n#Elm#0;n#!!top" expanded="true" />
+            <element signature="n#_getNamespace#0;n#Elm#0;n#!!top" expanded="true" />
+            <element signature="n#_getInflected#0;n#Elm#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/data/db/upgrade-0.0.18-0.0.19.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="16" selection-start="445" selection-end="445" vertical-scroll-proportion="0.44444445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Zend/Application/Bootstrap/Bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="9" selection-start="2646" selection-end="3142" vertical-scroll-proportion="0.73333335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/http/file-bin/images/logo-blue-account.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/http/file-bin/images/logo_orig.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/http/file-bin/images/logo-sm_orig.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/configs/application.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="17" selection-start="536" selection-end="536" vertical-scroll-proportion="0.4888889">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/footer.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="52" selection-start="917" selection-end="917" vertical-scroll-proportion="0.53731346">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/header.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="93" selection-start="1775" selection-end="1775" vertical-scroll-proportion="1.1044776">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/http/file-bin/css/screen.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="42" selection-start="5480" selection-end="5480" vertical-scroll-proportion="0.0">
+        <state line="857" column="71" selection-start="23555" selection-end="23555" vertical-scroll-proportion="1.1707317">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/index/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="36" selection-start="1495" selection-end="1495" vertical-scroll-proportion="-16.608696">
-          <folding>
-            <element signature="e#2095#2546#0" expanded="true" />
-            <element signature="e#2434#2542#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/http/file-bin/js/lib/infobox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="304" column="25" selection-start="10323" selection-end="10330" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="n#!!block;n#InfoBox#0" expanded="true" />
-            <element signature="e#5928#8721#0" expanded="true" />
-            <element signature="e#6106#6200#0" expanded="true" />
-            <element signature="e#6415#6581#0" expanded="true" />
-            <element signature="e#8347#8395#0" expanded="true" />
-            <element signature="e#8841#9246#0" expanded="true" />
-            <element signature="e#9370#9621#0" expanded="true" />
-            <element signature="e#9780#10198#0" expanded="true" />
-            <element signature="e#9823#10195#0" expanded="true" />
-            <element signature="e#10355#12329#0" expanded="true" />
-            <element signature="e#12506#13427#0" expanded="true" />
-            <element signature="e#13605#14697#0" expanded="true" />
-            <element signature="e#14816#14915#0" expanded="true" />
-            <element signature="e#15036#15555#0" expanded="true" />
-            <element signature="e#15934#17517#0" expanded="true" />
-            <element signature="e#17701#18926#0" expanded="true" />
-            <element signature="e#19061#19317#0" expanded="true" />
-            <element signature="e#19442#19708#0" expanded="true" />
-            <element signature="e#19822#19850#0" expanded="true" />
-            <element signature="e#19977#20006#0" expanded="true" />
-            <element signature="e#20119#20146#0" expanded="true" />
-            <element signature="e#20216#20313#0" expanded="true" />
-            <element signature="e#20383#20478#0" expanded="true" />
-            <element signature="e#20904#21203#0" expanded="true" />
-            <element signature="e#21080#21129#0" expanded="true" />
-            <element signature="e#21289#21902#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/http/file-bin/js/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="38" selection-start="3562" selection-end="3562" vertical-scroll-proportion="0.5869565">
-          <folding>
-            <element signature="e#3670#4390#0" expanded="true" />
-            <element signature="e#3743#4384#0" expanded="true" />
-            <element signature="e#3992#4211#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
