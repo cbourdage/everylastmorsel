@@ -16,9 +16,24 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
      */
     public function run()
     {
+		$front   = $this->getResource('FrontController');
+        $default = $front->getDefaultModule();
+        if (null === $front->getControllerDirectory($default)) {
+            throw new Zend_Application_Bootstrap_Exception(
+                'No default controller directory registered with front controller'
+            );
+        }
+
+        $front->setParam('bootstrap', $this);
+
 		// Apply all updates
 		Elm_Model_Setup::applyAllUpdates();
-		return parent::run();
+
+		// Dispatch and go
+        $response = $front->dispatch();
+        if ($front->returnResponse()) {
+            return $response;
+        }
     }
 
 	/**
@@ -340,7 +355,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
      */
     public static function getModel($modelClass = '')
     {
-		$bootstrap = Zend_Controller_Front::getInstance()->getParam('bootstrap'); 
+		$bootstrap = Zend_Controller_Front::getInstance()->getParam('bootstrap');
 		$class = implode(array(
 	  			$bootstrap->_getNamespace(),
 				'Model',

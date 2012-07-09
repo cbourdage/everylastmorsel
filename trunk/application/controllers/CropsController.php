@@ -89,6 +89,9 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 		$this->_redirect($redirectUrl);
 	}
 
+	/**
+	 * Auto-suggest search action
+	 */
 	public function searchAction()
 	{
 		$this->_initAjax();
@@ -103,7 +106,7 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 	}
 
 	/**
-	 *
+	 * test import action
 	 */
 	public function importAction()
 	{
