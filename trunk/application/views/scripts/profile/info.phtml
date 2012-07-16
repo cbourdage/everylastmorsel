@@ -19,7 +19,7 @@ $user = $this->user;
 			<li>
 				<?= $photoInput->renderLabel(); ?>
 				<div>
-					<figure><img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="255px" /></figure>
+					<figure><img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $this->escape($user->getName()); ?>" width="255px" /></figure>
 					<p><?= $photoInput->renderFile(); ?></p>
 				</div>
 			</li>

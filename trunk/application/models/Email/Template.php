@@ -50,8 +50,10 @@ class Elm_Model_Email_Template extends Colony_Object
 		$html->setScriptPath(APPLICATION_PATH . '/views/emails/');
 
 		// assign valeues
-		foreach ($this->getParams() as $name => $value) {
-			$html->assign($name, $value);
+		if (count($this->getParams())) {
+			foreach ($this->getParams() as $name => $value) {
+				$html->assign($name, $value);
+			}
 		}
 
 		// create mail object

@@ -65,7 +65,7 @@ class Elm_Model_Resource_Crop extends Colony_Db_Table
 		if ($limit !== null) {
 			$select->limit($limit, 0);
 		}
-Elm::log($select->__toString());
+
 		foreach ($this->fetchAll($select) as $row) {
 			$items[$row->crop_id] = $row->variety;
 		}

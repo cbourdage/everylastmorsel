@@ -270,7 +270,8 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		return $this->_getResource()->isUserAssociated(
 			$this,
 			$user->getId(),
-			array(Elm_Model_Resource_Plot::ROLE_OWNER, Elm_Model_Resource_Plot::ROLE_CREATOR)
+			array(Elm_Model_Resource_Plot::ROLE_OWNER, Elm_Model_Resource_Plot::ROLE_CREATOR),
+			true
 		);
 
 		/** Deprecated */

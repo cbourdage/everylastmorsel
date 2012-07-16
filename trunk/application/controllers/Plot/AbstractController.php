@@ -22,18 +22,6 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
         }
 	}
 
-	public function _init()
-	{
-		$this->_plot = Elm::getModel('plot')->load($this->getRequest()->getParam('p'));
-		Zend_Registry::set('current_plot', $this->_plot);
-
-		$this->view->plot = $this->_plot;
-		$this->view->canContact = $this->_plot->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC ? true : false;
-		$this->view->headTitle()->prepend($this->_plot->getName());
-
-		return $this;
-	}
-
 	protected function _isValid()
 	{
 		if (!$id = $this->getRequest()->getParam('p')) {
@@ -46,6 +34,18 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 		}
 
 		return true;
+	}
+
+	public function _init()
+	{
+		$this->_plot = Elm::getModel('plot')->load($this->getRequest()->getParam('p'));
+		Zend_Registry::set('current_plot', $this->_plot);
+
+		$this->view->plot = $this->_plot;
+		$this->view->canContact = $this->_plot->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC ? true : false;
+		$this->view->headTitle()->prepend($this->_plot->getName());
+
+		return $this;
 	}
 
 	/**

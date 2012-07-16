@@ -2,6 +2,7 @@
 $session = Elm::getSingleton('user/session');
 $user = $this->user;
 ?>
+<?php if (!$user->isPrivate()) : ?>
 <nav id="profileNavigation">
 	<ul class="list-block">
 		<li><a href="<?= $user->getUrl(); ?>" title="About Me">About</a></li>
@@ -9,3 +10,4 @@ $user = $this->user;
 		<li><a href="<?= $this->url('', array('_route' => 'user-crops', 'u' => $user->getId())); ?>" title="Crops">Crops</a></li>
 	</ul>
 </nav>
+<?php endif; ?>

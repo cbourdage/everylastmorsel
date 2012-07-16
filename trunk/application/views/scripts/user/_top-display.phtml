@@ -1,0 +1,10 @@
+<?php
+$user = $this->user;
+?>
+<div class="top">
+	<h2><?php echo $this->escape($user->getName()); ?></h2>
+	<ul class="list-inline">
+		<li><?php echo $this->escape($user->getCity()); ?>,</li>
+		<li><?php echo $this->escape($user->getState()); ?></li>
+	</ul>
+</div>

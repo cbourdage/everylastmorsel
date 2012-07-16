@@ -38,6 +38,23 @@ class Elm_Model_Geolocation extends Colony_Object
 
 			$this->_location = $this->_results['results'][0];
 
+			/**
+			 * cache results into db for later use?
+			 */
+			$locationCache = Elm::getModel('location_cache');
+			$locationCache->setData(array(
+				'latitude' => $lat,
+				'longitude' => $long,
+				'address' => $this->getAddress(),
+				'city' => $this->getCity(),
+				'state' => $this->getState(),
+				'zipcode' => $this->getZip(),
+				'county' => $this->getCounty(),
+				'raw' => serialize($this->_location),
+				'ip_address' => Zend_Controller_Front::getInstance()->getRequest()->getClientIp(true)
+			));
+			$locationCache->save();
+
 			// Log data
 			Elm::log(
 				sprintf("%s,%s:%s,%s,%s,%s", $lat, $long, $this->getCity(), $this->getState(), $this->getZip(), $this->getCounty()),
@@ -53,6 +70,16 @@ class Elm_Model_Geolocation extends Colony_Object
 	public function getLocation()
 	{
 		return $this->_location;
+	}
+
+	/**
+	 * Returns the street address
+	 *
+	 * @return string
+	 */
+	public function getAddress()
+	{
+		return $this->_results['results'][0]['address_components'][0]['long_name'] . ' ' . $this->_results['results'][0]['address_components'][1]['long_name'];
 	}
 
 	/**

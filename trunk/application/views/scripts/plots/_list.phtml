@@ -6,12 +6,12 @@
 		<?php foreach ($this->plots as $plot) : ?>
 			<li>
 				<figure>
-					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '150', 'width' => '150'))); ?>" title="<?php echo $plot->getName(); ?>" />
+					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '150', 'width' => '150'))); ?>" title="<?php echo $this->escape($plot->getName()); ?>" />
 				</figure>
 				<div class="plot-details details">
-					<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $plot->getName(); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
+					<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
 					<p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
-					<p><?php echo $plot->getAbout(); ?></p>
+					<p><?php echo $this->escape($plot->getAbout()); ?></p>
 				</div>
 			</li>
 		<?php endforeach; ?>
@@ -22,9 +22,9 @@
 		<?php foreach ($this->plots as $plot) : ?>
 			<li>
 				<figure>
-					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '125', 'width' => '125'))); ?>" title="<?php echo $plot->getName(); ?>" />
+					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '125', 'width' => '125'))); ?>" title="<?php echo $this->escape($plot->getName()); ?>" />
 				</figure>
-				<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $plot->getName(); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
+				<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
 				<p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
 			</li>
 		<?php endforeach; ?>

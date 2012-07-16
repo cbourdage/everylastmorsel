@@ -6,12 +6,15 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 {
 	public function preDispatch()
 	{
+		parent::preDispatch();
 		if ($plotId = $this->getRequest()->getParam('p')) {
 			$plot = Elm::getModel('plot')->load($plotId);
 			if ($plot->getId()) {
 				$this->_init();
 			}
 		}
+
+		//if ($this->_plot->is)
 	}
 
 	/**
@@ -137,6 +140,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
+		$this->_init();
 		$this->_initLayout();
 		$this->view->headTitle()->append("Crops");
 	}
@@ -151,6 +155,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
+		$this->_init();
 		$this->_initLayout();
 		$this->view->headTitle()->append("People");
 	}
@@ -165,12 +170,14 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
+		$this->_init();
 		$this->_initLayout();
 		$this->view->headTitle()->append("People");
 
 		$form = new Elm_Model_Form_Plot_Images();
 		$form->setAction('/plot/image-upload/p/' . $this->_plot->getId());
 		$this->view->form = $form;
+
 	}
 
 	/**

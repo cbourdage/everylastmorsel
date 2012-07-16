@@ -4,15 +4,7 @@ $plot = $this->Plot()->getPlot();
 $users = $this->users;
 ?>
 <div class="inner-content-wrapper profile plot">
-	<div class="top">
-		<h2><?php echo $plot->getName(); ?></h2>
-		<ul class="list-inline">
-			<li><?php echo $plot->getCity(); ?>,</li>
-			<li><?php echo $plot->getState(); ?></li>
-			<li><?php echo $plot->getZipcode(); ?></li>
-		</ul>
-	</div>
-
+	<?php echo $this->partial('plot/_top-display.phtml', array('plot' => $plot)); ?>
 	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
 
@@ -22,8 +14,8 @@ $users = $this->users;
 			<ul class="list-block">
 			<?php foreach ($users as $user) : ?>
 				<li>
-					<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="150px" />
-					<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
+					<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $this->escape($user->getName()); ?>" width="150px" />
+					<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $this->escape($user->getName()); ?>"><?php echo $this->escape($user->getName()); ?></a></h3>
 					<p class="role">Says they are a <b><?php echo $user->getRole(); ?></b></p>
 					<p class="actions">
 						<a href="<?php echo $this->Plot()->getApprovalUrl($plot, $user); ?>" title="Approve">Approve</a>

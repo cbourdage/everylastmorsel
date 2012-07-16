@@ -2,13 +2,16 @@
 /**
  * Globals
  */
-var elm = {
-	domain : 'http://local.elm-1-0.com/',
+/**
+ * @TODO move into scrips head
+ */
+var Elm = {
+	domain : 'http://local.Elm-1-0.com/',
 	environment : 'development',
 	api : 'AIzaSyB5wrozaPkDDIO0Kh6tNyHEru-2gOvO40w'
 };
 
-window.elm = elm;
+window.Elm = Elm;
 
 // Initialize the users location
 function initLocation() {
@@ -25,7 +28,7 @@ function initLocation() {
 	 * No location
 	 */
 	function handleNoGeolocation() {
-		window.location = elm.domain + 'coming-soon/';
+		window.location = Elm.domain + 'coming-soon/';
 	}
 
 	/**
@@ -34,7 +37,7 @@ function initLocation() {
 	 * @param position
 	 */
 	function initPosition(position) {
-		elm.myPosition = {
+		Elm.myPosition = {
 			lat : position.coords.latitude,
 			long : position.coords.longitude
 		};
@@ -44,7 +47,7 @@ function initLocation() {
 		 */
 		jQuery.ajax({
 			url: '/index/init-location/',
-			data: jQuery.serializeJSON(elm.myPosition),
+			data: jQuery.serializeJSON(Elm.myPosition),
 			dataType: 'json',
 			success: function(response) {
 				if (response.location) {
@@ -74,7 +77,7 @@ initLocation();
  *
  * @param response
  */
-window.elm.success = function(response) {
+window.Elm.success = function(response) {
 	if (response.location) {
 		window.location = response.location;
 		return false;
@@ -89,7 +92,7 @@ window.elm.success = function(response) {
  * @param $el
  * @param location
  */
-window.elm.error = function(message, $el, location) {
+window.Elm.error = function(message, $el, location) {
 	var $message = jQuery.createErrorAlert(message).hide();
 
 	switch(location) {
@@ -114,27 +117,6 @@ window.elm.error = function(message, $el, location) {
 
 !function ($) {
 	$(function() {
-
-		/**
-		 * Photo timeline slider
-		 *
-		 * @TODO use scroller for this
-		 */
-		if ($('.photo-timeline').length) {
-			//$('.photo-timeline').simpleScroll({});
-		}
-
-		/**
-		 * Photo timeline main image switch
-		 *
-		 * @TODO use bibles.com code for this
-		 */
-		if ($('.photo-main').length) {
-			$('.photo-timeline').on('click', 'ul.photo-timeline-list img', function(e) {
-				$('.photo-main').find('figure img').attr('src', '');
-			});
-		}
-
 		/**
 		 * Invole me button click to open modal
 		 */
@@ -170,11 +152,11 @@ window.elm.error = function(message, $el, location) {
 						$successModal.find('.modal-body h3').html(response.message);
 						$successModal.modal('show').delay(3000, function(e) { });
 					} else {
-						elm.error(response.message, $content, 'prepend');
+						Elm.error(response.message, $content, 'prepend');
 					}
 				},
 				error: function() {
-					elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+					Elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
 				}
 			});
 			return false;
@@ -222,11 +204,11 @@ window.elm.error = function(message, $el, location) {
 						$successModal.find('.modal-body h3').html(response.message);
 						$successModal.modal('show').delay(3000, function(e) { });
 					} else {
-						elm.error(response.message, $content, 'prepend');
+						Elm.error(response.message, $content, 'prepend');
 					}
 				},
 				error: function() {
-					elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+					Elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
 				}
 			});
 			return false;

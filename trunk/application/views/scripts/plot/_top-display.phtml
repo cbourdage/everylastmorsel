@@ -1,0 +1,9 @@
+<?php $plot = $this->plot; ?>
+<div class="top">
+	<h2><?php echo $this->escape($plot->getName()); ?></h2>
+	<ul class="list-inline">
+		<li><?php echo $this->escape($plot->getCity()); ?>,</li>
+		<li><?php echo $this->escape($plot->getState()); ?></li>
+		<li><?php echo $this->escape($plot->getZipcode()); ?></li>
+	</ul>
+</div>

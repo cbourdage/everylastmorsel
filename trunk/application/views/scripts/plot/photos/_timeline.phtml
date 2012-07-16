@@ -5,11 +5,11 @@ if (!$this->showRemove) {
 	$this->showRemove = false;
 }
 ?>
-<?php if ($images = $plot->getImages()) : Elm::log($images); ?>
+<?php if ($images = $plot->getImages()) : ?>
 <ul class="photo-timeline-list list list-block">
 	<?php foreach ($images as $image) : ?>
 		<li>
-			<img src="<?= Elm::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" title="<?php echo $image->getCaption(); ?>" alt="<?php echo $image->getCaption(); ?>">
+			<img src="<?= Elm::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" title="<?php echo $this->escape($image->getCaption()); ?>" alt="<?php echo $this->escape($image->getCaption()); ?>">
 			<?php if ($session->isLoggedIn() && $plot->isOwner($session->user) && $this->showRemove) : ?>
 				<br /><a href="<?= $this->url('plot/photo-remove', array('p' => $plot->getId(), 'photo' => $image->getId())); ?>" title="Remove Image">Remove</a>
 			<?php endif; ?>

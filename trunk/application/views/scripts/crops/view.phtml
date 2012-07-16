@@ -4,14 +4,7 @@ $user = $this->user;
 $plots = $user->getNonWatching();
 ?>
 <div class="inner-content-wrapper crops">
-	<div class="top">
-		<h2><?php echo $user->getName(); ?></h2>
-		<ul class="list-inline">
-			<li><?php echo $user->getCity(); ?>,</li>
-			<li><?php echo $user->getState(); ?></li>
-		</ul>
-	</div>
-
+	<?php echo $this->partial('user/_top-display.phtml', array('user' => $user)); ?>
 	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('profile/_navigation.phtml'); ?>
 
@@ -20,12 +13,12 @@ $plots = $user->getNonWatching();
 		<?php foreach ($plots as $plot) : ?>
 			<li>
 				<figure>
-					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '150', 'width' => '150'))); ?>" title="<?php echo $plot->getName(); ?>" />
+					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '150', 'width' => '150'))); ?>" title="<?php echo $this->escape($plot->getName()); ?>" />
 				</figure>
 				<div class="plot-details details">
-					<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $plot->getName(); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
+					<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
 					<p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
-					<p><?php echo $plot->getAbout(); ?></p>
+					<p><?php echo $this->escape($plot->getAbout()); ?></p>
 					<p class="buttons-set">
 						<a href="<?php echo $this->url('crops/add', array('p' => $plot->getId())); ?>" class="btn btn-grey" title="Add Crop"><span>Add Crop</span></a>
 					</p>

@@ -18,7 +18,7 @@ class Elm_Model_Form_User_Info extends Elm_Model_Form_Abstract
             'label'      => 'About Yourself'
         ));
 
-        $this->addElement('text', 'email', array(
+		$this->addElement('text', 'email', array(
             'filters'    => array('StringTrim', 'StringToLower'),
             'validators' => array(
                 array('StringLength', true, array(3, 128)),
@@ -27,6 +27,21 @@ class Elm_Model_Form_User_Info extends Elm_Model_Form_Abstract
             ),
             'required'   => true,
             'label'      => 'Email'
+        ));
+
+        $this->addElement('text', 'city', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(),
+            'required'   => false,
+            'label'      => 'City'
+        ));
+
+		$this->addElement('text', 'state', array(
+            'filters'    => array('StringTrim'),
+            'validators' => array(),
+            'required'   => false,
+            'label'      => 'State',
+			'value' => 'Illinois'
         ));
 
 		// Image input

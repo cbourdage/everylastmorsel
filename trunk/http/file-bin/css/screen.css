@@ -884,8 +884,24 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 .photo-timeline ul {}
 .photo-timeline ul li { margin-right: 10px; position: relative; }
 .photo-timeline ul li img { border: 0; height: 80px; }
+.photo-timeline a.arrow {
+	background: red;
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+	height: 30px;
+	width: 30px;
+}
+.photo-timeline a.arrow.prev { left: 0; }
+.photo-timeline a.arrow.next { right: 0; }
 /*.photo-timeline ul li a { position: absolute; bottom: 0; left: 0; }*/
 .photo-main figure img { width: 630px; }
+body.elm-plot-photos .photo-timeline {
+	height: 100px;
+	overflow: hidden;
+	position: relative;
+}
 
 
 /**

@@ -16,16 +16,19 @@ class Elm_View_Helper_Map extends Zend_View_Helper_Abstract
 		return $this;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getPlotJson()
 	{
 		$this->_plots = Elm::getModel('plot')->getAllPlots();
 		$tempJson = array();
 		foreach ($this->_plots as $key => $plot) {
-			$html = '<h3 class="heading">' . $plot->getName() . '</h3>';
+			$html = '<h3 class="heading">' . $this->escape($plot->getName()) . '</h3>';
 			$html .= '<div class="content clearfix">';
 			// About info
-			$html .= '<p>' . ($plot->getAbout() ? str_replace('<br />', '</p><p>', nl2br($plot->getAbout())) : '') . '</p>';
-			$html .= '<p class="buttons-set"><a href="' . $plot->getUrl() . '" title="' . $plot->getName() . '">View Plot</a></p>';
+			//$html .= '<p>' . ($plot->getAbout() ? str_replace('<br />', '</p><p>', nl2br($$this->escape(plot->getAbout())) : '') . '</p>';
+			$html .= '<p class="buttons-set"><a href="' . $plot->getUrl() . '" title="' . $this->escape($plot->getName()) . '">View Plot</a></p>';
 			$html .= '</div>';
 			$plot->setData('infoWindowHtml', $html);
 			$plot->setUrl($plot->getUrl);
@@ -88,7 +91,7 @@ class Elm_View_Helper_Map extends Zend_View_Helper_Abstract
 	 * Builds google map url image request. Returns string of url or all query
 	 * string parameters based on flag
 	 *
-	 * * http://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=14&size=512x512&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Ccolor:red%7Clabel:C%7C40.718217,-73.998284&sensor=false
+	 * http://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=14&size=512x512&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Ccolor:red%7Clabel:C%7C40.718217,-73.998284&sensor=false
 	 * http://maps.googleapis.com/maps/api/staticmap?center=Lombard,IL
 	 *		 &zoom=15
 	 *		 &size=250x250

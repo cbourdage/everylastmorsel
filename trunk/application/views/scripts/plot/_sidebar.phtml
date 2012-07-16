@@ -4,7 +4,7 @@ $session = Elm::getSingleton('user/session');
 <?php if (Zend_Registry::isRegistered('current_plot') || $this->plot) : ?>
 	<?php $plot = $this->plot ? $this->plot : Zend_Registry::get('current_plot') ; ?>
 	<figure id="mainImage">
-		<img src="<?php echo $this->Map()->getMapImage($plot); ?>" title="<?php echo $plot->getName(); ?>" />
+		<img src="<?php echo $this->Map()->getMapImage($plot); ?>" title="<?php echo $this->escape($plot->getName()); ?>" />
 	</figure>
 	<div class="social-links">
 		<ul>

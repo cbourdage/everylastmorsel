@@ -6,10 +6,10 @@ $users = $this->users;
 	<?php foreach ($users as $user) : ?>
 		<li>
 			<figure>
-				<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="150px" />
+				<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $this->escape($user->getName()); ?>" width="150px" />
 			</figure>
 			<div class="user-details details">
-				<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
+				<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $this->escape($user->getName()); ?>"><?php echo $this->escape($user->getName()); ?></a></h3>
 				<p class="role">
 					<b><?php echo $user->getRole(); ?></b>
 					<i>since <?php echo $this->Data()->formatDate($user->getCreatedAt()); ?></i>
@@ -17,11 +17,11 @@ $users = $this->users;
 						<i>(Me)</i>
 					<?php endif; ?>
 				</p>
-				<p><?php echo $user->getAbout(); ?></p>
+				<p><?php echo $this->escape($user->getAbout()); ?></p>
 				<?php if (!$user->isMe() && $this->canContact) : ?>
 					<p class="buttons-set">
-						<a href="#contact" class="btn btn-grey contact-button" title="Contact <?php echo $user->getName(); ?>" data-toggle="modal" data-to="<?php echo $user->getId(); ?>">
-							<span>Contact <?php echo $user->getFirstname(); ?></span>
+						<a href="#contact" class="btn btn-grey contact-button" title="Contact <?php echo $this->escape($user->getName()); ?>" data-toggle="modal" data-to="<?php echo $user->getId(); ?>">
+							<span>Contact <?php echo $this->escape($user->getFirstname()); ?></span>
 						</a>
 					</p>
 				<?php endif; ?>

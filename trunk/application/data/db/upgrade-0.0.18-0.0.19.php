@@ -1,6 +1,8 @@
 <?php
 $this->startSetup();
 
+$this->run("TRUNCATE crops;");
+
 $type = 'amaranth';
 $file = 'amaranth_out.csv';
 Elm::getModel('crop')->import($file, $type);

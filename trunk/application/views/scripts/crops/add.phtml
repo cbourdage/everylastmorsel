@@ -5,18 +5,11 @@ $plot = $this->plot;
 $form = $this->form;
 ?>
 <div class="inner-content-wrapper crops">
-	<div class="top">
-		<h2><?php echo $user->getName(); ?></h2>
-		<ul class="list-inline">
-			<li><?php echo $user->getCity(); ?>,</li>
-			<li><?php echo $user->getState(); ?></li>
-		</ul>
-	</div>
-
+	<?php echo $this->partial('user/_top-display.phtml', array('user' => $user)); ?>
 	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('profile/_navigation.phtml'); ?>
 
-	<h2 class="blue"><?= $plot->getName(); ?></h2>
+	<h2 class="blue"><?= $this->escape($plot->getName()); ?></h2>
 	<div class="blocked-content clearfix">
 		<?php echo $this->partial('crops/_list.phtml', array('plot' => $plot)); ?>
 	</div>

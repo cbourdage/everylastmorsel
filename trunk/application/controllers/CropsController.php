@@ -55,6 +55,9 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 		$this->_initLayout();
 	}
 
+	/**
+	 * @return mixed
+	 */
 	public function addPostAction()
 	{
 		if (!$this->getRequest()->isPost()) {
@@ -62,14 +65,14 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 			return;
 		}
 
-		$data = $this->getRequest()->getPost();
-		$plot = Elm::getSingleton('plot')->load($data['plot_id']);
+		$post = $this->getRequest()->getPost();
+		$plot = Elm::getSingleton('plot')->load($post['plot_id']);
 
 		$form = new Elm_Model_Form_Plot_Crop();
-		if ($form->isValid($data)) {
+		if ($form->isValid($post)) {
 			try {
 				$plotCrop = new Elm_Model_Plot_Crop();
-				$plotCrop->extractData($data);
+				$plotCrop->extractData($post);
 				$plotCrop->save();
 				$plotCrop->createNewCropStatus();
 				$this->_getSession()->addSuccess('Successfully added a new crop to ' . $plot->getName());
@@ -78,7 +81,7 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 				$this->_getSession()->addError("Ah, we've run into an error. Try again");
 			}
 		} else {
-			$this->_getSession()->formData = new Colony_Object($data);
+			$this->_getSession()->formData = $post;
 			$this->_getSession()->addError('Check all form fields are filled out.');
 		}
 

@@ -36,7 +36,7 @@ class Elm_Model_User_Image implements Elm_Model_Image_Interface
 	public static function getImageDestination($object)
 	{
 		$destination = Elm::getBaseDir(self::DESTINATION_DIR) . self::getImagePath($object);
-		Elm::log($destination);
+		//Elm::log($destination);
 		if (!is_dir($destination)) {
 			mkdir($destination, 0777, true);
 		}
@@ -75,7 +75,7 @@ class Elm_Model_User_Image implements Elm_Model_Image_Interface
 
 			// Receive and save
 			if ($adapter->receive('image')) {
-				Elm::log('received image' . self::getImageUrl($user) . '/' . $newFilename);
+				//Elm::log('received image' . self::getImageUrl($user) . '/' . $newFilename);
 				// Set image data
 				//$this->setData('exif_data', exif_read_data($info['destination'] . DIRECTORY_SEPARATOR . $newFilename));
 				$user->setImage(self::getImageUrl($user) . '/' . $newFilename);

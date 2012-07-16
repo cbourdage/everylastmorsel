@@ -25,15 +25,14 @@ var zoomLevel = 14;
 
 	var locationTimeout;
 	function _initRecurse() {
-		if (typeof(elm.myPosition) == 'undefined') {
+		if (typeof(Elm.myPosition) == 'undefined') {
 			initLocation();
-			locationTimeout = window.setTimeout(function() { _initRecurse() }, 300);
+			locationTimeout = window.setTimeout(function() {
+				_initRecurse()
+			}, 300);
 		} else {
 			// init location
-			initialLocation = new google.maps.LatLng(elm.myPosition.lat, elm.myPosition.long);
-
-			// init map on window load
-			//google.maps.event.addDomListener(window, 'load', _initMap);
+			initialLocation = new google.maps.LatLng(Elm.myPosition.lat, Elm.myPosition.long);
 			_initMap();
 		}
 	}
@@ -164,12 +163,12 @@ var zoomLevel = 14;
 										if (response.success) {
 											window.location = response.location;
 										}  else {
-											elm.error(response.message, $content, 'prepend');
+											Elm.error(response.message, $content, 'prepend');
 											$modal.modal('show');
 										}
 									},
 									error: function() {
-										elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+										Elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
 										$modal.modal('show');
 									}
 								});
@@ -178,7 +177,7 @@ var zoomLevel = 14;
 						}
 					},
 					error: function() {
-						elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+						Elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
 						$modal.modal('show');
 					}
 				});

@@ -9,11 +9,17 @@ class Elm_UserController extends Elm_User_AbstractController
 	 */
 	public function preDispatch()
 	{
+		parent::preDispatch();
 		if ($userId = $this->getRequest()->getParam('u')) {
 			$user = Elm::getModel('user')->load($userId);
 			if ($user->getId()) {
 				$this->_init();
 			}
+		}
+
+		if ($this->_user->isPrivate()) {
+			$this->_redirect($this->_user->getUrl());
+			return;
 		}
 	}
 

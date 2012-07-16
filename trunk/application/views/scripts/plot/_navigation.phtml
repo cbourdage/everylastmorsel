@@ -4,9 +4,9 @@ $plot = $this->plot;
 ?>
 <nav id="profileNavigation">
 	<ul class="list-block">
-		<li><a href="<?= $plot->getUrl(); ?>" title="<?= $plot->getName(); ?>">About</a></li>
-		<li><a href="<?= $this->url('', array('_route' => 'plot-photos', 'p' => $plot->getId())); ?>" title="<?= $plot->getName(); ?> Photos">Photos</a></li>
-		<li><a href="<?= $this->url('', array('_route' => 'plot-crops', 'p' => $plot->getId())); ?>" title="<?= $plot->getName(); ?> Crops">Crops</a></li>
-		<li><a href="<?= $this->url('', array('_route' => 'plot-people', 'p' => $plot->getId())); ?>" title="<?= $plot->getName(); ?> Users">People</a></li>
+		<li><a href="<?= $plot->getUrl(); ?>" title="<?= $this->escape($plot->getName()); ?>">About</a></li>
+		<li><a href="<?= $this->url('', array('_route' => 'plot-photos', 'p' => $plot->getId())); ?>" title="<?= $this->escape($plot->getName()); ?> Photos">Photos</a></li>
+		<li><a href="<?= $this->url('', array('_route' => 'plot-crops', 'p' => $plot->getId())); ?>" title="<?= $this->escape($plot->getName()); ?> Crops">Crops</a></li>
+		<li><a href="<?= $this->url('', array('_route' => 'plot-people', 'p' => $plot->getId())); ?>" title="<?= $this->escape($plot->getName()); ?> Users">People</a></li>
 	</ul>
 </nav>

@@ -7,8 +7,8 @@ $users = $this->users;
 	<ul class="list-block pending-user-list">
 	<?php foreach ($users as $user) : ?>
 		<li>
-			<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $user->getName(); ?>" width="150px" />
-			<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $user->getName(); ?>"><?php echo $user->getName(); ?></a></h3>
+			<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $this->escape($user->getName()); ?>" width="150px" />
+			<h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $this->escape($user->getName()); ?>"><?php echo $this->escape($user->getName()); ?></a></h3>
 			<p><?php echo $user->getRole(); ?></p>
 			<p class="actions">
 				<a href="<?php echo $this->Plot()->getApprovalUrl($plot, $user); ?>" title="Approve">Approve</a>
