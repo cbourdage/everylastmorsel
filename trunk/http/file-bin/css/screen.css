@@ -709,14 +709,17 @@ div.mapMarker.plot-info > div div.content p.buttons-set a {
 
 
 /**
-	Login/Create
+	Login/Create/Password Reset
 */
 .account-form { text-align: center; }
 .account-form h1 { font-weight: bold;  margin-bottom: 50px; }
-.account-form form { margin: 0 auto; width: 460px; }
+.account-form form { margin: 0 auto; width: 470px; }
 .account-form form .fieldset label { width: 170px;}
 .account-form form .buttons-set { float: right; margin-right: 7px; }
-
+body.elm-profile-login .account-form form { width: 400px; }
+body.elm-profile-login .account-form form .fieldset label { width: 100px; }
+body.elm-profile-forgot-password .account-form form { width: 380px; }
+body.elm-profile-forgot-password .account-form form .fieldset label { width: 75px; }
 
 /**
 	Account Pages
@@ -921,6 +924,25 @@ body.elm-plot-photos .photo-timeline {
 #cropsForm form ul.fieldset li input#date_planted { width: 100px; }
 #cropsForm form ul.fieldset li div.multi-control { width: 270px; }
 
+/**
+	CMS Pages
+*/
+.cms-page {
+	text-align: justify;
+	width: 600px;
+}
+.cms-page h1 {
+	margin-bottom: 20px;
+	text-align: center;
+}
+.cms-page p {
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+.cms-page p em,
+.cms-page p i { font-style: italic; }
+.cms-page p strong,
+.cms-page p b { font-weight: bold; }
 
 /** Print Styles */
 @media print {

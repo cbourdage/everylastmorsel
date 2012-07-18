@@ -82,9 +82,11 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
     {
         self::$_hadUpdates = false;
 
+		Elm::profile('setup_updates', 'start');
 		$class = __CLASS__;
 		$setup = new $class();
 		$setup->applyUpdates();
+		Elm::profile('setup_updates', 'end');
         return true;
     }
 
@@ -98,12 +100,10 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
 		$config = self::getConfig();
         $dbVer = $this->getDbVersion('app');
         $configVer = (string) $config['app']['version'];
+		Elm::log(sprintf('Updating: %s, %s', $dbVer, $configVer), Zend_Log::INFO, 'upgrades.log');
 
         if ($dbVer !== false) {
              switch (version_compare($configVer, $dbVer)) {
-                //case self::VERSION_COMPARE_LOWER:
-                //    $this->_rollbackResourceDb($configVer, $dbVer);
-                //    break;
                 case self::VERSION_COMPARE_GREATER:
                     $this->_upgradeResourceDb($dbVer, $configVer);
                     break;
@@ -128,8 +128,7 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
             try {
                 $select = $this->getConnection()->select()->from('config', array('name', 'version'));
                 self::$_versions = $this->getConnection()->fetchPairs($select);
-            }
-            catch (Exception $e){
+            } catch (Exception $e){
                 self::$_versions = array();
             }
         }
@@ -146,13 +145,11 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
     public function setDbVersion($resName, $version)
     {
         $dbModuleInfo = array('version' => $version);
-
         if ($this->getDbVersion($resName)) {
             self::$_versions[$resName] = $version;
-            $condition = $this->getConnection()->quoteInto('name=?', $resName);
+            $condition = $this->getConnection()->quoteInto('name = ?', $resName);
             return $this->getConnection()->update('config', $dbModuleInfo, $condition);
-        }
-        else {
+        } else {
             self::$_versions[$resName] = $version;
             return $this->getConnection()->insert('config', $dbModuleInfo);
         }
@@ -193,6 +190,7 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
      */
     protected function _modifyResourceDb($actionType, $fromVersion, $toVersion)
     {
+		Elm::profile('setup_updates');
         $sqlFilesDir = APPLICATION_PATH . '/data/db/';
         if (!is_dir($sqlFilesDir) || !is_readable($sqlFilesDir)) {
             return false;
@@ -218,16 +216,16 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
         }
 
         $modifyVersion = false;
-        foreach ($arrModifyFiles as $file) {
-            $sqlFile = $sqlFilesDir . $file['fileName'];
-            $fileType = pathinfo($file['fileName'], PATHINFO_EXTENSION);
+        foreach ($arrModifyFiles as $modFile) {
+            $sqlFile = $sqlFilesDir . $modFile['fileName'];
+            $fileType = pathinfo($modFile['fileName'], PATHINFO_EXTENSION);
             // Execute SQL
             if ($this->_conn) {
                 try {
                     switch ($fileType) {
                         case 'sql':
                             $sql = file_get_contents($sqlFile);
-                            if ($sql!='') {
+                            if ($sql != '') {
                                 $result = $this->run($sql);
                             } else {
                                 $result = true;
@@ -240,15 +238,17 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
                         default:
                             $result = false;
                     }
+
+					Elm::profile('setup_updates');
                     if ($result) {
-						$this->setDbVersion('app', $file['toVersion']);
+						$this->setDbVersion('app', $modFile['toVersion']);
                     }
                 } catch (Exception $e){
-                    echo "<pre>".print_r($e,1)."</pre>";
+                    echo "<pre>".print_r($e, 1)."</pre>";
                     throw Elm::exception('Colony', sprintf('Error in file: "%s" - %s', $sqlFile, $e->getMessage()));
                 }
             }
-            $modifyVersion = $file['toVersion'];
+            $modifyVersion = $modFile['toVersion'];
         }
         self::$_hadUpdates = true;
         return $modifyVersion;
@@ -266,31 +266,29 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
     protected function _getModifySqlFiles($actionType, $fromVersion, $toVersion, $arrFiles)
     {
         $arrRes = array();
-
         switch ($actionType) {
             case 'install':
                 uksort($arrFiles, 'version_compare');
                 foreach ($arrFiles as $version => $file) {
-                    if (version_compare($version, $toVersion)!==self::VERSION_COMPARE_GREATER) {
-                        $arrRes[0] = array('toVersion'=>$version, 'fileName'=>$file);
+                    if (version_compare($version, $toVersion) !== self::VERSION_COMPARE_GREATER) {
+                        $arrRes[0] = array('toVersion' => $version, 'fileName' => $file);
                     }
                 }
                 break;
-
             case 'upgrade':
                 uksort($arrFiles, 'version_compare');
                 foreach ($arrFiles as $version => $file) {
                     $version_info = explode('-', $version);
-
                     // In array must be 2 elements: 0 => version from, 1 => version to
-                    if (count($version_info)!=2) {
+                    if (count($version_info) != 2) {
                         break;
                     }
+
                     $infoFrom = $version_info[0];
                     $infoTo   = $version_info[1];
-                    if (version_compare($infoFrom, $fromVersion)!==self::VERSION_COMPARE_LOWER
-                        && version_compare($infoTo, $toVersion)!==self::VERSION_COMPARE_GREATER) {
-                        $arrRes[] = array('toVersion'=>$infoTo, 'fileName'=>$file);
+                    if (version_compare($infoFrom, $fromVersion) !== self::VERSION_COMPARE_LOWER
+							&& version_compare($infoTo, $toVersion) !== self::VERSION_COMPARE_GREATER) {
+                        $arrRes[] = array('toVersion' => $infoTo, 'fileName' => $file);
                     }
                 }
                 break;

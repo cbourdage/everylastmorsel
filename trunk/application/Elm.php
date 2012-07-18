@@ -505,7 +505,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 	 */
     public static function logGoogleRequest($s)
     {
-        self::log($s, Zend_Log::DEBUG, date('Y-m-d-') . 'google-request.log');
+        self::log($s, Zend_Log::DEBUG, 'google/' . date('Y-m-d-') . 'google-request.log');
     }
 
 	/**
@@ -523,19 +523,22 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 		try {
             if (!isset($profiles[$name])) {
 				$profiles[$name] = array(
-					'start' => array(),
+					'start' => microtime(true),
 					'checkpoint' => array(),
-					'end' => array()
+					'end' => null
 				);
             }
 
-			if ($action == 'start') {
-				$profiles[$name]['start'] = microtime(true);
-			} else if ($action == 'end') {
-				$profiles[$name]['end'] = microtime(true) - $profiles[$name]['start'];
+			if ($action == 'end') {
+				$profiles[$name]['end'] = microtime(true);
 				self::log($profiles[$name], Zend_Log::INFO, 'profiles/' . $name . '.log');
+				self::log(
+					"Total Time: " . ($profiles[$name]['end'] - $profiles[$name]['start']),
+					Zend_Log::INFO,
+					'profiles/' . $name . '.log'
+				);
 			} else {
-				$profiles[$name]['checkout'][] = microtime(true) - $profiles[$name]['start'];
+				$profiles[$name]['checkpoint'][] = microtime(true) - $profiles[$name]['start'];
 			}
         }
         catch (Exception $e) {

@@ -52,6 +52,12 @@ class Elm_Model_Resource_Crop extends Colony_Db_Table
 		return $items;
 	}
 
+	/**
+	 * @param string $term
+	 * @param null|string $type
+	 * @param null|int $limit
+	 * @return array
+	 */
 	public function searchVarieties($term, $type=null, $limit=null)
 	{
 		$items = array();

@@ -39,14 +39,14 @@ CREATE TABLE  `crops_inventory_transaction` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 
-#TRUNCATE `crops`;
-#ALTER TABLE `crops` ADD COLUMN `variety` varchar(64) NOT NULL AFTER `type`;
-#ALTER TABLE `crops` ADD COLUMN `breeder` varchar(64) NOT NULL AFTER `variety`;
-#ALTER TABLE `crops` ADD COLUMN `characteristics` text NOT NULL AFTER `breeder`;
-#ALTER TABLE `crops` ADD COLUMN `similar` varchar(64) NOT NULL AFTER `characteristics`;
-#ALTER TABLE `crops` ADD COLUMN `adaptation` varchar(255) NOT NULL AFTER `similar`;
-#ALTER TABLE `crops` ADD COLUMN `resistance` varchar(255) NOT NULL AFTER `adaptation`;
-#ALTER TABLE `crops` ADD COLUMN `parentage` varchar(255) NOT NULL AFTER `resistance`;
+TRUNCATE `crops`;
+ALTER TABLE `crops` ADD COLUMN `variety` varchar(64) NOT NULL AFTER `type`;
+ALTER TABLE `crops` ADD COLUMN `breeder` varchar(64) NOT NULL AFTER `variety`;
+ALTER TABLE `crops` ADD COLUMN `characteristics` text NOT NULL AFTER `breeder`;
+ALTER TABLE `crops` ADD COLUMN `similar` varchar(64) NOT NULL AFTER `characteristics`;
+ALTER TABLE `crops` ADD COLUMN `adaptation` varchar(255) NOT NULL AFTER `similar`;
+ALTER TABLE `crops` ADD COLUMN `resistance` varchar(255) NOT NULL AFTER `adaptation`;
+ALTER TABLE `crops` ADD COLUMN `parentage` varchar(255) NOT NULL AFTER `resistance`;
 
 ");
 

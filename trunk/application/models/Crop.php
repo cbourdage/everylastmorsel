@@ -91,9 +91,15 @@ class Elm_Model_Crop extends Colony_Model_Abstract
 		$file = Elm::getBaseDir('application/data/vegetables/csv/') . $file;
 		if ($fh = fopen($file, 'r')) {
 			$data = fgetcsv($fh, 10000, "|");
-			Elm::log($data, Zend_Log::DEBUG, $logFile);
+			//Elm::log($data, Zend_Log::DEBUG, $logFile);
 			try {
 				while (($data = fgetcsv($fh, 1000, "|")) !== FALSE) {
+					/*$results = $this->getResource()->searchVarieties($data[0], $type, 1);
+					if (count($results)) {
+						Elm::log(sprintf('exists: %s, %s', $data[0], $type), Zend_Log::DEBUG, 'import/import.log');
+						continue;
+					}*/
+
 					$crop = new Elm_Model_Crop();
 					$crop->setType($type);
 					$crop->setName($data[0]);
@@ -104,18 +110,15 @@ class Elm_Model_Crop extends Colony_Model_Abstract
 					$crop->setAdaptation($data[4]);
 					$crop->setResistance($data[4]);
 					$crop->setParentage($data[4]);
-
 					Elm::log($crop, Zend_Log::DEBUG, $logFile);
-					//die('dead');
 					$crop->save();
 				}
 			} catch(Colony_Exception $e) {
 				Elm::throwException($e);
 			}
-
 			fclose($fh);
 		} else {
-			Elm::log('failed to open: ' . $file, Zend_Log::ERR);
+			Elm::throwException('failed to open: ' . $file);
 		}
 	}
 /**
