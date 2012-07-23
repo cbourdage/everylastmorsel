@@ -173,6 +173,7 @@ form ul.fieldset > li label {
 }
 form ul.fieldset > li label + div {
 	display: inline-block;
+	text-align: left;
 	width: 270px;
 }
 form ul.fieldset > li figure { margin: 0 0 10px; }
@@ -720,7 +721,7 @@ body.elm-profile-login .account-form form { width: 400px; }
 body.elm-profile-login .account-form form .fieldset label { width: 100px; }
 body.elm-profile-forgot-password .account-form form { width: 380px; }
 body.elm-profile-forgot-password .account-form form .fieldset label { width: 75px; }
-
+.account-confirmation p { margin: 0 auto 20px; width: 410px; }
 /**
 	Account Pages
 */
@@ -755,6 +756,11 @@ body.elm-profile-forgot-password .account-form form .fieldset label { width: 75p
 }
 .profile-layout .main-content .top { margin-bottom: 50px; }
 .profile-layout .main-content .top h2 { color: #fff; font-size: 26px; }
+.profile-layout .main-content .top h2 a {
+	font-size: 12px;
+	color: #58585A;
+	text-decoration: underline;
+}
 .profile-layout .main-content .top ul { margin-top: 5px; }
 .profile-layout .main-content .top ul li { color: #fff; }
 /** nav menu */

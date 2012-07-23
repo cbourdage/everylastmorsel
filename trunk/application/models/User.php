@@ -42,12 +42,16 @@ class Elm_Model_User extends Colony_Model_Abstract
     public function authenticate($login, $password)
     {
         $this->loadByEmail($login);
+
         if (!$this->validatePassword($password)) {
             throw new Colony_Exception('Invalid login or password', self::EXCEPTION_INVALID_EMAIL_OR_PASSWORD);
-        } else {
-			$this->setLastLogin(new Zend_Db_Expr('now()'))->save();
+        }
+
+		if (!$this->getIsConfirmed()) {
+			throw new Colony_Exception('This account has yet to be confirmed. Check your email for more information.', self::EXCEPTION_EMAIL_NOT_CONFIRMED);
 		}
 
+		$this->setLastLogin(new Zend_Db_Expr('now()'))->save();
         return true;
     }
 
@@ -79,7 +83,7 @@ class Elm_Model_User extends Colony_Model_Abstract
 	 * Checks the confirmation key exists
 	 *
 	 * @param $key
-	 * @return bool
+	 * @return bool | Elm_Model_User
 	 */
 	public function checkConfirmationKey($key)
 	{
@@ -188,6 +192,11 @@ class Elm_Model_User extends Colony_Model_Abstract
 		return $plots;
 	}
 
+	/**
+	 * Checks if the user has plots
+	 *
+	 * @return bool
+	 */
 	public function hasPlots()
 	{
 		return count($this->getPlots()) > 0;

@@ -1,3 +1,8 @@
-<?php echo $this->Message()->render(); ?>
 
-<p>Success!</p>
+<div class="account-form account-confirmation container_12">
+	<h1 class="turquiose">Fantastic! <span class="light-green">You're an honest individual.</span></h1>
+	<div class="no-display"><?php echo $this->Message()->render(); ?></div>
+    <p>Your account has been confirmed. You can now <a href="<?php echo $this->url('profile/login'); ?>">login</a>
+	and share your progress and knowledge with others.</p>
+	<p>Let's get growin'!</p>
+</div>

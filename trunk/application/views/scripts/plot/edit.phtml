@@ -1,6 +1,8 @@
-
+<?php
+$session = Elm::getSingleton('user/session')->user;
+?>
 <div class="account-form account-create container_12">
-	<h1 class="turquiose">Sign Up. <span class="light-green">It's as easy as watching grass grow!</span></h1>
+	<h1 class="turquiose">Configure your plot below.</h1>
     <?php echo $this->Message()->render(); ?>
     <form action="<?php echo $this->form->getAction() ?>" method="post" id="form-validate">
         <ul class="fieldset">
@@ -9,7 +11,7 @@
 			<?php endforeach; ?>
 		</ul>
 		<div class="buttons-set">
-			<button type="submit" class="btn btn-blue" id="create-submit"><span>Now sign me up!</span></button>
+			<button type="submit" class="btn btn-blue" id="create-submit"><span>Save Changes</span></button>
 		</div>
     </form>
 </div>

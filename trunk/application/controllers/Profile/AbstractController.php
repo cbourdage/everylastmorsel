@@ -17,7 +17,7 @@ class Elm_Profile_AbstractController extends Elm_AbstractController
 		parent::preDispatch();
 
 		$action = $this->getRequest()->getActionName();
-        $pattern = '/^(create|login|forgot)/i';
+        $pattern = '/^(create|login|forgot|confirmation|confirmed)/i';
 		if (!preg_match($pattern, $action)) {
 			if (!$this->_getSession()->authenticate($this)) {
 				$this->_redirect('/profile/login');

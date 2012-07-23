@@ -110,6 +110,91 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	}
 
 	/**
+	 * Create action
+	 *
+	 * @return mixed
+	 */
+	public function editAction()
+	{
+		$session = $this->_getSession();
+		if (!($plotId = $this->getRequest()->getParam('p', null))) {
+			$this->_redirect('/plots/');
+			return;
+		}
+
+		$plot = Elm::getSingleton('plot')->load($plotId);
+		if (!$plot->getId()) {
+			$this->_redirect('/plots/');
+			return;
+		}
+
+		$this->_init();
+		$this->_initLayout();
+
+		$form = new Elm_Model_Form_Plot_Edit();
+		$form->setAction('/p/edit-post/' . $this->_plot->getId());
+
+		if ($session->formData) {
+			$form->setDefaults($session->formData);
+			$session->formData = null;
+		} else {
+			$form->setDefaults($this->_plot->getData());
+
+		}
+
+		$this->view->headTitle()->prepend('Edit Plot');
+		$this->view->form = $form;
+	}
+
+	/**
+	 * Create post action
+	 *
+	 * @return mixed
+	 */
+	public function editPostAction()
+	{
+		$session = $this->_getSession();
+		if (!($plotId = $this->getRequest()->getParam('p', null))) {
+			die('redirecting to plots/');
+			$this->_redirect('/plots/');
+			return;
+		}
+
+		$this->_init();
+
+		if (!$this->getRequest()->isPost()) {
+			die('redirecting to plots/ (second one)');
+			$this->_redirect('/p/edit/' . $this->_plot->getId());
+			return;
+		}
+
+		$form = new Elm_Model_Form_Plot_Edit();
+		$post = $this->getRequest()->getParams();
+		$session = $this->_getSession();
+
+		if ($form->isValid($post)) {
+			try {
+				Elm::log($this->_plot->getData());
+				//$this->_plot->setData($post);
+				$this->_plot->addData($post);
+				Elm::log($this->_plot->getData());
+				//die('about to save');
+				$this->_plot->save();
+				$session->addSuccess('Successfully saved your changes');
+			} catch (Colony_Exception $e) {
+				$session->addError($e->getMessage());
+			} catch (Exception $e) {
+				$session->addError($e->getMessage());
+			}
+		} else {
+			$session->formData = $post;
+			$session->addError('Check all fields are filled out correctly.');
+		}
+
+		$this->_redirect('/p/edit/' . $this->_plot->getId());
+	}
+
+	/**
 	 * view action
 	 */
 	public function indexAction()
@@ -127,6 +212,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
+		$this->_init();
 		$this->_initLayout();
 	}
 

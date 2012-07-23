@@ -259,6 +259,30 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 			)
 		);
 		$frontController->getRouter()->addRoute('plot-people', $route);
+		$route = new Zend_Controller_Router_Route(
+		    'p/edit/:p',
+		    array(
+		    	'controller' => 'plot',
+        		'action' => 'edit',
+				'p' => ''
+		    ),
+			array(
+				'p' => '\d+'
+			)
+		);
+		$frontController->getRouter()->addRoute('plot-edit', $route);
+		$route = new Zend_Controller_Router_Route(
+		    'p/edit-post/:p',
+		    array(
+		    	'controller' => 'plot',
+        		'action' => 'edit-post',
+				'p' => ''
+		    ),
+			array(
+				'p' => '\d+'
+			)
+		);
+		$frontController->getRouter()->addRoute('plot-edit-post', $route);
 
 		// about-us
 		$route = new Zend_Controller_Router_Route(

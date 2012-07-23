@@ -38,7 +38,7 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 
 	public function _init()
 	{
-		$this->_plot = Elm::getModel('plot')->load($this->getRequest()->getParam('p'));
+		$this->_plot = Elm::getSingleton('plot')->load($this->getRequest()->getParam('p'));
 		Zend_Registry::set('current_plot', $this->_plot);
 
 		$this->view->plot = $this->_plot;
@@ -54,7 +54,7 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 	protected function _initLayout()
 	{
 		$action = $this->getRequest()->getActionName();
-        $pattern = '/^(create|login)/i';
+        $pattern = '/^(create|login|edit)/i';
         if (!preg_match($pattern, $action)) {
          	$layout = $this->_helper->layout();
 			$layout->setLayout('profile-layout');

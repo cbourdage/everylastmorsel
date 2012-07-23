@@ -225,7 +225,7 @@ window.Elm.error = function(message, $el, location) {
 		/**
 		 * Login form clicks/actions
 		 */
-		$('body').on('click', '[href*="profile/login/"]', function(e) {
+		$('body .header-container').on('click', '[href*="profile/login/"]', function(e) {
 			e.preventDefault();
 			$('#headerLoginForm').stop(true).slideDown(function() {
 				$(this).find('.cancel').on('click', function(e) {

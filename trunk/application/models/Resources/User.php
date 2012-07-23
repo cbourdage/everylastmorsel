@@ -122,7 +122,6 @@ class Elm_Model_Resource_User extends Colony_Db_Table
 	 */
 	public function checkConfirmationKey(Elm_Model_User $user, $key)
 	{
-		//$row = $this->fetchRow("SELECT 1 FROM user WHERE confirmation_key = ?", $key));
 		$row = $this->fetchRow(Zend_Db_Table::getDefaultAdapter()->quoteInto('confirmation_key = ?', $key));
 		if ($row !== null) {
             return $this->load($user, $row->user_id);

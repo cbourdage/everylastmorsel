@@ -29,20 +29,6 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	}
 
 	/**
-	 * Index/view action
-	 */
-	public function emailTestingAction()
-	{
-		$this->_init();
-		$this->_helper->viewRenderer->setNoRender(true);
-
-		// email testing
-		//$this->_user->sendPasswordResetEmail();
-		//$plot = Elm::getModel('plot')->load(2);
-		//$plot->sendNewPlotEmail();
-	}
-
-	/**
 	 * About action
 	 */
 	public function aboutAction()
@@ -262,10 +248,11 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 				$inviteCode->increment()->save();
 
 				// setup session, send email, add messages, move on
-				$session->setUserAsLoggedIn($user);
+				//$session->setUserAsLoggedIn($user);
+				$session->isJustRegistered = true;
 				$user->sendNewAccountEmail($session->beforeAuthUrl);
-				$session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
-				$this->_redirect('/profile/');
+				//$session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
+				$this->_redirect('/profile/confirmation');
 				return;
 			} catch (Colony_Exception $e) {
 				$session->addError($e->getMessage());
@@ -279,7 +266,52 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 			$session->addError('Check all fields are filled out correctly.');
 		}
 
-		$this->_redirect('/plot/create');
+		$this->_redirect('/profile/create');
+	}
+
+	/**
+	 *
+	 */
+	public function confirmationAction()
+	{
+		$session = $this->_getSession();
+		if ($key = $this->getRequest()->getParam('uid', null)) {
+			//die($key);
+			$user = new Elm_Model_User();
+			if ($user->checkConfirmationKey($key)) {
+				if (!$user->getIsConfirmed()) {
+					$user->setIsConfirmed(true)->save();
+					$user->sendConfirmedAccountEmail();
+
+					//$session->setUserAsLoggedIn($user);
+					//$session->addSuccess("Excellent! Let's get growin'.");
+					$this->_forward('confirmed');
+				} else {
+					$this->_redirect('profile');
+				}
+			} else {
+				$this->_getSession()->addError('Whoops. This key does not match anything on file!');
+				$this->_forward('no-route');
+			}
+			return;
+		}
+
+		if (!$session->isJustRegistered) {
+			$this->_redirect('/profile');
+			return;
+		}
+	}
+
+	/**
+	 *
+	 */
+	public function confirmedAction()
+	{
+		$session = $this->_getSession();
+        if ($session->isLoggedIn()) {
+			$this->_redirect('/profile/');
+            return;
+        }
 	}
 
 	/**
@@ -453,30 +485,11 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 				$session->addError($e->getMessage());
 			}
 		} else {
+			$session->formData = $post;
 			$session->addError('Check all fields are filled out!');
 		}
 
 		$this->_redirect('/profile/settings');
-	}
-
-	/**
-	 *
-	 */
-	public function confirmationAction()
-	{
-		if ($key = $this->getRequest()->getParam('uid', null)) {
-			$user = new Elm_Model_User();
-			if ($user->checkConfirmationKey($key)) {
-				if (!$user->getIsConfirmed()) {
-					$user->setIsConfirmed(true)->save();
-					$user->sendConfirmedAccountEmail();
-					$this->_getSession()->addSuccess("Excellent! Let's get growin'.");
-				}
-				$this->_forward('confirmed');
-			} else {
-				$this->_getSession()->addError('Gasp! This key does not match anything on file.');
-			}
-		}
 	}
 
 	/**
@@ -491,5 +504,17 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 			);
 		}
 		$this->_redirect('/profile/');
+	}
+
+
+		public function emailTestingAction()
+	{
+		$this->_init();
+		$this->_helper->viewRenderer->setNoRender(true);
+
+		// email testing
+		//$this->_user->sendPasswordResetEmail();
+		//$plot = Elm::getModel('plot')->load(2);
+		//$plot->sendNewPlotEmail();
 	}
 }

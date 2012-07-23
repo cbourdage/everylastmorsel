@@ -7,7 +7,6 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
 	const VISIBILITY_PUBLIC = 'public';
 
 	// @TODO add social settings
-	// @TODO add notes to fields (ie: Visiblity - publicly people can view you and search for you, but privately they can only see your listing)
 	public function __construct()
 	{
 		parent::__construct();
@@ -68,6 +67,8 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
 		$session = Elm::getSingleton('user/session');
 		foreach ($this->getElements() as $element) {
 			$element->setDecorators($this->defaultDecorators);
+
+			// @TODO Should move out of form object?
 			$element->setValue($session->user->getData($element->getName()));
 		}
 	}
