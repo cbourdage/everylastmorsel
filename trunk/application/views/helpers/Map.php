@@ -24,14 +24,14 @@ class Elm_View_Helper_Map extends Zend_View_Helper_Abstract
 		$this->_plots = Elm::getModel('plot')->getAllPlots();
 		$tempJson = array();
 		foreach ($this->_plots as $key => $plot) {
-			$html = '<h3 class="heading">' . $this->escape($plot->getName()) . '</h3>';
+			$html = '<h3 class="heading">' . $this->view->escape($plot->getName()) . '</h3>';
 			$html .= '<div class="content clearfix">';
 			// About info
-			//$html .= '<p>' . ($plot->getAbout() ? str_replace('<br />', '</p><p>', nl2br($$this->escape(plot->getAbout())) : '') . '</p>';
-			$html .= '<p class="buttons-set"><a href="' . $plot->getUrl() . '" title="' . $this->escape($plot->getName()) . '">View Plot</a></p>';
+			//$html .= '<p>' . ($plot->getAbout() ? str_replace('<br />', '</p><p>', nl2br($this->view->escape(plot->getAbout())) : '') . '</p>';
+			$html .= '<p class="buttons-set"><a href="' . $plot->getUrl() . '" title="' . $this->view->escape($plot->getName()) . '">View Plot</a></p>';
 			$html .= '</div>';
 			$plot->setData('infoWindowHtml', $html);
-			$plot->setUrl($plot->getUrl);
+			$plot->setUrl($plot->getUrl());
 			array_push($tempJson, $plot->getData());
 		}
 		return Zend_Json::encode($tempJson);

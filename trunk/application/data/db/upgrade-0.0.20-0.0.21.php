@@ -11,9 +11,9 @@ ALTER TABLE `crops` CHANGE COLUMN `adaptation` `adaptation` varchar(255) DEFAULT
 ALTER TABLE `crops` CHANGE COLUMN `resistance` `resistance` varchar(255) DEFAULT NULL AFTER `adaptation`;
 ALTER TABLE `crops` CHANGE COLUMN `parentage` `parentage` varchar(255) DEFAULT NULL AFTER `resistance`;
 
-DROP INDEX `crop_name_idx` ON `crops`;
-DROP INDEX `crop_variety_idx` ON `crops`;
-DROP INDEX `crop_type_idx` ON `crops`;
+#DROP INDEX `crop_name_idx` ON `crops`;
+#DROP INDEX `crop_variety_idx` ON `crops`;
+#DROP INDEX `crop_type_idx` ON `crops`;
 
 CREATE INDEX `crop_name_idx` ON `crops` (name(6));
 CREATE INDEX `crop_variety_idx` ON `crops` (variety(6));
