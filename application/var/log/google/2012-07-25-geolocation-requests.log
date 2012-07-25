@@ -1,0 +1,2238 @@
+2012-07-25T01:25:11+00:00 INFO (6): http://maps.googleapis.com/maps/api/geocode/json?latlng=41.8781628,-88.02414639999999&sensor=false
+2012-07-25T01:25:11+00:00 INFO (6): Array
+(
+    [results] => Array
+        (
+            [0] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => 255-265
+                                    [short_name] => 255-265
+                                    [types] => Array
+                                        (
+                                            [0] => street_number
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => W Washington Blvd
+                                    [short_name] => W Washington Blvd
+                                    [types] => Array
+                                        (
+                                            [0] => route
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => Lombard
+                                    [short_name] => Lombard
+                                    [types] => Array
+                                        (
+                                            [0] => locality
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => York
+                                    [short_name] => York
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_3
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [4] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [5] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [6] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [7] => Array
+                                (
+                                    [long_name] => 60148
+                                    [short_name] => 60148
+                                    [types] => Array
+                                        (
+                                            [0] => postal_code
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => 255-265 W Washington Blvd, Lombard, IL 60148, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.878167
+                                            [lng] => -88.0228924
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8781353
+                                            [lng] => -88.0242152
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8781646
+                                    [lng] => -88.0241463
+                                )
+
+                            [location_type] => RANGE_INTERPOLATED
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.8795001303
+                                            [lng] => -88.0222048197
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8768021697
+                                            [lng] => -88.0249027803
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => street_address
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => Lombard
+                                    [short_name] => Lombard
+                                    [types] => Array
+                                        (
+                                            [0] => locality
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => York
+                                    [short_name] => York
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_3
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [4] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => Lombard, IL, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.915062
+                                            [lng] => -87.9872561
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8316091
+                                            [lng] => -88.051531
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8800296
+                                    [lng] => -88.0078435
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.915062
+                                            [lng] => -87.9872561
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8316091
+                                            [lng] => -88.051531
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => locality
+                            [1] => political
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => York
+                                    [short_name] => York
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_3
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => York, IL, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.9068
+                                            [lng] => -87.9183819
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815473
+                                            [lng] => -88.034066
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8621106
+                                    [lng] => -87.972681
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.9068
+                                            [lng] => -87.9183819
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815473
+                                            [lng] => -88.034066
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => administrative_area_level_3
+                            [1] => political
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => 60148
+                                    [short_name] => 60148
+                                    [types] => Array
+                                        (
+                                            [0] => postal_code
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => Lombard
+                                    [short_name] => Lombard
+                                    [types] => Array
+                                        (
+                                            [0] => locality
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [4] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => Lombard, IL 60148, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.923379
+                                            [lng] => -87.974863
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815176
+                                            [lng] => -88.073172
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8725524
+                                    [lng] => -88.0020589
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.923379
+                                            [lng] => -87.974863
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815176
+                                            [lng] => -88.073172
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => postal_code
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => DuPage, IL, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.994029
+                                            [lng] => -87.9142569
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.68533
+                                            [lng] => -88.2631781
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8243831
+                                    [lng] => -88.0900762
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.994029
+                                            [lng] => -87.9142569
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.68533
+                                            [lng] => -88.2631781
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => administrative_area_level_2
+                            [1] => political
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => Illinois, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 42.5083379
+                                            [lng] => -87.4951991
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 36.970298
+                                            [lng] => -91.5130789
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 40.6331249
+                                    [lng] => -89.3985283
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 42.5083379
+                                            [lng] => -87.4951991
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 36.970298
+                                            [lng] => -91.5130789
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => administrative_area_level_1
+                            [1] => political
+                        )
+
+                )
+
+            [6] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => United States
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 71.389888
+                                            [lng] => -66.9497608
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 18.9110642
+                                            [lng] => 172.4546966
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 37.09024
+                                    [lng] => -95.712891
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 49.38
+                                            [lng] => -66.94
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 25.82
+                                            [lng] => -124.39
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => country
+                            [1] => political
+                        )
+
+                )
+
+        )
+
+    [status] => OK
+)
+
+2012-07-25T01:26:23+00:00 INFO (6): http://maps.googleapis.com/maps/api/geocode/json?latlng=41.8781628,-88.02414639999999&sensor=false
+2012-07-25T01:26:23+00:00 INFO (6): Array
+(
+    [results] => Array
+        (
+            [0] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => 255-265
+                                    [short_name] => 255-265
+                                    [types] => Array
+                                        (
+                                            [0] => street_number
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => W Washington Blvd
+                                    [short_name] => W Washington Blvd
+                                    [types] => Array
+                                        (
+                                            [0] => route
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => Lombard
+                                    [short_name] => Lombard
+                                    [types] => Array
+                                        (
+                                            [0] => locality
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => York
+                                    [short_name] => York
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_3
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [4] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [5] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [6] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [7] => Array
+                                (
+                                    [long_name] => 60148
+                                    [short_name] => 60148
+                                    [types] => Array
+                                        (
+                                            [0] => postal_code
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => 255-265 W Washington Blvd, Lombard, IL 60148, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.878167
+                                            [lng] => -88.0228924
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8781353
+                                            [lng] => -88.0242152
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8781646
+                                    [lng] => -88.0241463
+                                )
+
+                            [location_type] => RANGE_INTERPOLATED
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.8795001303
+                                            [lng] => -88.0222048197
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8768021697
+                                            [lng] => -88.0249027803
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => street_address
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => Lombard
+                                    [short_name] => Lombard
+                                    [types] => Array
+                                        (
+                                            [0] => locality
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => York
+                                    [short_name] => York
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_3
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [4] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => Lombard, IL, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.915062
+                                            [lng] => -87.9872561
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8316091
+                                            [lng] => -88.051531
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8800296
+                                    [lng] => -88.0078435
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.915062
+                                            [lng] => -87.9872561
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8316091
+                                            [lng] => -88.051531
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => locality
+                            [1] => political
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => York
+                                    [short_name] => York
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_3
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => York, IL, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.9068
+                                            [lng] => -87.9183819
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815473
+                                            [lng] => -88.034066
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8621106
+                                    [lng] => -87.972681
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.9068
+                                            [lng] => -87.9183819
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815473
+                                            [lng] => -88.034066
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => administrative_area_level_3
+                            [1] => political
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => 60148
+                                    [short_name] => 60148
+                                    [types] => Array
+                                        (
+                                            [0] => postal_code
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => Lombard
+                                    [short_name] => Lombard
+                                    [types] => Array
+                                        (
+                                            [0] => locality
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [4] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => Lombard, IL 60148, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.923379
+                                            [lng] => -87.974863
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815176
+                                            [lng] => -88.073172
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8725524
+                                    [lng] => -88.0020589
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.923379
+                                            [lng] => -87.974863
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815176
+                                            [lng] => -88.073172
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => postal_code
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => DuPage, IL, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.994029
+                                            [lng] => -87.9142569
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.68533
+                                            [lng] => -88.2631781
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8243831
+                                    [lng] => -88.0900762
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.994029
+                                            [lng] => -87.9142569
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.68533
+                                            [lng] => -88.2631781
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => administrative_area_level_2
+                            [1] => political
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => Illinois, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 42.5083379
+                                            [lng] => -87.4951991
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 36.970298
+                                            [lng] => -91.5130789
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 40.6331249
+                                    [lng] => -89.3985283
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 42.5083379
+                                            [lng] => -87.4951991
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 36.970298
+                                            [lng] => -91.5130789
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => administrative_area_level_1
+                            [1] => political
+                        )
+
+                )
+
+            [6] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => United States
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 71.389888
+                                            [lng] => -66.9497608
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 18.9110642
+                                            [lng] => 172.4546966
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 37.09024
+                                    [lng] => -95.712891
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 49.38
+                                            [lng] => -66.94
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 25.82
+                                            [lng] => -124.39
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => country
+                            [1] => political
+                        )
+
+                )
+
+        )
+
+    [status] => OK
+)
+
+2012-07-25T01:44:53+00:00 INFO (6): http://maps.googleapis.com/maps/api/geocode/json?latlng=41.8781628,-88.02414639999999&sensor=false
+2012-07-25T01:44:53+00:00 INFO (6): Array
+(
+    [results] => Array
+        (
+            [0] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => 255-265
+                                    [short_name] => 255-265
+                                    [types] => Array
+                                        (
+                                            [0] => street_number
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => W Washington Blvd
+                                    [short_name] => W Washington Blvd
+                                    [types] => Array
+                                        (
+                                            [0] => route
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => Lombard
+                                    [short_name] => Lombard
+                                    [types] => Array
+                                        (
+                                            [0] => locality
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => York
+                                    [short_name] => York
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_3
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [4] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [5] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [6] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [7] => Array
+                                (
+                                    [long_name] => 60148
+                                    [short_name] => 60148
+                                    [types] => Array
+                                        (
+                                            [0] => postal_code
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => 255-265 W Washington Blvd, Lombard, IL 60148, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.878167
+                                            [lng] => -88.0228924
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8781353
+                                            [lng] => -88.0242152
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8781646
+                                    [lng] => -88.0241463
+                                )
+
+                            [location_type] => RANGE_INTERPOLATED
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.8795001303
+                                            [lng] => -88.0222048197
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8768021697
+                                            [lng] => -88.0249027803
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => street_address
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => Lombard
+                                    [short_name] => Lombard
+                                    [types] => Array
+                                        (
+                                            [0] => locality
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => York
+                                    [short_name] => York
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_3
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [4] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => Lombard, IL, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.915062
+                                            [lng] => -87.9872561
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8316091
+                                            [lng] => -88.051531
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8800296
+                                    [lng] => -88.0078435
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.915062
+                                            [lng] => -87.9872561
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.8316091
+                                            [lng] => -88.051531
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => locality
+                            [1] => political
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => York
+                                    [short_name] => York
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_3
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => York, IL, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.9068
+                                            [lng] => -87.9183819
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815473
+                                            [lng] => -88.034066
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8621106
+                                    [lng] => -87.972681
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.9068
+                                            [lng] => -87.9183819
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815473
+                                            [lng] => -88.034066
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => administrative_area_level_3
+                            [1] => political
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => 60148
+                                    [short_name] => 60148
+                                    [types] => Array
+                                        (
+                                            [0] => postal_code
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => Lombard
+                                    [short_name] => Lombard
+                                    [types] => Array
+                                        (
+                                            [0] => locality
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [3] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [4] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => Lombard, IL 60148, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.923379
+                                            [lng] => -87.974863
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815176
+                                            [lng] => -88.073172
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8725524
+                                    [lng] => -88.0020589
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.923379
+                                            [lng] => -87.974863
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.815176
+                                            [lng] => -88.073172
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => postal_code
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => DuPage
+                                    [short_name] => DuPage
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_2
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => DuPage, IL, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.994029
+                                            [lng] => -87.9142569
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.68533
+                                            [lng] => -88.2631781
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 41.8243831
+                                    [lng] => -88.0900762
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 41.994029
+                                            [lng] => -87.9142569
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 41.68533
+                                            [lng] => -88.2631781
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => administrative_area_level_2
+                            [1] => political
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => Illinois
+                                    [short_name] => IL
+                                    [types] => Array
+                                        (
+                                            [0] => administrative_area_level_1
+                                            [1] => political
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => Illinois, USA
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 42.5083379
+                                            [lng] => -87.4951991
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 36.970298
+                                            [lng] => -91.5130789
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 40.6331249
+                                    [lng] => -89.3985283
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 42.5083379
+                                            [lng] => -87.4951991
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 36.970298
+                                            [lng] => -91.5130789
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => administrative_area_level_1
+                            [1] => political
+                        )
+
+                )
+
+            [6] => Array
+                (
+                    [address_components] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [long_name] => United States
+                                    [short_name] => US
+                                    [types] => Array
+                                        (
+                                            [0] => country
+                                            [1] => political
+                                        )
+
+                                )
+
+                        )
+
+                    [formatted_address] => United States
+                    [geometry] => Array
+                        (
+                            [bounds] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 71.389888
+                                            [lng] => -66.9497608
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 18.9110642
+                                            [lng] => 172.4546966
+                                        )
+
+                                )
+
+                            [location] => Array
+                                (
+                                    [lat] => 37.09024
+                                    [lng] => -95.712891
+                                )
+
+                            [location_type] => APPROXIMATE
+                            [viewport] => Array
+                                (
+                                    [northeast] => Array
+                                        (
+                                            [lat] => 49.38
+                                            [lng] => -66.94
+                                        )
+
+                                    [southwest] => Array
+                                        (
+                                            [lat] => 25.82
+                                            [lng] => -124.39
+                                        )
+
+                                )
+
+                        )
+
+                    [types] => Array
+                        (
+                            [0] => country
+                            [1] => political
+                        )
+
+                )
+
+        )
+
+    [status] => OK
+)
+

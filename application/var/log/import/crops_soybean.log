@@ -1,0 +1,4948 @@
+2012-07-18T03:13:28+00:00 DEBUG (7): Array
+(
+    [0] => Name
+    [1] => Breeder
+    [2] => Vendor
+    [3] => Characteristics
+    [4] => Similar
+    [5] => Adaptation
+    [6] => Resistance
+    [7] => Parentage
+)
+
+2012-07-18T03:13:28+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:28+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:28+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:28+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:28+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:28+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:28+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:42+00:00 DEBUG (7): Array
+(
+    [0] => Name
+    [1] => Breeder
+    [2] => Vendor
+    [3] => Characteristics
+    [4] => Similar
+    [5] => Adaptation
+    [6] => Resistance
+    [7] => Parentage
+)
+
+2012-07-18T03:13:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:13:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:18+00:00 DEBUG (7): Array
+(
+    [0] => Name
+    [1] => Breeder
+    [2] => Vendor
+    [3] => Characteristics
+    [4] => Similar
+    [5] => Adaptation
+    [6] => Resistance
+    [7] => Parentage
+)
+
+2012-07-18T03:14:18+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:18+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:18+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:18+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:18+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:18+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:18+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:32+00:00 DEBUG (7): Array
+(
+    [0] => Name
+    [1] => Breeder
+    [2] => Vendor
+    [3] => Characteristics
+    [4] => Similar
+    [5] => Adaptation
+    [6] => Resistance
+    [7] => Parentage
+)
+
+2012-07-18T03:14:32+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:32+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:32+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:32+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:32+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:32+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:14:32+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:18:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:18:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:18:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:18:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:18:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:18:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:18:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:41:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:41:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:41:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:41:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:41:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:41:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:41:16+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:53:35+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:53:35+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:53:35+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:53:35+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:53:35+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:53:35+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:53:35+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:57:17+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:57:17+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:57:17+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:57:17+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:57:17+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:57:17+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T03:57:17+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:03:52+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:03:52+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:03:52+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:03:52+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:03:52+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:03:52+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:03:52+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:06:41+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:06:41+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:06:41+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:06:41+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:06:41+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:06:41+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:06:41+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:16:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:16:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:16:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:16:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:16:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:16:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:16:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:20:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:20:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:20:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:20:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:20:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:20:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:20:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:24:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:24:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:24:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:24:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:24:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:24:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:24:24+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:25:34+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:25:34+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:25:34+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:25:34+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:25:34+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:25:34+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:25:34+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:30:06+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:30:06+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:30:06+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:30:06+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:30:06+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:30:06+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:30:06+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:31:47+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:31:47+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:31:47+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:31:47+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:31:47+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:31:47+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:31:47+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:34:19+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:34:20+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:34:20+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:34:20+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:34:20+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:34:20+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:34:20+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:36:54+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:36:54+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:36:54+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:36:54+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:36:54+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:36:54+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:36:54+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:51:33+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:51:33+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:51:33+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:51:33+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:51:33+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:51:33+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:51:33+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:55:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:55:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:55:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:55:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:55:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:55:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:55:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:59:29+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:59:29+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:59:29+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:59:29+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:59:29+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:59:29+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T04:59:29+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:04:48+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:04:48+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:04:48+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:04:48+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:04:48+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:04:48+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:04:48+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:07:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:07:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:07:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:07:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:07:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:07:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:07:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:36:02+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:36:02+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:36:02+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:36:02+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:36:02+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:36:02+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:36:02+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:38:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Blackeye
+            [variety] => Blackeye
+            [breeder] => Div. of Hort., Central Expt. Farm, Ottawa, Ont., Canada.
+            [characteristics] => vegetable soybean, excellent for freezing green, home garden and field production for shelled green beans.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:38:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Green Pearl
+            [variety] => Green Pearl
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:38:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kahala (288 BB 4-6-3-3)
+            [variety] => Kahala (288 BB 4-6-3-3)
+            [breeder] => Univ. Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => vigorous, leafy plant, pods held high.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:38:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kaikoo (288 BB 24-9-3-6)
+            [variety] => Kaikoo (288 BB 24-9-3-6)
+            [breeder] => Univ. of Hawaii Agric. Expt. Sta., Honolulu.
+            [characteristics] => white flowered; pods held high on plant; grows on cultivar of soils.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:38:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Kailua (288 BB 4-7-1-3)
+            [variety] => Kailua (288 BB 4-7-1-3)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => dark-green foliage, white flowers, pods easy to pick.
+            [similar] => UD 288.
+            [adaptation] => UD 288.
+            [resistance] => UD 288.
+            [parentage] => UD 288.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:38:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Mokapu Summer (288 BC 28-1-2-2)
+            [variety] => Mokapu Summer (288 BC 28-1-2-2)
+            [breeder] => Univ. of Hawaii Agr. Expt. Sta., Honolulu.
+            [characteristics] => purple flowers, large pod and seed, good flavor; for summer harvest.
+            [similar] => Bansei.
+            [adaptation] => Bansei.
+            [resistance] => Bansei.
+            [parentage] => Bansei.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:38:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => soybean
+            [name] => Pando (Panda in England)
+            [variety] => Pando (Panda in England)
+            [breeder] => Dept. of Hort., Univ. of New Hampshire, Durham.
+            [characteristics] => extremely early-neutral edible cultivar maturing dry seeds in 75 days on plants 1 foot tall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+

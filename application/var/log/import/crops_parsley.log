@@ -1,0 +1,2476 @@
+2012-07-09T04:00:04+00:00 DEBUG (7): Array
+(
+    [0] => Name
+    [1] => Breeder
+    [2] => Vendor
+    [3] => Characteristics
+    [4] => Similar
+    [5] => Adaptation
+    [6] => Resistance
+    [7] => Parentage
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Bartowich Long
+            [variety] => Bartowich Long
+            [breeder] => 
+            [characteristics] => 95 days, good flavor, fall, winter and spring harvest, slender roots 7-10' long, nutty taste; root parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Bravour
+            [variety] => Bravour
+            [breeder] => 
+            [characteristics] => more recent cultivar with high yield of early dark green leaves; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Champion Moss Curled
+            [variety] => Champion Moss Curled
+            [breeder] => 
+            [characteristics] => 70-85 days; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Clivi
+            [variety] => Clivi
+            [breeder] => 
+            [characteristics] => dwarf plant, very neat and prolific, base leaves do not turn yellow; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Consort
+            [variety] => Consort
+            [breeder] => 
+            [characteristics] => emerald green leaves 8' long and 10' wide; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Curlina
+            [variety] => Curlina
+            [breeder] => 
+            [characteristics] => rich green color, for fresh market; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Dark Green Curled
+            [variety] => Dark Green Curled
+            [breeder] => 
+            [characteristics] => densely curled leaves; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Dark Green Italian var. neapolitanum
+            [variety] => Dark Green Italian var. neapolitanum
+            [breeder] => 
+            [characteristics] => 78 day celery-leaf cultivar, good flavor, excellent for drying; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Darki
+            [variety] => Darki
+            [breeder] => 
+            [characteristics] => dwarf, intensely curled, very deep green; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Decora
+            [variety] => Decora
+            [breeder] => Sakata.
+            [characteristics] => 80 days, dark green leaves; curled leaf parsley type. 1979.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Decorator (ACR no. 3031)
+            [variety] => Decorator (ACR no. 3031)
+            [breeder] => Abbott and Cobb.
+            [characteristics] => open pollinated, extremely tight curl, extra dark-green and has thick leaves and stems.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Deep Green
+            [variety] => Deep Green
+            [breeder] => Northrup, King and Co.
+            [characteristics] => leaves dark green, moss curled and erect; coarsely cut and deeply curled.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Evergreen
+            [variety] => Evergreen
+            [breeder] => Ferry-Morse Seed Co., Mountain View, Calf.
+            [characteristics] => vigorous grooving.
+            [similar] => Double Curled.
+            [adaptation] => Double Curled.
+            [resistance] => Double Curled.
+            [parentage] => Double Curled.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Extra Curled Dwarf
+            [variety] => Extra Curled Dwarf
+            [breeder] => 
+            [characteristics] => compact plants, dark green moss-like leaves; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Extra Triple Curled (Moss Curled Sel.)
+            [variety] => Extra Triple Curled (Moss Curled Sel.)
+            [breeder] => 
+            [characteristics] => compact, densely curled, dark green; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Fakir
+            [variety] => Fakir
+            [breeder] => 
+            [characteristics] => 85 days, parsnip shaped roots, dark green plain leaf top, high yields; root parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Favorit
+            [variety] => Favorit
+            [breeder] => 
+            [characteristics] => 75 days, very dark green double curled leaves; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Forest Green
+            [variety] => Forest Green
+            [breeder] => 
+            [characteristics] => 75-80 days, good flavor, long, stiff, upright stems, good for bunching; standard curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => French
+            [variety] => French
+            [breeder] => 
+            [characteristics] => plain dark green, deeply cut leaves with fine flavor; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Frisca Curly Parsley
+            [variety] => Frisca Curly Parsley
+            [breeder] => 
+            [characteristics] => 75 days; vigorous Dutch cultivar with dense, extra curly leaves, fine flavor; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Frison
+            [variety] => Frison
+            [breeder] => 
+            [characteristics] => darker than Moss Curled, a heavy cropper; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Giant Italian Parsley
+            [variety] => Giant Italian Parsley
+            [breeder] => 
+            [characteristics] => 85 days, 2-3 feet tall and thick stalked; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Gigante Catalogno
+            [variety] => Gigante Catalogno
+            [breeder] => 
+            [characteristics] => large flat leaves, 2.0-2.5' long; good taste; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Gigante d'Italia
+            [variety] => Gigante d'Italia
+            [breeder] => 
+            [characteristics] => 2-3' wide plants with leaves 2' across, aromatic, mild taste with a juicy texture; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Green Lace (76-CD-4)
+            [variety] => Green Lace (76-CD-4)
+            [breeder] => R. Engle.
+            [characteristics] => freeze tolerant, bright light green.
+            [similar] => Paramount.
+            [adaptation] => Paramount.
+            [resistance] => Paramount.
+            [parentage] => Paramount.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Green River
+            [variety] => Green River
+            [breeder] => 
+            [characteristics] => 70 days, medium green, double-curled type, good early branching; slow bolter; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Hamburg
+            [variety] => Hamburg
+            [breeder] => 
+            [characteristics] => 90 days, standard cultivar, roots 8-10' long, flat leaves; root parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Italian
+            [variety] => Italian
+            [breeder] => 
+            [characteristics] => 75 days, dark green leaves with strong flavor; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Italian Dark Green
+            [variety] => Italian Dark Green
+            [breeder] => 
+            [characteristics] => strong taste, flat dark green leaves with strong parsley/celery flavor, stiff upright stems for bunching; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Italian Plain Leaf
+            [variety] => Italian Plain Leaf
+            [breeder] => 
+            [characteristics] => 78 days, dark green flat leaf, vigorous growth; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Krausa
+            [variety] => Krausa
+            [breeder] => 
+            [characteristics] => 75 days, dark green very dense curled leaf, strong stalks, fast regrowth; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Moss Curled
+            [variety] => Moss Curled
+            [breeder] => 
+            [characteristics] => bright green with deeply cut leaves; standard curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Novas
+            [variety] => Novas
+            [breeder] => 
+            [characteristics] => best plain-leaf cultivar, good regrowth, not cold tolerant; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Pagoda
+            [variety] => Pagoda
+            [breeder] => 
+            [characteristics] => 85 days, moss curled leaves, long stemmed; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Paramount
+            [variety] => Paramount
+            [breeder] => Ferry-Morse Seed Co., Mountain View, Calif.
+            [characteristics] => a distinct cultivar; dwarfer, darker green than Ex. Triple Curled.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Paramount
+            [variety] => Paramount
+            [breeder] => 
+            [characteristics] => 85 days, triple curled, uniform curled dark green leaves, adapts well; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Petra
+            [variety] => Petra
+            [breeder] => 
+            [characteristics] => 87 days, moss curled parsley with strong, long stems and densely curled dark green leaves; good regrowth after cutting; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Plain
+            [variety] => Plain
+            [breeder] => 
+            [characteristics] => 72 days, deeply cut, bright green leaves, good flavor; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Regent
+            [variety] => Regent
+            [breeder] => 
+            [characteristics] => small plant, overwinters, tightly curled, can be grown in pots; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Shamrock Double Curled
+            [variety] => Shamrock Double Curled
+            [breeder] => Shamrock Seed Co.
+            [characteristics] => open pollinated; double curl type with 75-day maturity; plants dark green; recovers quickly after cutting; excellent for fresh market and dehydration.
+            [similar] => Forest Green.
+            [adaptation] => Forest Green.
+            [resistance] => Forest Green.
+            [parentage] => Forest Green.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Single-Leaf Italian
+            [variety] => Single-Leaf Italian
+            [breeder] => 
+            [characteristics] => 80 days, full-flavored broad-leaf parsley with dark green leaves, good for drying in bunches; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Sweet Italian
+            [variety] => Sweet Italian
+            [breeder] => 
+            [characteristics] => deep green leaves; sweet taste; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Triple Curled
+            [variety] => Triple Curled
+            [breeder] => 
+            [characteristics] => 88 days, tightly curled leaves, less productive than Decora; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T04:00:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Verdi
+            [variety] => Verdi
+            [breeder] => 
+            [characteristics] => summer and autumn cutting, heavy yielding, closely curled; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Bartowich Long
+            [variety] => Bartowich Long
+            [breeder] => 
+            [characteristics] => 95 days, good flavor, fall, winter and spring harvest, slender roots 7-10' long, nutty taste; root parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Bravour
+            [variety] => Bravour
+            [breeder] => 
+            [characteristics] => more recent cultivar with high yield of early dark green leaves; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Champion Moss Curled
+            [variety] => Champion Moss Curled
+            [breeder] => 
+            [characteristics] => 70-85 days; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Clivi
+            [variety] => Clivi
+            [breeder] => 
+            [characteristics] => dwarf plant, very neat and prolific, base leaves do not turn yellow; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Consort
+            [variety] => Consort
+            [breeder] => 
+            [characteristics] => emerald green leaves 8' long and 10' wide; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Curlina
+            [variety] => Curlina
+            [breeder] => 
+            [characteristics] => rich green color, for fresh market; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Dark Green Curled
+            [variety] => Dark Green Curled
+            [breeder] => 
+            [characteristics] => densely curled leaves; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Dark Green Italian var. neapolitanum
+            [variety] => Dark Green Italian var. neapolitanum
+            [breeder] => 
+            [characteristics] => 78 day celery-leaf cultivar, good flavor, excellent for drying; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Darki
+            [variety] => Darki
+            [breeder] => 
+            [characteristics] => dwarf, intensely curled, very deep green; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Decora
+            [variety] => Decora
+            [breeder] => Sakata.
+            [characteristics] => 80 days, dark green leaves; curled leaf parsley type. 1979.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Decorator (ACR no. 3031)
+            [variety] => Decorator (ACR no. 3031)
+            [breeder] => Abbott and Cobb.
+            [characteristics] => open pollinated, extremely tight curl, extra dark-green and has thick leaves and stems.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Deep Green
+            [variety] => Deep Green
+            [breeder] => Northrup, King and Co.
+            [characteristics] => leaves dark green, moss curled and erect; coarsely cut and deeply curled.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Evergreen
+            [variety] => Evergreen
+            [breeder] => Ferry-Morse Seed Co., Mountain View, Calf.
+            [characteristics] => vigorous grooving.
+            [similar] => Double Curled.
+            [adaptation] => Double Curled.
+            [resistance] => Double Curled.
+            [parentage] => Double Curled.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Extra Curled Dwarf
+            [variety] => Extra Curled Dwarf
+            [breeder] => 
+            [characteristics] => compact plants, dark green moss-like leaves; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Extra Triple Curled (Moss Curled Sel.)
+            [variety] => Extra Triple Curled (Moss Curled Sel.)
+            [breeder] => 
+            [characteristics] => compact, densely curled, dark green; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Fakir
+            [variety] => Fakir
+            [breeder] => 
+            [characteristics] => 85 days, parsnip shaped roots, dark green plain leaf top, high yields; root parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Favorit
+            [variety] => Favorit
+            [breeder] => 
+            [characteristics] => 75 days, very dark green double curled leaves; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Forest Green
+            [variety] => Forest Green
+            [breeder] => 
+            [characteristics] => 75-80 days, good flavor, long, stiff, upright stems, good for bunching; standard curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => French
+            [variety] => French
+            [breeder] => 
+            [characteristics] => plain dark green, deeply cut leaves with fine flavor; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Frisca Curly Parsley
+            [variety] => Frisca Curly Parsley
+            [breeder] => 
+            [characteristics] => 75 days; vigorous Dutch cultivar with dense, extra curly leaves, fine flavor; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Frison
+            [variety] => Frison
+            [breeder] => 
+            [characteristics] => darker than Moss Curled, a heavy cropper; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Giant Italian Parsley
+            [variety] => Giant Italian Parsley
+            [breeder] => 
+            [characteristics] => 85 days, 2-3 feet tall and thick stalked; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Gigante Catalogno
+            [variety] => Gigante Catalogno
+            [breeder] => 
+            [characteristics] => large flat leaves, 2.0-2.5' long; good taste; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Gigante d'Italia
+            [variety] => Gigante d'Italia
+            [breeder] => 
+            [characteristics] => 2-3' wide plants with leaves 2' across, aromatic, mild taste with a juicy texture; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Green Lace (76-CD-4)
+            [variety] => Green Lace (76-CD-4)
+            [breeder] => R. Engle.
+            [characteristics] => freeze tolerant, bright light green.
+            [similar] => Paramount.
+            [adaptation] => Paramount.
+            [resistance] => Paramount.
+            [parentage] => Paramount.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Green River
+            [variety] => Green River
+            [breeder] => 
+            [characteristics] => 70 days, medium green, double-curled type, good early branching; slow bolter; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Hamburg
+            [variety] => Hamburg
+            [breeder] => 
+            [characteristics] => 90 days, standard cultivar, roots 8-10' long, flat leaves; root parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Italian
+            [variety] => Italian
+            [breeder] => 
+            [characteristics] => 75 days, dark green leaves with strong flavor; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Italian Dark Green
+            [variety] => Italian Dark Green
+            [breeder] => 
+            [characteristics] => strong taste, flat dark green leaves with strong parsley/celery flavor, stiff upright stems for bunching; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Italian Plain Leaf
+            [variety] => Italian Plain Leaf
+            [breeder] => 
+            [characteristics] => 78 days, dark green flat leaf, vigorous growth; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Krausa
+            [variety] => Krausa
+            [breeder] => 
+            [characteristics] => 75 days, dark green very dense curled leaf, strong stalks, fast regrowth; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Moss Curled
+            [variety] => Moss Curled
+            [breeder] => 
+            [characteristics] => bright green with deeply cut leaves; standard curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Novas
+            [variety] => Novas
+            [breeder] => 
+            [characteristics] => best plain-leaf cultivar, good regrowth, not cold tolerant; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Pagoda
+            [variety] => Pagoda
+            [breeder] => 
+            [characteristics] => 85 days, moss curled leaves, long stemmed; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Paramount
+            [variety] => Paramount
+            [breeder] => Ferry-Morse Seed Co., Mountain View, Calif.
+            [characteristics] => a distinct cultivar; dwarfer, darker green than Ex. Triple Curled.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Paramount
+            [variety] => Paramount
+            [breeder] => 
+            [characteristics] => 85 days, triple curled, uniform curled dark green leaves, adapts well; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Petra
+            [variety] => Petra
+            [breeder] => 
+            [characteristics] => 87 days, moss curled parsley with strong, long stems and densely curled dark green leaves; good regrowth after cutting; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Plain
+            [variety] => Plain
+            [breeder] => 
+            [characteristics] => 72 days, deeply cut, bright green leaves, good flavor; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Regent
+            [variety] => Regent
+            [breeder] => 
+            [characteristics] => small plant, overwinters, tightly curled, can be grown in pots; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Shamrock Double Curled
+            [variety] => Shamrock Double Curled
+            [breeder] => Shamrock Seed Co.
+            [characteristics] => open pollinated; double curl type with 75-day maturity; plants dark green; recovers quickly after cutting; excellent for fresh market and dehydration.
+            [similar] => Forest Green.
+            [adaptation] => Forest Green.
+            [resistance] => Forest Green.
+            [parentage] => Forest Green.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Single-Leaf Italian
+            [variety] => Single-Leaf Italian
+            [breeder] => 
+            [characteristics] => 80 days, full-flavored broad-leaf parsley with dark green leaves, good for drying in bunches; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Sweet Italian
+            [variety] => Sweet Italian
+            [breeder] => 
+            [characteristics] => deep green leaves; sweet taste; plain-leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Triple Curled
+            [variety] => Triple Curled
+            [breeder] => 
+            [characteristics] => 88 days, tightly curled leaves, less productive than Decora; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-18T05:34:38+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsley
+            [name] => Verdi
+            [variety] => Verdi
+            [breeder] => 
+            [characteristics] => summer and autumn cutting, heavy yielding, closely curled; curled leaf parsley type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+

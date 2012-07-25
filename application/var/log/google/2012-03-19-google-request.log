@@ -1,0 +1,4 @@
+2012-03-19T12:05:14+00:00 DEBUG (7): http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=100x100&format=jpeg&maptype=roadmap&sensor=false&center=41.87810199,-88.02440130&markers=color:red|label:S|41.87810199,-88.02440130
+2012-03-19T12:05:14+00:00 DEBUG (7): http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=100x100&format=jpeg&maptype=roadmap&sensor=false&center=41.88262991,-88.01906468&markers=color:red|label:S|41.88262991,-88.01906468
+2012-03-19T12:05:14+00:00 DEBUG (7): http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=100x100&format=jpeg&maptype=roadmap&sensor=false&center=41.87816815,-88.02439490&markers=color:red|label:S|41.87816815,-88.02439490
+2012-03-19T12:05:14+00:00 DEBUG (7): http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=100x100&format=jpeg&maptype=roadmap&sensor=false&center=41.87702222,-88.02095214&markers=color:red|label:S|41.87702222,-88.02095214

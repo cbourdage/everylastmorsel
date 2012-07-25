@@ -1,0 +1,68 @@
+2012-07-09T00:41:42+00:00 DEBUG (7): Array
+(
+    [0] => Name
+    [1] => Breeder
+    [2] => Vendor
+    [3] => Characteristics
+    [4] => Similar
+    [5] => Adaptation
+    [6] => Resistance
+    [7] => Parentage
+)
+
+2012-07-09T00:41:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => basil
+            [name] => Dark Opal
+            [variety] => Dark Opal
+            [breeder] => Univ. of Connecticut, Storrs.
+            [characteristics] => compact bush, 12-15 inches high; used as culinary herb or ornamental plant.
+            [similar] => other purple basils.
+            [adaptation] => other purple basils.
+            [resistance] => other purple basils.
+            [parentage] => other purple basils.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-09T00:41:42+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => basil
+            [name] => Green Bouquet
+            [variety] => Green Bouquet
+            [breeder] => W. Atlee Burpee Co.
+            [characteristics] => open pollinated, dwarf bush plants with small dark green leaves; attractive as border.
+            [similar] => Picollo.
+            [adaptation] => Picollo.
+            [resistance] => Picollo.
+            [parentage] => Picollo.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
