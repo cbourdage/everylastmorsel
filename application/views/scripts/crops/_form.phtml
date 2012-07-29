@@ -62,26 +62,26 @@ $form = $this->view->form;
 </form>
 <script src="/file-bin/js/lib/jquery-ui-1.8.18.custom.min.js"></script>
 <script defer="defer">
-	jQuery("#date_planted").datepicker();
-	jQuery("#variety").autocomplete({
-		source: function(event, add) {
-			jQuery.ajax({
-				url: "/crops/search/",
-				data: 'limit=6&type=' + jQuery('#crop_type').val() + '&term=' + jQuery('#variety').val(),
-				dataType: 'json',
-				success:function(data) {
-                	var items = [];
-                	jQuery.each(data, function(i, val){
-                		items.push(val);
-                	});
-                	add(items);
-				}
-			});
-		},
-		minLength: 2,
-		appendTo: '#varietySuggest',
-		select: function(event, ui) {
-			jQuery('#crop_id').val(ui.item.id);
-		}
-	});
+jQuery("#date_planted").datepicker();
+jQuery("#variety").autocomplete({
+	source: function(event, add) {
+		jQuery.ajax({
+			url: "/crops/search/",
+			data: 'limit=10&type=' + jQuery('#crop_type').val() + '&term=' + jQuery('#variety').val(),
+			dataType: 'json',
+			success:function(data) {
+				var items = [];
+				jQuery.each(data, function(i, val) {
+					items.push(val);
+				});
+				add(items);
+			}
+		});
+	},
+	minLength: 0,
+	appendTo: '#varietySuggest',
+	select: function(event, ui) {
+		jQuery('#crop_id').val(ui.item.id);
+	}
+});
 </script>

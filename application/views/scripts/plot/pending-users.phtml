@@ -5,8 +5,8 @@ $users = $this->users;
 ?>
 <div class="inner-content-wrapper profile plot">
 	<?php echo $this->partial('plot/_top-display.phtml', array('plot' => $plot)); ?>
-	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
+	<?php echo $this->Message()->render(); ?>
 
 	<h2 class="blue">Pending</h2>
 	<div id="users" class="blocked-content pending-users-list">

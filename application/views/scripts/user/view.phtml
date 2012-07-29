@@ -4,8 +4,8 @@ $user = $this->user;
 ?>
 <div class="inner-content-wrapper profile">
 	<?php echo $this->partial('user/_top-display.phtml', array('user' => $user)); ?>
-	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('user/_navigation.phtml', array('user' => $user)); ?>
+	<?php echo $this->Message()->render(); ?>
 
 <?php if ($user->isPrivate()) : ?>
 	<h2 class="private-user">This user is private.</h2>

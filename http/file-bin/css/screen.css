@@ -235,7 +235,10 @@ div.alert > a.close {
 div.alert.alert-success { background: #6C722C; }
 div.alert.alert-error { background: #80883b; }
 div.alert.alert-info { background: #FAC13D; }
-div.inner-content-wrapper div.alert { width: 645px; }
+div.inner-content-wrapper div.alert {
+	margin-bottom: 30px;
+	width: 645px;
+}
 
 /**
 	Overlay
@@ -713,10 +716,12 @@ div.mapMarker.plot-info > div div.content p.buttons-set a {
 	Login/Create/Password Reset
 */
 .account-form { text-align: center; }
-.account-form h1 { font-weight: bold;  margin-bottom: 50px; }
-.account-form form { margin: 0 auto; width: 470px; }
+.account-form h1 { font-weight: bold;  margin-bottom: 30px; }
+.account-form form { margin: 30px auto; width: 470px; }
 .account-form form .fieldset label { width: 170px;}
+.account-form form .fieldset textarea { height: 150px; }
 .account-form form .buttons-set { float: right; margin-right: 7px; }
+.account-form form .buttons-set button { float: none; margin-left: 15px;  }
 body.elm-profile-login .account-form form { width: 400px; }
 body.elm-profile-login .account-form form .fieldset label { width: 100px; }
 body.elm-profile-forgot-password .account-form form { width: 380px; }
@@ -845,6 +850,7 @@ ul.list-block.details li div.details {
 	width: 400px;
 }
 ul.list-block.details li div.details p.role { margin-bottom: 15px; }
+ul.list-block.details li div.details p.buttons-set { margin-top: 15px; }
 ul.list-block.details li div.details p.buttons-set button { width: auto; }
 /** Data Lists: crops */
 table.data-table { }
@@ -871,11 +877,6 @@ table.data-table tr td a { color: #010101; text-decoration: underline; }
 */
 body.elm-profile-settings .account-form form,
 body.elm-profile-info .account-form form { text-align: left; }
-body.elm-profile-info .account-form textarea { height: 150px; }
-/*body.elm-profile-settings .account-form form ul li > div label,
-body.elm-profile-info .account-form form ul li > div label { line-height: 20px; text-align: left; width: auto; }
-body.elm-profile-settings .account-form form ul li > div label > input,
-body.elm-profile-info .account-form form ul li > div label > input { margin-right: 10px; width: auto; }*/
 body.elm-plot-create .account-form form .buttons-set,
 body.elm-profile-settings .account-form form .buttons-set,
 body.elm-profile-info .account-form form .buttons-set {
@@ -890,7 +891,7 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 /**
 	Photos
 */
-.photo-timeline ul {}
+.photo-timeline ul { }
 .photo-timeline ul li { margin-right: 10px; position: relative; }
 .photo-timeline ul li img { border: 0; height: 80px; }
 .photo-timeline a.arrow {
@@ -911,7 +912,12 @@ body.elm-plot-photos .photo-timeline {
 	overflow: hidden;
 	position: relative;
 }
-
+#photosForm { margin: 30px 0; }
+#photosForm .fieldset {
+	border-top: 4px double #80883b;
+	padding-top: 20px;
+}
+#photosForm .fieldset:first-child { border: 0; padding: 0; }
 
 /**
  	People

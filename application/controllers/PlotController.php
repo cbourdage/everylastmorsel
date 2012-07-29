@@ -79,25 +79,10 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 
 		if ($form->isValid($post)) {
 			try {
-				$plot = Elm::getModel('plot');
-				$plot->setData($post);
-				$plot->setIsStartup(false);
-				$plot->save();
-
-				if (isset($post['role'])) {
-					$plot->associateUser($post['user_id'], $post['role'], true);
-				} else {
-					$plot->associateUser($post['user_id'], 'Owner', true);
-				}
-
-				$user = $session->getUser();
-				$user->addData($post)->save();
-				$plot->createNewPlotStatus()->sendNewPlotEmail();
+				$plot = Elm::getModel('plot')->createPlot($post, $session->getUser());
 				$session->addSuccess("This location looks great!");
 				$this->_redirect($plot->getUrl());
 				return;
-			} catch (Colony_Exception $e) {
-				$session->addError($e->getMessage());
 			} catch (Exception $e) {
 				$session->addError($e->getMessage());
 			}

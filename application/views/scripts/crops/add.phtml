@@ -6,8 +6,8 @@ $form = $this->form;
 ?>
 <div class="inner-content-wrapper crops">
 	<?php echo $this->partial('user/_top-display.phtml', array('user' => $user)); ?>
-	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('profile/_navigation.phtml'); ?>
+	<?php echo $this->Message()->render(); ?>
 
 	<h2 class="blue"><?= $this->escape($plot->getName()); ?></h2>
 	<div class="blocked-content clearfix">

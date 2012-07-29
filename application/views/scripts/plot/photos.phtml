@@ -4,10 +4,11 @@ $plot = $this->plot;
 ?>
 <div class="inner-content-wrapper profile plot">
 	<?php echo $this->partial('plot/_top-display.phtml', array('plot' => $plot)); ?>
-	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
+	<?php echo $this->Message()->render(); ?>
 
-	<h2 class="blue">Photos
+	<h2 class="blue">
+		Photos
 		<?php if ($session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
 			<a class="action" href="#photosForm" title="Add Photos">Add Photos</a>
 		<?php endif; ?>
@@ -25,7 +26,7 @@ $plot = $this->plot;
 				</li>
 			</ul>
 			<p class="buttons">
-				<a href="#" id="addPhoto" title="Add Images">Add Another</a>
+				<a href="#" class="action" id="addPhoto" title="Add Images">Add Another</a>
 				<button type="submit" class="btn btn-blue"><span>Upload</span></button>
 			</p>
 		</form>
@@ -47,9 +48,7 @@ $plot = $this->plot;
 		</script>
 	<?php endif; ?>
 
-	<div class="photo-timeline blocked-content">
-		<?php echo $this->partial('plot/photos/_timeline.phtml', array('plot' => $plot, 'showRemove' => true)); ?>
-	</div>
+	<?php echo $this->partial('plot/photos/_timeline.phtml', array('plot' => $plot, 'showRemove' => true)); ?>
 
 	<div class="photo-main blocked-content">
 	<?php if ($images = $plot->getImages()) : ?>

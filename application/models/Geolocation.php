@@ -41,7 +41,7 @@ class Elm_Model_Geolocation extends Colony_Object
 			/**
 			 * cache results into db for later use?
 			 */
-			$locationCache = Elm::getModel('location_cache');
+			$locationCache = Elm::getModel('geolocation_cache');
 			$locationCache->setData(array(
 				'latitude' => $lat,
 				'longitude' => $long,

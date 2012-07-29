@@ -159,22 +159,51 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		return $this->_comments;
 	}
 
-    /**
-     * Send email with new account specific information
-     *
+	/**
+	 * Creates a new plot and necessary associations
+	 *
+	 * @param $data Array
+	 * @param $user Elm_Model_User
+	 * @return Elm_Model_Plot
+	 */
+	public function createPlot($data, $user)
+	{
+		try {
+			$this->setData($data);
+			$this->setIsStartup(false);
+			$this->save();
+
+			if (isset($data['role'])) {
+				$this->associateUser($user->getId(), $data['role'], true);
+			} else {
+				$this->associateUser($user->getId(), 'Owner', true);
+			}
+
+			$user->addData($data)->save();
+			$this->createNewPlotStatus();
+			$this->sendNewPlotEmail($user);
+		}
+		catch (Exception $e) {
+			Elm::logException($e);
+			Elm::throwException('Unable to create plot. We aplogize for the inconvenience.');
+		}
+		return $this;
+	}
+
+	/**
+	 * Send email with new plot created email
+	 *
 	 * @reference http://stackoverflow.com/questions/1218191/how-can-i-make-email-template-in-zend-framework
 	 *
-	 * @param string $backUrl
-     * @return Elm_Model_User
-     */
-    public function sendNewPlotEmail($backUrl = '')
+	 * @param $user
+	 * @return Elm_Model_Plot
+	 */
+    public function sendNewPlotEmail($user)
     {
 		try {
 			$EmailTemplate = new Elm_Model_Email_Template(array('template' => 'new-plot.phtml'));
-			$EmailTemplate->setParams(array(
-				'plot' => $this
-			));
-			$EmailTemplate->send(array('email' => 'collin.bourdage@gmail.com', 'name' => 'Collin Bourdage'));
+			$EmailTemplate->setParams(array('plot' => $this));
+			$EmailTemplate->send(array('email' => $user->getEmail(), 'name' => $user->getName()));
 		} catch(Exception $e) {
 			Elm::logException($e);
 		}

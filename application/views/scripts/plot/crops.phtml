@@ -4,10 +4,11 @@ $plot = $this->plot;
 ?>
 <div class="inner-content-wrapper profile plot">
 	<?php echo $this->partial('plot/_top-display.phtml', array('plot' => $plot)); ?>
-	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
+	<?php echo $this->Message()->render(); ?>
 
-	<h2 class="blue">Crops
+	<h2 class="blue">
+		Crops
 		<?php if ($session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
 			<a class="action" href="<?php echo $this->url('crops/add/', array('p' => $plot->getId())); ?>" title="Add Crop">Add Crop</a>
 		<?php endif; ?>

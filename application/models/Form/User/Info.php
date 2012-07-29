@@ -8,7 +8,7 @@ class Elm_Model_Form_User_Info extends Elm_Model_Form_Abstract
 		parent::__construct();
 
 		$this->addElement('radio', 'gardener_type', array(
-            'required'   => true,
+            'required'   => false,
 			'label' => 'Type of Gardener',
 			'multiOptions' => Elm_Model_Resource_User::$gardenerTypes
         ));

@@ -19,6 +19,11 @@ class Elm_Model_Form_Plot_Edit extends Elm_Model_Form_Abstract
             'label' => 'Plot Name',
         ));
 
+		$this->addElement('textarea', 'about', array(
+            'required'   => false,
+            'label'      => 'About Location'
+        ));
+
 		$this->addElement('radio', 'visibility', array(
             'required'   => true,
 			'label' => 'Plot Visibility',

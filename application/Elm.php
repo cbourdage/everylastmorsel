@@ -58,7 +58,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 	 */
 	protected function _initMailTransport()
 	{
-		if (self::getAppConfig('initEmail')) {
+		if (self::getAppConfig('initTestEmail')) {
 			try {
 				$config = array(
 					'auth' => 'login',

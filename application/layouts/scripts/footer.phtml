@@ -30,3 +30,21 @@
 	<?php echo $this->partial('communication/_modal.phtml'); ?>
 <?php endif; ?>
 <script src="/file-bin/js/lib/bootstrap/bootstrap-modal.js" type="text/javascript"></script>
+<script id="_webengage_script_tag" type="text/javascript">
+window.webengageWidgetInit = window.webengageWidgetInit || function(){
+	webengage.init({
+		licenseCode:"~47b66612"
+	}).onReady(function(){
+		webengage.render();
+	});
+};
+
+(function(d){
+	var _we = d.createElement('script');
+	_we.type = 'text/javascript';
+	_we.async = true;
+	_we.src = (d.location.protocol == 'https:' ? "//ssl.widgets.webengage.com" : "//cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-3.0.js";
+	var _sNode = d.getElementById('_webengage_script_tag');
+	_sNode.parentNode.insertBefore(_we, _sNode);
+})(document);
+</script>

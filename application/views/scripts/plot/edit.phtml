@@ -11,6 +11,7 @@ $session = Elm::getSingleton('user/session')->user;
 			<?php endforeach; ?>
 		</ul>
 		<div class="buttons-set">
+			<a class="blue" href="<?php echo $this->plot->getUrl(); ?>">Back to Plot</a>
 			<button type="submit" class="btn btn-blue" id="create-submit"><span>Save Changes</span></button>
 		</div>
     </form>
