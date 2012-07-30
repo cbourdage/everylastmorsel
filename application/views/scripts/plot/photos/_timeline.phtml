@@ -18,5 +18,16 @@ if (!$this->showRemove) {
 		<?php endforeach; ?>
 	</ul>
 </div>
+<script src="/file-bin/js/lib/jquery-simpleSlider.js"></script>
+<script defer="defer">
+/**
+ * Photo slider
+ */
+jQuery('.photo-timeline').simpleSlider({
+	sliderDiv : '> ul.photo-timeline-list',
+	items : '> ul.photo-timeline-list > li',
+	visibleCount : 5
+});
+</script>
 <?php endif; ?>
 

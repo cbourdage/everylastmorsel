@@ -2,7 +2,7 @@
 $session = Elm::getSingleton('user/session');
 $plot = $this->plot;
 ?>
-<nav id="profileNavigation">
+<nav id="profileNavigation" class="styled">
 	<ul class="list-block">
 		<li><a href="<?= $plot->getUrl(); ?>" title="<?= $this->escape($plot->getName()); ?>">About</a></li>
 		<li><a href="<?= $this->url('', array('_route' => 'plot-photos', 'p' => $plot->getId())); ?>" title="<?= $this->escape($plot->getName()); ?> Photos">Photos</a></li>
