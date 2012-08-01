@@ -55,9 +55,9 @@ function initLocation() {
 				}
 
 				if (response.success) {
-					console.log(response);
+					//console.log(response);
 				} else {
-					alert('error in request');
+					//alert('error in request');
 				}
 			},
 			error: function() {

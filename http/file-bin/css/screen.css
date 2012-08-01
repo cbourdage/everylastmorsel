@@ -752,6 +752,10 @@ body.elm-profile-forgot-password .account-form form .fieldset label { width: 75p
 	border-radius: 1px;
 	padding: 10px;
 }
+.profile-layout .column-left .social-links {
+	margin: 25px 0;
+}
+.profile-layout .column-left .social-links li { margin-bottom: 20px;}
 /** main */
 .profile-layout .main-content {
 	float: right;

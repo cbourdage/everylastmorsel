@@ -10,22 +10,19 @@ $session = Elm::getSingleton('user/session');
 		<ul>
 			<li>
 				<?php //echo $this->Social()->getTwitterLink(); ?>
+				<?php
+					$urlToShare = Zend_Controller_Front::getInstance()->getRequest()->getRequestUri();
+					$urlToShare = $this->url(ltrim($urlToShare, '/'));
+				?>
 				<a href="https://twitter.com/share" class="twitter-share-button"
-				   data-related="everylastmorsel"
-				   data-url="<?php //Zend_Controller_Front::getInstance()->getCurrentUrl(); ?>"
-				   data-url="<?php echo Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
-				   data-text="Support this garden: <?php echo Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
-				   data-hashtags="everylastmorsel"
-				   data-lang="en" data-size="large" data-count="none">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				   data-related="everylastmorsel" data-url="<?php echo $urlToShare; ?>" data-text="Support this garden: <?php echo $urlToShare; ?>"
+				   data-hashtags="everylastmorsel" data-lang="en" data-size="large" data-count="none">Tweet</a>
 			</li>
 			<li>
-				<div class="fb-send" data-font="arial"
-					data-href="<?php echo Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"
-				   	data-text="Support this garden: <?php echo Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"></div>
+				<div class="g-plus" data-action="share" data-annotation="none" data-height="24" href="<?php echo $urlToShare; ?>"></div>
 			</li>
 			<li>
-				<div class="g-plusone" data-annotation="none" href="<?php echo Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>"></div>
+				<div class="fb-send" data-font="arial" data-href="<?php echo $urlToShare; ?>" data-text="Support this garden: <?php echo $urlToShare; ?>"></div>
 			</li>
 		</ul>
 	</div>
@@ -47,5 +44,4 @@ $session = Elm::getSingleton('user/session');
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
-
 <?php endif; ?>

@@ -31,11 +31,20 @@ class Elm_Model_Crop extends Colony_Model_Abstract
 	}
 
 	/**
+	 * @param bool $alphabetical
 	 * @return array
 	 */
-	public function getCropTypes()
+	public function getCropTypes($alphabetical=true)
 	{
-		$this->_types = $this->_getResource()->uniqueTypes();
+		if (!count($this->_types)) {
+			$this->_types = $this->_getResource()->uniqueTypes();
+		}
+
+		if ($alphabetical) {
+			sort($this->_types);
+		}
+		//Elm::log($this->_types);
+
 		return $this->_types;
 	}
 
@@ -47,7 +56,7 @@ class Elm_Model_Crop extends Colony_Model_Abstract
 	 * @param null $limit
 	 * @return array
 	 */
-	public function getVarieties($type, $term=null, $limit=null)
+	public function searchVarieties($type, $term=null, $limit=null)
 	{
 		$results = array();
 		$varieties = $this->_getResource()->searchVarieties($term, $type, $limit);

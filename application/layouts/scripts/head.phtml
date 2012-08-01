@@ -9,32 +9,3 @@
 <?= $this->headScript(); ?>
 
 <link href="/favicon.ico" rel="shortcut icon" />
-<script>
-window.fbAsyncInit = function() {
-	FB.init({
-		appId      : 'YOUR_APP_ID', // App ID
-		//channelUrl : '//<?php echo $this->Data()->getDomain() . $this->baseUrl('channel.html'); ?>', // Channel File
-		status     : true, // check login status
-		cookie     : true, // enable cookies to allow the server to access the session
-		xfbml      : true  // parse XFBML
-	});
-};
-
-// Load Asynchronously
-(function(d){
-	// FB
-	var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-	js = d.createElement('script'); js.id = id; js.async = true;
-	js.src = "//connect.facebook.net/en_US/all.js";
-	d.getElementsByTagName('head')[0].appendChild(js);
-
-	// g+
-	var po = d.createElement('script');
-	po.type = 'text/javascript';
-	po.async = true;
-	po.src = 'https://apis.google.com/js/plusone.js';
-	var s = d.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(po, s);
-}(document));
-
-</script>

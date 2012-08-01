@@ -100,11 +100,12 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 		$this->_initAjax();
 
 		$results = array();
-		$type = $this->getRequest()->getParam('type', null);
-		$limit = $this->getRequest()->getParam('limit', null);
-		if ($term = $this->getRequest()->getParam('term', null)) {
-			$results = Elm::getModel('crop')->getVarieties($type, $term, $limit);
-		}
+		$type = $this->getRequest()->getParam('type', '');
+		$term = $this->getRequest()->getParam('term', '');
+		$limit = $this->getRequest()->getParam('limit', '');
+		//if ($term = $this->getRequest()->getParam('term', null)) {
+			$results = Elm::getModel('crop')->searchVarieties($type, $term, $limit);
+		//}
 		$this->_helper->json->sendJson($results);
 	}
 
