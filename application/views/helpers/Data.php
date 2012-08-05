@@ -22,10 +22,10 @@ class Elm_View_Helper_Data extends Zend_View_Helper_Url
 
 	public function formatDate($date, $format = null)
 	{
-		$date = new Zend_Date($date);
+		$zd = new Zend_Date(strtotime($date));
 		if ($format === null) {
 			$format = 'MMMM d, YYYY';
 		}
-		return $date->toString($format);
+		return $zd->toString($format);
 	}
 }

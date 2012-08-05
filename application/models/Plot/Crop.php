@@ -28,7 +28,12 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 		'partial_sun'
 	);
 
-	private $_crop;
+	/**
+	 * Stores the plots_crops crop object
+	 *
+	 * @var Elm_Model_Crop
+	 */
+	private $_crop = null;
 
 	/**
 	 * Constructor
@@ -113,33 +118,11 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 
 		if (!$this->_crop) {
 			$crop = new Elm_Model_Crop();
-			if (!$this->getCropId()) {
-				//if (!$crop->lookupLoad($this->getCropName())) {
-					unset($data['crop_id']);
-					//$result = $crop->getResource()->insert($data);
-					$crop->setData($data);
-					$crop->save();
-				//}
-			} else {
-				$crop->load($this->getCropId());
-			}
-
+			$crop->load($this->getCropId());
 			$this->_crop = $crop;
 		}
 
 		return $this;
-	}
-
-	/**
-	 * Formats date
-	 *
-	 * @param string $format
-	 * @return string
-	 */
-	public function getDatePlanted($format = 'MM/dd/YYYY')
-	{
-		$date = new Zend_Date($this->getData('date_planted'));
-		return $date->toString($format);
 	}
 
 	/**

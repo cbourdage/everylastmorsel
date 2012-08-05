@@ -66,8 +66,23 @@ $plot = $this->plot;
  *
  * @TODO use bibles.com code for this
  */
+jQuery('ul.photo-timeline-list > li').eq(0).addClass('active');
 jQuery('ul.photo-timeline-list > li').on('click', 'img', function(e) {
+	var $this = jQuery(this);
 	jQuery('#photo-main').find('img').attr('src', '');
+
+	// reset active
+	$this.parent('li').addClass('active').siblings().removeClass('active');
+	jQuery('#photo-main').find('img').fadeOut(200, function() {
+		//jQuery(this).attr('src', $this.attr('src').replace('thumbnails', 'fullsize'));
+		jQuery(this).attr('src', $this.attr('src'));
+		jQuery(this).fadeIn(200);
+	});
+	jQuery('#photo-main').find('img').error(function(){
+		jQuery(this).hide().attr('src',  '/media/placeholder.jpg');
+		jQuery(this).fadeIn(200);
+	});
 });
+
 </script>
 

@@ -1,7 +1,7 @@
 
 DirectoryIndex index.php
 
-SetEnv APPLICATION_ENV development
+SetEnv APPLICATION_ENV production
 
 <IfModule mod_php5.c>
 	## adjust memory limit

@@ -27,7 +27,7 @@ $plot = $this->plot;
 			<tr class="<?php echo ($ctr++ % 2) ? '' : 'alt'; ?>">
 				<td><?= ucwords($pCrop->getCrop()->getType()); ?></td>
 				<td><?= $this->escape($pCrop->getCrop()->getVariety()); ?></td>
-				<td><?= $this->Data()->formatDate($pCrop->getPlantedDate()); ?></td>
+				<td><?= $this->Data()->formatDate($pCrop->getDatePlanted()); ?></td>
 				<td><?= $pCrop->getCoverage(); ?> <?= $pCrop->getCoverageUnits(); ?></td>
 				<td><?= $pCrop->getYield(); ?></td>
 				<td>

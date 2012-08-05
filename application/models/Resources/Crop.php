@@ -52,6 +52,23 @@ class Elm_Model_Resource_Crop extends Colony_Db_Table
 		return $items;
 	}
 
+	public function getDefaultVarieties($type=null)
+	{
+		$items = array();
+		$select = $this->select()
+			->where('type = ?', new Zend_Db_Expr('LOWER(variety)'));
+
+		if ($type !== null) {
+			$select->where('type = ?', $type);
+		}
+
+		foreach ($this->fetchAll($select) as $row) {
+			$items[$row->crop_id] = Elm::getModel('crop')->load($row->crop_id);
+		}
+
+		return $items;
+	}
+
 	/**
 	 * @param string $term
 	 * @param null|string $type
@@ -73,7 +90,7 @@ class Elm_Model_Resource_Crop extends Colony_Db_Table
 		}
 
 		foreach ($this->fetchAll($select) as $row) {
-			$items[$row->crop_id] = $row->variety;
+			$items[$row->crop_id] = Elm::getModel('crop')->load($row->crop_id);
 		}
 		return $items;
 	}

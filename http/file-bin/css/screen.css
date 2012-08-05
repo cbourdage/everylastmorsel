@@ -995,6 +995,9 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 	text-transform: capitalize;
 }
 
+/** no route */
+.no-route { text-align: center; }
+
 
 /** Print Styles */
 @media print {

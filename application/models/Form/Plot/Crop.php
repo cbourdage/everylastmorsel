@@ -34,7 +34,7 @@ class Elm_Model_Form_Plot_Crop extends Elm_Model_Form_Abstract
             'validators' => array(
                 array('StringLength', true, array(3, 128))
             ),
-            'required'   => true
+            'required'   => false
         ));
 
 		$this->addElement('text', 'coverage', array(

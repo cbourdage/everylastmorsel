@@ -10,7 +10,7 @@ $form = $this->view->form;
 		<li>
 			<label for="crop_type">Crop Type</label>
 			<div>
-				<select name="crop_type" id="crop_type">
+				<select name="crop_type" id="crop_type" onchange="populateDefaultCrop(this);">
 					<option value="">Type</option>
 					<?php foreach (Elm::getModel('crop')->getCropTypes() as $type) : ?>
 					<option value="<?= $type; ?>"><?= ucwords($type); ?></option>
@@ -22,7 +22,7 @@ $form = $this->view->form;
 			<label for="variety">Crop Variety</label>
 			<div>
 				<input type="hidden" name="crop_id" id="crop_id" value="<?php // $form->getElement('variety')->getValue(); ?>" />
-				<input type="text" name="variety" id="variety" value="<?php // $form->getElement('variety')->getValue(); ?>" />
+				<input type="text" name="variety" id="variety" onblur="checkDefaultVariety(this);" value="<?php // $form->getElement('variety')->getValue(); ?>" />
 				<div id="varietySuggest"></div>
 			</div>
 		</li>
@@ -81,7 +81,28 @@ jQuery("#variety").autocomplete({
 	minLength: 0,
 	appendTo: '#varietySuggest',
 	select: function(event, ui) {
-		jQuery('#crop_id').val(ui.item.id);
+		if (ui.item.id) {
+			jQuery('#crop_id').val(ui.item.id);
+		} else {
+			jQuery('#crop_id').val(currentDefaultId);
+		}
 	}
 });
+
+var defaults = <?php echo $this->Crops()->getDefaultCrops(); ?>;
+var currentDefaultId = null;
+function populateDefaultCrop(el) {
+	for (var i = 0; i < defaults.length; i++) {
+		if (defaults[i].label.toLowerCase() == el.value) {
+			jQuery('#crop_id').val(defaults[i].id);
+			currentDefaultId = defaults[i].id;
+		}
+	}
+}
+
+function checkDefaultVariety(el) {
+	if (el.value.trim() == '') {
+		jQuery('#crop_id').val(currentDefaultId);
+	}
+}
 </script>

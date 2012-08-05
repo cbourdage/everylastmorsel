@@ -50,6 +50,10 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 				'fromUser' => $this->getFromUser(),
 				'toUser' => $this->getFromUser()
 			));
+			$EmailTemplate->setFromName($this->getName());
+			//$EmailTemplate->setFromEmail($this->getEmail());
+			//Elm::log($EmailTemplate);
+			//die('dead sending');
 			$EmailTemplate->send(array('email' => $this->getToUser()->getEmail(), 'name' => $this->getToUser()->getName()));
 
 			// Save message

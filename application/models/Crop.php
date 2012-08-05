@@ -43,9 +43,13 @@ class Elm_Model_Crop extends Colony_Model_Abstract
 		if ($alphabetical) {
 			sort($this->_types);
 		}
-		//Elm::log($this->_types);
 
 		return $this->_types;
+	}
+
+	public function getDefaultVariety($type=null)
+	{
+		return $this->_getResource()->getDefaultVarieties($type);
 	}
 
 	/**
@@ -60,8 +64,8 @@ class Elm_Model_Crop extends Colony_Model_Abstract
 	{
 		$results = array();
 		$varieties = $this->_getResource()->searchVarieties($term, $type, $limit);
-		foreach ($varieties as $cropId => $variety) {
-			$results[] = array('id' => $cropId, 'value' => $variety, 'label' => $variety);
+		foreach ($varieties as $cropId => $crop) {
+			$results[] = array('id' => $crop->getId(), 'value' => $crop->getVariety(), 'label' => $crop->getVariety());
 		}
 		return $results;
 	}
@@ -90,6 +94,8 @@ class Elm_Model_Crop extends Colony_Model_Abstract
 
 	/**
 	 * Imports files provided into database
+	 *
+	 * @TODO move to an adapter/parser model
 	 *
 	 * @param $file
 	 * @param $type

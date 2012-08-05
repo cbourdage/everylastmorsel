@@ -14,7 +14,8 @@
 			sliderDiv : '> div',	// element selector string
             speed : 500,
             nextTag : '.next',		// element selector string
-            prevTag : '.prev'		// element selector string
+            prevTag : '.prev',		// element selector string
+            slideCount : 1
 		},
 
 		/**
@@ -31,8 +32,7 @@
 				var opts = $.extend({}, methods.defaults, options);
 
 				var width = 0;
-				//var items = $(opts.sliderDiv, $this).children('img, a, div');
-				var items = $(opts.sliderDiv, $this);
+				var items = $(opts.sliderDiv, $this).children('img, a, div, li');
 				// establish total width
 				items.each(function(key, item) {
 					width += $(this).outerWidth(true);
@@ -56,7 +56,7 @@
 			 */
 			if (!$(data.nextTag, $this).length) {
 				var htmlOut = '<a class="arrow ' + data.prevTag.replace('.', '') + '" href="#"></a><a class="arrow ' + data.nextTag.replace('.', '') + '" href="#"></a>';
-				$this.append(htmlOut);
+				$(data.sliderDiv, $this).after(htmlOut);
 			}
 
 			// if we have more than 1 show next button
@@ -87,7 +87,7 @@
         moveNext: function() {
             var $this = $(this),
                 data = $this.data(methods.namespace);
-            var nextIdx = data.currentIdx + 1;
+            var nextIdx = data.currentIdx + data.slideCount;
 
             // Only animate if necessary
             if (nextIdx < data.itemCount) {
@@ -101,7 +101,7 @@
         movePrev: function() {
             var $this = $(this),
                 data = $this.data(methods.namespace);
-            var prevIdx = data.currentIdx - 1;
+            var prevIdx = data.currentIdx - data.slideCount;
 
             // Only animate if necessary
             if (prevIdx >= 0) {
@@ -119,7 +119,7 @@
 				data = $this.data(methods.namespace),
                 $slider = $(data.sliderDiv, $this);
 
-            var items = $slider.children('img, a, div');
+            var items = $slider.children('img, a, div, li');
 
             if (data.currentIdx > nextIdx) {
                 data.leftOffset = eval(data.leftOffset + $(items.get(nextIdx)).outerWidth(true));
@@ -128,7 +128,7 @@
             }
 
             data.currentIdx = nextIdx;
-            $slider.animate({"left" : data.leftOffset + "px"}, data.speed, function() {
+            $slider.animate({"left" : (data.leftOffset * data.slideCount) + "px"}, data.speed, function() {
                 /**
                  * Properly toggle css classes on arrows
                  */
@@ -147,7 +147,7 @@
                     $nextBtn.addClass("show");
                 }
 
-                if (data.currentIdx >= data.itemCount - 1 && $nextBtn.hasClass('show')) {
+                if (data.currentIdx >= data.itemCount - data.slideCount && $nextBtn.hasClass('show')) {
                     $nextBtn.removeClass("show");
                 }
             });
