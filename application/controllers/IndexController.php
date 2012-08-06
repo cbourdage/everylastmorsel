@@ -97,6 +97,34 @@ class Elm_IndexController extends Elm_AbstractController
 	}
 
 	/**
+	 *
+	 */
+	public function saveLocationAction()
+	{
+		$this->_initAjax();
+		$response = array();
+		$location = null;
+
+		$request = $this->getRequest();
+		if ($request->getParam('lat', false) && $request->getParam('long', false)) {
+			$location = new Elm_Model_Geolocation($request->getParam('lat'), $request->getParam('long'));
+			Elm::getSingleton('session')->plotLocation = $location;
+		}
+
+		if ($location) {
+			$response = array(
+				'success' => true,
+				'error' => false,
+				'city' => $location->getCity(),
+				'state' => $location->getState(),
+				'zip' => $location->getZip()
+			);
+		}
+
+		$this->_helper->json->sendJson($response);
+	}
+
+	/**
 	 * About Us Action
 	 *
 	 * @return void

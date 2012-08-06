@@ -44,7 +44,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$form->setAction('/plot/create-post');
 
 		// Set data if stored in session b/c of an error
-		if ($location = Elm::getSingleton('session')->location) {
+		if ($location = Elm::getSingleton('session')->plotLocation) {
 			$form->setDefaults(array(
 				'city' => $location->getCity(),
 				'state' => $location->getState(),
@@ -107,8 +107,10 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			return;
 		}
 
+		/** @var $plot Elm_Model_Plot */
 		$plot = Elm::getSingleton('plot')->load($plotId);
-		if (!$plot->getId()) {
+
+		if (!$plot->getId() || !$plot->isOwner($session->getUser())) {
 			$this->_redirect('/plots/');
 			return;
 		}

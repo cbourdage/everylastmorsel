@@ -40,7 +40,14 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 		}
 
 		$session = $this->_getSession();
+		/** @var $plot Elm_Model_Plot */
 		$plot = Elm::getSingleton('plot')->load($plotId);
+
+		// Check is owner
+		if (!$plot->isOwner($session->getUser())) {
+			$this->_redirect('/crops/');
+			return;
+		}
 
 		$form = new Elm_Model_Form_Plot_Crop();
 		if ($session->formData) {

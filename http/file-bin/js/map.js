@@ -109,6 +109,8 @@ var zoomLevel = 12;
 			lat : event.latLng.lat(),
 			long : event.latLng.lng()
 		};
+
+		saveLocation(coords);
 	});
 
 

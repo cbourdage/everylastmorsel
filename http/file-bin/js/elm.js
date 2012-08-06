@@ -71,6 +71,45 @@ function initLocation() {
 // Initialize location
 initLocation();
 
+/**
+ * Saves a location
+ *
+ * @param position
+ */
+function saveLocation(position) {
+	var location = position;
+	if (position.coords) {
+		location = {
+			lat : position.coords.latitude,
+			long : position.coords.longitude
+		}
+	}
+
+	/**
+	 * Request to get users location if have coordinates - will store the data on session and in db
+	 */
+	jQuery.ajax({
+		url: '/index/save-location/',
+		data: jQuery.serializeJSON(location),
+		dataType: 'json',
+		success: function(response) {
+			if (response.location) {
+				window.location = response.location;
+			}
+
+			if (response.success) {
+				//console.log(response);
+			} else {
+				//alert('error in request');
+			}
+		},
+		error: function() {
+			// @TODO create a simple error handler function to display global message
+			//alert('error in request');
+		}
+	});
+}
+
 
 /**
  * checks response for location and redirects
