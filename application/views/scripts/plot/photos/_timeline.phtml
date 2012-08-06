@@ -7,25 +7,29 @@ if (!$this->showRemove) {
 ?>
 <?php if ($images = $plot->getImages()) : ?>
 <div class="photo-timeline blocked-content">
-	<ul class="photo-timeline-list list list-block">
-		<?php foreach ($images as $image) : ?>
-			<li>
-				<img src="<?= Elm::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" title="<?php echo $this->escape($image->getCaption()); ?>" alt="<?php echo $this->escape($image->getCaption()); ?>">
-				<?php if ($session->isLoggedIn() && $plot->isOwner($session->user) && $this->showRemove) : ?>
-					<br /><a href="<?= $this->url('plot/photo-remove', array('p' => $plot->getId(), 'photo' => $image->getId())); ?>" title="Remove Image">Remove</a>
-				<?php endif; ?>
-			</li>
-		<?php endforeach; ?>
-	</ul>
+	<div class="container">
+		<ul class="photo-timeline-list list list-block">
+			<?php foreach ($images as $image) : ?>
+				<li>
+					<img src="<?= Elm::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" title="<?php echo $this->escape($image->getCaption()); ?>" alt="<?php echo $this->escape($image->getCaption()); ?>">
+					<?php if ($session->isLoggedIn() && $plot->isOwner($session->user) && $this->showRemove) : ?>
+						<br /><a href="<?= $this->url('plot/photo-remove', array('p' => $plot->getId(), 'photo' => $image->getId())); ?>" title="Remove Image">Remove</a>
+					<?php endif; ?>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
 </div>
 <script src="/file-bin/js/lib/jquery-simpleSlider.js"></script>
 <script defer="defer">
 /**
  * Photo slider
  */
-jQuery('.photo-timeline').simpleSlider({
-	sliderDiv : '> ul.photo-timeline-list',
-	slideCount : 3
+jQuery(function() {
+	jQuery('.photo-timeline').simpleSlider({
+		sliderDiv : 'ul.photo-timeline-list',
+		slideCount : 3
+	});
 });
 </script>
 <?php endif; ?>

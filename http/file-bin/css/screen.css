@@ -902,29 +902,40 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 /**
 	Photos
 */
-.photo-timeline {
+.blocked-content.photo-timeline {
 	height: 100px;
-	overflow: hidden;
+	padding: 0;
 	position: relative;
+	width: 640px;
 }
-.photo-timeline ul { position: relative; }
-.photo-timeline ul li {
-	margin-right: 10px;
+.photo-timeline .container {
+	margin: 0 35px;
+	overflow: hidden;
+}
+.photo-timeline ul.list {
+	position: relative;
+	min-width: 580px;
+}
+.photo-timeline ul.list li {
+	margin-right: 8px;
 	position: relative;
 	width: auto;
 }
-.photo-timeline ul li img { border: 0; height: 80px; }
+.photo-timeline ul.list li img { border: 0; height: 87px; }
 .photo-timeline a.arrow {
-	background: red;
+	background: transparent url('../images/sprites.png') no-repeat -1px -459px;
 	display: block;
 	position: absolute;
 	top: 50%;
-	margin-top: -15px;
-	height: 30px;
+	margin-top: -20px;
+	height: 40px;
 	width: 30px;
 }
 .photo-timeline a.arrow.prev { left: 0; }
-.photo-timeline a.arrow.next { right: 0; }
+.photo-timeline a.arrow.next {
+	background-position: -55px -459px;
+	right: 0;
+}
 /*.photo-timeline ul li a { position: absolute; bottom: 0; left: 0; }*/
 .photo-main figure img { width: 630px; }
 #photosForm { margin: 30px 0; }
