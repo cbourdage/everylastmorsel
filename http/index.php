@@ -17,7 +17,9 @@ set_include_path(implode(PATH_SEPARATOR, array(
 /**
  * Maintenance Flag
  */
-if (file_exists('maintenance.flag')) {
+$allowableIps = array('127.0.0.1', '98.223.124.152');
+$allowableIps = array();
+if (file_exists('maintenance.flag') && !in_array($_SERVER['REMOTE_ADDR'], $allowableIps)) {
     include_once dirname(__FILE__) . '/errors/503.php';
     exit;
 }
