@@ -179,7 +179,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 				$this->associateUser($user->getId(), 'Owner', true);
 			}
 
-			$user->addData($data)->save();
+			//$user->addData($data)->save();
 			$this->createNewPlotStatus();
 			$this->sendNewPlotEmail($user);
 		}
