@@ -42,7 +42,7 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
                 array('StringLength', true, array(6, 128)),
                 array('MatchingPassword', false, array(Elm::getModel('user'))),
             ),
-            'required'   => true,
+            'required'   => false,
             'label'      => 'Current Password'
         ));
 
@@ -51,7 +51,7 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
             'validators' => array(
                 array('StringLength', true, array(6, 128))
             ),
-            'required'   => true,
+            'required'   => false,
             'label'      => 'New Password'
         ));
 
@@ -60,7 +60,7 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
             'validators' => array(
 				'PasswordVerification'
 			),
-            'required'   => true,
+            'required'   => false,
             'label'      => 'Confirm Password'
         ));
 
