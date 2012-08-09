@@ -4,8 +4,8 @@
 class Elm_Model_Form_Communication_Abstract extends Elm_Model_Form_Abstract
 {
 	public static $subjects = array(
-		'Subject 1' => 'Subject 1',
-		'Subject 2' => 'Subject 2'
+		'1' => 'Friendly Chitchat',
+		'2' => 'Food Exchange'
 	);
 
 	public function __construct()
