@@ -922,7 +922,10 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 	position: relative;
 	width: auto;
 }
-.photo-timeline ul.list li img { border: 0; height: 87px; }
+.photo-timeline ul.list li img {
+	border: 0;
+	height: 87px;
+}
 .photo-timeline ul.list li a.remove {
 	background: #59601C;
 	border-radius: 10px;
