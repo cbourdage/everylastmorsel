@@ -74,8 +74,9 @@ var options = {
 	infoBoxClearance: new google.maps.Size(25, 25),
 	zIndex: 50
 };
+var infoWindow = new InfoBox(options);
+
 function plotPoint(plot) {
-	console.log(plot);
 	var marker = new google.maps.Marker({
 		map: map,
 		position: new google.maps.LatLng(plot.latitude, plot.longitude),
@@ -87,12 +88,8 @@ function plotPoint(plot) {
 		animation: google.maps.Animation.DROP
 	});
 
-	// Init infobox display - Trigger infowindow when map is loaded
-	var infoWindow = new InfoBox(options);
-
 	markers.push(marker);
 	google.maps.event.addListener(marker, 'click', function() {
-		console.log(marker.content);
 		infoWindow.setContent(infoWindowOpen + marker.content + infoWindowClose);
 		infoWindow.open(map, marker);
 	});

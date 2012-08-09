@@ -3,9 +3,9 @@
 interface Elm_Model_Image_Interface
 {
 	/**
-	 * 102400*12 = 1228800
+	 * 102400*64 = 6553600
 	 */
-	const MAX_FILE_SIZE = 1228800;
+	const MAX_FILE_SIZE = 6553600;
 
 	/**
 	 * Returns the images directory path

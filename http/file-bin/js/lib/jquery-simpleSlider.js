@@ -34,9 +34,11 @@
 				var width = 0;
 				var items = $(opts.sliderDiv, $this).children('img, a, div, li');
 				// establish total width
+				console.log(items.length);
 				items.each(function(key, item) {
 					width += $(this).outerWidth(true);
 				});
+				console.log(width);
 
 				opts.currentIdx = 0;
 				opts.leftOffset = 0;

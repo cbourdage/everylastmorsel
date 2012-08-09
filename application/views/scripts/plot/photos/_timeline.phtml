@@ -13,7 +13,7 @@ if (!$this->showRemove) {
 				<li>
 					<img src="<?= Elm::getBaseUrl('media/plot') . $image->getThumbnail(); ?>" title="<?php echo $this->escape($image->getCaption()); ?>" alt="<?php echo $this->escape($image->getCaption()); ?>">
 					<?php if ($session->isLoggedIn() && $plot->isOwner($session->user) && $this->showRemove) : ?>
-						<br /><a href="<?= $this->url('plot/photo-remove', array('p' => $plot->getId(), 'photo' => $image->getId())); ?>" title="Remove Image">Remove</a>
+						<a class="remove" href="<?= $this->url('plot/photo-remove', array('p' => $plot->getId(), 'photo' => $image->getId())); ?>" title="Remove Image">x</a>
 					<?php endif; ?>
 				</li>
 			<?php endforeach; ?>
