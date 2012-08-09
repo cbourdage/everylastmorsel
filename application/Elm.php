@@ -63,7 +63,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 				$config = array(
 					'auth' => 'login',
 					'username' => 'collin.bourdage@gmail.com',
-					'password' => 'stere0s!x',
+					'password' => '',
 					'ssl' => 'tls',
 					'port' => 587
 				);
