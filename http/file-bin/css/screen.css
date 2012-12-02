@@ -173,6 +173,7 @@ form ul.fieldset > li label {
 }
 form ul.fieldset > li label + div {
 	display: inline-block;
+	position: relative;
 	text-align: left;
 	width: 270px;
 }
@@ -205,6 +206,14 @@ form ul.fieldset > li > div label {
 	text-transform: capitalize;
 	text-align: left;
 	width: 250px;
+}
+form ul.fieldset > li > div label.error {
+	font-size: 12px;
+	letter-spacing: 0;
+	line-height: 1;
+	position: absolute;
+	left: 280px;
+	white-space: nowrap;
 }
 form ul.fieldset > li > div label > input {
 	margin-right: 10px;

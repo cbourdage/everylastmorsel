@@ -77,7 +77,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 	}
 
 	/**
-	 * Initizlize view settings
+	 * Initialize view settings
 	 */
 	protected function _initViewSettings()
 	{
@@ -95,6 +95,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
             ->appendStylesheet('/file-bin/css/screen.css');
 		$this->_view->headScript()
 			->appendFile('/file-bin/js/lib/jquery-1.7.1.min.js', 'text/javascript')
+			->appendFile('/file-bin/js/helper.js', 'text/javascript')
 			->appendFile('/file-bin/js/elm.js', 'text/javascript');
         $this->_view->headTitle('Every Last Morsel')
 			->setSeparator(' | ');

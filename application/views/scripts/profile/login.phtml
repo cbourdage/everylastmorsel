@@ -12,5 +12,20 @@
 			<button type="submit" class="btn btn-blue" id="login-submit"><span>Sign In!</span></button>
 		</div>
     </form>
-    <script type="text/javascript"></script>
+	<script type="text/javascript" src="/file-bin/js/lib/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+	jQuery("#form-validate").validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			},
+			password: {required : true}
+		},
+		messages: {
+			email : "Please enter your email address",
+			password : "Please provide a password"
+		}
+	});
+    </script>
 </div>

@@ -1,11 +1,40 @@
 
+/**
+ * Helper functions
+ */
 jQuery.extend({
-	serializeJSON: function(json) {
+	serializeJSON : function(json) {
 		var string = JSON.stringify(json);
 		return string.replace(/([{}"])/g, '').replace(/:/g, '=').replace(/,/g, '&');
 	},
 
-	formReset: function(form) {
+	/**
+	 * <div class="alert hide fade in">
+		  <a class="close" data-dismiss="alert">×</a>
+		  message
+		</div>
+	 */
+	createAlert : function(type, message) {
+		return jQuery('<div class="alert hide fade in ' + type + '"><a class="close" data-dismiss="alert">×</a>' + message + '</div>');
+	},
+
+	createErrorAlert : function(message) {
+		return jQuery.createAlert('alert-error', message);
+	},
+
+	createInfoAlert : function(message) {
+		return jQuery.createAlert('alert-info', message);
+	},
+
+	createWarningAlert : function(message) {
+		return jQuery.createAlert('alert-warning', message);
+	},
+
+	createSuccessAlert : function(message) {
+		return jQuery.createAlert('alert-success', message);
+	},
+
+	formReset : function(form) {
 		var formEls = form.get(0).elements;
 		for (var i = 0; i < formEls.length; i++) {
 			switch (formEls[i].type.toLowerCase()) {

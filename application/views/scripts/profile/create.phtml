@@ -12,4 +12,40 @@
 			<button type="submit" class="btn btn-blue" id="create-submit"><span>Now sign me up!</span></button>
 		</div>
     </form>
+	<script type="text/javascript" src="/file-bin/js/lib/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+	jQuery("#form-validate").validate({
+		rules: {
+			invite_code : {required : true},
+			firstname : {required : true},
+			lastname : {required : true},
+			city : {required : true},
+			state : {required : true},
+			email : {
+				required : true,
+				email : true
+			},
+			password : {
+				required : true
+			},
+			passwordVerify : {
+				required : true,
+				equalTo : '#password'
+			}
+		},
+		messages: {
+			invite_code : "An invite code is required",
+			firstname : "Please enter your first name",
+			lastname : "Please enter your last name",
+			city : "Please the city you live in",
+			state : "Please enter the state of your city",
+			email : "Please enter your email address",
+			password : "Please provide a password",
+			passwordVerify : {
+				required : "Please confirm your password",
+				equalTo : "Please enter the same password as above"
+			}
+		}
+	});
+    </script>
 </div>
