@@ -8,7 +8,6 @@ $plot = $this->plot;
 			<col class="variety" />
 			<col class="date" />
 			<col class="coverage" />
-			<col class="yield" />
 			<col class="actions" />
 		</colgroup>
 		<thead>
@@ -17,7 +16,6 @@ $plot = $this->plot;
 				<th>Variety</th>
 				<th>Date Planted</th>
 				<th>Coverage</th>
-				<th>Yield</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
@@ -29,18 +27,27 @@ $plot = $this->plot;
 				<td><?= $this->escape($pCrop->getCrop()->getVariety()); ?></td>
 				<td><?= $this->Data()->formatDate($pCrop->getDatePlanted()); ?></td>
 				<td><?= $pCrop->getCoverage(); ?> <?= $pCrop->getCoverageUnits(); ?></td>
-				<td><?= $pCrop->getYield(); ?></td>
 				<td>
-					<!--<a href="#">Add Yield</a>
-					<?php /*if (!$pCrop->getIsForSale()) : */?>
+					<a href="#addYieldModal" data-toggle="modal">Add Yield</a>
+					<?php if ($pCrop->getIsForSale()) : ?>
 						<span class="separator">|</span>
-						<a href="#">Flag For Sale</a>
-					--><?php /*endif; */?>
+						<a href="#is-for-sale">For Sale</a>
+					<?php endif; ?>
 				</td>
 			</tr>
 		<?php endforeach; ?>
 		</tbody>
 	</table>
+	<div class="modal hide fade" id="addYieldModal">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">×</a>
+			<h3>Add Yield</h3>
+		</div>
+		<div class="modal-body">
+			<?php echo $this->partial('yields/_form.phtml'); ?>
+		</div>
+	</div>
+
 <?php else : ?>
 	<p>Nothing has been planted yet. Get growin'!</p>
 <?php endif; ?>

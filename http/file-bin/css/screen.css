@@ -337,6 +337,7 @@ div.inner-content-wrapper div.alert {
 	text-transform: capitalize;
 	text-decoration: underline;
 }
+/** Map Modal */
 #mapModal {
 	margin-top: -140px;
 	margin-left: -200px;
@@ -349,6 +350,7 @@ div.inner-content-wrapper div.alert {
 	border-top: 2px solid #9de5e9;
 }
 #mapModal .buttons-set a.cancel { display: none; }
+/** Contact Modal */
 #contactModal {
 	margin-top: -250px;
 	margin-left: -190px;
@@ -366,7 +368,13 @@ div.inner-content-wrapper div.alert {
 	margin-top: 30px;
 	text-align: center;
 }
+/** Involve Me Modal */
 #involveMeModal .buttons-set { margin-top: 25px; }
+/** Add Yield Modal */
+#addYieldModal form { width: 300px; }
+#addYieldModal .buttons-set { margin-top: 30px; }
+#addYieldModal .mark-for-sale { color: #fff; text-align: left; width: 160px; }
+#addYieldModal .mark-for-sale a { text-decoration: underline; }
 
 /**
 	Layout Specs

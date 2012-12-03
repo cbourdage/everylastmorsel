@@ -1,0 +1,27 @@
+
+<?php $form = new Elm_Model_Form_Yield_Add(); ?>
+<form action="<?php echo $form->getAction() ?>" method="post" id="add-yield-form">
+	<input type="hidden" name="plot_crop_id" value="" />
+	<ul class="fieldset clearfix">
+		<li>
+			<label for="quantity">Yield</label>
+			<div>
+				<input type="text" class="input small" name="quantity" id="quantity" value="<?= $form->getElement('quantity')->getValue(); ?>" />
+			</div>
+		</li>
+		<li>
+			<label for="date_picked">Date Picked</label>
+			<div>
+				<input type="text" class="input small" name="date_picked" id="date_picked" value="<?= $form->getElement('date_picked')->getValue(); ?>" />
+			</div>
+		</li>
+	</ul>
+	<div class="buttons-set">
+		<button type="submit" class="btn btn-blue" name="Add Yield" id="add-yield-submit"><span>Add Yield</span></button>
+		<p class="f-left mark-for-sale">Additionally, I'd like to <a href="#" title="Mark Purchasable">put some up for sale?</a></p>
+	</div>
+</form>
+<script src="/file-bin/js/lib/jquery-ui-1.8.18.custom.min.js"></script>
+<script defer="defer">
+jQuery("#date_picked").datepicker();
+</script>

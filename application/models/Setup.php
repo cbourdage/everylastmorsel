@@ -100,7 +100,6 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
 		$config = self::getConfig();
         $dbVer = $this->getDbVersion('app');
         $configVer = (string) $config['app']['version'];
-		Elm::log(sprintf('Updating: %s, %s', $dbVer, $configVer), Zend_Log::INFO, 'upgrades.log');
 
         if ($dbVer !== false) {
              switch (version_compare($configVer, $dbVer)) {
@@ -178,16 +177,18 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
     {
         $this->_modifyResourceDb('upgrade', $oldVersion, $newVersion);
         $this->setDbVersion('app', $newVersion);
+		Elm::log(sprintf('Updating: %s, %s', $oldVersion, $newVersion), Zend_Log::INFO, 'upgrades.log');
     }
 
 	/**
-     * Run module modification files. Return version of last applied upgrade (false if no upgrades applied)
-     *
-     * @param     string $actionType install|upgrade|uninstall
-     * @param     string $fromVersion
-     * @param     string $toVersion
-     * @return    string | false
-     */
+	 * Run module modification files. Return version of last applied upgrade (false if no upgrades applied)
+	 *
+	 * @param     string $actionType install|upgrade|uninstall
+	 * @param     string $fromVersion
+	 * @param     string $toVersion
+	 * @throws Colony_Exception
+	 * @return    string | false
+	 */
     protected function _modifyResourceDb($actionType, $fromVersion, $toVersion)
     {
 		Elm::profile('setup_updates');
@@ -205,6 +206,7 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
             }
         }
         $sqlDir->close();
+
         if (empty($arrAvailableFiles)) {
             return false;
         }
@@ -297,11 +299,12 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS=0, 0, 1);
     }
 
 	/**
-     * Run Multi-line queries
-     *
-     * @param string $sql
-     * @return array
-     */
+	 * Run Multi-line queries
+	 *
+	 * @param string $sql
+	 * @throws Exception
+	 * @return array
+	 */
     public function multipleLineQuery($sql)
     {
         try {

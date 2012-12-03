@@ -79,7 +79,7 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 		$status = Elm::getModel('plot/status');
 		$status->setPlotId($this->getPlotId())
 			->setUserId($this->getUserId())
-			->setType('text')
+			->setType('crop')
 			->setTitle('New Crop Added!')
 			->setContent(sprintf(
 				'<a href="%s">%s</a> has planted %s %s!',
