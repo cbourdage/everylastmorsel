@@ -62,7 +62,6 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 	 */
 	public function updatePostAction()
 	{
-		//if ($this->getRequest()->getParam('isAjax')) {
 		$this->_initAjax();
 		$response = array();
 
