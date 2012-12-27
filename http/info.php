@@ -1,5 +1,6 @@
 <?php
 //echo phpinfo();
+die();
 ?>
 <!DOCTYPE html>
 <html>

@@ -16,7 +16,7 @@ $plot = $this->plot;
 				<th>Variety</th>
 				<th>Date Planted</th>
 				<th>Coverage</th>
-				<th>Actions</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -27,26 +27,93 @@ $plot = $this->plot;
 				<td><?= $this->escape($pCrop->getCrop()->getVariety()); ?></td>
 				<td><?= $this->Data()->formatDate($pCrop->getDatePlanted()); ?></td>
 				<td><?= $pCrop->getCoverage(); ?> <?= $pCrop->getCoverageUnits(); ?></td>
+			<?php if (Elm::getSingleton('user/session')->isLoggedIn()) : ?>
 				<td>
-					<a href="#addYieldModal" data-toggle="modal">Add Yield</a>
+					<a href="#addYieldModal" data-toggle="modal" data-cropId="<?= $pCrop->getId(); ?>">Add Yield</a>
 					<?php if ($pCrop->getIsForSale()) : ?>
 						<span class="separator">|</span>
-						<a href="#is-for-sale">For Sale</a>
+						<a href="#is-for-sale" title="">Update stock</a>
 					<?php endif; ?>
 				</td>
+			<?php else : ?>
+				<td>
+					<?php if ($pCrop->getIsForSale()) : ?>
+						<a href="#is-for-sale" title="Buy here">Buy here!</a>
+					<?php endif; ?>
+				</td>
+			<?php endif; ?>
 			</tr>
+			<?php if (Elm::getSingleton('user/session')->isLoggedIn() && count($pCrop->getYields())) : ?>
+				<tr class="<?php echo ($ctr % 2) ? '' : 'alt'; ?> nested">
+					<td colspan="5">
+						<table>
+							<thead>
+								<tr>
+									<th>Picked Date</th>
+									<th>Yield Quantity</th>
+									<th>For Sale Quantity</th>
+									<th>Price</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php foreach ($pCrop->getYields() as $yield) : ?>
+									<tr>
+										<td><?= $this->Data()->formatDate($yield->getDatePicked()); ?></td>
+										<td><?= $yield->getQuantity(); ?></td>
+										<td><?= $yield->getQtyForSale(); ?></td>
+										<td><?= ''; ?></td>
+										<td>
+											<a href="#sellThese" data-toggle="modal" data-yieldId="<?= $yield->getYieldId(); ?>" data-yieldUnit="<?= $yield->getQuantityUnit(); ?>">Sell these!</a>
+											<?php if ($yield->getIsForSale()) : ?>
+												<span class="separator">|</span>
+												<a href="<?php echo $this->url('yields/cancel-for-sale', array('yield_id' => $yield->getId())); ?>" title="Take remaining yields off the market">Take off the market</a>
+											<?php endif; ?>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			<?php endif; ?>
 		<?php endforeach; ?>
 		</tbody>
 	</table>
-	<div class="modal hide fade" id="addYieldModal">
-		<div class="modal-header">
-			<a class="close" data-dismiss="modal">×</a>
-			<h3>Add Yield</h3>
+
+	<?php if (Elm::getSingleton('user/session')->isLoggedIn()) : ?>
+		<div class="modal hide fade crops-modal" id="addYieldModal">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>Add Yield</h3>
+			</div>
+			<div class="modal-body">
+				<?php echo $this->partial('yields/_form.phtml'); ?>
+			</div>
 		</div>
-		<div class="modal-body">
-			<?php echo $this->partial('yields/_form.phtml'); ?>
+		<script type="text/javascript">
+			jQuery('table.data-table').find('a[href="#addYieldModal"]').on('click', function(e) {
+				jQuery('#plot_crop_id').val(jQuery(this).attr('data-cropId'));
+			});
+		</script>
+
+		<div class="modal hide fade crops-modal" id="sellThese">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>Sell These</h3>
+			</div>
+			<div class="modal-body">
+				<?php echo $this->partial('yields/_sell-these.phtml'); ?>
+			</div>
 		</div>
-	</div>
+		<script type="text/javascript">
+			jQuery('table.data-table').find('a[href="#sellThese"]').on('click', function(e) {
+				jQuery('#purchasable_yield_id').val(jQuery(this).attr('data-yieldId'));
+				jQuery('#purchasable_quantity_unit').val(jQuery(this).attr('data-yieldUnit'));
+				jQuery('#yield-sell-these-form').find('.quantity-yield-unit').html(jQuery(this).attr('data-yieldUnit'));
+			});
+		</script>
+	<?php endif; ?>
 
 <?php else : ?>
 	<p>Nothing has been planted yet. Get growin'!</p>

@@ -144,4 +144,12 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 		}
 		return $units;
 	}
+
+	public function getYields()
+	{
+		if (!$this->getData('yields')) {
+			$this->setData('yields', Elm::getModel('yield')->fetchByPlotCrop($this));
+		}
+		return $this->getData('yields');
+	}
 }

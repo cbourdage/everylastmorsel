@@ -134,7 +134,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	}
 
 	/**
-	 * Create post action
+	 * Edit post action
 	 *
 	 * @return mixed
 	 */
@@ -142,7 +142,6 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	{
 		$session = $this->_getSession();
 		if (!($plotId = $this->getRequest()->getParam('p', null))) {
-			die('redirecting to plots/');
 			$this->_redirect('/plots/');
 			return;
 		}
@@ -150,7 +149,6 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->_init();
 
 		if (!$this->getRequest()->isPost()) {
-			die('redirecting to plots/ (second one)');
 			$this->_redirect('/p/edit/' . $this->_plot->getId());
 			return;
 		}
@@ -161,11 +159,8 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 
 		if ($form->isValid($post)) {
 			try {
-				Elm::log($this->_plot->getData());
 				//$this->_plot->setData($post);
 				$this->_plot->addData($post);
-				Elm::log($this->_plot->getData());
-				//die('about to save');
 				$this->_plot->save();
 				$session->addSuccess('Successfully saved your changes');
 			} catch (Colony_Exception $e) {

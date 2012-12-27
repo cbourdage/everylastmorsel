@@ -507,7 +507,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	}
 
 
-		public function emailTestingAction()
+	public function emailTestingAction()
 	{
 		$this->_init();
 		$this->_helper->viewRenderer->setNoRender(true);

@@ -254,6 +254,13 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 		return $this;
 	}
 
+	/**
+	 * Denies a user based on id and role
+	 *
+	 * @param $userId
+	 * @param $role
+	 * @return Elm_Model_Plot
+	 */
 	public function denyUser($userId, $role)
 	{
 		$this->_getResource()->updateAssociatedUser($this, $userId, $role, -1);

@@ -119,7 +119,7 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 			->findDependentRowset('Elm_Model_Resource_Plot_Crop', 'Crop');
 
 		foreach ($rows as $row) {
-			$items[$row->entity_id] = Elm::getModel('plot_crop')->load($row->entity_id);
+			$items[$row->entity_id] = Elm::getModel('plot/crop')->load($row->entity_id);
 		}
 
 		return $items;

@@ -5,6 +5,14 @@ require_once 'controllers/Profile/AbstractController.php';
 class Elm_YieldsController extends Elm_Profile_AbstractController
 {
 	/**
+	 * initializes layout for ajax requests
+	 */
+	protected function _initAjax()
+	{
+		$this->_helper->layout()->disableLayout();
+	}
+
+	/**
 	 * Default 404
 	 */
 	public function noRouteAction()
@@ -12,68 +20,96 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 	}
 
 	/**
-	 * view action
+	 * @return mixed
 	 */
-	public function indexAction()
+	public function addPostAction()
 	{
-		$this->_forward('view');
-	}
+		//if ($this->getRequest()->getParam('isAjax')) {
+		$this->_initAjax();
+		$response = array();
 
-	/**
-	 * view action
-	 */
-	public function viewAction()
-	{
-		$this->_redirect('/crops');
-		return;
+		if (!$this->getRequest()->isPost()) {
+			$this->_helper->json->sendJson(array('success' => true, 'location' => $this->_helper->url('crops')));
+			return;
+		}
 
-		$this->_init();
-		$this->view->headTitle()->prepend('My Crops');
-		$this->_initLayout();
-	}
+		$post = $this->getRequest()->getPost();
+		$form = new Elm_Model_Form_Yield_Add();
+		if ($form->isValid($post)) {
+			try {
+				$yield = new Elm_Model_Yield();
+				$yield->prepareNewYield($post);
+				$response = array(
+					'success' => true,
+					'message' => 'Successfully added yield.'
+				);
+			} catch (Exception $e) {
+				Elm::logException($e);
+				$response = array('error' => true, 'message' => $e->getMessage());
+			}
+		} else {
+			$response = array(
+				'error' => true,
+				'message' => 'Check all form fields are filled out.'
+			);
+		}
 
-	/**
-	 *
-	 */
-	public function addAction()
-	{
-
+		$this->_helper->json->sendJson($response);
 	}
 
 	/**
 	 * @return mixed
 	 */
-	public function addPostAction()
+	public function sellYieldPostAction()
 	{
+		$this->_initAjax();
+		$response = array();
+
 		if (!$this->getRequest()->isPost()) {
-			$this->_redirect('/crops/');
+			$this->_helper->json->sendJson(array('success' => true, 'location' => $this->_helper->url('crops')));
 			return;
 		}
 
-		$post = $this->getRequest()->getPost();
-		$plot = Elm::getSingleton('crop')->load($post['crop_id']);
-
-		$form = new Elm_Model_Form_Yield();
-		if ($form->isValid($post)) {
+		$data = $this->getRequest()->getParam('purchasable');
+		$form = new Elm_Model_Form_Yield_Sell();
+		if ($form->isValid($data)) {
 			try {
-				$yield = new Elm_Model_Yield();
-				$yield->extractData($post);
-				$yield->save();
-				$yield->createNewYieldStatus();
-				$this->_getSession()->addSuccess('Alright! Yield added to ' . $yield->getCropName());
+				$yield = Elm::getModel('yield')->load($data['yield_id']);
+				$yield->makePurchasable($data);
+				$response = array(
+					'success' => true,
+					'message' => 'Successfully put ' . $data['quantity'] . ' up for sale.'
+				);
 			} catch (Exception $e) {
 				Elm::logException($e);
-				$this->_getSession()->addError("Ah, we've run into an error. Try again");
+				$response = array('error' => true, 'message' => $e->getMessage());
 			}
 		} else {
-			$this->_getSession()->formData = $post;
-			$this->_getSession()->addError('Check all form fields are filled out.');
+			$response = array(
+				'error' => true,
+				'message' => 'Check all form fields are filled out.'
+			);
 		}
 
-		if (!($redirectUrl = $this->_getSession()->lastUrl)){
-			$redirectUrl = '/crops/';
+		$this->_helper->json->sendJson($response);
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function cancelForSaleAction()
+	{
+		if ($yieldId = $this->getRequest()->getParam('yield_id')) {
+			try {
+				$yield = Elm::getModel('yield')->load($yieldId);
+				$yield->cancelPurchasable();
+				// @TODO add to session messages
+			} catch (Exception $e) {
+				Elm::logException($e);
+				// @TODO add to session messages
+			}
 		}
 
-		$this->_redirect($redirectUrl);
+		$this->_redirect($this->getRequest()->getHeader('referer'));
 	}
 }

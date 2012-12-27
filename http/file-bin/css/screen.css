@@ -178,6 +178,7 @@ form ul.fieldset > li label + div {
 	width: 270px;
 }
 form ul.fieldset > li figure { margin: 0 0 10px; }
+form .buttons-set input,
 form ul.fieldset > li input,
 form ul.fieldset > li textarea {
 	border: 1px solid #ccc;
@@ -302,6 +303,7 @@ div.inner-content-wrapper div.alert {
 	text-decoration: none;
 }
 .modal .modal-body { overflow: hidden; }
+.modal .modal-body .alert { width: auto; }
 .modal .modal-body form { margin-bottom: 0; }
 .modal .modal-body form label {
 	color: #fff;
@@ -370,11 +372,11 @@ div.inner-content-wrapper div.alert {
 }
 /** Involve Me Modal */
 #involveMeModal .buttons-set { margin-top: 25px; }
-/** Add Yield Modal */
-#addYieldModal form { width: 300px; }
-#addYieldModal .buttons-set { margin-top: 30px; }
-#addYieldModal .mark-for-sale { color: #fff; text-align: left; width: 160px; }
-#addYieldModal .mark-for-sale a { text-decoration: underline; }
+/** Shared Crop Yield Modals */
+.crops-modal form { width: 300px; }
+.crops-modal .buttons-set { margin-top: 30px; }
+.crops-modal .mark-for-sale { color: #fff; text-align: left; width: 160px; }
+.crops-modal .mark-for-sale a { text-decoration: underline; }
 
 /**
 	Layout Specs
@@ -965,17 +967,11 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 	width: 30px;
 }
 .photo-timeline a.arrow.prev { left: 0; }
-.photo-timeline a.arrow.next {
-	background-position: -55px -459px;
-	right: 0;
-}
+.photo-timeline a.arrow.next { background-position: -55px -459px; right: 0; }
 /*.photo-timeline ul li a { position: absolute; bottom: 0; left: 0; }*/
 .photo-main figure img { width: 630px; }
 #photosForm { margin: 30px 0; }
-#photosForm .fieldset {
-	border-top: 4px double #80883b;
-	padding-top: 20px;
-}
+#photosForm .fieldset { border-top: 4px double #80883b; padding-top: 20px; }
 #photosForm .fieldset:first-child { border: 0; padding: 0; }
 
 /**
@@ -994,6 +990,13 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 }
 #cropsForm form ul.fieldset li input#date_planted { width: 100px; }
 #cropsForm form ul.fieldset li div.multi-control { width: 270px; }
+
+.crops-modal .modal-body form ul.fieldset li > div { width: 100%; }
+.crops-modal .modal-body form ul.fieldset li > div input { width: 95%; }
+.crops-modal .modal-body form input[type="text"].small { width: 100px }
+.crops-modal .modal-body form ul.fieldset li > div input + select { margin-left: 15px; }
+.crops-modal .modal-body form ul.fieldset li.inline { float: left; width: 46%; }
+
 
 /**
 	CMS Pages

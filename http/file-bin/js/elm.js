@@ -119,9 +119,37 @@ function saveLocation(position) {
 window.Elm.success = function(response) {
 	if (response.location) {
 		window.location = response.location;
-		return false;
+		return;
+	} else if (response.update_id) {
+		/**
+		 * @TODO create generic update regions selector/html
+		 */
+
+
+	} else {
+		var $message = jQuery.createSuccessAlert(response.message).hide();
+
+		var $el = arguments[1];
+		switch(arguments[2]) {
+		case 'after':
+			$el.after($message);
+			break;
+		case 'before':
+			$el.before($message);
+			break;
+		case 'append':
+			$el.append($message);
+			break;
+		default:
+		case 'prepend':
+			$el.prepend($message);
+			break;
 	}
-	return true;
+
+		$message.fadeIn();
+	}
+
+
 }
 
 /**

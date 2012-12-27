@@ -1,0 +1,56 @@
+
+<?php $form = new Elm_Model_Form_Yield_Sell(); ?>
+<form action="<?php echo $form->getAction() ?>" method="post" id="yield-sell-these-form">
+	<input type="hidden" name="purchasable[yield_id]" id="purchasable_yield_id" value="" />
+	<input type="hidden" name="purchasable[quantity_unit]" id="purchasable_quantity_unit" value="" />
+	<ul class="fieldset clearfix">
+		<li>
+			<label for="purchasable_quantity">How many <span class="quantity-yield-unit"></span> would you like to sell?</label>
+			<div>
+				<input type="text" class="input small" name="purchasable[quantity]" id="purchasable_quantity" />
+			</div>
+		</li>
+		<li>
+			<label for="purchasable_price">How much would you like to sell each <span class="quantity-yield-unit"></span> for?</label>
+			<div>
+				<input type="text" class="input small" name="purchasable[price]" id="purchasable_price" />
+			</div>
+		</li>
+	</ul>
+	<div class="buttons-set">
+		<button type="submit" class="btn btn-blue" name="Add Yield" id="add-yield-submit"><span>Add Yield</span></button>
+	</div>
+</form>
+<script defer="defer">
+jQuery('#yield-sell-these-form').on('submit', function(e) {
+	e.preventDefault();
+	var $form = jQuery(this);
+
+	/**
+	 * @TODO validation
+	 */
+	//if ($form.find('#purchasable_quantity').val())
+
+	if ($form.find('.alert').length) {
+		$form.find('.alert').remove();
+	}
+
+	jQuery.ajax({
+		url : $form.attr('action'),
+		data : $form.serialize(),
+		type : 'post',
+		dataType : 'json',
+		success : function(response) {
+			if (response.success) {
+				Elm.success(response.message, $form, 'prepend');
+				jQuery.formReset($form);
+			} else {
+				Elm.error(response.message, $form, 'prepend');
+			}
+		},
+		error : function() {
+			Elm.error('There was an error with your request.', $form, 'prepend');
+		}
+	})
+});
+</script>

@@ -243,11 +243,12 @@ abstract class Colony_Model_Abstract extends Colony_Object
         return $this;
     }
 
-    /**
-     * Delete object from database
-     *
-     * @return Colony_Model_Abstract
-     */
+	/**
+	 * Delete object from database
+	 *
+	 * @throws Exception
+	 * @return Colony_Model_Abstract
+	 */
     public function delete()
     {
         $dbAdapter = Zend_Db_Table::getDefaultAdapter();

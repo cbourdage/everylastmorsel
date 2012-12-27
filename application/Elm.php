@@ -95,6 +95,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
             ->appendStylesheet('/file-bin/css/screen.css');
 		$this->_view->headScript()
 			->appendFile('/file-bin/js/lib/jquery-1.7.1.min.js', 'text/javascript')
+			->appendFile('/file-bin/js/lib/jquery-ui-1.8.18.custom.min.js', 'text/javascript')
 			->appendFile('/file-bin/js/helper.js', 'text/javascript')
 			->appendFile('/file-bin/js/elm.js', 'text/javascript');
         $this->_view->headTitle('Every Last Morsel')
@@ -425,7 +426,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
     }
 
 	/**
-     * Retrieve resource vodel object singleton
+     * Retrieve resource model object singleton
      *
      * @param   string $modelClass
      * @param   array $arguments
@@ -454,12 +455,14 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
         return new $className($message, $code);
     }
 
-    /**
-     * Throw Exception
-     *
-     * @param string $message
-     * @param string $messageStorage
-     */
+	/**
+	 * Throw Exception
+	 *
+	 * @param string $message
+	 * @param string $messageStorage
+	 * @throws Colony_Exception
+	 * @return void
+	 */
     public static function throwException($message, $messageStorage = null)
     {
         if ($messageStorage && ($storage = self::getSingleton($messageStorage))) {
