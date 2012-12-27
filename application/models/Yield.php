@@ -70,7 +70,7 @@ class Elm_Model_Yield extends Colony_Model_Abstract
 	}
 
 	/**
-	 * @TODO some how validate against crop quantities
+	 * prepares post data and adds yields
 	 *
 	 * @param $data
 	 * @return Elm_Model_Yield
@@ -88,7 +88,15 @@ class Elm_Model_Yield extends Colony_Model_Abstract
 		return $this;
 	}
 
+	public function prepareYieldUpdates($data)
+	{
+		//$this->save();
+		return $this;
+	}
+
 	/**
+	 * Adds new purchasable yields.
+	 *
 	 * @TODO validate against sale quantities
 	 *
 	 * @param array $data

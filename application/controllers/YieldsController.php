@@ -60,6 +60,36 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 	/**
 	 * @return mixed
 	 */
+	public function updatePostAction()
+	{
+		//if ($this->getRequest()->getParam('isAjax')) {
+		$this->_initAjax();
+		$response = array();
+
+		if (!$this->getRequest()->isPost()) {
+			$this->_helper->json->sendJson(array('success' => true, 'location' => $this->_helper->url('crops')));
+			return;
+		}
+
+		$post = $this->getRequest()->getPost();
+		try {
+			$yield = new Elm_Model_Yield();
+			$yield->prepareYieldUpdates($post);
+			$response = array(
+				'success' => true,
+				'message' => 'Successfully added yield.'
+			);
+		} catch (Exception $e) {
+			Elm::logException($e);
+			$response = array('error' => true, 'message' => $e->getMessage());
+		}
+
+		$this->_helper->json->sendJson($response);
+	}
+
+	/**
+	 * @return mixed
+	 */
 	public function sellYieldPostAction()
 	{
 		$this->_initAjax();
