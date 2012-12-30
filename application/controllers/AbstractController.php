@@ -31,7 +31,7 @@ class Elm_AbstractController extends Zend_Controller_Action
 	protected $_isAjax = false;
 
     /**
-     * Predispatch: should set layout area
+     * preDispatch: should set layout area
      *
      * @return Colony_Controller_Action
      */
@@ -57,6 +57,16 @@ class Elm_AbstractController extends Zend_Controller_Action
 
         return $this;
     }
+
+	/**
+	 * Returns the action helper
+	 *
+	 * @return null|Zend_Controller_Action_Helper_Abstract|Zend_Controller_Action_HelperBroker
+	 */
+	public function getHelper()
+	{
+		return $this->_helper;
+	}
 
     /**
      * Sets last visited url

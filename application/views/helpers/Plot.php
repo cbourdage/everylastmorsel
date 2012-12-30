@@ -41,6 +41,10 @@ class Elm_View_Helper_Plot extends Zend_View_Helper_Abstract
 		return $feed;
 	}
 
+	/**
+	 * @param $users
+	 * @return mixed
+	 */
 	public function filterUsers($users)
 	{
 		if (!$this->_session->isLoggedIn()) {
@@ -91,5 +95,15 @@ class Elm_View_Helper_Plot extends Zend_View_Helper_Abstract
 			'plot_id' => $plot->getId(),
 			'role' => $user->getRole()
 		));
+	}
+
+	public function hasCropsForSale($plot)
+	{
+		foreach ($plot->getCrops() as $pCrop) {
+			if ($pCrop->getIsForSale()) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

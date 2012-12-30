@@ -37,7 +37,7 @@ class Elm_User_AbstractController extends Elm_AbstractController
 		$action = $this->getRequest()->getActionName();
         $pattern = '/^(create|login)/i';
         if (!preg_match($pattern, $action)) {
-         	$layout = $this->_helper->layout();
+         	$layout = $this->getHelper()->layout();
 			$layout->setLayout('profile-layout');
         }
 

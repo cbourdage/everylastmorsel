@@ -17,8 +17,9 @@ class Elm_UserController extends Elm_User_AbstractController
 			}
 		}
 
+		Elm::log($this->_user->getId() . ' is private? ' . $this->_user->isPrivate());
 		if ($this->_user->isPrivate()) {
-			$this->_redirect($this->_user->getUrl());
+			//$this->_redirect($this->_user->getUrl());
 			return;
 		}
 	}

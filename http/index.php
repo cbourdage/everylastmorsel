@@ -14,6 +14,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
     get_include_path(),
 )));
 
+
 /**
  * Maintenance Flag
  */
@@ -32,6 +33,7 @@ $application = new Zend_Application(
     APPLICATION_ENV,
     APPLICATION_PATH . '/configs/application.ini'
 );
+
 
 // Start session
 //Zend_Session::start();

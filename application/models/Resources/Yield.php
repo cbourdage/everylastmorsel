@@ -20,6 +20,20 @@ class Elm_Model_Resource_Yield extends Colony_Db_Table
 		return $this;
 	}
 
+	public function fetchByPlot($plot)
+	{
+		$items = array();
+		$select = $this->select()
+			->from(array('y' => $this->_name))
+			->join(array('pc' => 'plot_crops'), 'pc.entity_id = y.plot_crop_id', array())
+			->where('pc.plot_id = ?', $plot->getId());
+		foreach ($this->fetchAll($select) as $row) {
+			$items[$row->yield_id] = Elm::getModel('yield')->load($row->yield_id);
+		}
+
+		return $items;
+	}
+
 	public function fetchByPlotCrop($plotCrop)
 	{
 		$items = array();

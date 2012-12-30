@@ -32,13 +32,13 @@ class Elm_Model_User extends Colony_Model_Abstract
     }
 
 	/**
-     * Authenticate user
-     *
-     * @param  string $login
-     * @param  string $password
-     * @return true
-     * @throws Exception
-     */
+	 * Authenticate user
+	 *
+	 * @param  string $login
+	 * @param  string $password
+	 * @throws Colony_Exception
+	 * @return true
+	 */
     public function authenticate($login, $password)
     {
         $this->loadByEmail($login);
@@ -93,6 +93,8 @@ class Elm_Model_User extends Colony_Model_Abstract
 	/**
 	 * Checks if the current session user matches the
 	 * instantiated user
+	 *
+	 * @TODO confirm this functionality
 	 *
 	 * @return bool
 	 */

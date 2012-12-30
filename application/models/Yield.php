@@ -15,6 +15,12 @@ class Elm_Model_Yield extends Colony_Model_Abstract
         $this->_init('yield');
     }
 
+	public function fetchByPlot($plot)
+	{
+		$yields = $this->_getResource()->fetchByPlot($plot);
+		return $yields;
+	}
+
 	/**
 	 * @param $plotCrop
 	 * @return mixed
@@ -107,7 +113,7 @@ class Elm_Model_Yield extends Colony_Model_Abstract
 		$newForSaleQty = (int)$this->getQtyForSale() + (int)$data['quantity'];
 
 		if ($newForSaleQty > $this->getQuantity()) {
-			Elm::throwException("Looks like you're trying to sell more than you've yielded");
+			Elm::throwException("Looks like you're trying to sell more than you've yielded.");
 			return;
 		}
 
@@ -120,9 +126,10 @@ class Elm_Model_Yield extends Colony_Model_Abstract
 		$this->setData('purchasable', $temp);
 
 		// Update data of yield
-		$this->setIsForSale(true);
-		$this->setQtyForSale($newForSaleQty);
-		$this->save();
+		$this->setIsForSale(true)->setQtyForSale($newForSaleQty)->save();
+
+		// update plot crop to flag for sale
+		$this->getPlotCrop()->setIsForSale(true)->save();
 
 		return $this;
 	}

@@ -1,14 +1,23 @@
 <?php
 $plot = $this->plot;
+$session = Elm::getSingleton('user/session');
+$hasYields = $this->Yield()->plotHasYields($plot);
 ?>
 <?php if ($plot->getCrops()) : ?>
-	<table class="data-table" width="100%">
+	<table class="data-table crops" width="100%">
 		<colgroup>
 			<col class="plant-type" />
 			<col class="variety" />
 			<col class="date" />
 			<col class="coverage" />
+
+		<?php //if (has yields) : ?>
+			<col class="total-yield" />
+		<?php // endif; ?>
+
+		<?php //if (has actions) : ?>
 			<col class="actions" />
+		<?php //endif; ?>
 		</colgroup>
 		<thead>
 			<tr>
@@ -16,7 +25,13 @@ $plot = $this->plot;
 				<th>Variety</th>
 				<th>Date Planted</th>
 				<th>Coverage</th>
+			<?php if ($hasYields) : ?>
+				<th>Yield</th>
+			<?php endif; ?>
+
+			<?php if (($session->isLoggedIn() && $plot->isOwner($session->getUser())) || $this->Plot()->hasCropsForSale($plot)) : ?>
 				<th></th>
+			<?php endif; ?>
 			</tr>
 		</thead>
 		<tbody>
@@ -27,7 +42,12 @@ $plot = $this->plot;
 				<td><?= $this->escape($pCrop->getCrop()->getVariety()); ?></td>
 				<td><?= $this->Data()->formatDate($pCrop->getDatePlanted()); ?></td>
 				<td><?= $pCrop->getCoverage(); ?> <?= $pCrop->getCoverageUnits(); ?></td>
-			<?php if (Elm::getSingleton('user/session')->isLoggedIn()) : ?>
+
+			<?php if ($hasYields) : ?>
+				<td><?php echo $this->Yield()->getYieldCount($pCrop); ?></td>
+			<?php endif; ?>
+
+			<?php if ($session->isLoggedIn() && $plot->isOwner($session->getUser())) : ?>
 				<td>
 					<a href="#addYieldModal" data-toggle="modal" data-cropId="<?= $pCrop->getId(); ?>">Add Yield</a>
 					<?php if ($pCrop->getIsForSale()) : ?>
@@ -35,17 +55,15 @@ $plot = $this->plot;
 						<a href="#is-for-sale" title="">Update stock</a>
 					<?php endif; ?>
 				</td>
-			<?php else : ?>
+			<?php elseif ($pCrop->getIsForSale()) : ?>
 				<td>
-					<?php if ($pCrop->getIsForSale()) : ?>
-						<a href="#is-for-sale" title="Buy here">Buy here!</a>
-					<?php endif; ?>
+					<a href="#is-for-sale" title="Buy here">Buy here!</a>
 				</td>
 			<?php endif; ?>
 			</tr>
-			<?php if (Elm::getSingleton('user/session')->isLoggedIn() && count($pCrop->getYields())) : ?>
+			<?php if ($session->isLoggedIn() && count($pCrop->getYields()) && $plot->isOwner($session->getUser())) : ?>
 				<tr class="<?php echo ($ctr % 2) ? '' : 'alt'; ?> nested">
-					<td colspan="5">
+					<td colspan="5" class="yields">
 						<table>
 							<thead>
 								<tr>
@@ -81,7 +99,7 @@ $plot = $this->plot;
 		</tbody>
 	</table>
 
-	<?php if (Elm::getSingleton('user/session')->isLoggedIn()) : ?>
+	<?php if ($session->isLoggedIn() && $plot->isOwner($session->getUser())) : ?>
 		<div class="modal hide fade crops-modal" id="addYieldModal">
 			<div class="modal-header">
 				<a class="close" data-dismiss="modal">×</a>

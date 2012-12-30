@@ -885,23 +885,23 @@ ul.list-block.details li div.details p.buttons-set { margin-top: 15px; }
 ul.list-block.details li div.details p.buttons-set button { width: auto; }
 /** Data Lists: crops */
 table.data-table { }
-table.data-table tr th,
-table.data-table tr td {
+table.data-table th,
+table.data-table td {
 	color: #010101;
 	font-size: 13px;
 	padding: 5px 8px;
 	text-align: left;
 	white-space: nowrap;
 }
-table.data-table tr th {
+table.data-table th {
 	color: #a8a9a9;
 	font-size: 14px;
 	padding: 7px 3px;
 	text-transform: capitalize;
 }
-table.data-table tr td { }
+table.data-table td { }
 table.data-table tr.alt td { background: #e5f1f2; }
-table.data-table tr td a { color: #010101; text-decoration: underline; }
+table.data-table td a { color: #010101; text-decoration: underline; }
 
 /**
 	My Account forms: settings, info, create
@@ -997,6 +997,36 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 .crops-modal .modal-body form ul.fieldset li > div input + select { margin-left: 15px; }
 .crops-modal .modal-body form ul.fieldset li.inline { float: left; width: 46%; }
 
+#crops { border: 1px solid #ccc; padding: 0; }
+#crops table.data-table { border: 1px solid white; }
+#crops table.data-table th,
+#crops table.data-table td {
+	background-color: #EFEFEF;
+	border-left: 1px solid white;
+	border-top: 1px solid white;
+	color: #ACACAC;
+	font-size: 12px;
+	padding: 9px 4px;
+	text-align: center;
+}
+#crops table.data-table th:first-child,
+#crops table.data-table td:first-child { border-left: 0; }
+#crops table.data-table th {
+	background-color: #7B6B59; /*#ABACAD;*/
+	/*border-bottom: 4px solid #A3A4A5;*/
+	border-top: 0;
+	color: white;
+}
+#crops table.data-table td {  }
+#crops table.data-table tr:first-child td { border-top: 0; }
+#crops table.data-table td.yields { padding: 20px; }
+#crops table.data-table td.yields table { border: 1px solid #ccc; width: 100%; }
+#crops table.data-table td.yields table th {
+	background-color: #E6E6E6;
+	border: 0;
+	border-bottom: 1px inset white;
+	color: #ACACAC;
+}
 
 /**
 	CMS Pages

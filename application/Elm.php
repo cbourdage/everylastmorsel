@@ -33,7 +33,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
         $response = $front->dispatch();
         if ($front->returnResponse()) {
             return $response;
-        }
+		}
     }
 
 	/**
