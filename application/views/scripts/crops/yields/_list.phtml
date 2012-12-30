@@ -1,0 +1,42 @@
+<?php
+$pCrop = $this->pCrop;
+?>
+<table>
+	<thead>
+		<tr>
+			<th>Picked Date</th>
+			<th>Yield Quantity</th>
+			<th>Items For Sale</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($pCrop->getYields() as $yield) : ?>
+			<tr>
+				<td><?= $this->Data()->formatDate($yield->getDatePicked()); ?></td>
+				<td><?= $yield->getQuantity(); ?> <?= $yield->getQuantityUnits(); ?></td>
+				<td>
+				<?php foreach ($yield->getPurchasable() as $yP) : ?>
+					<span><?= $yP->getQuantity(); ?></span> <span class="units"><?= $this->Yield()->formatUnits($yP->getQuantityUnit(), $yP->getQuantity()); ?></span>
+					-
+					<span class="price"><?= $this->Data()->formatPrice($yP->getPrice()); ?></span> / ea.
+					<span class="separator">|</span>
+					<a href="<?php echo $this->url('yields/cancel-sale', array('pid' => $yP->getId())); ?>" title="Take remaining yields off the market">Un-list</a>
+					<br />
+				<?php endforeach; ?>
+				</td>
+				<td>
+					<?php if (count($yield->getPurchasable()) > 0) : ?>
+						<a href="#sellThese" data-toggle="modal" data-yieldId="<?= $yield->getYieldId(); ?>" data-yieldUnit="<?= $yield->getQuantityUnits(); ?>">Sell more</a>
+					<?php else : ?>
+						<a href="#sellThese" data-toggle="modal" data-yieldId="<?= $yield->getYieldId(); ?>" data-yieldUnit="<?= $yield->getQuantityUnits(); ?>">Sell these!</a>
+					<?php endif; ?>
+
+					<?php if ($yield->getIsForSale()) : ?>
+
+					<?php endif; ?>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>

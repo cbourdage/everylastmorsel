@@ -41,7 +41,17 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 				$yield->prepareNewYield($post);
 				$response = array(
 					'success' => true,
-					'message' => 'Successfully added yield.'
+					'message' => 'Successfully added yield.',
+					'update_areas' => array(
+						'crop-yields-' . $yield->getPlotCrop()->getId(),
+						'crop-yield-actions-' . $yield->getPlotCrop()->getId(),
+						'crop-yields-totals-' . $yield->getPlotCrop()->getId()
+					),
+					'html' => array(
+						'crop-yields-' . $yield->getPlotCrop()->getId() => $this->view->partial('crops/yields/_list.phtml', array('pCrop' => $yield->getPlotCrop())),
+						'crop-yield-actions-' . $yield->getPlotCrop()->getId() => $this->view->partial('crops/list/_actions.phtml', array('pCrop' => $yield->getPlotCrop())),
+						'crop-yields-totals-' . $yield->getPlotCrop()->getId() => $this->view->partial('crops/yields/_totals.phtml', array('pCrop' => $yield->getPlotCrop())),
+					)
 				);
 			} catch (Exception $e) {
 				Elm::logException($e);
@@ -107,7 +117,13 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 				$yield->makePurchasable($data);
 				$response = array(
 					'success' => true,
-					'message' => 'Successfully put ' . $data['quantity'] . ' up for sale.'
+					'message' => 'Successfully put ' . $data['quantity'] . ' up for sale.',
+					'update_areas' => array(
+						'crop-yields-' . $yield->getPlotCrop()->getId(),
+					),
+					'html' => array(
+						'crop-yields-' . $yield->getPlotCrop()->getId() => $this->view->partial('crops/yields/_list.phtml', array('pCrop' => $yield->getPlotCrop())),
+					)
 				);
 			} catch (Exception $e) {
 				Elm::logException($e);
@@ -126,8 +142,42 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 	/**
 	 * @return mixed
 	 */
+	public function cancelSaleAction()
+	{
+		$this->_redirect($this->getRequest()->getHeader('referer'));
+		return;
+
+		if ($yieldId = $this->getRequest()->getParam('pid')) {
+			try {
+				$yield = Elm::getModel('yield/purchasable')->load($yieldId);
+				$yield->cancelSale();
+				$response = array(
+					'success' => true,
+					'message' => 'Successfully un-listed crops for sale.',
+					'update_areas' => array(
+						'crop-yields-' . $yield->getPlotCrop()->getId(),
+					),
+					'html' => array(
+						'crop-yields-' . $yield->getPlotCrop()->getId() => $this->view->partial('crops/yields/_list.phtml', array('pCrop' => $yield->getPlotCrop())),
+					)
+				);
+			} catch (Exception $e) {
+				Elm::logException($e);
+			}
+		}
+
+		$this->_redirect($this->getRequest()->getHeader('referer'));
+	}
+
+	/**
+	 * @return mixed
+	 */
 	public function cancelForSaleAction()
 	{
+		$this->_redirect($this->getRequest()->getHeader('referer'));
+		return;
+
+
 		if ($yieldId = $this->getRequest()->getParam('yield_id')) {
 			try {
 				$yield = Elm::getModel('yield')->load($yieldId);

@@ -1,25 +1,32 @@
 <?php
 $_session = Elm::getSingleton('user/session');
-$total = count($this->plots);
+$total = count($this->crops);
 $ctr = 0;
 $columnCount = 4;
 ?>
 <div class="clearfix container_12 community">
 	<?php echo $this->partial('community/_navigation.phtml'); ?>
 	<div class="blocked-content plots">
-		<?php foreach ($this->plots as $plot) : ?>
+		<?php foreach ($this->crops as $yield) : ?>
+			<?php
+				$plotCrop = $yield->getPlotCrop();
+				$plot = $plotCrop->getPlot();
+			?>
 			<?php if ($ctr % $columnCount == 0) : ?>
-			<ul class="list-block user-list list">
+			<ul class="list-block marketplace-list list">
 			<?php endif; ?>
 			<li>
 				<figure>
 					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '205', 'width' => '205'))); ?>" title="<?php echo $this->escape($plot->getName()); ?>" />
 				</figure>
 				<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
-				<p class="role"><?php echo $plot->getUserRole(); ?></p>
+				<p class="role"><?php echo $plotCrop->getCrop()->getVariety(); ?> <?php echo $plotCrop->getCrop()->getType(); ?></p>
+				<p class="role">
+					<?php echo $this->partial('crops/yields/_totals.phtml', array('pCrop' => $plotCrop)); ?>
+				</p>
 			</li>
 			<?php if (++$ctr % $columnCount == 0 || $ctr == $total) : ?>
-			<ul class="list-block user-list list">
+			<ul class="list-block marketplace-list list">
 			<?php endif; ?>
 		<?php endforeach; ?>
 	</div>

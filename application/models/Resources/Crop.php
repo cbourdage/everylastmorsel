@@ -43,8 +43,7 @@ class Elm_Model_Resource_Crop extends Colony_Db_Table
 	public function uniqueTypes()
 	{
 		$items = array();
-		$select = $this->select()
-			->distinct()
+		$select = $this->select()->distinct()
 			->from($this->_name, 'type');
 		foreach ($this->fetchAll($select) as $row) {
 			$items[] = $row->type;

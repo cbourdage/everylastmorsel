@@ -56,8 +56,8 @@ class Elm_CommentController extends Elm_User_AbstractController
 		$session = $this->_getSession();
 
 		//if ($this->getRequest()->getParam('isAjax', true)) {
-			$this->_helper->layout()->disableLayout();
-			$this->_helper->viewRenderer->setNoRender(true);
+			$this->getHelper()->layout()->disableLayout();
+			$this->getHelper()->viewRenderer->setNoRender(true);
 		//}
 
         if (!$session->isLoggedIn()) {

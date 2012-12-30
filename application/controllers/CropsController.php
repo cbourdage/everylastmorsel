@@ -29,10 +29,7 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 		$this->_initLayout();
 	}
 
-	/**
-	 *
-	 */
-	public function addAction()
+	public function manageAction()
 	{
 		if (!($plotId = $this->getRequest()->getParam('p', null))) {
 			$this->_redirect('/crops/');
@@ -56,10 +53,18 @@ class Elm_CropsController extends Elm_Profile_AbstractController
 		}
 
 		$this->_init();
-		$this->view->headTitle()->prepend('Add Crops');
+		$this->view->headTitle()->prepend('Manage Crops');
 		$this->view->form = $form;
 		$this->view->plot = $plot;
 		$this->_initLayout();
+	}
+
+	/**
+	 *
+	 */
+	public function addAction()
+	{
+		$this->_forward('manage');
 	}
 
 	/**

@@ -17,6 +17,14 @@ class Elm_Model_Resource_Yield extends Colony_Db_Table
 	protected function _afterLoad($object)
 	{
 		$object->setDatePicked(trim(strstr($object->getDatePicked(), ' ', true)));
+
+		$items = array();
+		$purchasable = $this->find($object->getId())->current()
+			->findDependentRowset('Elm_Model_Resource_Yield_Purchasable', 'Yield');
+		foreach ($purchasable as $p) {
+			$items[$p->entity_id] = Elm::getModel('yield/purchasable')->load($p->entity_id);
+		}
+		$object->setPurchasable($items);
 		return $this;
 	}
 

@@ -40,5 +40,14 @@ class Elm_CommunityController extends Elm_AbstractController
 		$model = Elm::getSingleton('community');
 		$this->view->plots = $model->getPlots();
     }
+
+	/**
+	 * @return void
+	 */
+    public function marketplaceAction()
+    {
+		$model = Elm::getSingleton('community');
+		$this->view->crops = $model->getCropsOnSale();
+    }
 }
 

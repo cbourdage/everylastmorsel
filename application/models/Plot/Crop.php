@@ -29,6 +29,13 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 	);
 
 	/**
+	 * Stores the plot object
+	 *
+	 * @var Elm_Model_Plot
+	 */
+	private $_plot = null;
+
+	/**
 	 * Stores the plots_crops crop object
 	 *
 	 * @var Elm_Model_Crop
@@ -62,9 +69,13 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 		return parent::_beforeSave();
 	}
 
+	/**
+	 * @return Elm_Model_Plot_Crop
+	 */
 	protected function _afterLoad()
 	{
 		$this->_crop = Elm::getModel('crop')->load($this->getCropId());
+		$this->_plot = Elm::getModel('plot')->load($this->getPlotId());
 		return $this;
 	}
 
@@ -93,7 +104,15 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 	}
 
 	/**
-	 * @return mixed
+	 * @return Elm_Model_Plot
+	 */
+	public function getPlot()
+	{
+		return $this->_plot;
+	}
+
+	/**
+	 * @return Elm_Model_Crop
 	 */
 	public function getCrop()
 	{
@@ -145,11 +164,35 @@ class Elm_Model_Plot_Crop extends Colony_Model_Abstract
 		return $units;
 	}
 
+	/**
+	 * Return array of yield objects
+	 *
+	 * @return array
+	 */
 	public function getYields()
 	{
 		if (!$this->getData('yields')) {
 			$this->setData('yields', Elm::getModel('yield')->fetchByPlotCrop($this));
 		}
 		return $this->getData('yields');
+	}
+
+	/**
+	 * Returns the quantities of yields based on their units
+	 * in a key => value array
+	 *
+	 * @return array
+	 */
+	public function getYieldQuantities()
+	{
+		$yieldQts = array();
+		foreach ($this->getYields() as $yield) {
+			if (!isset($yieldQts[$yield->getQuantityUnit()])) {
+				$yieldQts[$yield->getQuantityUnits()] = 0;
+			}
+			$yieldQts[$yield->getQuantityUnits()] += (int) $yield->getQuantity();
+		}
+
+		return $yieldQts;
 	}
 }

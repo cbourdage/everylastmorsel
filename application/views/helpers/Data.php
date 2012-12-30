@@ -33,4 +33,10 @@ class Elm_View_Helper_Data extends Zend_View_Helper_Url
 
 		return $zd->toString($format);
 	}
+
+	public function formatPrice($price)
+	{
+		$price = new Zend_Currency(array('precision' => 2, 'value' => $price));
+		return $price;
+	}
 }

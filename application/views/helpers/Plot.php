@@ -97,6 +97,12 @@ class Elm_View_Helper_Plot extends Zend_View_Helper_Abstract
 		));
 	}
 
+	/**
+	 * Checks if any crops are for sale
+	 *
+	 * @param $plot
+	 * @return bool
+	 */
 	public function hasCropsForSale($plot)
 	{
 		foreach ($plot->getCrops() as $pCrop) {

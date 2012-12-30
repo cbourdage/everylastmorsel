@@ -1,0 +1,21 @@
+<?php
+$session = Elm::getSingleton('user/session');
+$pCrop = $this->pCrop;
+$hasYields = $this->Yield()->plotHasYields($pCrop->getPlot());
+?>
+<?php if ($session->isLoggedIn() && $pCrop->getPlot()->isOwner($session->getUser())) : ?>
+	<a href="#addYieldModal" data-toggle="modal" data-cropId="<?= $pCrop->getId(); ?>">Add Yield</a>
+
+	<?php if ($this->Yield()->getYieldCount($pCrop) > 0) : ?>
+		<span class="separator">|</span>
+		<a href="#crop-yields-<?php echo $pCrop->getId(); ?>">Yields</a>
+	<?php endif; ?>
+
+	<?php if ($pCrop->getIsForSale()) : ?>
+		<!--<span class="separator">|</span>
+		<a href="#cancel-for-sale" title="Un-list for sale">Un-list</a>-->
+	<?php endif; ?>
+	</td>
+<?php elseif ($pCrop->getIsForSale()) : ?>
+	<a href="#is-for-sale" title="Buy here">Buy here!</a>
+<?php endif; ?>

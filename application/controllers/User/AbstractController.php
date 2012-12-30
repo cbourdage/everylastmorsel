@@ -6,6 +6,9 @@ class Elm_User_AbstractController extends Elm_AbstractController
 {
 	protected $_session;
 
+	/**
+	 * @var Elm_Model_User
+	 */
 	protected $_user;
 
 	protected function _getSession()

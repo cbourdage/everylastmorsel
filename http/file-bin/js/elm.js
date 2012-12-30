@@ -110,27 +110,16 @@ function saveLocation(position) {
 	});
 }
 
-
 /**
- * checks response for location and redirects
+ * Injects a message into the specified location relative to the
+ * passed in element
  *
- * @param response
+ * @param $message
+ * @param $el
+ * @param location
  */
-window.Elm.success = function(response) {
-	if (response.location) {
-		window.location = response.location;
-		return;
-	} else if (response.update_id) {
-		/**
-		 * @TODO create generic update regions selector/html
-		 */
-
-
-	} else {
-		var $message = jQuery.createSuccessAlert(response.message).hide();
-
-		var $el = arguments[1];
-		switch(arguments[2]) {
+window.Elm.injectElement = function($message, $el, location) {
+	switch(location) {
 		case 'after':
 			$el.after($message);
 			break;
@@ -146,11 +135,31 @@ window.Elm.success = function(response) {
 			break;
 	}
 
-		$message.fadeIn();
+	$message.fadeIn();
+};
+
+/**
+ * checks response for location and redirects
+ *
+ * @param response
+ */
+window.Elm.success = function(response) {
+	if (response.location) {
+		window.location = response.location;
+		return;
+	} else if (response.update_areas) {
+		response.update_areas.forEach(function(id) {
+			jQuery('#' + id).html(response.html[id]);
+		});
 	}
 
+	if (response.message) {
+		var $message = jQuery.createSuccessAlert(response.message).hide();
+		Elm.injectElement($message, arguments[1], arguments[2]);
+	}
 
-}
+	return;
+};
 
 /**
  * Handles logging errors for application
@@ -161,6 +170,8 @@ window.Elm.success = function(response) {
  */
 window.Elm.error = function(message, $el, location) {
 	var $message = jQuery.createErrorAlert(message).hide();
+	Elm.injectElement($message, $el, location);
+	return;
 
 	switch(location) {
 		case 'after':
@@ -185,7 +196,7 @@ window.Elm.error = function(message, $el, location) {
 !function ($) {
 	$(function() {
 		/**
-		 * Invole me button click to open modal
+		 * Involve me button click to open modal
 		 */
 		$('body').on('click', 'a[href="#involve-me"]', function(e) {
 			e.preventDefault();
@@ -279,6 +290,84 @@ window.Elm.error = function(message, $el, location) {
 				}
 			});
 			return false;
+		});
+
+		/**
+		 * Add yields form submit
+		 */
+		jQuery('#add-yield-form').on('submit', function(e) {
+			e.preventDefault();
+			var $form = $(this),
+				$modal = $('#addYieldModal'),
+				$loader = $('<span class="loader green">Loading...</span>');
+
+			$modal.find('.alert').slideUp('fast', function() {
+				$(this).remove();
+			});
+			$modal.find('button').attr('disable', 'disable').after($loader);
+
+			$.ajax({
+				url : $form.attr('action'),
+				data : $form.serialize(),
+				type : 'post',
+				dataType : 'json',
+				complete: function(response) {
+					$loader.remove();
+					$modal.find('button').attr('disable', '');
+				},
+				success : function(response) {
+					if (response.success) {
+						Elm.success(response, $form, 'prepend');
+						window.setTimeout(function(e) {
+							$modal.modal('hide');
+							$modal.find('.alert').remove();
+							$.formReset($form);
+						}, 2000);
+					} else {
+						Elm.error(response.message, $form, 'prepend');
+					}
+				},
+				error : function() {
+					Elm.error('There was an error with your request.', $form, 'prepend');
+				}
+			});
+		});
+
+		/**
+		 * Set for sale form submit
+		 */
+		jQuery('#yield-sell-these-form').on('submit', function(e) {
+			e.preventDefault();
+			var $form = $(this),
+				$modal = $('#sellThese'),
+				$loader = $('<span class="loader green">Loading...</span>');
+
+			$modal.find('.alert').slideUp('fast', function() {
+				$(this).remove();
+			});
+			$modal.find('button').attr('disable', 'disable').after($loader);
+
+			jQuery.ajax({
+				url : $form.attr('action'),
+				data : $form.serialize(),
+				type : 'post',
+				dataType : 'json',
+				success : function(response) {
+					if (response.success) {
+						Elm.success(response, $form, 'prepend');
+						window.setTimeout(function(e) {
+							$modal.modal('hide');
+							$modal.find('.alert').remove();
+							$.formReset($form);
+						}, 2000);
+					} else {
+						Elm.error(response.message, $form, 'prepend');
+					}
+				},
+				error : function() {
+					Elm.error('There was an error with your request.', $form, 'prepend');
+				}
+			})
 		});
 
 		/**

@@ -1,0 +1,6 @@
+<?php
+$pCrop = $this->pCrop;
+?>
+<?php foreach ($pCrop->getYieldQuantities() as $unit => $total) : ?>
+	<?php echo $total . ' ' . $unit; ?><br />
+<?php endforeach; ?>

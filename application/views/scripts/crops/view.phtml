@@ -20,7 +20,7 @@ $plots = $user->getNonWatching();
 					<p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
 					<p><?php echo $this->escape($plot->getAbout()); ?></p>
 					<p class="buttons-set">
-						<a href="<?php echo $this->url('crops/add', array('p' => $plot->getId())); ?>" class="btn btn-grey" title="Add Crop"><span>Add Crop</span></a>
+						<a href="<?php echo $this->url('crops/manage', array('p' => $plot->getId())); ?>" class="btn btn-grey" title="Manage Crops"><span>Manage Crops</span></a>
 					</p>
 				</div>
 				<div class="crops-container">

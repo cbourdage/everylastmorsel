@@ -15,6 +15,26 @@ class Elm_Model_Yield extends Colony_Model_Abstract
         $this->_init('yield');
     }
 
+	protected function _afterLoad()
+	{
+
+	}
+
+	/**
+	 * Sets the crop id if it has not yet been set
+	 *
+	 * @return Colony_Model_Abstract
+	 */
+	protected function _beforeSave()
+	{
+		if (!$this->getCreatedAt()) {
+			$date = new Zend_Date($this->getDatePicked());
+			$this->setDatePicked($date->toString('YYYY-MM-dd'));
+		}
+
+		return parent::_beforeSave();
+	}
+
 	public function fetchByPlot($plot)
 	{
 		$yields = $this->_getResource()->fetchByPlot($plot);
@@ -29,6 +49,18 @@ class Elm_Model_Yield extends Colony_Model_Abstract
 	{
 		$yields = $this->_getResource()->fetchByPlotCrop($plotCrop);
 		return $yields;
+	}
+
+	/**
+	 * Returns the quantity units in a readable format
+	 *
+	 * @return string
+	 */
+	public function getQuantityUnits()
+	{
+		$units = $this->getData('quantity_unit');
+		$helper = new Elm_View_Helper_Yield();
+		return $helper->formatUnits($units, $this->getQuantity());
 	}
 
 	/**
@@ -91,6 +123,7 @@ class Elm_Model_Yield extends Colony_Model_Abstract
 		} else {
 			$this->createNewYieldStatus();
 		}
+
 		return $this;
 	}
 
@@ -122,6 +155,9 @@ class Elm_Model_Yield extends Colony_Model_Abstract
 
 		// update the purchasable info
 		$temp = $this->getData('purchasable');
+		if (!is_array($temp)) {
+			$temp = array();
+		}
 		array_push($temp, $purchasable);
 		$this->setData('purchasable', $temp);
 

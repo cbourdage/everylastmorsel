@@ -2,137 +2,59 @@
 $plot = $this->plot;
 $session = Elm::getSingleton('user/session');
 $hasYields = $this->Yield()->plotHasYields($plot);
+$hasActions = $this->Plot()->hasCropsForSale($plot);
+$columnCount = ($hasYields && $hasActions) ? 6 : (($hasYields || $hasActions) ? 5 : 4);
 ?>
 <?php if ($plot->getCrops()) : ?>
-	<table class="data-table crops" width="100%">
-		<colgroup>
-			<col class="plant-type" />
-			<col class="variety" />
-			<col class="date" />
-			<col class="coverage" />
-
-		<?php //if (has yields) : ?>
-			<col class="total-yield" />
-		<?php // endif; ?>
-
-		<?php //if (has actions) : ?>
-			<col class="actions" />
-		<?php //endif; ?>
-		</colgroup>
-		<thead>
-			<tr>
-				<th>Plant Type</th>
-				<th>Variety</th>
-				<th>Date Planted</th>
-				<th>Coverage</th>
+	<div class="container">
+		<table class="data-table crops" width="100%">
+			<colgroup>
+				<col class="plant-type" />
+				<col class="variety" />
+				<col class="date" />
+				<col class="coverage" />
 			<?php if ($hasYields) : ?>
-				<th>Yield</th>
+				<col class="total-yield" />
 			<?php endif; ?>
-
-			<?php if (($session->isLoggedIn() && $plot->isOwner($session->getUser())) || $this->Plot()->hasCropsForSale($plot)) : ?>
-				<th></th>
+			<?php if ($hasActions) : ?>
+				<col class="actions" />
 			<?php endif; ?>
-			</tr>
-		</thead>
-		<tbody>
-		<?php $ctr = 0; ?>
-		<?php foreach ($plot->getCrops() as $pCrop) : ?>
-			<tr class="<?php echo ($ctr++ % 2) ? '' : 'alt'; ?>">
-				<td><?= ucwords($pCrop->getCrop()->getType()); ?></td>
-				<td><?= $this->escape($pCrop->getCrop()->getVariety()); ?></td>
-				<td><?= $this->Data()->formatDate($pCrop->getDatePlanted()); ?></td>
-				<td><?= $pCrop->getCoverage(); ?> <?= $pCrop->getCoverageUnits(); ?></td>
-
-			<?php if ($hasYields) : ?>
-				<td><?php echo $this->Yield()->getYieldCount($pCrop); ?></td>
-			<?php endif; ?>
-
-			<?php if ($session->isLoggedIn() && $plot->isOwner($session->getUser())) : ?>
-				<td>
-					<a href="#addYieldModal" data-toggle="modal" data-cropId="<?= $pCrop->getId(); ?>">Add Yield</a>
-					<?php if ($pCrop->getIsForSale()) : ?>
-						<span class="separator">|</span>
-						<a href="#is-for-sale" title="">Update stock</a>
-					<?php endif; ?>
-				</td>
-			<?php elseif ($pCrop->getIsForSale()) : ?>
-				<td>
-					<a href="#is-for-sale" title="Buy here">Buy here!</a>
-				</td>
-			<?php endif; ?>
-			</tr>
-			<?php if ($session->isLoggedIn() && count($pCrop->getYields()) && $plot->isOwner($session->getUser())) : ?>
-				<tr class="<?php echo ($ctr % 2) ? '' : 'alt'; ?> nested">
-					<td colspan="5" class="yields">
-						<table>
-							<thead>
-								<tr>
-									<th>Picked Date</th>
-									<th>Yield Quantity</th>
-									<th>For Sale Quantity</th>
-									<th>Price</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php foreach ($pCrop->getYields() as $yield) : ?>
-									<tr>
-										<td><?= $this->Data()->formatDate($yield->getDatePicked()); ?></td>
-										<td><?= $yield->getQuantity(); ?></td>
-										<td><?= $yield->getQtyForSale(); ?></td>
-										<td><?= ''; ?></td>
-										<td>
-											<a href="#sellThese" data-toggle="modal" data-yieldId="<?= $yield->getYieldId(); ?>" data-yieldUnit="<?= $yield->getQuantityUnit(); ?>">Sell these!</a>
-											<?php if ($yield->getIsForSale()) : ?>
-												<span class="separator">|</span>
-												<a href="<?php echo $this->url('yields/cancel-for-sale', array('yield_id' => $yield->getId())); ?>" title="Take remaining yields off the market">Take off the market</a>
-											<?php endif; ?>
-										</td>
-									</tr>
-								<?php endforeach; ?>
-							</tbody>
-						</table>
-					</td>
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Plant Type</th>
+					<th>Variety</th>
+					<th>Date Planted</th>
+					<th>Coverage</th>
+				<?php if ($hasYields) : ?>
+					<th>Yield</th>
+				<?php endif; ?>
+				<?php if ($hasActions) : ?>
+					<th></th>
+				<?php endif; ?>
 				</tr>
-			<?php endif; ?>
-		<?php endforeach; ?>
-		</tbody>
-	</table>
-
-	<?php if ($session->isLoggedIn() && $plot->isOwner($session->getUser())) : ?>
-		<div class="modal hide fade crops-modal" id="addYieldModal">
-			<div class="modal-header">
-				<a class="close" data-dismiss="modal">×</a>
-				<h3>Add Yield</h3>
-			</div>
-			<div class="modal-body">
-				<?php echo $this->partial('yields/_form.phtml'); ?>
-			</div>
-		</div>
-		<script type="text/javascript">
-			jQuery('table.data-table').find('a[href="#addYieldModal"]').on('click', function(e) {
-				jQuery('#plot_crop_id').val(jQuery(this).attr('data-cropId'));
-			});
-		</script>
-
-		<div class="modal hide fade crops-modal" id="sellThese">
-			<div class="modal-header">
-				<a class="close" data-dismiss="modal">×</a>
-				<h3>Sell These</h3>
-			</div>
-			<div class="modal-body">
-				<?php echo $this->partial('yields/_sell-these.phtml'); ?>
-			</div>
-		</div>
-		<script type="text/javascript">
-			jQuery('table.data-table').find('a[href="#sellThese"]').on('click', function(e) {
-				jQuery('#purchasable_yield_id').val(jQuery(this).attr('data-yieldId'));
-				jQuery('#purchasable_quantity_unit').val(jQuery(this).attr('data-yieldUnit'));
-				jQuery('#yield-sell-these-form').find('.quantity-yield-unit').html(jQuery(this).attr('data-yieldUnit'));
-			});
-		</script>
-	<?php endif; ?>
-
-<?php else : ?>
-	<p>Nothing has been planted yet. Get growin'!</p>
+			</thead>
+			<tbody>
+			<?php $ctr = 0; ?>
+			<?php foreach ($plot->getCrops() as $pCrop) : ?>
+				<tr class="<?php echo ($ctr++ % 2) ? '' : 'alt'; ?>">
+					<td><?= ucwords($pCrop->getCrop()->getType()); ?></td>
+					<td><?= $this->escape($pCrop->getCrop()->getVariety()); ?></td>
+					<td><?= $this->Data()->formatDate($pCrop->getDatePlanted()); ?></td>
+					<td><?= $pCrop->getCoverage(); ?> <?= $pCrop->getCoverageUnits(); ?></td>
+				<?php if ($hasYields) : ?>
+					<td id="crop-yields-totals-<?php echo $pCrop->getId(); ?>"><?php echo $this->partial('crops/yields/_totals.phtml', array('pCrop' => $pCrop)); ?></td>
+				<?php endif; ?>
+				<?php if ($hasActions) : ?>
+					<td id="crop-yield-actions-<?php echo $pCrop->getId(); ?>">
+						<?php if ($pCrop->getIsForSale()) : ?>
+							<a href="#is-for-sale" title="For Sale">For Sale</a>
+						<?php endif; ?>
+					</td>
+				<?php endif; ?>
+				</tr>
+			<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div>
 <?php endif; ?>

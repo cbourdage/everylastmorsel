@@ -7,6 +7,8 @@ class Elm_Model_Community extends Colony_Model_Abstract
 
 	private $_plots = array();
 
+	private $_crops = array();
+
 	public function _construct()
     {
         $this->_resource = Zend_Db_Table::getDefaultAdapter();
@@ -33,5 +35,16 @@ class Elm_Model_Community extends Colony_Model_Abstract
 			}
 		}
 		return $this->_plots;
+	}
+
+	public function getCropsOnSale()
+	{
+		if (count($this->_crops) < 1) {
+			$results = $this->_resource->fetchAll('SELECT yield_id FROM yields WHERE is_for_sale = 1');
+			foreach ($results as $row) {
+				$this->_crops[] = Elm::getModel('yield')->load($row->yield_id);
+			}
+		}
+		return $this->_crops;
 	}
 }

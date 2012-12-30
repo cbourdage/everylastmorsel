@@ -997,10 +997,10 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 .crops-modal .modal-body form ul.fieldset li > div input + select { margin-left: 15px; }
 .crops-modal .modal-body form ul.fieldset li.inline { float: left; width: 46%; }
 
-#crops { border: 1px solid #ccc; padding: 0; }
-#crops table.data-table { border: 1px solid white; }
-#crops table.data-table th,
-#crops table.data-table td {
+.crops .container { border: 1px solid #ccc; padding: 0; }
+table.data-table.crops { border: 1px solid white; }
+table.data-table.crops th,
+table.data-table.crops td {
 	background-color: #EFEFEF;
 	border-left: 1px solid white;
 	border-top: 1px solid white;
@@ -1009,22 +1009,26 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 	padding: 9px 4px;
 	text-align: center;
 }
-#crops table.data-table th:first-child,
-#crops table.data-table td:first-child { border-left: 0; }
-#crops table.data-table th {
+table.data-table.crops tr.alt td { background-color: #EFEFEF; }
+table.data-table.crops th:first-child,
+table.data-table.crops td:first-child { border-left: 0; }
+table.data-table.crops th {
 	background-color: #7B6B59; /*#ABACAD;*/
 	/*border-bottom: 4px solid #A3A4A5;*/
 	border-top: 0;
 	color: white;
 }
-#crops table.data-table td {  }
-#crops table.data-table tr:first-child td { border-top: 0; }
-#crops table.data-table td.yields { padding: 20px; }
-#crops table.data-table td.yields table { border: 1px solid #ccc; width: 100%; }
-#crops table.data-table td.yields table th {
+table.data-table.crops td {  }
+table.data-table.crops tr:first-child td { border-top: 0; }
+table.data-table.crops td.yields { display: none; padding: 20px; }
+table.data-table.crops td.yields table { border: 1px solid #ccc; width: 100%; }
+table.data-table.crops td.yields table th {
 	background-color: #E6E6E6;
 	border: 0;
 	border-bottom: 1px inset white;
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.1) inset;
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,.1) inset;
+	box-shadow: 0px 1px 3px rgba(0,0,0,.1) inset;
 	color: #ACACAC;
 }
 

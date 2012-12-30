@@ -61,4 +61,9 @@ class Elm_Model_Yield_Purchasable extends Colony_Model_Abstract
 		$this->createNewForSaleStatus();
 		return $this;
 	}
+
+	public function cancelSale()
+	{
+		return $this;
+	}
 }

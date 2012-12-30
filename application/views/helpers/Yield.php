@@ -21,7 +21,6 @@ class Elm_View_Helper_Yield extends Zend_View_Helper_Url
 	public function plotHasYields($plot)
 	{
 		$yield = Elm::getModel('yield')->fetchByPlot($plot);
-		Elm::log('total yields: ' . count($yield));
 		return count($yield) > 0;
 	}
 
@@ -34,5 +33,25 @@ class Elm_View_Helper_Yield extends Zend_View_Helper_Url
 		}
 
 		return $totalYield;
+	}
+
+	public function formatUnits($units, $qty)
+	{
+		switch ($units) {
+			case 'individual':
+				$units = 'individual item';
+				if ($qty > 0) {
+					$units = 'individual items';
+				}
+				break;
+			case 'bundle':
+			default:
+				$units = 'bundle';
+				if ($qty > 0) {
+					$units = 'bundles';
+				}
+				break;
+		}
+		return $units;
 	}
 }

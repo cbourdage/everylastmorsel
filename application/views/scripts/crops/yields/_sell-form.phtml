@@ -30,27 +30,5 @@ jQuery('#yield-sell-these-form').on('submit', function(e) {
 	 * @TODO validation
 	 */
 	//if ($form.find('#purchasable_quantity').val())
-
-	if ($form.find('.alert').length) {
-		$form.find('.alert').remove();
-	}
-
-	jQuery.ajax({
-		url : $form.attr('action'),
-		data : $form.serialize(),
-		type : 'post',
-		dataType : 'json',
-		success : function(response) {
-			if (response.success) {
-				Elm.success(response.message, $form, 'prepend');
-				jQuery.formReset($form);
-			} else {
-				Elm.error(response.message, $form, 'prepend');
-			}
-		},
-		error : function() {
-			Elm.error('There was an error with your request.', $form, 'prepend');
-		}
-	})
 });
 </script>
