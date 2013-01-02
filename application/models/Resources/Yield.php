@@ -16,7 +16,8 @@ class Elm_Model_Resource_Yield extends Colony_Db_Table
 
 	protected function _afterLoad($object)
 	{
-		$object->setDatePicked(trim(strstr($object->getDatePicked(), ' ', true)));
+		// set date object
+		$object->setDatePicked(trim(substr($object->getDatePicked(), 0, strpos($object->getDatePicked(), ' '))));
 
 		$items = array();
 		$purchasable = $this->find($object->getId())->current()

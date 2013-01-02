@@ -107,7 +107,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	public function loginAjaxAction()
 	{
 		$this->_initAjax();
-		$this->_helper->viewRenderer->setNoRender(true);
+		$this->getHelper()->viewRenderer->setNoRender(true);
 
 		$request = $this->getRequest();
 		$response = array();

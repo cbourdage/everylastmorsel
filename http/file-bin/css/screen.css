@@ -436,6 +436,16 @@ header nav ul.list > li {
 header nav ul.list li:last-child { border-bottom: 0; }
 header nav ul.list li.social { height: 34px; }
 header nav ul.list li a { text-transform: uppercase; }
+header nav ul.list li .arrow {
+	background: url('../images/app-icons.png') no-repeat -62px -257px;
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	right: 9px;
+	top: 6px;
+	height: 20px;
+	width: 20px;
+}
 header nav > ul.list.left { border-right: 4px double #7ad5e5; float: left; text-align: right; }
 header nav > ul.list.right { border-left: 4px double #7ad5e5; float: right; text-align: left; }
 header nav ul.social { margin-top: 6px; }
@@ -456,10 +466,25 @@ header nav ul.list li > ul.child {
 	position: absolute;
 	left: 150px;
 	top: 0;
+	opacity: 0;
+	display: none;
+	width: auto;
+
+	-moz-transition: opacity .3s ease-in-out;
+	-o-transition: opacity .3s ease-in-out;
+	-webkit-transition: opacity .3s ease-in-out;
+	transition: opacity .3s ease-in-out;
 }
 header nav ul.list li > ul.child li { border-bottom: 1px solid #fff; }
 header nav ul.list li > ul.child li:last-child { border-bottom-color: #bbe6e8; }
-header nav ul.list li > ul.child li a { padding-left: 20px; }
+header nav ul.list li > ul.child li a {
+	font-size: 11px;
+	line-height: 32px;
+	padding-left: 10px;
+	padding-right: 10px;
+	white-space: nowrap;
+}
+header nav ul.list li:hover > ul.child { opacity: 1; display: block; }
 /*header ul.secondary { position: absolute; top: -20px; right: 0; }*/
 /*header ul li { color: #666; font-size: 11px;  margin-left: 10px; }
 header ul li:after { content: '|'; margin-left: 10px; }

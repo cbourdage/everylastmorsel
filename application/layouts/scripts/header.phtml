@@ -21,9 +21,11 @@ $_session = Elm::getSingleton('user/session');
 			<?php if ($_session->isLoggedIn()) : ?>
 				<li>
 					<a href="<?= $this->url('profile'); ?>" title="My Account">My Account</a>
+					<span class="arrow"></span>
 					<ul class="child">
 						<li><a href="<?= $this->url('profile/info'); ?>" title="Edit Profile">Profile Info</a></li>
 						<li><a href="<?= $this->url('profile/settings'); ?>" title="Edit Profile">Settings</a></li>
+						<li><a href="<?= $this->url('communication/view'); ?>" title="Communication Hub">Communication Hub</a></li>
 					</ul>
 				</li>
 				<li><a href="<?= $this->url('profile/logout'); ?>" title="Logout">Logout</a></li>

@@ -1,27 +1,32 @@
 <?php
-
+/**
+ * Individual user view
+ *
+ */
 require_once 'controllers/User/AbstractController.php';
 
 class Elm_UserController extends Elm_User_AbstractController
 {
 	/**
-	 *
+	 * Checks if the user id exists and then
+	 * initializes the user object
 	 */
 	public function preDispatch()
 	{
 		parent::preDispatch();
+
 		if ($userId = $this->getRequest()->getParam('u')) {
 			$user = Elm::getModel('user')->load($userId);
 			if ($user->getId()) {
 				$this->_init();
-			}
-		}
 
-		Elm::log($this->getCurrentUrl() . ' == ' . $this->_user->getUrl());
-		if ($this->_user->isPrivate() && $this->_user->getUrl() !== $this->getCurrentUrl()) {
-			Elm::log($this->_user->getId() . ' is private? ' . $this->_user->isPrivate());
-			$this->_redirect($this->_user->getUrl());
-			return;
+				Elm::log($this->getCurrentUrl() . ' == ' . $this->_user->getUrl());
+				if ($this->_user->isPrivate() && $this->_user->getUrl() !== $this->getCurrentUrl()) {
+					Elm::log($this->_user->getId() . ' is private? ' . $this->_user->isPrivate());
+					$this->_redirect($this->_user->getUrl());
+					return;
+				}
+			}
 		}
 	}
 

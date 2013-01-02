@@ -1,8 +1,8 @@
 <?php
 
-require_once 'controllers/AbstractController.php';
+require_once 'controllers/Profile/AbstractController.php';
 
-class Elm_CommunicationController extends Elm_AbstractController
+class Elm_CommunicationController extends Elm_Profile_AbstractController
 {
 	protected $_session;
 
@@ -30,6 +30,24 @@ class Elm_CommunicationController extends Elm_AbstractController
 	}
 
 	/**
+	 * Initializes the User layout objects
+	 */
+	protected function _initLayout()
+	{
+		$layout = $this->_helper->layout();
+		$layout->setLayout('two-column');
+		$this->view->placeholder('sidebar')->set($this->view->render('communication/_sidebar.phtml'));
+	}
+
+	public function viewAction()
+	{
+		$this->_init();
+		$this->view->headTitle()->append('Communication Hub');
+		$this->view->messages = Elm::getModel('communication')->getByUserId($this->_user->getId());
+		//$this->_initLayout();
+	}
+
+	/**
 	 * @return mixed
 	 */
 	public function sendAction()
@@ -43,9 +61,9 @@ class Elm_CommunicationController extends Elm_AbstractController
 		$form = new Elm_Model_Form_Communication_Contact();
 		if ($form->isValid($post)) {
 			$message = Elm::getModel('communication')->init($post);
-			Elm::profile('communication_send', 'start');
+			//Elm::profile('communication_send', 'start');
 			if ($message->send()) {
-				Elm::profile('communication_send', 'end');
+				//Elm::profile('communication_send', 'end');
 				$this->_helper->json->sendJson(array(
 					'success' => true,
 					'error' => false,

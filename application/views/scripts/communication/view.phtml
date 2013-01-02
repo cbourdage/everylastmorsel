@@ -1,0 +1,20 @@
+<?php
+$messages = $this->messages;
+?>
+
+<table class="data-table">
+	<colgroup>
+		<col class="from" />
+		<col class="subject" />
+		<col class="date" />
+	</colgroup>
+	<tbody>
+		<?php foreach ($messages as $message) : ?>
+			<tr>
+				<td><?php echo $message->getFromUser()->getName(); ?></td>
+				<td><?php echo $message->getSubject(); ?></td>
+				<td><?php echo $this->Data()->formatDate($message->getCreatedAt()); ?></td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
