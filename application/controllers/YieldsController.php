@@ -64,7 +64,7 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 			);
 		}
 
-		$this->_helper->json->sendJson($response);
+		$this->getHelper()->json->sendJson($response);
 	}
 
 	/**

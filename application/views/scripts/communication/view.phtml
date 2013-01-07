@@ -1,20 +1,58 @@
 <?php
 $messages = $this->messages;
+$ctr = 0;
 ?>
-
-<table class="data-table">
+<h3><?php echo $this->type; ?></h3>
+<table class="data-table communication-messages">
 	<colgroup>
+		<col class="actions" />
 		<col class="from" />
 		<col class="subject" />
 		<col class="date" />
 	</colgroup>
 	<tbody>
 		<?php foreach ($messages as $message) : ?>
-			<tr>
-				<td><?php echo $message->getFromUser()->getName(); ?></td>
-				<td><?php echo $message->getSubject(); ?></td>
-				<td><?php echo $this->Data()->formatDate($message->getCreatedAt()); ?></td>
+			<tr class="row <?php echo $message->getIsRead() ? 'read' : 'new'; ?>" id="r:<?php echo $message->getId(); ?>" data-id="<?php echo $message->getId(); ?>">
+				<td class="actions">
+					<span class="icon archive" title="Archive"></span>
+					<span class="icon delete" title="Delete"></span>
+				</td>
+				<td class="from"><?php echo $message->getFromUser()->getName(); ?></td>
+				<td class="subject"><?php echo $message->getSubject(); ?></td>
+				<td class="date"><?php echo $this->Data()->formatDate($message->getCreatedAt()); ?></td>
 			</tr>
 		<?php endforeach; ?>
 	</tbody>
 </table>
+<script defer="defer">
+var deleteUrl = '<?php echo $this->url('communication/delete', array('mid' => 'DIGIT')); ?>';
+var archiveUrl = '<?php echo $this->url('communication/archive', array('mid' => 'DIGIT')); ?>';
+
+jQuery('table').on('click', '.icon', function(e) {
+	var $icon = jQuery(this),
+		$loader = jQuery('#action-loader'),
+		$row = jQuery(this).parents('tr'),
+		urlString = archiveUrl.replace('DIGIT', $row.data('id'));
+
+	if ($icon.hasClass('delete')) {
+		if (!confirm('Are you sure you would like to delete this message?')) {
+			return false;
+		}
+		urlString = deleteUrl.replace('DIGIT', $row.data('id'));
+	}
+
+	$loader.show();
+	jQuery.ajax({
+		url : urlString,
+		complete : function() {
+			$loader.hide();
+		},
+		success : function(response) {
+			if (response.success) {
+				$row.remove();
+			}
+		},
+		error : function() { }
+	});
+});
+</script>

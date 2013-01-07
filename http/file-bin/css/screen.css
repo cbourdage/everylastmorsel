@@ -61,6 +61,18 @@ img {
 	white-space: nowrap;
 }
 .loader.green { background: url(../images/loader-green.gif) no-repeat; }
+#action-loader {
+	background-position: center center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	padding: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+
 
 /**
 	General Styles
@@ -1056,6 +1068,43 @@ table.data-table.crops td.yields table th {
 	box-shadow: 0px 1px 3px rgba(0,0,0,.1) inset;
 	color: #ACACAC;
 }
+
+/**
+	Communication Hub
+*/
+body.elm-communication .main-content h3,
+#columnLeft .left-filters h3 { margin-bottom: 15px; }
+#columnLeft .left-filters ul li { margin-bottom: 5px; }
+table.communication-messages { width: 100%; }
+table.communication-messages td {
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+	empty-cells: show;
+	font-size: 12px;
+	padding: 6px 10px;
+	vertical-align: middle;
+}
+table.communication-messages tr:first-child td { border-top: 1px solid #ccc; }
+table.communication-messages tr.new td { background-color: #EBEBEB; }
+table.communication-messages td.actions { cursor: default; width: 40px; }
+table.communication-messages td.from { width: 140px; }
+table.communication-messages td.subject { }
+table.communication-messages td.date { text-align: right; padding-right: 10px; width: 75px; }
+
+table .icon {
+	background-image: url(../images/app-icons.png);
+	cursor: pointer;
+	display: inline-block;
+	height: 18px;
+	overflow: hidden;
+	text-indent: 110%;
+	white-space: nowrap;
+	width: 18px;
+}
+table .icon + .icon { margin-left: 3px; }
+table .icon.delete { background-position: -288px -2px; }
+table .icon.archive { background-position: 0 -324px; }
 
 /**
 	CMS Pages

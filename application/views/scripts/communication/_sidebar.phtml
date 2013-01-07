@@ -1,3 +1,32 @@
 <div class="left-filters">
-	filters
+	<h3>Communication Hub</h3>
+	<ul>
+		<li><a href="#inbox">Inbox</a></li>
+		<li><a href="#sent">Sent</a></li>
+		<li><a href="#archive">Archive</a></li>
+	</ul>
 </div>
+
+<script type="text/javascript">
+var baseUrl = '<?php echo $this->url('communication/retrieve', array('type' => 'TOKEN')); ?>';
+jQuery('.left-filters').on('click', 'a', function(e) {
+	e.preventDefault();
+
+	var $this = jQuery(this),
+		$loader = jQuery('#action-loader');
+
+	$loader.show();
+	jQuery.ajax({
+		url : baseUrl.replace('TOKEN', $this.attr('href').substr(1)),
+		complete : function() {
+			$loader.hide();
+		},
+		success : function(response) {
+			if (response.success) {
+				Elm.success(response);
+			}
+		},
+		error : function() { }
+	});
+})
+</script>

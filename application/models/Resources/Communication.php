@@ -17,7 +17,7 @@ class Elm_Model_Resource_Communication extends Colony_Db_Table
 			$items[$row->id] = Elm::getModel('communication')->load($row->id);
 			$items[$row->id]->setFromUser(Elm::getModel('user')->load($row->from_user_id));
 		}
-Elm::log($items);
+
         return $items;
     }
 }
