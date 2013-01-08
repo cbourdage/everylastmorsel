@@ -20,19 +20,9 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 		return $this->_session;
 	}
 
-	protected function _initAjax($auth = false)
+	protected function _initAjax()
 	{
 		$this->getHelper()->layout()->disableLayout();
-
-		if ($auth !== false) {
-			if (!Elm::getSingleton('user/session')->isLoggedIn()) {
-				$this->_helper->json->sendJson(array(
-					'success' => false,
-					'error' => true,
-					'location' => $this->view->url('user/login')
-				));
-			}
-		}
 	}
 
 	/**
@@ -45,25 +35,67 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 		$this->view->placeholder('sidebar')->set($this->view->render('communication/_sidebar.phtml'));
 	}
 
+	public function preDispatch()
+	{
+		if ($this->getRequest()->isXmlHttpRequest()) {
+			if (!Elm::getSingleton('user/session')->isLoggedIn()) {
+				$this->getHelper()->json->sendJson(array(
+					'success' => false,
+					'error' => true,
+					'location' => $this->view->url('profile/login')
+				));
+			}
+		} else {
+			parent::preDispatch();
+		}
+
+		return $this;
+	}
+
 	/**
 	 * main view action
 	 */
 	public function viewAction()
 	{
+		$this->_initAjax();
+		$this->_init();
+
+		if ($commId = $this->getRequest()->getParam('cid')) {
+			$this->view->message = Elm::getModel('communication')->load($commId);
+			$this->getHelper()->json->sendJson(array(
+				'success' => true,
+				'error' => false,
+				'update_areas' => array(
+					'content',
+				),
+				'html' => array(
+					'content' => $this->view->partial('communication/view.phtml', array('message' => $this->view->message)),
+				)
+			));
+		} else {
+			$this->_forward('retrieve');
+		}
+
+	}
+
+	/**
+	 * main view action
+	 */
+	public function listAction()
+	{
 		$this->_init();
 
 		// Check if ajax/type retrieve request
 		if ($this->getRequest()->getParam('type')) {
-			Elm::log('retrieving');
 			$this->_forward('retrieve');
 			return;
 		}
 
 		$this->view->headTitle()->append('Communication Hub');
-		$this->view->messages = Elm::getModel('communication')->getByUserId($this->_user->getId());
-
+		$comm = Elm::getModel('communication')->setUserId($this->_user->getId())
+			->setFilterBy('inbox');
+		$this->view->messages = $comm->retrieve();
 		$this->view->type = 'Inbox';
-		//$this->_initLayout();
 	}
 
 	/**
@@ -71,11 +103,13 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 	 */
 	public function retrieveAction()
 	{
-		$this->_initAjax(true);
+		$this->_initAjax();
 		$this->_init();
 
-		$type = $this->getRequest()->getParam('type');
-		$this->view->messages = Elm::getModel('communication')->getByUserId($this->_user->getId());
+		$type = $this->getRequest()->getParam('type', 'inbox');
+		$comm = Elm::getModel('communication')->setUserId($this->_user->getId())
+			->setFilterBy($type);
+		$this->view->messages = $comm->retrieve();
 		$this->view->type = ucfirst($type);
 
 		$this->getHelper()->json->sendJson(array(
@@ -85,7 +119,7 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 				'content',
 			),
 			'html' => array(
-				'content' => $this->view->partial('communication/view.phtml', array(
+				'content' => $this->view->partial('communication/list.phtml', array(
 					'messages' => $this->view->messages,
 					'type' => $this->view->type
 				)),
@@ -98,15 +132,15 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 	 */
 	public function sendAction()
 	{
-		$this->_initAjax(true);
+		$this->_initAjax();
 		if (!$this->getRequest()->isPost()) {
 			return;
 		}
 
-		$post = $this->getRequest()->getParams();
+		$data = $this->getRequest()->getParams();
 		$form = new Elm_Model_Form_Communication_Contact();
-		if ($form->isValid($post)) {
-			$message = Elm::getModel('communication')->init($post);
+		if ($form->isValid($data)) {
+			$message = Elm::getModel('communication')->init($data);
 			//Elm::profile('communication_send', 'start');
 			if ($message->send()) {
 				//Elm::profile('communication_send', 'end');
@@ -134,5 +168,31 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 				'message' => 'Check the form is filled out.'
 			));
 		}
+	}
+
+	/**
+	 * Archive action
+	 */
+	public function archiveAction()
+	{
+		if ($commId = $this->getRequest()->getParam('cid')) {
+			$message = Elm::getModel('communication')->load($commId)->archive();
+		}
+
+		//$this->getRequest()->setParam('type', 'inbox');
+		$this->_forward('retrieve');
+	}
+
+	/**
+	 * Delete action
+	 */
+	public function deleteAction()
+	{
+		if ($commId = $this->getRequest()->getParam('cid')) {
+			$message = Elm::getModel('communication')->load($commId)->delete();
+		}
+
+		//$this->getRequest()->setParam('type', 'inbox');
+		$this->_forward('retrieve');
 	}
 }

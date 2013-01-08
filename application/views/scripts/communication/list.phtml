@@ -1,0 +1,35 @@
+<?php
+$messages = $this->messages;
+$ctr = 0;
+?>
+<h3><?php echo $this->type; ?></h3>
+<table class="data-table communication-messages">
+	<colgroup>
+		<col class="actions" />
+		<col class="from" />
+		<col class="subject" />
+		<col class="date" />
+	</colgroup>
+	<tbody>
+		<?php foreach ($messages as $message) : ?>
+			<tr class="row <?php echo $message->getIsRead() ? 'read' : 'new'; ?>" id="r:<?php echo $message->getId(); ?>" data-id="<?php echo $message->getId(); ?>" data-url="<?php echo $this->url('communication/view', array('cid' => $message->getId())); ?>">
+				<td class="actions">
+					<?php if (!$message->getIsArchived()) : ?>
+						<span class="icon archive" title="Archive" rel="<?php echo $this->url('communication/archive', array('cid' => $message->getId())); ?>"></span>
+					<?php endif; ?>
+					<span class="icon delete" title="Delete" rel="<?php echo $this->url('communication/delete', array('cid' => $message->getId())); ?>"></span>
+				</td>
+				<td class="from"><?php echo $message->getFromUser()->getName(); ?></td>
+				<td class="subject"><?php echo $message->getSubject(); ?></td>
+				<td class="date"><?php echo $this->Data()->formatDate($message->getCreatedAt()); ?></td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
+<div class="modal hide fade" id="messageModal">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+		<h3>Message Details</h3>
+	</div>
+	<div class="modal-body" id="messageBody"></div>
+</div>

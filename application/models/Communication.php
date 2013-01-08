@@ -25,12 +25,41 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 	}
 
 	/**
-	 * @param $id
+	 * @param $userId
 	 * @return mixed
 	 */
-	public function getByUserId($id)
+	public function getByUserId($userId)
 	{
-		return $this->_getResource()->getByUserId($id);
+		return $this->_getResource()->getAll($userId);
+	}
+
+	/**
+	 * Retrieves messages based on any specified/set filters
+	 *
+	 * @return mixed
+	 */
+	public function retrieve()
+	{
+		if (!$this->getUserId()) {
+			$this->setUserId(Elm::getSingleton('user/session')->getUserId());
+		}
+
+		if ($this->getFilterBy()) {
+			return $this->_getResource()->getFiltered($this);
+		}
+
+		return $this->_getResource()->getAll($this->getUserId());
+	}
+
+	/**
+	 * Archives current message
+	 *
+	 * @return Elm_Model_Communication
+	 */
+	public function archive()
+	{
+		$this->setIsArchived(true)->save();
+		return $this;
 	}
 
 	/**

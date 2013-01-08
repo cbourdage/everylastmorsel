@@ -1092,7 +1092,7 @@ table.communication-messages td.from { width: 140px; }
 table.communication-messages td.subject { }
 table.communication-messages td.date { text-align: right; padding-right: 10px; width: 75px; }
 
-table .icon {
+body.elm-communication .icon {
 	background-image: url(../images/app-icons.png);
 	cursor: pointer;
 	display: inline-block;
@@ -1102,9 +1102,16 @@ table .icon {
 	white-space: nowrap;
 	width: 18px;
 }
-table .icon + .icon { margin-left: 3px; }
-table .icon.delete { background-position: -288px -2px; }
-table .icon.archive { background-position: 0 -324px; }
+body.elm-communication .icon + .icon { margin-left: 3px; }
+body.elm-communication .icon.delete { background-position: -288px -2px; }
+body.elm-communication .icon.archive { background-position: 0 -324px; }
+
+.message-contents { position: relative; }
+.message-contents p.actions { position: absolute; right: 0; top: 10px; }
+.message-contents h4 { font-size: 15px; margin-bottom: 10px;}
+.message-contents .body { margin: 20px 0; }
+.message-form textarea { min-height: 100px; padding: 5px; width: 100%; }
+
 
 /**
 	CMS Pages
