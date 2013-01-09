@@ -91,6 +91,8 @@ jQuery(document).on('submit', '.message-form form', function(e) {
 				$form.parent().prev().find('.alert').delay(3000).fadeOut('fast', function() {
 					jQuery(this).remove();
 				});
+			} else if (response.location) {
+				Elm.success(response);
 			} else {
 				Elm.error(response.message, $form, 'prepend');
 			}
