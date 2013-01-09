@@ -4,9 +4,9 @@
 	<h4>Note from...</h4>
 	<form action="<?php echo $form->getAction() ?>" method="post" id="contact-form">
 		<?php if (Zend_Registry::isRegistered('current_user')) : ?>
-			<input type="hidden" name="user_to_id" value="<?php echo Zend_Registry::get('current_user')->getId(); ?>" />
+			<input type="hidden" name="to_user_id" value="<?php echo Zend_Registry::get('current_user')->getId(); ?>" />
 		<?php endif; ?>
-		<input type="hidden" name="user_from_id" value="<?php echo Elm::getSingleton('user/session')->user->getId(); ?>" />
+		<input type="hidden" name="from_user_id" value="<?php echo Elm::getSingleton('user/session')->user->getId(); ?>" />
 		<ul class="fieldset">
 			<?php foreach($form->getElements() as $element) : ?>
 				<?php echo $element->render(); ?>

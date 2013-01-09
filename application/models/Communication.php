@@ -44,8 +44,8 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 	public function init($params)
 	{
 		$this->setData($params);
-		$this->setToUser(Elm::getModel('user')->load($this->getUserToId()));
-		$this->setFromUser(Elm::getModel('user')->load($this->getUserFromId()));
+		$this->setToUser(Elm::getModel('user')->load($this->getToUserId()));
+		$this->setFromUser(Elm::getModel('user')->load($this->getFromUserId()));
 		return $this;
 	}
 

@@ -14,12 +14,12 @@
 		<div class="modal-body">
 			<?php $form = new Elm_Model_Form_Communication_Contact(); ?>
 			<form action="<?php echo $form->getAction() ?>" method="post" id="contactModalForm">
-				<input type="hidden" name="user_from_id" value="<?php echo Elm::getSingleton('user/session')->user->getId(); ?>" />
+				<input type="hidden" name="from_user_id" value="<?php echo Elm::getSingleton('user/session')->user->getId(); ?>" />
 
 				<?php if (Zend_Registry::isRegistered('current_user')) : ?>
-					<input type="hidden" name="user_to_id" value="<?php echo Zend_Registry::get('current_user')->getId(); ?>" />
+					<input type="hidden" name="to_user_id" value="<?php echo Zend_Registry::get('current_user')->getId(); ?>" />
 				<?php else : ?>
-					<input type="hidden" name="user_to_id" value="" />
+					<input type="hidden" name="to_user_id" value="" />
 				<?php endif; ?>
 
 				<ul class="fieldset">

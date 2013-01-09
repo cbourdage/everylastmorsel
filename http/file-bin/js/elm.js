@@ -281,6 +281,8 @@ window.Elm.error = function(message, $el, location) {
 						$modal.modal('hide');
 						$successModal.find('.modal-body h3').html(response.message);
 						$successModal.modal('show').delay(3000, function(e) { });
+					} else if (response.location) {
+						Elm.success(response);
 					} else {
 						Elm.error(response.message, $content, 'prepend');
 					}
