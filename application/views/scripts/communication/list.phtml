@@ -13,14 +13,14 @@ $ctr = 0;
 	</colgroup>
 	<tbody>
 		<?php foreach ($messages as $message) : ?>
-			<tr class="row <?php echo $message->getIsRead() ? 'read' : 'new'; ?>" id="r:<?php echo $message->getId(); ?>" data-id="<?php echo $message->getId(); ?>" data-url="<?php echo $this->url('communication/view', array('cid' => $message->getId())); ?>">
+			<tr class="row <?php echo $message->getIsRead() || $this->type == 'Sent' ? 'read' : 'new'; ?>" id="r:<?php echo $message->getId(); ?>" data-id="<?php echo $message->getId(); ?>" data-url="<?php echo $this->url('communication/view', array('cid' => $message->getId())); ?>">
 				<td class="actions">
 					<?php if (!$message->getIsArchived() && $this->type != 'Sent') : ?>
 						<span class="icon archive" title="Archive" rel="<?php echo $this->url('communication/archive', array('cid' => $message->getId())); ?>"></span>
 					<?php endif; ?>
 					<?php /**<span class="icon delete" title="Delete" rel="<?php echo $this->url('communication/delete', array('cid' => $message->getId())); ?>"></span>*/ ?>
 				</td>
-				<td class="from"><?php echo $message->getFromUser()->getName(); ?></td>
+				<td class="from"><?php echo $this->type == 'Sent' ? $message->getToUser()->getName() : $message->getFromUser()->getName(); ?></td>
 				<td class="subject"><?php echo $message->getSubject(); ?></td>
 				<td class="date"><?php echo $this->Data()->formatDate($message->getCreatedAt()); ?></td>
 			</tr>

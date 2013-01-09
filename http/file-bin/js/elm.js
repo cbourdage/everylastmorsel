@@ -277,7 +277,8 @@ window.Elm.error = function(message, $el, location) {
 				},
 				success: function(response) {
 					if (response.success) {
-						$.formReset($form);
+						//$.formReset($form);
+						$form.find('#message').val('');
 						$modal.modal('hide');
 						$successModal.find('.modal-body h3').html(response.message);
 						$successModal.modal('show').delay(3000, function(e) { });

@@ -25,6 +25,10 @@ jQuery(document).on('click', '#content .icon', function(e) {
 		$loader = jQuery('#action-loader'),
 		$row = jQuery(this).parents('tr');
 
+	if ($icon.hasClass('reply')) {
+		return false;
+	}
+
 	if ($icon.hasClass('delete')) {
 		if (!confirm('Are you sure you would like to delete this message?')) {
 			return false;

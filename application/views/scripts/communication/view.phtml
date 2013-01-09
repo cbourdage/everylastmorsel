@@ -6,7 +6,7 @@ $message = $this->message;
 <div class="message-contents" id="message-<?php echo $message->getId(); ?>">
 	<h4><?php echo $this->escape($message->getSubject()); ?></h4>
 	<p class="actions">
-		<?php if (!$message->getIsRead()) : ?>
+		<?php if (!$message->getIsRead() && $message->getFromUser()->getId() != Elm::getSingleton('user/session')->getUserId()) : ?>
 			<span class="icon read" title="Mark Read" rel="<?php echo $this->url('communication/mark-read', array('cid' => $message->getId())); ?>"></span>
 		<?php endif; ?>
 		<?php if (!$message->getIsArchived() && $message->getFromUser()->getId() != Elm::getSingleton('user/session')->getUserId()) : ?>
