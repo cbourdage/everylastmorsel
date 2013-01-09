@@ -49,7 +49,7 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 
 		// if subject is a 'key' from form, ie: 1, 2, 3, set it to the subject line
 		if (key_exists($this->getSubject(), Elm_Model_Form_Communication_Contact::$subjects)) {
-			$this->setSubject(Elm_Model_Form_Communication_Contact::$subjects[$this->getSubject]);
+			$this->setSubject(Elm_Model_Form_Communication_Contact::$subjects[$this->getSubject()]);
 		}
 
 		return $this;
