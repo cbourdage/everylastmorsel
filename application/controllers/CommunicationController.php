@@ -133,10 +133,6 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 	public function sendAction()
 	{
 		$this->_initAjax();
-		if (!$this->getRequest()->isPost()) {
-			return;
-		}
-
 		$data = $this->getRequest()->getParams();
 		$form = new Elm_Model_Form_Communication_Contact();
 		if ($form->isValid($data)) {
@@ -151,10 +147,36 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 				));
 			} else {
 				$this->getHelper()->json->sendJson(array(
+					'success' => false,
+					'error' => true,
+					'message' => 'Error sending message at this time. We sincerely apologize.'
+				));
+			}
+		}  else {
+			$this->getHelper()->json->sendJson(array(
+				'success' => false,
+				'error' => true,
+				'message' => 'Check the form is filled out.'
+			));
+		}
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function replyAction()
+	{
+		$this->_initAjax();
+		$data = $this->getRequest()->getParams();
+		$message = Elm::getModel('communication')->init($data);
+		if ($message->isValidReply($data)) {
+			if ($message->reply()) {
+				$this->getHelper()->json->sendJson(array(
 					'success' => true,
 					'error' => false,
 					'message' => "You're message has been successfully sent!"
 				));
+			} else {
 				$this->getHelper()->json->sendJson(array(
 					'success' => false,
 					'error' => true,
@@ -179,7 +201,20 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 			$message = Elm::getModel('communication')->load($commId)->archive();
 		}
 
-		//$this->getRequest()->setParam('type', 'inbox');
+		$this->_forward('retrieve');
+	}
+
+	/**
+	 * mark-read action
+	 */
+	public function markReadAction()
+	{
+		if ($commId = $this->getRequest()->getParam('cid')) {
+			$message = Elm::getModel('communication')->load($commId)
+				->setIsRead(true)
+				->save();
+		}
+
 		$this->_forward('retrieve');
 	}
 
@@ -189,10 +224,9 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 	public function deleteAction()
 	{
 		if ($commId = $this->getRequest()->getParam('cid')) {
-			$message = Elm::getModel('communication')->load($commId)->delete();
+			//$message = Elm::getModel('communication')->load($commId)->delete();
 		}
 
-		//$this->getRequest()->setParam('type', 'inbox');
 		$this->_forward('retrieve');
 	}
 }

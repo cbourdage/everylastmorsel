@@ -1105,11 +1105,14 @@ body.elm-communication .icon {
 body.elm-communication .icon + .icon { margin-left: 3px; }
 body.elm-communication .icon.delete { background-position: -288px -2px; }
 body.elm-communication .icon.archive { background-position: 0 -324px; }
+body.elm-communication .icon.reply { background-position: -415px -290px; }
+body.elm-communication .icon.read { background-position: -416px -228px; }
 
 .message-contents { position: relative; }
 .message-contents p.actions { position: absolute; right: 0; top: 10px; }
 .message-contents h4 { font-size: 15px; margin-bottom: 10px;}
 .message-contents .body { margin: 20px 0; }
+.message-contents .alert { margin: 0; }
 .message-form textarea { min-height: 100px; padding: 5px; width: 100%; }
 
 

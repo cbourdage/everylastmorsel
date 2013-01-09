@@ -1,18 +1,20 @@
 <?php
 $message = $this->message;
 ?>
-
 <h3>Message Details</h3>
+<?php echo $this->Message()->render(); ?>
 <div class="message-contents" id="message-<?php echo $message->getId(); ?>">
 	<h4><?php echo $this->escape($message->getSubject()); ?></h4>
 	<p class="actions">
 		<?php if (!$message->getIsRead()) : ?>
-			<span class="icon read" title="Mark Read" rel="<?php echo $this->url('communication/delete', array('mid' => $message->getId())); ?>"></span>
+			<span class="icon read" title="Mark Read" rel="<?php echo $this->url('communication/mark-read', array('cid' => $message->getId())); ?>"></span>
 		<?php endif; ?>
-		<?php if (!$message->getIsArchived()) : ?>
-			<span class="icon archive" title="Archive" rel="<?php echo $this->url('communication/archive', array('mid' => $message->getId())); ?>"></span>
+		<?php if (!$message->getIsArchived() && $message->getFromUser()->getId() != Elm::getSingleton('user/session')->getUserId()) : ?>
+			<span class="icon archive" title="Archive" rel="<?php echo $this->url('communication/archive', array('cid' => $message->getId())); ?>"></span>
 		<?php endif; ?>
-		<span class="icon delete" title="Delete" rel="<?php echo $this->url('communication/delete', array('mid' => $message->getId())); ?>"></span>
+		<?php
+			/**<span class="icon delete" title="Delete" rel="<?php echo $this->url('communication/delete', array('cid' => $message->getId())); ?>"></span>*/
+		?>
 		<span class="icon reply" title="Reply"></span>
 	</p>
 	<h5><?php echo $message->getFromUser()->getName(); ?> - <span class="date dark-grey"><?php echo $this->Data()->formatDate($message->getCreatedAt()); ?></span></h5>
@@ -21,37 +23,26 @@ $message = $this->message;
 		<?php echo $this->escape(nl2br($message->getMessage())); ?>
 	</div>
 </div>
-<div class="message-form">
+<div class="message-form" style="display: none;">
 	<form action="<?php echo $this->url('communication/reply', array('mid' => $message->getId())); ?>" method="post">
-		<textarea class="reply"></textarea>
+		<input type="hidden" name="to_user_id" value="<?php echo $message->getFromUser()->getId(); ?>" />
+		<input type="hidden" name="from_user_id" value="<?php echo $message->getToUser()->getId(); ?>" />
+		<input type="hidden" name="parent_id" value="<?php echo $message->getId(); ?>" />
+		<input type="hidden" name="subject" value="Re: <?php echo $message->getSubject(); ?>" />
+		<textarea class="reply" name="message" id="reply_message"></textarea>
+		<p class="buttons-set">
+			<button type="submit" name="reply" class="btn-primary"><span>Reply</span></button>
+			<button type="button" class="btn-info btn-cancel"><span>Cancel</span></button>
+		</p>
 	</form>
 </div>
 <script defer="defer">
-jQuery('#v-<?php echo $message->getId(); ?>').on('click', '.icon', function(e) {
-	e.preventDefault();
-	var $icon = jQuery(this),
-		$loader = jQuery('#action-loader'),
-		urlString = $icon.attr('rel');
-
-	if ($icon.hasClass('delete')) {
-		if (!confirm('Are you sure you would like to delete this message?')) {
-			return false;
-		}
-	}
-
-	$loader.show();
-	jQuery.ajax({
-		url : urlString,
-		complete : function() {
-			$loader.hide();
-		},
-		success : function(response) {
-			if (response.success) {
-				jQuery('#messageModal').modal('show');
-				Elm.success(response);
-			}
-		},
-		error : function() { }
-	});
+jQuery('.icon.reply').on('click', function(e) {
+	jQuery('.message-form').show();
+	jQuery('#reply_message').focus();
+});
+jQuery('.message-form').find('.btn-cancel').on('click', function(e) {
+	jQuery('.message-form').hide();
+	jQuery('#reply_message').val('');
 });
 </script>

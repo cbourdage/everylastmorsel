@@ -10,6 +10,31 @@ class Elm_Model_Communication extends Colony_Model_Abstract
         $this->_init('communication');
     }
 
+	public function isValidReply($data)
+	{
+		if (!strlen($data['parent_id'])) {
+			return false;
+		}
+
+		if (!strlen($data['to_user_id'])) {
+			return false;
+		}
+
+		if (!strlen($data['from_user_id'])) {
+			return false;
+		}
+
+		if (!strlen($data['subject'])) {
+			return false;
+		}
+
+		if (!strlen($data['subject'])) {
+			return false;
+		}
+
+		return true;
+	}
+
 	/**
 	 * Sets the appropriate data
 	 *
@@ -63,6 +88,17 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 	}
 
 	/**
+	 * Sends reply
+	 *
+	 * @return bool
+	 */
+	public function reply()
+	{
+		$this->setIsRead(true);
+		return $this->send();
+	}
+
+	/**
 	 * Sends the email
 	 *
 	 * @return bool
@@ -83,7 +119,7 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 			//$EmailTemplate->setFromEmail($this->getEmail());
 			//Elm::log($EmailTemplate);
 			//die('dead sending');
-			$EmailTemplate->send(array('email' => $this->getToUser()->getEmail(), 'name' => $this->getToUser()->getName()));
+			//$EmailTemplate->send(array('email' => $this->getToUser()->getEmail(), 'name' => $this->getToUser()->getName()));
 
 			// Save message
 			$this->setDelivered(true)->save();
