@@ -21,6 +21,39 @@ class Elm_Model_Yield_Purchasable extends Colony_Model_Abstract
 		if (!$this->getPlotCropId()) {
 			$this->setPlotCropId($this->getYield()->getPlotCropId());
 		}
+
+		if (!$this->getQtyAvailable()) {
+			$this->setQtyAvailable($this->getQuantity());
+		} else {
+			// @TODO update the quantities based on the transaction totals
+			//$this->setQtyAvailable($this->getQtyAvailable() + $this->getQuantity());
+		}
+	}
+
+	/**
+	 * Returns the yield object
+	 *
+	 * @return mixed
+	 */
+	public function getYield()
+	{
+		if (!$this->getData('yield')) {
+			$this->setData('yield', Elm::getModel('yield')->load($this->getYieldId()));
+		}
+		return $this->getData('yield');
+	}
+
+	/**
+	 * Returns the plot crop object
+	 *
+	 * @return Elm_Model_Crop
+	 */
+	public function getPlotCrop()
+	{
+		if (!$this->getData('plot_crop')) {
+			$this->setData('plot_crop', Elm::getModel('plot/crop')->load($this->getPlotCropId()));
+		}
+		return $this->getData('plot_crop');
 	}
 
 	/**
@@ -62,8 +95,29 @@ class Elm_Model_Yield_Purchasable extends Colony_Model_Abstract
 		return $this;
 	}
 
-	public function cancelSale()
+	/**
+	 * Un-lists the purchasable for sale and updates the yields'
+	 * qty for sale value
+	 *
+	 * @return Elm_Model_Yield_Purchasable
+	 */
+	public function unList()
 	{
+		if ($this->getIsForSale()) {
+			$this->setIsForSale(false)->save();
+			$yield = $this->getYield();
+			$yield->setQtyForSale($yield->getQtyForSale() - $this->getQtyAvailable());
+		}
+		return $this;
+	}
+
+	public function listForSale()
+	{
+		if (!$this->getIsForSale()) {
+			$this->setIsForSale(true)->save();
+			$yield = $this->getYield();
+			$yield->setQtyForSale($yield->getQtyForSale() + $this->getQtyAvailable());
+		}
 		return $this;
 	}
 }

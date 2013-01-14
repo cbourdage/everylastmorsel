@@ -10,11 +10,13 @@ $form = $this->form;
 	<?php echo $this->Message()->render(); ?>
 
 	<h2 class="blue"><?= $this->escape($plot->getName()); ?></h2>
-	<div id="crops" class="blocked-content clearfix crops"">
-		<?php echo $this->partial('crops/manage/_list.phtml', array('plot' => $plot)); ?>
-	</div>
 
 	<div id="cropsForm" class="blocked-content clearfix">
 		<?php echo $this->partial('crops/_form.phtml', array('view' => $this)); ?>
 	</div>
+
+	<div id="crops" class="blocked-content clearfix crops"">
+		<?php echo $this->partial('crops/manage/_list.phtml', array('plot' => $plot)); ?>
+	</div>
 </div>
+<script type="text/javascript" src="/file-bin/js/crops.js"></script>

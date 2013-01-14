@@ -7,7 +7,6 @@ $pCrop = $this->pCrop;
 			<th>Picked Date</th>
 			<th>Yield Quantity</th>
 			<th>Items For Sale</th>
-			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -16,24 +15,34 @@ $pCrop = $this->pCrop;
 				<td><?= $this->Data()->formatDate($yield->getDatePicked()); ?></td>
 				<td><?= $yield->getQuantity(); ?> <?= $yield->getQuantityUnits(); ?></td>
 				<td>
-				<?php foreach ($yield->getPurchasable() as $yP) : ?>
-					<span><?= $yP->getQuantity(); ?></span> <span class="units"><?= $this->Yield()->formatUnits($yP->getQuantityUnit(), $yP->getQuantity()); ?></span>
-					-
-					<span class="price"><?= $this->Data()->formatPrice($yP->getPrice()); ?></span> / ea.
-					<span class="separator">|</span>
-					<a href="<?php echo $this->url('yields/cancel-sale', array('pid' => $yP->getId())); ?>" title="Take remaining yields off the market">Un-list</a>
-					<br />
-				<?php endforeach; ?>
-				</td>
-				<td>
-					<?php if (count($yield->getPurchasable()) > 0) : ?>
-						<a href="#sellThese" data-toggle="modal" data-yieldId="<?= $yield->getYieldId(); ?>" data-yieldUnit="<?= $yield->getQuantityUnits(); ?>">Sell more</a>
-					<?php else : ?>
-						<a href="#sellThese" data-toggle="modal" data-yieldId="<?= $yield->getYieldId(); ?>" data-yieldUnit="<?= $yield->getQuantityUnits(); ?>">Sell these!</a>
-					<?php endif; ?>
-
-					<?php if ($yield->getIsForSale()) : ?>
-					<?php endif; ?>
+					<ul class="list">
+					<?php foreach ($yield->getPurchasable() as $yP) : ?>
+						<li>
+							<p>
+								<span class="input"><?= $yP->getQuantity(); ?></span>
+								<span class="units"><?= $this->Yield()->formatUnits($yP->getQuantityUnit(), $yP->getQuantity()); ?></span>
+								-
+								<span class="price"><?= $this->Data()->formatPrice($yP->getPrice()); ?></span> / ea.
+								<span class="icon edit"></span>
+							</p>
+							<div class="actions">
+								<?php if ($yP->getIsForSale()) : ?>
+									<a class="un-list" href="#un-list" rel="<?php echo $this->url('yields/un-list', array('pid' => $yP->getId())); ?>" title="Take remaining items off of the market">Un-list Items</a>
+								<?php else : ?>
+									<a class="re-list" href="#re-list" rel="<?php echo $this->url('yields/re-list', array('pid' => $yP->getId())); ?>" title="Re-list the remaining items on the market">Re-list Items</a>
+								<?php endif; ?>
+								<a href="#<?php echo $this->url('yields/add-sale', array('pid' => $yP->getId())); ?>" title="">Add Transaction</a>
+							</div>
+						</li>
+					<?php endforeach; ?>
+						<li>
+							<?php if (count($yield->getPurchasable()) == 0) : ?>
+								<a href="#sellThese" data-toggle="modal" data-yieldId="<?= $yield->getYieldId(); ?>" data-yieldUnit="<?= $yield->getQuantityUnits(); ?>">Sell these!</a>
+							<?php elseif ($this->Yield()->hasMoreToSell($yield)) : ?>
+								<a href="#sellThese" data-toggle="modal" data-yieldId="<?= $yield->getYieldId(); ?>" data-yieldUnit="<?= $yield->getQuantityUnits(); ?>">Sell more</a>
+							<?php endif; ?>
+						</li>
+					</ul>
 				</td>
 			</tr>
 		<?php endforeach; ?>

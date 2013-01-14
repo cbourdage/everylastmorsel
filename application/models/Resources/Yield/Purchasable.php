@@ -13,4 +13,9 @@ class Elm_Model_Resource_Yield_Purchasable extends Colony_Db_Table
 			'refColumns' => 'yield_id'
 		)
 	);
+
+	protected function _afterLoad($object)
+	{
+		return $this;
+	}
 }

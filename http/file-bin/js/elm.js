@@ -153,7 +153,7 @@ window.Elm.success = function(response) {
 		});
 	}
 
-	if (response.message) {
+	if (response.message && arguments.length > 1) {
 		var $message = jQuery.createSuccessAlert(response.message).hide();
 		Elm.injectElement($message, arguments[1], arguments[2]);
 	}
@@ -293,84 +293,6 @@ window.Elm.error = function(message, $el, location) {
 				}
 			});
 			return false;
-		});
-
-		/**
-		 * Add yields form submit
-		 */
-		jQuery('#add-yield-form').on('submit', function(e) {
-			e.preventDefault();
-			var $form = $(this),
-				$modal = $('#addYieldModal'),
-				$loader = $('<span class="loader green">Loading...</span>');
-
-			$modal.find('.alert').slideUp('fast', function() {
-				$(this).remove();
-			});
-			$modal.find('button').attr('disable', 'disable').after($loader);
-
-			$.ajax({
-				url : $form.attr('action'),
-				data : $form.serialize(),
-				type : 'post',
-				dataType : 'json',
-				complete: function(response) {
-					$loader.remove();
-					$modal.find('button').attr('disable', '');
-				},
-				success : function(response) {
-					if (response.success) {
-						Elm.success(response, $form, 'prepend');
-						window.setTimeout(function(e) {
-							$modal.modal('hide');
-							$modal.find('.alert').remove();
-							$.formReset($form);
-						}, 2000);
-					} else {
-						Elm.error(response.message, $form, 'prepend');
-					}
-				},
-				error : function() {
-					Elm.error('There was an error with your request.', $form, 'prepend');
-				}
-			});
-		});
-
-		/**
-		 * Set for sale form submit
-		 */
-		jQuery('#yield-sell-these-form').on('submit', function(e) {
-			e.preventDefault();
-			var $form = $(this),
-				$modal = $('#sellThese'),
-				$loader = $('<span class="loader green">Loading...</span>');
-
-			$modal.find('.alert').slideUp('fast', function() {
-				$(this).remove();
-			});
-			$modal.find('button').attr('disable', 'disable').after($loader);
-
-			jQuery.ajax({
-				url : $form.attr('action'),
-				data : $form.serialize(),
-				type : 'post',
-				dataType : 'json',
-				success : function(response) {
-					if (response.success) {
-						Elm.success(response, $form, 'prepend');
-						window.setTimeout(function(e) {
-							$modal.modal('hide');
-							$modal.find('.alert').remove();
-							$.formReset($form);
-						}, 2000);
-					} else {
-						Elm.error(response.message, $form, 'prepend');
-					}
-				},
-				error : function() {
-					Elm.error('There was an error with your request.', $form, 'prepend');
-				}
-			})
 		});
 
 		/**

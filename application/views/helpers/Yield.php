@@ -24,6 +24,12 @@ class Elm_View_Helper_Yield extends Zend_View_Helper_Url
 		return count($yield) > 0;
 	}
 
+	/**
+	 * Returns the total yields for all crops on a plot
+	 *
+	 * @param $plotCrop
+	 * @return int
+	 */
 	public function getYieldCount($plotCrop)
 	{
 		$totalYield = 0;
@@ -31,7 +37,6 @@ class Elm_View_Helper_Yield extends Zend_View_Helper_Url
 		foreach ($yields as $y) {
 			$totalYield += (int) $y->getQuantity();
 		}
-
 		return $totalYield;
 	}
 
@@ -53,5 +58,18 @@ class Elm_View_Helper_Yield extends Zend_View_Helper_Url
 				break;
 		}
 		return $units;
+	}
+
+	/**
+	 * @param Elm_Model_Yield $yield
+	 * @return bool
+	 */
+	public function hasMoreToSell($yield)
+	{
+		$purchasableTotal = 0;
+		foreach ($yield->getPurchasable() as $yP) {
+			$purchasableTotal += (int) $yP->getQuantity();
+		}
+		return ($yield->getQuantity() > $purchasableTotal);
 	}
 }

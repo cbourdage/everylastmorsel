@@ -105,7 +105,7 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 		$response = array();
 
 		if (!$this->getRequest()->isPost()) {
-			$this->_helper->json->sendJson(array('success' => true, 'location' => $this->_helper->url('crops')));
+			$this->getHelper()->json->sendJson(array('success' => true, 'location' => $this->_helper->url('crops')));
 			return;
 		}
 
@@ -136,37 +136,69 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 			);
 		}
 
-		$this->_helper->json->sendJson($response);
+		$this->getHelper()->json->sendJson($response);
 	}
 
 	/**
 	 * @return mixed
 	 */
-	public function cancelSaleAction()
+	public function unListAction()
 	{
-		$this->_redirect($this->getRequest()->getHeader('referer'));
-		return;
+		$this->_initAjax();
+		$response = array();
 
 		if ($yieldId = $this->getRequest()->getParam('pid')) {
 			try {
-				$yield = Elm::getModel('yield/purchasable')->load($yieldId);
-				$yield->cancelSale();
+				$yieldPurchasable = Elm::getModel('yield/purchasable')->load($yieldId);
+				$yieldPurchasable->unList();
 				$response = array(
 					'success' => true,
-					'message' => 'Successfully un-listed crops for sale.',
+					'message' => 'Successfully un-listed items for sale on the market.',
 					'update_areas' => array(
-						'crop-yields-' . $yield->getPlotCrop()->getId(),
+						'crop-yields-' . $yieldPurchasable->getPlotCrop()->getId(),
 					),
 					'html' => array(
-						'crop-yields-' . $yield->getPlotCrop()->getId() => $this->view->partial('crops/yields/_list.phtml', array('pCrop' => $yield->getPlotCrop())),
+						'crop-yields-' . $yieldPurchasable->getPlotCrop()->getId() => $this->view->partial('crops/yields/_list.phtml', array('pCrop' => $yieldPurchasable->getPlotCrop())),
 					)
 				);
 			} catch (Exception $e) {
 				Elm::logException($e);
+				$response = array('error' => true, 'message' => $e->getMessage());
 			}
-		}
 
-		$this->_redirect($this->getRequest()->getHeader('referer'));
+			$this->getHelper()->json->sendJson($response);
+		}
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function reListAction()
+	{
+		$this->_initAjax();
+		$response = array();
+
+		if ($yieldId = $this->getRequest()->getParam('pid')) {
+			try {
+				$yieldPurchasable = Elm::getModel('yield/purchasable')->load($yieldId);
+				$yieldPurchasable->listForSale();
+				$response = array(
+					'success' => true,
+					'message' => 'Successfully listed items for sale on the market.',
+					'update_areas' => array(
+						'crop-yields-' . $yieldPurchasable->getPlotCrop()->getId(),
+					),
+					'html' => array(
+						'crop-yields-' . $yieldPurchasable->getPlotCrop()->getId() => $this->view->partial('crops/yields/_list.phtml', array('pCrop' => $yieldPurchasable->getPlotCrop())),
+					)
+				);
+			} catch (Exception $e) {
+				Elm::logException($e);
+				$response = array('error' => true, 'message' => $e->getMessage());
+			}
+
+			$this->getHelper()->json->sendJson($response);
+		}
 	}
 
 	/**

@@ -1,66 +1,76 @@
 <?php
+$session = Elm::getSingleton('user/session');
 $user = $this->view->user;
 $plot = $this->view->plot;
 $form = $this->view->form;
 ?>
-<form action="<?php echo $this->url('crops/add-post'); ?>" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="user_id" value="<?= $user->getId(); ?>" />
-	<input type="hidden" name="plot_id" value="<?= $plot->getId(); ?>" />
-	<ul class="fieldset">
-		<li>
-			<label for="crop_type">Crop Type</label>
-			<div>
-				<select name="crop_type" id="crop_type" onchange="populateDefaultCrop(this);">
-					<option value="">Type</option>
-					<?php foreach (Elm::getModel('crop')->getCropTypes() as $type) : ?>
-					<option value="<?= $type; ?>"><?= ucwords($type); ?></option>
-					<?php endforeach; ?>
-				</select>
-			</div>
-		</li>
-		<li>
-			<label for="variety">Crop Variety</label>
-			<div>
-				<input type="hidden" name="crop_id" id="crop_id" value="<?php // $form->getElement('variety')->getValue(); ?>" />
-				<input type="text" name="variety" id="variety" onblur="checkDefaultVariety(this);" value="<?php // $form->getElement('variety')->getValue(); ?>" />
-				<div id="varietySuggest"></div>
-			</div>
-		</li>
-		<li>
-			<label for="coverage">Coverage</label>
-			<div>
-				<input type="text" name="coverage" id="coverage" value="<?= $form->getElement('coverage')->getValue(); ?>" />
-				<select name="coverage_unit">
-					<option value="individual"># of plants</option>
-					<option value="sq_ft">square feet</option>
-				</select>
-			</div>
-		</li>
-		<li>
-			<label for="date_planted">Date Planted</label>
-			<div>
-				<input type="text" name="date_planted" id="date_planted" value="<?= $form->getElement('date_planted')->getValue(); ?>" />
-			</div>
-		</li>
-		<li>
-			<label>Starting Type</label>
-			<div class="multi-control">
-				<label for="starting_type_seed" class="radio">
-					<input type="radio" name="starting_type" id="starting_type_seed" value="seed" />
-					Seed
-				</label>
-				<label for="starting_type_seedling" class="radio">
-					<input type="radio" name="starting_type" id="starting_type_seedling" value="seedling" />
-					Seedling
-				</label>
-			</div>
-		</li>
-	</ul>
-	<p class="buttons-set">
-		<button type="submit" class="btn btn-blue"><span>Add Crop</span></button>
-	</p>
-</form>
+<div class="add-crop-form-container">
+	<?php if ($session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
+		<a class="action" href="#cropsAddForm" title="Add Photos">Add Crop</a>
+	<?php endif; ?>
+
+	<form action="<?php echo $this->url('crops/add-post'); ?>" method="post" id="cropsAddForm" enctype="multipart/form-data" style="display: none;">
+		<input type="hidden" name="user_id" value="<?= $user->getId(); ?>" />
+		<input type="hidden" name="plot_id" value="<?= $plot->getId(); ?>" />
+		<ul class="fieldset">
+			<li>
+				<label for="crop_type">Crop Type</label>
+				<div>
+					<select name="crop_type" id="crop_type" onchange="populateDefaultCrop(this);">
+						<option value="">Type</option>
+						<?php foreach (Elm::getModel('crop')->getCropTypes() as $type) : ?>
+						<option value="<?= $type; ?>"><?= ucwords($type); ?></option>
+						<?php endforeach; ?>
+					</select>
+				</div>
+			</li>
+			<li>
+				<label for="variety">Crop Variety</label>
+				<div>
+					<input type="hidden" name="crop_id" id="crop_id" value="<?php // $form->getElement('variety')->getValue(); ?>" />
+					<input type="text" name="variety" id="variety" onblur="checkDefaultVariety(this);" value="<?php // $form->getElement('variety')->getValue(); ?>" />
+					<div id="varietySuggest"></div>
+				</div>
+			</li>
+			<li>
+				<label for="coverage">Coverage</label>
+				<div>
+					<input type="text" name="coverage" id="coverage" value="<?= $form->getElement('coverage')->getValue(); ?>" />
+					<select name="coverage_unit">
+						<option value="individual"># of plants</option>
+						<option value="sq_ft">square feet</option>
+					</select>
+				</div>
+			</li>
+			<li>
+				<label for="date_planted">Date Planted</label>
+				<div>
+					<input type="text" name="date_planted" id="date_planted" value="<?= $form->getElement('date_planted')->getValue(); ?>" />
+				</div>
+			</li>
+			<li>
+				<label>Starting Type</label>
+				<div class="multi-control">
+					<label for="starting_type_seed" class="radio">
+						<input type="radio" name="starting_type" id="starting_type_seed" value="seed" />
+						Seed
+					</label>
+					<label for="starting_type_seedling" class="radio">
+						<input type="radio" name="starting_type" id="starting_type_seedling" value="seedling" />
+						Seedling
+					</label>
+				</div>
+			</li>
+		</ul>
+		<p class="buttons-set">
+			<button type="submit" class="btn btn-blue"><span>Add Crop</span></button>
+			<a href="#cancel" class="btn btn-info" onclick="jQuery('#cropsAddForm').hide();"><span>Cancel</span></a>
+		</p>
+	</form>
+</div>
 <script defer="defer">
+var defaults = <?php echo $this->Crops()->getDefaultCrops(); ?>;
+var currentDefaultId = null;
 jQuery("#date_planted").datepicker();
 jQuery("#variety").autocomplete({
 	source: function(event, add) {
@@ -88,8 +98,6 @@ jQuery("#variety").autocomplete({
 	}
 });
 
-var defaults = <?php echo $this->Crops()->getDefaultCrops(); ?>;
-var currentDefaultId = null;
 function populateDefaultCrop(el) {
 	for (var i = 0; i < defaults.length; i++) {
 		if (defaults[i].label.toLowerCase() == el.value) {

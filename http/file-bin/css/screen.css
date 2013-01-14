@@ -99,6 +99,8 @@ button.btn {
 	background: transparent;
 	border: 0;
 	cursor: pointer;
+	line-height: 1;
+	margin: 0;
 	padding: 0;
 }
 button[disable="disable"],
@@ -1068,6 +1070,41 @@ table.data-table.crops td.yields table th {
 	box-shadow: 0px 1px 3px rgba(0,0,0,.1) inset;
 	color: #ACACAC;
 }
+table.data-table.crops td.yields table td ul li {
+	line-height: 16px;
+	padding: 5px;
+	position: relative;
+	text-align: left;
+}
+table.data-table.crops td.yields table td ul li:hover { background-color: #e6e6e6; }
+table.data-table.crops td.yields table td ul li:first-child { margin-top: 0; }
+table.data-table.crops td.yields table td ul li p { line-height: 16px; }
+table.data-table.crops td.yields table td ul li > div.actions {
+	background-color: #e6e6e6;
+	-moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+	display: none;
+	padding: 8px;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	text-align: right;
+	z-index: 100;
+}
+table.data-table.crops td.yields table td ul li:hover > div { display: block; }
+table.data-table.crops td.yields table td ul li > div.actions a { display: block; margin-top: 8px; text-decoration: none; }
+table.data-table.crops td.yields table td ul li > div.actions a:first-child { margin-top: 0; }
+table.data-table.crops td.yields table td ul li > div.actions a:hover { text-decoration: underline; }
+table.data-table.crops td.yields table td ul li .icon { float: right; vertical-align: middle; }
+/** Success message */
+.modal.success-message { min-height: 100px; width: 250px; }
+.modal.success-message .modal-body { text-align: center; }
+.modal.success-message .modal-body .buttons-set { margin-top: 20px; }
+
+/** Crops Form */
+#cropsAddForm { margin-top: 20px; }
+#cropsAddForm .buttons-set .btn + .btn { margin-left: 10px; }
 
 /**
 	Communication Hub
@@ -1092,6 +1129,7 @@ table.communication-messages td.from { width: 140px; }
 table.communication-messages td.subject { }
 table.communication-messages td.date { text-align: right; padding-right: 10px; width: 75px; }
 
+table.data-table.crops td.yields .icon,
 body.elm-communication .icon {
 	background-image: url(../images/app-icons.png);
 	cursor: pointer;
@@ -1107,6 +1145,7 @@ body.elm-communication .icon.delete { background-position: -288px -2px; }
 body.elm-communication .icon.archive { background-position: 0 -324px; }
 body.elm-communication .icon.reply { background-position: -415px -290px; }
 body.elm-communication .icon.read { background-position: -416px -228px; }
+table.data-table.crops td.yields .icon.edit { background-position: -222px -2px; }
 
 .message-contents { position: relative; }
 .message-contents p.actions { position: absolute; right: 0; top: 10px; }
