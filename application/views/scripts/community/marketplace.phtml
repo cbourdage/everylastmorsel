@@ -4,12 +4,12 @@ $total = count($this->crops);
 $ctr = 0;
 $columnCount = 4;
 ?>
-<div class="clearfix container_12 community">
+<div class="clearfix container_12 community marketplace">
 	<?php echo $this->partial('community/_navigation.phtml'); ?>
 	<div class="blocked-content plots">
-		<?php foreach ($this->crops as $yield) : ?>
+		<?php foreach ($this->crops as $purchasable) : ?>
 			<?php
-				$plotCrop = $yield->getPlotCrop();
+				$plotCrop = $purchasable->getPlotCrop();
 				$plot = $plotCrop->getPlot();
 			?>
 			<?php if ($ctr % $columnCount == 0) : ?>
@@ -18,12 +18,25 @@ $columnCount = 4;
 			<li>
 				<figure>
 					<img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '205', 'width' => '205'))); ?>" title="<?php echo $this->escape($plot->getName()); ?>" />
+					<div class="mask no-display">
+						<input type="hidden" name="purchasable_id" value="<?php echo $purchasable->getId(); ?>" />
+						<input type="hidden" name="seller_id" value="<?php echo $purchasable->getId(); ?>" />
+						<p>
+							I'd like to buy<br />
+							<input type="input" class="qty small" name="quantity" value="" /> <?php echo $purchasable->getQuantityUnit(); ?> items
+						</p>
+						<p>at <span class="individual-price"><?php echo $this->Data()->formatPrice($purchasable->getPrice()); ?></span> each</p>
+						<span class="total no-display">Totaling: $<span></span></span>
+						<button href="#contact-for-sale" class="btn btn-primary buy" rel="<?php echo $this->url('sale/purchase'); ?>" disabled="disabled"><span>Buy</span></button>
+					</div>
 				</figure>
-				<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
-				<p class="role"><?php echo $plotCrop->getCrop()->getVariety(); ?> <?php echo $plotCrop->getCrop()->getType(); ?></p>
+				<h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plotCrop->getCrop()->getVariety()); ?> <?php echo $plotCrop->getCrop()->getType(); ?></a></h3>
+				<p class="role"><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plot->getName()); ?></a></p>
 				<p class="role">
-					<?php echo $this->partial('crops/yields/_totals.phtml', array('pCrop' => $plotCrop)); ?>
+					<span class="qty-available"><?php echo $purchasable->getQtyAvailable() . '</span> ' . $purchasable->getQuantityUnit(); ?> at
+					<span class="individual-price"><?php echo $this->Data()->formatPrice($purchasable->getPrice()); ?></span> each
 				</p>
+				<p class="role">on sale since <?php echo $this->Data()->formatDate($purchasable->getCreatedAt(), 'M/d'); ?></p>
 			</li>
 			<?php if (++$ctr % $columnCount == 0 || $ctr == $total) : ?>
 			<ul class="list-block marketplace-list list">
@@ -31,3 +44,4 @@ $columnCount = 4;
 		<?php endforeach; ?>
 	</div>
 </div>
+<script type="text/javascript" src="/file-bin/js/marketplace.js" defer="defer"></script>

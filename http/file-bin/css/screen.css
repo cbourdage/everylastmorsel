@@ -1087,7 +1087,7 @@ table.data-table.crops td.yields table td ul li > div.actions {
 	display: none;
 	padding: 8px;
 	position: absolute;
-	top: 100%;
+	top: 25px;
 	right: 0;
 	text-align: right;
 	z-index: 100;
@@ -1097,6 +1097,8 @@ table.data-table.crops td.yields table td ul li > div.actions a { display: block
 table.data-table.crops td.yields table td ul li > div.actions a:first-child { margin-top: 0; }
 table.data-table.crops td.yields table td ul li > div.actions a:hover { text-decoration: underline; }
 table.data-table.crops td.yields table td ul li .icon { float: right; vertical-align: middle; }
+table.data-table.crops td.yields table td ul li ul { margin-left: 5px; }
+table.data-table.crops td.yields table td ul li ul li { line-height: 1; padding: 2px 5px; }
 /** Success message */
 .modal.success-message { min-height: 100px; width: 250px; }
 .modal.success-message .modal-body { text-align: center; }
@@ -1151,7 +1153,7 @@ table.data-table.crops td.yields .icon.edit { background-position: -222px -2px; 
 .message-contents p.actions { position: absolute; right: 0; top: 10px; }
 .message-contents h4 { font-size: 15px; margin-bottom: 10px;}
 .message-contents .body { margin: 20px 0; }
-.message-contents .alert { margin: 0; }
+.message-form .alert { float: left; }
 .message-form textarea { min-height: 100px; padding: 5px; width: 100%; }
 
 
@@ -1197,6 +1199,30 @@ table.data-table.crops td.yields .icon.edit { background-position: -222px -2px; 
 .community ul.list li p.role {
 	text-align: center;
 	text-transform: capitalize;
+}
+/** marketplace */
+.community .marketplace-list figure { position: relative; }
+.community .marketplace-list figure:hover > div.mask { display: block;}
+.community .marketplace-list figure > div.mask {
+	background-color: rgba(255,255,255,.7);
+	border: 1px solid rgba(255,255,255,.7);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.community .marketplace-list figure > div.mask > p { font-size: 14px; line-height: 24px; margin: 50px 0 0 20px; }
+.community .marketplace-list figure > div.mask > p input { font-size: 14px; padding: 5px; width: 30px; }
+.community .marketplace-list figure > div.mask > p input.error { border-left: 2px solid red; }
+.community .marketplace-list figure > div.mask > p + p { margin-top: 0; }
+.community .marketplace-list figure > div.mask > .buy { position: absolute; bottom: 20px; right: 20px; }
+.community .marketplace-list figure > div.mask > .buy[disabled="disabled"] { opacity: .5; }
+.community .marketplace-list figure > div.mask > span.total {
+	font-size: 18px;
+	position: absolute;
+	bottom: 25px;
+	left: 20px;
 }
 
 /** no route */

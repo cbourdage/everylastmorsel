@@ -82,7 +82,7 @@ class Elm_AbstractController extends Zend_Controller_Action
 			$session->lastUrl = $this->getCurrentUrl();
 			$session->beforeAuthUrl = $this->getCurrentUrl();
 		}
-		// @TODO start using $helper->escape();
+
 		$this->view->setEscape('stripslashes');
         return $this;
     }

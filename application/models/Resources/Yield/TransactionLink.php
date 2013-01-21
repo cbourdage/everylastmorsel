@@ -13,4 +13,12 @@ class Elm_Model_Resource_Yield_TransactionLink extends Colony_Db_Table
 			'refColumns' => 'yield_id'
 		)
 	);*/
+
+	public function loadByTransactionId($transId)
+	{
+		$items = array();
+		$select = $this->select()->where('transaction_id = ?', $transId);
+		$row = $this->fetchRow($select);
+		return Elm::getModel('yield/transactionLink')->load($row->entity_id);
+	}
 }

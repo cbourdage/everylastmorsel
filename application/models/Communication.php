@@ -5,11 +5,20 @@
  */
 class Elm_Model_Communication extends Colony_Model_Abstract
 {
+	/**
+	 *
+	 */
+	const SUBJECT_NOTIFICATION = 'Elm Notifications';
+
 	public function _construct()
     {
         $this->_init('communication');
     }
 
+	/**
+	 * @param array $data
+	 * @return bool
+	 */
 	public function isValidReply($data)
 	{
 		if (!strlen($data['parent_id'])) {
@@ -122,9 +131,6 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 				'toUser' => $this->getFromUser()
 			));
 			$EmailTemplate->setFromName($this->getName());
-			//$EmailTemplate->setFromEmail($this->getEmail());
-			//Elm::log($EmailTemplate);
-			//die('dead sending');
 			$EmailTemplate->send(array('email' => $this->getToUser()->getEmail(), 'name' => $this->getToUser()->getName()));
 
 			// Save message
@@ -132,6 +138,30 @@ class Elm_Model_Communication extends Colony_Model_Abstract
 			return true;
 		} catch(Exception $e) {
 			$this->setDelivered(false)->save();
+			Elm::logException($e);
+			return false;
+		}
+	}
+
+	public function sendNotification()
+	{
+		try {
+			$EmailTemplate = new Elm_Model_Email_Template(array('template' => 'notification.phtml'));
+			$EmailTemplate->setParams(array(
+				'reason' => self::SUBJECT_NOTIFICATION,
+				'fromName' => $this->getName(),
+				'fromEmail' => $this->getEmail(),
+				'message' => $this->getMessage(),
+				'fromUser' => $this->getFromUser(),
+				'toUser' => $this->getFromUser()
+			));
+			$EmailTemplate->setFromName($this->getName());
+			//$EmailTemplate->setFromEmail($this->getEmail());
+			//Elm::log($EmailTemplate);
+			//die('dead sending');
+			$EmailTemplate->send(array('email' => $this->getToUser()->getEmail(), 'name' => $this->getToUser()->getName()));
+			return true;
+		} catch(Exception $e) {
 			Elm::logException($e);
 			return false;
 		}

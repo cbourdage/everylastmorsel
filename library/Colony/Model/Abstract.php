@@ -165,11 +165,12 @@ abstract class Colony_Model_Abstract extends Colony_Object
         return $this->hasDataChanges();
     }
 
-    /**
-     * Save object data
-     *
-     * @return Colony_Model_Abstract
-     */
+	/**
+	 * Save object data
+	 *
+	 * @throws Exception
+	 * @return Colony_Model_Abstract
+	 */
     public function save()
     {
         /**

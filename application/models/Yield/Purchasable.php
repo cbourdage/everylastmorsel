@@ -12,6 +12,11 @@ class Elm_Model_Yield_Purchasable extends Colony_Model_Abstract
         $this->_init('yield_purchasable');
     }
 
+	/**
+	 * Updates the necessary ids and quantity available
+	 *
+	 * @return Colony_Model_Abstract|void
+	 */
 	public function _beforeSave()
 	{
 		if (!$this->getYieldId()) {
@@ -22,7 +27,7 @@ class Elm_Model_Yield_Purchasable extends Colony_Model_Abstract
 			$this->setPlotCropId($this->getYield()->getPlotCropId());
 		}
 
-		if (!$this->getQtyAvailable()) {
+		if (!$this->getQtyAvailable() && !$this->getIsSoldOut()) {
 			$this->setQtyAvailable($this->getQuantity());
 		} else {
 			// @TODO update the quantities based on the transaction totals
@@ -33,7 +38,7 @@ class Elm_Model_Yield_Purchasable extends Colony_Model_Abstract
 	/**
 	 * Returns the yield object
 	 *
-	 * @return mixed
+	 * @return Elm_Model_Yield|mixed
 	 */
 	public function getYield()
 	{
@@ -54,6 +59,15 @@ class Elm_Model_Yield_Purchasable extends Colony_Model_Abstract
 			$this->setData('plot_crop', Elm::getModel('plot/crop')->load($this->getPlotCropId()));
 		}
 		return $this->getData('plot_crop');
+	}
+
+	/**
+	 * Returns the crop object (this is the main crop info)
+	 * @return mixed
+	 */
+	public function getCrop()
+	{
+		return $this->getPlotCrop()->getCrop();
 	}
 
 	/**
@@ -111,6 +125,9 @@ class Elm_Model_Yield_Purchasable extends Colony_Model_Abstract
 		return $this;
 	}
 
+	/**
+	 * @return Elm_Model_Yield_Purchasable
+	 */
 	public function listForSale()
 	{
 		if (!$this->getIsForSale()) {

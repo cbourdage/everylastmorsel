@@ -25,14 +25,29 @@ $pCrop = $this->pCrop;
 								<span class="price"><?= $this->Data()->formatPrice($yP->getPrice()); ?></span> / ea.
 								<span class="icon edit"></span>
 							</p>
-							<div class="actions">
-								<?php if ($yP->getIsForSale()) : ?>
-									<a class="un-list" href="#un-list" rel="<?php echo $this->url('yields/un-list', array('pid' => $yP->getId())); ?>" title="Take remaining items off of the market">Un-list Items</a>
-								<?php else : ?>
-									<a class="re-list" href="#re-list" rel="<?php echo $this->url('yields/re-list', array('pid' => $yP->getId())); ?>" title="Re-list the remaining items on the market">Re-list Items</a>
-								<?php endif; ?>
-								<a href="#<?php echo $this->url('yields/add-sale', array('pid' => $yP->getId())); ?>" title="">Add Transaction</a>
-							</div>
+							<?php if (!$yP->getIsSoldOut()) : ?>
+								<div class="actions">
+									<?php if ($yP->getIsForSale()) : ?>
+										<a class="un-list" href="#un-list" rel="<?php echo $this->url('yields/un-list', array('pid' => $yP->getId())); ?>" title="Take remaining items off of the market">Un-list Items</a>
+									<?php else : ?>
+										<a class="re-list" href="#re-list" rel="<?php echo $this->url('yields/re-list', array('pid' => $yP->getId())); ?>" title="Re-list the remaining items on the market">Re-list Items</a>
+									<?php endif; ?>
+									<a href="#transaction" rel="<?php echo $this->url('yields/add-sale', array('pid' => $yP->getId())); ?>" title="">Add Transaction</a>
+								</div>
+							<?php endif; ?>
+
+							<?php if ($trans = Elm::getModel('yield/transaction')->getByYieldPurchasable($yP)) : ?>
+							<ul>
+								<?php foreach ($trans as $t) : ?>
+									<li><?php echo $t->getQuantity(); ?>
+										<?php if ($t->wasPurchased()) : ?>
+											<?php $buyer = $t->getLink()->getBuyer(); ?>
+											purchased by <a href="<?php echo $buyer->getUrl(); ?>"><?php echo $buyer->getName(); ?></a>
+										<?php endif; ?>
+								</li>
+								<?php endforeach; ?>
+							</ul>
+							<?php endif; ?>
 						</li>
 					<?php endforeach; ?>
 						<li>

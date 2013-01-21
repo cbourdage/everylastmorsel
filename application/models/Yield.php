@@ -35,6 +35,10 @@ class Elm_Model_Yield extends Colony_Model_Abstract
 		return parent::_beforeSave();
 	}
 
+	/**
+	 * @param Elm_Model_Plot $plot
+	 * @return mixed
+	 */
 	public function fetchByPlot($plot)
 	{
 		$yields = $this->_getResource()->fetchByPlot($plot);

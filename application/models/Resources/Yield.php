@@ -29,6 +29,24 @@ class Elm_Model_Resource_Yield extends Colony_Db_Table
 		return $this;
 	}
 
+	/**
+	 * Updates the plot_crops data
+	 *
+	 * @param Colony_Model_Abstract $object
+	 * @return Colony_Model_Abstract|void
+	 */
+	protected function _afterSave($object)
+	{
+		$forSale = $this->getDefaultAdapter()->fetchOne("SELECT 1 FROM " . $this->_name . " WHERE is_for_sale = 1 AND yield_id = " . $object->getYieldId());
+
+		Elm::log("forSale: " . $forSale);
+		$this->getDefaultAdapter()->update(
+			'plot_crops',
+			array('is_for_sale' => $forSale),
+			'entity_id = ' . $object->getPlotCropId()
+		);
+	}
+
 	public function fetchByPlot($plot)
 	{
 		$items = array();

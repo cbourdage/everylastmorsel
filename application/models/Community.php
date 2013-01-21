@@ -40,9 +40,9 @@ class Elm_Model_Community extends Colony_Model_Abstract
 	public function getCropsOnSale()
 	{
 		if (count($this->_crops) < 1) {
-			$results = $this->_resource->fetchAll('SELECT yield_id FROM yields WHERE is_for_sale = 1');
+			$results = $this->_resource->fetchAll('SELECT entity_id FROM yields_purchasable WHERE is_for_sale = 1 AND is_sold_out = 0');
 			foreach ($results as $row) {
-				$this->_crops[] = Elm::getModel('yield')->load($row->yield_id);
+				$this->_crops[] = Elm::getModel('yield/purchasable')->load($row->entity_id);
 			}
 		}
 		return $this->_crops;

@@ -1,0 +1,26 @@
+<?php
+$urlHelper = new Elm_View_Helper_Url();
+$dataHelper = new Elm_View_Helper_Data();
+Elm::log($this->transaction);
+?>
+<body style="color: #222; text-align: center">
+	<table style="background: #F8F6F4; border-bottom: 2px solid #ccc; color: #666; font-family: arial, sans-serif; font-size: 13px; margin: 0 auto; text-align: left;" width="450">
+		<?php echo $this->partial('_header.phtml'); ?>
+		<tr>
+			<td style="padding: 15px;">
+				<p style="color: #1DA5B1; font-size: 16px;">Someone is interested in what you're selling!</p>
+				<p>
+					<a style="color: #1DA5B1;" href="<?php echo $this->buyer->getUrl(); ?>"><?php echo $this->buyer->getName(); ?></a>
+					has reached out to you and would like to purchase <?php echo $this->transaction->getQuantity(); ?> <?php echo $this->transaction->getQuantityUnit(); ?>
+					for <?php echo $dataHelper->formatPrice($this->transaction->getTotal()); ?>.
+				</p>
+				<p>You can view this message and others in the <a href="/communication-hub">Communication Hub</a>.</p>
+				<p>
+					Thanks, <br />
+					Every Last Morsel
+				</p>
+			</td>
+		</tr>
+		<?php echo $this->partial('_footer.phtml'); ?>
+	</table>
+</body>

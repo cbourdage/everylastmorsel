@@ -20,7 +20,7 @@ $message = $this->message;
 	<h5><?php echo $message->getFromUser()->getName(); ?> - <span class="date dark-grey"><?php echo $this->Data()->formatDate($message->getCreatedAt()); ?></span></h5>
 
 	<div class="body">
-		<?php echo $this->escape(nl2br($message->getMessage())); ?>
+		<?php echo nl2br($this->escape($message->getMessage())); ?>
 	</div>
 </div>
 <div class="message-form" style="display: none;">

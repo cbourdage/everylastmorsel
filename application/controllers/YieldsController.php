@@ -9,7 +9,7 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 	 */
 	protected function _initAjax()
 	{
-		$this->_helper->layout()->disableLayout();
+		$this->getHelper()->layout()->disableLayout();
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 		$response = array();
 
 		if (!$this->getRequest()->isPost()) {
-			$this->_helper->json->sendJson(array('success' => true, 'location' => $this->_helper->url('crops')));
+			$this->getHelper()->json->sendJson(array('success' => true, 'location' => $this->getHelper()->url('crops')));
 			return;
 		}
 
@@ -76,7 +76,7 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 		$response = array();
 
 		if (!$this->getRequest()->isPost()) {
-			$this->_helper->json->sendJson(array('success' => true, 'location' => $this->_helper->url('crops')));
+			$this->getHelper()->json->sendJson(array('success' => true, 'location' => $this->getHelper()->url('crops')));
 			return;
 		}
 
@@ -93,7 +93,7 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 			$response = array('error' => true, 'message' => $e->getMessage());
 		}
 
-		$this->_helper->json->sendJson($response);
+		$this->getHelper()->json->sendJson($response);
 	}
 
 	/**
@@ -105,7 +105,7 @@ class Elm_YieldsController extends Elm_Profile_AbstractController
 		$response = array();
 
 		if (!$this->getRequest()->isPost()) {
-			$this->getHelper()->json->sendJson(array('success' => true, 'location' => $this->_helper->url('crops')));
+			$this->getHelper()->json->sendJson(array('success' => true, 'location' => $this->getHelper()->url('crops')));
 			return;
 		}
 

@@ -13,4 +13,14 @@ class Elm_Model_Resource_Yield_Transaction extends Colony_Db_Table
 			'refColumns' => 'yield_id'
 		)
 	);*/
+
+	public function getByYieldPurchasableId($ypId)
+	{
+		$items = array();
+		$select = $this->select()->where('purchasable_id = ?', $ypId);
+		foreach ($this->fetchAll($select) as $row) {
+			$items[] = Elm::getModel('yield/transaction')->load($row->purchasable_id);
+		}
+		return $items;
+	}
 }
