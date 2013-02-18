@@ -6,11 +6,11 @@ $urlHelper = new Elm_View_Helper_Url();
 		<?php echo $this->partial('_header.phtml'); ?>
 		<tr>
 			<td style="padding: 15px;">
-				<p style="color: #1DA5B1; font-size: 16px;"><?php echo $this->fromName; ?> has broke the ice!</p>
+				<p style="color: #1DA5B1; font-size: 16px;"><?php echo $this->fromUser->getName(); ?> has broke the ice!</p>
 				<p>Their reason for contacting you is: <i><?php echo $this->reason; ?></i></p>
-				<p><?php echo $this->message; ?></p>
+				<p><?php echo $this->escape($this->message); ?></p>
 				<p style="margin-top: 40px;">
-					You can contact this user back directly via <i><?php echo $this->fromEmail; ?></i> or you can checkout their
+					You can contact this user back directly via <i><?php echo $this->fromUser->getEmail(); ?></i> or you can checkout their
 					<a style="color: #1DA5B1;" href="<?php echo $this->fromUser->getUrl(); ?>">profile</a> and contact them
 					directly through the site.
 				</p>
