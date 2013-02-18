@@ -24,8 +24,8 @@ CREATE TABLE `yields_transactions` (
 	`created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
 	`modified_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
 	PRIMARY KEY (`entity_id`),
-	CONSTRAINT `fk_yields_transaction_purchasable_id` FOREIGN KEY (`purchasable_id`) REFERENCES `yields_purchasable` (`entity_id`) ON DELETE CASCADE,
 	CONSTRAINT `fk_yields_transaction_crop_id` FOREIGN KEY (`crop_id`) REFERENCES `crops` (`crop_id`) ON DELETE CASCADE,
+	CONSTRAINT `fk_yields_transaction_purchasable_id` FOREIGN KEY (`purchasable_id`) REFERENCES `yields_purchasable` (`entity_id`) ON DELETE CASCADE,
 	CONSTRAINT `fk_yields_transaction_yield_id` FOREIGN KEY (`yield_id`) REFERENCES `yields` (`yield_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
