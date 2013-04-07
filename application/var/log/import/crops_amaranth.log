@@ -4266,3 +4266,227 @@
     [_isDeleted:protected] => 
 )
 
+2012-07-25T03:09:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => amaranth
+            [name] => Green Leaf Vegetable Amaranth
+            [variety] => Green Leaf Vegetable Amaranth
+            [breeder] => 
+            [characteristics] => oval to heart-shaped leaves; deep green color.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:09:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => amaranth
+            [name] => Kahlalu Leaf
+            [variety] => Kahlalu Leaf
+            [breeder] => 
+            [characteristics] => 45-50 days, used like spinach, purple venation, adapts easily to most localities; endangered cultivar.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:09:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => amaranth
+            [name] => Red Leaf Edible Amaranth
+            [variety] => Red Leaf Edible Amaranth
+            [breeder] => 
+            [characteristics] => large green leaves with red stripes.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:09:59+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => amaranth
+            [name] => White Leaf Edible Amaranth
+            [variety] => White Leaf Edible Amaranth
+            [breeder] => 
+            [characteristics] => dwarf type with light green leaves and stems which are very tender.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => amaranth
+            [name] => Green Leaf Vegetable Amaranth
+            [variety] => Green Leaf Vegetable Amaranth
+            [breeder] => 
+            [characteristics] => oval to heart-shaped leaves; deep green color.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => amaranth
+            [name] => Kahlalu Leaf
+            [variety] => Kahlalu Leaf
+            [breeder] => 
+            [characteristics] => 45-50 days, used like spinach, purple venation, adapts easily to most localities; endangered cultivar.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => amaranth
+            [name] => Red Leaf Edible Amaranth
+            [variety] => Red Leaf Edible Amaranth
+            [breeder] => 
+            [characteristics] => large green leaves with red stripes.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:04+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => amaranth
+            [name] => White Leaf Edible Amaranth
+            [variety] => White Leaf Edible Amaranth
+            [breeder] => 
+            [characteristics] => dwarf type with light green leaves and stems which are very tender.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+

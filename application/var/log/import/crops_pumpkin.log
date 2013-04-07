@@ -104150,3 +104150,3475 @@
     [_isDeleted:protected] => 
 )
 
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Aladdin (HMX 6689)
+            [variety] => Aladdin (HMX 6689)
+            [breeder] => Ted Superak.
+            [characteristics] => Cucurbita pepo pumpkin; strong vine; large fruit, round to tall shape, averaging 12 inches in width and 15 inches tall; weight ranges 30 to 50 lb.; large handle, firmly attached, deep orange color with moderate ribbing; thick wall.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Alagold (African Squash)
+            [variety] => Alagold (African Squash)
+            [breeder] => Alabama Polytechnic Institute, Auburn.
+            [characteristics] => cylindrical to somewhat bell shape, very small seed cavity, deep golden flesh of high quality, stores excellently, sweet flavor; like Butternut except the flesh is soft and the fruit larger.
+            [similar] => Butternut.
+            [adaptation] => Butternut.
+            [resistance] => Butternut.
+            [parentage] => Butternut.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Allneck Cushaw
+            [variety] => Allneck Cushaw
+            [breeder] => G.H. Hastings Company, Atlanta, Georgia.
+            [characteristics] => very long, solid necks, small seed cavity.
+            [similar] => Striped Cushaw. Hastings catalog, 1952.
+            [adaptation] => Striped Cushaw. Hastings catalog, 1952.
+            [resistance] => Striped Cushaw. Hastings catalog, 1952.
+            [parentage] => Striped Cushaw. Hastings catalog, 1952.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Appalachian (PSX 10200)
+            [variety] => Appalachian (PSX 10200)
+            [breeder] => Waltrip.
+            [characteristics] => creamy exterior, about 12 lb, medium size, bright orange flesh, unique type.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Apprentice (HMX 5682)
+            [variety] => Apprentice (HMX 5682)
+            [breeder] => Ted Superak.
+            [characteristics] => mini pumpkin type; fruit 1 lb or less; hard shell; round shape; high yield; unique.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Aspen
+            [variety] => Aspen
+            [breeder] => Hollar.
+            [characteristics] => vigorous, semi-bush vine; large fruited, 20 lb, rich orange color; large, sturdy handles; stores and ships well. 1992.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Atlantic Giant
+            [variety] => Atlantic Giant
+            [breeder] => 
+            [characteristics] => large 'contest' pumpkin commonly weighing 50-100 lb, but can weight much more; pinkish or orange fruit; 115 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Autumn Gold
+            [variety] => Autumn Gold
+            [breeder] => Musser Seed Co.
+            [characteristics] => F1 hybrid, early orange fruit color development permits culture in areas where other cultivars may not mature, seven to ten pound fruits.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Autumn King (RWS5668)
+            [variety] => Autumn King (RWS5668)
+            [breeder] => Seeds By Design.
+            [characteristics] => 25 lb, jack-o'-lantern class, very dark orange color, strong handles. American Vegetable Grower, 1999.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Baby Bear
+            [variety] => Baby Bear
+            [breeder] => R. Johnston, Jr.
+            [characteristics] => unique size, a scaled down version of a classic Jack-O-Lantern, fruit average 5-6' diameter, 3.5-4' height, 1.5-2 lb, slender stem averaging 3', deep, bright orange, semi-hulless seeds.
+            [similar] => New England Pie. PVP. 1992.
+            [adaptation] => New England Pie. PVP. 1992.
+            [resistance] => New England Pie. PVP. 1992.
+            [parentage] => New England Pie. PVP. 1992.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Baby Boo
+            [variety] => Baby Boo
+            [breeder] => J.Jaunsem. PVP. 1990.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Baby Pam
+            [variety] => Baby Pam
+            [breeder] => Seedway.
+            [characteristics] => uniform, 5x5' fruit; deep orange, smooth rind; deep orange flesh, good for pies and as ornamental; long, sturdy handles; vigorous vines produce a dozen or more quality fruit per plant; 100 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Big Autumn (87S259)
+            [variety] => Big Autumn (87S259)
+            [breeder] => P.Yorty.
+            [characteristics] => early orange fruit color development permits culture in areas where other cultivars may not mature, fruit weigh 15 lb compared to 9 lb for Autumn Gold.
+            [similar] => Autumn Gold. 1989.
+            [adaptation] => Autumn Gold. 1989.
+            [resistance] => Autumn Gold. 1989.
+            [parentage] => Autumn Gold. 1989.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Big Max
+            [variety] => Big Max
+            [breeder] => 
+            [characteristics] => up to 100 lb; pinkish-orange rind with bright yellow flesh 3-4' thick; good cooking quality. Twilley Catalog, 1989.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Big Moon (PSR 853)
+            [variety] => Big Moon (PSR 853)
+            [breeder] => Petoseed Co.
+            [characteristics] => open pollinated, very large, medium orange, ribbed with slightly rough texture on very large vine; seeds large and brown; one or two fruit per vine.
+            [similar] => Big Max.
+            [adaptation] => Big Max.
+            [resistance] => Big Max.
+            [parentage] => Big Max.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Bookin
+            [variety] => Bookin
+            [breeder] => Market More. 1989.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Buckskin (PS10295)
+            [variety] => Buckskin (PS10295)
+            [breeder] => Petoseed.
+            [characteristics] => dark orange flesh, buff color vine, excellent for pumpkin pie, large vine.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Bushkin (VP)
+            [variety] => Bushkin (VP)
+            [breeder] => W. Atlee Burpee Co.
+            [characteristics] => open pollinated, bush-type, naked seeded, golden orange, eight to ten pounds with good flesh for pies, nearly hulless seeds for eating raw or roasted.
+            [similar] => Cinderella.
+            [adaptation] => Cinderella.
+            [resistance] => Cinderella.
+            [parentage] => Cinderella.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:36+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Cangold
+            [variety] => Cangold
+            [breeder] => Department of Hort., Iowa State College, Ames.
+            [characteristics] => oblong shaped fruit, weighing 9-15 pounds; flesh deep yellow in color, 2-3' in thickness; poor seed maker because of small seed cavity; yield of about one mature fruit per plant.
+            [similar] => Kentucky Field.
+            [adaptation] => Kentucky Field.
+            [resistance] => Kentucky Field.
+            [parentage] => Kentucky Field.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Casper (EXP3812)
+            [variety] => Casper (EXP3812)
+            [breeder] => J.Howell.
+            [characteristics] => smooth, waxy, white skin, some with slight bluish tints; flesh dark orange up to 1.5' thick, excellent for baking and Mexican candy making; fruit 8-15 lb.
+            [similar] => Lumina. 1992.
+            [adaptation] => Lumina. 1992.
+            [resistance] => Lumina. 1992.
+            [parentage] => Lumina. 1992.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Cheyenne Bush
+            [variety] => Cheyenne Bush
+            [breeder] => Hort. Field Sta., USDA, Cheyenne, Wyoming.
+            [characteristics] => extremely early bush pie pumpkin.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Cinderella
+            [variety] => Cinderella
+            [breeder] => Illinois Agric. Expt. Sta. and Joseph Harris Company.
+            [characteristics] => early, true bush vine with medium size fruit free of pressure ridges.
+            [similar] => Youngs Beauty.
+            [adaptation] => Youngs Beauty.
+            [resistance] => Youngs Beauty.
+            [parentage] => Youngs Beauty.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Connecticut Field
+            [variety] => Connecticut Field
+            [breeder] => 
+            [characteristics] => fruit are large, round, flattened at ends, weighing 15-25 lb; flesh is thick, orange-yellow, sweet but coarse; grown mostly for stock feed and Halloween decoration; 120 day maturity. Eastern States Farmers Exchange Catalog, p. 18, 1962.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Dickinson
+            [variety] => Dickinson
+            [breeder] => 
+            [characteristics] => fruit is 12-16' x 12-14', weight 12-16 lb, mostly elongated round; flesh orange, coarse, sweet and good quality; longer and more uniform shape than Kentucky Field; used for canning and livestock. Northrup King Company GS-7-5 catalog, 1958.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Dills Atlantic Giant
+            [variety] => Dills Atlantic Giant
+            [breeder] => Howard Dill Enterprises. PVP. 1985.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Early Autumn
+            [variety] => Early Autumn
+            [breeder] => Rogers Seed.
+            [characteristics] => round, medium orange fruit; can be harvested early or in full mid-season when it weighs 12 lb. American Vegetable Grower, 1996.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Early Buckskin (PS 971676)
+            [variety] => Early Buckskin (PS 971676)
+            [breeder] => John Bill.
+            [characteristics] => open pollinated, large vine, early maturing, buff color, 11 lb fruit with fine texture and dark orange flesh.
+            [similar] => Buckskin.
+            [adaptation] => Buckskin.
+            [resistance] => Buckskin.
+            [parentage] => Buckskin.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Early Cheyenne Pie
+            [variety] => Early Cheyenne Pie
+            [breeder] => Hort. Field Sta., USDA, Cheyenne, Wyoming.
+            [characteristics] => early maturity and small fruit.
+            [similar] => New England Pie.
+            [adaptation] => New England Pie.
+            [resistance] => New England Pie.
+            [parentage] => New England Pie.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Eastern 7 x 7
+            [variety] => Eastern 7 x 7
+            [breeder] => Eastern States Farmers Exchange, West Springfield, Massachusetts.
+            [characteristics] => round, 7 x 7-inch fruit for Halloween and pie.
+            [similar] => New England Pie.
+            [adaptation] => New England Pie.
+            [resistance] => New England Pie.
+            [parentage] => New England Pie.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Fairy Tale
+            [variety] => Fairy Tale
+            [breeder] => 
+            [characteristics] => hybrid; 30-80 lb fruit, unique orange-brown skin, unique shape and flavor, 100 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => First Prize
+            [variety] => First Prize
+            [breeder] => 
+            [characteristics] => contest-size; bright orange 80-300 lb fruit; 120 days. 2000.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Fortuna
+            [variety] => Fortuna
+            [breeder] => Puerto Rico Agric. Expt. Sta., Rv?o Piedras.
+            [characteristics] => medium uniform fruit, high in carotene; very prolific.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Frosty
+            [variety] => Frosty
+            [breeder] => 
+            [characteristics] => hybrid; bright orange, 10' diameter fruit; bush habit; ships and stores well. Twilley Catalog, 1992.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Funny Face
+            [variety] => Funny Face
+            [breeder] => Petoseed Co.
+            [characteristics] => hybrid, early semi-bush, fruit uniform, bright orange-yellow, good handle, size comparable to Youngs Beauty, outstanding yield.
+            [similar] => Youngs Beauty.
+            [adaptation] => Youngs Beauty.
+            [resistance] => Youngs Beauty.
+            [parentage] => Youngs Beauty.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Ghost-Rider
+            [variety] => Ghost-Rider
+            [breeder] => Shamrock.
+            [characteristics] => very smooth Connecticut Field type with darker orange color, with dark green handle. 1987.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Gold Fever
+            [variety] => Gold Fever
+            [breeder] => Rupp Seeds.
+            [characteristics] => shipping pumpkin, ideal for store trade, 15-18 lb fruit, exceptional handles, fine orange color. American Vegetable Grower, Dec 1998.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Gold Keeper
+            [variety] => Gold Keeper
+            [breeder] => Petoseed.
+            [characteristics] => orange-red processing pumpkin; high soluble solids; oblate shape; viny; 90-100 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Gold Rush
+            [variety] => Gold Rush
+            [breeder] => Rupp Seeds.
+            [characteristics] => large, deep orange, thick-walled, globe shaped 30-40 lb fruit; large and thick handles; large vine; 100 days. PVP. 1998.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Gold Standard
+            [variety] => Gold Standard
+            [breeder] => Rupp Seeds.
+            [characteristics] => shipping pumpkin; produces large 15-18 lb fruit and tonnage per acre; excellent handles and orange color. American Vegetable Grower, Dec 1998.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Gold Strike
+            [variety] => Gold Strike
+            [breeder] => Rupp Seeds.
+            [characteristics] => hybrid; large yields, large uniform fruit, dark golden color, good handles, weighs about 10% more than Howden; 105 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Golden Centennial
+            [variety] => Golden Centennial
+            [breeder] => Ferry-Morse Seed Company, Detroit.
+            [characteristics] => round to oval shape, medium size (eight to nine'), thick fleshed and russet-orange skin color.
+            [similar] => Winter Luxury.
+            [adaptation] => Winter Luxury.
+            [resistance] => Winter Luxury.
+            [parentage] => Winter Luxury.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Goldilocks
+            [variety] => Goldilocks
+            [breeder] => Musser.
+            [characteristics] => small round gold fruit. PVP. 1984.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Gremlin
+            [variety] => Gremlin
+            [breeder] => Liberty Seed.
+            [characteristics] => ornamental pumpkin or for small halloweeners; 5x5.5'; superior yields; strong handles hold up to bulk shipping; 100 days.
+            [similar] => Baby Pam. 1999.
+            [adaptation] => Baby Pam. 1999.
+            [resistance] => Baby Pam. 1999.
+            [parentage] => Baby Pam. 1999.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Half-Moon
+            [variety] => Half-Moon
+            [breeder] => 
+            [characteristics] => 14-18 lb with strong handles. Twilley Catalog, 1989.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Hallo-Queen (PSX114750)
+            [variety] => Hallo-Queen (PSX114750)
+            [breeder] => Petoseed.
+            [characteristics] => deep orange color, easy carving, uniform shape and size, 15-18 lb, strong handle, 115 day maturity.
+            [similar] => Howdens Field. 1994.
+            [adaptation] => Howdens Field. 1994.
+            [resistance] => Howdens Field. 1994.
+            [parentage] => Howdens Field. 1994.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Happy
+            [variety] => Happy
+            [breeder] => Jennie C. Brush. PVP. 1986.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Happy Jack (PSXF-11476)
+            [variety] => Happy Jack (PSXF-11476)
+            [breeder] => Petoseed.
+            [characteristics] => exceptionally uniform; large, vigorous vine; dark orange color fruit; medium ribs. 1990.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Howden Biggie
+            [variety] => Howden Biggie
+            [breeder] => Howden Farm.
+            [characteristics] => 35-60 lb; upright globe shape; rich orange color and hard rind. American Vegetable Grower, September, 1995. PVP. 1991.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Howdens Field
+            [variety] => Howdens Field
+            [breeder] => John Howden.
+            [characteristics] => open pollinated, long vine, late (115 days), uniformly large, thick flesh, hard shell, deeply ridged dark rich orange fruit with high solids for processing and Halloween.
+            [similar] => Connecticut Field.
+            [adaptation] => Connecticut Field.
+            [resistance] => Connecticut Field.
+            [parentage] => Connecticut Field.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Howdy Doody
+            [variety] => Howdy Doody
+            [breeder] => Seeds By Design.
+            [characteristics] => hybrid; mid-size, dark orange, 17-20 lb fruit; thick flesh; semi-vine plant; 115 days. 1999.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Hybrid Pam
+            [variety] => Hybrid Pam
+            [breeder] => Speedway.
+            [characteristics] => very deep burnt orange, 5-7 lb fruit; long, dark green handles; semi-vine plant; 90 days. 1998.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Ichabod
+            [variety] => Ichabod
+            [breeder] => Market More. 1989.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Jack B Quick
+            [variety] => Jack B Quick
+            [breeder] => Rupp Seeds.
+            [characteristics] => miniature pumpkin, taller, darker orange, more ribbed than Jack B Little.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Jack Be Little
+            [variety] => Jack Be Little
+            [breeder] => 
+            [characteristics] => mini pumpkin 2 x 3' weighing 3-4 oz, prolific plants bear 8-10 fruit on large vines, for fall and winter decorating. Twilley Catalog, 1989.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Jack of All Trades
+            [variety] => Jack of All Trades
+            [breeder] => 
+            [characteristics] => hybrid; dark orange, 9-12 lb fruit; excellent handles, smooth with sutures; very vigorous semi-bush plant; 90 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Jack O'Lantern
+            [variety] => Jack O'Lantern
+            [breeder] => Northrup King and Company, Minneapolis.
+            [characteristics] => small size, deeper than round, selected for size of mans head.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Jack Pot (hybrid 888)
+            [variety] => Jack Pot (hybrid 888)
+            [breeder] => Joseph Harris Co.
+            [characteristics] => F1 hybrid, short vine, early (100 days), uniform medium size, glossy orange yellow; for Halloween.
+            [similar] => Youngs Beauty.
+            [adaptation] => Youngs Beauty.
+            [resistance] => Youngs Beauty.
+            [parentage] => Youngs Beauty.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Jumpin Jack
+            [variety] => Jumpin Jack
+            [breeder] => Rupp Seeds.
+            [characteristics] => open pollinated; tall, 35-50 lb fruit; deep orange color, rough skin; 100 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Kakai
+            [variety] => Kakai
+            [breeder] => Johnny's Selected Seeds.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Kentucky Field
+            [variety] => Kentucky Field
+            [breeder] => 
+            [characteristics] => 10-18' diameter, fruit variable in shape but usually deeper than they are wide, tapered at ends, 10-15 lb, rind smooth, dull orange-yellow, distinctly sutured, thin hard rind; flesh thick, coarse, deep yellow, sweet; 120 day maturity; used for canning and stock feed. Asgrow Catalog 19, 1957.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Large Cheese
+            [variety] => Large Cheese
+            [breeder] => 
+            [characteristics] => for home, market, canning; derives name from cheese box shape of fruit; fruit is 7 x 15', weighing 12-15 lb; very flat shape, slightly grooved; hard shell, deep yellow skin; flesh is orange-yellow, fairly thick, with fine quality and flavor; 110 day maturity. Corneli Catalog 14. 1964.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Large Sweet Cheese
+            [variety] => Large Sweet Cheese
+            [breeder] => 
+            [characteristics] => a pumpkin for both table and stock, often attains 25 lb; mottled green and yellow when young, creamy yellow when ripe; flesh yellow, extra thick, tender, sweet and of finest quality; for pies, canning and feeding stock. T. W. Wood and Sons Seed Company, 1961.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Lil' Goblin
+            [variety] => Lil' Goblin
+            [breeder] => Harris Moran.
+            [characteristics] => hybrid miniature; round, slightly ribbed, 1-2 lb fruit; true pumpkin look and shape; semi-bush.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Lil' Ironsides (HMX4696)
+            [variety] => Lil' Ironsides (HMX4696)
+            [breeder] => Ted Superak.
+            [characteristics] => hybrid; dense, viny bush; small orange fruit, 4' tall x 6' wide, 2 lb; thick, hard shell gives excellent shelf life.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Lil' Pump-ke-mon (HMX 6684)
+            [variety] => Lil' Pump-ke-mon (HMX 6684)
+            [breeder] => Ted Superak.
+            [characteristics] => mini size, flat shape, 4x2', white with thin green stripes which turn orange, very stocky bush plant.
+            [similar] => no cultivar like it.
+            [adaptation] => no cultivar like it.
+            [resistance] => no cultivar like it.
+            [parentage] => no cultivar like it.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Little Boo
+            [variety] => Little Boo
+            [breeder] => Agway. PVP. 1978.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Little Jack (PSX11298)
+            [variety] => Little Jack (PSX11298)
+            [breeder] => Petoseed.
+            [characteristics] => small, very uniform Jack-O-Lantern type pumpkins; good orange color; fruit 4-6 lb; good carving shape. 1992.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Longface
+            [variety] => Longface
+            [breeder] => Seneca (Robson).
+            [characteristics] => distinctive elongated vertical shape; 20-30 lb fruit; compact semi-bush plant; excellent yields; 95 days. Seed and Crops Digest, Jan 1997.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Longfellow
+            [variety] => Longfellow
+            [breeder] => Louisiana State University, Baton Rouge.
+            [characteristics] => a high quality yellow skinned Cushaw.
+            [similar] => Cushaw.
+            [adaptation] => Cushaw.
+            [resistance] => Cushaw.
+            [parentage] => Cushaw.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Lumina
+            [variety] => Lumina
+            [breeder] => Hollar Seed Co. and George Perry & Sons. PVP. 1990.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Magic
+            [variety] => Magic
+            [breeder] => Seneca (Robson).
+            [characteristics] => hybrid; 20-30 lb fruit produced on a semi-bush plant; classic Howden-shaped fruit; more uniform fruit size and stress tolerance than Howden; 100 days. Seed and Crops Digest, Jan 1997.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Magic Lantern (HMX5683)
+            [variety] => Magic Lantern (HMX5683)
+            [breeder] => Ted Superak.
+            [characteristics] => hybrid; semi-vine; dark orange, medium ribbing, large dark green fruit stem; round, 18 lb fruit.
+            [similar] => Wizard. American Vegetable Grower, Dec 1998.
+            [adaptation] => Wizard. American Vegetable Grower, Dec 1998.
+            [resistance] => Wizard. American Vegetable Grower, Dec 1998.
+            [parentage] => Wizard. American Vegetable Grower, Dec 1998.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Magician (HMX 0683)
+            [variety] => Magician (HMX 0683)
+            [breeder] => Ted Superak.
+            [characteristics] => decorative pumpkin type; high yield; medium size fruit (12 to 18 lb); excellent orange color; round shape.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Mammoth Gold
+            [variety] => Mammoth Gold
+            [breeder] => Rupp Seeds.
+            [characteristics] => open pollinated; 20-25 lb, nearly round, smooth, faintly ribbed, golden orange fruit; used for novelty and pies. Willhite Seed Catalog, 1994.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Merlin (HMX5680)
+            [variety] => Merlin (HMX5680)
+            [breeder] => Ted Superak.
+            [characteristics] => hybrid; semi-vine; dark orange fruit, dark green and large fruit stem, 12x14', 22 lb.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Mini-Jack (NS-SP 401-4)
+            [variety] => Mini-Jack (NS-SP 401-4)
+            [breeder] => Dessert Seed Co.
+            [characteristics] => open pollinated, small (4-6'), uniform fruit; with high fruit set.
+            [similar] => Jack O'Lantern.
+            [adaptation] => Jack O'Lantern.
+            [resistance] => Jack O'Lantern.
+            [parentage] => Jack O'Lantern.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Mini Treat (PX 159011)
+            [variety] => Mini Treat (PX 159011)
+            [breeder] => Seminis Vegetable Seeds-Petoseed.
+            [characteristics] => true Mini-Jack type; outstanding fruit shape, color and handle, 1 lb. size; compact bush plant habit with high yield; ornamental; true pumpkin shape, small Jack-O-Lantern; hulless seed.
+            [similar] => Wee-Be-Little, Little Goblin.
+            [adaptation] => Wee-Be-Little, Little Goblin.
+            [resistance] => Wee-Be-Little, Little Goblin.
+            [parentage] => Wee-Be-Little, Little Goblin.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Mother Lode
+            [variety] => Mother Lode
+            [breeder] => Rupp.
+            [characteristics] => hybrid, bush-semi bush vine type with extra large 25+ lb fruit with excellent handles, it stays confined to a tight bush until late after the crown set and can be planted in closer rows than many of the large cultivars.
+            [similar] => RS1090. 1996.
+            [adaptation] => RS1090. 1996.
+            [resistance] => RS1090. 1996.
+            [parentage] => RS1090. 1996.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Munchkin
+            [variety] => Munchkin
+            [breeder] => Harris Moran Seed.
+            [characteristics] => early; flattened and ribbed fruit, 2-3' diameter, medium light orange color; suited for arrangements and fall decorations. 1994.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Mystic (HMX 5680)
+            [variety] => Mystic (HMX 5680)
+            [breeder] => Harris Moran Seed.
+            [characteristics] => hybrid; dark orange exterior, thick walls, uniform size and shape; thick handles with good attachment; 15-25 lb, 14' tall x 12' wide.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Mystic Plus (HMX 6688)
+            [variety] => Mystic Plus (HMX 6688)
+            [breeder] => Ted Superak.
+            [characteristics] => small size, slightly flat, 8x6', 5 to 7 lb., dark orange color, thick, large handles.
+            [similar] => Mystic.
+            [adaptation] => Mystic.
+            [resistance] => Mystic.
+            [parentage] => Mystic.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => New England Pie (JS strain)
+            [variety] => New England Pie (JS strain)
+            [breeder] => 
+            [characteristics] => traditional, open pollinated, pie pumpkin; 4-7 lb fruit, dark, orange skin; orange flesh is relatively starchy, dry and stringless; 105 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Orange Smoothie (PS SVNH 660)
+            [variety] => Orange Smoothie (PS SVNH 660)
+            [breeder] => Jim Waldrop.
+            [characteristics] => small pumpkin, bright yellow color exterior, 8-10' diameter, smooth to be painted on.
+            [similar] => no cultivar like it.
+            [adaptation] => no cultivar like it.
+            [resistance] => no cultivar like it.
+            [parentage] => no cultivar like it.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Oz (HXP2672)
+            [variety] => Oz (HXP2672)
+            [breeder] => T.Superak.
+            [characteristics] => semi-bush habit, precocious yellow fruit, small, strong handles, smooth surface.
+            [similar] => Baby Pam. 1991.
+            [adaptation] => Baby Pam. 1991.
+            [resistance] => Baby Pam. 1991.
+            [parentage] => Baby Pam. 1991.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Paint-A-Punkin (PSX10902)
+            [variety] => Paint-A-Punkin (PSX10902)
+            [breeder] => Petoseed.
+            [characteristics] => unique color and size. 1994.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Pam
+            [variety] => Pam
+            [breeder] => Seedway.
+            [characteristics] => hybrid, ornamental type, 6-7 lb fruit, burnt orange color, strong handles, ideal for school tours, painting or pie making, semi-bush plant, 90 days. American Vegetable Grower, December 1998.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Pankows Field
+            [variety] => Pankows Field
+            [breeder] => G.A. and G.W. Pankow.
+            [characteristics] => open pollinated, large, firm stalks.
+            [similar] => Connecticut Field.
+            [adaptation] => Connecticut Field.
+            [resistance] => Connecticut Field.
+            [parentage] => Connecticut Field.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Peek-A-Boo
+            [variety] => Peek-A-Boo
+            [breeder] => Rogers Brothers.
+            [characteristics] => small fruited pumpkin weighing 3.5-4.0 lb; fruit slightly flattened globe shape with medium bright orange color and extra long handles.
+            [similar] => Spooktacular, Oz, Baby Bear. 1994.
+            [adaptation] => Spooktacular, Oz, Baby Bear. 1994.
+            [resistance] => Spooktacular, Oz, Baby Bear. 1994.
+            [parentage] => Spooktacular, Oz, Baby Bear. 1994.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Phantom (PS 159004)
+            [variety] => Phantom (PS 159004)
+            [breeder] => Manuel Rosas.
+            [characteristics] => hybrid; Howden type; large, uniform fruit; dark orange rind; strong vine, strong fruit handle.
+            [similar] => Howden.
+            [adaptation] => Howden.
+            [resistance] => Howden.
+            [parentage] => Howden.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Pick-a-Pie
+            [variety] => Pick-a-Pie
+            [breeder] => Rupp Seeds.
+            [characteristics] => high yielding pie pumpkin, orange color, sturdy handles, 4 to 6 lb fruit; excellent for school trade. American Vegetable Grower, Dec 1998.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Prizewinner
+            [variety] => Prizewinner
+            [breeder] => Harris Moran Seed.
+            [characteristics] => hybrid; round to deep round; reddish orange skin color; used for 'contest' size, 80-120 lb fruit; late. Harris Moran Seed Co. Product Listing Booklet, 1994.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => ProGold #300
+            [variety] => ProGold #300
+            [breeder] => Abbott and Cobb.
+            [characteristics] => hybrid; exceptionally smooth, 16-20 lb fruit; medium orange color, very sturdy, strong handles; vigorous, nearly full-bush plants; one week earlier than #500 and #510; 88 days. 1998.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => ProGold #500
+            [variety] => ProGold #500
+            [breeder] => Abbott and Cobb.
+            [characteristics] => hybrid; bright orange, nearly round, medium deep ribbed, 12-14' diameter, 18-22 lb fruit; 95 days. 1992.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => ProGold #510
+            [variety] => ProGold #510
+            [breeder] => Abbott and Cobb.
+            [characteristics] => hybrid; deep round to tall fruit of the Howden type; deep orange, deep ribs, 14-16' diameter, 22-26 lb fruit; 95 days. 1992.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Racer
+            [variety] => Racer
+            [breeder] => Johnny's Selected Seeds.
+            [characteristics] => hybrid, mid-size jack-o-lantern type; blocky, heavy, 12-18 lb, ribbed, dark orange, big handles; vigorous, short vine; 85 days. 1998.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Robusta (PS 9007)
+            [variety] => Robusta (PS 9007)
+            [breeder] => Manuel Rosas.
+            [characteristics] => hybrid, round shape, 1.8-2.0 kg, slightly flat on top and bottom, dark green color, ribbed, thick flesh, good for storage and shipment.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Rocket
+            [variety] => Rocket
+            [breeder] => Johnny's Selected Seeds.
+            [characteristics] => medium-size, 12-12 lb fruit; distinctive shoulder ribbing; long, strong, green handles; brilliant orange color; 95 days. 1996.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Rockstar
+            [variety] => Rockstar
+            [breeder] => Johnny's Selected Seeds.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Rouge Vif d'Estampes (same as Cinderella)
+            [variety] => Rouge Vif d'Estampes (same as Cinderella)
+            [breeder] => 
+            [characteristics] => bright red, open pollinated, French cultivar for fall displays and pies; flat, 10-15 lb fruit; moderately orange flesh; 115 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => RS1090
+            [variety] => RS1090
+            [breeder] => Rupp Seeds. PVP. 1992.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Schooltime (XP 1853)
+            [variety] => Schooltime (XP 1853)
+            [breeder] => Seminis Vegetable Seeds.
+            [characteristics] => medium size class, 8-10 lb., dark orange in color and dark green handle.
+            [similar] => Spirit.
+            [adaptation] => Spirit.
+            [resistance] => Spirit.
+            [parentage] => Spirit.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Small Sugar
+            [variety] => Small Sugar
+            [breeder] => Rupp Seeds.
+            [characteristics] => open pollinated; famous for making pies; round fruit, 6-8 lb, flattened at ends, hard rind, smooth, deep orange, somewhat ribbed; flesh thick, sweet and dry; bright orange color. Willhite Catalog, 1994.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Sorcerer (HMX 4694)
+            [variety] => Sorcerer (HMX 4694)
+            [breeder] => Ted Superak.
+            [characteristics] => medium to large fruit about 25 cm round and 7 kg, very dark orange fruit, large dark green handles, distinct ribs, semi-vine.
+            [similar] => Wizard.
+            [adaptation] => Wizard.
+            [resistance] => Wizard.
+            [parentage] => Wizard.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Spirit
+            [variety] => Spirit
+            [breeder] => Petoseed Co.
+            [characteristics] => F1 hybrid, semi-bush type with heavy stem; fruit 10-15 pounds.
+            [similar] => Funny Face.
+            [adaptation] => Funny Face.
+            [resistance] => Funny Face.
+            [parentage] => Funny Face.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Spookie
+            [variety] => Spookie
+            [breeder] => Northrup King and Company, Minneapolis.
+            [characteristics] => higher yield and deeper fruit shape than Early Sugar or Pie, which it resembles; for Halloween use. 1966.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Spooktacular (PSX11298)
+            [variety] => Spooktacular (PSX11298)
+            [breeder] => Petoseed.
+            [characteristics] => small, very uniform Jack-O-Lantern type pumpkins with bright orange color; fruit four-six lb; good carving shape. 1994.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Streaker (NS 418-6)
+            [variety] => Streaker (NS 418-6)
+            [breeder] => Dessert Seed Co.
+            [characteristics] => open pollinated, medium size with naked seed.
+            [similar] => Small Sugar.
+            [adaptation] => Small Sugar.
+            [resistance] => Small Sugar.
+            [parentage] => Small Sugar.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Sugar Treat
+            [variety] => Sugar Treat
+            [breeder] => Rupp Seeds.
+            [characteristics] => hybrid, semi-bush plant; bright color.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Sweetie Pie
+            [variety] => Sweetie Pie
+            [breeder] => 
+            [characteristics] => open pollinated, 0.25 lb fruit, flat, deep ribs, orange color, 20-40 fruit per plant; 90 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Thomas Halloween
+            [variety] => Thomas Halloween
+            [breeder] => Agway.
+            [characteristics] => open pollinated jack-o-lantern type pumpkin; 16-20 lb fruit; bright to dark orange color; ribbed; good for carving; 90 days. 1971.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Tom Fox
+            [variety] => Tom Fox
+            [breeder] => Johnny's Selected Seeds. PVP. 1994.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Touch of Autumn PMT (RWS 6260)
+            [variety] => Touch of Autumn PMT (RWS 6260)
+            [breeder] => Seeds By Design.
+            [characteristics] => compact vines, 2-3 lb, deep orange flesh.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Trax Field
+            [variety] => Trax Field
+            [breeder] => 
+            [characteristics] => medium-large round fruit matures to about 25 lb in 100 days, hard shell, deep orange, slightly ribbed, dark green stems.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Trick or Treat
+            [variety] => Trick or Treat
+            [breeder] => 
+            [characteristics] => F1 hybrid, hulless, edible seeds; attractive, dark orange fruit 11 x 14', 10-12 lb. Twilley Catalog, 1989.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Trickster
+            [variety] => Trickster
+            [breeder] => 
+            [characteristics] => hybrid pie or decoration pumpkin; rich, deep orange skin; 3-4 lb, 6' diameter fruit; compact plant type; 90 days.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Tricky Jack
+            [variety] => Tricky Jack
+            [breeder] => New Hampshire Agric. Expt. Sta., Durham.
+            [characteristics] => early bush plant with bright orange jack-o-lantern and pie fruit, naked seed.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Triple Treat (75-2)
+            [variety] => Triple Treat (75-2)
+            [breeder] => W. Atlee Burpee Co.
+            [characteristics] => open pollinated, deep round, eight to ten pounds, dark orange, thick flesh, an edible hulless seed.
+            [similar] => Small Sugar.
+            [adaptation] => Small Sugar.
+            [resistance] => Small Sugar.
+            [parentage] => Small Sugar.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Tuckernuck
+            [variety] => Tuckernuck
+            [breeder] => 
+            [characteristics] => vigorous, late maturing, deep orange skinned fruit, with square ends, fibrous flesh; for ornamental use. Eastern States Catalog, 1956.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Valenciano
+            [variety] => Valenciano
+            [breeder] => Johnny's Selected Seeds.
+            [characteristics] => open pollinated, snow-white rind, developed for great taste, 12-18 lb. American Vegetable Grower, Dec 1998.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Virginia Mammoth
+            [variety] => Virginia Mammoth
+            [breeder] => 
+            [characteristics] => grows to immense size, excellent keeping quality, oval shape, thick flesh; for pies or stock feeding.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Wee-B-Little (RWS 5604)
+            [variety] => Wee-B-Little (RWS 5604)
+            [breeder] => Novartis Seeds.
+            [characteristics] => open pollinated, small 'mini-pumpkin', 3x3.75'; excellent fruit uniformity, excellent handle strength; AAS 1999 winner.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Wizard (HMX4621)
+            [variety] => Wizard (HMX4621)
+            [breeder] => Harris Moran. 1989.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Wyatt's Wonder (PX 159013)
+            [variety] => Wyatt's Wonder (PX 159013)
+            [breeder] => Seminis Vegetable Seeds.
+            [characteristics] => halloween type giant C. maxima; extra large fruit with uniform size and shape, averaging 70-110 lb depending on environment and cultural practices; high round fruit shape; deep orange exterior color.
+            [similar] => Atlantic Giant.
+            [adaptation] => Atlantic Giant.
+            [resistance] => Atlantic Giant.
+            [parentage] => Atlantic Giant.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:37+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => pumpkin
+            [name] => Youngs Beauty
+            [variety] => Youngs Beauty
+            [breeder] => Arthur and John Youngs, Glen Head, Long Island, New York.
+            [characteristics] => very uniform, hard rind, good orange color, heavy yield, twice size of sugar pumpkin.
+            [similar] => sugar pumpkin.
+            [adaptation] => sugar pumpkin.
+            [resistance] => sugar pumpkin.
+            [parentage] => sugar pumpkin.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+

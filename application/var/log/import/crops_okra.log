@@ -16846,3 +16846,563 @@
     [_isDeleted:protected] => 
 )
 
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Annie Oakley II (PSX 1485)
+            [variety] => Annie Oakley II (PSX 1485)
+            [breeder] => Petoseed.
+            [characteristics] => hybrid, early maturing with angular, penta-type, dark green pods, short internodes, open canopy, suited for fresh market and processing. 1990.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Cajun Delight (PS 3687)
+            [variety] => Cajun Delight (PS 3687)
+            [breeder] => Petoseed.
+            [characteristics] => smooth, penta-type, dark green pods, concentrated fruit set, short internodes, lobed leaf, earlier than Clemson 80, for processing or fresh market. 1988.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Campbells Long Green
+            [variety] => Campbells Long Green
+            [breeder] => Campbell Soup Company, Riverton, N.J.
+            [characteristics] => slender pod, semi-dwarf, high color.
+            [similar] => Perkins Mammoth.
+            [adaptation] => Perkins Mammoth.
+            [resistance] => Perkins Mammoth.
+            [parentage] => Perkins Mammoth.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Clemson Spineless (Perkins)
+            [variety] => Clemson Spineless (Perkins)
+            [breeder] => South Carolina Agric. Expt. Sta., Clemson.
+            [characteristics] => uniform, spineless, green pods.
+            [similar] => Perkins.
+            [adaptation] => Perkins.
+            [resistance] => Perkins.
+            [parentage] => Perkins.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Dardo (PS 11589)
+            [variety] => Dardo (PS 11589)
+            [breeder] => Seminis Vegetable Seeds-Petoseed.
+            [characteristics] => small plant, leaves more serrated, semi round type for Brazil; early maturing, 30 days earlier than current leader Santa Cruz 47.
+            [similar] => Santa Cruz 47.
+            [adaptation] => Santa Cruz 47.
+            [resistance] => Santa Cruz 47.
+            [parentage] => Santa Cruz 47.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Dixie Spineless (NV 2552)
+            [variety] => Dixie Spineless (NV 2552)
+            [breeder] => Northrup King.
+            [characteristics] => green stalk, deep cut leaf compared to Clemson Spineless, plants slightly taller and more vigorous than Clemson Spineless, without anthocyanin in plant or fruit. PVP. 1982.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Emerald
+            [variety] => Emerald
+            [breeder] => Campbell Soup Company, Riverton, N.J.
+            [characteristics] => round pod, slender pod, long pod, spineless, deep green pod color, thick wall, semi-dwarf, large leaves.
+            [similar] => Evergreen.
+            [adaptation] => Evergreen.
+            [resistance] => Evergreen.
+            [parentage] => Evergreen.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Evergreen
+            [variety] => Evergreen
+            [breeder] => Campbell Soup Company, Riverton, N.J.
+            [characteristics] => long pod, spineless, slender pod, medium green color, tall plant.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Gold Coast
+            [variety] => Gold Coast
+            [breeder] => Louisiana Agric. Expt. Sta., Baton Rouge, Louisiana.
+            [characteristics] => dwarf plant, straight dark green pod, fruits over a long period, excellent for freezing and local market.
+            [similar] => Louisiana Market.
+            [adaptation] => Louisiana Market.
+            [resistance] => Louisiana Market.
+            [parentage] => Louisiana Market.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Green Velvet
+            [variety] => Green Velvet
+            [breeder] => Fruit and Truck Station, Hammond, Louisiana.
+            [characteristics] => smooth green, round, velvet-type pod especially adapted for canning and freezing.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Jade
+            [variety] => Jade
+            [breeder] => Department of Horticulture and Forestry, University of Arkansas, Fayetteville.
+            [characteristics] => semi-dwarf growth habit, similar in height to Clemson 80 but with fewer branches; pods are straight, dark green and ribbed with 6 to 9 locules; matures 10 days earlier than Clemson Spineless.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Jefferson
+            [variety] => Jefferson
+            [breeder] => Department of Horticulture, University of Arkansas, Fayetteville.
+            [characteristics] => plants tall, 6 and relatively free of lateral branches, leaves medium lobed, pods dark green, 7-9 carpels, few spines, early.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Lee
+            [variety] => Lee
+            [breeder] => Department of Horticulture, University of Arkansas, Fayetteville.
+            [characteristics] => plants are semi-dwarf and generally free of lateral branches, leaves are slightly lobed, pods are 5 carpellate, uniform, straight, bright green and spineless. 1978.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Little Lucy (PS 38895)
+            [variety] => Little Lucy (PS 38895)
+            [breeder] => Jim Waltrip.
+            [characteristics] => dwarf red okra; ornamental, very attractive plant; 1998 AAS winner.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Louisiana Market
+            [variety] => Louisiana Market
+            [breeder] => Fruit and Truck Sta., Hammond, Louisiana.
+            [characteristics] => heavy yields of thick, smooth green pods with thick walls; arrangements of petaloids and foliage tend to make pods easily accessible.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => North and South (B 56960)
+            [variety] => North and South (B 56960)
+            [breeder] => Burpee.
+            [characteristics] => early yielding hybrid which tolerates cool temperatures, pods are dark green with little fiber, fresh market and home garden production. 1995.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Parbhani Kranti (PBNO 57)
+            [variety] => Parbhani Kranti (PBNO 57)
+            [breeder] => Central Seeds Organization, Mahatma Phule Agricultural University, Rahuri-413 722, India.
+            [characteristics] => plants tall, single stemmed, dark green foliage, fruit are dark green, smooth, slender.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Perkins Spineless
+            [variety] => Perkins Spineless
+            [breeder] => Campbell Soup Company, Riverton, N.J.
+            [characteristics] => spineless pod, deep-green pod color, deep cut leaves, semi-dwarf, earliness.
+            [similar] => Campbells Long Green.
+            [adaptation] => Campbells Long Green.
+            [resistance] => Campbells Long Green.
+            [parentage] => Campbells Long Green.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => Prelude (NV 2555)
+            [variety] => Prelude (NV 2555)
+            [breeder] => Northrup King and Co.
+            [characteristics] => open pollinated, fluted pod matures in about 48 days; for fresh market and processing; pod is medium dark green, seven to eight carpels, 3.5' in length.
+            [similar] => Clemson Spineless.
+            [adaptation] => Clemson Spineless.
+            [resistance] => Clemson Spineless.
+            [parentage] => Clemson Spineless.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:23+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => okra
+            [name] => White Lightning
+            [variety] => White Lightning
+            [breeder] => H.G. Hastings Company, Atlanta.
+            [characteristics] => long, slender, white pods, tender.
+            [similar] => White Velvet.
+            [adaptation] => White Velvet.
+            [resistance] => White Velvet.
+            [parentage] => White Velvet.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+

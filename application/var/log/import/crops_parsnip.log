@@ -2566,3 +2566,87 @@
     [_isDeleted:protected] => 
 )
 
+2012-07-25T03:10:30+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsnip
+            [name] => Andover
+            [variety] => Andover
+            [breeder] => University Minnesota, D. Davis.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:30+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsnip
+            [name] => Fullback (St-12)
+            [variety] => Fullback (St-12)
+            [breeder] => Dessert Seed Co.
+            [characteristics] => open pollinated, uniform short root with thick shoulder.
+            [similar] => Short Thick.
+            [adaptation] => Short Thick.
+            [resistance] => Short Thick.
+            [parentage] => Short Thick.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:30+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => parsnip
+            [name] => Smooth White
+            [variety] => Smooth White
+            [breeder] => Ferry-Morse Seed Company, Detroit.
+            [characteristics] => long tapering roots, 8-10'; very white parsnip. Ferry-Morse Seed Company Desc. List. 1950.
+            [similar] => Long White Dutch.
+            [adaptation] => Long White Dutch.
+            [resistance] => Long White Dutch.
+            [parentage] => Long White Dutch.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+

@@ -1,0 +1,602 @@
+2012-12-30T16:41:33+00:00 ERR (3): 
+exception 'Zend_View_Exception' with message 'script 'yield/_list.phtml' not found in path (/Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/views/scripts/)' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php:980
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php(876): Zend_View_Abstract->_script('yield/_list.pht...')
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Helper/Partial.php(105): Zend_View_Abstract->render('yield/_list.pht...')
+#2 [internal function]: Zend_View_Helper_Partial->partial('yield/_list.pht...', Array)
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php(342): call_user_func_array(Array, Array)
+#4 [internal function]: Zend_View_Abstract->__call('partial', Array)
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/YieldsController.php(47): Zend_View->partial('yield/_list.pht...', Array)
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_YieldsController->addPostAction()
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('addPostAction')
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#12 {main}
+2012-12-30T17:36:38+00:00 ERR (3): 
+exception 'Zend_View_Exception' with message 'script 'crops/list_actions.phtml' not found in path (/Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/views/scripts/)' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php:980
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php(876): Zend_View_Abstract->_script('crops/list_acti...')
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Helper/Partial.php(105): Zend_View_Abstract->render('crops/list_acti...')
+#2 [internal function]: Zend_View_Helper_Partial->partial('crops/list_acti...', Array)
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php(342): call_user_func_array(Array, Array)
+#4 [internal function]: Zend_View_Abstract->__call('partial', Array)
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/YieldsController.php(51): Zend_View->partial('crops/list_acti...', Array)
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_YieldsController->addPostAction()
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('addPostAction')
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#12 {main}
+2012-12-30T19:32:36+00:00 ERR (3): 
+exception 'Zend_View_Exception' with message 'script 'yields/_list.phtml' not found in path (/Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/views/scripts/)' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php:980
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php(876): Zend_View_Abstract->_script('yields/_list.ph...')
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Helper/Partial.php(105): Zend_View_Abstract->render('yields/_list.ph...')
+#2 [internal function]: Zend_View_Helper_Partial->partial('yields/_list.ph...', Array)
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php(342): call_user_func_array(Array, Array)
+#4 [internal function]: Zend_View_Abstract->__call('partial', Array)
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/YieldsController.php(51): Zend_View->partial('yields/_list.ph...', Array)
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_YieldsController->addPostAction()
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('addPostAction')
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#12 {main}
+2012-12-30T19:36:01+00:00 ERR (3): 
+exception 'Colony_Exception' with message 'Looks like you're trying to sell more than you've yielded.' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php:471
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield.php(158): Elm::throwException('Looks like you'...')
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/YieldsController.php(117): Elm_Model_Yield->makePurchasable(Array)
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_YieldsController->sellYieldPostAction()
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('sellYieldPostAc...')
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#8 {main}
+2012-12-30T19:41:12+00:00 ERR (3): 
+exception 'Colony_Exception' with message 'Looks like you're trying to sell more than you've yielded.' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php:471
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield.php(158): Elm::throwException('Looks like you'...')
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/YieldsController.php(117): Elm_Model_Yield->makePurchasable(Array)
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_YieldsController->sellYieldPostAction()
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('sellYieldPostAc...')
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#8 {main}
+2012-12-30T19:44:10+00:00 ERR (3): 
+exception 'Colony_Exception' with message 'Looks like you're trying to sell more than you've yielded.' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php:471
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield.php(158): Elm::throwException('Looks like you'...')
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/YieldsController.php(117): Elm_Model_Yield->makePurchasable(Array)
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_YieldsController->sellYieldPostAction()
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('sellYieldPostAc...')
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#8 {main}
+2013-01-02T00:48:40+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 10sm40767576ign.5
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(77): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/User.php(305): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/ProfileController.php(253): Elm_Model_User->sendNewAccountEmail('http://local.be...')
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_ProfileController->createPostAction()
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('createPostActio...')
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#14 {main}
+2013-01-09T04:39:00+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 i10sm1312149igb.12
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Communication.php(128): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/CommunicationController.php(141): Elm_Model_Communication->send()
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_CommunicationController->sendAction()
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('sendAction')
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#14 {main}
+2013-01-14T00:31:28+00:00 ERR (3): 
+exception 'Colony_Exception' with message 'Looks like you're trying to sell more than you've yielded.' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php:471
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield.php(149): Elm::throwException('Looks like you'...')
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/YieldsController.php(117): Elm_Model_Yield->makePurchasable(Array)
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_YieldsController->sellYieldPostAction()
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('sellYieldPostAc...')
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#8 {main}
+2013-01-14T04:05:51+00:00 ERR (3): 
+exception 'Colony_Exception' with message 'Invalid method Elm_Model_Yield::lad(Array
+(
+    [0] => 1
+)
+)' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Colony/Object.php:463
+Stack trace:
+#0 [internal function]: Colony_Object->__call('lad', Array)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Resources/Yield/Purchasable.php(19): Elm_Model_Yield->lad('1')
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Colony/Db/Table.php(48): Elm_Model_Resource_Yield_Purchasable->_afterLoad(Object(Elm_Model_Yield_Purchasable))
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Colony/Model/Abstract.php(129): Colony_Db_Table->load(Object(Elm_Model_Yield_Purchasable), '1', true)
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/YieldsController.php(149): Colony_Model_Abstract->load('1')
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_YieldsController->cancelSaleAction()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('cancelSaleActio...')
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#11 {main}
+2013-01-14T04:06:11+00:00 ERR (3): 
+exception 'Colony_Exception' with message 'Invalid method Elm_Model_Yield::lad(Array
+(
+    [0] => 1
+)
+)' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Colony/Object.php:463
+Stack trace:
+#0 [internal function]: Colony_Object->__call('lad', Array)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Resources/Yield/Purchasable.php(19): Elm_Model_Yield->lad('1')
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Colony/Db/Table.php(48): Elm_Model_Resource_Yield_Purchasable->_afterLoad(Object(Elm_Model_Yield_Purchasable))
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Colony/Model/Abstract.php(129): Colony_Db_Table->load(Object(Elm_Model_Yield_Purchasable), '1', true)
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/YieldsController.php(149): Colony_Model_Abstract->load('1')
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_YieldsController->cancelSaleAction()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('cancelSaleActio...')
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#11 {main}
+2013-01-20T19:43:39+00:00 ERR (3): 
+exception 'Colony_Exception' with message 'Looks like you're trying to sell more than you've yielded.' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php:471
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield.php(149): Elm::throwException('Looks like you'...')
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/YieldsController.php(117): Elm_Model_Yield->makePurchasable(Array)
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_YieldsController->sellYieldPostAction()
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('sellYieldPostAc...')
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#8 {main}
+2013-01-21T02:08:54+00:00 ERR (3): 
+exception 'Zend_Loader_PluginLoader_Exception' with message 'Plugin by name 'Data' was not found in the registry; used paths:
+Zend_View_Helper_: Zend/View/Helper/' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Loader/PluginLoader.php:412
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php(1174): Zend_Loader_PluginLoader->load('Data')
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php(610): Zend_View_Abstract->_getPlugin('helper', 'Data')
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php(336): Zend_View_Abstract->getHelper('Data')
+#3 [internal function]: Zend_View_Abstract->__call('Data', Array)
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/views/emails/purchase-request.phtml(13): Zend_View->Data()
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View.php(108): include('/Users/cbourdag...')
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/View/Abstract.php(880): Zend_View->_run('/Users/cbourdag...')
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(67): Zend_View_Abstract->render('purchase-reques...')
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(79): Elm_Model_Email_Template->send(Array)
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(44): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(64): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#16 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#17 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#18 {main}
+2013-01-21T02:12:23+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 s3sm8288631igb.14
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(64): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T02:15:58+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 eo7sm8302008igc.12
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(64): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(58): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T02:22:08+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 iw5sm7532862igc.5 - gsmtp
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(55): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(58): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T02:23:45+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 gs6sm8318454igc.11
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(55): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(58): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T02:25:40+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 pr7sm7514716igc.16 - gsmtp
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(55): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(58): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T02:52:02+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 px5sm9660756igc.0 - gsmtp
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(58): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T03:11:42+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 wo10sm7607532igc.13 - gsmtp
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(58): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T03:15:07+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 dc8sm8414582igb.15
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(58): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T03:15:17+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 as6sm7625021igc.8 - gsmtp
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(58): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T03:20:00+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 fa6sm8451492igb.2
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(58): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T03:22:31+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 b13sm8445401igp.7
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(58): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T03:22:46+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 nj1sm8454942igc.3
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(58): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T03:23:24+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 rd10sm7655764igb.1 - gsmtp
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(58): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T03:24:45+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 fa6sm8460851igb.2
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(58): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T03:26:55+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 rd10sm7662041igb.1 - gsmtp
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(83): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/TransactionLink.php(48): Elm_Model_Yield_TransactionLink->sendCommunicationMessage(Object(Elm_Model_Yield_Transaction))
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Yield/Transaction.php(58): Elm_Model_Yield_TransactionLink->linkThemUp(Object(Elm_Model_Yield_Transaction))
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/SaleController.php(57): Elm_Model_Yield_Transaction->purchase(Array)
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_SaleController->purchaseAction()
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('purchaseAction')
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#15 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#16 {main}
+2013-01-21T03:29:12+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 ui8sm7635856igb.14 - gsmtp
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Communication.php(134): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Communication.php(113): Elm_Model_Communication->send()
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/CommunicationController.php(173): Elm_Model_Communication->reply()
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_CommunicationController->replyAction()
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('replyAction')
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#15 {main}
+2013-01-21T03:30:49+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 eo7sm8452361igc.12
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Communication.php(134): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Communication.php(113): Elm_Model_Communication->send()
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/CommunicationController.php(173): Elm_Model_Communication->reply()
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_CommunicationController->replyAction()
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('replyAction')
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#15 {main}
+2013-04-06T23:35:29+00:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.1 Username and Password not accepted. Learn more at
+ 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 hi4sm9686005igc.6 - gsmtp
+' in /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Abstract.php:431
+Stack trace:
+#0 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp/Auth/Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Protocol/Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Email/Template.php(80): Zend_Mail->send()
+#6 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Communication.php(134): Elm_Model_Email_Template->send(Array)
+#7 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/models/Communication.php(113): Elm_Model_Communication->send()
+#8 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/controllers/CommunicationController.php(173): Elm_Model_Communication->reply()
+#9 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Action.php(513): Elm_CommunicationController->replyAction()
+#10 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('replyAction')
+#11 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#12 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/application/Elm.php(33): Zend_Controller_Front->dispatch()
+#13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
+#14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
+#15 {main}

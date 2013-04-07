@@ -6346,3 +6346,255 @@
     [_isDeleted:protected] => 
 )
 
+2012-07-25T03:10:45+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => swiss chard
+            [name] => Argentata
+            [variety] => Argentata
+            [breeder] => 
+            [characteristics] => Italian heirloom type, silvery white midribs and savoyed deep green broad leaves, mild and sweet flavor.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:45+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => swiss chard
+            [name] => Burpees Rhubarb Chard (Ruby Chard)
+            [variety] => Burpees Rhubarb Chard (Ruby Chard)
+            [breeder] => W. Atlee Burpee Company, Philadelphia.
+            [characteristics] => reddish green crumpled leaves and bright red, wide petioles with orange tint.
+            [similar] => Crimson Giant or Burbank's Rainbow cultivar.
+            [adaptation] => Crimson Giant or Burbank's Rainbow cultivar.
+            [resistance] => Crimson Giant or Burbank's Rainbow cultivar.
+            [parentage] => Crimson Giant or Burbank's Rainbow cultivar.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:45+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => swiss chard
+            [name] => Fordhook Giant
+            [variety] => Fordhook Giant
+            [breeder] => 
+            [characteristics] => leaves dark green, savoyed, white veins, stems broad and white, heat resistant, fresh market use.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:45+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => swiss chard
+            [name] => Large White Ribbed
+            [variety] => Large White Ribbed
+            [breeder] => 
+            [characteristics] => leaves dark green, smooth, white veins, stems broad and smooth, white, slightly flattened.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:45+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => swiss chard
+            [name] => Neon Lights
+            [variety] => Neon Lights
+            [breeder] => Burpee Seed Co.
+            [characteristics] => 
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:45+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => swiss chard
+            [name] => Paros
+            [variety] => Paros
+            [breeder] => 
+            [characteristics] => tall, shiny, upright green leaves on thick white stalks, mild and sweet flavor.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:45+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => swiss chard
+            [name] => Rainbow
+            [variety] => Rainbow
+            [breeder] => John Eaton.
+            [characteristics] => delicious Swiss chard with multicolored stems, red, pink, striped, white, orange, yellow, and lemon.
+            [similar] => Silverbeet Five Color.
+            [adaptation] => Silverbeet Five Color.
+            [resistance] => Silverbeet Five Color.
+            [parentage] => Silverbeet Five Color.
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:45+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => swiss chard
+            [name] => Ruby Red
+            [variety] => Ruby Red
+            [breeder] => 
+            [characteristics] => leaves deep green, savoyed, red veins, stems bright red and slightly flat, fresh market use.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
+2012-07-25T03:10:45+00:00 DEBUG (7): Elm_Model_Crop Object
+(
+    [_types:Elm_Model_Crop:private] => Array
+        (
+        )
+
+    [_resourceName:protected] => crop
+    [_resource:protected] => 
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [type] => swiss chard
+            [name] => Silverado
+            [variety] => Silverado
+            [breeder] => Alf Christianson.
+            [characteristics] => glossy dark green leaves and white stems, compact habit, excellent flavor.
+            [similar] => 
+            [adaptation] => 
+            [resistance] => 
+            [parentage] => 
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => 
+    [_idFieldName:protected] => 
+    [_isDeleted:protected] => 
+)
+
