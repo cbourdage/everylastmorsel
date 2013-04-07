@@ -2,16 +2,6 @@
 /**
  * Globals
  */
-/**
- * @TODO move into scrips head
- */
-var Elm = {
-	domain : 'http://local.beta.everylastmorsel.com/',
-	environment : 'development',
-	api : 'AIzaSyB5wrozaPkDDIO0Kh6tNyHEru-2gOvO40w'
-};
-
-window.Elm = Elm;
 
 // Initialize the users location
 function initLocation() {

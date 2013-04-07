@@ -15,9 +15,28 @@ class Elm_View_Helper_Data extends Zend_View_Helper_Url
 		return $this;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getDomain()
 	{
-		return Zend_Controller_Front::getInstance()->getRequest()->getHttpHost();
+		return Zend_Controller_Front::getInstance()->getRequest()->getHttpHost() . '/';
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getEnvironment()
+	{
+		return APPLICATION_ENV;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getMapsApi()
+	{
+		return Elm::getAppConfig('app/mapsapi');
 	}
 
 	public function formatDate($date, $format = null)
