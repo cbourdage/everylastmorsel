@@ -407,9 +407,20 @@ div#page { }
 div.main-content { }
 div.main-container { padding: 40px 0; }
 /** two columns */
-body.two-column .main-container { background: #ecf0df; }
-div.two-column .column-left { float: left; margin: 25px 0 20px 20px; position: relative; width: 225px; }
-div.two-column .main-content { float: right; margin: 25px 20px 20px 0; min-height: 300px; position: relative; width: 665px; }
+body.two-column .main-container { background: #ecf0df url(../images/bg-noise.jpg) repeat; }
+div.two-column .column-left {
+    float: left;
+    margin: 20px 0 25px 25px;
+    position: relative;
+    width: 225px;
+}
+div.two-column .main-content {
+    float: right;
+    margin: 20px 25px 25px 0;
+    min-height: 300px;
+    position: relative;
+    width: 665px;
+}
 
 /**
 	Header
@@ -798,12 +809,13 @@ body.elm-profile-forgot-password .account-form form .fieldset label { width: 75p
 */
 .profile-layout { background: #fff; position: relative; }
 .profile-layout .upper-background {
-	background: #7dc6ca url(../images/logo-blue-account.png) no-repeat 865px 10px;
+	background: #7dc6ca url(../images/blue-noise.jpg) repeat;
 	border-top-right-radius: 6px;
 	border-top-left-radius: 6px;
-	-moz-box-shadow: inset 0 -2px 2px rgba(100,100,100,.2);
-	-webkit-box-shadow: inset 0 -2px 2px rgba(100,100,100,.2);
-	box-shadow: inset 0 -2px 2px rgba(100,100,100,.2);
+    border-bottom: 1px solid #75bbbf;
+	-moz-box-shadow: inset 0 -1px 1px rgba(255,255,255,.3);
+	-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,.3);
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,.3);
 	position: absolute;
 	top: -5px;
 	height: 105px;
@@ -813,10 +825,12 @@ body.elm-profile-forgot-password .account-form form .fieldset label { width: 75p
 .profile-layout .column-left { margin: 30px 0 20px 20px; position: relative; }
 .profile-layout .column-left figure { margin: 0; }
 .profile-layout .column-left figure img {
-	background: #fff;
-	border: 1px solid #ccc;
-	border-radius: 1px;
-	padding: 10px;
+    border: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    padding: 0;
+    width: 220px;
 }
 .profile-layout .column-left .social-links {
 	margin: 25px 0;
@@ -840,35 +854,34 @@ body.elm-profile-forgot-password .account-form form .fieldset label { width: 75p
 .profile-layout .main-content .top ul li { color: #fff; }
 /** nav menu */
 nav.styled {
+    border-bottom: 1px solid #bcbcbc;
 	margin-bottom: 30px;
 	float: left;
 	width: 100%;
 }
-nav.styled ul li { background: url(../images/nav-gradient.png) repeat-x left top; }
+nav.styled ul { position: relative; top: 1px; }
+nav.styled ul li { }
 nav.styled ul li a {
-	border: 1px solid #ccc;
-	border-left: 0;
+    background-color: #bebebe;
+	border: 1px solid #bebebe;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 	cursor: pointer;
-	color: #7b6b59;
+	color: #fff;
 	font-size: 14px;
-	font-weight: bold;
 	display: block;
 	line-height: 1;
-	padding: 10px 30px;
+	padding: 10px 35px;
 }
-nav.styled ul li:first-child a {
-	border: 1px solid #ccc;
-	border-top-left-radius: 3px;
-	border-bottom-left-radius: 3px;
-}
-nav.styled ul li:last-child a {
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-	border-left: 0;
+nav.styled ul li a:hover { }
+nav.styled ul li a.active {
+    background-color: #fff;
+    border-bottom-color: #fff;
+    color: #022222;
 }
 
 /** profile nav */
-.profile-layout .main-content nav.styled ul li a { padding-left: 45px; }
+/*.profile-layout .main-content nav.styled ul li a { padding-left: 45px; }
 .profile-layout .main-content nav.styled ul li:first-child a { padding-left: 30px; }
 .profile-layout .main-content nav ul li a[href*="about"] { background: url(../images/sprites.png) no-repeat 15px -570px; }
 .profile-layout .main-content nav ul li a[href*="plots"] { background: url(../images/sprites.png) no-repeat 18px -601px; }
@@ -881,7 +894,8 @@ nav.styled ul li:last-child a {
 .profile-layout .main-content nav ul li:hover a[href*="plots"] { background-position: -177px -601px; }
 .profile-layout .main-content nav ul li:hover a[href*="photos"] { background-position: -180px -630px; }
 .profile-layout .main-content nav ul li:hover a[href*="crops"] { background-position: -178px -659px; }
-.profile-layout .main-content nav ul li:hover a[href*="people"] { background-position: -184px -690px; }
+.profile-layout .main-content nav ul li:hover a[href*="people"] { background-position: -184px -690px; }*/
+
 
 /**
 	Universal/Shared content

@@ -6,6 +6,13 @@ $session = Elm::getSingleton('user/session');
 	<figure id="mainImage">
 		<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $this->escape($user->getName()); ?>" width="200px" />
 	</figure>
+    <?php if ($session->isLoggedIn()) : ?>
+        <ul id="profile-navigation" class="utility-navigation">
+            <li><a href="<?= $this->url('profile'); ?>" title="My Profile">My Profile</a></li>
+            <li><a href="<?= $this->url('communication/list'); ?>" title="Communication Hub">Communication Hub</a></li>
+            <li><a href="<?= $this->url('profile/settings'); ?>" title="Settings">Settings</a></li>
+        </ul>
+    <?php endif; ?>
 	<div id="lowerColumn">
 		<?php if ($session->isLoggedIn() && !$user->isPrivate() && !$user->isMe()) : ?>
 		<div class="buttons-set">

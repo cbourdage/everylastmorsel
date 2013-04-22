@@ -2,11 +2,10 @@
 $session = Elm::getSingleton('user/session');
 ?>
 <nav id="profileNavigation" class="styled">
-	<ul class="list-block">
-		<li><a href="<?= $this->url('profile'); ?>" title="My Account">Home</a></li>
-		<li><a href="<?= $this->url('profile/about'); ?>" title="About Me">About</a></li>
-		<li><a href="<?= $this->url('plots'); ?>" title="My Plots">Plots</a></li>
-		<!--<li><a href="<?/*= $this->url('profile/photos'); */?>" title="My Photos">Photos</a></li>-->
-		<li><a href="<?= $this->url('crops'); ?>" title="My Crops">Crops</a></li>
-	</ul>
+    <ul class="list-block">
+        <li><a href="<?php echo $this->url('profile'); ?>" title="About Me">About</a></li>
+        <!--<li><a href="<?php /*echo $this->url('profile/news'); */?>" title="About Me">News</a></li>-->
+        <li><a href="<?php echo $this->url('profile/plots'); ?>" title="My Plots">Plots</a></li>
+        <li><a href="<?php echo $this->url('profile/crops'); ?>" title="My Crops">Crops</a></li>
+    </ul>
 </nav>
