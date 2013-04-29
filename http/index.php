@@ -40,3 +40,5 @@ $application = new Zend_Application(
 
 // Run it!
 $application->bootstrap()->run();
+
+//phpinfo();

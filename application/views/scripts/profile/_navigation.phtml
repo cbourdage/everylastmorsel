@@ -1,11 +1,17 @@
 <?php
 $session = Elm::getSingleton('user/session');
 ?>
-<nav id="profileNavigation" class="styled">
+<nav id="profile-navigation" class="styled">
     <ul class="list-block">
-        <li><a href="<?php echo $this->url('profile'); ?>" title="About Me">About</a></li>
+        <li<?php if($this->Data()->isActiveUrl($this->url('profile'))) : ?> class="is-active"<?php endif; ?>>
+            <a href="<?php echo $this->url('profile'); ?>">About</a>
+        </li>
         <!--<li><a href="<?php /*echo $this->url('profile/news'); */?>" title="About Me">News</a></li>-->
-        <li><a href="<?php echo $this->url('profile/plots'); ?>" title="My Plots">Plots</a></li>
-        <li><a href="<?php echo $this->url('profile/crops'); ?>" title="My Crops">Crops</a></li>
+        <li<?php if($this->Data()->isActiveUrl($this->url('profile/plots'))) : ?> class="is-active"<?php endif; ?>>
+            <a href="<?php echo $this->url('profile/plots'); ?>">Plots</a>
+        </li>
+        <li<?php if($this->Data()->isActiveUrl($this->url('profile/crops'))) : ?> class="is-active"<?php endif; ?>>
+            <a href="<?php echo $this->url('profile/crops'); ?>">Crops</a>
+        </li>
     </ul>
 </nav>

@@ -93,4 +93,16 @@ class Elm_Model_Resource_Crop extends Colony_Db_Table
 		}
 		return $items;
 	}
+
+    /**
+     * Direct insert for crop data import.
+     *
+     * @param $data
+     * @return $this
+     */
+    public function import($data)
+    {
+        $this->getAdapter()->insert($this->_name, $data);
+        return $this;
+    }
 }

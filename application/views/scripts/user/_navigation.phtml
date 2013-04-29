@@ -5,9 +5,17 @@ $user = $this->user;
 <?php if (!$user->isPrivate()) : ?>
 <nav id="profileNavigation" class="styled">
 	<ul class="list-block">
-		<li><a href="<?= $user->getUrl(); ?>" title="About Me">About</a></li>
-		<li><a href="<?= $this->url('', array('_route' => 'user-plots', 'u' => $user->getId())); ?>" title="Plots">Plots</a></li>
-		<li><a href="<?= $this->url('', array('_route' => 'user-crops', 'u' => $user->getId())); ?>" title="Crops">Crops</a></li>
+		<li<?php if($this->Data()->isActiveUrl($user->getUrl())) : ?> class="is-active"<?php endif; ?>>
+            <a href="<?php echo $user->getUrl(); ?>">About</a>
+        </li>
+        <?php $plotUrl = $this->url('', array('_route' => 'user-plots', 'u' => $user->getId())); ?>
+		<li<?php if($this->Data()->isActiveUrl($plotUrl)) : ?> class="is-active"<?php endif; ?>>
+            <a href="<?php echo $plotUrl; ?>">Plots</a>
+        </li>
+        <?php $cropsUrl = $this->url('', array('_route' => 'user-crops', 'u' => $user->getId())); ?>
+		<li<?php if($this->Data()->isActiveUrl($cropsUrl)) : ?> class="is-active"<?php endif; ?>>
+            <a href="<?php echo $cropsUrl; ?>">Crops</a>
+        </li>
 	</ul>
 </nav>
 <?php endif; ?>

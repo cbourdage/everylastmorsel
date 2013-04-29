@@ -12,11 +12,9 @@
 			<div class="header-container">
 				<?= $this->render('header.phtml'); ?>
 			</div>
-
 			<div class="main-container">
 				<div class="two-column profile-layout clearfix container_12">
-					<div class="upper-background"></div>
-					<div id="columnLeft" role="aside" class="column-left">
+					<div id="column-left" role="aside" class="column-left">
 						<?php if (strlen($this->placeholder('sidebar')) > 0) : ?>
 							<?= $this->placeholder('sidebar'); ?>
 						<?php endif; ?>

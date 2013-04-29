@@ -1,4 +1,5 @@
 <?php
+$session = Elm::getSingleton('user/session');
 $users = $this->users;
 ?>
 <?php if (count($users)) : ?>
@@ -13,12 +14,12 @@ $users = $this->users;
 				<p class="role">
 					<b><?php echo $user->getRole(); ?></b>
 					<i>since <?php echo $this->Data()->formatDate($user->getCreatedAt()); ?></i>
-					<?php if ($user->isMe()) : ?>
+					<?php if ($session->isMe($user)) : ?>
 						<i>(Me)</i>
 					<?php endif; ?>
 				</p>
 				<p><?php echo $this->escape($user->getAbout()); ?></p>
-				<?php if (!$user->isMe() && $this->canContact) : ?>
+				<?php if (!$session->isMe($user) && $this->canContact) : ?>
 					<p class="buttons-set">
 						<a href="#contact" class="btn btn-grey contact-button" title="Contact <?php echo $this->escape($user->getName()); ?>" data-toggle="modal" data-to="<?php echo $user->getId(); ?>">
 							<span>Contact <?php echo $this->escape($user->getFirstname()); ?></span>

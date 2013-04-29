@@ -3,7 +3,7 @@ $this->startSetup();
 
 $this->run("
 
-ALTER TABLE `user` ADD COLUMN `image` varchar(255) NOT NULL AFTER `location`;
+ALTER TABLE `user` ADD COLUMN `image` varchar(255) DEFAULT NULL AFTER `location`;
 
 --
 -- Crops

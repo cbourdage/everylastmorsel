@@ -21,6 +21,10 @@ CREATE INDEX `crop_type_idx` ON `crops` (type(4));
 
 ");
 
+
+/**
+ * @TODO move import off to it's own controller/action
+ */
 $directory = APPLICATION_PATH . '/data/vegetables/csv';
 if ($handle = opendir($directory)) {
 	$ctr = 0;

@@ -115,7 +115,10 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 	    Zend_Registry::set('db', $db);
 	}
 
-	protected function _initSession()
+    /**
+     * Saving sessions to db support
+     */
+    protected function _initSession()
 	{
 		$config = array(
 			'name'           => 'session',
@@ -126,7 +129,9 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 		);
 		//create your Zend_Session_SaveHandler_DbTable and set the save handler for Zend_Session
 		//Zend_Session::setSaveHandler(new Zend_Session_SaveHandler_DbTable($config));
-		Zend_Session::setOptions($this->getOption('session'));
+		//Zend_Session::setOptions($this->getOption('session'));
+
+        Zend_Session::setOptions(array('cookie_domain' => Elm::getAppConfig('domain')));
 
 		//self::log(Zend_Session::getOptions());
 	}
@@ -167,7 +172,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 		    'u/:u',
 		    array(
 		    	'controller' => 'user',
-        		'action' => 'view',
+        		'action' => 'about',
 				//'alias' => ''
 				'u' => ''
 		    ),

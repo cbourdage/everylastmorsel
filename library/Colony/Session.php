@@ -49,10 +49,7 @@ class Colony_Session extends Zend_Session_Namespace
     public function addException(Exception $exception, $alternativeText)
     {
         // log exception to exceptions log
-        $message = sprintf('Exception message: %s%sTrace: %s',
-            $exception->getMessage(),
-            "\n",
-            $exception->getTraceAsString());
+        $message = sprintf('Exception message: %s%sTrace: %s', $exception->getMessage(), "\n", $exception->getTraceAsString());
         Elm::log($message, Zend_Log::DEBUG, self::EXCEPTION_FILE);
         $this->addMessage(self::ERROR, $alternativeText);
         return $this;

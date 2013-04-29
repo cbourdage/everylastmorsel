@@ -4,16 +4,11 @@ DirectoryIndex index.php
 SetEnv APPLICATION_ENV development
 
 <IfModule mod_php5.c>
-	## adjust memory limit
     php_value memory_limit 256M
-    php_value max_execution_time 18000
+    php_value max_execution_time 300
     php_value upload_max_filesize 512M
 
-	## disable magic quotes for php request vars
-    php_flag magic_quotes_gpc off
-
-	## disable automatic session start
-	## before autoload was initialized
+	## disable automatic session start before autoload was initialized
     php_flag session.auto_start off
     php_value session.auto_start 0
 
@@ -31,7 +26,6 @@ SetEnv APPLICATION_ENV development
 </IfModule>
 
 <IfModule mod_expires.c>
-	## Add default Expires header
 	## http://developer.yahoo.com/performance/rules.html#expires
     #ExpiresDefault "access plus 1 year"
 </IfModule>

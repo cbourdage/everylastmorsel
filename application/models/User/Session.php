@@ -44,6 +44,17 @@ class Elm_Model_User_Session extends Colony_Session
     }
 
     /**
+     * Checks if the user is me.
+     *
+     * @param Elm_Model_User $user
+     * @return bool
+     */
+    public function isMe(Elm_Model_User $user)
+    {
+        return $this->isLoggedIn() && $this->getUser()->getId() == $user->getId();
+    }
+
+    /**
      * Retrieve user model object
      *
      * @return Elm_Model_User

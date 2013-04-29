@@ -94,7 +94,7 @@ class Elm_Model_User extends Colony_Model_Abstract
 	 * Checks if the current session user matches the
 	 * instantiated user
 	 *
-	 * @TODO confirm this functionality
+     * @TODO move out to user/session
 	 *
 	 * @return bool
 	 */
@@ -110,21 +110,28 @@ class Elm_Model_User extends Colony_Model_Abstract
 	/**
 	 * Checks if the user is a public profile
 	 *
+     * @TODO move the is me out to templates and build a canShow helper
+     *
 	 * @return bool
 	 */
 	public function isPublic()
 	{
-		return $this->isMe() || $this->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC;
+		//return $this->isMe() || $this->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC;
+		return $this->getVisibility() === Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC;
 	}
 
 	/**
 	 * Checks if the user is a private profile
+     *
+     * @TODO move the is me out to templates and build a canShow helper
 	 *
 	 * @return bool
 	 */
 	public function isPrivate()
 	{
-		return !$this->isMe() && $this->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PRIVATE;
+		/*return !$this->isMe() && $this->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PRIVATE;*/
+        Elm::log($this->getVisibility());
+		return $this->getVisibility() === Elm_Model_Form_User_Settings::VISIBILITY_PRIVATE;
 	}
 
 	/**
@@ -295,6 +302,9 @@ class Elm_Model_User extends Colony_Model_Abstract
     public function sendNewAccountEmail()
     {
 		try {
+            $this->sendConfirmedAccountEmail();
+            return $this;
+
 			$this->setConfirmationKey($this->_getRandomConfirmationKey())->save();
 			$EmailTemplate = new Elm_Model_Email_Template(array('template' => 'new-user.phtml'));
 			$EmailTemplate->setParams(array(

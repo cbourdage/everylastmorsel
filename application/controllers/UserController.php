@@ -15,7 +15,10 @@ class Elm_UserController extends Elm_User_AbstractController
 	{
 		parent::preDispatch();
 
-		if ($userId = $this->getRequest()->getParam('u')) {
+        /**
+         * @TODO check if private and forward to that privacyAction()
+         */
+        if ($userId = $this->getRequest()->getParam('u')) {
 			$user = Elm::getModel('user')->load($userId);
 			if ($user->getId()) {
 				$this->_init();
@@ -39,26 +42,31 @@ class Elm_UserController extends Elm_User_AbstractController
 		$layout->setLayout('main');
 	}
 
+    public function privacyAction()
+    {
+        $this->_initLayout();
+    }
+
 	/**
-	 * Index/view action
+	 * Index/about action
 	 */
 	public function indexAction()
 	{
-		$this->_forward('view');
+		$this->_forward('about');
 	}
 
-	/**
-	 * Index/view action
-	 */
-	public function viewAction()
-	{
-		if (!$this->view->user) {
-			$this->_forward('no-route');
-			return;
-		}
+    /**
+     * Index/about action
+     */
+    public function aboutAction()
+    {
+        if (!$this->view->user) {
+            $this->_forward('no-route');
+            return;
+        }
 
-		$this->_initLayout();
-	}
+        $this->_initLayout();
+    }
 
 	/**
 	 * u/plots/id

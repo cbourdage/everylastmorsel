@@ -4,7 +4,7 @@ $this->startSetup();
 $this->run("
 
 ALTER TABLE `user` ADD COLUMN `is_confirmed` tinyint DEFAULT 0 AFTER `is_active`;
-ALTER TABLE `user` ADD COLUMN `confirmation_key` varchar(255) NOT NULL AFTER `password_hash`;
+ALTER TABLE `user` ADD COLUMN `confirmation_key` varchar(255) DEFAULT NULL AFTER `password_hash`;
 ALTER TABLE `plot` ADD COLUMN `is_startup` tinyint DEFAULT 0 AFTER `is_new`;
 
 -- update to relation table

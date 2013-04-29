@@ -16,16 +16,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	 */
 	public function indexAction()
 	{
-		$this->_forward('view');
-	}
-
-	/**
-	 * Index/view action
-	 */
-	public function viewAction()
-	{
-		$this->_init();
-		$this->_initLayout();
+		$this->_forward('about');
 	}
 
 	/**
@@ -37,7 +28,17 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		$this->_initLayout();
 	}
 
-	/**
+    /**
+     * About action
+     */
+    public function plotsAction()
+    {
+        $this->_init();
+        $this->_initLayout();
+    }
+
+
+    /**
 	 * Login action
 	 *
 	 * @return void
@@ -238,29 +239,37 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		$session = $this->_getSession();
 
 		if ($form->isValid($post)) {
-			try {
-				$user = Elm::getModel('user');
-				$user->setData($post)->setPassword($post['password']);
-				$user->save();
+            try {
+                $user = Elm::getModel('user');
+                $user->setData($post)->setPassword($post['password']);
+                $user->setIsConfirmed(true); // temp fix
+                $user->save();
 
-				// Increment inviteCode
-				$inviteCode = Elm::getSingleton('inviteCode')->load($post['invite_code']);
-				$inviteCode->increment()->save();
+                // Increment inviteCode
+                $inviteCode = Elm::getSingleton('inviteCode')->load($post['invite_code']);
+                $inviteCode->increment()->save();
 
-				// setup session, send email, add messages, move on
-				//$session->setUserAsLoggedIn($user);
-				$session->isJustRegistered = true;
-				$user->sendNewAccountEmail($session->beforeAuthUrl);
-				//$session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
-				$this->_redirect('/profile/confirmation');
-				return;
-			} catch (Colony_Exception $e) {
-				$session->addError($e->getMessage());
-				Elm::logException($e);
-			} catch (Exception $e) {
-				$session->addError($e->getMessage());
-				Elm::logException($e);
-			}
+                // setup session, send email, add messages, move on
+                $session->setUserAsLoggedIn($user);
+                $session->isJustRegistered = true;
+                $user->sendNewAccountEmail($session->beforeAuthUrl);
+                $session->addSuccess(sprintf("Glad to have you on board, %s!", $user->getFirstname()));
+                $this->_redirect('/profile/');
+                return;
+
+                // Use for account confirmation process
+                $session->isJustRegistered = true;
+                $user->sendNewAccountEmail($session->beforeAuthUrl);
+                $this->_redirect('/profile/confirmation');
+                return;
+            } catch (Colony_Exception $e) {
+                $session->addError($e->getMessage());
+                Elm::logException($e);
+            } catch (Exception $e) {
+                //$session->addError($e->getMessage());
+                $session->addError('Gah, there was an error processing your form. Please try again shortly.');
+                Elm::logException($e);
+            }
 		} else {
 			$session->formData = $post;
 			$session->addError('Check all fields are filled out correctly.');
@@ -505,7 +514,6 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		}
 		$this->_redirect('/profile/');
 	}
-
 
 	public function emailTestingAction()
 	{

@@ -1,0 +1,16 @@
+<?php
+$user = $this->user;
+?>
+<!--<div class="upper-background"></div>-->
+<div class="top clearfix">
+    <div class="pushed">
+        <h1><?php echo $this->escape($user->getName()); ?></h1>
+        <ul class="list-inline">
+            <li><span class="icon location"></span><?php echo $this->escape($user->getCity()); ?>, <?php echo $this->escape($user->getState()); ?></li>
+            <?php if ($user->getWebsite()) : ?>
+            <li><span class="icon globe"></span><a href="<?php echo $user->getWebsite(); ?>"><?php echo $user->getWebsite(); ?></a></li>
+            <?php endif; ?>
+        </ul>
+        <p><?php echo $this->escape($user->getGardenerType()); ?></p>
+    </div>
+</div>

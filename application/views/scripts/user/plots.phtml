@@ -2,16 +2,17 @@
 $session = Elm::getSingleton('user/session');
 $user = $this->user;
 ?>
+<?php echo $this->partial('partials/user/top-display.phtml', array('user' => $user)); ?>
 <div class="inner-content-wrapper profile">
-	<?php echo $this->partial('user/_top-display.phtml', array('user' => $user)); ?>
 	<?php echo $this->partial('user/_navigation.phtml', array('user' => $user)); ?>
 	<?php echo $this->Message()->render(); ?>
 
-<?php if ($user->isPrivate()) : ?>
-	<h2 class="private-user">This user has their settings set to private.</h2>
-<?php else : ?>
-	<div id="plotsList" class="blocked-content clearfix plots-list">
-		<?php echo $this->partial('plots/_list.phtml', array('plots' => $user->getPlots(), 'details' => true)); ?>
-	</div>
-<?php endif; ?>
+    <?php if ($user->isPrivate()) : ?>
+        <h3 class="private-user">This user has requested a little privacy.</h3>
+    <?php else : ?>
+        <h2>My Plots</h2>
+        <div id="plots-list" class="blocked-content clearfix plots-list">
+            <?php echo $this->partial('partials/plot/list.phtml', array('plots' => $user->getPlots(), 'details' => true)); ?>
+        </div>
+    <?php endif; ?>
 </div>

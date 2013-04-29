@@ -1,0 +1,34 @@
+<?php /** @TODO filter plots based on ones you're approved to be associated with */ ?>
+
+<?php if (count($this->plots) > 0) : ?>
+    <?php if ($this->details) : ?>
+        <ul class="list-block list details">
+            <?php foreach ($this->plots as $plot) : ?>
+                <li>
+                    <figure>
+                        <img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '150', 'width' => '150'))); ?>" title="<?php echo $this->escape($plot->getName()); ?>" />
+                    </figure>
+                    <div class="plot-details details">
+                        <h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
+                        <p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
+                        <p><?php echo $this->escape($plot->getAbout()); ?></p>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else : ?>
+        <ul class="list-block list">
+            <?php foreach ($this->plots as $plot) : ?>
+                <li>
+                    <figure>
+                        <img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '125', 'width' => '125'))); ?>" title="<?php echo $this->escape($plot->getName()); ?>" />
+                    </figure>
+                    <h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
+                    <p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+<?php else : ?>
+    <h3>Gasp! It looks as if nothing has been planted.</h3>
+<?php endif; ?>

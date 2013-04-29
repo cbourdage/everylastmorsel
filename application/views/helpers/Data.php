@@ -39,7 +39,14 @@ class Elm_View_Helper_Data extends Zend_View_Helper_Url
 		return Elm::getAppConfig('app/mapsapi');
 	}
 
-	public function formatDate($date, $format = null)
+    /**
+     * Date format helper
+     *
+     * @param $date
+     * @param null $format
+     * @return string
+     */
+    public function formatDate($date, $format = null)
 	{
 		if (!Zend_Date::isDate($date, 'YYYY-MM-dd')) {
 			return '';
@@ -53,9 +60,37 @@ class Elm_View_Helper_Data extends Zend_View_Helper_Url
 		return $zd->toString($format);
 	}
 
-	public function formatPrice($price)
+    /**
+     * Price formatting helper
+     *
+     * @param $price
+     * @return Zend_Currency
+     */
+    public function formatPrice($price)
 	{
 		$price = new Zend_Currency(array('precision' => 2, 'value' => $price));
 		return $price;
 	}
+
+    /**
+     * Checks if url is the active url
+     *
+     * @param $url
+     * @return bool
+     */
+    public function isActiveUrl($url)
+    {
+        return $this->_currentUrl() === $url;
+    }
+
+    /**
+     * Returns current url
+     *
+     * @return string
+     */
+    protected function _currentUrl()
+    {
+        $request = Zend_Controller_Front::getInstance()->getRequest();
+        return $request->getScheme() . '://' . $request->getHttpHost() . $request->getRequestUri();
+    }
 }
