@@ -100,91 +100,68 @@ function saveLocation(position) {
 	});
 }
 
-/**
- * Injects a message into the specified location relative to the
- * passed in element
- *
- * @param $message
- * @param $el
- * @param location
- */
-window.Elm.injectElement = function($message, $el, location) {
-	switch(location) {
-		case 'after':
-			$el.after($message);
-			break;
-		case 'before':
-			$el.before($message);
-			break;
-		case 'append':
-			$el.append($message);
-			break;
-		default:
-		case 'prepend':
-			$el.prepend($message);
-			break;
-	}
-
-	$message.fadeIn();
-};
-
-/**
- * checks response for location and redirects
- *
- * @param response
- */
-window.Elm.success = function(response) {
-	if (response.location) {
-		window.location = response.location;
-		return;
-	} else if (response.update_areas) {
-		response.update_areas.forEach(function(id) {
-			jQuery('#' + id).html(response.html[id]);
-		});
-	}
-
-	if (response.message && arguments.length > 1) {
-		var $message = jQuery.createSuccessAlert(response.message).hide();
-		Elm.injectElement($message, arguments[1], arguments[2]);
-	}
-
-	return;
-};
-
-/**
- * Handles logging errors for application
- *
- * @param message
- * @param $el
- * @param location
- */
-window.Elm.error = function(message, $el, location) {
-	var $message = jQuery.createErrorAlert(message).hide();
-	Elm.injectElement($message, $el, location);
-	return;
-
-	switch(location) {
-		case 'after':
-			$el.after($message);
-			break;
-		case 'before':
-			$el.before($message);
-			break;
-		case 'append':
-			$el.append($message);
-			break;
-		default:
-		case 'prepend':
-			$el.prepend($message);
-			break;
-	}
-
-	$message.fadeIn();
-};
-
-
 !function ($) {
 	$(function() {
+
+        /**
+         * Contact button click to open modal & submit events.
+         * Contact button must be .btn.contact and contain a data-to field
+         * with the user id of which sending to.
+         */
+        $('body').on('click', '.btn.contact', function(e) {
+            e.preventDefault();
+            $('#contact-modal').modal('show');
+            if ($(this).data('to')) {
+                $('#contact-modal-form').find('input[name="user_to_id"]').val($(this).data('to'));
+            }
+        });
+
+        $('#contact-modal-form').on('submit', function(e) {
+            e.preventDefault();
+            var $form = $(this),
+                $modal = $('#contact-modal'),
+                $content = $modal.find('.modal-body'),
+                $successModal = $('#contact-success-modal'),
+                $loader = $('<span class="loader green">Loading...</span>');
+
+            $content.find('.alert').slideUp('fast', function() { $(this).remove(); });
+            $content.find('button').attr('disable', 'disable').after($loader);
+
+            $.ajax({
+                url: $form.attr('action'),
+                type: 'post',
+                data: $form.serialize(),
+                complete: function(response) {
+                    $loader.remove();
+                    $content.find('button').attr('disable', '');
+                },
+                success: function(response) {
+                    if (response.success) {
+                        $form.find('#message').val('');
+                        $modal.modal('hide');
+                        $successModal.find('.modal-body h3').html(response.message);
+                        $successModal.modal('show').delay(3000, function(e) { });
+                    } else if (response.location) {
+                        Elm.success(response);
+                    } else {
+                        Elm.error(response.message, $content, 'prepend');
+                    }
+                },
+                error: function() {
+                    Elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+                }
+            });
+            return false;
+        });
+
+
+
+
+
+
+
+
+
 		/**
 		 * Involve me button click to open modal
 		 */
@@ -230,60 +207,6 @@ window.Elm.error = function(message, $el, location) {
 			return false;
 		});
 
-		/**
-		 * Contact button click to open modal
-		 */
-		$('body').on('click', '.contact-button', function(e) {
-			e.preventDefault();
-			$('#contactModal').modal('show');
-			if ($(this).data('to')) {
-				$('#contactModalForm').find('input[name="user_to_id"]').val($(this).data('to'));
-			}
-		});
-
-		/**
-		 * Involve me form submit
-		 */
-		$('#contactModalForm').on('submit', function(e) {
-			e.preventDefault();
-			var $form = $(this),
-				$modal = $('#contactModal'),
-				$content = $modal.find('.modal-body'),
-				$successModal = $('#contactSuccessModal'),
-				$loader = $('<span class="loader green">Loading...</span>');
-
-			$content.find('.alert').slideUp('fast', function() {
-				$(this).remove();
-			});
-			$content.find('button').attr('disable', 'disable').after($loader);
-
-			$.ajax({
-				url: $form.attr('action'),
-				type: 'post',
-				data: $form.serialize(),
-				complete: function(response) {
-					$loader.remove();
-					$content.find('button').attr('disable', '');
-				},
-				success: function(response) {
-					if (response.success) {
-						//$.formReset($form);
-						$form.find('#message').val('');
-						$modal.modal('hide');
-						$successModal.find('.modal-body h3').html(response.message);
-						$successModal.modal('show').delay(3000, function(e) { });
-					} else if (response.location) {
-						Elm.success(response);
-					} else {
-						Elm.error(response.message, $content, 'prepend');
-					}
-				},
-				error: function() {
-					Elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
-				}
-			});
-			return false;
-		});
 
 		/**
 		 * Simple toggle to show additional content

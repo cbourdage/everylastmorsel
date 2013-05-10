@@ -8,9 +8,15 @@ $session = Elm::getSingleton('user/session');
 	</figure>
     <?php if ($session->isLoggedIn()) : ?>
         <ul id="profile-navigation" class="utility-navigation">
-            <li><a href="<?= $this->url('profile'); ?>" title="My Profile">My Profile</a></li>
-            <li><a href="<?= $this->url('communication/list'); ?>" title="Communication Hub">Communication Hub</a></li>
-            <li><a href="<?= $this->url('profile/settings'); ?>" title="Settings">Settings</a></li>
+            <li<?php if ($this->Data()->isActiveUrl($this->url('profile'))) : ?> class="active"<?php endif; ?>>
+                <a href="<?php echo $this->url('profile'); ?>" title="My Profile"><span class="icon person"></span>My Profile</a>
+            </li>
+            <li<?php if ($this->Data()->isActiveUrl($this->url('communication/list'))) : ?> class="active"<?php endif; ?>>
+                <a href="<?php echo $this->url('communication/list'); ?>" title="Communication Hub"><span class="icon drawer"></span>Communication Hub</a>
+            </li>
+            <li<?php if ($this->Data()->isActiveUrl($this->url('profile/settings'))) : ?> class="active"<?php endif; ?>>
+                <a href="<?php echo $this->url('profile/settings'); ?>" title="Settings"><span class="icon cog"></span>Settings</a>
+            </li>
         </ul>
     <?php endif; ?>
 	<div id="lower-column">

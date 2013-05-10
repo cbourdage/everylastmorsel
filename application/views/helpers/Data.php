@@ -80,7 +80,7 @@ class Elm_View_Helper_Data extends Zend_View_Helper_Url
      */
     public function isActiveUrl($url)
     {
-        return $this->_currentUrl() === $url;
+        return $this->_currentUrl() === rtrim($url, '/') . '/';
     }
 
     /**
@@ -91,6 +91,6 @@ class Elm_View_Helper_Data extends Zend_View_Helper_Url
     protected function _currentUrl()
     {
         $request = Zend_Controller_Front::getInstance()->getRequest();
-        return $request->getScheme() . '://' . $request->getHttpHost() . $request->getRequestUri();
+        return $request->getScheme() . '://' . $request->getHttpHost() . rtrim($request->getRequestUri(), '/') . '/';
     }
 }

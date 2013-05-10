@@ -1,40 +1,35 @@
 <?php
 $_session = Elm::getSingleton('user/session');
 ?>
-<div class="container_12 clearfix">
-	<header id="header" role="banner" class="clearfix grid_12">
-		<h1>
-			<a href="<?= $this->url('/'); ?>" title="Every Last Morsel" class="ext-hide">
-				<img src="<?= Elm::getBaseUrl('file-bin/images/logo.png'); ?>" alt="Every Last Morsel" title="Every Last Morsel" />
-			</a>
-		</h1>
-
-		<nav>
-			<ul class="list left">
-				<li><a href="<?= $this->url('about-us'); ?>" title="About Us">About Us</a></li>
-				<li><a href="<?= $this->url('crops'); ?>" title="My Crops">My Crops</a></li>
-				<li><a href="<?= $this->url('plots'); ?>" title="My Plots">My Plots</a></li>
-				<li><a href="<?= $this->url('community/marketplace'); ?>" title="Community">Marketplace</a></li>
-			</ul>
-
-			<ul class="list right">
-			<?php if ($_session->isLoggedIn()) : ?>
-				<li><a href="<?= $this->url('profile'); ?>" title="My Account">My Profile</a></li>
-				<li><a href="<?= $this->url('profile/logout'); ?>" title="Logout">Logout</a></li>
-			<?php else : ?>
-				<li><a href="<?= $this->url('profile/login'); ?>" title="Login">Login</a></li>
-				<li><a href="<?= $this->url('profile/create'); ?>" title="Sign Up">Sign Up</a></li>
-			<?php endif; ?>
-				<li><a href="<?= $this->url('help'); ?>" title="Help">Help</a></li>
-				<li class="social">
-					<ul class="list-block social">
-						<li><a href="https://twitter.com/@EveryLastMorsel" target="_blank" rel="twitter" title="Tweet With Us"></a></li>
-						<li><a href="https://www.facebook.com/everylastmorsel" target="_blank" rel="facebook" title="Facebook Us"></a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-	</header>
+<div class="utility">
+    <div class="container">
+        <ul class="list-inline t-right">
+        <?php if ($_session->isLoggedIn()) : ?>
+            <li>Howdy, <?php echo $_session->getUser()->getFullname(); ?>!<span class="separator">|</span></li>
+            <li><a href="<?php echo $this->url('profile/settings'); ?>" title="Account Settings">Account Settings</a><span class="separator">|</span></li>
+            <li><a href="<?php echo $this->url('profile/logout'); ?>" title="Logout">Sign Out</a></li>
+        <?php else : ?>
+            <li><a href="<?php echo $this->url('profile/create'); ?>" title="Sign Up">Sign Up</a><span class="separator">|</span></li>
+            <li><a href="<?php echo $this->url('profile/login'); ?>" title="Sign In">Sign In</a></li>
+        <?php endif; ?>
+        </ul>
+    </div>
 </div>
+<header id="header" class="container clearfix">
+    <h1>
+        <a href="<?php echo $this->url('/'); ?>" title="Every Last Morsel" class="ext-hide">
+            <img src="<?php echo Elm::getBaseUrl('file-bin/images/logo.gif'); ?>" alt="Every Last Morsel" title="Every Last Morsel" />
+        </a>
+    </h1>
+    <nav role="navigation">
+        <ul class="list-inline t-right">
+            <li><a href="<?php echo $this->url('map'); ?>" title="Map">Map</a></li>
+            <li><a href="<?php echo $this->url('marketplace'); ?>" title="Marketplace">Marketplace</a></li>
+            <li><a href="<?php echo $this->url('about-us'); ?>" title="About Us">About Us</a></li>
+            <li><a href="<?php echo $this->url('help'); ?>" title="Help">Help</a></li>
+        </ul>
+    </nav>
+    <div id="search" class="no-display"></div>
+</header>
 
 <?php echo $this->partial('profile/_login-menu.phtml'); ?>

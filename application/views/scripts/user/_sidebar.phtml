@@ -6,13 +6,25 @@ $session = Elm::getSingleton('user/session');
 	<figure id="main-image">
 		<img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $this->escape($user->getName()); ?>" width="200px" />
 	</figure>
-	<div id="lower-column">
-		<?php if ($session->isLoggedIn() && !$session->isMe($user) && !$user->isPrivate()) : ?>
-		<div class="buttons-set">
-			<?php if ($this->canContact) : ?>
-				<button type="button" class="btn btn-orange contact-owner contact-button" data-to="<?php echo $user->getId(); ?>"><span>Contact <?php echo $this->escape($user->getFirstname()); ?>!</span></button>
+	<div id="lower-half">
+        <div class="buttons-set">
+		<?php if ($session->isLoggedIn() && !$session->isMe($user)) : ?>
+            <button type="button" class="btn btn-blue icon follow" data-to="<?php echo $user->getId(); ?>"><span><span>Follow</span></span></button>
+			<?php if ($this->canContact && !$user->isPrivate()) : ?>
+				<button type="button" class="btn btn-green icon contact contact-owner" data-to="<?php echo $user->getId(); ?>"><span><span>Get In Touch!</span></span></button>
 			<?php endif; ?>
-		</div>
 		<?php endif; ?>
+        </div>
+        <div class="content followers">
+            <h3>Followers</h3>
+            <ul>
+                <li><a href="#somebody">Some one following</a></li>
+                <li><a href="#somebody">Some one following</a></li>
+                <li><a href="#somebody">Some one following</a></li>
+                <li><a href="#somebody">Some one following</a></li>
+                <li><a href="#somebody">Some one following</a></li>
+                <li><a href="#somebody">Some one following</a></li>
+            </ul>
+        </div>
 	</div>
 <?php endif; ?>

@@ -88,8 +88,8 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
         $this->_view->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8');
         $this->_view->headMeta()->appendHttpEquiv('Content-Language', 'en-US');
         $this->_view->headLink()
-            //->appendStylesheet('/file-bin/css/960/reset.css')
-		 	->appendStylesheet('/file-bin/css/960/960.css')
+            ->appendStylesheet('/file-bin/css/960/reset.css')
+		 	//->appendStylesheet('/file-bin/css/960/960.css')
 			->appendStylesheet('/file-bin/css/smoothness/jquery-ui-1.8.18.custom.css')
 			//->appendStylesheet('/file-bin/css/bootstrap.css')
             ->appendStylesheet('/file-bin/css/screen.css');

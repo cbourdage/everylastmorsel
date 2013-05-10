@@ -6,14 +6,13 @@
  */
 ?>
 <?php if (Elm::getSingleton('user/session')->isLoggedIn()) : ?>
-	<div class="modal hide fade" id="contactModal">
-		<div class="modal-header">
-			<a class="close" data-dismiss="modal">×</a>
-			<h3>Note from...</h3>
-		</div>
+	<div class="modal hide fade" id="contact-modal">
+        <a class="close" data-dismiss="modal">X</a>
+        <h3>Get In Touch!</h3>
 		<div class="modal-body">
+            <p class="note">A Message will be sent to Bill. Manage your messages in the Communication Hub. Get ready for some great conversation!</p>
 			<?php $form = new Elm_Model_Form_Communication_Contact(); ?>
-			<form action="<?php echo $form->getAction() ?>" method="post" id="contactModalForm">
+			<form action="<?php echo $form->getAction() ?>" method="post" id="contact-modal-form">
 				<input type="hidden" name="from_user_id" value="<?php echo Elm::getSingleton('user/session')->user->getId(); ?>" />
 				<?php if (Zend_Registry::isRegistered('current_user')) : ?>
 					<input type="hidden" name="to_user_id" value="<?php echo Zend_Registry::get('current_user')->getId(); ?>" />
@@ -26,19 +25,15 @@
 					<?php endforeach; ?>
 				</ul>
 				<div class="buttons-set">
-					<a href="#cancel" class="cancel" data-dismiss="modal">cancel</a>
-					<button type="submit" class="btn btn-blue" id="contact-submit"><span>Send Note</span></button>
+					<button type="submit" class="btn btn-orange" id="contact-submit"><span>Send Message</span></button>
 				</div>
 			</form>
 		</div>
 	</div>
-	<div class="modal hide fade" id="contactSuccessModal">
-		<div class="modal-header"><a class="close" data-dismiss="modal">×</a></div>
+	<div class="modal hide fade" id="contact-success-modal">
+        <a class="close" data-dismiss="modal">X</a>
 		<div class="modal-body">
-			<h3>Successfully sent note!</h3>
-			<div class="buttons-set">
-				<a class="button-link close" data-dismiss="modal">Close</a>
-			</div>
+			<h3>Your message has been successfully sent.</h3>
 		</div>
 	</div>
 <?php endif; ?>

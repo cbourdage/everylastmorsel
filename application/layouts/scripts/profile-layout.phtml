@@ -1,14 +1,14 @@
 <?= $this->doctype(); ?>
-<!--[if IE 7]><html class="lt-ie9 lt-ie8" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><![endif]-->
-<!--[if IE 8]><html class="lt-ie9" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><!--<![endif]-->
+<!--[if IE 8]><html class="ie8" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><![endif]-->
+<!--[if gt IE 9]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><!--<![endif]-->
 <head>
 	<?= $this->render('head.phtml'); ?>
 </head>
 <body class="<?= $this->bodyClass; ?> two-column">
 	<div id="fb-root"></div>
 	<div class="wrapper">
-		<div id="page" class="clearfix">
+		<div class="page clearfix">
 			<div class="header-container">
 				<?= $this->render('header.phtml'); ?>
 			</div>
@@ -24,10 +24,11 @@
 					</div>
 				</div>
 			</div>
-
-			<?= $this->render('footer.phtml'); ?>
 		</div>
 	</div>
+    <div class="footer-container">
+        <?= $this->render('footer.phtml'); ?>
+    </div>
 </body>
 </html>
 

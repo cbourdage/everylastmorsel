@@ -59,3 +59,90 @@ jQuery.extend({
 		}
 	}
 });
+
+
+
+jQuery.extend(window.Elm, {
+    /**
+     * Injects a message into the specified location relative to the
+     * passed in element
+     *
+     * @param $message
+     * @param $el
+     * @param location
+     */
+    injectElement : function($message, $el, location) {
+        switch(location) {
+            case 'after':
+                $el.after($message);
+                break;
+            case 'before':
+                $el.before($message);
+                break;
+            case 'append':
+                $el.append($message);
+                break;
+            default:
+            case 'prepend':
+                $el.prepend($message);
+                break;
+        }
+
+        $message.fadeIn();
+    },
+
+    /**
+     * checks response for location and redirects
+     *
+     * @param response
+     */
+    success : function(response) {
+        if (response.location) {
+            window.location = response.location;
+            return;
+        } else if (response.update_areas) {
+            response.update_areas.forEach(function(id) {
+                jQuery('#' + id).html(response.html[id]);
+            });
+        }
+
+        if (response.message && arguments.length > 1) {
+            var $message = jQuery.createSuccessAlert(response.message).hide();
+            Elm.injectElement($message, arguments[1], arguments[2]);
+        }
+
+        return;
+    },
+
+    /**
+     * Handles logging errors for application
+     *
+     * @param message
+     * @param $el
+     * @param location
+     */
+    error : function(message, $el, location) {
+        var $message = jQuery.createErrorAlert(message).hide();
+        Elm.injectElement($message, $el, location);
+        return;
+
+        switch(location) {
+            case 'after':
+                $el.after($message);
+                break;
+            case 'before':
+                $el.before($message);
+                break;
+            case 'append':
+                $el.append($message);
+                break;
+            default:
+            case 'prepend':
+                $el.prepend($message);
+                break;
+        }
+
+        $message.fadeIn();
+    }
+});
+

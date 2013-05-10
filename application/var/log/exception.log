@@ -600,3 +600,15 @@ Stack trace:
 #13 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/library/Zend/Application.php(366): Elm->run()
 #14 /Users/cbourdage/Sites/everylastmorsel-1.0/Every-Last-Morsel/http/index.php(42): Zend_Application->run()
 #15 {main}
+2013-04-28T15:48:03-05:00 ERR (3): 
+exception 'Colony_Exception' with message 'Invalid login or password' in M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\models\User.php:47
+Stack trace:
+#0 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\models\User\Session.php(105): Elm_Model_User->authenticate('collin.bourdage...', 'stereo')
+#1 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\controllers\ProfileController.php(72): Elm_Model_User_Session->login('collin.bourdage...', 'stereo')
+#2 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Controller\Action.php(513): Elm_ProfileController->loginPostAction()
+#3 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('loginPostAction')
+#4 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#5 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\Elm.php(33): Zend_Controller_Front->dispatch()
+#6 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Application.php(366): Elm->run()
+#7 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\http\index.php(42): Zend_Application->run()
+#8 {main}
