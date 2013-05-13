@@ -107,6 +107,10 @@ ul.list-block li { display: block; float: left; }
     height: 18px;
     width: 18px;
 }
+.icon.twitter,
+.icon.facebook { height: 30px; width: 30px; }
+.icon.twitter { background-position: -100px -250px; }
+.icon.facebook { background-position: -150px -250px; }
 .icon.location { background-position: -3px -4px; }
 .icon.globe { background-position: -3px -50px; }
 
@@ -459,10 +463,10 @@ header nav ul li {
     background: linear-gradient(to bottom,  #747a2f 0%,#6d732c 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#747a2f', endColorstr='#6d732c',GradientType=0 ); /* IE6-9 */
 
-    border-bottom: 1px solid #75bbbf;
-    -moz-box-shadow: inset 0 -1px 1px rgba(255,255,255,.3);
-    -webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,.3);
-    box-shadow: inset 0 -1px 1px rgba(255,255,255,.3);
+    border-top: 1px solid #747a2f;
+    -moz-box-shadow: inset 0 1px 1px rgba(255,255,255,.3);
+    -webkit-box-shadow: inset 0 1px 1px rgba(255,255,255,.3);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,.3);
 }
 footer { color: #fff; font-size: 14px; }
 footer .container { position: relative; }
@@ -475,6 +479,7 @@ footer .column {
     width: 150px;
     z-index: 12;
 }
+footer .column .social li { margin-right: 5px; }
 footer .column.newsletter { width: 275px; }
 footer .column.newsletter form input {
     background: #ebebeb;
