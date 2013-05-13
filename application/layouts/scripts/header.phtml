@@ -5,7 +5,7 @@ $_session = Elm::getSingleton('user/session');
     <div class="container">
         <ul class="list-inline t-right">
         <?php if ($_session->isLoggedIn()) : ?>
-            <li>Howdy, <?php echo $_session->getUser()->getFullname(); ?>!<span class="separator">|</span></li>
+            <li>Howdy, <?php echo $_session->getUser()->getName(); ?>!<span class="separator">|</span></li>
             <li><a href="<?php echo $this->url('profile/settings'); ?>" title="Account Settings">Account Settings</a><span class="separator">|</span></li>
             <li><a href="<?php echo $this->url('profile/logout'); ?>" title="Logout">Sign Out</a></li>
         <?php else : ?>

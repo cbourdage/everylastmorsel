@@ -443,6 +443,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 		}
 
 		$this->_init();
+        $this->_initLayout();
 
 		$this->view->headTitle()->prepend('Settings');
 		$this->view->headTitle()->prepend($session->user->getFirstname() . ' ' . $session->user->getLastname());
@@ -498,7 +499,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 			$session->addError('Check all fields are filled out!');
 		}
 
-		$this->_redirect('/profile/settings');
+		$this->_redirect('/profile');
 	}
 
 	/**
