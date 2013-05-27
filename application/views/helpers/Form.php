@@ -6,6 +6,8 @@ class Elm_View_Helper_Form extends Zend_View_Helper_Abstract
 
 	private $_loginForm = null;
 
+	private $_createForm = null;
+
 	/**
 	 * @return Elm_View_Helper_User
 	 */
@@ -22,4 +24,12 @@ class Elm_View_Helper_Form extends Zend_View_Helper_Abstract
 		}
 		return $this->_loginForm;
 	}
+
+    public function getCreateForm()
+    {
+        if (!$this->_createForm) {
+            $this->_createForm = new Elm_Model_Form_User_Create();
+        }
+        return $this->_createForm;
+    }
 }

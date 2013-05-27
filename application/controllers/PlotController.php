@@ -76,7 +76,6 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$form = new Elm_Model_Form_Plot_Create();
 		$post = $this->getRequest()->getParams();
 		$session = $this->_getSession();
-
 		if ($form->isValid($post)) {
 			try {
 				$plot = Elm::getModel('plot')->createPlot($post, $session->getUser());
@@ -88,7 +87,11 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			}
 		} else {
 			$session->formData = $post;
-			$session->addError('Check all fields are filled out correctly.');
+            // find first message
+            foreach ($form->getMessages() as $input) {
+                $session->addError(array_shift($input));
+                break;
+            }
 		}
 
 		$this->_redirect('/plot/create');

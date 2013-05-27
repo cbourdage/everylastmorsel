@@ -4,7 +4,10 @@ require_once 'controllers/AbstractController.php';
 
 class Elm_Plot_AbstractController extends Elm_AbstractController
 {
-	protected $_plot = null;
+    /**
+     * @var Elm_Model_Plot
+     */
+    protected $_plot;
 
 	/**
 	 * Pre Dispatch check for invalid session
@@ -40,6 +43,7 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 	{
 		$this->_plot = Elm::getSingleton('plot')->load($this->getRequest()->getParam('p'));
 		Zend_Registry::set('current_plot', $this->_plot);
+		Zend_Registry::set('current_user', $this->_plot->getOwner());
 
 		$this->view->plot = $this->_plot;
 		$this->view->canContact = $this->_plot->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC ? true : false;
@@ -60,7 +64,7 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 			$layout->setLayout('profile-layout');
         }
 
-		$this->view->placeholder('contact-modal')->set($this->view->render('communication/_modal.phtml'));
+		$this->view->placeholder('contact-modal')->set($this->view->render('communication/contact/modal.phtml'));
 		$this->view->placeholder('sidebar')->set($this->view->render('plot/_sidebar.phtml'));
 	}
 }

@@ -1,5 +1,5 @@
 
-<div class="account-form account-create container_12">
+<div class="account-form account-create">
 	<h1 class="turquiose">Sign Up. <span class="light-green">It's as easy as watching grass grow!</span></h1>
     <?php echo $this->Message()->render(); ?>
     <form action="<?php echo $this->form->getAction() ?>" method="post" id="form-validate">
@@ -12,7 +12,6 @@
 			<button type="submit" class="btn btn-blue" id="create-submit"><span>Now sign me up!</span></button>
 		</div>
     </form>
-	<script type="text/javascript" src="/file-bin/js/lib/jquery.validate.min.js"></script>
     <script type="text/javascript">
 	jQuery("#form-validate").validate({
 		rules: {

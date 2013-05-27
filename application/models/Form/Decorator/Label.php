@@ -13,7 +13,7 @@ class Elm_Model_Form_Decorator_Label extends Zend_Form_Decorator_Abstract
             return $content;
         }
 
-        $label = $element->getLabel() . ':';
+        $label = $element->getLabel(); // . ':';
 
         if (null === ($view = $element->getView())) {
             return $this->renderLabel($content, $label);

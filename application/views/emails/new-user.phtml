@@ -8,11 +8,12 @@ $urlHelper = new Elm_View_Helper_Url();
 			<td style="padding: 15px;">
 				<p style="color: #1DA5B1; font-size: 16px;">Welcome, <?php echo $this->user->getFirstname(); ?>!</p>
 				<p>Your password is: <i><?php echo $this->password; ?></i></p>
-				<p>Please confirm you are who you say you are by clicking the following link:
-					<a style="color: #1DA5B1;" href="<?php echo $urlHelper->url('profile/confirmation', array('uid' => $this->user->getConfirmationKey())); ?>">
-						<?php echo $urlHelper->url('profile/confirmation', array('uid' => $this->user->getConfirmationKey())); ?>
+                <p>You can now login to your <a style="color: #1DA5B1;" href="<?php echo $urlHelper->url('/'); ?>">account</a> and start growing with others.</p>
+				<!--<p>Please confirm you are who you say you are by clicking the following link:
+					<a style="color: #1DA5B1;" href="<?php /*echo $urlHelper->url('profile/confirmation', array('uid' => $this->user->getConfirmationKey())); */?>">
+						<?php /*echo $urlHelper->url('profile/confirmation', array('uid' => $this->user->getConfirmationKey())); */?>
 					</a>
-				</p>
+				</p>-->
 			</td>
 		</tr>
 		<?php echo $this->partial('_footer.phtml'); ?>

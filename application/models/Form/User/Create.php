@@ -7,7 +7,7 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
 	{
 		parent::__construct();
 
-		$this->setAction('/profile/create/');
+		$this->setAction('/profile/create-post/');
 
 		if (!Elm::getAppConfig('public')) {
 			$this->addElement('text', 'invite_code', array(
@@ -64,16 +64,18 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
             'validators' => array(),
             'required'   => false,
             'label'      => 'State',
-			'value' => 'Illinois'
+			//'value' => 'Illinois'
         ));
 
-/*		$this->addElement('text', 'zipcode', array(
+        /*
+        $this->addElement('text', 'zipcode', array(
             'filters'    => array('StringTrim'),
             'validators' => array(),
             'required'   => false,
             'label'      => 'State',
 			'value' => 'Illinois'
-        ));*/
+        ));
+        */
 
         $this->addElement('password', 'password', array(
             'filters'    => array('StringTrim'),
@@ -96,6 +98,8 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
 
 		foreach ($this->getElements() as $element) {
 			$element->setDecorators($this->defaultDecorators);
+            // Removed for labelify
+            /*$element->removeDecorator('row')->removeDecorator('Label');*/
 		}
 	}
 }

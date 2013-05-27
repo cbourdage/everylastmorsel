@@ -55,6 +55,30 @@ class Elm_Model_User extends Colony_Model_Abstract
         return true;
     }
 
+    public function createNewUser($data)
+    {
+        $this->setData($data)->setPassword($data['password']);
+
+        // temp fix to confirm by default
+        $this->setIsConfirmed(true);
+
+        $this->save();
+
+        // setup session, send email, add messages, move on
+        $session = Elm::getSingleton('user/session');
+        $session->setUserAsLoggedIn($this);
+        $session->isJustRegistered = true;
+        $this->sendNewAccountEmail($session->beforeAuthUrl);
+
+        $session->addSuccess(sprintf("Glad to have you on board, %s!", $this->getFirstname()));
+        return $this;
+
+        // Use for account confirmation process
+        $session->isJustRegistered = true;
+        $this->sendNewAccountEmail($session->beforeAuthUrl);
+        return $this;
+    }
+
     /**
      * Load customer by email
      *

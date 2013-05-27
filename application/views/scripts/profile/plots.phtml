@@ -8,6 +8,7 @@ $user = $this->user;
 	<?php echo $this->Message()->render(); ?>
 
     <section class="content">
+        <?php /** @TODO figure out now flow based on design changes */ ?>
         <?php if ($session->isMe($user)) : ?>
             <p class="buttons-set">
                 <a href="#add-plot" class="btn wider btn-orange"><span>Add New Plot</span></a>

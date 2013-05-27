@@ -5,12 +5,12 @@ $_session = Elm::getSingleton('user/session');
     <div class="container">
         <ul class="list-inline t-right">
         <?php if ($_session->isLoggedIn()) : ?>
-            <li>Howdy, <?php echo $_session->getUser()->getName(); ?>!<span class="separator">|</span></li>
+            <li>Howdy, <a href="<?php echo $this->url('profile'); ?>"><?php echo $_session->getUser()->getName(); ?></a>!<span class="separator">|</span></li>
             <li><a href="<?php echo $this->url('profile/settings'); ?>" title="Account Settings">Account Settings</a><span class="separator">|</span></li>
             <li><a href="<?php echo $this->url('profile/logout'); ?>" title="Logout">Sign Out</a></li>
         <?php else : ?>
-            <li><a href="<?php echo $this->url('profile/create'); ?>" title="Sign Up">Sign Up</a><span class="separator">|</span></li>
-            <li><a href="<?php echo $this->url('profile/login'); ?>" title="Sign In">Sign In</a></li>
+            <li><a href="#sign-up<?php //echo $this->url('profile/create'); ?>" data-toggle="modal" title="Sign Up">Sign Up</a><span class="separator">|</span></li>
+            <li><a href="#sign-in<?php //echo $this->url('profile/login'); ?>" data-toggle="modal" title="Sign In">Sign In</a></li>
         <?php endif; ?>
         </ul>
     </div>
@@ -31,5 +31,3 @@ $_session = Elm::getSingleton('user/session');
     </nav>
     <div id="search" class="no-display"></div>
 </header>
-
-<?php echo $this->partial('profile/_login-menu.phtml'); ?>

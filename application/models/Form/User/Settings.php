@@ -22,6 +22,17 @@ class Elm_Model_Form_User_Settings extends Elm_Model_Form_Abstract
             'label'      => 'Email'
         ));
 
+        $this->addElement('text', 'website', array(
+            //'filters'    => array('StringTrim', 'StringToLower', 'Url'),
+            'filters'    => array('StringTrim', 'StringToLower'),
+            'validators' => array(
+                array('StringLength', true, array(3, 128)),
+            ),
+            'required'   => false,
+            'label'      => 'http://'
+        ));
+        $this->getElement('website')->addFilter('PregReplace', array('match' => '/http\:\/\//', 'replace' => ''));
+
 		/*$this->addElement('checkbox', 'is_new', array(
             'required'   => false,
             'label'      => 'Show/Hide Tips'

@@ -1,27 +1,28 @@
-<?= $this->doctype(); ?>
+<?php echo $this->doctype(); ?>
 <!--[if IE 8]><html class="ie8" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><![endif]-->
 <!--[if gt IE 9]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><!--<![endif]-->
 <head>
-	<?= $this->render('head.phtml'); ?>
+	<?php echo $this->render('head.phtml'); ?>
 </head>
-<body class="<?= $this->bodyClass; ?>">
+<body class="<?php echo $this->bodyClass; ?>">
 	<div id="fb-root"></div>
 	<div class="wrapper">
 		<div class="page clearfix">
 			<div class="header-container">
-				<?= $this->render('header.phtml'); ?>
+				<?php echo $this->render('header.phtml'); ?>
 			</div>
 			<div class="main-container">
 				<div id="content" role="contentinfo" class="clearfix">
-					<?= $this->layout()->content; ?>
+					<?php echo $this->layout()->content; ?>
 				</div>
 			</div>
 		</div>
 	</div>
     <div class="footer-container">
-        <?= $this->render('footer.phtml'); ?>
+        <?php echo $this->render('footer.phtml'); ?>
     </div>
+    <?php echo $this->render('before-body-close.phtml'); ?>
 </body>
 </html>
 

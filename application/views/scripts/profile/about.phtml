@@ -10,7 +10,7 @@ $user = $this->user;
     <section class="content">
         <?php if ($session->isMe($user)) : ?>
             <p class="buttons-set">
-                <a href="#edit-about" class="btn wider btn-orange"><span>Edit About</span></a>
+                <a href="<?php echo $this->url('profile/about-edit'); ?>" class="btn wider btn-orange"><span>Edit About</span></a>
             </p>
         <?php endif; ?>
 
@@ -18,7 +18,7 @@ $user = $this->user;
             <?php if (strlen($user->getAbout()) > 0) : ?>
                 <h2>About <?= $user->getFirstname(); ?></h2>
                 <div id="about" class="blocked-content about-me">
-                    <?php echo $this->partial('partials/user/about.phtml', array('user' => $user)); ?>
+                    <?php echo $this->partial('partials/about.phtml', array('about' => $user->getAbout())); ?>
                 </div>
             <?php else : ?>
                 <h3>Share a little about yourself. Everyone's eager to hear more!</h3>

@@ -11,7 +11,7 @@ class Elm_Model_Form_Abstract extends Zend_Form
 		'Errors',
 		array(array('data' => 'HtmlTag')),
 		array('Label'),
-		array(array('row' => 'HtmlTag'), array('tag' => 'li'))
+		array('Row')
 	);
 
 	protected $fileDecorators = array(
@@ -19,7 +19,7 @@ class Elm_Model_Form_Abstract extends Zend_Form
 		'Errors',
 		array(array('data' => 'HtmlTag')),
 		array('Label'),
-		array(array('row' => 'HtmlTag'), array('tag' => 'li'))
+        array('Row')
 	);
 
 	protected $hiddenDecorators = array('ViewHelper');
@@ -32,6 +32,11 @@ class Elm_Model_Form_Abstract extends Zend_Form
 
 	public function __construct()
 	{
+        $this->addElementPrefixPath(
+            'Elm_Model_Form_Filter',
+            APPLICATION_PATH . '/models/Form/Filter/',
+            Zend_Form_Element::FILTER
+        );
         $this->addElementPrefixPath(
             'Elm_Model_Form_Validate',
             APPLICATION_PATH . '/models/Form/Validate/',

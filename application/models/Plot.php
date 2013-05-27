@@ -169,10 +169,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	public function createPlot($data, $user)
 	{
 		try {
-			$this->setData($data);
-			$this->setIsStartup(false);
-			$this->save();
-
+			$this->setData($data)->setIsStartup(0)->save();
 			if (isset($data['role'])) {
 				$this->associateUser($user->getId(), $data['role'], true);
 			} else {

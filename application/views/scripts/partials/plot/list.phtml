@@ -1,4 +1,3 @@
-<?php /** @TODO filter plots based on ones you're approved to be associated with */ ?>
 
 <?php if (count($this->plots) > 0) : ?>
     <?php if ($this->details) : ?>
@@ -10,21 +9,23 @@
                     </figure>
                     <div class="plot-details details">
                         <h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
-                        <p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
-                        <p><?php echo $this->escape($plot->getAbout()); ?></p>
+                        <p class="role"><?php echo $plot->getUserRole(); ?></p>
+                        <div class="description">
+                            <?php echo $this->partial('partials/about.phtml', array('about' => $plot->getAbout())); ?>
+                        </div>
                     </div>
                 </li>
             <?php endforeach; ?>
         </ul>
     <?php else : ?>
-        <ul class="list-block list">
+        <ul class="list-block grid">
             <?php foreach ($this->plots as $plot) : ?>
                 <li>
                     <figure>
                         <img src="<?php echo $this->Map()->getMapImage($plot, array('size' => array('height' => '125', 'width' => '125'))); ?>" title="<?php echo $this->escape($plot->getName()); ?>" />
                     </figure>
                     <h3><a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>"><?php echo $this->escape($plot->getName()); ?></a></h3>
-                    <p class="role"><b><?php echo $plot->getUserRole(); ?></b></p>
+                    <p class="role"><?php echo $plot->getUserRole(); ?></p>
                 </li>
             <?php endforeach; ?>
         </ul>

@@ -1,0 +1,55 @@
+<?php
+$helper = new Elm_View_Helper_Form();
+$helper->getCreateForm()->setAttrib('labelify', true);
+?>
+<form action="<?php echo $helper->getCreateForm()->getAction(); ?>" class="labelify" method="post" id="create-form-validate">
+    <ul class="fieldset">
+        <?php foreach($helper->getCreateForm()->getElements() as $element) : ?>
+            <?php echo $element->render(); ?>
+        <?php endforeach; ?>
+    </ul>
+    <div class="buttons-set">
+        <button type="submit" class="btn btn-orange submit icon secure"><span><span>Sign up</span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+jQuery("#create-form-validate").validate({
+    onkeyup: false,
+    rules: {
+        invite_code : {required : true},
+        firstname : {required : true},
+        lastname : {required : true},
+        city : {required : true},
+        state : {required : true},
+        email : {
+            required : true,
+            email : true
+        },
+        password : {
+            required : true
+        },
+        passwordVerify : {
+            required : true,
+            equalTo : '#password'
+        }
+    },
+    messages: {
+        invite_code : "An invite code is required",
+        firstname : "Please enter your first name",
+        lastname : "Please enter your last name",
+        city : "Please the city you live in",
+        state : "Please enter the state of your city",
+        email : "Incorrect email format",
+        password : "Please provide a password",
+        passwordVerify : {
+            required : "Please confirm your password",
+            equalTo : "Please enter the same password as above"
+        }
+    },
+    submitHandler : function(form) {
+        window.event.preventDefault();
+        Elm.Auth.Create(jQuery(form));
+        return false;
+    }
+});
+</script>

@@ -5,7 +5,7 @@ class Elm_Model_Form_Validate_UniqueEmail extends Zend_Validate_Abstract
     const EMAIL_EXISTS = 'emailExists';
 
     protected $_messageTemplates = array(
-        self::EMAIL_EXISTS => 'Email "%value%" already exists in our system',
+        self::EMAIL_EXISTS => 'Email "%value%" already exists',
     );
 
 	/**

@@ -44,7 +44,7 @@ class Elm_User_AbstractController extends Elm_AbstractController
 			$layout->setLayout('profile-layout');
         }
 
-		$this->view->placeholder('contact-modal')->set($this->view->render('communication/_modal.phtml'));
+		$this->view->placeholder('contact-modal')->set($this->view->render('communication/contact/modal.phtml'));
 		$this->view->placeholder('sidebar')->set($this->view->render('user/_sidebar.phtml'));
 	}
 }

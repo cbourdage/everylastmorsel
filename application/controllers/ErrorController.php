@@ -48,6 +48,8 @@ class Elm_ErrorController extends Elm_AbstractController
 	 */
 	public function noRouteAction()
 	{
+        /*$layout = $this->_helper->layout();
+        $layout->setLayout('main');*/
 	}
 }
 

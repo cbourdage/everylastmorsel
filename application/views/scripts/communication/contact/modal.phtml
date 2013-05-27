@@ -5,14 +5,14 @@
  * 	user_to_id (user to send to id)
  */
 ?>
-<?php if (Elm::getSingleton('user/session')->isLoggedIn()) : ?>
+<?php if ($this->canContact && Elm::getSingleton('user/session')->isLoggedIn()) : ?>
 	<div class="modal hide fade" id="contact-modal">
         <a class="close" data-dismiss="modal">X</a>
         <h3>Get In Touch!</h3>
 		<div class="modal-body">
-            <p class="note">A Message will be sent to Bill. Manage your messages in the Communication Hub. Get ready for some great conversation!</p>
+            <p class="note">A Message will be sent to <?php echo Zend_Registry::get('current_user')->getFirstname(); ?>. Manage your messages in the Communication Hub. Get ready for some great conversation!</p>
 			<?php $form = new Elm_Model_Form_Communication_Contact(); ?>
-			<form action="<?php echo $form->getAction() ?>" method="post" id="contact-modal-form">
+			<form action="<?php echo $form->getAction() ?>" method="post" class="labelify" id="contact-modal-form">
 				<input type="hidden" name="from_user_id" value="<?php echo Elm::getSingleton('user/session')->user->getId(); ?>" />
 				<?php if (Zend_Registry::isRegistered('current_user')) : ?>
 					<input type="hidden" name="to_user_id" value="<?php echo Zend_Registry::get('current_user')->getId(); ?>" />
