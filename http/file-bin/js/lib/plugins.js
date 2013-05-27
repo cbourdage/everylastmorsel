@@ -16,7 +16,8 @@
         defaults : {
             dim : false,
             opacity : '.5',
-            ignoreClass: 'ignore'
+            ignoreClass : 'ignore',
+            inputSelectors : ['input[type="text"]', 'textarea', 'input[type="password"]', 'input[type="email"]', 'input[type="url"]']
         },
 
         /**
@@ -29,15 +30,14 @@
             var $form = $(this),
                 data = $form.data(methods.namespace);
 
-            var inputs = $('input[type="text"], textarea, input[type="password"], input[type="email"], input[type="url"]', $form).filter(':visible');
-
             if (!data) {
                 var opts = $.extend({}, methods.defaults, options);
+                opts.inputs = $(opts.inputSelectors.join(','), $form).filter(function() { return $(this).attr('type') !== 'hidden'; });
                 $form.data(methods.namespace, opts);
             }
 
             // iterate over each input and setup events
-            inputs.each(function(key, item) {
+            opts.inputs.each(function(key, item) {
                 var $input = $(this),
                     $label = $input.parent().prev('label');
 
@@ -52,17 +52,16 @@
             /**
              * Set the focus event on each input
              */
-            $form.on('focus', 'input[type="text"], textarea, input[type="password"], input[type="email"], input[type="url"]', function(e) {
+            $form.on('focus', opts.inputSelectors.join(','), function(e) {
                 var $input = $(this),
                     $label = $input.parent().prev('label');
-
                 methods[$input.val().length > 0 ? 'hide' : 'dim'].apply($label.parents('form'), [$label]);
             });
 
             /**
              * Set the keyup to hide the label
              */
-            $form.on('keyup', 'input[type="text"], textarea, input[type="password"], input[type="email"], input[type="url"]', function(e) {
+            $form.on('keyup', opts.inputSelectors.join(','), function(e) {
                 var $input = $(this),
                     $label = $(this).parent().prev('label');
 
@@ -77,7 +76,7 @@
             /**
              * Set the blur to reset the label
              */
-            $form.on('blur', 'input[type="text"], textarea, input[type="password"], input[type="email"], input[type="url"]', function(e) {
+            $form.on('blur', opts.inputSelectors.join(','), function(e) {
                 var $input = $(this),
                     $label = $(this).parent().prev('label');
 
@@ -87,7 +86,7 @@
             });
 
             // If any inputs are focused set properly
-            inputs.filter(':focus').trigger('focus');
+            opts.inputs.filter(':focus').trigger('focus');
         },
 
         /**
@@ -137,7 +136,25 @@
         },
 
         reset : function() {
-            //this.inputs.
+            var $form = $(this),
+                data = $form.data(methods.namespace);
+
+            if (!data) {
+                methods.init({});
+            } else {
+                // iterate over each input and setup events
+                data.inputs.each(function(key, item) {
+                    var $input = $(this),
+                        $label = $input.parent().prev('label');
+
+                    // Check value for initial label state
+                    if ($input.val().length < 1) {
+                        methods['show'].apply($label.parents('form'), [$label]);
+                    } else {
+                        methods['hide'].apply($label.parents('form'), [$label]);
+                    }
+                });
+            }
         },
 
         /**

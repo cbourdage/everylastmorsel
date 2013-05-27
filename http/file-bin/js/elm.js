@@ -298,39 +298,20 @@ function saveLocation(position) {
         });
 
         /**
-         * Login and Create submit forms
+         * Left column of profiles/plots adjustment
          */
-        /*$('.authenticate').find('form').on('submit', function(e) {
-            e.preventDefault();
-            var $form = $(this),
-                $modal = $form.parent('.authenticate'),
-                $content = $modal.find('.modal-body'),
-                $loader = $('<span class="loader green">Loading...</span>');
-
-            $content.find('.alert').slideUp('fast', function() { $(this).remove(); });
-            $content.find('.submit').attr('disable', 'disable').after($loader);
-
-            $.ajax({
-                url: $form.attr('action') + '?isAjax=1',
-                type: 'post',
-                data: $form.serialize(),
-                complete: function(response) {
-                    $loader.remove();
-                    $content.find('button').attr('disable', '');
-                },
-                success: function(response) {
-                    if (response.success) {
-                        location.href = response.location;
-                    } else {
-                        Elm.error(response.message, $content, 'prepend');
-                    }
-                },
-                error: function() {
-                    Elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+        var $content = $('#content'), $leftColumn = $('#column-left');
+        $leftColumn.find('#main-image img').one('load', function() {
+            window.setTimeout(function() {
+                if ($content.length && $leftColumn.length && ($leftColumn.outerHeight(true) > $content.outerHeight())) {
+                    $content.height($leftColumn.outerHeight(true));
                 }
-            });
-            return false;
-        });*/
+            }, 500);
+        }).each(function() {
+            if($(this).complete){
+                $(this).load();
+            }
+        });
 
         /**
          * Contact button click to open modal & submit events.
@@ -339,10 +320,14 @@ function saveLocation(position) {
          */
         $('body').on('click', '.btn.contact', function(e) {
             e.preventDefault();
-            $('#contact-modal').modal('show');
             if ($(this).data('to')) {
                 $('#contact-modal-form').find('input[name="user_to_id"]').val($(this).data('to'));
             }
+
+            // Refresh labelify?
+            /*window.setTimeout(function() {
+                $('#contact-modal-form').labelify('reset');
+            }, 500);*/
         });
 
         $('#contact-modal-form').on('submit', function(e) {
@@ -351,7 +336,7 @@ function saveLocation(position) {
                 $modal = $('#contact-modal'),
                 $content = $modal.find('.modal-body'),
                 $successModal = $('#contact-success-modal'),
-                $loader = $('<span class="loader green">Loading...</span>');
+                $loader = $('<span class="loader">Loading...</span>');
 
             $content.find('.alert').slideUp('fast', function() { $(this).remove(); });
             $content.find('button').attr('disable', 'disable').after($loader);
@@ -373,11 +358,11 @@ function saveLocation(position) {
                     } else if (response.location) {
                         Elm.success(response);
                     } else {
-                        Elm.error(response.message, $content, 'prepend');
+                        Elm.error(response.message, $form, 'prepend');
                     }
                 },
                 error: function() {
-                    Elm.error("Oops! We've encountered some troubles. Try again shortly!", $content, 'prepend');
+                    Elm.error("Oops! We've encountered some troubles. Try again shortly!", $form, 'prepend');
                 }
             });
             return false;

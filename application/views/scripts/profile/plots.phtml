@@ -4,9 +4,8 @@ $user = $this->user;
 ?>
 <?php echo $this->partial('partials/user/top-display.phtml', array('user' => $user)); ?>
 <div class="inner-content-wrapper plots">
-	<?php echo $this->partial('profile/_navigation.phtml'); ?>
 	<?php echo $this->Message()->render(); ?>
-
+	<?php echo $this->partial('profile/_navigation.phtml'); ?>
     <section class="content">
         <?php /** @TODO figure out now flow based on design changes */ ?>
         <?php if ($session->isMe($user)) : ?>

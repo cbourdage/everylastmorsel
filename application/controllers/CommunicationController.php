@@ -156,7 +156,7 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 			$this->getHelper()->json->sendJson(array(
 				'success' => false,
 				'error' => true,
-				'message' => 'Check the form is filled out.'
+				'message' => 'Check all fields are filled out.'
 			));
 		}
 	}

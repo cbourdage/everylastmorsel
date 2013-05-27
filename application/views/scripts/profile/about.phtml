@@ -4,9 +4,8 @@ $user = $this->user;
 ?>
 <?php echo $this->partial('partials/user/top-display.phtml', array('user' => $user)); ?>
 <div class="inner-content-wrapper profile about">
-	<?php echo $this->partial('profile/_navigation.phtml'); ?>
 	<?php echo $this->Message()->render(); ?>
-
+	<?php echo $this->partial('profile/_navigation.phtml'); ?>
     <section class="content">
         <?php if ($session->isMe($user)) : ?>
             <p class="buttons-set">
@@ -16,7 +15,7 @@ $user = $this->user;
 
         <article>
             <?php if (strlen($user->getAbout()) > 0) : ?>
-                <h2>About <?= $user->getFirstname(); ?></h2>
+                <h2>About <?php echo $user->getFirstname(); ?></h2>
                 <div id="about" class="blocked-content about-me">
                     <?php echo $this->partial('partials/about.phtml', array('about' => $user->getAbout())); ?>
                 </div>

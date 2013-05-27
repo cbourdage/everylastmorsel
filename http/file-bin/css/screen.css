@@ -291,6 +291,7 @@ form ul.fieldset > li > div label > input {
 	clear: both;
 	margin: 10px auto;
 	padding: 10px;
+    position: relative;
 	width: 100%;
 }
 .alert a {
@@ -298,7 +299,7 @@ form ul.fieldset > li > div label > input {
 	text-decoration: underline;
 }
 .alert > a.close {
-	display: none;
+	display: none !important; /** required to prevent overlap on modal close button */
 	float: right;
 }
 .alert.alert-success { background: #6C722C; }
@@ -588,6 +589,16 @@ footer .watermark {
 .profile-layout .column-left .utility-navigation li.active a .icon.drawer { background-position: -4px -287px; }
 .profile-layout .column-left .utility-navigation li a:hover .icon.cog,
 .profile-layout .column-left .utility-navigation li.active a .icon.cog { background-position: -5px -328px; }
+.profile-layout .column-left .content { margin-top: 20px; }
+.profile-layout .column-left .content h3 {
+    border-bottom: 1px solid #bcbcbc;
+    clear: both;
+    color: #343434;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
 /** Main Content */
 .profile-layout .main-content .top {
     background: #7dc6ca url("../images/blue-noise.jpg") repeat;
