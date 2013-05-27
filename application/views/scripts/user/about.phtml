@@ -6,14 +6,13 @@ $user = $this->user;
 <div class="inner-content-wrapper profile">
 	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('user/_navigation.phtml', array('user' => $user)); ?>
-
     <section class="content">
         <article>
             <?php if ($user->isPrivate()) : ?>
                 <h2 class="private-user">This user has requested a little privacy.</h2>
             <?php else : ?>
                 <?php if (strlen($user->getAbout()) > 0) : ?>
-                    <h3>About <?= $user->getFirstname(); ?></h3>
+                    <h3>About <?php echo $user->getFirstname(); ?></h3>
                     <div id="about" class="blocked-content about-me">
                         <?php echo $this->partial('partials/about.phtml', array('about' => $user->getAbout())); ?>
                     </div>

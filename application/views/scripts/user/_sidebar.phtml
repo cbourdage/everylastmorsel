@@ -9,14 +9,14 @@ $session = Elm::getSingleton('user/session');
 	<div id="lower-half">
         <div class="buttons-set">
 		<?php if ($session->isLoggedIn() && !$session->isMe($user)) : ?>
-            <button type="button" class="btn btn-blue icon follow" data-to="<?php echo $user->getId(); ?>"><span><span>Follow</span></span></button>
+            <a href="#follow" class="btn btn-blue icon follow" data-to="<?php echo $user->getId(); ?>"><span><span>Follow</span></span></a>
 			<?php if ($this->canContact && !$user->isPrivate()) : ?>
-				<button type="button" class="btn btn-green icon contact contact-owner" data-to="<?php echo $user->getId(); ?>"><span><span>Get In Touch!</span></span></button>
+				<a href="#contact-modal" class="btn btn-green icon contact" data-toggle="modal" data-to="<?php echo $user->getId(); ?>"><span><span>Get In Touch!</span></span></a>
 			<?php endif; ?>
 		<?php endif; ?>
         </div>
         <div class="content followers">
-            <h3>Followers</h3>
+            <h3>Following</h3>
             <ul>
                 <li><a href="#somebody">Some one following</a></li>
                 <li><a href="#somebody">Some one following</a></li>

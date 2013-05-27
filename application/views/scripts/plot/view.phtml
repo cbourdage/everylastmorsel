@@ -2,17 +2,25 @@
 $session = Elm::getSingleton('user/session');
 $plot = $this->plot;
 ?>
-<div class="inner-content-wrapper profile plot">
-	<?php echo $this->partial('plot/_top-display.phtml', array('plot' => $plot)); ?>
-	<?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
-	<?php echo $this->Message()->render(); ?>
-
-	<?php echo $this->partial('plot/photos/_timeline.phtml', array('plot' => $plot, 'showRemove' => false)); ?>
-
-	<?php if ($plot->getAbout()) : ?>
-		<h2 class="blue">About <?= $this->escape($plot->getName()); ?></h2>
-		<div id="about" class="blocked-content about-me">
-			<p><?= str_replace('<br />', '</p><p>', nl2br($this->escape($plot->getAbout()))); ?></p>
-		</div>
-	<?php endif; ?>
+<?php echo $this->partial('partials/plot/top-display.phtml', array('plot' => $plot)); ?>
+<div class="inner-content-wrapper plot view">
+    <?php echo $this->Message()->render(); ?>
+    <?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
+    <section class="content">
+        <?php if ($session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
+            <p class="buttons-set">
+                <a href="<?php echo $this->url('', array('_route' => 'plot-edit', 'p' => $plot->getId())); ?>" class="btn wider btn-orange"><span>Edit Plot</span></a>
+            </p>
+        <?php endif; ?>
+        <article>
+            <?php if (strlen($plot->getAbout()) > 0) : ?>
+                <h2>About <?php echo $plot->getName(); ?></h2>
+                <div id="about" class="blocked-content about-me">
+                    <?php echo $this->partial('partials/about.phtml', array('about' => $plot->getAbout())); ?>
+                </div>
+            <?php else : ?>
+                <h3>Share a little about your plot. Everyone's eager to hear more!</h3>
+            <?php endif; ?>
+        </article>
+    </section>
 </div>

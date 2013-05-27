@@ -1,0 +1,13 @@
+<?php
+$plot = $this->plot;
+$session = Elm::getSingleton('user/session');
+?>
+<div class="top clearfix">
+    <div class="pushed">
+        <h1><?php echo $this->escape($plot->getName()); ?></h1>
+        <ul class="list-inline">
+            <li><span class="icon location"></span><?php echo $this->escape($plot->getCity()); ?>, <?php echo $this->escape($plot->getState()); ?></li>
+            <li><?php echo $this->escape($plot->getZipcode()); ?></li>
+        </ul>
+    </div>
+</div>

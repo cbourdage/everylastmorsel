@@ -2,7 +2,7 @@
 
 class Elm_Model_Form_Decorator_Row extends Zend_Form_Decorator_Abstract
 {
-    protected $_controls = array('Zend_Form_Element_Radio', 'Zend_Form_Element_Checkbox');
+    protected $_controls = array('Zend_Form_Element_Radio', 'Zend_Form_Element_Checkbox', 'Zend_Form_Element_Select', 'Zend_Form_Element_Multiselect');
 
     public function render($content)
     {

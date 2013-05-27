@@ -1,5 +1,4 @@
 
-<?php echo $this->partial('communication/contact/modal.phtml'); ?>
 <?php if (!Elm::getSingleton('user/session')->isLoggedIn()) : ?>
     <div class="modal hide fade authenticate" id="sign-in">
         <a class="close" data-dismiss="modal">X</a>
@@ -19,6 +18,7 @@
     </div>
 <?php endif; ?>
 
+<?php echo $this->partial('communication/contact/modal.phtml', array('canContact' => $this->canContact)); ?>
 
 <div id="action-loader" class="loader" style="display: none;"></div>
 <script src="/file-bin/js/lib/bootstrap-combine.js" type="text/javascript"></script>

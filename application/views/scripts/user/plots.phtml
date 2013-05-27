@@ -6,7 +6,6 @@ $user = $this->user;
 <div class="inner-content-wrapper profile">
 	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('user/_navigation.phtml', array('user' => $user)); ?>
-
     <section class="content">
         <?php if ($user->isPrivate()) : ?>
             <h3 class="private-user">This user has requested a little privacy.</h3>
