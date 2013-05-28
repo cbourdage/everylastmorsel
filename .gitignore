@@ -3,7 +3,7 @@
 application/configs/application.ini
 application/data/session
 application/data/log/*.log
+application/var/
 extras/
 http/media/user/*
 http/media/plot/*
-application/var*
