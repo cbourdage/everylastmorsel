@@ -702,6 +702,12 @@ ul.list-block.grid li { margin-right: 10px; width: 150px; }
 ul.list-block.grid li:last-child { margin-right: 0; }
 ul.list-block.grid li figure { margin: 0 0 8px; }*/
 
+/** Plot Styles */
+#plot-edit-form textarea { width: 600px; }
+#plot-edit-form .buttons-set a { margin-top: 10px; }
+
+
+
 
 
 /** @todo */

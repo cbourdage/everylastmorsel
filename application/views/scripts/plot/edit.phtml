@@ -1,18 +1,22 @@
 <?php
-$session = Elm::getSingleton('user/session')->user;
+$session = Elm::getSingleton('user/session');
+$plot = $this->plot;
 ?>
-<div class="account-form account-create container_12">
-	<h1 class="turquiose">Configure your plot below.</h1>
+<?php echo $this->partial('partials/plot/top-display.phtml', array('plot' => $plot)); ?>
+<div class="inner-content-wrapper plot view">
     <?php echo $this->Message()->render(); ?>
-    <form action="<?php echo $this->form->getAction() ?>" method="post" id="form-validate">
-        <ul class="fieldset">
-			<?php foreach($this->form->getElements() as $element) : ?>
-				<?php echo $element->render(); ?>
-			<?php endforeach; ?>
-		</ul>
-		<div class="buttons-set">
-			<a class="blue" href="<?php echo $this->plot->getUrl(); ?>">Back to Plot</a>
-			<button type="submit" class="btn btn-blue" id="create-submit"><span>Save Changes</span></button>
-		</div>
-    </form>
+    <?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
+    <section class="content">
+        <form action="<?php echo $this->form->getAction() ?>" method="post" class="labelify" id="plot-edit-form">
+            <ul class="fieldset">
+                <?php foreach($this->form->getElements() as $element) : ?>
+                    <?php echo $element->render(); ?>
+                <?php endforeach; ?>
+            </ul>
+            <div class="buttons-set">
+                <a class="blue f-right" href="<?php echo $this->plot->getUrl(); ?>">Back to Plot</a>
+                <button type="submit" class="btn btn-blue" id="create-submit"><span>Save Plot Changes</span></button>
+            </div>
+        </form>
+    </section>
 </div>

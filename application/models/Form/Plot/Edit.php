@@ -11,22 +11,24 @@ class Elm_Model_Form_Plot_Edit extends Elm_Model_Form_Abstract
 		parent::__construct();
 
         $this->addElement('text', 'name', array(
+            'label' => 'Plot Name',
+            'required' => true,
             'filters' => array('StringTrim'),
             'validators' => array(
                 array('StringLength', true, array(3, 128))
-            ),
-            'required' => true,
-            'label' => 'Plot Name',
+            )
         ));
 
 		$this->addElement('textarea', 'about', array(
-            'required'   => false,
-            'label'      => 'About Location'
+            'label' => 'About Location',
+            'required' => false,
+            'rows' => 6,
+            'cols' => 75
         ));
 
 		$this->addElement('radio', 'visibility', array(
+            'label' => 'Plot Visibility',
             'required'   => true,
-			'label' => 'Plot Visibility',
 			'multiOptions' => array(
 				Elm_Model_Form_Plot_Create::VISIBILITY_PUBLIC => 'Public',
 				Elm_Model_Form_Plot_Create::VISIBILITY_PRIVATE => 'Private'

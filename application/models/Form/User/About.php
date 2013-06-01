@@ -8,10 +8,10 @@ class Elm_Model_Form_User_About extends Elm_Model_Form_Abstract
 		parent::__construct();
 
 		$this->addElement('textarea', 'about', array(
-            'rows' => 6,
-            'cols' => 75,
+            'label'      => 'About Yourself',
             'required'   => false,
-            'label'      => 'About Yourself'
+            'rows' => 6,
+            'cols' => 75
         ));
 
         $session = Elm::getSingleton('user/session');

@@ -105,21 +105,19 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	public function editAction()
 	{
 		$session = $this->_getSession();
-		if (!($plotId = $this->getRequest()->getParam('p', null))) {
-			$this->_redirect('/plots/');
+        if (!$this->_isValid()) {
+            $this->_forward('no-route');
+            return;
+        }
+
+        $this->_init();
+        $this->_initLayout();
+
+        // Check if user trying to edit is the owner
+		if (!$this->_plot->isOwner($session->getUser())) {
+			$this->_redirect($this->_plot->getUrl());
 			return;
 		}
-
-		/** @var $plot Elm_Model_Plot */
-		$plot = Elm::getSingleton('plot')->load($plotId);
-
-		if (!$plot->getId() || !$plot->isOwner($session->getUser())) {
-			$this->_redirect('/plots/');
-			return;
-		}
-
-		$this->_init();
-		$this->_initLayout();
 
 		$form = new Elm_Model_Form_Plot_Edit();
 		$form->setAction('/p/edit-post/' . $this->_plot->getId());
@@ -129,7 +127,6 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			$session->formData = null;
 		} else {
 			$form->setDefaults($this->_plot->getData());
-
 		}
 
 		$this->view->headTitle()->prepend('Edit Plot');
@@ -144,12 +141,18 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	public function editPostAction()
 	{
 		$session = $this->_getSession();
-		if (!($plotId = $this->getRequest()->getParam('p', null))) {
-			$this->_redirect('/plots/');
-			return;
-		}
+        if (!$this->_isValid()) {
+            $this->_forward('no-route');
+            return;
+        }
 
 		$this->_init();
+
+        // Check if user trying to edit is the owner
+        if (!$this->_plot->isOwner($session->getUser())) {
+            $this->_redirect($this->_plot->getUrl());
+            return;
+        }
 
 		if (!$this->getRequest()->isPost()) {
 			$this->_redirect('/p/edit/' . $this->_plot->getId());
@@ -158,11 +161,8 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 
 		$form = new Elm_Model_Form_Plot_Edit();
 		$post = $this->getRequest()->getParams();
-		$session = $this->_getSession();
-
 		if ($form->isValid($post)) {
 			try {
-				//$this->_plot->setData($post);
 				$this->_plot->addData($post);
 				$this->_plot->save();
 				$session->addSuccess('Successfully saved your changes');

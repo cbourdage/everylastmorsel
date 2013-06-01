@@ -25,7 +25,12 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
         }
 	}
 
-	protected function _isValid()
+    /**
+     * Checks if the request is valid
+     *
+     * @return bool
+     */
+    protected function _isValid()
 	{
 		if (!$id = $this->getRequest()->getParam('p')) {
 			return false;
@@ -39,7 +44,12 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 		return true;
 	}
 
-	public function _init()
+    /**
+     * Initializes plot view data
+     *
+     * @return $this
+     */
+    public function _init()
 	{
 		$this->_plot = Elm::getSingleton('plot')->load($this->getRequest()->getParam('p'));
 		Zend_Registry::set('current_plot', $this->_plot);
@@ -48,23 +58,25 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 		$this->view->plot = $this->_plot;
 		$this->view->canContact = $this->_plot->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC ? true : false;
 		$this->view->headTitle()->prepend($this->_plot->getName());
-
 		return $this;
 	}
 
 	/**
 	 * Initializes the User layout objects
+     *
+     * @return $this
 	 */
 	protected function _initLayout()
 	{
 		$action = $this->getRequest()->getActionName();
-        $pattern = '/^(create|login|edit)/i';
-        if (!preg_match($pattern, $action)) {
-         	$layout = $this->getHelper()->layout();
-			$layout->setLayout('profile-layout');
-        }
+        /*$pattern = '/^(create|login)/i';
+        if (!preg_match($pattern, $action)) {*/
+            $layout = $this->getHelper()->layout();
+            $layout->setLayout('profile-layout');
+        //}
 
 		$this->view->placeholder('contact-modal')->set($this->view->render('communication/contact/modal.phtml'));
 		$this->view->placeholder('sidebar')->set($this->view->render('plot/_sidebar.phtml'));
+        return $this;
 	}
 }

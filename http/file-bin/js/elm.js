@@ -370,6 +370,9 @@ function saveLocation(position) {
 
 
 
+        return;
+
+
 
 
 
