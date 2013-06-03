@@ -26,7 +26,7 @@ class Elm_User_AbstractController extends Elm_AbstractController
 		Zend_Registry::set('current_user', $this->_user);
 
 		$this->view->user = $this->_user;
-		$this->view->canContact = $this->_user->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC ? true : false;
+		$this->view->canContact = ($this->_user->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC);
 		$this->view->headTitle()->prepend($this->_user->getName());
 
 		return $this;
@@ -44,7 +44,7 @@ class Elm_User_AbstractController extends Elm_AbstractController
 			$layout->setLayout('profile-layout');
         }
 
-		$this->view->placeholder('contact-modal')->set($this->view->render('communication/contact/modal.phtml'));
+		$this->view->placeholder('contact-modal')->set($this->view->render('communication/contact/user.phtml'));
 		$this->view->placeholder('sidebar')->set($this->view->render('user/_sidebar.phtml'));
 	}
 }

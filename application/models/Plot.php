@@ -3,6 +3,8 @@
 
 class Elm_Model_Plot extends Colony_Model_Abstract
 {
+    static $urlHelper = '';
+
 	/**
 	 * @var array
 	 */
@@ -11,7 +13,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	/**
 	 * @var array
 	 */
-	private $_watchers = array();
+	private $_followers = array();
 
 	/**
 	 * @var array
@@ -41,6 +43,14 @@ class Elm_Model_Plot extends Colony_Model_Abstract
         $this->_init('plot');
     }
 
+    public function getUrlHelper()
+    {
+        if (!self::$urlHelper) {
+            self::$urlHelper = new Elm_View_Helper_Url();
+        }
+        return self::$urlHelper;
+    }
+
 	/**
 	 * Before save
 	 */
@@ -59,6 +69,17 @@ class Elm_Model_Plot extends Colony_Model_Abstract
     {
         $this->_getResource()->loadByLatLong($this, $lat, $long);
         return $this;
+    }
+
+    /**
+     * Checks if the user is a private profile
+     *
+     * @return bool
+     */
+    public function isPrivate()
+    {
+        /*return !$this->isMe() && $this->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PRIVATE;*/
+        return $this->getVisibility() === Elm_Model_Form_User_Settings::VISIBILITY_PRIVATE;
     }
 
 	/**
@@ -117,10 +138,10 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 *
 	 * @return mixed
 	 */
-	public function getNonWatchers()
+	public function getManagement()
 	{
 		foreach ($this->getUsers() as $user) {
-			if ($user->getRole() != Elm_Model_Resource_Plot::ROLE_CREATOR && $user->getRole() != Elm_Model_Resource_Plot::ROLE_WATCHER) {
+			if ($user->getRole() != Elm_Model_Resource_Plot::ROLE_CREATOR && $user->getRole() != Elm_Model_Resource_Plot::ROLE_FOLLOWER) {
 				$users[] = $user;
 			}
 		}
@@ -133,16 +154,16 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 *
 	 * @return mixed
 	 */
-	public function getWatchers()
+	public function getFollowers()
 	{
-		if (count($this->_watchers) < 1 && count($this->getAssociatedUsers()) > 0) {
+		if (count($this->_followers) < 1 && count($this->getAssociatedUsers()) > 0) {
 			foreach ($this->getUsers() as $user) {
-				if ($user->getRole() == Elm_Model_Resource_Plot::ROLE_WATCHER) {
-					$this->_watchers[] = $user;
+				if ($user->getRole() == Elm_Model_Resource_Plot::ROLE_FOLLOWER) {
+					$this->_followers[] = $user;
 				}
 			}
 		}
-		return $this->_watchers;
+		return $this->_followers;
 	}
 
 	/**
@@ -283,7 +304,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 			$isApproved
 		);
 		foreach ($user->getPlotIds() as $id => $role) {
-			if ($this->getId() == $id && $role != Elm_Model_Resource_Plot::ROLE_WATCHER) {
+			if ($this->getId() == $id && $role != Elm_Model_Resource_Plot::ROLE_FOLLOWER) {
 				return true;
 			}
 		}
@@ -331,7 +352,7 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 */
 	public function isWatching($user)
 	{
-		return $this->_getResource()->isUserAssociated($this, $user->getId(), Elm_Model_Resource_Plot::ROLE_WATCHER);
+		return $this->_getResource()->isUserAssociated($this, $user->getId(), Elm_Model_Resource_Plot::ROLE_FOLLOWER);
 
 		/** @Deprecated */
 		foreach ($this->getWatchers() as $u) {
@@ -349,10 +370,38 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 */
 	public function getUrl()
 	{
-		$helper = new Elm_View_Helper_Url();
-		$url = $helper->url(null, array('p' => $this->getId(), '_route' => 'plot'));
-		return $url;
+		return $this->getUrlHelper()->url(null, array('p' => $this->getId(), '_route' => 'plot'));
 	}
+
+    /**
+     * Returns a plots edit url
+     *
+     * @return string
+     */
+    public function getEditUrl()
+    {
+        return $this->getUrlHelper()->url(null, array('p' => $this->getId(), '_route' => 'plot-edit'));
+    }
+
+    public function getFollowUrl($user)
+    {
+        return $this->getUrlHelper()->url('plot/follow', array('p' => $this->getId(), 'u' => $user->getId()));
+    }
+
+    public function getUnFollowUrl($user)
+    {
+        return $this->getUrlHelper()->url('plot/unfollow', array('p' => $this->getId(), 'u' => $user->getId()));
+    }
+
+    /**
+     * Returns a plots edit url
+     *
+     * @return string
+     */
+    public function getSettingsUrl()
+    {
+        return $this->getUrlHelper()->url(null, array('p' => $this->getId(), '_route' => 'plot-settings'));
+    }
 
 	/**
 	 * Adds images to the plot

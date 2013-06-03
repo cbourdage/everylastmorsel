@@ -56,7 +56,7 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
 		Zend_Registry::set('current_user', $this->_plot->getOwner());
 
 		$this->view->plot = $this->_plot;
-		$this->view->canContact = $this->_plot->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PUBLIC ? true : false;
+        $this->view->canContact = ($this->_plot->getVisibility() == Elm_Model_Form_Plot_Settings::VISIBILITY_PUBLIC);
 		$this->view->headTitle()->prepend($this->_plot->getName());
 		return $this;
 	}
@@ -75,8 +75,18 @@ class Elm_Plot_AbstractController extends Elm_AbstractController
             $layout->setLayout('profile-layout');
         //}
 
-		$this->view->placeholder('contact-modal')->set($this->view->render('communication/contact/modal.phtml'));
+		//$this->view->placeholder('contact-modal')->set($this->view->render('communication/contact/owner.phtml'));
 		$this->view->placeholder('sidebar')->set($this->view->render('plot/_sidebar.phtml'));
         return $this;
 	}
+
+    /**
+     * Checks current user has permissions ot access this action
+     *
+     * @return bool
+     */
+    protected function _canAccess()
+    {
+        return $this->_plot && $this->_plot->isOwner($this->_getSession()->getUser());
+    }
 }

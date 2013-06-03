@@ -1,0 +1,42 @@
+2013-06-02T18:04:35-05:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.8 Username and Password not accepted. Learn more at
+ 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257
+ 5.7.8 {BADCREDENTIALS} y11sm16254299igy.10 - gsmtp
+' in M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail\Protocol\Abstract.php:431
+Stack trace:
+#0 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail\Protocol\Smtp\Auth\Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail\Protocol\Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail\Transport\Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail\Transport\Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\models\Email\Template.php(80): Zend_Mail->send()
+#6 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\models\Communication.php(134): Elm_Model_Email_Template->send(Array)
+#7 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\controllers\CommunicationController.php(148): Elm_Model_Communication->send()
+#8 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Controller\Action.php(513): Elm_CommunicationController->sendAction()
+#9 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('sendAction')
+#10 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#11 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\Elm.php(38): Zend_Controller_Front->dispatch()
+#12 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Application.php(366): Elm->run()
+#13 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\http\index.php(42): Zend_Application->run()
+#14 {main}
+2013-06-02T18:56:03-05:00 ERR (3): 
+exception 'Zend_Mail_Protocol_Exception' with message '5.7.8 Username and Password not accepted. Learn more at
+ 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257
+ 5.7.8 {BADCREDENTIALS} ct8sm16511885igb.7 - gsmtp
+' in M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail\Protocol\Abstract.php:431
+Stack trace:
+#0 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail\Protocol\Smtp\Auth\Login.php(95): Zend_Mail_Protocol_Abstract->_expect(235)
+#1 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail\Protocol\Smtp.php(217): Zend_Mail_Protocol_Smtp_Auth_Login->auth()
+#2 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail\Transport\Smtp.php(200): Zend_Mail_Protocol_Smtp->helo('localhost')
+#3 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail\Transport\Abstract.php(348): Zend_Mail_Transport_Smtp->_sendMail()
+#4 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#5 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\models\Email\Template.php(80): Zend_Mail->send()
+#6 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\models\Communication.php(134): Elm_Model_Email_Template->send(Array)
+#7 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\controllers\CommunicationController.php(147): Elm_Model_Communication->send()
+#8 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Controller\Action.php(513): Elm_CommunicationController->sendAction()
+#9 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('sendAction')
+#10 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#11 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\application\Elm.php(37): Zend_Controller_Front->dispatch()
+#12 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\library\Zend\Application.php(366): Elm->run()
+#13 M:\Documents\www\everylastmorsel.com\html\Every-Last-Morsel\http\index.php(42): Zend_Application->run()
+#14 {main}

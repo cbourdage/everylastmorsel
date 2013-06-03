@@ -9,7 +9,7 @@ $plot = $this->plot;
     <section class="content">
         <?php if ($session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
             <p class="buttons-set">
-                <a href="<?php echo $this->url('', array('_route' => 'plot-edit', 'p' => $plot->getId())); ?>" class="btn wider btn-orange"><span>Edit Plot</span></a>
+                <a href="<?php echo $plot->getEditUrl(); ?>" class="btn wider btn-orange"><span>Edit Plot</span></a>
             </p>
         <?php endif; ?>
         <article>
@@ -22,5 +22,41 @@ $plot = $this->plot;
                 <h3>Share a little about your plot. Everyone's eager to hear more!</h3>
             <?php endif; ?>
         </article>
+
+        <section class="article">
+            <h2>Images</h2>
+            <div id="photos" class="blocked-content about-me">
+            <?php if ($plot->getImages()) : ?>
+                <?php echo $this->partial('plot/photos/_timeline.phtml', array('plot' => $plot, 'showRemove' => true)); ?>
+                <p><a href="#photos">See more images of <?php echo $plot->getName(); ?></a></p>
+            <?php else : ?>
+                <p><a href="#photos">Upload some images, share the visuals!</a></p>
+            <?php endif; ?>
+        </section>
     </section>
 </div>
+
+<?php if (Elm::getSingleton('user/session')->isLoggedIn() && $plot->isOwner($session->user)) : ?>
+    <div class="modal hide fade" id="plot-image-upload-modal">
+        <a class="close" data-dismiss="modal">X</a>
+        <h3>Get In Touch!</h3>
+        <div class="modal-body">
+            <form id="photosForm" action="<?php echo $this->url('plot/photo-upload', array('p' => $plot->getId())); ?>" method="post" enctype="multipart/form-data" class="no-display photo-form">
+                <ul class="fieldset list-block">
+                    <li>
+                        <label for="image-1" class="optional">Image</label>
+                        <div><input type="file" name="image[]" id="image-1"></div>
+                    </li>
+                    <li>
+                        <label for="caption-1" class="optional">Title/Caption</label>
+                        <div><input type="text" name="caption[]" id="caption-1" value=""></div>
+                    </li>
+                </ul>
+                <p class="buttons">
+                    <a href="#" class="action" id="addPhoto" title="Add Images">Add Another</a>
+                    <button type="submit" class="btn btn-blue"><span>Upload</span></button>
+                </p>
+            </form>
+        </div>
+    </div>
+<?php endif; ?>

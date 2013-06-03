@@ -1,4 +1,10 @@
 <?php
+/**
+ * @TODO Plot People
+ * @TODO Plot People - Follow/Following
+ * @TODO Plot Association - Pending People?
+ * @TODO Plot Association - Add People??
+ */
 
 class Elm extends Zend_Application_Bootstrap_Bootstrap
 {
@@ -278,17 +284,41 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 		);
 		$frontController->getRouter()->addRoute('plot-edit', $route);
 		$route = new Zend_Controller_Router_Route(
-		    'p/edit-post/:p',
+		    'p/edit-save/:p',
 		    array(
 		    	'controller' => 'plot',
-        		'action' => 'edit-post',
+        		'action' => 'edit-save',
 				'p' => ''
 		    ),
 			array(
 				'p' => '\d+'
 			)
 		);
-		$frontController->getRouter()->addRoute('plot-edit-post', $route);
+		$frontController->getRouter()->addRoute('plot-edit-save', $route);
+        $route = new Zend_Controller_Router_Route(
+            'p/settings/:p',
+            array(
+                'controller' => 'plot',
+                'action' => 'settings',
+                'p' => ''
+            ),
+            array(
+                'p' => '\d+'
+            )
+        );
+        $frontController->getRouter()->addRoute('plot-settings', $route);
+        $route = new Zend_Controller_Router_Route(
+            'p/settings-save/:p',
+            array(
+                'controller' => 'plot',
+                'action' => 'settings-save',
+                'p' => ''
+            ),
+            array(
+                'p' => '\d+'
+            )
+        );
+        $frontController->getRouter()->addRoute('plot-settings-save', $route);
 
 		// about-us
 		$route = new Zend_Controller_Router_Route(

@@ -24,6 +24,14 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	{
 	}
 
+    /**
+     * view action
+     */
+    public function indexAction()
+    {
+        $this->_forward('view');
+    }
+
 	/**
 	 * Create action
 	 *
@@ -97,14 +105,11 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->_redirect('/plot/create');
 	}
 
-	/**
-	 * Create action
-	 *
-	 * @return mixed
-	 */
-	public function editAction()
-	{
-		$session = $this->_getSession();
+    /**
+     * view action
+     */
+    public function viewAction()
+    {
         if (!$this->_isValid()) {
             $this->_forward('no-route');
             return;
@@ -112,16 +117,29 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 
         $this->_init();
         $this->_initLayout();
+    }
 
-        // Check if user trying to edit is the owner
-		if (!$this->_plot->isOwner($session->getUser())) {
-			$this->_redirect($this->_plot->getUrl());
-			return;
-		}
+	/**
+	 * Create action
+	 *
+	 * @return mixed
+	 */
+	public function editAction()
+	{
+        if (!$this->_isValid()) {
+            $this->_forward('no-route');
+            return;
+        }
+
+        $this->_init();
+        if (!$this->_canAccess()) {
+            $this->_redirect($this->_plot->getUrl());
+            return;
+        }
 
 		$form = new Elm_Model_Form_Plot_Edit();
-		$form->setAction('/p/edit-post/' . $this->_plot->getId());
-
+		$form->setAction('/p/edit-save/' . $this->_plot->getId());
+        $session = $this->_getSession();
 		if ($session->formData) {
 			$form->setDefaults($session->formData);
 			$session->formData = null;
@@ -129,6 +147,7 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 			$form->setDefaults($this->_plot->getData());
 		}
 
+        $this->_initLayout();
 		$this->view->headTitle()->prepend('Edit Plot');
 		$this->view->form = $form;
 	}
@@ -138,29 +157,27 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 	 *
 	 * @return mixed
 	 */
-	public function editPostAction()
+	public function editSaveAction()
 	{
-		$session = $this->_getSession();
         if (!$this->_isValid()) {
             $this->_forward('no-route');
             return;
         }
 
-		$this->_init();
-
-        // Check if user trying to edit is the owner
-        if (!$this->_plot->isOwner($session->getUser())) {
+        $this->_init();
+        if (!$this->_canAccess()) {
             $this->_redirect($this->_plot->getUrl());
             return;
         }
 
 		if (!$this->getRequest()->isPost()) {
-			$this->_redirect('/p/edit/' . $this->_plot->getId());
+			$this->_redirect($this->_plot->getEditUrl());
 			return;
 		}
 
 		$form = new Elm_Model_Form_Plot_Edit();
 		$post = $this->getRequest()->getParams();
+        $session = $this->_getSession();
 		if ($form->isValid($post)) {
 			try {
 				$this->_plot->addData($post);
@@ -179,27 +196,82 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->_redirect('/p/edit/' . $this->_plot->getId());
 	}
 
-	/**
-	 * view action
-	 */
-	public function indexAction()
-	{
-		$this->_forward('view');
-	}
+    /**
+     * Users settings page
+     *
+     * @return mixed
+     */
+    public function settingsAction()
+    {
+        if (!$this->_isValid()) {
+            $this->_forward('no-route');
+            return;
+        }
 
-	/**
-	 * view action
-	 */
-	public function viewAction()
-	{
-		if (!$this->_isValid()) {
-			$this->_forward('no-route');
-			return;
-		}
+        $this->_init();
+        if (!$this->_canAccess()) {
+            $this->_redirect($this->_plot->getUrl());
+            return;
+        }
 
-		$this->_init();
-		$this->_initLayout();
-	}
+        $form = new Elm_Model_Form_Plot_Settings();
+        $form->setAction('/p/settings-save/' . $this->_plot->getId());
+        $session = $this->_getSession();
+        if ($session->formData) {
+            $form->setDefaults($session->formData);
+            $session->formData = null;
+        } else {
+            $form->setDefaults($this->_plot->getData());
+        }
+
+        $this->_initLayout();
+        $this->view->headTitle()->prepend('Plot Settings');
+        $this->view->form = $form;
+    }
+
+    /**
+     * Users settings save action
+     *
+     * @return mixed
+     */
+    public function settingsSaveAction()
+    {
+        if (!$this->_isValid()) {
+            $this->_forward('no-route');
+            return;
+        }
+
+        $this->_init();
+        if (!$this->_canAccess()) {
+            $this->_redirect($this->_plot->getUrl());
+            return;
+        }
+
+        if (!$this->getRequest()->isPost()) {
+            $this->_redirect($this->_plot->getSettingsUrl());
+            return;
+        }
+
+        $form = new Elm_Model_Form_Plot_Settings();
+        $post = $this->getRequest()->getParams();
+        $session = $this->_getSession();
+        if ($form->isValid($post)) {
+            try {
+                $this->_plot->addData($post);
+                $this->_plot->save();
+                $session->addSuccess('Successfully saved your settings!');
+            } catch (Colony_Exception $e) {
+                $session->addError($e->getMessage());
+            } catch (Exception $e) {
+                $session->addError($e->getMessage());
+            }
+        } else {
+            $session->formData = $post;
+            $session->addError($this->_getError($form));
+        }
+
+        $this->_redirect($this->_plot->getSettingsUrl());
+    }
 
 	/**
 	 * Plot images default

@@ -7,14 +7,17 @@ $plot = $this->plot;
         <li<?php if($this->Data()->isActiveUrl($plot->getUrl())) : ?> class="is-active"<?php endif; ?>>
             <a href="<?php echo $plot->getUrl(); ?>" title="<?php echo $this->escape($plot->getName()); ?>">About</a>
         </li>
-        <?php $url = $this->url('', array('_route' => 'plot-photos', 'p' => $plot->getId())); ?>
+        <?php $url = $this->url('', array('_route' => 'plot-people', 'p' => $plot->getId())); ?>
         <li<?php if($this->Data()->isActiveUrl($url)) : ?> class="is-active"<?php endif; ?>>
-            <a href="<?php echo $url; ?>" title="<?php echo $this->escape($plot->getName()); ?> Photos">Photos</a>
+            <a href="<?php echo $url; ?>" title="<?php echo $this->escape($plot->getName()); ?> People">People</a>
         </li>
+
+
         <?php /*$url = $this->url('', array('_route' => 'plot-photos', 'p' => $plot->getId())); */?><!--
         <li<?php /*if($this->Data()->isActiveUrl($url)) : */?> class="is-active"<?php /*endif; */?>>
-            <a href="<?php /*echo $this->url('', array('_route' => 'plot-crops', 'p' => $plot->getId())); */?>" title="<?php /*echo $this->escape($plot->getName()); */?> Crops">Crops</a>
-        </li>-->
+            <a href="<?php /*echo $url; */?>" title="<?php /*echo $this->escape($plot->getName()); */?> Photos">Photos</a>
+        </li>
+        -->
         <?php /*$url = $this->url('', array('_route' => 'plot-photos', 'p' => $plot->getId())); */?><!--
         <li<?php /*if($this->Data()->isActiveUrl($url)) : */?> class="is-active"<?php /*endif; */?>>
             <a href="<?php /*echo $this->url('', array('_route' => 'plot-people', 'p' => $plot->getId())); */?>" title="<?php /*echo $this->escape($plot->getName()); */?> Users">People</a>

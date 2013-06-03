@@ -96,10 +96,6 @@ class Elm_Model_Form_User_Create extends Elm_Model_Form_Abstract
         ));
 
 
-		foreach ($this->getElements() as $element) {
-			$element->setDecorators($this->defaultDecorators);
-            // Removed for labelify
-            /*$element->removeDecorator('row')->removeDecorator('Label');*/
-		}
+        $this->prepareElements();
 	}
 }

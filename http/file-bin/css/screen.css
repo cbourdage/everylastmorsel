@@ -32,7 +32,7 @@ h4 {
     font-weight: normal;
     font-size: 24px;
 }
-p { line-height: 1.2; }
+p { line-height: 1.4; }
 a {
 	color: #343434;
 	cursor: pointer;
@@ -194,10 +194,11 @@ button.btn-grey > span {
 .btn.icon { height: auto; display: block; width: auto; }
 .btn.icon > span > span {
     background: url("../images/sprite.png") no-repeat -4px -99px;
-    padding-left: 30px;
+    padding-left: 35px;
 }
 .btn.icon.contact > span > span { background-position: -4px -99px; }
-.btn.icon.follow > span > span { background-position: -4px -99px; }
+.btn.icon.follow > span > span { background-position: -4px -146px; padding-left: 22px; }
+.btn.icon.following > span > span { background-position: -4px -146px; padding-left: 22px; }
 .btn.icon.secure > span > span { background-position: -4px -378px; padding-left: 40px; }
 
 /** Form defaults */
@@ -356,15 +357,15 @@ form ul.fieldset > li > div label > input {
 }
 .modal.fade.in { top: 10%; }
 .modal a.close {
-    background: #fff url("../images/sprite.png") no-repeat -180px -40px;
+    background: rgba(250,250,250,.4) url("../images/sprite.png") no-repeat -185px -40px;
     display: block;
-    height: 40px;
+    height: 35px;
     overflow: hidden;
 	position: absolute;
 	top: 5px;
 	right: 5px;
     text-indent: 110%;
-    width: 40px;
+    width: 35px;
     white-space: nowrap;
 }
 /** Body and content */
@@ -544,6 +545,8 @@ footer .watermark {
 
 /**
  * Account/Profile Pages
+ *      - Profile
+ *      - Plot
  */
 .profile-layout { background: #fff; position: relative; }
 .profile-layout .main-content { margin: 0; min-height: 400px; padding-bottom: 50px; width: 100%; }
@@ -674,6 +677,16 @@ footer .watermark {
     padding-bottom: 5px;
     text-transform: uppercase;
 }
+.main-content .blocked-content {
+    color: #848484;
+    clear: both;
+    display: block;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+}
+.main-content .blocked-content > h4 { }
+.main-content .blocked-content > p { line-height: 1.5; margin-bottom: 20px; }
 /** About Edit page */
 #about-edit-form textarea { width: 600px; }
 /** Listings: plots & people */
@@ -705,22 +718,13 @@ ul.list-block.grid li figure { margin: 0 0 8px; }*/
 /** Plot Styles */
 #plot-edit-form textarea { width: 600px; }
 #plot-edit-form .buttons-set a { margin-top: 10px; }
+/** Plot People */
+.plot.people .associate { border-top: 1px solid #bcbcbc; padding-top: 25px; }
+.plot.people .associate h3 { font-size: 28px; margin-bottom: 10px; }
+.plot.people .associate .f-left { margin-right: 50px;  width: 300px; }
+.plot.people .associate .action { padding-top: 20px; width: 200px; }
+.plot.people .associate .action .get-involved > span { font-size: 16px; padding: 8px 26px; }
 
-
-
-
-
-/** @todo */
-.main-content .blocked-content {
-    color: #848484;
-    clear: both;
-    display: block;
-    margin-bottom: 10px;
-    overflow: hidden;
-    padding: 10px 0;
-}
-.main-content .blocked-content > h4 { }
-.main-content .blocked-content > p { margin-bottom: 20px; }
 
 
 
@@ -1006,21 +1010,6 @@ table.data-table td { }
 table.data-table tr.alt td { background: #e5f1f2; }
 table.data-table td a { color: #010101; text-decoration: underline; }
 
-/**
-	My Account forms: settings, info, create
-*/
-body.elm-profile-settings .account-form form,
-body.elm-profile-info .account-form form { text-align: left; }
-body.elm-plot-create .account-form form .buttons-set,
-body.elm-profile-settings .account-form form .buttons-set,
-body.elm-profile-info .account-form form .buttons-set {
-	border-top: 4px double #CCC;
-	padding-top: 10px;
-	width: 275px;
-}
-body.elm-plot-create .account-form form .buttons-set button,
-body.elm-profile-settings .account-form form .buttons-set button,
-body.elm-profile-info .account-form form .buttons-set button { float: right; }
 
 /**
 	Photos
@@ -1077,10 +1066,6 @@ body.elm-profile-info .account-form form .buttons-set button { float: right; }
 #photosForm .fieldset { border-top: 4px double #80883b; padding-top: 20px; }
 #photosForm .fieldset:first-child { border: 0; padding: 0; }
 
-/**
- 	People
-*/
-.get-involved { clear: both; }
 
 /**
 	Crops

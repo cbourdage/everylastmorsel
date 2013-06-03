@@ -133,8 +133,6 @@ class Elm_Model_User extends Colony_Model_Abstract
 
 	/**
 	 * Checks if the user is a public profile
-	 *
-     * @TODO move the is me out to templates and build a canShow helper
      *
 	 * @return bool
 	 */
@@ -146,15 +144,12 @@ class Elm_Model_User extends Colony_Model_Abstract
 
 	/**
 	 * Checks if the user is a private profile
-     *
-     * @TODO move the is me out to templates and build a canShow helper
 	 *
 	 * @return bool
 	 */
 	public function isPrivate()
 	{
 		/*return !$this->isMe() && $this->getVisibility() == Elm_Model_Form_User_Settings::VISIBILITY_PRIVATE;*/
-        Elm::log($this->getVisibility());
 		return $this->getVisibility() === Elm_Model_Form_User_Settings::VISIBILITY_PRIVATE;
 	}
 

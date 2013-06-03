@@ -83,13 +83,7 @@ class Elm_Model_Form_Plot_Create extends Elm_Model_Form_Abstract
 				self::VISIBILITY_PRIVATE => 'Private'
 			)
         ));
-		
-        foreach ($this->getElements() as $element) {
-			if ($element instanceof Zend_Form_Element_Hidden) {
-				$element->setDecorators($this->hiddenDecorators);
-			} else {
-				$element->setDecorators($this->defaultDecorators);
-			}
-		}
+
+        $this->prepareElements();
 	}
 }

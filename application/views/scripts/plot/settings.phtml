@@ -1,0 +1,21 @@
+<?php
+$session = Elm::getSingleton('user/session');
+$plot = $this->plot;
+?>
+<?php echo $this->partial('partials/plot/top-display.phtml', array('plot' => $plot)); ?>
+<div class="inner-content-wrapper settings">
+    <?php echo $this->Message()->render(); ?>
+    <section class="content">
+        <h2>Settings</h2>
+        <form action="<?php echo $this->form->getAction() ?>" method="post" class="labelify" id="settings-form">
+            <ul class="fieldset">
+                <?php foreach($this->form->getElements() as $element) : ?>
+                    <?php echo $element->render(); ?>
+                <?php endforeach; ?>
+            </ul>
+            <div class="buttons-set">
+                <button type="submit" class="btn wider btn-orange" id="create-submit"><span>Save Settings</span></button>
+            </div>
+        </form>
+    </section>
+</div>

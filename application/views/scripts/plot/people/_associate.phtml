@@ -1,0 +1,7 @@
+<?php
+$session = Elm::getSingleton('user/session');
+$plot = $this->plot;
+?>
+<?php if ($session->isLoggedIn() && !$plot->isAssociated($session->user)) : ?>
+    <a href="#contact-owner-modal" class="btn btn-orange get-involved" data-toggle="modal" data-to="<?php echo $plot->getOwner()->getId(); ?>"><span><span>Get Involved</span></span></a>
+<?php endif; ?>

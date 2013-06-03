@@ -1,0 +1,41 @@
+<?php
+/**
+ * requires:
+ * 	user_from_id (current user id)
+ * 	user_to_id (user to send to id)
+ */
+?>
+<?php if (Elm::getSingleton('user/session')->isLoggedIn() && $this->canContact) : ?>
+    <div class="modal hide fade contact-modal" id="contact-owner-modal">
+        <a class="close" data-dismiss="modal">X</a>
+        <h3>Get In Touch!</h3>
+        <div class="modal-body">
+            <p class="note">
+                Feel like lending a hand or simply learning more about this plot?
+            </p>
+            <?php $form = new Elm_Model_Form_Communication_Contact_Owner(); ?>
+            <form action="<?php echo $form->getAction() ?>" method="post" class="labelify contact-modal-form" id="contact-owner-modal-form">
+                <input type="hidden" name="from_user_id" value="<?php echo Elm::getSingleton('user/session')->user->getId(); ?>" />
+                <?php if (Zend_Registry::isRegistered('current_plot')) : ?>
+                    <input type="hidden" name="to_user_id" value="<?php echo Zend_Registry::get('current_plot')->getOwner()->getId(); ?>" />
+                <?php else : ?>
+                    <input type="hidden" name="to_user_id" value="" />
+                <?php endif; ?>
+                <ul class="fieldset">
+                    <?php foreach($form->getElements() as $element) : ?>
+                        <?php echo $element->render(); ?>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="buttons-set">
+                    <button type="submit" class="btn btn-orange" id="contact-submit"><span>Send Message</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal hide fade" id="contact-success-modal">
+        <a class="close" data-dismiss="modal">X</a>
+        <div class="modal-body">
+            <h3>Your message has been successfully sent.</h3>
+        </div>
+    </div>
+<?php endif; ?>

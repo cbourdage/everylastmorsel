@@ -1,0 +1,42 @@
+<?php
+$session = Elm::getSingleton('user/session');
+$users = $this->users;
+?>
+<?php if (count($users)) : ?>
+    <?php if ($this->details) : ?>
+        <ul class="list-block user-list list details">
+        <?php foreach ($users as $user) : ?>
+            <li>
+                <figure>
+                    <img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $this->escape($user->getName()); ?>" width="150px" />
+                </figure>
+                <div class="user-details details">
+                    <h3>
+                        <a href="<?php echo $user->getUrl(); ?>" title="<?php echo $this->escape($user->getName()); ?>"><?php echo $this->escape($user->getName()); ?></a>
+                        <?php if (!$user->isPrivate() && !$session->isMe($user)) : ?>
+                            <a href="#contact" class="icon mail" title="Contact <?php echo $this->escape($user->getName()); ?>" data-toggle="modal" data-to="<?php echo $user->getId(); ?>">
+                                <span>Contact <?php echo $this->escape($user->getFirstname()); ?></span>
+                            </a>
+                        <?php endif; ?>
+                    </h3>
+                    <p class="role"><b><?php echo $user->getRole(); ?></b></p>
+                    <div><?php echo $this->partial('partials/about.phtml', array('about' => $user->getAbout())); ?></div>
+                </div>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+    <?php else : ?>
+        <ul class="list-block user-list list">
+            <?php foreach ($users as $user) : ?>
+                <li>
+                    <figure>
+                        <img src="<?php echo $this->User()->getImage($user); ?>" title="<?php echo $this->escape($user->getName()); ?>" width="120px" />
+                    </figure>
+                    <div class="no-display">
+                        <h3><a href="<?php echo $user->getUrl(); ?>" title="<?php echo $this->escape($user->getName()); ?>"><?php echo $this->escape($user->getName()); ?></a></h3>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+<?php endif; ?>

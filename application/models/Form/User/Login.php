@@ -30,8 +30,6 @@ class Elm_Model_Form_User_Login extends Elm_Model_Form_Abstract
 			'id'		 => 'login-password-input'
         ));
 
-        foreach ($this->getElements() as $element) {
-			$element->setDecorators($this->defaultDecorators);
-		}
+        $this->prepareElements();
 	}
 }

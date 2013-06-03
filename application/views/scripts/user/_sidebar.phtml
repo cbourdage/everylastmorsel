@@ -11,7 +11,7 @@ $session = Elm::getSingleton('user/session');
 		<?php if ($session->isLoggedIn() && !$session->isMe($user)) : ?>
             <a href="#follow" class="btn btn-blue icon follow" data-to="<?php echo $user->getId(); ?>"><span><span>Follow</span></span></a>
 			<?php if ($this->canContact && !$user->isPrivate()) : ?>
-				<a href="#contact-modal" class="btn btn-green icon contact" data-toggle="modal" data-to="<?php echo $user->getId(); ?>"><span><span>Get In Touch!</span></span></a>
+				<a href="#contact-user-modal" class="btn btn-green icon contact" data-toggle="modal" data-to="<?php echo $user->getId(); ?>"><span><span>Get In Touch!</span></span></a>
 			<?php endif; ?>
 		<?php endif; ?>
         </div>

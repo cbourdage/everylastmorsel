@@ -59,7 +59,7 @@ class Elm_Model_Form_User_Info extends Elm_Model_Form_Abstract
 		$session = Elm::getSingleton('user/session');
 		foreach ($this->getElements() as $element) {
 			if ($element->getType() != 'Zend_Form_Element_File') {
-				$element->setDecorators($this->defaultDecorators);
+				$element->setDecorators($this->_defaultDecorators);
 				$element->setValue($session->user->getData($element->getName()));
 			}
 		}

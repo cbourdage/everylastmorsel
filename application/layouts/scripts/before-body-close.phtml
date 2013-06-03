@@ -18,7 +18,8 @@
     </div>
 <?php endif; ?>
 
-<?php echo $this->partial('communication/contact/modal.phtml', array('canContact' => $this->canContact)); ?>
+<?php echo $this->partial('communication/contact/user.phtml', array('canContact' => $this->canContact)); ?>
+<?php echo $this->partial('communication/contact/owner.phtml', array('canContact' => $this->canContact)); ?>
 
 <div id="action-loader" class="loader" style="display: none;"></div>
 <script src="/file-bin/js/lib/bootstrap-combine.js" type="text/javascript"></script>

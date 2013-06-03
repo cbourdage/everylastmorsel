@@ -6,7 +6,7 @@ class Elm_Model_Form_Abstract extends Zend_Form
 	/**
 	 * @var array
 	 */
-	protected $defaultDecorators = array(
+	protected $_defaultDecorators = array(
 		'ViewHelper',
 		'Errors',
 		array(array('data' => 'HtmlTag')),
@@ -14,7 +14,7 @@ class Elm_Model_Form_Abstract extends Zend_Form
 		array('Row')
 	);
 
-	protected $fileDecorators = array(
+	protected $_fileDecorators = array(
 		'File',
 		'Errors',
 		array(array('data' => 'HtmlTag')),
@@ -22,7 +22,7 @@ class Elm_Model_Form_Abstract extends Zend_Form
         array('Row')
 	);
 
-	protected $hiddenDecorators = array('ViewHelper');
+	protected $_hiddenDecorators = array('ViewHelper');
 
 	protected $_hiddenElements = array();
 
@@ -48,6 +48,23 @@ class Elm_Model_Form_Abstract extends Zend_Form
             Zend_Form_Element::DECORATOR
 		);
 	}
+
+    /**
+     * Sets form element decorators
+     *
+     * @return $this
+     */
+    public function prepareElements()
+    {
+        foreach ($this->getElements() as $element) {
+            if ($element instanceof Zend_Form_Element_Hidden) {
+                $element->setDecorators($this->_hiddenDecorators);
+            } else {
+                $element->setDecorators($this->_defaultDecorators);
+            }
+        }
+        return $this;
+    }
 
 	/**
 	 * Returns all non- type="hidden" form fields

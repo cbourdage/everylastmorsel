@@ -321,7 +321,7 @@ function saveLocation(position) {
         $('body').on('click', '.btn.contact', function(e) {
             e.preventDefault();
             if ($(this).data('to')) {
-                $('#contact-modal-form').find('input[name="user_to_id"]').val($(this).data('to'));
+                $($(this).attr('href')).find('input[name="user_to_id"]').val($(this).data('to'));
             }
 
             // Refresh labelify?
@@ -330,12 +330,11 @@ function saveLocation(position) {
             }, 500);*/
         });
 
-        $('#contact-modal-form').on('submit', function(e) {
+        $('.contact-modal-form').on('submit', function(e) {
             e.preventDefault();
             var $form = $(this),
-                $modal = $('#contact-modal'),
+                $modal = $form.parents('.modal'),
                 $content = $modal.find('.modal-body'),
-                $successModal = $('#contact-success-modal'),
                 $loader = $('<span class="loader">Loading...</span>');
 
             $content.find('.alert').slideUp('fast', function() { $(this).remove(); });
@@ -351,10 +350,13 @@ function saveLocation(position) {
                 },
                 success: function(response) {
                     if (response.success) {
-                        $form.find('#message').val('');
-                        $modal.modal('hide');
-                        $successModal.find('.modal-body h3').html(response.message);
-                        $successModal.modal('show').delay(3000, function(e) { });
+                        $form.find('name=["message"]').val('');
+                        $form.find('name=["subject"]').val('');
+                        Elm.success(response.message, $form, 'prepend');
+
+                        window.setTimeout(function() {
+                            $modal.modal('hide');
+                        }, 1000);
                     } else if (response.location) {
                         Elm.success(response);
                     } else {

@@ -7,13 +7,15 @@ $user = $this->user;
 	<?php echo $this->Message()->render(); ?>
 	<?php echo $this->partial('user/_navigation.phtml', array('user' => $user)); ?>
     <section class="content">
-        <?php if ($user->isPrivate()) : ?>
-            <h3 class="private-user">This user has requested a little privacy.</h3>
-        <?php else : ?>
-            <h2>My Plots</h2>
-            <div id="plots-list" class="blocked-content clearfix plots-list">
-                <?php echo $this->partial('partials/plot/list.phtml', array('plots' => $user->getPlots(), 'details' => true)); ?>
-            </div>
-        <?php endif; ?>
+        <section class="article">
+            <?php if ($user->isPrivate()) : ?>
+                <h3 class="private-user">This user has requested a little privacy.</h3>
+            <?php else : ?>
+                <h2>My Plots</h2>
+                <div id="plots-list" class="blocked-content clearfix plots-list">
+                    <?php echo $this->partial('partials/plot/list.phtml', array('plots' => $user->getPlots(), 'details' => true)); ?>
+                </div>
+            <?php endif; ?>
+        </section>
     </div>
 </div>

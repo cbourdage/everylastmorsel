@@ -62,13 +62,7 @@ class Elm_Model_Form_Plot_Crop extends Elm_Model_Form_Abstract
             'required'   => true,
 			'multiOptions' => Elm_Model_Plot_Crop::$conditions
         ));*/
-		
-        foreach ($this->getElements() as $element) {
-			if ($element instanceof Zend_Form_Element_Hidden) {
-				$element->setDecorators($this->hiddenDecorators);
-			} else {
-				$element->setDecorators($this->defaultDecorators);
-			}
-		}
+
+        $this->prepareElements();
 	}
 }

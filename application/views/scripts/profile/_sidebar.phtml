@@ -20,16 +20,6 @@ $session = Elm::getSingleton('user/session');
         </ul>
     <?php endif; ?>
 	<div id="lower-column">
-        <?php if ($session->isLoggedIn() && !$session->isMe($user) && !$user->isPrivate()) : ?>
-		<div class="buttons-set">
-			<?php if ($this->canContact) : ?>
-				<button type="button" class="btn btn-orange contact-owner contact-button" data-to="<?php echo $user->getId(); ?>">
-                    <span>Contact <?php echo $this->escape($user->getFirstname()); ?>!</span>
-                </button>
-			<?php endif; ?>
-		</div>
-		<?php endif; ?>
-
         <div class="content followers">
             <h3>Following</h3>
             <ul>

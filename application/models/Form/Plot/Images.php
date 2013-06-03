@@ -25,7 +25,7 @@ class Elm_Model_Form_Plot_Images extends Elm_Model_Form_Abstract
 		// Image titile
         $this->addElement('text', 'caption', array(
 			'label' => 'Title/Caption',
-			'decorators' => $this->defaultDecorators,
+			'decorators' => $this->_defaultDecorators,
             'filters' => array('StringTrim'),
             'validators' => array(
                 array('StringLength', true, array(0, 255))

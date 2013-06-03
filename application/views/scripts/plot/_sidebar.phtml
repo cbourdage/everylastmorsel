@@ -1,47 +1,57 @@
 <?php
 $session = Elm::getSingleton('user/session');
 ?>
-<?php if (Zend_Registry::isRegistered('current_plot') || $this->plot) : ?>
-	<?php $plot = $this->plot ? $this->plot : Zend_Registry::get('current_plot') ; ?>
+<?php if (Zend_Registry::isRegistered('current_plot')) : ?>
+	<?php $plot = Zend_Registry::get('current_plot'); ?>
 	<figure id="main-image">
 		<img src="<?php echo $this->Map()->getMapImage($plot); ?>" title="<?php echo $this->escape($plot->getName()); ?>" />
 	</figure>
-	<div class="social-links">
-		<ul>
-			<li>
-				<?php //echo $this->Social()->getTwitterLink(); ?>
-				<?php
-					$urlToShare = Zend_Controller_Front::getInstance()->getRequest()->getRequestUri();
-					$urlToShare = $this->url(ltrim($urlToShare, '/'));
-				?>
-				<a href="https://twitter.com/share" class="twitter-share-button"
-				   data-related="everylastmorsel" data-url="<?php echo $urlToShare; ?>" data-text="Support this garden: <?php echo $urlToShare; ?>"
-				   data-hashtags="everylastmorsel" data-lang="en" data-size="large" data-count="none">Tweet</a>
-			</li>
-			<li>
-				<div class="g-plus" data-action="share" data-annotation="none" data-height="24" href="<?php echo $urlToShare; ?>"></div>
-			</li>
-			<li>
-				<div class="fb-send" data-font="arial" data-href="<?php echo $urlToShare; ?>" data-text="Support this garden: <?php echo $urlToShare; ?>"></div>
-			</li>
-		</ul>
-	</div>
+    <?php if ($session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
+        <ul id="plot-navigation" class="utility-navigation">
+            <li<?php if ($this->Data()->isActiveUrl($plot->getUrl())) : ?> class="active"<?php endif; ?>>
+                <a href="<?php echo $plot->getUrl(); ?>" title="My Profile"><span class="icon person"></span>Plot Profile</a>
+            </li>
+            <li<?php if ($this->Data()->isActiveUrl($plot->getSettingsUrl())) : ?> class="active"<?php endif; ?>>
+                <a href="<?php echo $plot->getSettingsUrl(); ?>" title="Settings"><span class="icon cog"></span>Settings</a>
+            </li>
+        </ul>
+    <?php endif; ?>
+    <div id="lower-column">
+        <?php if ($session->isLoggedIn() && !$plot->isPrivate() && !$session->isMe($plot->getOwner())) : ?>
+            <div class="buttons-set">
+                <?php if ($plot->isAssociated($session->user)) : ?>
+                    <a href="#unfollow" class="btn btn-blue icon following" id="following-plot" rel="<?php echo $plot->getUnFollowUrl($session->user); ?>"><span><span>Following</span></span></a>
+                <?php else : ?>
+                    <a href="#follow" class="btn btn-blue icon follow" id="follow-plot" rel="<?php echo $plot->getFollowUrl($session->user); ?>"><span><span>Follow</span></span></a>
+                <?php endif; ?>
 
-	<?php if ($session->isLoggedIn() && !$plot->isOwner($session->user)) : ?>
-		<div class="buttons-set">
-			<?php if ($plot->isWatching($session->user)) : ?>
-				<button type="button" class="btn btn-grey"><span>Watching this Garden</span></button>
-			<?php else : ?>
-				<form action="<?php echo $this->url('plot/watch-this'); ?>" method="post">
-					<input type="hidden" name="plot_id" value="<?php echo $plot->getId(); ?>" />
-					<input type="hidden" name="user_id" value="<?php echo $session->user->getId(); ?>" />
-					<button type="submit" class="btn btn-blue watch-this"><span>Watch This Garden</span></button>
-				</form>
-			<?php endif; ?>
+                <?php if ($this->canContact) : ?>
+                    <a href="#contact-owner-modal" class="btn btn-green icon contact" data-toggle="modal" data-to="<?php echo $plot->getOwner()->getId(); ?>"><span><span>Get In Touch!</span></span></a>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+    </div>
 
-			<?php if ($this->canContact) : ?>
-				<button type="button" class="btn btn-orange contact-owner contact-button" data-to="<?php echo $plot->getOwner()->getId(); ?>"><span>Contact Owner!</span></button>
-			<?php endif; ?>
-		</div>
-	<?php endif; ?>
+    <?php if (false) : ?>
+        <div class="social-links">
+            <ul>
+                <li>
+                    <?php //echo $this->Social()->getTwitterLink(); ?>
+                    <?php
+                    $urlToShare = Zend_Controller_Front::getInstance()->getRequest()->getRequestUri();
+                    $urlToShare = $this->url(ltrim($urlToShare, '/'));
+                    ?>
+                    <a href="https://twitter.com/share" class="twitter-share-button"
+                       data-related="everylastmorsel" data-url="<?php echo $urlToShare; ?>" data-text="Support this garden: <?php echo $urlToShare; ?>"
+                       data-hashtags="everylastmorsel" data-lang="en" data-size="large" data-count="none">Tweet</a>
+                </li>
+                <li>
+                    <div class="g-plus" data-action="share" data-annotation="none" data-height="24" href="<?php echo $urlToShare; ?>"></div>
+                </li>
+                <li>
+                    <div class="fb-send" data-font="arial" data-href="<?php echo $urlToShare; ?>" data-text="Support this garden: <?php echo $urlToShare; ?>"></div>
+                </li>
+            </ul>
+        </div>
+    <?php endif; ?>
 <?php endif; ?>

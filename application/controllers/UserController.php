@@ -52,13 +52,13 @@ class Elm_UserController extends Elm_User_AbstractController
 	 */
 	public function indexAction()
 	{
-		$this->_forward('about');
+		$this->_forward('view');
 	}
 
     /**
      * Index/about action
      */
-    public function aboutAction()
+    public function viewAction()
     {
         if (!$this->view->user) {
             $this->_forward('no-route');

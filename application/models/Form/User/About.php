@@ -16,7 +16,7 @@ class Elm_Model_Form_User_About extends Elm_Model_Form_Abstract
 
         $session = Elm::getSingleton('user/session');
 		foreach ($this->getElements() as $element) {
-            $element->setDecorators($this->defaultDecorators);
+            $element->setDecorators($this->_defaultDecorators);
             $element->setValue($session->user->getData($element->getName()));
 		}
 	}

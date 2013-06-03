@@ -9,10 +9,9 @@ $user = $this->user;
     <section class="content">
         <?php if ($session->isMe($user)) : ?>
             <p class="buttons-set">
-                <a href="<?php echo $this->url('profile/about-edit'); ?>" class="btn wider btn-orange"><span>Edit About</span></a>
+                <a href="<?php echo $this->url('profile/edit'); ?>" class="btn wider btn-orange"><span>Edit About</span></a>
             </p>
         <?php endif; ?>
-
         <article>
             <?php if (strlen($user->getAbout()) > 0) : ?>
                 <h2>About <?php echo $user->getFirstname(); ?></h2>

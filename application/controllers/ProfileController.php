@@ -28,61 +28,43 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
 	 */
 	public function indexAction()
 	{
-		$this->_forward('about');
-	}
-
-	/**
-	 * About action
-	 */
-	public function aboutAction()
-	{
-		$this->_init();
-		$this->_initLayout();
+		$this->_forward('view');
 	}
 
     /**
-     * About action
+     * Login action
+     *
+     * @return void
      */
-    public function plotsAction()
+    public function loginAction()
     {
-        $this->_init();
-        $this->_initLayout();
-    }
-
-    /**
-	 * Login action
-	 *
-	 * @return void
-	 */
-	public function loginAction()
-	{
-		$session = $this->_getSession();
+        $session = $this->_getSession();
         if ($session->isLoggedIn()) {
-			$this->_redirect('/profile/');
+            $this->_redirect('/profile/');
             return;
         }
 
-		$form = new Elm_Model_Form_User_Login();
-		if ($session->formData) {
-			$form->setDefaults($session->formData);
-			$session->formData = null;
-		}
+        $form = new Elm_Model_Form_User_Login();
+        if ($session->formData) {
+            $form->setDefaults($session->formData);
+            $session->formData = null;
+        }
 
-		$this->view->headTitle()->prepend('Account Login');
-		$this->view->form = $form;
-	}
+        $this->view->headTitle()->prepend('Account Login');
+        $this->view->form = $form;
+    }
 
-	/**
-	 * Login post action
-	 *
-	 * @return mixed
-	 */
-	public function loginPostAction()
-	{
-		if (!$this->getRequest()->isPost()) {
-			$this->_redirect('/profile/login');
-			return;
-		}
+    /**
+     * Login post action
+     *
+     * @return mixed
+     */
+    public function loginPostAction()
+    {
+        if (!$this->getRequest()->isPost()) {
+            $this->_redirect('/profile/login');
+            return;
+        }
 
         if ($this->getRequest()->getParam('isAjax')) {
             $this->_forward('login-post-ajax');
@@ -113,152 +95,126 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
         }
 
         $this->_redirect('/profile/login');
-	}
+    }
 
-	/**
-	 * Login ajax action
-	 *
-	 * @return void
-	 */
-	public function loginPostAjaxAction()
-	{
-		$this->_initAjax();
-		$this->getHelper()->viewRenderer->setNoRender(true);
+    /**
+     * Login ajax action
+     *
+     * @return void
+     */
+    public function loginPostAjaxAction()
+    {
+        $this->_initAjax();
+        $this->getHelper()->viewRenderer->setNoRender(true);
 
         $response = array();
         $request = $this->getRequest();
-		$session = $this->_getSession();
+        $session = $this->_getSession();
         if ($session->isLoggedIn()) {
-			$response = array(
-				'success' => true,
-				'error' => false,
-				'location' => $request->getParam('after_auth') ? $request->getParam('after_auth') : $this->getUrl('profile')
-			);
+            $response = array(
+                'success' => true,
+                'error' => false,
+                'location' => $request->getParam('after_auth') ? $request->getParam('after_auth') : $this->getUrl('profile')
+            );
         } else {
-			$form = new Elm_Model_Form_User_Login();
-			$post = $this->getRequest()->getPost();
-			if ($this->getRequest()->isPost() && $form->isValid($post)) {
-				try {
-					$session->login($post['email'], $post['password']);
-					$response = array(
-						'success' => true,
-						'error' => false,
-						'location' => $request->getParam('after_auth') ? $request->getParam('after_auth') : $this->getUrl('profile')
-					);
-				} catch (Exception $e) {
-					$response = array(
-						'success' => false,
-						'error' => true,
-						'message' => $e->getMessage()
-					);
-				}
-			} else {
-				$response = array(
-					'success' => false,
-					'error' => true,
-					'message' => 'Login and password are required.'
-				);
-			}
-		}
+            $form = new Elm_Model_Form_User_Login();
+            $post = $this->getRequest()->getPost();
+            if ($this->getRequest()->isPost() && $form->isValid($post)) {
+                try {
+                    $session->login($post['email'], $post['password']);
+                    $response = array(
+                        'success' => true,
+                        'error' => false,
+                        'location' => $request->getParam('after_auth') ? $request->getParam('after_auth') : $this->getUrl('profile')
+                    );
+                } catch (Exception $e) {
+                    $response = array(
+                        'success' => false,
+                        'error' => true,
+                        'message' => $e->getMessage()
+                    );
+                }
+            } else {
+                $response = array(
+                    'success' => false,
+                    'error' => true,
+                    'message' => 'Login and password are required.'
+                );
+            }
+        }
 
-		$this->_helper->json->sendJson($response);
-	}
+        $this->_helper->json->sendJson($response);
+    }
 
-	/**
-	 * Ajax authentication method for overlay
-	 */
-	public function authenticateAction()
-	{
-		$this->_initAjax();
-		$this->_helper->viewRenderer->setNoRender(true);
-
-		if (Elm::getSingleton('user/session')->isLoggedIn()) {
-			$response = array(
-				'success' => true,
-				'error' => false
-			);
-			$this->_helper->json->sendJson($response);
-		} else {
-			$response = array(
-				'success' => false,
-				'error' => true,
-				'location' => $this->view->url('plot/create')
-			);
-			$this->_helper->json->sendJson($response);
-		}
-
-		//$this->getResponse()->sendResponse();
-	}
-
-	/**
-	 * Logout action request
-	 *
-	 * @return void
-	 */
-	public function logoutAction()
-	{
-		$_session = $this->_getSession();
-		$_session->logout();
-		$_session->beforeAuthUrl = $this->getCurrentUrl();
+    /**
+     * Logout action request
+     *
+     * @return void
+     */
+    public function logoutAction()
+    {
+        $_session = $this->_getSession();
+        $_session->logout();
+        $_session->beforeAuthUrl = $this->getCurrentUrl();
         $this->_redirect('/');
-	}
+    }
 
-	/**
-	 * Registration action
-	 *
-	 * @return void
-	 */
-	public function createAction()
-	{
-		$session = $this->_getSession();
+    /**
+     * Registration action
+     *
+     * @return void
+     */
+    public function createAction()
+    {
+        $session = $this->_getSession();
         if ($session->isLoggedIn()) {
-			$this->_redirect('/profile/');
+            $this->_redirect('/profile/');
             return;
         }
 
-		$form = new Elm_Model_Form_User_Create();
-		$form->setAction('/profile/create-post');
+        $form = new Elm_Model_Form_User_Create();
+        $form->setAction('/profile/create-post');
 
-		// Set data if stored in session b/c of an error
-		if ($location = Elm::getSingleton('session')->location) {
-			$form->setDefaults(array(
-				'city' => $location->getCity(),
-				'state' => $location->getState(),
-				'zipcode' => $location->getZip()
-			));
-		}
+        // Set data if stored in session b/c of an error
+        if ($location = Elm::getSingleton('session')->location) {
+            $form->setDefaults(array(
+                'city' => $location->getCity(),
+                'state' => $location->getState(),
+                'zipcode' => $location->getZip()
+            ));
+        }
 
-		if ($session->formData) {
-			$form->setDefaults($session->formData);
-			$session->formData = null;
-		}
+        if ($session->formData) {
+            $form->setDefaults($session->formData);
+            $session->formData = null;
+        }
 
-		$this->view->headTitle()->prepend('Create Account');
-		$this->view->form = $form;
-	}
+        $this->view->headTitle()->prepend('Create Account');
+        $this->view->form = $form;
+    }
 
-	/**
-	 * registration post action
-	 *
-	 * @return mixed
-	 */
-	public function createPostAction()
-	{
-		if (!$this->getRequest()->isPost()) {
-			$this->_redirect('/profile/create');
-			return;
-		}
+    /**
+     * registration post action
+     *
+     * @return mixed
+     */
+    public function createPostAction()
+    {
+        if (!$this->getRequest()->isPost()) {
+            $this->_redirect('/profile/create');
+            return;
+        }
 
         if ($this->getRequest()->getParam('isAjax')) {
             $this->_forward('create-post-ajax');
             return;
         }
 
-		$form = new Elm_Model_Form_User_Create();
-		$post = $this->getRequest()->getParams();
-		$session = $this->_getSession();
+        $form = new Elm_Model_Form_User_Create();
+        $post = $this->getRequest()->getParams();
+        $session = $this->_getSession();
 
-		if ($form->isValid($post)) {
+        if ($form->isValid($post)) {
             try {
                 $user = Elm::getModel('user')->createNewUser($post);
 
@@ -280,13 +236,13 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
                 $session->addError('Gah, there was an error processing your form. Please try again shortly.');
                 Elm::logException($e);
             }
-		} else {
-			$session->formData = $post;
-			$session->addError($this->_getError($form));
-		}
+        } else {
+            $session->formData = $post;
+            $session->addError($this->_getError($form));
+        }
 
-		$this->_redirect('/profile/create');
-	}
+        $this->_redirect('/profile/create');
+    }
 
     /**
      * registration post action
@@ -343,86 +299,130 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
     }
 
     /**
-	 *
-	 */
-	public function confirmationAction()
-	{
-		$session = $this->_getSession();
-		if ($key = $this->getRequest()->getParam('uid', null)) {
-			//die($key);
-			$user = new Elm_Model_User();
-			if ($user->checkConfirmationKey($key)) {
-				if (!$user->getIsConfirmed()) {
-					$user->setIsConfirmed(true)->save();
-					$user->sendConfirmedAccountEmail();
+     * Ajax authentication method for overlay
+     */
+    public function authenticateAction()
+    {
+        $this->_initAjax();
+        $this->_helper->viewRenderer->setNoRender(true);
 
-					//$session->setUserAsLoggedIn($user);
-					//$session->addSuccess("Excellent! Let's get growin'.");
-					$this->_forward('confirmed');
-				} else {
-					$this->_redirect('profile');
-				}
-			} else {
-				$this->_getSession()->addError('Whoops. This key does not match anything on file!');
-				$this->_forward('no-route');
-			}
-			return;
-		}
+        if (Elm::getSingleton('user/session')->isLoggedIn()) {
+            $response = array(
+                'success' => true,
+                'error' => false
+            );
+            $this->_helper->json->sendJson($response);
+        } else {
+            $response = array(
+                'success' => false,
+                'error' => true,
+                'location' => $this->view->url('plot/create')
+            );
+            $this->_helper->json->sendJson($response);
+        }
 
-		if (!$session->isJustRegistered) {
-			$this->_redirect('/profile');
-			return;
-		}
-	}
+        //$this->getResponse()->sendResponse();
+    }
 
-	/**
-	 *
-	 */
-	public function confirmedAction()
-	{
-		$session = $this->_getSession();
-        if ($session->isLoggedIn()) {
-			$this->_redirect('/profile/');
+    /**
+     *
+     */
+    public function confirmationAction()
+    {
+        $session = $this->_getSession();
+        if ($key = $this->getRequest()->getParam('uid', null)) {
+            //die($key);
+            $user = new Elm_Model_User();
+            if ($user->checkConfirmationKey($key)) {
+                if (!$user->getIsConfirmed()) {
+                    $user->setIsConfirmed(true)->save();
+                    $user->sendConfirmedAccountEmail();
+
+                    //$session->setUserAsLoggedIn($user);
+                    //$session->addSuccess("Excellent! Let's get growin'.");
+                    $this->_forward('confirmed');
+                } else {
+                    $this->_redirect('profile');
+                }
+            } else {
+                $this->_getSession()->addError('Whoops. This key does not match anything on file!');
+                $this->_forward('no-route');
+            }
             return;
         }
-	}
 
-	/**
-	 * Password reset action request
-	 *
-	 * @return void
+        if (!$session->isJustRegistered) {
+            $this->_redirect('/profile');
+            return;
+        }
+    }
+
+    /**
+     *
+     */
+    public function confirmedAction()
+    {
+        $session = $this->_getSession();
+        if ($session->isLoggedIn()) {
+            $this->_redirect('/profile/');
+            return;
+        }
+    }
+
+    /**
+     * Password reset action request
+     *
+     * @return void
+     */
+    public function forgotPasswordAction()
+    {
+        $_session = $this->_getSession();
+
+        if ($this->getRequest()->isPost()) {
+            $email = $this->getRequest()->getParam('email');
+            if (!Zend_Validate::is($email, 'EmailAddress')) {
+                $_session->addError('Invalid email address');
+                $_session->forgotPasswordEmail = $email;
+            } else {
+                $user = Elm::getSingleton('user')->loadByEmail($email);
+                if ($user->getId()) {
+                    try {
+                        $newPassword = $user->generatePassword();
+                        $user->changePassword($newPassword);
+                        $user->sendPasswordResetEmail();
+                        $_session->addSuccess('A new password has been sent.');
+                        $_session->forgotPasswordEmail = null;
+                    } catch (Exception $e) {
+                        $_session->addError($e->getMessage());
+                        $_session->forgotPasswordEmail = $email;
+                    }
+                } else {
+                    $_session->addError('This email address was not found in our records.');
+                    $_session->forgotPasswordEmail = $email;
+                }
+            }
+        }
+
+        $this->view->headTitle()->prepend('Forgot Password');
+    }
+
+    /**
+	 * About action
 	 */
-	public function forgotPasswordAction()
+	public function viewAction()
 	{
-		$_session = $this->_getSession();
-
-		if ($this->getRequest()->isPost()) {
-			$email = $this->getRequest()->getParam('email');
-			if (!Zend_Validate::is($email, 'EmailAddress')) {
-				$_session->addError('Invalid email address');
-				$_session->forgotPasswordEmail = $email;
-			} else {
-				$user = Elm::getSingleton('user')->loadByEmail($email);
-				if ($user->getId()) {
-					try {
-						$newPassword = $user->generatePassword();
-						$user->changePassword($newPassword);
-						$user->sendPasswordResetEmail();
-						$_session->addSuccess('A new password has been sent.');
-						$_session->forgotPasswordEmail = null;
-					} catch (Exception $e) {
-						$_session->addError($e->getMessage());
-						$_session->forgotPasswordEmail = $email;
-					}
-				} else {
-					$_session->addError('This email address was not found in our records.');
-                	$_session->forgotPasswordEmail = $email;
-				}
-			}
-		}
-
-		$this->view->headTitle()->prepend('Forgot Password');
+		$this->_init();
+		$this->_initLayout();
 	}
+
+    /**
+     * About action
+     */
+    public function plotsAction()
+    {
+        $this->_init();
+        $this->_initLayout();
+    }
 
 	/**
 	 * Users settings page
@@ -500,17 +500,17 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
      *
      * @return mixed
      */
-    public function aboutEditAction()
+    public function editAction()
     {
         $session = $this->_getSession();
 
         $this->_init();
         $this->_initLayout();
-        $this->view->headTitle()->prepend('Edit About');
+        $this->view->headTitle()->prepend('Edit Profile');
         $this->view->headTitle()->prepend($session->user->getFirstname() . ' ' . $session->user->getLastname());
 
         $form = new Elm_Model_Form_User_About();
-        $form->setAction('/profile/about-edit-save');
+        $form->setAction('/profile/edit-save');
 
         // Set data if stored in session b/c of an error
         if ($session->formData) {
@@ -526,10 +526,10 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
      *
      * @return mixed
      */
-    public function aboutEditSaveAction()
+    public function editSaveAction()
     {
         if (!$this->getRequest()->isPost()) {
-            $this->_redirect('/profile/info');
+            $this->_redirect('/profile/edit');
             return;
         }
 
@@ -559,7 +559,7 @@ class Elm_ProfileController extends Elm_Profile_AbstractController
             $session->addError($this->_getError($form));
         }
 
-        $this->_redirect('/profile/about-edit');
+        $this->_redirect('/profile/edit');
     }
 
 	/**

@@ -6,9 +6,9 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 	const ROLE_CREATOR = 'Creator';
 	const ROLE_OWNER = 'Owner';
 	const ROLE_GARDENER = 'Gardener';
-	const ROLE_WATCHER = 'Watcher';
+	const ROLE_FOLLOWER = 'Follower';    /** @TODO some time switch watchers to followers? */
 
-	public static $userRoles = array('Creator', 'Owner', 'Gardener', 'Watcher');
+	public static $userRoles = array('Creator', 'Owner', 'Gardener', 'Follower');
 	public static $plotTypes = array('Community' => array('Individual', 'Group'), 'Personal', 'Farm');
 
     protected $_name = 'plot';

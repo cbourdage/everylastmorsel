@@ -26,21 +26,6 @@ class Elm_Model_Form_Plot_Edit extends Elm_Model_Form_Abstract
             'cols' => 75
         ));
 
-		$this->addElement('radio', 'visibility', array(
-            'label' => 'Plot Visibility',
-            'required'   => true,
-			'multiOptions' => array(
-				Elm_Model_Form_Plot_Create::VISIBILITY_PUBLIC => 'Public',
-				Elm_Model_Form_Plot_Create::VISIBILITY_PRIVATE => 'Private'
-			)
-        ));
-		
-        foreach ($this->getElements() as $element) {
-			if ($element instanceof Zend_Form_Element_Hidden) {
-				$element->setDecorators($this->hiddenDecorators);
-			} else {
-				$element->setDecorators($this->defaultDecorators);
-			}
-		}
+        $this->prepareElements();
 	}
 }

@@ -2,35 +2,56 @@
 $session = Elm::getSingleton('user/session');
 $plot = $this->plot;
 ?>
-<div class="inner-content-wrapper profile plot">
-	<?php echo $this->partial('plot/_top-display.phtml', array('plot' => $plot)); ?>
-	<?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
-	<?php echo $this->Message()->render(); ?>
+<?php echo $this->partial('partials/plot/top-display.phtml', array('plot' => $plot)); ?>
+<div class="inner-content-wrapper plot people">
+    <?php echo $this->Message()->render(); ?>
+    <?php echo $this->partial('plot/_navigation.phtml', array('plot' => $plot)); ?>
+    <section class="content">
+        <?php if (count($plot->getPendingUsers()) && $session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
+            <div class="alert alert-info">
+                Look at that, you have pending users. Take a <a href="<?php echo $this->url('plot/people/type/pending', array('p' => $plot->getId())); ?>">look</a>.
+            </div>
+        <?php endif; ?>
 
-	<?php if (count($plot->getPendingUsers()) && $session->isLoggedIn() && $plot->isOwner($session->user)) : ?>
-		<div class="alert alert-info">
-			Look at that, you have pending users. Take a <a href="<?php echo $this->url('plot/pending-users', array('p' => $plot->getId())); ?>">look</a>.
-		</div>
-	<?php endif; ?>
+        <section class="article">
+            <h2>Management</h2>
+            <div class="blocked-content people management">
+                <?php
+                    echo $this->partial('plot/people/_list.phtml', array(
+                        'users' => $plot->getManagement(),
+                        'canContact' => $this->canContact,
+                        'details' => true
+                    ));
+                ?>
+            </div>
+        </section>
 
-	<h2 class="blue">People</h2>
-	<div id="users" class="blocked-content users-list">
-		<?php
-			echo $this->partial('plot/user/_list.phtml', array(
-				'users' => $plot->getNonWatchers(),
-				'canContact' => $this->canContact,
-				'details' => true
-			));
-		?>
-		<?php echo $this->partial('plot/user/_associate.phtml', array('plot' => $plot)); ?>
-	</div>
+        <?php if ($plot->getFollowers()) : ?>
+        <section class="article">
+            <h2>Everyone Else</h2>
+            <div class="blocked-content people followers">
+                <?php
+                    echo $this->partial('user/_list.phtml', array(
+                        'users' => $plot->getFollowers(),
+                        canContact => $this->canContact,
+                        'details' => false
+                    ));
+                ?>
+        </section>
+        <?php endif; ?>
 
-	<?php if (count($plot->getWatchers())) : ?>
-		<h2 class="blue">Watchers</h2>
-		<div id="users" class="blocked-content wathers-list">
-			<?php echo $this->partial('user/_list.phtml', array('users' => $plot->getWatchers())); ?>
-		</div>
-	<?php endif; ?>
+        <?php if ($session->isLoggedIn() && !$plot->isAssociated($session->user) && $this->canContact) : ?>
+            <section class="article associate">
+                <div class="f-left">
+                    <h3>Do you like this plot?</h3>
+                    <p>Feel like lending a helping hand, sharing your knowledge or simply donating to the cause?</p>
+                </div>
+                <div class="f-left action">
+                    <?php echo $this->partial('plot/people/_associate.phtml', array('plot' => $plot)); ?>
+                </div>
+            </section>
+        <?php endif; ?>
+    </section>
 </div>
 
 

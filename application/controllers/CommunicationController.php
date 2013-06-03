@@ -134,7 +134,13 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 	{
 		$this->_initAjax();
 		$data = $this->getRequest()->getParams();
-		$form = new Elm_Model_Form_Communication_Contact();
+
+        if ($data['type'] === Elm_Model_Form_Communication_Contact_Owner::TYPE) {
+            $form = new Elm_Model_Form_Communication_Contact_Owner();
+        } else {
+            $form = new Elm_Model_Form_Communication_Contact_User();
+        }
+
 		if ($form->isValid($data)) {
 			$message = Elm::getModel('communication')->init($data);
 			//Elm::profile('communication_send', 'start');
@@ -153,6 +159,12 @@ class Elm_CommunicationController extends Elm_Profile_AbstractController
 				));
 			}
 		}  else {
+
+            // find first message
+            foreach ($form->getMessages() as $input) {
+                Elm::log(array_shift($input));
+            }
+
 			$this->getHelper()->json->sendJson(array(
 				'success' => false,
 				'error' => true,
