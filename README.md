@@ -1,4 +1,5 @@
-Every Last Morsel Read Me 
+Every Last Morsel 
+=========================
 
 RELEASE NOTES
 ---------------
@@ -68,8 +69,10 @@ NameVirtualHost *:80
 
 5. Add the following entires to /etc/hosts
 
+```
 127.0.0.1 localhost
 127.0.0.1 elm.localhost	localhost
+```
 
 6. Hit the root url (http/index.php) to perform install and upgrades.
 
