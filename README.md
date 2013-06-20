@@ -74,7 +74,14 @@ NameVirtualHost *:80
 127.0.0.1 elm.localhost	localhost
 ```
 
-6. Hit the root url (http/index.php) to perform install and upgrades.
+6. Change "app.domain" and "app.baseurl" in application/configs/application.ini to match the virtual host ServerName. The app.baseurl must end in a slash.
+
+```
+app.domain = "elm.localhost"
+app.baseurl = "http://elm.localhost/"
+```
+
+7. Hit the root url (http/index.php) to perform install and upgrades.
 
 
 
