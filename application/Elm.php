@@ -68,13 +68,13 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 			try {
 				$config = array(
 					'auth' => 'login',
-					'username' => 'collin.bourdage@gmail.com',
-					'password' => '',
+					'username' => 'everylastmorsel',
+					'password' => '305cdafd-d010-420e-bcb5-658839c3b2aa',
 					'ssl' => 'tls',
 					'port' => 587
 				);
 
-				$mailTransport = new Zend_Mail_Transport_Smtp('smtp.gmail.com', $config);
+				$mailTransport = new Zend_Mail_Transport_Smtp('smtp.mandrillapp.com', $config);
 				Zend_Mail::setDefaultTransport($mailTransport);
 			} catch (Zend_Exception $e) {
 				//Do something with exception

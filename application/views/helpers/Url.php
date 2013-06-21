@@ -37,8 +37,14 @@ class Elm_View_Helper_Url extends Zend_View_Helper_Url
 			unset($params['_reset']);
 		}
 
-		if ($path !== null) {
-			list ($controller, $action) = explode('/', $path);
+		if (isset($path)) {
+
+            if (strrpos($path, '/') != false)
+			    list ($controller, $action) = explode('/', $path);
+            else {
+                $controller = $path;
+                $action = "";
+            }
 
 			if ($controller == null) {
 				$urlOptions = array(
