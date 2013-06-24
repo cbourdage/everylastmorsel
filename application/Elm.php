@@ -1,7 +1,5 @@
 <?php
 /**
- * @TODO Plot People
- * @TODO Plot People - Follow/Following
  * @TODO Plot Association - Pending People?
  * @TODO Plot Association - Add People??
  */

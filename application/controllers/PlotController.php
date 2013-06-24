@@ -288,6 +288,72 @@ class Elm_PlotController extends Elm_Plot_AbstractController
 		$this->view->headTitle()->append("Crops");
 	}
 
+    /**
+     * Follow action - assumes ajax
+     */
+    public function followAction() {
+        $this->_initAjax();
+        $this->getHelper()->viewRenderer->setNoRender(true);
+
+        $plotId = $this->getRequest()->getParam('p');
+        $userId = $this->getRequest()->getParam('u');
+        if (!$plotId || !$userId) {
+            $response = array('success' => false);
+        } else {
+            try {
+                $plot = Elm::getModel('plot')->load($plotId);
+                $plot->associateUser($userId, Elm_Model_Resource_Plot::ROLE_FOLLOWER, true);
+                $response = array(
+                    'success' => true,
+                    'text' => 'Following',
+                    'url' => $plot->getUnFollowUrl(Elm::getModel('user')->load($userId))
+                );
+                //$this->_getSession()->addSuccess('Thanks for showing interest. You are now following this plot.');
+            } catch (Colony_Exception $e) {
+                Elm::logException($e);
+                $response = array(
+                    'success' => false,
+                    'message' => $e->getMessage()
+                );
+                //$this->_getSession()->addError($e);
+            }
+        }
+
+        $this->_helper->json->sendJson($response);
+    }
+
+    /**
+     * Follow action - assumes ajax
+     */
+    public function unfollowAction() {
+        $this->_initAjax();
+        $this->getHelper()->viewRenderer->setNoRender(true);
+
+        $plotId = $this->getRequest()->getParam('p');
+        $userId = $this->getRequest()->getParam('u');
+        if (!$plotId || !$userId) {
+            $response = array('success' => false);
+        } else {
+            try {
+                $plot = Elm::getModel('plot')->load($plotId);
+                $plot->unAssociateUser($userId, Elm_Model_Resource_Plot::ROLE_FOLLOWER);
+                $response = array(
+                    'success' => true,
+                    'text' => 'Follow',
+                    'url' => $plot->getFollowUrl(Elm::getModel('user')->load($userId))
+                );
+            } catch (Colony_Exception $e) {
+                Elm::logException($e);
+                $response = array(
+                    'success' => false,
+                    'message' => $e->getMessage()
+                );
+            }
+        }
+
+        $this->_helper->json->sendJson($response);
+    }
+
 	/**
 	 * Plot images default
 	 */

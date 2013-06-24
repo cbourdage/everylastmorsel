@@ -14,7 +14,7 @@ $users = $this->users;
                     <h3>
                         <a href="<?php echo $user->getUrl(); ?>" title="<?php echo $this->escape($user->getName()); ?>"><?php echo $this->escape($user->getName()); ?></a>
                         <?php if (!$user->isPrivate() && !$session->isMe($user)) : ?>
-                            <a href="#contact" class="icon mail" title="Contact <?php echo $this->escape($user->getName()); ?>" data-toggle="modal" data-to="<?php echo $user->getId(); ?>">
+                            <a href="#contact-user-modal" class="icon mail" title="Contact <?php echo $this->escape($user->getName()); ?>" data-toggle="modal" data-to="<?php echo $user->getId(); ?>">
                                 <span>Contact <?php echo $this->escape($user->getFirstname()); ?></span>
                             </a>
                         <?php endif; ?>

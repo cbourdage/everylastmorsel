@@ -371,6 +371,36 @@ function saveLocation(position) {
         });
 
 
+        /**
+         * Follow and Unfollow ajax requests - they follow the same pattern and use the
+         * rel attribute for the url. Toggles between Follow and Following text with
+         * .follow and .unfollow for style changes
+         */
+        $('a[href="#follow"], a[href="#unfollow"]').on('click', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            $.ajax({
+                url: $this.attr('rel'),
+                type: 'get',
+                beforeSend : function() {
+                    $this.addClass('loader');
+                },
+                complete: function() {
+                    $this.removeClass('loader');
+                },
+                success: function(response) {
+                    if (response.success) {
+                        $this.toggleClass('follow').toggleClass('following').attr('rel', response.url)
+                            .find('span > span').html(response.text);
+                    } else if (response.location) {
+                        Elm.success(response);
+                    }
+                }
+            });
+            return false;
+        });
+
+
 
         return;
 

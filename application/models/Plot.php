@@ -261,7 +261,15 @@ class Elm_Model_Plot extends Colony_Model_Abstract
         return $this;
 	}
 
-	/**
+    public function unAssociateUser($userId, $role)
+    {
+        if ($this->_getResource()->isUserAssociated($this, $userId, $role)) {
+            $this->_getResource()->unAssociateUser($this, $userId, $role);
+        }
+        return $this;
+    }
+
+    /**
 	 * @param $userId
 	 * @param $role
 	 * @return Elm_Model_Plot
@@ -350,17 +358,9 @@ class Elm_Model_Plot extends Colony_Model_Abstract
 	 * @param $user
 	 * @return bool
 	 */
-	public function isWatching($user)
+	public function isFollowing($user)
 	{
 		return $this->_getResource()->isUserAssociated($this, $user->getId(), Elm_Model_Resource_Plot::ROLE_FOLLOWER);
-
-		/** @Deprecated */
-		foreach ($this->getWatchers() as $u) {
-			if ($user->getId() == $u->getId()) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	/**

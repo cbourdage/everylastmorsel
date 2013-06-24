@@ -63,7 +63,6 @@ img {
 	padding-left: 28px;
 	white-space: nowrap;
 }
-.loader.green { background: url(../images/loader-green.gif) no-repeat; }
 #action-loader {
 	background-position: center center;
 	position: absolute;
@@ -111,7 +110,7 @@ ul.list-block li { display: block; float: left; }
 .icon.drawer { background-position: -50px -287px; }
 .icon.cog { background-position: -50px -328px; }
 .icon.secure { background-position: -4px -378px; width: 40px; }
-
+.icon.mail { background-position: -199px -99px; height: 17px; width: 26px; }
 /** Buttons & form defaults */
 a.btn,
 button,
@@ -198,7 +197,7 @@ button.btn-grey > span {
 }
 .btn.icon.contact > span > span { background-position: -4px -99px; }
 .btn.icon.follow > span > span { background-position: -4px -146px; padding-left: 22px; }
-.btn.icon.following > span > span { background-position: -4px -146px; padding-left: 22px; }
+.btn.icon.following > span > span { background-position: -4px -172px; padding-left: 22px; }
 .btn.icon.secure > span > span { background-position: -4px -378px; padding-left: 40px; }
 
 /** Form defaults */
@@ -419,7 +418,15 @@ body.two-column .main-container { background: #ecf0df url(../images/bg-noise.jpg
 #column-left .buttons-set .btn {
     clear: both;
     margin-bottom: 10px;
+    position: relative;
     width: 100%;
+}
+#column-left .buttons-set .btn.loader {
+    opacity: .4;
+    filter: alpha(opacity=40);
+    -moz-transition: opacity .2 linear;
+    -webkit-transition: opacity .2 linear;
+    transition: opacity .2 linear;
 }
 #column-left .buttons-set .btn > span { }
 
@@ -667,6 +674,7 @@ footer .watermark {
 .profile-layout .main-content .content .buttons-set  { margin: 35px 0 0; }
 .profile-layout .main-content .content .buttons-set .btn > span { font-size: 12px; }
 .profile-layout .main-content .content article,
+.profile-layout .main-content .content .article,
 .profile-layout .main-content .content .buttons-set + h2 { margin-top: 35px; }
 .profile-layout .main-content h2 {
     border-bottom: 1px solid #bcbcbc;
@@ -699,6 +707,12 @@ ul.list-block.list li figure {
     float: left;
     margin-right: 25px;
     width: 160px;
+}
+ul.list-block.list li div.details a.icon {
+    position: relative;
+    top: 2px;
+    overflow: hidden;
+    text-indent: 110%;
 }
 ul.list-block.list li div.details {
     float: left;

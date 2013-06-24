@@ -19,10 +19,10 @@ $session = Elm::getSingleton('user/session');
     <div id="lower-column">
         <?php if ($session->isLoggedIn() && !$plot->isPrivate() && !$session->isMe($plot->getOwner())) : ?>
             <div class="buttons-set">
-                <?php if ($plot->isAssociated($session->user)) : ?>
-                    <a href="#unfollow" class="btn btn-blue icon following" id="following-plot" rel="<?php echo $plot->getUnFollowUrl($session->user); ?>"><span><span>Following</span></span></a>
+                <?php if ($plot->isFollowing($session->user)) : ?>
+                    <a href="#unfollow" class="btn btn-blue icon following" rel="<?php echo $plot->getUnFollowUrl($session->user); ?>"><span><span>Following</span></span></a>
                 <?php else : ?>
-                    <a href="#follow" class="btn btn-blue icon follow" id="follow-plot" rel="<?php echo $plot->getFollowUrl($session->user); ?>"><span><span>Follow</span></span></a>
+                    <a href="#follow" class="btn btn-blue icon follow" rel="<?php echo $plot->getFollowUrl($session->user); ?>"><span><span>Follow</span></span></a>
                 <?php endif; ?>
 
                 <?php if ($this->canContact) : ?>

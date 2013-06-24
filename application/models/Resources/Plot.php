@@ -166,7 +166,8 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 	 * @param $userId
 	 * @param $role
 	 * @param $approved
-	 */
+     * @return $this
+     */
 	public function associateUser($object, $userId, $role, $approved)
 	{
 		if (in_array($role, self::$userRoles)) {
@@ -181,14 +182,32 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 				)
 			);
 		}
+
+        return $this;
 	}
+
+    /**
+     * @param $object
+     * @param $userId
+     * @param $role
+     * @return $this
+     */
+    public function unAssociateUser($object, $userId, $role)
+    {
+        if (in_array($role, self::$userRoles)) {
+            $this->getDefaultAdapter()->delete(self::RELATIONSHIP_TABLE, "user_id = $userId AND plot_id = " . $object->getId() . " AND role = '$role'");
+        }
+
+        return $this;
+    }
 
 	/**
 	 * @param $object
 	 * @param $userId
 	 * @param $role
 	 * @param $isApproved
-	 */
+     * @return $this
+     */
 	public function updateAssociatedUser($object, $userId, $role, $isApproved)
 	{
 		if (in_array($role, self::$userRoles)) {
@@ -198,6 +217,8 @@ class Elm_Model_Resource_Plot extends Colony_Db_Table
 				"plot_id = {$object->getId()} AND user_id = {$userId} AND role = '{$role}'"
 			);
 		}
+
+        return $this;
 	}
 }
 
