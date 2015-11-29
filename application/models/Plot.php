@@ -6,6 +6,11 @@ class Elm_Model_Plot extends Colony_Model_Abstract
     static $urlHelper = '';
 
 	/**
+	 * @var null
+	 */
+	private $_owner = null;
+
+	/**
 	 * @var array
 	 */
 	private $_users = array();

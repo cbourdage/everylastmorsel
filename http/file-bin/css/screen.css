@@ -1225,6 +1225,7 @@ table.data-table.crops td.yields .icon.edit { background-position: -222px -2px; 
 */
 .cms-page {
 	text-align: justify;
+    margin: 0 auto;
 	width: 600px;
 }
 .cms-page h1 {

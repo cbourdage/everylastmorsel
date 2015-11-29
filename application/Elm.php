@@ -131,11 +131,9 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 			'lifetimeColumn' => 'lifetime'
 		);
 		//create your Zend_Session_SaveHandler_DbTable and set the save handler for Zend_Session
-		//Zend_Session::setSaveHandler(new Zend_Session_SaveHandler_DbTable($config));
-		//Zend_Session::setOptions($this->getOption('session'));
-
-        Zend_Session::setOptions(array('cookie_domain' => Elm::getAppConfig('domain')));
-
+		Zend_Session::setSaveHandler(new Zend_Session_SaveHandler_DbTable($config));
+		Zend_Session::setOptions($this->getOption('session'));
+        //Zend_Session::setOptions(array('cookie_domain' => Elm::getAppConfig('domain')));
 		//self::log(Zend_Session::getOptions());
 	}
 
