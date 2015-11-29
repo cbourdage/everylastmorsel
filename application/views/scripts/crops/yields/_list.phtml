@@ -20,7 +20,7 @@ $pCrop = $this->pCrop;
 						<li>
 							<p>
 								<span class="input"><?= $yP->getQuantity(); ?></span>
-								<span class="units"><?= $this->Yield()->formatUnits($yP->getQuantityUnit(), $yP->getQuantity()); ?></span>
+								<span class="units"><?= $this->Yields()->formatUnits($yP->getQuantityUnit(), $yP->getQuantity()); ?></span>
 								-
 								<span class="price"><?= $this->Data()->formatPrice($yP->getPrice()); ?></span> / ea.
 								<span class="icon edit"></span>
@@ -53,7 +53,7 @@ $pCrop = $this->pCrop;
 						<li>
 							<?php if (count($yield->getPurchasable()) == 0) : ?>
 								<a href="#sellThese" data-toggle="modal" data-yieldId="<?= $yield->getYieldId(); ?>" data-yieldUnit="<?= $yield->getQuantityUnits(); ?>">Sell these!</a>
-							<?php elseif ($this->Yield()->hasMoreToSell($yield)) : ?>
+							<?php elseif ($this->Yields()->hasMoreToSell($yield)) : ?>
 								<a href="#sellThese" data-toggle="modal" data-yieldId="<?= $yield->getYieldId(); ?>" data-yieldUnit="<?= $yield->getQuantityUnits(); ?>">Sell more</a>
 							<?php endif; ?>
 						</li>

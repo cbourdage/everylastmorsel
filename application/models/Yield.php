@@ -63,7 +63,7 @@ class Elm_Model_Yield extends Colony_Model_Abstract
 	public function getQuantityUnits()
 	{
 		$units = $this->getData('quantity_unit');
-		$helper = new Elm_View_Helper_Yield();
+		$helper = new Elm_View_Helper_Yields();
 		return $helper->formatUnits($units, $this->getQuantity());
 	}
 

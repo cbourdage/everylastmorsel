@@ -1,7 +1,7 @@
 <?php
 $plot = $this->plot;
 $session = Elm::getSingleton('user/session');
-$hasYields = $this->Yield()->plotHasYields($plot);
+$hasYields = $this->Yields()->plotHasYields($plot);
 $hasActions = ($session->isLoggedIn() && $plot->isOwner($session->getUser())) || $this->Plot()->hasCropsForSale($plot);
 $columnCount = ($hasYields && $hasActions) ? 6 : (($hasYields || $hasActions) ? 5 : 4);
 ?>

@@ -1,12 +1,12 @@
 <?php
 $session = Elm::getSingleton('user/session');
 $pCrop = $this->pCrop;
-$hasYields = $this->Yield()->plotHasYields($pCrop->getPlot());
+$hasYields = $this->Yields()->plotHasYields($pCrop->getPlot());
 ?>
 <?php if ($session->isLoggedIn() && $pCrop->getPlot()->isOwner($session->getUser())) : ?>
 	<a href="#addYieldModal" data-toggle="modal" data-cropId="<?= $pCrop->getId(); ?>">Add Yield</a>
 
-	<?php if ($this->Yield()->getYieldCount($pCrop) > 0) : ?>
+	<?php if ($this->Yields()->getYieldCount($pCrop) > 0) : ?>
 		<span class="separator">|</span>
 		<a href="#crop-yields-<?php echo $pCrop->getId(); ?>">Yields</a>
 	<?php endif; ?>

@@ -7,13 +7,13 @@
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Elm_View_Helper_Yield extends Zend_View_Helper_Url
+class Elm_View_Helper_Yields extends Zend_View_Helper_Url
 {
 	//private $_plot = null;
 
 	//private $_yields = null;
 
-    public function Yield()
+    public function Yields()
 	{
 		return $this;
 	}
