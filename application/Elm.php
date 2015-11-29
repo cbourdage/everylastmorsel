@@ -93,15 +93,17 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
         $this->_view->headMeta()->appendHttpEquiv('Content-Language', 'en-US');
         $this->_view->headLink()
             ->appendStylesheet('/file-bin/css/960/reset.css')
-		 	//->appendStylesheet('/file-bin/css/960/960.css')
+		 	->appendStylesheet('/file-bin/css/960/960.css')
 			//->appendStylesheet('/file-bin/css/smoothness/jquery-ui-1.8.18.custom.css')
             ->appendStylesheet('/file-bin/css/screen.css');
+
 		$this->_view->headScript()
 			->appendFile('/file-bin/js/lib/jquery-1.7.1.min.js', 'text/javascript')
             //->appendFile('/file-bin/js/lib/jquery-ui-1.8.18.custom.min.js', 'text/javascript')
             ->appendFile('/file-bin/js/lib/plugins.js', 'text/javascript')
 			->appendFile('/file-bin/js/elm.js', 'text/javascript');
-        $this->_view->headTitle('Every Last Morsel')
+
+		$this->_view->headTitle('Every Last Morsel')
 			->setSeparator(' | ');
     }
 

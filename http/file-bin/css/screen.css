@@ -1248,7 +1248,9 @@ table.data-table.crops td.yields .icon.edit { background-position: -222px -2px; 
 	float: none;
 	margin-left: -4px;
 }
-#communityNavigation ul li:first-child { margin-left: 0; }
+#communityNavigation ul li:first-child {
+    margin-left: 0;
+}
 .community ul.list li {
 	margin-left: 20px;
 	margin-bottom: 30px;

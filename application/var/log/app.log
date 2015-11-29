@@ -1,2 +1,4 @@
 2013-06-02T18:31:42-05:00 DEBUG (7): not logged in: Elm_Model_User_Session::authenticate
 2013-06-02T18:31:42-05:00 DEBUG (7): http://local.everylastmorsel.com/profile/
+2015-11-29T19:14:19+01:00 DEBUG (7): http://local.everylastmorsel.com/u/100/ == http://local.everylastmorsel.com/u/100/
+2015-11-29T19:14:20+01:00 DEBUG (7): http://local.everylastmorsel.com/u/100/ == http://local.everylastmorsel.com/u/100/
