@@ -91,6 +91,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
         $this->_view->doctype('HTML5');
         $this->_view->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8');
         $this->_view->headMeta()->appendHttpEquiv('Content-Language', 'en-US');
+
         $this->_view->headLink()
             ->appendStylesheet('/file-bin/css/960/reset.css')
 		 	->appendStylesheet('/file-bin/css/960/960.css')
@@ -175,7 +176,7 @@ class Elm extends Zend_Application_Bootstrap_Bootstrap
 		    'u/:u',
 		    array(
 		    	'controller' => 'user',
-        		'action' => 'about',
+        		'action' => 'view',
 				//'alias' => ''
 				'u' => ''
 		    ),
